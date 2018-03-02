@@ -229,15 +229,7 @@
         <footer>
             <div class="b-grid__list">
                 <div class="b-grid__item b-grid__item--1-1">
-                    <span class="year">2018 ©</span>
-                    <div class="menu">
-                        <ul>
-                            <li v-for="(link, indexLink) in links[lang]" :key="indexLink" @click="scrollToElement(link.to)">{{ link.title}}</li>
-                            <!-- <li>ICO</li> -->
-                            <!-- <li>News</li> -->
-                            <!-- <li>Bounty</li> -->
-                        </ul>
-                    </div>
+                    <span class="year">Effective Energy LLC © 2018 All rights reserved.</span>
                 </div>
             </div>
         </footer>
