@@ -544,6 +544,17 @@ p {
 .subs {
   margin-left: -10px;
 }
+.description_inner {
+  text-align: left;
+}
+.description_inner li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.description_inner ul {
+  margin-top: 10px;
+}
 .b-grid--post-preview .b-grid__list {
   margin: 0 0 0 -15px;
 }
