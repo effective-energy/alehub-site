@@ -10,7 +10,7 @@
                 <div class="hamburger" @click="toggleMenu">Menu</div>
                 <ul>
                     <li class="check-fonts" v-for="link in links[lang]" @click="scrollToElement(link.to)">{{ link.title}}</li>
-                    <a href="http://presale.alehub.io"><li class="check-fonts">
+                    <a href="http://presale.alehub.io" class="navbar-link"><li class="check-fonts">
                         {{ cabinetWord }}
                     </li></a>
                     <div class="lang" @click="changeLang">
@@ -84,6 +84,13 @@
             }
         },
         methods: {
+            scrollACtiveClass () {
+                document.addEventListener('scroll', function(e) {
+                    // let scrollPos = document.documentElement.scrollTop;
+                    // let elements = document.getElementsByClassName('menu')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
+
+                });
+            },
             logout () {
                 localStorage.removeItem('token');
                 localStorage.removeItem('userId');
@@ -153,6 +160,7 @@
             }
         },
         created () {
+            this.scrollACtiveClass();
             if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Кабинет';
             else this.cabinetWord = 'Cabinet';
         }
@@ -182,6 +190,9 @@
 </style>
 
 <style lang="stylus" scoped>
+
+    .navbar-link
+        text-decoration none
 
     .header 
         align-items center

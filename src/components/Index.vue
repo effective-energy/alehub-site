@@ -23,50 +23,53 @@
         <section v-if="!loader" id="guaranteed" class="guaranteed wrapper style3">
             <div class="b-grid__list text-center">
                 <div class="inner inner-list b-grid__item b-grid__item--1-1">
-                    <!-- <p class="subtitle">{{ content?content.guaranteed.subTitle:'' }}</p> -->
-                    <p class="title">Предлагаемые решения<!-- {{ content?content.guaranteed.title:'' }}--></p>
-                    <!-- <div class="b-grid__list">
-                        <div class="b-grid__item b-grid__item--1-3" v-if="content" v-for="(item, indexGuaranted) in content.guaranteed.list" :key="indexGuaranted">
-                            <h3>{{ item.title }}</h3>
-                            <p>{{ item.text }}</p>
-                        </div>
-                    </div> -->
-                    <div class="b-grid__list">
-                        <div class="b-grid__item b-grid__item--1-1" v-if="content" >
-                            <p class="grid_inner">
-                                <ul style="text-align: left;line-height: 1.5;font-size:14px">
-                                    <li>Консенсус доверия сторон через распределённый реестр – Блок-чейн,
-                                        подкреплённый финансовыми гарантиями и репутационными рисками через
-                                        нейтральное посредничество системы АЛЕ.</li>
-                                    <li>Широко авторитетные верификационные Агенты.</li>
-                                    <li>Автоматизм механизмов взаиморасчётов сторон контракта.</li>
-                                    <li>Унификация, ускорение и максимальная автоматизация процессов верификации участников, ТЗ, результатов работы.</li>
-                                    <li>Капитализация расчётных средств, контроль и менеджмент расходов.</li>
-                                    <li>Безопасность собственной операционной среды.</li>
-                                </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <p class="title">Предлагаемые решения</p>
+                    
+                    <div class="b-grid__list solution-block" v-if="content">
 
-        <section v-if="!loader" id="documentations" class="wrapper style2">
-            <div class="b-grid__list">
-                <div class="inner b-grid__item b-grid__item--1-1">
-                    <section class="spotlights">
-                        <article class="full">
-                            <header class="major">
-                                <h2>{{ content.docs.title }}</h2>
-                            </header>
-                            <ul class="actions">
-                                <li v-for="(document, indexDocument) in content.docs.documents" :key="indexDocument">
-                                    <!-- <a :href="'static/pdf/'+document.link" class="button" target="_blank">{{ document.title }}</a> -->
-                                    <a class="button">{{ document.title }}</a>
-                                </li>
-                            </ul>
-                        </article>
-                    </section>
+                        <div class="b-grid__item b-grid__item--1-3">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/1.svg" alt="" />
+                                <p>Консенсус доверия сторон через BlockChain, подкреплённый финансовыми гарантиями.</p>
+                            </div>
+                        </div>
+
+                        <div class="b-grid__item b-grid__item--1-3">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/2.svg" alt="" />
+                                <p>Унификация и максимальная автоматизация процессов верификации участников.</p>
+                            </div>
+                        </div>
+
+                        <div class="b-grid__item b-grid__item--1-3">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/3.svg" alt="" />
+                                <p>Капитализация расчётных средств, контроль и менеджмент расходов.</p>
+                            </div>
+                        </div>
+
+                        <div class="b-grid__item b-grid__item--1-3"">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/4.svg" alt="" />
+                                <p>Автоматизм механизмов взаиморасчётов сторон контракта.</p>
+                            </div>
+                        </div>
+
+                        <div class="b-grid__item b-grid__item--1-3">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/5.svg" alt="" />
+                                <p>Широко авторитетные верификационные Агенты.</p>
+                            </div>
+                        </div>
+
+                        <div class="b-grid__item b-grid__item--1-3">
+                            <div class="solution-info">
+                                <img src="../assets/img/solution/6.svg" alt="" />
+                                <p>Безопасность собственной операционной среды.</p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -153,94 +156,110 @@
         </section>
 
 
-        <Teams v-if="!loader" :content="content.team" />
+    <Teams v-if="!loader" :content="content.team" />
 
-        <section v-if="!loader" id="partners" class="wrapper style2">
-            <div class="b-grid__list">
-                <div class="inner b-grid__item b-grid__item--1-1">
-                    <section class="spotlights">
-                        <article class="full">
-                            <header class="major">
-                                <p>{{ content.partners.subtitle }}</p>
-                                <h2>{{ content.partners.title }}</h2>
-                            </header>
-                            <div class="partners-list">
-                                <div class="b-grid__list">
-                                    <div class="b-grid__item b-grid__item--1-3" v-for="(partner, indexPartner) in content.partners.list" :key="indexPartner">
-                                        <img :src="$host + '/ale-files/'+partner.logo" alt=""/>
-                                    </div>
-                                </div>
+    <section data-v-82b7485c="" id="concept" class="wrappe" style="background: rgb(71, 75, 75);"><div data-v-82b7485c="" class="b-grid__list text-center" style="max-width: 1300px;"><div data-v-82b7485c="" class="inner inner-list b-grid__item b-grid__item--1-1"><p data-v-82b7485c="" class="title" style="color: rgb(255, 255, 255);margin-bottom: 50px;margin-top: 50px;">RoadMap</p> <div data-v-82b7485c="" class="b-grid__list"><div data-v-82b7485c="" class="b-grid__item b-grid__item--1-1" style="
+    margin-bottom: 30px;
+"><img data-v-82b7485c="" src="https://monetizecoin.com/resource/landingpage/img/roadmap-min.png" alt="" style="object-fit: cover; width: 110%;"></div></div></div></div></section>
+
+    <section class="wrapper" style="padding-bottom: 0;">
+        <div class="b-grid__list">
+            <div class="inner b-grid__item b-grid__item--1-1" style="width: 1170px; max-width: 1170px; min-width: 1170px;">
+                <section class="spotlights">
+                    <article class="full" style="width: 100%;">
+                        <header class="major">
+                            <h2 data-v-82b7485c="">Распределение средств</h2>
+                        </header>
+
+                        <div class="distribution-money" style="width: 100%; height: 60px; display: flex;">
+
+                            <div class="distribution-gist reseach" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
+                                <span style="margin-left: 10px;" class="">45%</span>
+                                <span class="more_info">Пишем код</span>
                             </div>
-                            <!-- <ul class="actions">
-                                <li><a href="#" class="button">Bounty program</a></li>
-                            </ul> -->
-                        </article>
-                    </section>
-                </div>
-            </div>
-        </section>
 
-        <section v-if="!loader" id="communication" class="wrapper style3">
-            <div class="b-grid__list text-center">
-                <div class="inner inner-list b-grid__item b-grid__item--1-1">
-                    <p class="title">{{ content.social.title }}</p>
-                    <h3>{{ content.social.subTitle }}</h3>
-                    <div class="b-grid__list">
-                        <div class="b-grid__item b-grid__item--1-1">
-                            <p>
-                                <a href="https://www.facebook.com/alehub.io/" target="_blank"><img src="../../static/icons/facebook.png" alt="" width="80"></a>
-                                <a href="https://www.instagram.com/alehub.io/" target="_blank"><img src="../../static/icons/instagram.svg" alt="" width="80"></a>
-                                <a href="https://t.me/alehub" target="_blank"><img src="../../static/icons/telegram.png" alt="" width="80"></a>
-                                <a href="https://twitter.com/alehub_io" target="_blank"><img src="../../static/icons/twitter.png" alt="" width="80"></a>
-                                <a href="https://github.com/AleHub" target="_blank"><img src="../../static/icons/github.png" alt="" width="80"></a>
-                            </p>
-                             <h3>Soon on:</h3>
-                             <p>
-                                 <a target="_blank"><img src="../../static/icons/youtube.svg" alt="" width="80"></a>
-                                 <a target="_blank"><img src="../../static/icons/reddit.svg" alt="" width="80"></a>
-                             </p>
+                            <div class="distribution-gist marketing" style="background: #2196F3;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
+                                <span style="margin-left: 10px;">30%</span>
+                                <span class="more_info">Лайки текут</span>
+                            </div>
+
+                            <div class="distribution-gist administrative" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
+                                <span style="margin-left: 10px;">12%</span>
+                                <span class="more_info">Купили бмв</span>
+                            </div>
+
+                            <div class="distribution-gist bonuses" style="background: #BA68C8;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
+                                <span style="margin-left: 10px;">8%</span>
+                                <span class="more_info">Секретарша</span>
+                            </div>
+
+                            <div class="distribution-gist legal" style="background: #FFC107;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
+                                <span style="margin-left: 10px;">5%</span>
+                                <span class="more_info">Судыыы тудыыы</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="distribution-labels" style="padding: 20px;display: flex;justify-content: space-between;font-size: 18px;margin-top:  20px;">
+
+                            <span class="dist-money_badge_red">Разработка</span>
+                            <span class="dist-money_badge_blue">Маркетинг</span>
+                            <span class="dist-money_badge_green">Операционные расходы</span>
+                            <span class="dist-money_badge_purple">Бонусы</span>
+                            <span class="dist-money_badge_yellow">Юридические расходы</span>
+                        </div>
+                    </article>
+                </section>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section v-if="!loader" id="contacts" class="wrapper style2">
-            <div class="b-grid__list">
-                <div class="inner b-grid__item b-grid__item--1-1">
-                    <section class="spotlights">
-                        <article class="full">
-                            <header class="major subs">
-                                <p class="large">{{ content?content.subscribe.title:'' }}</p>
-                                <h3>{{ content?content.subscribe.subtitle:'' }}</h3>
-                            </header>
-                            <ul class="actions">
-                                <input type="text" :placeholder="content.subscribe.placeholder" @keyup.enter="subscribe" v-model="subscribeEmail">
-                                <li class="subscribe">
-                                    <span class="button" @click="subscribe">{{ content?content.subscribe.btnText:'' }}</span>
-                                </li>
-                            </ul>
+    <section class="wrapper" style="padding-top: 0;">
+        <div class="b-grid__list">
+            <div class="inner b-grid__item b-grid__item--1-1" style="width: 1170px; max-width: 1170px; min-width: 1170px;">
+                <section class="spotlights">
+                    <article class="full" style="width: 100%;">
+                        <header class="major">
+                            <h2 data-v-82b7485c="">Распределение токенов</h2>
+                        </header>
 
-                            <span class="successSubscribe" v-if="subscribeStatus == 'success'">Success subscribe!</span>
+                        <div class="distribution-budget" style="width: 100%; height: 60px; display: flex;">
 
-                            <span class="errorSubscribe" v-if="subscribeStatus === 'emailexist'">Email already exist!</span>
+                            <div class="distribution-gist icosale" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width: 77%;">
+                                <span style="margin-left: 10px;">77%</span>
+                            </div>
 
-                            <span class="errorSubscribe" v-if="subscribeStatus === 'novalid'">Enter valid email!</span>
+                            <div class="distribution-gist forteam" style="background: rgb(33, 150, 243);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width: 11%;">
+                                <span style="margin-left: 10px;">11%</span>
+                            </div>
 
-                            <Spinner v-if="isLoaderSubscribe"/>
-                        </article>
-                    </section>
-                </div>
+                            <div class="distribution-gist" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
+                                <span style="margin-left: 10px;width: 10%;">10%</span>
+                            </div>
+
+                            <div class="distribution-gist" style="background: rgb(186, 103, 200);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width:  10%;">
+                                <span style="margin-left: 10px;width: 2%;">2%</span>
+                            </div>
+
+                        </div>
+                        <div class="distribution-labels" style="padding: 20px;display: flex;justify-content: space-between;font-size: 18px;margin-top:  20px;">
+
+                            <span class="dist_badge_red">Продажа на ICO</span>
+                            <span class="dist_badge_blue">Команда</span>
+                            <span class="dist_badge_green">Резерв, реферальная программа, адвайзер</span>
+                            <span class="dist_badge_green">Баунти</span>
+                        </div>
+                    </article>
+                </section>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-            <div class="b-grid__list">
-                <div class="b-grid__item b-grid__item--1-1">
-                    <span class="year">Effective Energy LLC © 2018 All rights reserved.</span>
-                </div>
+    <footer>
+        <div class="b-grid__list">
+            <div class="b-grid__item b-grid__item--1-1">
+                <span class="year">Effective Energy LLC © 2018 All rights reserved.</span>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     </div>
 </template>
@@ -354,6 +373,20 @@
 <style src="../assets/less/style.css"></style>
 
 <style scoped lang="stylus">
+    .distribution-money
+        .distribution-gist
+            transition all 400ms ease-in-out
+            .more_info
+                display none
+                margin-right 15px
+                font-size 20px
+                transition all 400ms ease-in-out
+        .distribution-gist:hover
+            width 100%
+            >.more_info
+                display block
+
+
     .errorSubscribe {
         color: red;
     }
@@ -365,4 +398,88 @@
     .large {
         margin-top: 0;
     }
+
+    .reseach {
+        width: 45%;
+    }
+
+    .marketing {
+        width: 30%;
+    }
+
+    .administrative {
+        width: 12%;
+    }
+
+    .bonuses {
+        width: 8%;
+    }
+
+    .legal {
+        width: 5%;
+    }
+
+    .icosale {
+        width: 77%;
+    }
+
+    .forteam {
+        width: 11%;
+    }
+        
+
+    .dist-money_badge_red::before
+        content ""
+        width 10px
+        height 10px
+        display inline-flex
+        clear both
+        margin-right 5px
+        position relative
+        top -2px
+        background-color #f54336
+
+    .dist-money_badge_blue::before
+        content ""
+        width 10px
+        height 10px
+        display inline-flex
+        clear both
+        margin-right 5px
+        position relative
+        top -2px
+        background-color #2296f3
+
+    .dist-money_badge_green::before
+        content ""
+        width 10px
+        height 10px
+        display inline-flex
+        clear both
+        margin-right 5px
+        position relative
+        top -2px
+        background-color #8bc34a
+
+    .dist-money_badge_purple::before
+        content ""
+        width 10px
+        height 10px
+        display inline-flex
+        clear both
+        margin-right 5px
+        position relative
+        top -2px
+        background-color #ba68c8
+
+    .dist-money_badge_yellow::before
+        content ""
+        width 10px
+        height 10px
+        display inline-flex
+        clear both
+        margin-right 5px
+        position relative
+        top -2px
+        background-color #FFC105
 </style>
