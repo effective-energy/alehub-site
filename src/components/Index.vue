@@ -2,7 +2,7 @@
     <div class="index">
 
         <Navbar :lang="lang"/>
-        <Greeting :content="content.greeting" :loader="loader"/>
+        <Timer :content="content.greeting" :loader="loader"/>
 
         <section v-if="!loader" id="about" class="wrapper style2">
             <div class="b-grid__list">
@@ -158,61 +158,7 @@
 
     <Teams v-if="!loader" :content="content.team" />
 
-    <section data-v-82b7485c="" id="concept" class="wrappe" style="background: rgb(71, 75, 75);"><div data-v-82b7485c="" class="b-grid__list text-center" style="max-width: 1300px;"><div data-v-82b7485c="" class="inner inner-list b-grid__item b-grid__item--1-1"><p data-v-82b7485c="" class="title" style="color: rgb(255, 255, 255);margin-bottom: 50px;margin-top: 50px;">RoadMap</p> <div data-v-82b7485c="" class="b-grid__list"><div data-v-82b7485c="" class="b-grid__item b-grid__item--1-1" style="
-    margin-bottom: 30px;
-"><img data-v-82b7485c="" src="https://monetizecoin.com/resource/landingpage/img/roadmap-min.png" alt="" style="object-fit: cover; width: 110%;"></div></div></div></div></section>
-
     <section class="wrapper" style="padding-bottom: 0;">
-        <div class="b-grid__list">
-            <div class="inner b-grid__item b-grid__item--1-1" style="width: 1170px; max-width: 1170px; min-width: 1170px;">
-                <section class="spotlights">
-                    <article class="full" style="width: 100%;">
-                        <header class="major">
-                            <h2 data-v-82b7485c="">Распределение средств</h2>
-                        </header>
-
-                        <div class="distribution-money" style="width: 100%; height: 60px; display: flex;">
-
-                            <div class="distribution-gist reseach" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
-                                <span style="margin-left: 10px;" class="">45%</span>
-                                <span class="more_info">Пишем код</span>
-                            </div>
-
-                            <div class="distribution-gist marketing" style="background: #2196F3;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
-                                <span style="margin-left: 10px;">30%</span>
-                                <span class="more_info">Лайки текут</span>
-                            </div>
-
-                            <div class="distribution-gist administrative" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
-                                <span style="margin-left: 10px;">12%</span>
-                                <span class="more_info">Купили бмв</span>
-                            </div>
-
-                            <div class="distribution-gist bonuses" style="background: #BA68C8;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
-                                <span style="margin-left: 10px;">8%</span>
-                                <span class="more_info">Секретарша</span>
-                            </div>
-
-                            <div class="distribution-gist legal" style="background: #FFC107;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
-                                <span style="margin-left: 10px;">5%</span>
-                                <span class="more_info">Судыыы тудыыы</span>
-                            </div>
-                        </div>
-                        <div class="distribution-labels" style="padding: 20px;display: flex;justify-content: space-between;font-size: 18px;margin-top:  20px;">
-
-                            <span class="dist-money_badge_red">Разработка</span>
-                            <span class="dist-money_badge_blue">Маркетинг</span>
-                            <span class="dist-money_badge_green">Операционные расходы</span>
-                            <span class="dist-money_badge_purple">Бонусы</span>
-                            <span class="dist-money_badge_yellow">Юридические расходы</span>
-                        </div>
-                    </article>
-                </section>
-            </div>
-        </div>
-    </section>
-
-    <section class="wrapper" style="padding-top: 0;">
         <div class="b-grid__list">
             <div class="inner b-grid__item b-grid__item--1-1" style="width: 1170px; max-width: 1170px; min-width: 1170px;">
                 <section class="spotlights">
@@ -221,31 +167,30 @@
                             <h2 data-v-82b7485c="">Распределение токенов</h2>
                         </header>
 
-                        <div class="distribution-budget" style="width: 100%; height: 60px; display: flex;">
+                        <div class="distribution-money" style="width: 100%; height: 60px; display: flex;">
 
-                            <div class="distribution-gist icosale" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width: 77%;">
+                            <div class="distribution-gist gist-red" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
                                 <span style="margin-left: 10px;">77%</span>
                             </div>
 
-                            <div class="distribution-gist forteam" style="background: rgb(33, 150, 243);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width: 11%;">
+                            <div class="distribution-gist gist-blue" style="background: #2196F3;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
                                 <span style="margin-left: 10px;">11%</span>
                             </div>
 
-                            <div class="distribution-gist" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
-                                <span style="margin-left: 10px;width: 10%;">10%</span>
+                            <div class="distribution-gist gist-green" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
+                                <span style="margin-left: 10px;">10%</span>
                             </div>
 
-                            <div class="distribution-gist" style="background: rgb(186, 103, 200);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;width:  10%;">
-                                <span style="margin-left: 10px;width: 2%;">2%</span>
+                            <div class="distribution-gist gist-purple" style="background: #BA68C8;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
+                                <span style="margin-left: 10px;">2%</span>
                             </div>
-
                         </div>
                         <div class="distribution-labels" style="padding: 20px;display: flex;justify-content: space-between;font-size: 18px;margin-top:  20px;">
 
-                            <span class="dist_badge_red">Продажа на ICO</span>
-                            <span class="dist_badge_blue">Команда</span>
-                            <span class="dist_badge_green">Резерв, реферальная программа, адвайзер</span>
-                            <span class="dist_badge_green">Баунти</span>
+                            <span class="dist-money_badge_red">Продажа на ICO</span>
+                            <span class="dist-money_badge_blue">Команда</span>
+                            <span class="dist-money_badge_green">Резерв, реферальная программа, адвайзер</span>
+                            <span class="dist-money_badge_purple">Баунти</span>
                         </div>
                     </article>
                 </section>
@@ -266,7 +211,7 @@
 
 <script>
     import Navbar from './layouts/Navbar';
-    import Greeting from './layouts/Greeting';
+    import Timer from './layouts/Timer';
     import Teams from './layouts/Teams';
     import Spinner from './layouts/Spinner';
 
@@ -274,7 +219,7 @@
         name: 'Index',
         components: {
             Navbar,
-            Greeting,
+            Timer,
             Teams,
             Spinner
         },
@@ -375,12 +320,12 @@
 <style scoped lang="stylus">
     .distribution-money
         .distribution-gist
-            transition all 400ms ease-in-out
+            transition all 800ms ease-in-out
             .more_info
                 display none
                 margin-right 15px
                 font-size 20px
-                transition all 400ms ease-in-out
+                transition all 800ms ease-in-out
         .distribution-gist:hover
             width 100%
             >.more_info
@@ -399,32 +344,20 @@
         margin-top: 0;
     }
 
-    .reseach {
-        width: 45%;
+    .gist-red {
+        width: 60%;
     }
 
-    .marketing {
-        width: 30%;
+    .gist-blue {
+        width: 15%;
     }
 
-    .administrative {
-        width: 12%;
+    .gist-green {
+        width: 15%;
     }
 
-    .bonuses {
-        width: 8%;
-    }
-
-    .legal {
-        width: 5%;
-    }
-
-    .icosale {
-        width: 77%;
-    }
-
-    .forteam {
-        width: 11%;
+    .gist-purple {
+        width: 10%;
     }
         
 
