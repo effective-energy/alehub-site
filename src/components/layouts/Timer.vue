@@ -684,12 +684,14 @@ export default {
 					border-radius 0
 					font-size 30px
 	@media screen and (max-width: 365px)
-		.greeting 
+		.greeting
 			.b-grid__list
 				.b-grid__item--1-1
-					.ico-timer 
-						.ico-body 
-							.ico-left 
+					.ico-timer
+						.ico-body
+							.ico-left
+								padding 1.5em
+								width calc(100% - 3em)
 								.softcap
 									font-size 19px
 									&:last-child
@@ -697,17 +699,21 @@ export default {
 								.countdown
 									font-size 40px
 							.ico-right
+								padding 2em 1.5em
 								.timer-title
 									font-size 24px
 									margin-top -10px
+						.footer
+							padding 10px 0
 	@media screen and (max-width: 350px)
-		.greeting 
+		.greeting
 			.b-grid__list
 				.b-grid__item--1-1
-					.ico-timer 
-						.ico-body 
+					.ico-timer
+						.ico-body
 							.ico-left
 								height auto
 								.softcap
 									font-size 18px
+					.greeting-banner
 </style>
