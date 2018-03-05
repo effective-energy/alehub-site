@@ -399,12 +399,12 @@ export default {
 								background-color #000000
 
 					.ico-right
-						height 499px
+						height 500px
 						background rgb(42, 45, 48)
 						padding 3em
 						color rgb(255, 255, 255)
 						width 50%
-						border-bottom 1px solid rgb(71, 75, 75)
+						border-bottom none
 						display flex
 						flex-direction column
 
@@ -421,6 +421,9 @@ export default {
 
 								a
 									width 33%
+									&:last-child
+										.partners-item
+											margin-right 0
 
 									.partners-item
 										padding 0px 10px
@@ -564,4 +567,147 @@ export default {
 				cursor pointer
 				&:hover
 					background #000!important
+
+	@media screen and (max-width: 1024px)
+		.greeting
+			.b-grid__list
+				.b-grid__item--1-1
+					padding-right 15px
+					.ico-timer
+						.ico-body
+							flex-direction column
+							align-items center
+							.ico-left,
+							.ico-right
+								width calc(100% - 6em)
+							.ico-right
+								border none
+						.ico-footer
+							flex-direction column
+							justify-content space-around
+							border-bottom-left-radius 4px
+							border-bottom-right-radius 4px
+							padding 10px 0
+							.social-links
+								margin 0
+							.actions
+								margin 0
+
+				.greeting-banner
+					margin 45px 0 0
+					border-bottom-left-radius 0
+					border-bottom-right-radius 0
+	@media screen and (max-width: 760px)
+		.greeting
+			.b-grid__list
+				.b-grid__item--1-1
+					padding 0
+					.ico-timer
+						.ico-body
+							flex-direction column
+							align-items center
+							.ico-left,
+							.ico-right
+								width calc(100% - 6em)
+							.ico-right
+								height 100%
+								.right-inner
+									.partners-list
+										flex-direction row
+										align-items center
+										justify-content center
+										flex-wrap wrap
+										a
+											width: 50%
+											margin-bottom: 8px
+											.partners-item
+												padding 10px
+								.supported-coins
+									justify-content center
+									flex-wrap wrap
+									.icon-container
+										width 50%
+										.icon-item
+											margin: 5px 10px 5px 0px;
+										&:nth-child(even),
+										&:last-child
+											.icon-item
+												margin-right 0
+								.project-info
+									display flex
+									flex-direction row
+									flex-wrap wrap
+									justify-content center
+									a
+										margin 0 0 20px
+										width 50%
+										&:first-child
+											text-align center
+										&:last-child
+											width 100%
+											text-align center
+											margin 0
+								.timer-title
+									text-align center
+							.ico-left
+								.countdown
+									font-size 50px
+								.bonus
+									font-size 24px
+						.ico-footer
+							flex-direction column
+							justify-content space-around
+							border-bottom-left-radius 4px
+							border-bottom-right-radius 4px
+							padding 20px 0
+							height 200px
+							width 100%
+							.social-links
+								margin 0
+								flex-direction column
+								height 40%
+								justify-content space-evenly
+								.social-link
+									margin-left -5px
+							.actions
+								height 60%
+								margin 0
+								display flex
+								align-items center
+								flex-direction column
+								justify-content space-around
+								button
+									width 100%
+									margin 0
+				.greeting-banner
+					margin -6px 0 0
+					border-radius 0
+					font-size 30px
+	@media screen and (max-width: 365px)
+		.greeting 
+			.b-grid__list
+				.b-grid__item--1-1
+					.ico-timer 
+						.ico-body 
+							.ico-left 
+								.softcap
+									font-size 19px
+									&:last-child
+										margin-top 5px
+								.countdown
+									font-size 40px
+							.ico-right
+								.timer-title
+									font-size 24px
+									margin-top -10px
+	@media screen and (max-width: 350px)
+		.greeting 
+			.b-grid__list
+				.b-grid__item--1-1
+					.ico-timer 
+						.ico-body 
+							.ico-left
+								height auto
+								.softcap
+									font-size 18px
 </style>

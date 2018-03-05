@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="stylus">
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 760px) {
 		.greeting {
 			.welcome {
 				font-size: 3em !important;

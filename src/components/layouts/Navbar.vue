@@ -332,7 +332,7 @@
                         color #ffd24f
                     
 
-                    @media screen and (max-width: 1000px)
+                    @media screen and (max-width: 1024px)
                         display none
                     
                         &.opened
@@ -385,7 +385,7 @@
         cursor pointer
         padding 1em 1em
         margin -1em -1em
-        @media screen and (max-width: 1000px)
+        @media screen and (max-width: 1024px)
             display block
 
     .hiddenMenu 
@@ -400,9 +400,9 @@
             @media screen and (max-width: 1280px)
                 width 920px
 
-            @media screen and (max-width: 1000px)
+            @media screen and (max-width: 1024px)
                 width 700px
 
-            @media screen and (max-width: 720px)
+            @media screen and (max-width: 760px)
                 width 90%
 </style>

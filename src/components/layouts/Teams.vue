@@ -8,7 +8,6 @@
 				</div>
 
 				<h1 class="title" v-if="content">{{ content.participants.title }}</h1>
-				<br /><br />
 
 
 				<div class="b-grid__list">
@@ -56,6 +55,9 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+	.b-grid__item--1-3
+		&:nth-child(3n+1)
+			padding-left 0
 	.team-list
 		border-radius 4px
 		margin-top 0px
@@ -65,6 +67,7 @@ export default {
 			padding-top 35px
 			padding-left 0
 			border-radius 4px
+			width 100%
 
 			.team-info
 				display flex
@@ -110,7 +113,40 @@ export default {
 					&:first-child
 						margin-left 0
 
-					&:hover {
-						cursor: pointer;
-					}
+					&:hover
+						cursor pointer
+
+	.teams
+		.b-grid__list
+			.b-grid__item
+				.title
+					margin -35px 0 35px
+	
+	@media screen and (max-width: 1024px)
+		.b-grid__item
+			padding 0 0 15px 0
+		.team-list
+			&:nth-child(odd)
+				padding 0 7.5px 15px 15px
+			&:nth-child(even)
+				padding 0 15px 15px 7.5px
+		.teams
+			.b-grid__list
+				.b-grid__item
+					.title
+						margin -60px 0 25px
+
+	@media screen and (max-width: 760px)
+		.b-grid__item
+			padding 0 0 15px 0
+		.team-list
+			&:nth-child(odd)
+				padding 0 15px 15px 15px
+			&:nth-child(even)
+				padding 0 15px 15px 15px
+		.teams
+			.b-grid__list
+				.b-grid__item
+					.title
+						margin 25px 0
 </style>

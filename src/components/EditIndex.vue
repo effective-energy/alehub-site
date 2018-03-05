@@ -787,7 +787,7 @@ export default {
                         padding-right: 0
                     }
 
-                    @media screen and (max-width: 720px) {
+                    @media screen and (max-width: 760px) {
                         padding 15px 0 0 0    
                     }
                 }
@@ -834,7 +834,7 @@ export default {
 		}
 	}
 
-	@media screen and (max-width: 1000px) {
+	@media screen and (max-width: 1024px) {
 		.b-grid__list {
 			max-width 700px
 		}
@@ -844,7 +844,7 @@ export default {
 		}
 	}
 
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 760px) {
 		.b-grid__list {
 			max-width 100%
 		}

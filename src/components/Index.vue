@@ -48,7 +48,7 @@
                             </div>
                         </div>
 
-                        <div class="b-grid__item b-grid__item--1-3"">
+                        <div class="b-grid__item b-grid__item--1-3">
                             <div class="solution-info">
                                 <img src="../assets/img/solution/4.svg" alt="" />
                                 <p>Автоматизм механизмов взаиморасчётов сторон контракта.</p>
@@ -158,34 +158,34 @@
 
     <Teams v-if="!loader" :content="content.team" />
 
-    <section class="wrapper" style="padding-bottom: 0;">
+    <section class="wrapper" id="distribution" style="padding-bottom: 0;">
         <div class="b-grid__list">
-            <div class="inner b-grid__item b-grid__item--1-1" style="width: 1170px; max-width: 1170px; min-width: 1170px;">
+            <div class="inner b-grid__item b-grid__item--1-1">
                 <section class="spotlights">
-                    <article class="full" style="width: 100%;">
+                    <article class="full">
                         <header class="major">
-                            <h2 data-v-82b7485c="">Распределение токенов</h2>
+                            <h2>Распределение токенов</h2>
                         </header>
 
-                        <div class="distribution-money" style="width: 100%; height: 60px; display: flex;">
+                        <div class="distribution-money">
 
-                            <div class="distribution-gist gist-red" style="background: rgb(244, 67, 54);font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
-                                <span style="margin-left: 10px;">77%</span>
+                            <div class="distribution-gist gist-red">
+                                <span>77%</span>
                             </div>
 
-                            <div class="distribution-gist gist-blue" style="background: #2196F3;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content: space-between;">
-                                <span style="margin-left: 10px;">11%</span>
+                            <div class="distribution-gist gist-blue">
+                                <span>11%</span>
                             </div>
 
-                            <div class="distribution-gist gist-green" style="background: #8BC34A;font-size: 26px;display: flex;align-items: center;color: #fff;justify-content:  space-between;">
-                                <span style="margin-left: 10px;">10%</span>
+                            <div class="distribution-gist gist-green">
+                                <span>10%</span>
                             </div>
 
-                            <div class="distribution-gist gist-purple" style="background: #BA68C8;font-size: 26px;display: flex;align-items: center;color: rgb(255, 255, 255);justify-content:  space-between;">
-                                <span style="margin-left: 10px;">2%</span>
+                            <div class="distribution-gist gist-purple">
+                                <span>2%</span>
                             </div>
                         </div>
-                        <div class="distribution-labels" style="padding: 20px;display: flex;justify-content: space-between;font-size: 18px;margin-top:  20px;">
+                        <div class="distribution-labels">
 
                             <span class="dist-money_badge_red">Продажа на ICO</span>
                             <span class="dist-money_badge_blue">Команда</span>
@@ -319,8 +319,25 @@
 
 <style scoped lang="stylus">
     .distribution-money
+        width 100% 
+        height 60px 
+        display flex
         .distribution-gist
             transition all 800ms ease-in-out
+            font-size 26px
+            display flex
+            align-items center
+            color rgb(255, 255, 255)
+            justify-content space-between
+            padding-left 10px
+            &.gist-red
+                background #f44336
+            &.gist-blue
+                background #2196F3
+            &.gist-green
+                background #8BC34A
+            &.gist-purple
+                background #BA68C8
             .more_info
                 display none
                 margin-right 15px
@@ -331,88 +348,143 @@
             >.more_info
                 display block
 
+    .distribution-labels
+        padding 20px
+        display flex
+        justify-content space-between
+        font-size 18px
+        margin-top 20px
 
-    .errorSubscribe {
-        color: red;
-    }
+    .errorSubscribe
+        color red
 
-    .successSubscribe {
-        color: green;
-    }
+    .successSubscribe
+        color green
 
-    .large {
-        margin-top: 0;
-    }
+    .large
+        margin-top 0
 
-    .gist-red {
-        width: 60%;
-    }
+    .gist-red
+        width 60%
 
-    .gist-blue {
-        width: 15%;
-    }
+    .gist-blue
+        width 15%
 
-    .gist-green {
-        width: 15%;
-    }
+    .gist-green
+        width 15%
 
-    .gist-purple {
-        width: 10%;
-    }
-        
+    .gist-purple
+        width: 10%
 
-    .dist-money_badge_red::before
-        content ""
-        width 10px
-        height 10px
-        display inline-flex
-        clear both
-        margin-right 5px
-        position relative
-        top -2px
-        background-color #f54336
+    .dist-money_badge_red
+        padding-right 10px
+        &::before
+            content ""
+            width 10px
+            height 10px
+            display inline-flex
+            clear both
+            margin-right 5px
+            position relative
+            top -2px
+            background-color #f54336
 
-    .dist-money_badge_blue::before
-        content ""
-        width 10px
-        height 10px
-        display inline-flex
-        clear both
-        margin-right 5px
-        position relative
-        top -2px
-        background-color #2296f3
+    .dist-money_badge_blue
+        padding-right 15px
+        &::before
+            content ""
+            width 10px
+            height 10px
+            display inline-flex
+            clear both
+            margin-right 5px
+            position relative
+            top -2px
+            background-color #2296f3
 
-    .dist-money_badge_green::before
-        content ""
-        width 10px
-        height 10px
-        display inline-flex
-        clear both
-        margin-right 5px
-        position relative
-        top -2px
-        background-color #8bc34a
+    .dist-money_badge_green
+        padding-right 15px
+        &::before
+            content ""
+            width 10px
+            height 10px
+            display inline-flex
+            clear both
+            margin-right 5px
+            position relative
+            top -2px
+            background-color #8bc34a
 
-    .dist-money_badge_purple::before
-        content ""
-        width 10px
-        height 10px
-        display inline-flex
-        clear both
-        margin-right 5px
-        position relative
-        top -2px
-        background-color #ba68c8
+    .dist-money_badge_purple
+        padding-right 15px
+        &::before
+            content ""
+            width 10px
+            height 10px
+            display inline-flex
+            clear both
+            margin-right 5px
+            position relative
+            top -2px
+            background-color #ba68c8
 
-    .dist-money_badge_yellow::before
-        content ""
-        width 10px
-        height 10px
-        display inline-flex
-        clear both
-        margin-right 5px
-        position relative
-        top -2px
-        background-color #FFC105
+    .dist-money_badge_yellow
+        padding-right 15px
+        &::before
+            content ""
+            width 10px
+            height 10px
+            display inline-flex
+            clear both
+            margin-right 5px
+            position relative
+            top -2px
+            background-color #FFC105
+    @media screen and (max-width: 1024px)
+        #distribution
+            .full
+                width 100%
+            .distribution-labels
+                flex-direction column
+        .gist-red
+            width 50%
+        .gist-blue
+            width 18%
+        .gist-green
+            width 18%
+        .gist-purple
+            width: 14%
+        footer
+            margin 0
+    @media screen and (max-width: 760px)
+        .distribution-money
+            flex-direction column
+            height 150px
+            .distribution-gist
+                font-size 20px
+                height 25%
+                &:hover
+                    &.gist-red
+                        width 100%
+                    &.gist-blue
+                        width 60%
+                    &.gist-green
+                        width 54%
+                    &.gist-purple
+                        width 20%
+        .gist-red
+            width 100%
+        .gist-blue
+            width 60%
+        .gist-green
+            width 54%
+        .gist-purple
+            width 20%
+        .distribution-labels
+            font-size 22px
+            span
+                &:not(:last-child)
+                    margin-bottom 8px
+        footer
+            margin 0
 </style>

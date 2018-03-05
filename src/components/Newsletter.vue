@@ -215,7 +215,7 @@ export default {
                         padding-right: 0
                     }
 
-                    @media screen and (max-width: 720px) {
+                    @media screen and (max-width: 760px) {
                         padding 15px 0 0 0    
                     }
                 }
