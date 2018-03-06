@@ -9,13 +9,13 @@
             <div class="menu">
                 <div class="hamburger" @click="toggleMenu">Menu</div>
                 <ul>
-                    <li class="check-fonts" v-for="link in links[lang]" @click="scrollToElement(link.to)">{{ link.title}}</li>
+                    <li class="check-fonts" :class="{active: indexLink === 0}" v-for="(link, indexLink) in links[lang]" :key="indexLink" :data-target="link.to" @click="scrollToElement(link.to)">{{ link.title}}</li>
                     <a href="http://presale.alehub.io" class="navbar-link"><li class="check-fonts">
                         {{ cabinetWord }}
                     </li></a>
                     <div class="lang" @click="changeLang">
-                        <div class="flag" :class="{ 'eng-flag': lang === 'en' }"></div>
-                        <span v-if="lang === 'ru'">RU</span>
+                        <div class="flag" :class="{ 'eng-flag': lang === 'ru' }"></div>
+                        <span v-if="lang === 'en'">RU</span>
                         <span v-else>EN</span>
                     </div>
                 </ul>
@@ -61,18 +61,16 @@
                     en: [
                         {title: 'Home', to: 'greeting'},
                         {title: 'Description', to: 'about'},
-                        {title: 'Advantages', to: 'guaranteed'},
+                        {title: 'Advantages', to: 'solution'},
                         {title: 'Docs', to: 'documentations'},
-                        {title: 'Partners', to: 'partners'},
-                        {title: 'Contacts', to: 'communication'}
+                        {title: 'Team', to: 'teams'}
                     ],
                     ru: [
                         {title: 'Домой', to: 'greeting'},
                         {title: 'Описание', to: 'about'},
-                        {title: 'Преимущества', to: 'guaranteed'},
+                        {title: 'Преимущества', to: 'solution'},
                         {title: 'Документы', to: 'documentations'},
-                        {title: 'Партнеры', to: 'partners'},
-                        {title: 'Контакты', to: 'communication'}
+                        {title: 'Команда', to: 'teams'}
                     ]
                 }
             }
@@ -84,12 +82,22 @@
             }
         },
         methods: {
-            scrollACtiveClass () {
-                document.addEventListener('scroll', function(e) {
-                    // let scrollPos = document.documentElement.scrollTop;
-                    // let elements = document.getElementsByClassName('menu')[0].getElementsByTagName('ul')[0].getElementsByTagName('li');
-
-                });
+            initScroll () {
+                let _this = this
+                window.addEventListener('scroll', function () {
+                    _this.checkActive()
+                })
+            },
+            checkActive () {
+                for (let i = 0; i < this.links.en.length; i++) {
+                    let offset = document.getElementById(this.links.en[i].to).offsetTop-60
+                    let height = document.getElementById(this.links.en[i].to).offsetHeight
+                    if (window.scrollY >= offset && window.scrollY <= offset+height) {
+                        document.querySelector(`[data-target='${this.links.en[i].to}']`).classList.add('active')
+                    } else {
+                        document.querySelector(`[data-target='${this.links.en[i].to}']`).classList.remove('active')
+                    }
+                }
             },
             logout () {
                 localStorage.removeItem('token');
@@ -153,14 +161,13 @@
                 let specifiedElement = document.querySelector('.menu');
                 document.addEventListener('click', function(event) {
                     let isClickInside = specifiedElement.contains(event.target);
-                    console.log(event.target.className,nav.className)
                     if (event.target.className !== 'hamburger' && nav.className === "opened")
                         nav.classList = "";
                 })
             }
         },
         created () {
-            this.scrollACtiveClass();
+            this.initScroll();
             if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Кабинет';
             else this.cabinetWord = 'Cabinet';
         }
@@ -296,6 +303,8 @@
                     li 
                         padding 1.5em 0
                         margin -1.5em 20px -1.5em 0
+                        &.active
+                            color #ffd24f
                     
 
                     li:hover 

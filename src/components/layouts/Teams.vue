@@ -1,5 +1,5 @@
 <template>
-	<section class="teams wrapper">
+	<section class="teams wrapper" id="teams">
 		<div class="b-grid__list">
 			<div class="b-grid__item b-grid__item--1-1">
 				<div class="serokell" v-if="false">

@@ -62,25 +62,25 @@
 		</div>
 	    <div class="b-grid__list">
 	        <div class="b-grid__item b-grid__item--1-1">
-	            <h1 class="greeting-banner">ICO Alehub началось</h1>
+	            <h1 class="greeting-banner">Раунд 1 начнётся через:</h1>
 	            <div class="ico-timer">
 	                    <div class="ico-body">
 	                        <div class="ico-left">
-	                            <h1 class="salestart">Продажа токенов началась!</h1>
+	                            <h1 v-if="false" class="salestart">Раунд 1 начнётся через:</h1>
 	                            <h1 class="countdown" id="countDown"></h1> <br>
 	                            <h4 class="softcap">Минимальная сумма средств</h4>
 	                            <div class="progress">
-	                            	<div class="active"></div>
+	                            	<div class="active" :style="{width: minSumm + '%'}"></div>
 	                            </div>
 
-	                            <span class="eth-progress">500/2000 ETH</span>
+	                            <span class="eth-progress">{{ Coll }}/{{ minNec }} ETH</span>
 	                            <h4 class="softcap">Необходимая сумма средств</h4>
 
 	                            <div class="progress">
-	                            	<div class="active"></div>
+	                            	<div class="active" :style="{width: needSumm + '%'}"></div>
 	                            </div>
 
-	                            <span class="eth-progress">500/33000 ETH</span>
+	                            <span class="eth-progress">{{ Coll }}/{{ needNec }} ETH</span>
 	                            <h2 class="bonus">Бонус 25% до 15 Марта 2018</h2>
 	                            <button>Купить токены</button>
 	                        </div>
@@ -235,7 +235,18 @@ export default {
 	},
 	data () {
 		return {
-			openCrypto: ''
+			openCrypto: '',
+			Coll: 0,
+			minNec: 2000,
+			needNec: 33000
+		}
+	},
+	computed: {
+		minSumm() {
+			return (this.Coll * 100)/this.minNec
+		},
+		needSumm() {
+			return (this.Coll * 100)/this.needNec
 		}
 	},
 	methods: {
@@ -267,8 +278,8 @@ export default {
 		    'total': t,
 		    'days': days,
 		    'hours': hours,
-		    'minutes': minutes,
-		    'seconds': seconds
+			'minutes': minutes,
+			'seconds': seconds
 		  };
 		},
 		showAlePrice (crypto) {
@@ -281,7 +292,7 @@ export default {
 			function updateClock() {
 				var t = _this.getTimeRemaining(endtime);
 
-				document.getElementById('countDown').innerHTML = t.days+':'+('0' + t.hours).slice(-2)+':'+('0' + t.minutes).slice(-2)+':'+('0' + t.seconds).slice(-2)
+				document.getElementById('countDown').innerHTML = ('0' + t.days).slice(-2)+':'+('0' + t.hours).slice(-2)+':'+('0' + t.minutes).slice(-2)+':'+('0' + t.seconds).slice(-2)
 
 				if (t.total <= 0) {
 					clearInterval(timeinterval);
@@ -294,7 +305,7 @@ export default {
 	},
 	mounted() {
 		this.yobaEffect();
-		this.initializeClock('countDown', new Date(1522530000000));
+		this.initializeClock('countDown', new Date(1521072000000));
 	}
 }
 </script>
@@ -481,6 +492,8 @@ export default {
 								color rgb(255, 255, 255)
 								margin 0px 10px
 								font-size 18px
+								&:hover
+									color #dcdcdc
 
 								&:first-child
 									margin 0px 10px 0px 0px
@@ -516,6 +529,10 @@ export default {
 								text-align center
 								color rgb(220, 220, 220)
 								border-radius 4px
+								&:hover
+									background #000
+									color #fff
+									cursor pointer
 
 								a
 									color rgb(220, 220, 220)
@@ -524,8 +541,8 @@ export default {
 						margin-right 30px
 
 						.bounty
-							background: rgb(255, 210, 79)
-							border-radius:2px
+							background #ffd24f
+							border-radius 2px
 							margin-right 10px
 							font-size 18px
 							text-transform none
@@ -533,6 +550,9 @@ export default {
 							height: auto
 							padding: 0px 25px
 							font-weight: 400
+							&:hover
+								background #ffdd78
+								cursor pointer
 
 						.referal
 							border-radius 2px
@@ -543,7 +563,10 @@ export default {
 							height auto
 							padding 0px 25px
 							font-weight 400
-							background-color rgb(229, 230, 230)
+							background-color #dedfdf
+							&:hover
+								background #e8e8e8
+								cursor pointer
 
 		.partners-item
 			transition all 200ms ease-in
@@ -700,6 +723,7 @@ export default {
 									font-size 40px
 							.ico-right
 								padding 2em 1.5em
+								width calc(100% - 3em)
 								.timer-title
 									font-size 24px
 									margin-top -10px
@@ -715,5 +739,4 @@ export default {
 								height auto
 								.softcap
 									font-size 18px
-					.greeting-banner
 </style>
