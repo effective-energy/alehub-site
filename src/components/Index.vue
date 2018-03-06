@@ -20,7 +20,7 @@
             </div>
         </section>
 
-        <section v-if="!loader" id="guaranteed" class="guaranteed wrapper style3">
+        <section v-if="!loader" id="solution" class="guaranteed wrapper style3">
             <div class="b-grid__list text-center">
                 <div class="inner inner-list b-grid__item b-grid__item--1-1">
                     <p class="title">Предлагаемые решения</p>
@@ -86,7 +86,7 @@
                         <div v-if="content" class="b-grid__item b-grid__item--1-1" >
                             <h3>Цель Проекта</h3>
                             <p class="grid_inner">Технологическое преодоление недостатков существующих на рынке онлайновых бирж труда и фрилансеров:
-                                <ul style="text-align: left">
+                                <ul>
                                     <li>Низкое качество ТЗ и актуальность уровня компетенций заказчиков</li>
                                     <li>Проблема приёмно-сдаточных мероприятий.</li>
                                     <li>Слабо регулируемая ответственность Заказчиков и 
@@ -158,7 +158,7 @@
 
     <Teams v-if="!loader" :content="content.team" />
 
-    <section class="wrapper" id="distribution" style="padding-bottom: 0;">
+    <section class="wrapper" id="distribution">
         <div class="b-grid__list">
             <div class="inner b-grid__item b-grid__item--1-1">
                 <section class="spotlights">
@@ -225,20 +225,6 @@
         },
         data() {
             return {
-                links: {
-                    ru: [
-                        {title: 'Домой', to: 'greeting'},
-                        {title: 'Описание', to: 'about'},
-                        {title: 'Преимущества', to: 'guaranteed'},
-                        {title: 'Партнеры', to: 'partners'}
-                    ],
-                    en: [
-                        {title: 'Home', to: 'greeting'},
-                        {title: 'Description', to: 'about'},
-                        {title: 'Advantages', to: 'guaranteed'},
-                        {title: 'Partners', to: 'partners'}
-                    ]
-                },
                 subscribeEmail: '',
                 subscribeStatus: '',
                 isLoaderSubscribe: false,
@@ -248,9 +234,6 @@
             }
         },
         methods: {
-            scrollToElement(id) {
-                document.getElementById(id).scrollIntoView();
-            },
             subscribe () {
                 this.isLoaderSubscribe = true;
                 this.subscribeStatus = '';
@@ -465,13 +448,13 @@
                 height 25%
                 &:hover
                     &.gist-red
-                        width 100%
+                        width calc(100% - 10px)
                     &.gist-blue
                         width 60%
                     &.gist-green
                         width 54%
                     &.gist-purple
-                        width 20%
+                        width 10%
         .gist-red
             width 100%
         .gist-blue
