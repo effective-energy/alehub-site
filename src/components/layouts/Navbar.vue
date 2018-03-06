@@ -90,6 +90,7 @@
             },
             checkActive () {
                 for (let i = 0; i < this.links.en.length; i++) {
+                    if(document.getElementById(this.links.en[i].to) === null) return false;
                     let offset = document.getElementById(this.links.en[i].to).offsetTop-60
                     let height = document.getElementById(this.links.en[i].to).offsetHeight
                     if (window.scrollY >= offset && window.scrollY <= offset+height) {

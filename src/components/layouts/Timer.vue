@@ -62,25 +62,25 @@
 		</div>
 	    <div class="b-grid__list">
 	        <div class="b-grid__item b-grid__item--1-1">
-	            <h1 class="greeting-banner">Раунд 1 начнётся через:</h1>
+	            <h1 class="greeting-banner">Добро пожаловать в будущее HR-индустрии</h1>
 	            <div class="ico-timer">
 	                    <div class="ico-body">
 	                        <div class="ico-left">
-	                            <h1 v-if="false" class="salestart">Раунд 1 начнётся через:</h1>
+	                            <h1 class="salestart">Раунд 1 начнётся через:</h1>
 	                            <h1 class="countdown" id="countDown"></h1> <br>
 	                            <h4 class="softcap">Минимальная сумма средств</h4>
 	                            <div class="progress">
-	                            	<div class="active" :style="{width: minSumm + '%'}"></div>
+	                            	<div class="active" :style="{width: softCapProgress + '%'}"></div>
 	                            </div>
 
-	                            <span class="eth-progress">{{ Coll }}/{{ minNec }} ETH</span>
+	                            <span class="eth-progress">{{ softCapState }} ETH</span>
 	                            <h4 class="softcap">Необходимая сумма средств</h4>
 
 	                            <div class="progress">
-	                            	<div class="active" :style="{width: needSumm + '%'}"></div>
+	                            	<div class="active" :style="{width: hardCapProgress + '%'}"></div>
 	                            </div>
 
-	                            <span class="eth-progress">{{ Coll }}/{{ needNec }} ETH</span>
+	                            <span class="eth-progress">{{ hardCapState }} ETH</span>
 	                            <h2 class="bonus">Бонус 25% до 15 Марта 2018</h2>
 	                            <button>Купить токены</button>
 	                        </div>
@@ -106,7 +106,7 @@
 	                        			</a>
 
 	                        			<a href="https://www.blockchain-spb.org/" target="_blank">
-	                        				<div class="partners-item">
+	                        				<div class="partners-item blockchain-spb">
 	                        					<img src="../../assets/img/partners/blockchain-spb.png" alt="" />
 	                        				</div>
 	                        			</a>
@@ -223,34 +223,39 @@
 </template>
 
 <script>
-import Countdown from 'vuejs-countdown';
-import Spinner from '../layouts/Spinner'
-
 export default {
 	name: 'Greeting',
-	props: ['content', 'loader'],
-	components: {
-		Countdown,
-		Spinner
-	},
+	props: ['content', 'isLoader'],
 	data () {
 		return {
 			openCrypto: '',
-			Coll: 0,
-			minNec: 2000,
-			needNec: 33000
+			totalEth: 4000,
+			minEth: 2000,
+			maxEth: 33000
 		}
 	},
 	computed: {
-		minSumm() {
-			return (this.Coll * 100)/this.minNec
+		softCapState () {
+			if(this.totalEth >= 2000) {
+				return "2000/"+this.minEth
+			} else return this.totalEth+"/"+this.minEth
 		},
-		needSumm() {
-			return (this.Coll * 100)/this.needNec
+		hardCapState () {
+			if(this.totalEth >= 33000) {
+				return "33000/"+this.maxEth
+			} else return this.totalEth+"/"+this.maxEth
+		},
+		softCapProgress() {
+			if(this.totalEth >= 2000) return 100;
+			return (this.totalEth * 100)/this.minEth
+		},
+		hardCapProgress() {
+			if(this.totalEth >= 33000) return 100;
+			return (this.totalEth * 100)/this.maxEth
 		}
 	},
 	methods: {
-		yobaEffect () {
+		startAnime () {
 			var pathEls = document.querySelectorAll('path');
 			for (var i = 0; i < pathEls.length; i++) {
 			  var pathEl = pathEls[i];
@@ -304,8 +309,10 @@ export default {
 		}
 	},
 	mounted() {
-		this.yobaEffect();
-		this.initializeClock('countDown', new Date(1521072000000));
+		if(!this.isLoader) {
+			this.startAnime();
+			this.initializeClock('countDown', new Date(1521072000000));
+		}
 	}
 }
 </script>
@@ -329,7 +336,7 @@ export default {
 
 			.greeting-banner
 				text-align center
-				font-size 42px
+				font-size 38px
 				color rgb(255, 255, 255)
 				font-weight 300
 				background rgb(42, 45, 48)
@@ -358,7 +365,6 @@ export default {
 							font-size 28px
 							margin 0px
 							font-weight 300
-							margin-bottom 30px
 
 						.countdown
 							text-align center
@@ -432,6 +438,7 @@ export default {
 
 								a
 									width 33%
+										
 									&:last-child
 										.partners-item
 											margin-right 0
@@ -449,6 +456,13 @@ export default {
 											border-radius 2px
 											height 90px
 											object-fit contain
+
+									.blockchain-spb
+										display flex
+										justify-content center
+
+										img
+											width 40%
 
 						.supported-coins
 							display flex

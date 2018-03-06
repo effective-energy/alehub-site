@@ -148,8 +148,6 @@ export default {
 		}
 	},
 	methods: {
-		// email: "vasya@pupka.com"
-		// password: "GzKeIjnrbUqZXSx"
 		signup () {
 			this.isError = false;
 			if(this.email === '') {

@@ -2,7 +2,12 @@
     <div class="index">
 
         <Navbar :lang="lang"/>
-        <Timer :content="content.greeting" :loader="loader"/>
+
+        <div class="loader" v-if="loader">
+            <Spinner />
+        </div>
+
+        <Timer :content="content.greeting" v-if="!loader" :isLoader="loader" />
 
         <section v-if="!loader" id="about" class="wrapper style2">
             <div class="b-grid__list">
@@ -72,17 +77,11 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section v-if="!loader" id="concept" class="wrapper style3">
-            <div class="b-grid__list text-center">
+            <div class="b-grid__list text-center concept">
                 <div class="inner inner-list b-grid__item b-grid__item--1-1">
                     <p class="title">{{ content?content.concept.title:'' }}</p>
                     <div class="b-grid__list">
-                        <!-- <div v-if="content" class="b-grid__item b-grid__item--1-2" v-for="(item, indexConcept) in content.concept.list" :key="indexConcept">
-                            <h3>{{ item.title }}</h3>
-                            <p>{{ item.text }}</p>
-                        </div> -->
                         <div v-if="content" class="b-grid__item b-grid__item--1-1" >
                             <h3>Цель Проекта</h3>
                             <p class="grid_inner">Технологическое преодоление недостатков существующих на рынке онлайновых бирж труда и фрилансеров:
@@ -158,7 +157,7 @@
 
     <Teams v-if="!loader" :content="content.team" />
 
-    <section class="wrapper" id="distribution">
+    <section class="wrapper" id="distribution" v-if="!loader">
         <div class="b-grid__list">
             <div class="inner b-grid__item b-grid__item--1-1">
                 <section class="spotlights">
@@ -198,7 +197,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer v-if="!loader">
         <div class="b-grid__list">
             <div class="b-grid__item b-grid__item--1-1">
                 <span class="year">Effective Energy LLC © 2018 All rights reserved.</span>
@@ -301,6 +300,23 @@
 <style src="../assets/less/style.css"></style>
 
 <style scoped lang="stylus">
+
+    .loader
+        width 100%
+        height 100vh
+        background rgb(42, 45, 48)
+        display flex
+        align-items center
+        justify-content center
+
+        img
+            margin-top 0
+            height 8em
+            width 8em
+
+    .concept
+        margin-top 50px
+
     .distribution-money
         width 100% 
         height 60px 

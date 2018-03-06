@@ -93,6 +93,7 @@ export default {
 						color #fff
 						margin 0px
 						margin-top 5px
+						font-size 16px
 
 			.team-links
 				width 100%

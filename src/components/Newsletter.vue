@@ -23,12 +23,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="b-grid__item b-grid__item--1-1 grid-block">
-                    <div class="content save-block">
-                        <button>View subscriber lists</button>
-                    </div>
-                </div> -->
-
                 <div class="b-grid__item b-grid__item--1-1" v-if="isNotif">
                     <div class="content notifBlock">
                         <p class="error" :class="{ 'success': isSuccess }">{{ notifText }}</p>
