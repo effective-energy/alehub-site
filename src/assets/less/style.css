@@ -387,6 +387,9 @@ button,
 #communication a {
   margin-right: 10px;
 }
+#distribution {
+  padding-bottom: 0;
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -443,6 +446,9 @@ footer .year {
   width: 60%;
   line-height: 1.5;
   font-size: 14px;
+}
+.grid_inner >ul {
+  text-align: left;
 }
 .grid_inner >ul >li {
   padding-bottom: 10px;
@@ -601,6 +607,7 @@ p {
   }
   .grid_inner ul {
     margin-top: 2em;
+    padding-right: 15px;
   }
   .description_inner li {
     font-size: 17px;
