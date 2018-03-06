@@ -6,20 +6,28 @@
 		 		<div class="inner b-grid__item b-grid__item--1-1">
 		 			<section class="spotlights">
 		 				<article>
-		 					<header class="major">
-		 						<h2>Restore authentificator</h2>
-		 					</header>
-
 		 					<div class="form-group">
 		 						<div class="row">
-									<input type="text" class="form-control" placeholder="Email" v-model="email" />
-									<input type="password" class="form-control" placeholder="Password" v-model="password" />
-		 							<input type="text" class="form-control" placeholder="Secret key" v-model="secret" />
-			 						<button class="btn btn-yellow" @click="restore" :disabled="loader">Restore</button>
+									<div class="control" @click="focusInput('email')">
+										<label for="email">e-mail</label>
+										<input type="text" id="email" autofocus="autofocus" readonly onfocus="this.removeAttribute('readonly');" 
+											contenteditable="true" autocomplete="off" class="form-control" placeholder="Your email" v-model="email" 
+											@keyup.enter="focusInput('password')" @input="resetError()" />
+									</div>
+									<div class="control" @click="focusInput('password')">
+										<label for="password">password</label>
+										<input type="text" id="password" autofocus="autofocus" readonly onfocus="this.removeAttribute('readonly');" 
+											contenteditable="true" autocomplete="off" class="form-control" placeholder="Your password" v-model="password" 
+											@keyup.enter="focusInput('secret')" @input="resetError()" />
+									</div>
+									<div class="control" @click="focusInput('secret')">
+										<label for="secret">Secret key</label>
+										<input type="text" id="secret" autofocus="autofocus" readonly onfocus="this.removeAttribute('readonly');" 
+											contenteditable="true" autocomplete="off" class="form-control" placeholder="Secret key" v-model="secret" 
+											@keyup.enter="restore()" @input="resetError()" />
+									</div>
+			 						<button class="btn btn-black" @click="restore" :disabled="loader">Restore</button>
 		 						</div>
-		 						<router-link :to="{ path: '/admin/reg' }" class="subformlink">
-		 							Create new account
-		 						</router-link>
 		 						<Spinner v-if="loader" />
 		 					</div>
 		 				</article>
@@ -137,6 +145,12 @@ export default {
 		},
 		login() {
 			this.$router.push('/admin/login')
+		},
+		focusInput (id) {
+			document.getElementById(id).focus()
+		},
+		resetError() {
+			this.isError = false;
 		}
 	}
 }
@@ -146,98 +160,136 @@ export default {
 
 <style lang="stylus">
 	body {
-    	background-color #f5f8fa
+    	background-color #f7f7f7
     }
 </style>
 
 <style lang="stylus" scoped>
-	.spotlights {
-    	margin-bottom 0
-    }
-
-	.form-group {
+	body
+		background #f7f7f7
+	.wrapper
 		display flex
-		flex-direction column
+		justify-content center
+		height calc(100vh - 88px)
+		padding 0
+		margin-top 88px
 
-		.row {
-			display -webkit-box
-			display -ms-flexbox
+	.spotlights
+		margin-bottom 0
+
+		article
+			box-shadow none
+			background #f0f0f0
 			display flex
-			-ms-flex-wrap wrap
-			flex-wrap wrap
-			margin-right -15px
-			margin-left -15px
-			text-align center 
+			justify-content center
+			padding 16px
+			height auto
+			border-radius 4px
+			flex-direction column
+			width 426px
+			margin 0 auto
 
-			.qrqode {
-				margin auto
-				margin-bottom 20px	
-			}
-		}
+			.control
+				display flex
+				justify-content space-between
+				width 100%
+				align-items baseline
+				border-bottom 1px solid #d1d1d1
+				padding-bottom 18px
+				padding-left 0
+				position relative
+				cursor pointer
+				font-size 12px
+				font-family MuseoSansCyrl500
+				line-height 1.7
+				&:first-child
+					margin-top 22px
+				&:not(:last-child)
+					margin-bottom 20px
+				&.noline
+					border none
+				
+				label
+					font-family MuseoSansCyrl700
+					font-size 13px
+					font-weight bold
+					line-height 1.08
+					color #34343e
+					text-transform uppercase
+					margin 0
+					white-space pre
+					margin-left 16px
+					margin-right 12px
+					cursor pointer
 
-		.form-control {
-			display block
-			width 100%
-			padding .375rem .75rem
-			font-size 1rem
-			line-height 1.5
-			color #495057
-			background-color #fff
-			background-clip padding-box
-			border 1px solid #ced4da
-			border-radius .25rem
-			transition border-color .15s ease-in-out,box-shadow .15s ease-in-out
-			margin-bottom 15px
-		}
+				input
+					width 100%
+					font-size 14px
+					background inherit
+					border none
+					text-align right
+					outline none
+					margin-right 16px
+					position relative
+					z-index 1
+					opacity 1
 
-		.btn {
-			display inline-block
-			font-weight 400
-			text-align center
-			white-space nowrap
-			vertical-align middle
-			-webkit-user-select none
-			-moz-user-select none
-			-ms-user-select none
-			user-select none
-			border 1px solid transparent
-			padding .375rem .75rem
-			font-size 1rem
-			line-height 1.5
-			border-radius .25rem
-			transition color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
-		}
+			.btn
+				display block
+				width 100%
+				font-size 16px
+				padding 12px
+				font-weight 400
+				height auto
+				text-transform none
+				line-height 1.42857143
+				text-align center
+				white-space nowrap
+				vertical-align middle
+				touch-action manipulation
+				cursor pointer
+				user-select none
+				background-image none
+				border 1px solid transparent
+				border-radius 4px
+				&.btn-black
+					background-color #0d1717
+					color #ffffff
+				&.btn-default
+					background rgba(13, 23, 23, 0.08)
 
-		.btn-yellow {
-			color #474b4b
-			background-color #ffd24f
-			border-color #ffd24f
-			display block
-			width 100%
-			font-weight 500
-		}
+			.links
+				font-family MuseoSansCyrl300
+				font-size 14px
+				font-weight 300
+				line-height 1.29
+				text-align center
+				margin 18px 0 0
+				color #0d1717
 
-		.subformlink {
-			text-align: right;
-			margin: 20px -10px -5px;
-			color: #333333;
-			font-family: MuseoSansCyrl500;
-		}
+				a
+					font-family MuseoSansCyrl700
+					font-weight bold
+					color #0d1717
+					border-bottom 1px solid #000
+					text-decoration none
+					padding-bottom 1px
 
-		.qrqode {
-			text-align center
-			width 100%
-		}
+			.btn-control
+				display flex
+				justify-content space-between
+				& button
+					width 50%
+					height 44px
+					border-radius 2px
+					border none
+					font-size 16px
+					color #34343e
+					margin-bottom 12px
+					font-family MuseoSansCyrl500
+					&:first-child
+						margin-right 8px
 
-		.secretKey {
-			text-align center
-			width 100%
-			margin 2em
-			color red
-
-			h4 {
-				color black
-			}
-		}
-	}
+			h3
+				text-align center
 </style>

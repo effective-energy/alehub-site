@@ -274,7 +274,6 @@ export default {
 		}
 	},
 	created () {
-        this.getIndexPage();
         if (!this.token) {
             this.$router.push('/admin/login')
         }
