@@ -238,7 +238,7 @@ export default {
 	mounted() {
 		if(!this.isLoader) {
 			this.startAnime();
-			this.initializeClock('countDown', new Date(1521072000000));
+			// this.initializeClock('countDown', new Date(1521072000000));
 		}
 	}
 }
@@ -331,7 +331,6 @@ export default {
 							background rgb(42, 45, 48)
 							color rgb(255, 255, 255)
 							border-radius 3px
-							margin-right 10px
 							font-size 20px
 							text-transform none
 							line-height 2.5em
@@ -403,7 +402,7 @@ export default {
 								.icon-item
 									text-align center
 									background rgb(35, 35, 35)
-									padding 10px
+									padding 20px
 									display flex
 									align-items center
 									justify-content center
@@ -415,7 +414,7 @@ export default {
 									img
 										width 50px
 										height 50px
-										margin 15px 0px
+										margin 0px 0px 10px 0px
 										object-fit contain
 
 								.icon-item-price
@@ -546,6 +545,8 @@ export default {
 								width calc(100% - 6em)
 							.ico-right
 								border none
+								height auto
+								padding-bottom 0
 						.ico-footer
 							flex-direction column
 							justify-content space-around
@@ -591,11 +592,18 @@ export default {
 									flex-wrap wrap
 									.icon-container
 										width 50%
+										min-height 130px
 										.icon-item
+											margin: 5px 10px 5px 0px;
+										.icon-item-price
+											height calc(100% - 30px)
+											align-items center
+											justify-content center
 											margin: 5px 10px 5px 0px;
 										&:nth-child(even),
 										&:last-child
-											.icon-item
+											.icon-item,
+											.icon-item-price
 												margin-right 0
 								.project-info
 									display flex
@@ -620,17 +628,19 @@ export default {
 									font-size 24px
 						.ico-footer
 							flex-direction column
-							justify-content space-around
+							justify-content space-between
 							border-bottom-left-radius 4px
 							border-bottom-right-radius 4px
 							padding 20px 0
-							height 200px
+							height auto
 							width 100%
 							.social-links
 								margin 0
 								flex-direction column
 								height 40%
 								justify-content space-evenly
+								h3
+									margin-bottom 5px
 								.social-link
 									margin-left -5px
 							.actions
@@ -663,7 +673,7 @@ export default {
 								.countdown
 									font-size 40px
 							.ico-right
-								padding 2em 1.5em
+								padding 2em 1.5em 0 1.5em
 								width calc(100% - 3em)
 								.timer-title
 									font-size 24px
