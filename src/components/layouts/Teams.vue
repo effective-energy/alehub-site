@@ -56,7 +56,7 @@ export default {
 			    foundedSocial = 'https://vk.com/'
 			    break;
 			  case 'linkedin':
-			    foundedSocial = 'https://linkedin.com/'
+			    foundedSocial = 'https://linkedin.com/in/'
 			    break;
 			  case 'linkedin':
 			    foundedSocial = 'https://facebook.com/'
