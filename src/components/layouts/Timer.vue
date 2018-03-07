@@ -268,7 +268,7 @@ export default {
 				font-weight 300
 				background rgb(42, 45, 48)
 				border-radius 4px
-				padding 10px 0px
+				padding 10px 20px
 
 			.ico-timer
 				box-shadow rgba(0, 0, 0, 0.3) 0px 0px 10em 5px
