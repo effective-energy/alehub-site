@@ -62,27 +62,27 @@
 		</div>
 	    <div class="b-grid__list">
 	        <div class="b-grid__item b-grid__item--1-1">
-	            <h1 class="greeting-banner">Добро пожаловать в будущее HR-индустрии</h1>
+	            <h1 class="greeting-banner">{{ content.title }}</h1>
 	            <div class="ico-timer">
 	                    <div class="ico-body">
 	                        <div class="ico-left">
-	                            <h1 class="salestart">Раунд 1 начнётся через:</h1>
-	                            <h1 class="countdown" id="countDown"></h1> <br>
-	                            <h4 class="softcap">Минимальная сумма средств</h4>
+	                            <h1 class="salestart">{{ content.left.roundOne }}:</h1>
+	                            <h1 class="countdown">88:88:88:88</h1> <br>
+	                            <h4 class="softcap">{{ content.left.softCap }}</h4>
 	                            <div class="progress">
 	                            	<div class="active" :style="{width: softCapProgress + '%'}"></div>
 	                            </div>
 
 	                            <span class="eth-progress">{{ softCapState }} ETH</span>
-	                            <h4 class="softcap">Необходимая сумма средств</h4>
+	                            <h4 class="softcap">{{ content.left.hardCap }}</h4>
 
 	                            <div class="progress">
 	                            	<div class="active" :style="{width: hardCapProgress + '%'}"></div>
 	                            </div>
 
 	                            <span class="eth-progress">{{ hardCapState }} ETH</span>
-	                            <h2 class="bonus">Бонус 25% до 15 Марта 2018</h2>
-	                            <button>Купить токены</button>
+	                            <h2 class="bonus">{{ content.left.bonus }}</h2>
+	                            <button disabled>{{ content.left.buyBtn }}</button>
 	                        </div>
 
 
@@ -90,130 +90,57 @@
 
 	                        <div class="ico-right">
 	                        	<div class="right-inner">
-	                        		<h2 class="timer-title">Наши партнеры</h2>
+	                        		<h2 class="timer-title">{{ content.right.partners.title }}</h2>
 	                        		<div class="partners-list">
 
-	                        			<a href="http://www.ifmo.ru/" target="_blank">
-	                        				<div class="partners-item">
-	                        					<img src="../../assets/img/partners/itmo.png" alt="" />
-	                        				</div>
-	                        			</a>
-
-	                        			<a href="http://cryptob2b.io/ru/" target="_blank">
-	                        				<div class="partners-item">
-	                        					<img src="../../assets/img/partners/cryptob2blogo.png" alt="" />
-	                        				</div>
-	                        			</a>
-
-	                        			<a href="https://www.blockchain-spb.org/" target="_blank">
-	                        				<div class="partners-item blockchain-spb">
-	                        					<img src="../../assets/img/partners/blockchain-spb.png" alt="" />
+	                        			<a :href="partner.links" target="_blank" v-for="partner in content.right.partners.list">
+	                        				<div class="partners-item" :class="{ 'blockchain-spb': partner.logo === 'blockchain-spb.png' }">
+	                        					<img :src="$host + '/ale-files/img/partners/'+partner.logo" alt="" />
 	                        				</div>
 	                        			</a>
 	                        		</div>
 	                        	</div>
-	                        	<h2 class="timer-title">Принимаем к сборам</h2>
+	                        	<h2 class="timer-title">{{ content.right.crypto.title }}</h2>
 
 	                        	<div class="supported-coins">
 
-	                        		<div class="icon-container">
+	                        		<div class="icon-container" v-for="crypto in content.right.crypto.list">
 
-	                        			<div v-if="openCrypto !== 'BTC'" @click="showAlePrice('BTC')" class="icon-item">
-	                        				<img src="../../assets/img/crypto/btc.svg" alt="" />
-	                        				<span>BTC</span>
+	                        			<div v-if="openCrypto !== crypto.name" @click="showAlePrice(crypto.name)" class="icon-item">
+	                        				<img :src="$host + '/ale-files/img/crypto/'+crypto.logo+'.svg'" alt="" />
+	                        				<span>{{ crypto.name }}</span>
 	                        			</div>
 
-	                        			<div @click="showAlePrice('')" v-if="openCrypto === 'BTC'" class="icon-item-price">
-	                        				<p style="margin: 0;">1 BTC = 13.000 ALE</p>
+	                        			<div @click="showAlePrice('')" v-if="openCrypto === crypto.name" class="icon-item-price">
+	                        				<p style="margin: 0;">1 {{ crypto.name }} = {{ crypto.course }} ECO</p>
 	                        			</div>
 	                        		</div>
 
-	                        		<div class="icon-container">
-	                        			<div v-if="openCrypto !== 'ETH'" class="icon-item" @click="showAlePrice('ETH')">
-	                        				<img src="../../assets/img/crypto/eth.svg" alt="" style="width: 50px;height: 50px;margin: 15px 0px;object-fit: contain;" />
-	                        				<span>ETH</span>
-	                        			</div>
-	                        			<div @click="showAlePrice('')" v-if="openCrypto === 'ETH'" class="icon-item-price">
-	                        				<p style="margin: 0;">1 ETH = 2.000 ALE</p>
-	                        			</div>
-	                        		</div>
-
-	                        		<div class="icon-container">
-	                        			<div v-if="openCrypto !== 'BCH'" class="icon-item" @click="showAlePrice('BCH')">
-	                        				<img src="../../assets/img/crypto/bch.svg" alt="" />
-	                        				<span>BCH</span>
-	                        			</div>
-	                        			<div @click="showAlePrice('')" v-if="openCrypto === 'BCH'" class="icon-item-price">
-	                        				<p style="margin: 0;">1 BCH = 3.000 ALE</p>
-	                        			</div>
-	                        		</div>
-
-	                        		<div class="icon-container">
-	                        			<div v-if="openCrypto !== 'LTC'" class="icon-item" @click="showAlePrice('LTC')">
-	                        				<img src="../../assets/img/crypto/ltc.svg" alt="" />
-	                        				<span>LTC</span>
-	                        			</div>
-	                        			<div @click="showAlePrice('')" v-if="openCrypto === 'LTC'" class="icon-item-price">
-	                        				<p style="margin: 0;">1 LTC = 500 LTC</p>
-	                        			</div>
-	                        		</div>
-
-	                        		<div class="icon-container">
-	                        			<div v-if="openCrypto !== 'DASH'" class="icon-item" @click="showAlePrice('DASH')">
-	                        				<img src="../../assets/img/crypto/dash.svg" alt="" />
-	                        				<span>DASH</span>
-	                        			</div>
-	                        			<div @click="showAlePrice('')" v-if="openCrypto === 'DASH'" class="icon-item-price">
-	                        				<p style="margin: 0;">1 DASH = 300 ALE</p>
-	                        			</div>
-	                        		</div>
 	                        	</div>
 
-	                        	<h2 class="timer-title">Информация</h2>
-	                        	<div class="project-info">
-	                            	<a href="#">Демо</a>
-	                            	<a href="#">White paper</a>
-	                            	<a href="#">План разработки</a>
+	                        	<h2 class="timer-title" v-if="false">{{ content.right.info.title }}</h2>
+	                        	<div class="project-info" v-if="false">
+	                            	<a v-for="info in content.right.info.list" href="#">{{ info.title }}</a>
 	                            </div>
 	                        </div>
 	                    </div>
 
 	                    <div class="ico-footer">
 	                    	<div class="social-links">
-	                        <h3>Наше сообщество</h3>
+	                        <h3>{{ content.footer.social.title }}</h3>
 
 	                        <div class="social-link">
 
-	                            <div class="social-item">
-	                            	<a href="#" target="_blank">
-	                            		<i class="fa fa-btc"></i>
+	                            <div class="social-item" v-for="info in content.footer.social.links">
+	                            	<a :href="info.link" target="_blank">
+	                            		<i class="fa" :class="'fa-'+info.type"></i>
 	                            	</a>
-	                            </div>
-	                            <div class="social-item">
-	                            	<i class="fa fa-github"></i>
-	                            </div>
-	                            <div class="social-item">
-	                            	<a href="https://www.facebook.com/alehub.io/" target="_blank">
-	                            	  <i class="fa fa-facebook"></i>
-	                            	</a>
-	                            </div>
-	                            <div class="social-item">
-	                            	<i class="fa fa-youtube"></i>
-	                            </div>
-	                            <div class="social-item">
-	                            	<i class="fa fa-twitter"></i>
-	                            </div>
-	                            <div class="social-item">
-	                            	<i class="fa fa-send"></i>
-	                            </div>
-	                            <div class="social-item">
-	                            	<i class="fa fa-vk"></i>
 	                            </div>
 	                        </div>
 	                    </div>
-	                    <div class="actions">
-	                    	<button class="bounty">Bounty программа</button>
-	                        <button class="referal">Реферальная программа</button>
+	                    <div class="actions" v-if="false">
+	                    	<button class="bounty">{{ content.footer.actions.bounty }}</button>
+	                        <button class="referal">{{ content.footer.actions.referal }}</button>
 	                    </div>
 	                </div>
 	            </div>
@@ -229,7 +156,7 @@ export default {
 	data () {
 		return {
 			openCrypto: '',
-			totalEth: 4000,
+			totalEth: 0,
 			minEth: 2000,
 			maxEth: 33000
 		}

@@ -15,10 +15,10 @@
                     <section class="spotlights">
                         <article class="info-card">
                             <header class="major">
-                                <p>{{ content?content.description.subtitle:'' }}</p>
-                                <h2>{{ content?content.description.title:'' }}</h2>
+                                <p>{{ content.description.subtitle }}</p>
+                                <h2>{{ content.description.title }}</h2>
                             </header>
-                            <p>{{ content?content.description.text:'' }}</p>
+                            <p>{{ content.description.text }}</p>
                         </article>
                     </section>
                 </div>
@@ -28,49 +28,14 @@
         <section v-if="!loader" id="solution" class="guaranteed wrapper style3">
             <div class="b-grid__list text-center">
                 <div class="inner inner-list b-grid__item b-grid__item--1-1">
-                    <p class="title">Предлагаемые решения</p>
+                    <p class="title">{{ content.solution.title }}</p>
                     
                     <div class="b-grid__list solution-block" v-if="content">
 
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/1.svg" alt="" />
-                                <p>Консенсус доверия сторон через BlockChain, подкреплённый финансовыми гарантиями.</p>
-                            </div>
-                        </div>
-
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/2.svg" alt="" />
-                                <p>Унификация и максимальная автоматизация процессов верификации участников.</p>
-                            </div>
-                        </div>
-
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/3.svg" alt="" />
-                                <p>Капитализация расчётных средств, контроль и менеджмент расходов.</p>
-                            </div>
-                        </div>
-
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/4.svg" alt="" />
-                                <p>Автоматизм механизмов взаиморасчётов сторон контракта.</p>
-                            </div>
-                        </div>
-
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/5.svg" alt="" />
-                                <p>Широко авторитетные верификационные Агенты.</p>
-                            </div>
-                        </div>
-
-                        <div class="b-grid__item b-grid__item--1-3">
-                            <div class="solution-info">
-                                <img src="../assets/img/solution/6.svg" alt="" />
-                                <p>Безопасность собственной операционной среды.</p>
+                        <div class="b-grid__item b-grid__item--1-3" v-for="(solution, solutionIndex) in content.solution.list">
+                            <div class="solution-info" >
+                                <img :src="getSolutionImage(solutionIndex)" alt="" />
+                                <p>{{ solution.title }}</p>
                             </div>
                         </div>
 
@@ -78,20 +43,15 @@
                 </div>
             </div>
 
-            <div class="b-grid__list text-center concept">
+            <div v-if="!loader" class="b-grid__list text-center concept">
                 <div class="inner inner-list b-grid__item b-grid__item--1-1">
-                    <p class="title">{{ content?content.concept.title:'' }}</p>
+                    <p class="title">{{ content.concept.title }}</p>
                     <div class="b-grid__list">
                         <div v-if="content" class="b-grid__item b-grid__item--1-1" >
-                            <h3>Цель Проекта</h3>
-                            <p class="grid_inner">Технологическое преодоление недостатков существующих на рынке онлайновых бирж труда и фрилансеров:
-                                <ul>
-                                    <li>Низкое качество ТЗ и актуальность уровня компетенций заказчиков</li>
-                                    <li>Проблема приёмно-сдаточных мероприятий.</li>
-                                    <li>Слабо регулируемая ответственность Заказчиков и 
-                                        Исполнителей за неисполнение (полное/частичное) обязательств по заключаемым договорам.</li>
-                                    <li>Разрозненное ведения проектной и финансовой деятельности</li>
-                                    <li>Малая гибкость и прозрачность процессов</li>
+                            <h3>{{ content.concept.subTitle }}</h3>
+                            <p class="grid_inner">{{ content.concept.text }}
+                                <ul v-for="concept in content.concept.list">
+                                    <li>{{ concept.title }}</li>
                                 </ul>
                             </p>
                         </div>
@@ -106,47 +66,15 @@
                     <section class="spotlights">
                         <article class="full">
                             <header class="major">
-                                <h2>Основные отличительные особенности АЛЕ</h2>
+                                <h2>{{ content.features.title }}</h2>
                             </header>
                             <ul class="description_inner">
-                                <li>Повышение надёжности и качества заключаемых договоров подряда и достоверности 
-                                    получаемых результатов, упрощение взаиморасчётов, капитализация успеха.</li>
-                                <li>Фиксация процессов согласования и исполнения контрактных условий в Блок-чейне.</li>
-                                <li>Внесение оплаты, предоплаты и гарантий участниками договорных отношений в монетарной системе АЛЕ.</li>
-                                <li>Гибкость ведения проектов – изменение условий при консенсусе финансовых и управленческих решений.</li>
-                                <li>«Окрашивание» инвестиций и обязательств с возможностью их мониторинга и контроля ( в последующих версиях).</li>
-                                <li>Собственные протоколы контрактов, исполняемых на блок-чейне АЛЕ.</li>
-                                <li>Собственная процедура верификации участников через процедуру в процессинговом коде системы через запись в БЧ.</li>
-                                <li>Возможность наличия дополнительных двух сторон в контракте (в начальных версиях, затем-неограниченно):
-                                    <ul>
-                                        <li>Верификатора ТЗ Заказчика.</li>
-                                        <li>Верификатора Результатов Исполнителя.</li>
+                                <li v-for="features in content.features.list">
+                                    {{ features.title }}
+                                    <ul v-if="features.list !== undefined" v-for="subFeatures in features.list">
+                                        <li>{{ subFeatures.title }}</li>
                                     </ul>
                                 </li>
-                                <li>Автоматизация процессов Верификации Участников, ТЗ и Приёмки-Сдачи (Acceptance tests, Qualifcaa n, 
-                                    Execua n C ntr l, C mmissi ning, C mpliance) для Заказчика и Исполнителя, распределения финансовых средств 
-                                    сторон контракта в соответствии с его условиями на основе алгоритма и протокола исполнения электронных контрактов АЛЕ.</li>
-                                <li>Встроенные механизмы изменения оценок и вариабельных параметров в алгоритме исполнения контрактов АЛЕ на основе консенсуса участников системы.</li>
-                            </ul>
-                        </article>
-                    </section>
-                </div>
-            </div>
-        </section>
-
-        <section v-if="false" id="participate" class="wrapper style2">
-            <div class="b-grid__list">
-                <div class="inner b-grid__item b-grid__item--1-1">
-                    <section class="spotlights">
-                        <article class="full">
-                            <header class="major">
-                                <p class="large">Participate in ICO</p>
-                                <h3>To get acquainted with the detailed description of the ALEHUB project, as well as
-                                    the entries on the ICO, we suggest you go to the appropriate section of
-                                    website.</h3>
-                            </header>
-                            <ul class="actions">
-                                <li><a href="#" class="button">Detailed description</a></li>
                             </ul>
                         </article>
                     </section>
@@ -163,33 +91,18 @@
                 <section class="spotlights">
                     <article class="full">
                         <header class="major">
-                            <h2>Распределение токенов</h2>
+                            <h2>{{ content.distribution.title }}</h2>
                         </header>
 
                         <div class="distribution-money">
 
-                            <div class="distribution-gist gist-red">
-                                <span>77%</span>
-                            </div>
-
-                            <div class="distribution-gist gist-blue">
-                                <span>11%</span>
-                            </div>
-
-                            <div class="distribution-gist gist-green">
-                                <span>10%</span>
-                            </div>
-
-                            <div class="distribution-gist gist-purple">
-                                <span>2%</span>
+                            <div class="distribution-gist" v-for="gist in content.distribution.list" :class="'gist-'+gist.color">
+                                <span>{{ gist.percent }}%</span>
                             </div>
                         </div>
                         <div class="distribution-labels">
 
-                            <span class="dist-money_badge_red">Продажа на ICO</span>
-                            <span class="dist-money_badge_blue">Команда</span>
-                            <span class="dist-money_badge_green">Резерв, реферальная программа, адвайзер</span>
-                            <span class="dist-money_badge_purple">Баунти</span>
+                            <span :class="'dist-money_badge_'+gist.color" v-for="gist in content.distribution.list">{{ gist.title }}</span>
                         </div>
                     </article>
                 </section>
@@ -233,6 +146,9 @@
             }
         },
         methods: {
+            getSolutionImage (index) {
+                return `${this.$host}/ale-files/img/solution/${index+1}.svg`
+            },
             subscribe () {
                 this.isLoaderSubscribe = true;
                 this.subscribeStatus = '';

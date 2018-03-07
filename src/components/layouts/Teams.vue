@@ -15,32 +15,23 @@
 						<div class="team-row">
 							<div class="team-info">
 								<div class="avatar">
-									<img :src="$host + '/ale-files/'+item.image" alt="">
+									<img :src="$host + '/ale-files/img/team/'+item.image" alt="">
 								</div>
 								<div class="info">
 									<h1>{{ item.name }}</h1>
 									<p>{{ item.position }}</p>
 								</div>
 							</div>
-							<div class="team-links" v-if="false">
-								<div class="social-item">
-									<i class="fa fa-vk"></i>
-								</div>
-								<div class="social-item">
-									<i class="fa fa-github"></i>
+							<div class="team-links" v-if="item.social !== undefined">
+								<div class="social-item" v-for="soc in item.social">
+									<a :href="parseLink(soc.type, soc.nickName)" target="_blank">
+										<i class="fa" :class="'fa-'+soc.type"></i>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- <div class="team-list">
-					<div class="item" v-if="content" v-for="(item, indexMember) in content.participants.members" :key="indexMember">
-						<img :src="$host + '/ale-files/'+item.image" style="border-radius: 100%;" width="300" height="300" />
-						<h1>{{ item.name }}</h1>
-						<h3>{{ item.position }}</h3>
-					</div>
-				</div> -->
 
 			</div>
 		</div>
@@ -50,7 +41,32 @@
 <script>
 export default {
 	name: 'Teams',
-	props: ['content']
+	props: ['content'],
+	methods: {
+		parseLink (social, nickName) {
+			let foundedSocial = '';
+			switch (social) {
+			  case 'github':
+			    foundedSocial = 'https://github.com/'
+			    break;
+			  case 'telegram':
+			    foundedSocial = 'https://t.me/'
+			    break;
+			  case 'vk':
+			    foundedSocial = 'https://vk.com/'
+			    break;
+			  case 'linkedin':
+			    foundedSocial = 'https://linkedin.com/'
+			    break;
+			  case 'linkedin':
+			    foundedSocial = 'https://facebook.com/'
+			    break;
+			  default:
+			    foundedSocial = ''
+			}
+			return foundedSocial+''+nickName;
+		}
+	}
 }
 </script>
 
@@ -82,6 +98,7 @@ export default {
 						border-radius 50%
 
 				.info
+					padding 0 30px
 					h1
 						color #fff
 						font-size 28px
@@ -101,6 +118,7 @@ export default {
 				align-items center
 				justify-content center
 				margin -10px 0
+				padding-bottom 20px
 
 				.social-item
 					width 30px
@@ -110,6 +128,10 @@ export default {
 					margin-left 0
 					font-size 24px
 					color #fff
+
+					a
+						color #fff
+						text-decoration none
 
 					&:first-child
 						margin-left 0
