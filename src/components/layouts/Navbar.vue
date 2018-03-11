@@ -7,8 +7,12 @@
                 </router-link>
             </span>
             <div class="menu">
-                <div class="hamburger" @click="toggleMenu">Menu</div>
-                <ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <ul id="mobileMenu">
                     <li class="check-fonts" :class="{active: indexLink === 0}" v-for="(link, indexLink) in links[lang]" :key="indexLink" :data-target="link.to" @click="scrollToElement(link.to)">{{ link.title}}</li>
                     <a href="http://presale.alehub.io" class="navbar-link"><li class="check-fonts">
                         {{ cabinetWord }}
@@ -91,9 +95,9 @@
             checkActive () {
                 for (let i = 0; i < this.links.en.length; i++) {
                     if(document.getElementById(this.links.en[i].to) === null) return false;
-                    let offset = document.getElementById(this.links.en[i].to).offsetTop-60
+                    let offset = document.getElementById(this.links.en[i].to).offsetTop-66
                     let height = document.getElementById(this.links.en[i].to).offsetHeight
-                    if (window.scrollY >= offset && window.scrollY <= offset+height) {
+                    if (window.scrollY > offset && window.scrollY <= offset+height) {
                         document.querySelector(`[data-target='${this.links.en[i].to}']`).classList.add('active')
                     } else {
                         document.querySelector(`[data-target='${this.links.en[i].to}']`).classList.remove('active')
@@ -151,23 +155,25 @@
                 if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Cabinet';
                 else this.cabinetWord = 'Кабинет';
                 this.$parent.$emit('changeLang')
-            },
-            toggleMenu() {
-                let nav = document.querySelector(".menu ul"),
-                    navToggle = document.querySelector(".menu .hamburger");
-                if (nav.className === "opened")
-                    nav.className = "";
-                else
-                    nav.className = "opened";
-                let specifiedElement = document.querySelector('.menu');
-                document.addEventListener('click', function(event) {
-                    let isClickInside = specifiedElement.contains(event.target);
-                    if (event.target.className !== 'hamburger' && nav.className === "opened")
-                        nav.classList = "";
-                })
             }
         },
         created () {
+            window.onload = function() {
+                document.getElementById('hamburger').addEventListener('click', function() {
+                    var nav = document.querySelector("#mobileMenu"),
+                        navToggle = document.querySelector("#hamburger"),
+                        specifiedElement = document.querySelector('.menu');
+                    nav.classList.toggle('opened');
+                    navToggle.classList.toggle('is-active');
+                    document.addEventListener('click', function(event) {
+                        let isClickInside = specifiedElement.contains(event.target);
+                        if (!event.target.classList.contains('hamburger') && !event.target.classList.contains('line') && nav.classList.contains('opened')) {
+                            nav.classList.remove("opened");
+                            navToggle.classList.remove('is-active');
+                        }
+                    })
+                })
+            }
             this.initScroll();
             if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Кабинет';
             else this.cabinetWord = 'Cabinet';
@@ -217,6 +223,9 @@
         z-index 10001
         padding 1em 2em
         background-color #0d1717
+
+        @media screen and (max-width: 1024px)
+            padding 0.88em 30px
 
         .pb0 {
             padding-bottom: 0;
@@ -300,6 +309,9 @@
                     display flex
                     list-style none
                     margin 0
+                    -webkit-transition all 0.3s ease-in-out
+                    -o-transition all 0.3s ease-in-out
+                    transition all 0.3s ease-in-out
 
                     li 
                         padding 1.5em 0
@@ -344,28 +356,39 @@
 
                     @media screen and (max-width: 1024px)
                         display none
+                        opacity 0
+                        top 100px
+                        right 100px
+                        left 100px
+                        position fixed
+                        -webkit-transition all 0.3s ease-in-out
+                        -o-transition all 0.3s ease-in-out
+                        transition all 0.3s ease-in-out
                     
                         &.opened
+                            opacity 1
                             display block
                             position fixed
-                            top 95px
-                            right 25px
-                            left 25px
+                            top 64px
+                            right 0px
+                            left 0px
+                            bottom 0px
                             text-align center
                             background #0d1717
-                            padding 2.5em .8em
+                            padding 2.5em 0em
 
                             li
-                                margin -2em 20px
-                                padding 2em 0
+                                margin 0em 0px
+                                padding 15px 0
+                                border-bottom 1px solid rgba(255, 255, 255, .2)
 
                             .lang
                                 text-align center
                                 background-color #0d1717
                                 cursor pointer
                                 box-shadow none
-                                padding 2em 0
-                                margin -2em 0
+                                padding 15px 0
+                                margin 0em 0
                                 border-radius 0
 
                                 .flag
@@ -385,18 +408,41 @@
                                     background-color #0d1717
                                     cursor pointer
                                     box-shadow none
-                                    padding 2em 0
-                                    margin -2em 0
+                                    padding 15px 0
+                                    margin 0em 0
                                     border-radius 0
                                     color #ffd24f
 
     .hamburger
         display none
         cursor pointer
-        padding 1em 1em
+        padding 1em 0em
         margin -1em -1em
         @media screen and (max-width: 1024px)
             display block
+            .line
+                width 35px
+                height 3px
+                background-color #ecf0f1
+                display block
+                margin 4px auto
+                -webkit-transition all 0.3s ease-in-out
+                -o-transition all 0.3s ease-in-out
+                transition all 0.3s ease-in-out
+            &.is-active
+                .line
+                    &:nth-child(2)
+                        opacity 0
+                    &:nth-child(1)
+                        -webkit-transform translateY(7px) rotate(45deg)
+                        -ms-transform translateY(7px) rotate(45deg)
+                        -o-transform translateY(7px) rotate(45deg)
+                        transform translateY(7px) rotate(45deg)
+                    &:nth-child(3)
+                        -webkit-transform translateY(-7px) rotate(-45deg)
+                        -ms-transform translateY(-7px) rotate(-45deg)
+                        -o-transform translateY(-7px) rotate(-45deg)
+                        transform translateY(-7px) rotate(-45deg)
 
     .hiddenMenu 
         padding-left 0

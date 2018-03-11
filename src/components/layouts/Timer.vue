@@ -690,4 +690,17 @@ export default {
 								height auto
 								.softcap
 									font-size 18px
+									&:last-child
+										margin-top 5px
+								.countdown
+									font-size 35px
+								button
+									font-size 18px
+									padding 0px 15px
+							.ico-right
+								.timer-title
+									font-size 22px
+									margin-top -10px
+						.footer
+							padding 10px 0
 </style>
