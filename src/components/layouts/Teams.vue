@@ -1,7 +1,7 @@
 <template>
 	<section class="teams wrapper" id="teams">
 		<div class="b-grid__list">
-			<div class="b-grid__item b-grid__item--1-1">
+			<div class="b-grid__item b-grid__item--1-1 team_grid">
 				<div class="serokell" v-if="false">
 					<h1 class="title">{{ content.partners.title }}</h1>
 				  <img src="https://serokell.io/images/logo-white.svg" alt="">
@@ -71,9 +71,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+	.team_grid
+		padding 0
 	.b-grid__item--1-3
-		&:nth-child(3n+1)
-			padding-left 0
+		padding 7.5px
 	.team-list
 		border-radius 4px
 		margin-top 0px

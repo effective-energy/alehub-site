@@ -380,15 +380,15 @@
                 height 25%
                 &:hover
                     &.gist-red
-                        width calc(100% - 10px)
+                        width calc(100% - 15px)
                     &.gist-blue
                         width 60%
                     &.gist-green
                         width 54%
                     &.gist-purple
-                        width 10%
+                        width 20%
         .gist-red
-            width 100%
+            width calc(100% - 15px)
         .gist-blue
             width 60%
         .gist-green
