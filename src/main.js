@@ -7,7 +7,7 @@ import VueQrcode from '@xkeshi/vue-qrcode'
 import VueResource from 'vue-resource';
 
 Vue.config.productionTip = false;
-Vue.prototype.$host = 'http://54.205.245.204:3000';
+Vue.prototype.$host = 'https://alehub.eu-4.evennode.com';
 
 Vue.use(VueResource);
 Vue.use(VModal);

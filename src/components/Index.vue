@@ -147,7 +147,7 @@
         },
         methods: {
             getSolutionImage (index) {
-                return `${this.$host}/ale-files/img/solution/${index+1}.svg`
+                return `${this.$host}/ale-files/img/solution/${index+1}.svg`;
             },
             subscribe () {
                 this.isLoaderSubscribe = true;
@@ -176,9 +176,10 @@
             },
             getContent () {
                 if(localStorage.getItem('systemLang') === 'ru') this.lang = 'ru';
+                else if (localStorage.getItem('systemLang') === 'cn') this.lang = 'cn';
                 else this.lang = 'en';
                 this.loader = true
-                this.$http.get(`${this.$host}/alehub/index${this.lang==='ru'?'/ru':''}`, {
+                this.$http.get(`${this.$host}/alehub/index${this.lang==='en'?'':'/'+this.lang}`, {
                 headers : {
                     'Content-Type' : 'application/json; charset=UTF-8',
                     'Accept' : 'application/json'
@@ -190,15 +191,9 @@
 
                 });
             },
-            changeLang () {
-                if (this.lang === 'en') {
-                    this.lang = 'ru';
-                    localStorage.setItem('systemLang', 'ru');
-                }
-                else {
-                    this.lang = 'en'
-                    localStorage.setItem('systemLang', 'en');
-                }
+            changeLang (lang) {
+                this.lang = lang;
+                localStorage.setItem('systemLang', lang);
                 this.getContent()
             }
         },
@@ -206,8 +201,8 @@
             this.getContent()
         },
         mounted() {
-            this.$on('changeLang', function () {
-                this.changeLang();
+            this.$on('changeLang', function (lang) {
+                this.changeLang(lang);
             });
         }
     }

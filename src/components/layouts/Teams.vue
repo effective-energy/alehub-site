@@ -2,16 +2,31 @@
 	<section class="teams wrapper" id="teams">
 		<div class="b-grid__list">
 			<div class="b-grid__item b-grid__item--1-1 team_grid">
-				<div class="serokell" v-if="false">
-					<h1 class="title">{{ content.partners.title }}</h1>
-				  <img src="https://serokell.io/images/logo-white.svg" alt="">
+
+				<img class="serokell_logo" src="https://serokell.io/images/logo-white.svg" alt="">
+
+				<div class="b-grid__list">
+					<div class="b-grid__item b-grid__item--1-3 team-list" v-for="(item, indexMember) in content.partners.members" :key="indexMember">
+						<div class="team-row">
+							<div class="team-info">
+								<div class="avatar">
+									<img :src="$host + '/ale-files/img/team/'+item.image" alt="">
+								</div>
+								<div class="info">
+									<h1>{{ item.name }}</h1>
+									<p>{{ item.position }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
 
 				<h1 class="title" v-if="content">{{ content.participants.title }}</h1>
 
 
 				<div class="b-grid__list">
-					<div class="b-grid__item b-grid__item--1-3 team-list" v-if="content" v-for="(item, indexMember) in content.participants.members" :key="indexMember">
+					<div class="b-grid__item b-grid__item--1-3 team-list" v-for="(item, indexMember) in content.participants.members" :key="indexMember">
 						<div class="team-row">
 							<div class="team-info">
 								<div class="avatar">
@@ -71,6 +86,12 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+	.serokell_logo
+		margin 0 auto 40px
+	#teams
+		text-align center
+		.title
+			margin-top: 50px
 	.team_grid
 		padding 0
 	.b-grid__item--1-3

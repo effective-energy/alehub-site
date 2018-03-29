@@ -67,7 +67,7 @@
 	                    <div class="ico-body">
 	                        <div class="ico-left">
 	                            <h1 class="salestart">{{ content.left.roundOne }}:</h1>
-	                            <h1 class="countdown">88:88:88:88</h1> <br>
+	                            <h1 class="countdown" id="countDown"></h1> <br>
 	                            <h4 class="softcap">{{ content.left.softCap }}</h4>
 	                            <div class="progress">
 	                            	<div class="active" :style="{width: softCapProgress + '%'}"></div>
@@ -238,7 +238,7 @@ export default {
 	mounted() {
 		if(!this.isLoader) {
 			this.startAnime();
-			// this.initializeClock('countDown', new Date(1521072000000));
+			this.initializeClock('countDown', new Date(1523394000000));
 		}
 	}
 }
@@ -531,9 +531,54 @@ export default {
 				&:hover
 					background #000!important
 
+	@media (max-width: 1920px)
+		.greeting
+			.b-grid__list
+				.b-grid__item--1-1
+					.greeting-banner
+						font-size 28px
+						padding 7px 15px
+						margin-bottom 0.5em
+					.ico-timer
+						.ico-body
+							.ico-left
+								height 450px
+								padding 2em
+								.countdown
+									font-size 54px
+								.bonus
+									margin-top 10px
+									font-size 24px
+							.ico-right
+								height 450px
+								padding 2em
+								justify-content space-between
+								.right-inner
+									margin-bottom 20px
+									.partners-list
+										margin-top 10px
+								.timer-title
+									margin 0
+								.supported-coins
+									flex-wrap wrap
+									margin 0
+									justify-content space-evenly
+									.icon-container
+										min-width 100px
+										width 30%
+										.icon-item
+											padding 15px
+											&:nth-last-child(1),
+											&:nth-last-child(2)
+												margin-bottom 0
+												margin-top 10px
+						.ico-footer
+							height 60px
+
 	@media screen and (max-width: 1024px)
 		.greeting
 			.b-grid__list
+				max-width 850px
 				.b-grid__item--1-1
 					padding-right 15px
 					.ico-timer

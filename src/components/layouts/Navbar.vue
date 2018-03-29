@@ -17,10 +17,18 @@
                     <a href="http://presale.alehub.io" class="navbar-link"><li class="check-fonts">
                         {{ cabinetWord }}
                     </li></a>
-                    <div class="lang" @click="changeLang">
-                        <div class="flag" :class="{ 'eng-flag': lang === 'ru' }"></div>
-                        <span v-if="lang === 'en'">RU</span>
-                        <span v-else>EN</span>
+                    <div class="lang" @click="toggleLang()">
+                        <div class="flag" :class="{ 'eng-flag': lang === 'en', 'cin-flag': lang === 'cn' }"></div>
+                        <span v-if="lang === 'en'">EN</span>
+                        <span v-if="lang === 'ru'">RU</span>
+                        <span v-if="lang === 'cn'">CN</span>
+                    </div>
+                    <div class="select-lang">
+                        <ul>
+                            <li v-if="lang!='en'" @click="changeLang('en')"><div class="flag eng-flag"></div><span>EN</span></li>
+                            <li v-if="lang!='cn'" @click="changeLang('cn')"><div class="flag cin-flag"></div><span>CN</span></li>
+                            <li v-if="lang!='ru'" @click="changeLang('ru')"><div class="flag"></div><span>RU</span></li>
+                        </ul>
                     </div>
                 </ul>
         </div>      
@@ -66,23 +74,25 @@
                         {title: 'Home', to: 'greeting'},
                         {title: 'Description', to: 'about'},
                         {title: 'Advantages', to: 'solution'},
-                        {title: 'Docs', to: 'documentations'},
+                        {title: 'Features', to: 'documentations'},
                         {title: 'Team', to: 'teams'}
                     ],
                     ru: [
                         {title: 'Домой', to: 'greeting'},
                         {title: 'Описание', to: 'about'},
                         {title: 'Преимущества', to: 'solution'},
-                        {title: 'Документы', to: 'documentations'},
+                        {title: 'Особенности', to: 'documentations'},
                         {title: 'Команда', to: 'teams'}
-                    ]
-                }
-            }
-        },
-        computed: {
-            checkLang () {
-                if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Кабинет';
-                else this.cabinetWord = 'Cabinet';
+                    ],
+                    cn: [
+                        {title: 'Home', to: 'greeting'},
+                        {title: 'Description', to: 'about'},
+                        {title: 'Advantages', to: 'solution'},
+                        {title: 'Features', to: 'documentations'},
+                        {title: 'Team', to: 'teams'}
+                    ],
+                },
+                collapsed: false
             }
         },
         methods: {
@@ -151,10 +161,33 @@
                     y += node.offsetTop;
                 } return y;
             },
-            changeLang() {
-                if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Cabinet';
-                else this.cabinetWord = 'Кабинет';
-                this.$parent.$emit('changeLang')
+            toggleLang() {
+                let nav = document.querySelector(".select-lang"),
+                    navToggle = document.querySelector(".lang"),
+                    _this = this;
+                if (!nav.classList.contains('is-collapsed')) {
+                    this.collapsed = true;
+                    nav.classList.add("is-collapsed");
+                    navToggle.classList.add('is-active');
+                    document.addEventListener('click', closeMenu, true)
+                }
+                else {
+                    this.collapsed = false;
+                    nav.classList.remove("is-collapsed");
+                    navToggle.classList.remove('is-active');
+                    document.removeEventListener('click', closeMenu, true)
+                }
+                function closeMenu () {
+                    if (!event.target.parentElement.classList.contains('lang') && !event.target.classList.contains('lang') && nav.classList.contains('is-collapsed')) {
+                        nav.classList.remove("is-collapsed");
+                        navToggle.classList.remove('is-active');
+                    }
+                }
+            },
+            changeLang(lang) {
+                this.$parent.$emit('changeLang', lang);
+                if(localStorage.getItem('systemLang') === 'ru') this.cabinetWord = 'Кабинет';
+                else this.cabinetWord = 'Cabinet';
             }
         },
         created () {
@@ -305,6 +338,49 @@
                 font-weight 700
                 padding 0.5em 1.25em
 
+                .select-lang
+                    position absolute
+                    top 40px
+                    right 10px
+                    min-width 65px
+                    background-color #232323
+                    padding 8px 15px
+                    box-shadow 7px 7px 30px 0px #000
+                    display none
+
+                    &.is-collapsed
+                        display block
+
+                    ul
+                        display flex
+                        flex-direction column
+                        padding 0
+
+                        li
+                            margin 0
+                            padding .3em 0
+                            display flex
+                            justify-content space-between
+                            align-content center
+                            line-height 1.8
+
+                            .flag
+                                width 25px
+                                height 21px
+                                background-size cover
+                                background-image url('../../assets/img/flags/rus.png')
+                                background-position center
+                                padding-top 4px
+
+                                &.eng-flag
+                                    background-image url('../../assets/img/flags/usa.png')
+                                
+                                &.cin-flag
+                                    background-image url('../../assets/img/flags/china.svg')
+                                    background-size contain
+                                    background-repeat no-repeat
+                                
+
                 ul 
                     display flex
                     list-style none
@@ -326,11 +402,11 @@
 
                     .lang 
                         display flex
+                        align-items center
                         cursor pointer
                         padding 0.5em 0em 0.5em 2em
                         margin -0.5em 0
                         border-radius 4px
-                        margin-top -9px
 
                         .flag 
                             width 25px
@@ -343,6 +419,14 @@
 
                             &.eng-flag 
                                 background-image url('../../assets/img/flags/usa.png')
+
+                            &.cin-flag
+                                background-image url('../../assets/img/flags/china.svg')
+                                background-size contain
+                                background-repeat no-repeat
+                                background-position center
+                                top 0
+                                margin-top -1px
                             
 
                         span 
@@ -383,35 +467,26 @@
                                 border-bottom 1px solid rgba(255, 255, 255, .2)
 
                             .lang
-                                text-align center
-                                background-color #0d1717
-                                cursor pointer
+                                display none
+
+                            .select-lang
+                                position initial
+                                width 100%
+                                background-color transparent
+                                padding 0
                                 box-shadow none
-                                padding 15px 0
-                                margin 0em 0
-                                border-radius 0
+                                display block
 
-                                .flag
-                                    width 25px
-                                    height 21px
-                                    background-size cover
-                                    background-image url('../../assets/img/flags/rus.png')
-                                    position relative
-                                    right 5px
-                                    top -2px
-                                    margin-left calc(50% - 21px)
+                                ul
+                                    display flex
+                                    flex-direction row
+                                    padding 0
+                                    position initial
+                                    opacity 1
+                                    justify-content space-evenly
 
-                                    &.eng-flag
-                                        background-image url('../../assets/img/flags/usa.png')
-                                
-                                &:hover
-                                    background-color #0d1717
-                                    cursor pointer
-                                    box-shadow none
-                                    padding 15px 0
-                                    margin 0em 0
-                                    border-radius 0
-                                    color #ffd24f
+                                    li
+                                        border none
 
     .hamburger
         display none
