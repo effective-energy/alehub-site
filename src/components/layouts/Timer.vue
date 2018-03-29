@@ -112,7 +112,7 @@
 	                        			</div>
 
 	                        			<div @click="showAlePrice('')" v-if="openCrypto === crypto.name" class="icon-item-price">
-	                        				<p style="margin: 0;">1 {{ crypto.name }} = {{ crypto.course }} ECO</p>
+	                        				<p style="margin: 0;">1 {{ crypto.name }} = {{ crypto.course }} ALE</p>
 	                        			</div>
 	                        		</div>
 
@@ -282,7 +282,7 @@ export default {
 						background rgb(255, 210, 79)
 						padding 3em
 						width 50%
-						height 500px
+						height 530px
 						display flex
 						flex-direction column
 						justify-content space-between
@@ -342,7 +342,7 @@ export default {
 								background-color #000000
 
 					.ico-right
-						height 500px
+						height 530px
 						background rgb(42, 45, 48)
 						padding 3em
 						color rgb(255, 255, 255)
@@ -542,7 +542,7 @@ export default {
 					.ico-timer
 						.ico-body
 							.ico-left
-								height 450px
+								height 530px
 								padding 2em
 								.countdown
 									font-size 54px
@@ -550,7 +550,7 @@ export default {
 									margin-top 10px
 									font-size 24px
 							.ico-right
-								height 450px
+								height 530px
 								padding 2em
 								justify-content space-between
 								.right-inner
