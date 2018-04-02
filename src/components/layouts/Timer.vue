@@ -587,7 +587,7 @@ export default {
 							align-items center
 							.ico-left,
 							.ico-right
-								width calc(100% - 6em)
+								width calc(100% - 4em)
 							.ico-right
 								border none
 								height auto
@@ -612,13 +612,15 @@ export default {
 			.b-grid__list
 				.b-grid__item--1-1
 					padding 0
+					.greeting-banner
+						margin-bottom 0
 					.ico-timer
 						.ico-body
 							flex-direction column
 							align-items center
 							.ico-left,
 							.ico-right
-								width calc(100% - 6em)
+								width calc(100% - 4em)
 							.ico-right
 								height 100%
 								.right-inner

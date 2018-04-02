@@ -194,4 +194,6 @@ export default {
 				.b-grid__item
 					.title
 						margin 25px 0
+		.serokell_logo
+			margin-top 35px
 </style>

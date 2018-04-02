@@ -214,6 +214,11 @@ button,
 .spotlights article.info-card {
   max-width: 600px;
 }
+@media (max-width: 760px) {
+  .spotlights article.info-card {
+    max-width: 100%;
+  }
+}
 .spotlights article header.major {
   margin-bottom: 2em;
   padding-bottom: 2em;
