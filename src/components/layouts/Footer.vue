@@ -222,22 +222,29 @@ export default {
 					outline none
 
 	@media(max-width: 1024px)
-		&.b-grid__item--1-3:last-child
-			margin 0
+		.b-grid__item
+			&.b-grid__item--1-3:last-child
+				margin 0 0 30px 0
+		.b-grid__item
+			&.b-grid__item--1-3:last-child
+				min-width 80% !important
 
 		footer
 			.subscribe-block
-				max-width 325px
 				margin 0 auto
 
 	@media(max-width: 760px)
 		.b-grid__item
 			&.b-grid__item--1-3
 				margin-bottom 30px
+		
+		footer 
+			.subscribe-block
+				max-width 325px
 
 	@media(max-width: 425px)
 		footer
-			padding-bottom 80px
+			padding-bottom 30px
 
 			.subscribe-block
 				text-align center
@@ -245,6 +252,16 @@ export default {
 		.b-grid__item
 			&.b-grid__item--1-3
 				margin-bottom 30px
+
+		.b-grid__item:nth-child(1)
+			order 0
+
+		.b-grid__item:nth-child(2)
+			order 2
+
+		.b-grid__item:nth-child(3)
+			order 1
+			
 
 	@media(max-width: 375px)
 		.b-grid__item
