@@ -3,7 +3,7 @@
 		<div class="b-grid__list">
 			<div class="b-grid__item b-grid__item--1-1 team_grid">
 
-				<img class="serokell_logo" src="https://serokell.io/images/logo-white.svg" alt="">
+				<h1 class="title" v-if="content">{{ content.partners.title }}</h1>
 
 				<div class="b-grid__list">
 					<div class="b-grid__item b-grid__item--1-3 team-list" v-for="(item, indexMember) in content.partners.members" :key="indexMember">
@@ -90,8 +90,9 @@ export default {
 		margin 0 auto 40px
 	#teams
 		text-align center
+		padding-top 0em
 		.title
-			margin-top: 50px
+			margin-top 50px
 	.team_grid
 		padding 0
 	.b-grid__item--1-3

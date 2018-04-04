@@ -392,7 +392,7 @@ export default {
 
 						.supported-coins
 							display flex
-							justify-content space-between
+							justify-content start
 							font-size 26px
 							margin-bottom 40px
 
@@ -407,7 +407,7 @@ export default {
 									align-items center
 									justify-content center
 									border-radius 4px
-									margin 5px 5px 5px 0px
+									margin 5px 10px 5px 0px
 									flex-direction column
 									font-size 16px
 
@@ -562,10 +562,10 @@ export default {
 								.supported-coins
 									flex-wrap wrap
 									margin 0
-									justify-content space-evenly
+									justify-content start
 									.icon-container
 										min-width 100px
-										width 30%
+										width 32.5%
 										.icon-item
 											padding 15px
 											&:nth-last-child(1),
