@@ -221,14 +221,26 @@ export default {
 					font-weight bold
 					outline none
 
-	@media(max-width: 768px)
+	@media(max-width: 1024px)
+		&.b-grid__item--1-3:last-child
+			margin 0
+
+		footer
+			.subscribe-block
+				max-width 325px
+				margin 0 auto
+
+	@media(max-width: 760px)
 		.b-grid__item
-			&.b-grid__item--1-3:last-child
-				margin 0
+			&.b-grid__item--1-3
+				margin-bottom 30px
 
 	@media(max-width: 425px)
 		footer
-			padding-bottom 100px
+			padding-bottom 80px
+
+			.subscribe-block
+				text-align center
 
 		.b-grid__item
 			&.b-grid__item--1-3
