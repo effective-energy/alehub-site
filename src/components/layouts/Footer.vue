@@ -25,7 +25,7 @@
                 <div class="subscribe-block">
                 	<label>Subscribe to news</label>
                 	<div class="subscribe-form">
-                		<input type="text" placeholder="Enter your email" v-model="subscribeEmail">
+                		<input type="text" placeholder="Enter your email" v-model="subscribeEmail" @keyup.enter="subscribe">
                 		<button @click="subscribe">Send</button>
                 	</div>
                 	<Spinner v-if="isLoader" />
@@ -79,9 +79,20 @@ export default {
     },
     methods: {
     	subscribe () {
-    		this.subscribeText = 'Success!';
+    		this.isLoader = true;
+
+    		let re = /\S+@\S+\.\S+/;
+            if(re.test(this.subscribeEmail) === false) {
+                this.isLoader = false;
+                this.subscribeText = 'Enter your E-mail';
+                this.isShowSubscribeStatus = true;
+                return this.subscribeStatus = 'subscribe-error';
+            }
+
+    		this.subscribeText = 'At this time, the subscription form does not work.';
     		this.isShowSubscribeStatus = true;
     		this.subscribeStatus = 'subscribe-error';
+    		return this.isLoader = false;
     	},
     	currentYPosition() {
             if (self.pageYOffset) return self.pageYOffset;
