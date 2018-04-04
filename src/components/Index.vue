@@ -110,13 +110,7 @@
         </div>
     </section>
 
-    <footer v-if="!loader">
-        <div class="b-grid__list">
-            <div class="b-grid__item b-grid__item--1-1">
-                <span class="year">Effective Energy LLC © 2018 All rights reserved.</span>
-            </div>
-        </div>
-    </footer>
+    <Footer v-if="!loader" :content="content.greeting" :lang="lang"/>
 
     </div>
 </template>
@@ -126,6 +120,7 @@
     import Timer from './layouts/Timer';
     import Teams from './layouts/Teams';
     import Spinner from './layouts/Spinner';
+    import Footer from './layouts/Footer';
 
     export default {
         name: 'Index',
@@ -133,7 +128,8 @@
             Navbar,
             Timer,
             Teams,
-            Spinner
+            Spinner,
+            Footer
         },
         data() {
             return {
