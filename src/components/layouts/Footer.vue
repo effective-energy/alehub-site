@@ -150,6 +150,7 @@ export default {
 			.item
 				border-radius 2px
 				width 40px
+				min-width 40px
 				height 40px
 				background #f4b604
 				font-size 24px
@@ -219,4 +220,39 @@ export default {
 					height 37px
 					font-weight bold
 					outline none
+
+	@media(max-width: 768px)
+		.b-grid__item
+			&.b-grid__item--1-3:last-child
+				margin 0
+
+	@media(max-width: 425px)
+		footer
+			padding-bottom 100px
+
+		.b-grid__item
+			&.b-grid__item--1-3
+				margin-bottom 30px
+
+	@media(max-width: 375px)
+		.b-grid__item
+			&.b-grid__item--1-3:first-child
+				margin-bottom 15px	
+
+		footer
+			.subscribe-block
+				.subscribe-form
+					button 
+						padding-right 20px
+						padding-left 20px
+
+			.social-links
+				flex-wrap wrap
+
+				.item
+					margin-bottom 15px
+
+				.item:first-child
+					margin-left 15px
+
 </style>
