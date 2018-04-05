@@ -118,9 +118,9 @@
 
 	                        	</div>
 
-	                        	<h2 class="timer-title">{{ content.right.info.title }}</h2>
-	                        	<div class="project-info">
-	                            	<a v-for="info in content.right.info.list" href="#">{{ info.title }}</a>
+	                        	<h2 class="timer-title" v-if="false">{{ content.right.info.title }}</h2>
+	                        	<div class="project-info" v-if="false">
+	                            	<a v-for="info in content.right.info.list" :href="info.link" target="_blank">{{ info.title }}</a>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -282,7 +282,7 @@ export default {
 						background rgb(255, 210, 79)
 						padding 3em
 						width 50%
-						height 580px
+						height 460px
 						display flex
 						flex-direction column
 						justify-content space-between
@@ -342,7 +342,7 @@ export default {
 								background-color #000000
 
 					.ico-right
-						height 580px
+						height 460px
 						background rgb(42, 45, 48)
 						padding 3em
 						color rgb(255, 255, 255)
