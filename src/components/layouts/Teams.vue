@@ -140,7 +140,7 @@ export default {
 				display flex
 				align-items center
 				justify-content center
-				margin -10px 0
+				margin -10px 0 0 0
 				padding-bottom 20px
 
 				.social-item
