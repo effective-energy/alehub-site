@@ -238,7 +238,7 @@ export default {
 	mounted() {
 		if(!this.isLoader) {
 			this.startAnime();
-			this.initializeClock('countDown', new Date(1523394000000));
+			//this.initializeClock('countDown', new Date(1523394000000));
 		}
 	}
 }
