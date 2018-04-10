@@ -66,8 +66,8 @@
 	            <div class="ico-timer">
 	                    <div class="ico-body">
 	                        <div class="ico-left">
-	                            <h1 class="salestart">{{ content.left.roundOne }}:</h1>
-	                            <h1 class="countdown" id="countDown"></h1> <br>
+	                            <h1 class="salestart">ICO coming soon</h1>
+	                            <!-- <h1 class="countdown" id="countDown"></h1> <br> -->
 	                            <h4 class="softcap">{{ content.left.softCap }}</h4>
 	                            <div class="progress">
 	                            	<div class="active" :style="{width: softCapProgress + '%'}"></div>
@@ -81,8 +81,8 @@
 	                            </div>
 
 	                            <span class="eth-progress">{{ hardCapState }} ETH</span>
-	                            <h2 class="bonus">{{ content.left.bonus }}</h2>
-	                            <button disabled>{{ content.left.buyBtn }}</button>
+	                            <!-- <h2 class="bonus">{{ content.left.bonus }}</h2>
+	                            <button disabled>{{ content.left.buyBtn }}</button> -->
 	                        </div>
 
 
@@ -285,7 +285,7 @@ export default {
 						height 460px
 						display flex
 						flex-direction column
-						justify-content space-between
+						justify-content flex-start
 
 						.salestart
 							text-align center
