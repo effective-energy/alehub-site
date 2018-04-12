@@ -12,7 +12,7 @@
 					<b-nav-item href="#" class="active">Home</b-nav-item>
 					<b-nav-item href="#">Description</b-nav-item>
 					<b-nav-item href="#">Advantages</b-nav-item>
-					<b-nav-item href="#">Featurs</b-nav-item>
+					<b-nav-item href="#">Features</b-nav-item>
 					<b-nav-item href="#">Bounty</b-nav-item>
 					<b-nav-item href="#">Team</b-nav-item>
 					<b-nav-item href="#">News</b-nav-item>
@@ -22,11 +22,19 @@
 
 					<b-button size="sm" class="login-btn" variant="warning" :size="'sm'">Log in</b-button>
 
-					<b-nav-item-dropdown text="en" right class="language-dropdown">
-						<b-dropdown-item href="#">EN</b-dropdown-item>
-						<b-dropdown-item href="#">ES</b-dropdown-item>
-						<b-dropdown-item href="#">RU</b-dropdown-item>
-						<b-dropdown-item href="#">FA</b-dropdown-item>
+					<b-nav-item-dropdown
+						:text="selectedLanguage"
+						right
+						class="language-dropdown"
+					>
+						<b-dropdown-item
+							:active="selectedLanguage === lang"
+							v-for="(lang, langIndex) in languageList"
+							:key="langIndex"
+							@click="selectLang(langIndex)"
+						>
+							{{ lang }}
+						</b-dropdown-item>
 					</b-nav-item-dropdown>
 
 				</b-navbar-nav>
@@ -38,7 +46,18 @@
 
 <script>
 	export default {
-		name: 'Navbar'
+		name: 'Navbar',
+		data() {
+			return {
+				selectedLanguage: 'En',
+				languageList: ['En', 'Ru', 'Ch']
+			}
+		},
+		methods: {
+			selectLang (index) {
+				this.selectedLanguage = this.languageList[index];
+			}
+		}
 	}
 </script>
 
@@ -74,6 +93,16 @@
 						border-bottom 3px solid #fec108
 						padding-left 0.1rem
 						padding-right 0.1rem
-						margin-right 0.6rem
-						margin-left 0.6rem
+						margin-right 0.5rem
+						margin-left 0.5rem
+
+				&:not(.active)
+					.nav-link:hover
+						padding-bottom 0
+						margin-bottom 0
+						border-bottom 3px solid #fec108
+						padding-left 0.1rem
+						padding-right 0.1rem
+						margin-right 0.5rem
+						margin-left 0.5rem
 </style>

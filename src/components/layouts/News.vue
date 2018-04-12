@@ -58,6 +58,12 @@
 				  </b-card>
 				</b-col>
 
+				<b-col md="12" class="show-more">
+					<b-button variant="outline-warning">
+		                Show more
+		            </b-button>
+				</b-col>
+
 			</b-row>
 		</b-container>
 	</b-jumbotron>
@@ -75,6 +81,10 @@
 		margin-top 60px
 		box-shadow 0px 15px 5em 0px rgba(0,0,0,.3)
 		margin-bottom 0
+
+		.show-more
+			display flex
+			justify-content center
 
 		.oneline-header
 			display flex

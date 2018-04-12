@@ -6,6 +6,7 @@
 			<Partners />
 			<About />
 			<Solutions />
+			<Features />
 			<Teams />
 			<Distribution />
 			<News />
@@ -20,6 +21,7 @@ import Greeting from './layouts/Greeting';
 import Partners from './layouts/Partners';
 import About from './layouts/About';
 import Solutions from './layouts/Solutions';
+import Features from './layouts/Features';
 import Teams from './layouts/Teams';
 import Distribution from './layouts/Distribution';
 import News from './layouts/News';
@@ -33,6 +35,7 @@ export default {
 		Partners,
 		About,
 		Solutions,
+		Features,
 		Teams,
 		Distribution,
 		News,

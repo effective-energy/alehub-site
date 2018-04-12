@@ -41,7 +41,7 @@
 				</b-col>
 
 				<b-col md="5" class="description">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam temporibus id voluptas impedit officia, commodi saepe eius doloribus, magni ducimus culpa qui! Officia delectus id consequatur, repudiandae ab hic illum!</p>
+					<p>The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.</p>
 
 					<b-button variant="outline-warning">
 		                Buy tokens
@@ -76,6 +76,9 @@
 		.description
 			p
 				color #fff
+				font-size 16px
+				letter-spacing 0.4px
+				line-height 22px
 
 		.hueta
 			display flex

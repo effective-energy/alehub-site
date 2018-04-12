@@ -14,7 +14,7 @@
 				</b-col>
 				<b-col md="6" class="about-block">
 					<h1>What is alehub</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ut ipsum at ab esse inventore laborum iste nam. Iusto laborum explicabo culpa soluta? Totam reprehenderit cupiditate rerum sunt, animi consequatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consequuntur adipisci quasi soluta dolorum quaerat sequi! Fuga repudiandae, rerum corporis! Et aspernatur minima, fugit culpa necessitatibus natus laudantium quaerat odio.</p>
+					<p>The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers. ALE in this sense is an online distributed information and financial platform / project management system, the location and interaction of project parties (in the first stage of IT projects).</p>
 
 					<b-button variant="outline-warning">White paper</b-button>
 					<b-button variant="outline-warning">Technical details of pre ICO</b-button>

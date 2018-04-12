@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="num">
-                  <span class="time">24</span>
+                  <span class="time">22</span>
                   <span class="type">Hours</span>
                 </div>
 
@@ -59,6 +59,17 @@
 			font-weight 300
 			font-size 48px
 			letter-spacing 2px
+
+		.btn-buy
+			background-color #051634
+			color #fff
+			font-weight lighter
+			padding-right 25px
+			padding-left 25px
+			text-transform: uppercase
+			padding-top 8px
+			padding-bottom 8px
+			font-size 14px
 
 	.timer-block
 		margin 40px 0
