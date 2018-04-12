@@ -1,50 +1,67 @@
 <template>
-	<b-jumbotron class="greeting">
-	  <b-row>
-          <b-col md="6">
-            <h1 class="title">Welcome to the future of the HR industry</h1>
-            
-            <div class="timer-block">
-              <p>Round 1 will begin:</p>
+	<div>
+		<div class="anime">
 
-              <div class="countdown">
-                <div class="num">
-                  <span class="time">01</span>
-                  <span class="type">Days</span>
-                </div>
+		</div>
+		<b-jumbotron class="greeting">
+			<b-row>
+						<b-col md="6">
+							<h1 class="title">Welcome to the future of the HR industry</h1>
+							
+							<div class="timer-block">
+								<p>Round 1 will begin:</p>
 
-                <div class="num">
-                  <span class="time">22</span>
-                  <span class="type">Hours</span>
-                </div>
+								<div class="countdown">
+									<div class="num">
+										<span class="time">01</span>
+										<span class="type">Days</span>
+									</div>
 
-                <div class="num">
-                  <span class="time">59</span>
-                  <span class="type">Minutes</span>
-                </div>
+									<div class="num">
+										<span class="time">22</span>
+										<span class="type">Hours</span>
+									</div>
 
-                <div class="num">
-                  <span class="time">48</span>
-                  <span class="type">Seconds</span>
-                </div>
-              </div>
+									<div class="num">
+										<span class="time">59</span>
+										<span class="type">Minutes</span>
+									</div>
 
-            </div>
+									<div class="num">
+										<span class="time">48</span>
+										<span class="type">Seconds</span>
+									</div>
+								</div>
 
-            <button class="btn btn-buy">Buy tokens</button>
-          </b-col>
+							</div>
 
-          <b-col md="6">
-            <img src="../../assets/img/brain.png" alt="" width="100%">
-          </b-col>
+							<button class="btn btn-buy">Buy tokens</button>
+						</b-col>
 
-        </b-row>
-	</b-jumbotron>
+						<b-col md="6">
+							<img src="../../assets/img/brain.png" alt="" width="100%">
+						</b-col>
+
+					</b-row>
+		</b-jumbotron>
+	</div>
 </template>
 
 <script>
 	export default {
-		name: 'Greeting'
+		name: 'Greeting',
+		mounted() {
+			let resizer = function () {
+				let outer = document.querySelector('.jumbotron.greeting'),
+						anime = document.querySelector('.anime');
+				let	outerW = outer.offsetWidth,
+						outerH = outer.offsetHeight;
+				anime.style.width = outerW+'px';
+				anime.style.height = outerH+'px';
+			}
+			resizer();
+			window.addEventListener("resize", resizer);
+		}
 	}
 </script>
 
@@ -106,4 +123,6 @@
 
 			.separator
 				padding 0 5px
+	.anime
+		position absolute
 </style>
