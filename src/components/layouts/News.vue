@@ -10,17 +10,51 @@
 		            </b-button>
 				</b-col>
 
-				<b-col md="3" v-for="n in 4">
-					<b-card title="Card Title"
-				          img-src="https://lorempixel.com/600/300/food/5/"
-				          img-alt="Image"
-				          img-top
+				<b-col md="3">
+					<b-card 
+				          img-src="http://via.placeholder.com/300x300"
 				          tag="article"
-				          style="max-width: 20rem;"
 				          class="mb-2">
 				    <p class="card-text">
-				      Some quick example text to build on the card title and make up the bulk of the card's content.
+				      The ALE product is  primarily a service  for consumers
 				    </p>
+				    <p class="date">Feb 11, 2018</p>
+				  </b-card>
+				</b-col>
+
+				<b-col md="3">
+					<b-card 
+				          img-src="http://via.placeholder.com/300x300"
+				          tag="article"
+				          class="mb-2">
+				    <p class="card-text">
+				      Alehub IOS application beta 1
+				    </p>
+				    <p class="date">Feb 11, 2018</p>
+				  </b-card>
+				</b-col>
+
+				<b-col md="3">
+					<b-card 
+				          img-src="http://via.placeholder.com/300x300"
+				          tag="article"
+				          class="mb-2">
+				    <p class="card-text">
+				      How To Invest In An ICO
+				    </p>
+				    <p class="date">Feb 11, 2018</p>
+				  </b-card>
+				</b-col>
+
+				<b-col md="3">
+					<b-card 
+				          img-src="http://via.placeholder.com/300x300"
+				          tag="article"
+				          class="mb-2">
+				    <p class="card-text">
+				      Push into billion-dollar Southeast Asian token markets
+				    </p>
+				    <p class="date">Feb 11, 2018</p>
 				  </b-card>
 				</b-col>
 
@@ -55,4 +89,30 @@
 
 			.btn
 				align-self center
+				background-color #D8D8DC
+				border 1px solid #D8D8DC
+				color #202226
+				padding 0.375rem 1.75rem
+				font-weight lighter
+				text-transform uppercase
+				font-size 14px
+
+		.card
+			border none
+			background none
+			font-size 18px
+			color #0F1118
+
+			img
+				border-radius 0
+
+			.date
+				margin 0
+				color #AAADB6
+				font-size 14px
+
+		.card:hover
+			background-color #fff
+			cursor pointer
+			box-shadow 0px 15px 5em 0px rgba(0,0,0,.3)
 </style>

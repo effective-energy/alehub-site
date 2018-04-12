@@ -35,7 +35,7 @@
           </b-col>
 
           <b-col md="6">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Brain_Drawing.svg" alt="" width="100%">
+            <img src="../../assets/img/brain.png" alt="" width="100%">
           </b-col>
 
         </b-row>

@@ -2,27 +2,27 @@
 	<div class="partners">
 		<b-row>
 			<b-col md="4">
-				<p>Our partners:</p>
+				<p class="title">Our partners:</p>
 			</b-col>
 
 			<b-col md="2">
 				<div class="partner">
-					<img src="https://alehub.eu-4.evennode.com/ale-files/img/partners/itmo.png" alt="">
+					<img src="../../assets/img/partners/serokell.png" alt="Serokell" />
 				</div>
 			</b-col>
 			<b-col md="2">
 				<div class="partner">
-					<img src="https://alehub.eu-4.evennode.com/ale-files/img/partners/cryptob2b.png" alt="">
+					<img src="../../assets/img/partners/itmo.png" alt="Itmo" />
 				</div>
 			</b-col>
 			<b-col md="2">
 				<div class="partner">
-					<img src="https://alehub.eu-4.evennode.com/ale-files/img/partners/blockchain-spb.png" alt="">
+					<img src="../../assets/img/partners/cryptob2b.png" alt="Cryptob2b" />
 				</div>
 			</b-col>
 			<b-col md="2">
 				<div class="partner">
-					<img src="https://alehub.eu-4.evennode.com/ale-files/img/partners/serokell.svg" alt="">
+					<img src="../../assets/img/partners/blockchain-spb.png" alt="Blockchain SPb" />
 				</div>
 			</b-col>
 		</b-row>
@@ -36,7 +36,21 @@
 </script>
 
 <style lang="stylus" scoped>
-	.partner
+	.partners
+		padding 4em 2em
+
+		.title
+			font-size 20px
+			margin 0
+			color #0F1118
+
 		img
 			width 100%
+			height 68px
+			object-fit scale-down
+
+		.row
+			display flex
+			align-items center
+
 </style>

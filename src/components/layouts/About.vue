@@ -2,11 +2,17 @@
 	<b-jumbotron class="about">
 		<b-container>
 			<b-row>
-				<b-col md="6">
-					<h3>We are attracting blockchain technology in the world of HR</h3>
-					<img src="https://cdn.dribbble.com/users/30252/screenshots/1198467/attachments/158890/MacBook-Pro-mockup.png" alt="" width="100%">
+				<b-col md="6" class="description-block">
+					<h3>
+						We are attracting
+						<br />
+						blockchain technology
+						<br />
+						in the world of HR
+					</h3>
+					<img src="../../assets/img/macbook.png" alt="" width="100%">
 				</b-col>
-				<b-col md="6">
+				<b-col md="6" class="about-block">
 					<h1>What is alehub</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ut ipsum at ab esse inventore laborum iste nam. Iusto laborum explicabo culpa soluta? Totam reprehenderit cupiditate rerum sunt, animi consequatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consequuntur adipisci quasi soluta dolorum quaerat sequi! Fuga repudiandae, rerum corporis! Et aspernatur minima, fugit culpa necessitatibus natus laudantium quaerat odio.</p>
 
@@ -28,67 +34,31 @@
 <style lang="stylus" scoped>
 	.about
 		background linear-gradient(270deg,#282a37,#303643)
-		margin-top 60px
 		box-shadow 0px 15px 5em 0px rgba(0,0,0,.3)
 		margin-bottom 0
 
-		.title
-			font-weight 300
-			font-size 48px
-			letter-spacing 2px
-			color #fff
-			padding-bottom 50px
-
-		.description
-			p
-				color #fff
-
-		.hueta
-			display flex
-			text-align center
-			justify-content center
-			align-items center
+		.description-block
+			h3
+				font-weight 300
+				font-size 18px
+				letter-spacing 1.34px
+				color #ECECF0
+				text-transform uppercase
 
 			img
-				width 100%
+				padding 2.4em 0 0 0
 
-			.stats
-				position absolute
-				font-size 1.5em
-				font-weight lighter
+		.about-block
+			h1
+				font-size 60px
+				color #FBB841
+				font-weight 300
+				letter-spacing 1.12px
 
-				.count, .type
-					color #fff
-					letter-spacing 2px
-
-				.separator
-					width 100%
-					height 2px
-					background #fff
-
-		.distribution-list
-
-			.list-group-item
-				background none
-				border none
+			p
+				font-weight 300
+				font-size 16px
+				letter-spacing 0.4px
 				color #fff
-				display flex
-				align-items center
-				justify-content flex-start
-
-				.badge
-					min-width 37px
-					min-height 37px
-					display block
-					border-radius 50%
-					margin-right 20px
-
-					&.badge-darkblue
-						background-color #3a87ff
-					&.badge-green
-						background-color #00b271
-					&.badge-lightblue
-						background-color #00a3e1
-					&.badge-yellow
-						background-color #ffb419
+				padding 1.5em 0
 </style>

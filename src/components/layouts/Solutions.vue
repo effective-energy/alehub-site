@@ -8,42 +8,42 @@
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/64x45" alt="" />
+						<img src="../../assets/img/solutions/1.png" alt="" />
 						<span class="text">Consensus of trust of the  parties through BlockChain, backed by financial guarentees.</span>
 					</div>
 				</b-col>
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/47x41" alt="" />
+						<img src="../../assets/img/solutions/2.png" alt="" />
 						<span class="text">Unification and maximum automation of participant verification processes.</span>
 					</div>
 				</b-col>
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/43x37" alt="" />
+						<img src="../../assets/img/solutions/3.png" alt="" />
 						<span class="text">Capitalization of settlement means, control and management of exprenses.</span>
 					</div>
 				</b-col>
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/51x43" alt="" />
+						<img src="../../assets/img/solutions/4.png" alt="" />
 						<span class="text">Automatism of the mechanisms of mutual settlements of the parties to the contract.</span>
 					</div>
 				</b-col>
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/46x43" alt="" />
+						<img src="../../assets/img/solutions/5.png" alt="" />
 						<span class="text">Widely authoritative verification agents.</span>
 					</div>
 				</b-col>
 
 				<b-col md="4">
 					<div class="solution-item">
-						<img src="http://via.placeholder.com/39x50" alt="" />
+						<img src="../../assets/img/solutions/6.png" alt="" />
 						<span class="text">Security of own operating environment.</span>
 					</div>
 				</b-col>
