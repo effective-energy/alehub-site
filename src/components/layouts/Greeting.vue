@@ -125,4 +125,36 @@
 				padding 0 5px
 	.anime
 		position absolute
+
+	@media(max-width: 991px)
+		.greeting
+			.title
+				font-size 36px
+
+			.timer-block
+				margin 26px 0
+
+				.countdown
+					.type
+						font-size 14px
+
+					.time
+						width 55px
+						height 55px
+						padding 8px
+						font-size 26px
+
+	@media(max-width: 767px)
+		.greeting
+			.row
+				flex-direction column-reverse
+
+				img
+					margin-bottom 30px
+
+	@media(max-width: 375px)
+		.greeting
+			button
+				width 100%
+
 </style>

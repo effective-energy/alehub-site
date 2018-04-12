@@ -5,22 +5,22 @@
 				<p class="title">Our partners:</p>
 			</b-col>
 
-			<b-col md="2">
+			<b-col md="2" sm="6">
 				<div class="partner">
 					<img src="../../assets/img/partners/serokell.png" alt="Serokell" />
 				</div>
 			</b-col>
-			<b-col md="2">
+			<b-col md="2" sm="6">
 				<div class="partner">
 					<img src="../../assets/img/partners/itmo.png" alt="Itmo" />
 				</div>
 			</b-col>
-			<b-col md="2">
+			<b-col md="2" sm="6">
 				<div class="partner">
 					<img src="../../assets/img/partners/cryptob2b.png" alt="Cryptob2b" />
 				</div>
 			</b-col>
-			<b-col md="2">
+			<b-col md="2" sm="6">
 				<div class="partner">
 					<img src="../../assets/img/partners/blockchain-spb.png" alt="Blockchain SPb" />
 				</div>
@@ -52,5 +52,12 @@
 		.row
 			display flex
 			align-items center
+
+	@media(max-width: 767px)
+		.partners
+			.row
+				.partner
+					padding-bottom 15px
+
 
 </style>

@@ -10,7 +10,7 @@
 		            </b-button>
 				</b-col>
 
-				<b-col md="3">
+				<b-col lg="3" md="4" sm="6">
 					<b-card 
 				          img-src="http://via.placeholder.com/300x300"
 				          tag="article"
@@ -22,7 +22,7 @@
 				  </b-card>
 				</b-col>
 
-				<b-col md="3">
+				<b-col lg="3" md="4" sm="6">
 					<b-card 
 				          img-src="http://via.placeholder.com/300x300"
 				          tag="article"
@@ -34,7 +34,7 @@
 				  </b-card>
 				</b-col>
 
-				<b-col md="3">
+				<b-col lg="3" md="4" sm="6">
 					<b-card 
 				          img-src="http://via.placeholder.com/300x300"
 				          tag="article"
@@ -46,7 +46,7 @@
 				  </b-card>
 				</b-col>
 
-				<b-col md="3">
+				<b-col lg="3" md="4" sm="6">
 					<b-card 
 				          img-src="http://via.placeholder.com/300x300"
 				          tag="article"
@@ -125,4 +125,23 @@
 			background-color #fff
 			cursor pointer
 			box-shadow 0px 15px 5em 0px rgba(0,0,0,.3)
+
+	@media(max-width: 991px)
+		.news
+			.oneline-header
+				.title
+					font-size 50px
+
+	@media(max-width: 425px)
+		.news
+			.oneline-header
+				.title
+					font-size 36px
+
+	@media(max-width: 375px)
+		.news
+			.show-more
+				button 
+					width 100%
+
 </style>

@@ -2,7 +2,7 @@
 	<b-jumbotron class="about">
 		<b-container>
 			<b-row>
-				<b-col md="6" class="description-block">
+				<b-col lg="6" md="12" class="description-block">
 					<h3>
 						We are attracting
 						<br />
@@ -12,7 +12,7 @@
 					</h3>
 					<img src="../../assets/img/macbook.png" alt="" width="100%">
 				</b-col>
-				<b-col md="6" class="about-block">
+				<b-col lg="6" md="12" class="about-block">
 					<h1>What is alehub</h1>
 					<p>The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers. ALE in this sense is an online distributed information and financial platform / project management system, the location and interaction of project parties (in the first stage of IT projects).</p>
 
@@ -61,4 +61,31 @@
 				letter-spacing 0.4px
 				color #fff
 				padding 1.5em 0
+
+	@media(max-width: 1199px)
+		.about
+			.about-block
+				h1
+					font-size 50px
+
+	@media(max-width: 991px)
+		.about
+			.description-block
+				margin-bottom 30px
+
+	@media(max-width: 425px)
+		.about
+			.about-block
+				h1
+					font-size 36px
+
+				.btn:last-child
+					margin-top 15px
+
+	@media(max-width: 375px)
+		.about
+			.about-block
+				button 
+					width 100%
+
 </style>
