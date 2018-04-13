@@ -96,7 +96,7 @@
 				</b-col>
 
 				<b-col md="6" style="text-align:center">
-					<img style="max-width:310px;" src="../../../static/images/big_logo.svg" alt="" width="100%">
+					<img src="../../assets/img/brain.png" alt="" width="100%">
 				</b-col>
 
 			</b-row>
@@ -205,10 +205,8 @@
 				padding 0 5px
 	.anime
 		position absolute
-<<<<<<< HEAD
 		.path
 			stroke-width 0.5
-=======
 
 	@media(max-width: 991px)
 		.greeting
@@ -241,5 +239,4 @@
 			button
 				width 100%
 
->>>>>>> 860c9950df4a5398d6224a2a721aa29ccd56c8d2
 </style>
