@@ -8,8 +8,8 @@
 					</h1>
 				</b-col>
 
-				<b-col md="4">
-					<div class="hueta">
+				<b-col lg="4" md="7">
+					<div class="chart">
 						<img src="../../assets/img/hueta.png" alt="" />
 						<div class="stats">
 							<span class="count">77%</span>
@@ -19,7 +19,7 @@
 					</div>
 				</b-col>
 
-				<b-col md="3">
+				<b-col lg="3" md="5" class="legend">
 					<b-list-group class="distribution-list">
 					  <b-list-group-item>
 					    <div class="badge badge-darkblue"></div>
@@ -40,7 +40,7 @@
 					</b-list-group>
 				</b-col>
 
-				<b-col md="5" class="description">
+				<b-col lg="5" md="12" class="description">
 					<p>The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.</p>
 
 					<b-button variant="outline-warning">
@@ -80,7 +80,7 @@
 				letter-spacing 0.4px
 				line-height 22px
 
-		.hueta
+		.chart
 			display flex
 			text-align center
 			justify-content center
@@ -128,4 +128,27 @@
 						background-color #00a3e1
 					&.badge-yellow
 						background-color #ffb419
+
+	@media(max-width: 991px)
+		.distribution
+			.description
+				margin-top 40px
+
+			.legend
+				align-self center
+
+	@media(max-width: 425px)
+		.distribution
+			.title
+				font-size 36px
+				padding-bottom 20px
+
+			.legend
+				margin-top 20px
+
+	@media(max-width: 375px)
+		.distribution
+			.description
+				button
+					width 100%
 </style>

@@ -2,14 +2,14 @@
 	<footer>
 		<b-container>
 			<b-row>
-				<b-col md="6">
+				<b-col lg="6" md="5">
 					<div class="info">
 						<div class="logo"></div>
 						<p>Effective Energy LLC © 2018 All rights reserved.</p>
 						<a href="#">Terms and conditions</a>
 					</div>
 				</b-col>
-				<b-col md="6">
+				<b-col lg="6" md="7">
 					<div class="actions">
 						<div class="social-icons">
 							<div class="icon-item">
@@ -80,6 +80,7 @@
 <style lang="stylus" scoped>
 	footer
 		padding 3em 0
+
 		.info
 			.logo
 				background-image url('../../assets/img/logo.png')
@@ -139,4 +140,29 @@
 
 				.icon-item:last-child
 					margin-right 0
+
+		@media(max-width: 991px)
+			.actions
+				.social-icons
+					.icon-item
+						margin 0
+
+		@media(max-width: 575px)
+			.menu
+				display none
+
+		@media(max-width: 375px)
+			.actions
+				flex-direction column-reverse
+				align-items center
+
+				.subscribe
+					margin-top 15px
+					margin-bottom 15px
+
+			.info
+				display flex
+				flex-direction column
+				align-items center
+			
 </style>
