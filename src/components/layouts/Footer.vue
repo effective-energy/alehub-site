@@ -160,6 +160,9 @@
 					margin-top 15px
 					margin-bottom 15px
 
+				.social-icons
+					padding-left 15px
+
 			.info
 				display flex
 				flex-direction column

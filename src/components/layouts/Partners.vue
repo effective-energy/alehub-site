@@ -59,5 +59,12 @@
 				.partner
 					padding-bottom 15px
 
+	@media(max-width: 375px)
+		.partners
+			padding 4em 2em 2em
+
+	@media(max-width: 320px)
+		.partners
+			padding-top 2em
 
 </style>

@@ -88,4 +88,17 @@
 				button 
 					width 100%
 
+				h1
+					font-size 30px
+
+	@media(max-width: 320px)
+		.about
+			.description-block
+				h3
+					font-size 14px
+
+			.about-block
+				h1
+					font-size 25px
+
 </style>

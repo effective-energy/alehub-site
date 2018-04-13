@@ -20,7 +20,7 @@
 
 				<b-navbar-nav class="ml-auto">
 
-					<b-button size="sm" class="login-btn" variant="warning" :size="'sm'">Log in</b-button>
+					<b-button size="sm" class="login-btn" variant="warning">Log in</b-button>
 
 					<b-nav-item-dropdown
 						:text="selectedLanguage"
@@ -105,4 +105,18 @@
 						padding-right 0.1rem
 						margin-right 0.5rem
 						margin-left 0.5rem
+
+	@media(max-width: 991px)
+		.navbar
+			.navbar-nav
+				.nav-item:first-child
+					.nav-link
+						margin-right 0
+
+	@media(max-width: 767px)
+		.navbar
+			.navbar-brand
+				margin-right 0
+				text-align right
+
 </style>

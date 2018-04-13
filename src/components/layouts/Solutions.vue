@@ -95,4 +95,23 @@
 			.title
 				font-size 36px	
 
+	@media(max-width: 375px)
+		.solutions
+			.title
+				font-size 30px	
+
+	@media(max-width: 320px)
+		.solutions
+			.title
+				font-size 25px
+
+		.solution-item
+			flex-direction column
+			margin-bottom 2em
+
+			.text
+				margin-left 0
+				text-align center
+				padding-top 15px
+
 </style>

@@ -148,7 +148,18 @@
 
 	@media(max-width: 375px)
 		.distribution
+			.title
+				font-size 30px
+
 			.description
+				margin-top 20px
+
 				button
 					width 100%
+	
+	@media(max-width: 320px)
+		.distribution
+			.title
+				font-size 25px
+
 </style>

@@ -137,11 +137,23 @@
 			.oneline-header
 				.title
 					font-size 36px
+					
+				padding-bottom 30px
 
 	@media(max-width: 375px)
 		.news
+			.oneline-header
+				.title
+					font-size 36px
+
 			.show-more
 				button 
 					width 100%
+
+	@media(max-width: 320px)
+		.news
+			.oneline-header
+				.title
+					font-size 25px
 
 </style>

@@ -156,5 +156,28 @@
 		.greeting
 			button
 				width 100%
+			
+			.row
+				img 
+					margin-bottom 15px
+
+			.timer-block
+				.countdown
+					justify-content space-between
+
+					.num
+						padding 5px
+
+	@media(max-width: 320px)
+		.greeting
+			margin-top 30px
+
+			.title
+				font-size 30px
+			
+			.timer-block
+				.count-down
+					.num
+						padding 0
 
 </style>

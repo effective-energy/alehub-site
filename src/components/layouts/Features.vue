@@ -118,4 +118,11 @@
 			button 
 				width 100%
 
+			.title
+				font-size 30px
+
+	@media(max-width: 320px)
+		.features
+			.title
+				font-size 25px
 </style>

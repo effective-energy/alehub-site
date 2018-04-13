@@ -233,4 +233,22 @@
 				.card-body
 					text-align center
 
+			.title
+				font-size 30px
+
+			.resume
+				button 
+					width 100%
+
+	@media(max-width: 320px)
+		.teams
+			.title
+				font-size 25px
+
+			.resume
+				padding 25px
+
+				.text
+					text-align center
+
 </style>
