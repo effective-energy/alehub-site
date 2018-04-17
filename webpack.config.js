@@ -43,13 +43,18 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg|otf)$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['*', '.js', '.vue', '.json']
   },
   devServer: {
     historyApiFallback: true,
