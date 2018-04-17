@@ -1,21 +1,12 @@
-import Vue from 'vue';
-import App from './App';
-import router from './router';
-import VModal from 'vue-js-modal';
-import VueQrcode from '@xkeshi/vue-qrcode'
+import Vue from 'vue'
+import BootstrapVue from "bootstrap-vue"
+import App from './App.vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
 
-import VueResource from 'vue-resource';
-
-Vue.config.productionTip = false;
-Vue.prototype.$host = 'https://alehub.eu-4.evennode.com';
-
-Vue.use(VueResource);
-Vue.use(VModal);
-Vue.component('qrcode', VueQrcode);
+Vue.use(BootstrapVue)
 
 new Vue({
   el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-});
+  render: h => h(App)
+})
