@@ -6,20 +6,14 @@
         <div class="separator"></div>
         <div class="advantages-body">
             <div class="select-point">
-                <ul class="select-point-list">
-                    <li>
-                        ALE vs Project Management Systems
-                    </li>
-                    <li>
-                        Point 2
-                    </li>
-                    <li>
-                        Point 3
-                    </li>
-                </ul>
+                <div class="point">
+                    ALE vs Project Management Systems
+                </div>
+                <div class="point point-right-active">
+                    ALE vs Other Blockchain Platforms
+                </div>
             </div>
             <div class="block-advantages">
-
                 <div class="advantage">
                     <div class="item item-title">
                         <p>
@@ -177,7 +171,7 @@
         .separator
             width 76px
             height 2px
-            margin 18px 0
+            margin 25px 0
             background-color #34343e
 
         .advantages-title
@@ -187,21 +181,34 @@
             width 100%
 
         .advantages-body
+            width 100%
             display flex
             flex-direction column
-            width 100%
 
             .select-point
-                display flex
-                justify-content center
                 width 100%
+                margin-bottom 30px
+                /*display flex*/
+                /*justify-content center*/
 
-                .select-point-list
-                    display flex
-                    list-style none
+                .point
+                    cursor pointer
+                    width 33%
+                    display inline-block
+                    font-size 18px
+                    text-align center
+                    color #34343e
+                    opacity 0.3
+                    /*margin-right 30px*/
 
-                    li
-                        padding-left 30px
+                .point-right-active
+                    cursor default
+                    opacity 1
+                    border-bottom 2px solid #ffbc00
+
+                .point-left-active
+                    margin-left 33%
+
 
             .block-advantages
                 display flex
@@ -233,6 +240,13 @@
 
                 .item-title
                     font-weight 700
+                    border-bottom 2px solid transparent
+                    -webkit-border-image -webkit-gradient(left top, right top, color-stop(0%, rgba(227, 227, 230, 0)), color-stop(50%, #b0b0b5), color-stop(100%, rgba(227, 227, 230, 0)))
+                    -webkit-border-image  -webkit-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
+                    -moz-border-image -moz-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
+                    -o-border-image -o-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
+                    border-image linear-gradient(to right, rgba(227, 227, 230, 0), #b0b0b5 50%, rgba(227, 227, 230, 0))
+                    border-image-slice 1
 
                 /*.advantage-item*/
                     /*width 50%*/
