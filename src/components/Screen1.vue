@@ -176,7 +176,10 @@
         <div class="container-fluid what-is">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <img src="../../static/images/desctop.png" class="desktop" alt="">
+                    <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
+                    <img src="../../static/images/screen1.png" class="screenshot" style="visibility:visible" alt="">
+                    <img src="../../static/images/screen2.png" class="screenshot" style="visibility:hidden" alt="">
+                    <img src="../../static/images/screen3.png" class="screenshot" style="visibility:hidden" alt="">
                     <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
                 </div>
                 <div class="col-lg-6 desc">
@@ -229,6 +232,20 @@ export default {
     },
     mounted() {
         this.startAnime();
+        setInterval(() => {
+            let screens = document.querySelectorAll('.screenshot');
+            for (let i = 0; i < screens.length; i++) {
+                console.log(i, screens.length, screens[i].style.visibility)
+                if (screens[i].style.visibility != "hidden") {
+                    screens[i].style.visibility = "hidden";
+                    if (i != (screens.length - 1)) 
+                        screens[i+1].style.visibility = "visible";
+                    else
+                        screens[0].style.visibility = "visible";
+                    break
+                }
+            }
+        }, 5000);
 	}
 }
 </script>

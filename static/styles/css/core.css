@@ -204,6 +204,14 @@ body {
 }
 #screen1 .container-fluid.what-is .desktop {
   width: 100%;
+  z-index: 15;
+}
+#screen1 .container-fluid.what-is .screenshot {
+  z-index: 14;
+  position: absolute;
+  top: 4.6%;
+  left: 12%;
+  width: 77%;
 }
 #screen1 .container-fluid.what-is .title {
   margin-top: 15px;
