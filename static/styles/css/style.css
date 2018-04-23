@@ -114,7 +114,7 @@ body {
   color: #34343e;
 }
 #screen1 {
-  min-width: 100vh;
+  min-height: 100vh;
 }
 .btn-buy-tokens {
   margin-right: 5px;
