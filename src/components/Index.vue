@@ -1,14 +1,14 @@
 <template>
     <div class="app">
-        <Header />
-        <Screen1 />
-        <Screen2 />
-        <Screen3 />
-        <Screen4 />
-        <Screen5 />
-        <Screen6 />
-        <Screen7 />
-        <Footer />
+        <header />
+        <screen1 />
+        <screen2 />
+        <screen3 />
+        <screen4 />
+        <screen5 />
+        <screen6 />
+        <screen7 />
+        <footer />
     </div>
 </template>
 
