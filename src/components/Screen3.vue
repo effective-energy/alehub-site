@@ -151,8 +151,17 @@
                 }
             }
         },
-        computed: {},
-        methods: {}
+        computed: {
+
+        },
+        methods: {
+
+        },
+        mounted() {
+            let point = anime({
+
+            });
+        }
     }
 </script>
 
