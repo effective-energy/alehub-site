@@ -430,6 +430,18 @@ body {
 .crypto .collection .item:hover .description .name {
   display: none;
 }
+.anim {
+  width: 100%;
+  height: 200vh;
+  position: absolute;
+}
+.anim .path {
+  stroke-width: 0.5;
+}
+img,
+a {
+  z-index: 10;
+}
 @-moz-keyframes movingcolor {
   0% {
     background-position: 0% 0%;
