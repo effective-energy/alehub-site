@@ -24,13 +24,40 @@
 	    	</div>
 
 	    	<div class="row distribution">
-	    		<div class="col-6">
-	    			<div class="steep-statis">
-	    				
+	    		<div class="col-3">
+
+	    			<div class="steep-statis steep-sale">
+	    				<div class="steep-team">
+	    					<div class="steep-referral">
+	    						<div class="steep-bounty">
+	    							<span class="steep-count">100%</span>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="col-3">
+	    			<div class="steep-list">
+	    				<div class="item-list">
+	    					<div class="color-steep steep-sale"></div>
+	    					<span>Sale for ICO</span>
+	    				</div>
+	    				<div class="item-list">
+	    					<div class="color-steep steep-team"></div>
+	    					<span>Team</span>
+	    				</div>
+	    				<div class="item-list">
+	    					<div class="color-steep steep-referral"></div>
+	    					<span>Referral program, advisors</span>
+	    				</div>
+	    				<div class="item-list">
+	    					<div class="color-steep steep-bounty"></div>
+	    					<span>Bounty</span>
+	    				</div>
 	    			</div>
 	    		</div>
 	    		<div class="col-6">
-	    			<h1 class="section-title is-white is-right">Distribution of tokens</h1>
+	    			<h1 class="section-title is-white is-right mt0">Distribution of tokens</h1>
 	    			<div class="divider"></div>
 	    			<p class="small">
 	    				The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.
@@ -51,7 +78,6 @@ export default {
 
     .section
     	padding 71px 0
-    	padding-bottom 130px
 
     .economy-section
     	background-color #343a49
@@ -70,6 +96,9 @@ export default {
 
     .is-right
     	text-align left
+
+    .mt0
+    	margin-top 0!important
 
     .section-title
     	font-family MuseoSansCyrl300
@@ -125,6 +154,7 @@ export default {
     		color #ffffff
 
     .distribution
+    	padding 64px
     	.small
     		font-family MuseoSansCyrl300
     		font-size 14px
@@ -137,8 +167,90 @@ export default {
     		color #ffffff
 
     	.steep-statis
-    		width 280px
-    		height 280px
-    		background-color red
+    		width 220px
+    		height 220px
     		border-radius 50%
+    		display flex
+    		justify-content center
+    		align-items center
+
+    		&.steep-sale
+    			border 2px solid #139ac9;
+
+    		.steep-team
+    			width 180px
+	    		height 180px
+	    		border-radius 50%
+    			border 2px solid #6289fd
+    			display flex
+    			justify-content center
+    			align-items center
+
+    			.steep-referral
+    				width 140px
+    				height 140px
+    				border-radius 50%
+    				border 2px solid #80ff89
+    				display flex
+	    			justify-content center
+	    			align-items center
+
+    				.steep-bounty
+	    				width 100px
+	    				height 100px
+	    				border-radius 50%
+	    				border 2px solid #fab604
+	    				display flex
+	    				justify-content center
+	    				align-items center
+
+	    				.steep-count
+	    					font-family MuseoSansCyrl300
+	    					font-size 22px
+	    					font-weight 300
+	    					font-style normal
+	    					font-stretch normal
+	    					line-height normal
+	    					letter-spacing normal
+	    					color #ffffff
+
+    	.steep-list
+    		display flex
+    		flex-direction column
+
+    		.item-list
+    			width 100%
+    			height 30px
+    			margin 10px 0
+    			display flex
+    			align-items center
+
+    			.color-steep
+    				width 20px
+    				height 20px
+    				border-radius 50%
+    				margin-right 15px
+
+    				&.steep-sale
+    					border solid 2px #139ac9
+
+    				&.steep-team
+    					border solid 2px #6289fd
+
+    				&.steep-referral
+    					border solid 2px #80ff89
+
+    				&.steep-bounty
+    					border solid 2px #fab604
+
+    			span
+    				color red
+    				font-family MuseoSansCyrl300
+    				font-size 16px
+    				font-weight 300
+    				font-style normal
+    				font-stretch normal
+    				line-height 1.25
+    				letter-spacing normal
+    				color #ffffff
 </style>

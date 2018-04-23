@@ -11,7 +11,7 @@
     		<div class="slides-body">
     			<div class="slide" v-for="(slide, slideIndex) in slides" :key="slideIndex">
     				<div class="line"></div>
-    				<div class="slide-content">
+    				<div class="slide-content" :class="{ 'deployed': slide.state === 'Deployed' }">
     					<h1 class="slide-title">
     						{{ slide.title }}
     					</h1>
@@ -45,7 +45,25 @@ export default {
     			title: 'Launch and publication MVP version of ALEHUB in centralised mode',
     			date: 'Sunday, April 15, 2018',
     			responsibles: [1, 2, 3],
-    			state: 'deployed',
+    			state: 'Deployed',
+    			progress: 100
+    		}, {
+    			title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
+    			date: 'Wednesday, August 1, 2018',
+    			responsibles: [1],
+    			state: 'Review',
+    			progress: 72
+    		}, {
+    			title: 'Launch of full ALEHUB version in centralised mode',
+    			date: 'Saturday, September 1, 2018',
+    			responsibles: [1, 2],
+    			state: 'Implementing',
+    			progress: 24
+    		}, {
+    			title: 'Launch and publication MVP version of ALEHUB in centralised mode',
+    			date: 'Sunday, April 15, 2018',
+    			responsibles: [1, 2, 3],
+    			state: 'Deployed',
     			progress: 100
     		}, {
     			title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
@@ -93,6 +111,7 @@ export default {
     	color #ffffff
 
     .roadmap-slides
+    	margin-top 46px
     	.topline
     		width 100%
     		height 2px
@@ -107,7 +126,7 @@ export default {
     			max-width 512px
     			margin 0 18px
     			.slide-content
-    				background-color: rgba(255, 255, 255, 0.05);
+    				background-color rgba(255, 255, 255, 0.05)
     				min-height 273px
 
     			.line
@@ -119,6 +138,13 @@ export default {
 
     			.slide-content
     				padding 32px 24px
+
+    				&.deployed
+    					background-color rgba(255, 188, 0, 0.05)
+
+    					.slide-title
+    						color #ffbc00
+
     				.slide-title
     					font-family MuseoSansCyrl300
     					font-size 24px
@@ -164,4 +190,12 @@ export default {
 						.state
 							display flex
 							justify-content space-between
+							align-items center
+
+							.status
+								margin 0
+								text-transform uppercase
+
+							.count
+								margin 0
 </style>
