@@ -141,6 +141,22 @@
             },
             toggleDropdown: function () {
                 this.dropdownOpen = !this.dropdownOpen;
+            },
+            initScroll () {
+                let _this = this
+                window.addEventListener('scroll', function () {
+                    _this.checkActive()
+                })
+            },
+            checkActive () {
+                for (let i = 0; i < this.navbar.length; i++) {
+                    if(document.querySelector(this.navbar[i].path) === null) return false;
+                    let offset = document.querySelector(this.navbar[i].path).offsetTop-74
+                    let height = document.querySelector(this.navbar[i].path).offsetHeight
+                    if (window.scrollY > offset && window.scrollY <= offset+height) {
+                        this.activeItem = i;
+                    }
+                }
             }
         },
         mounted() {
@@ -154,6 +170,8 @@
 
             console.log(featuresYOffset, 'featuresYOffset');
             console.log(navbarYOffset, 'navbarYOffset');
+
+            this.initScroll();
 
             window.addEventListener('scroll', () => {
                 // console.log(window.scrollY, 'scroll');
