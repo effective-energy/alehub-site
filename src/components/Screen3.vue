@@ -185,25 +185,27 @@
         flex-direction column
         width 100%
         padding 0 15%
-        min-height 100vh
         background-color #f5f5f7
 
         .separator
-            width 76px
+            width 152px
             height 2px
             margin 25px 0
             background-color #34343e
 
         .advantages-title
-            font-size 30px
+            font-size 60px
             display flex
             justify-content center
             width 100%
+            font-family MuseoSansCyrl300
+            margin-top 130px
 
         .advantages-body
             width 100%
             display flex
             flex-direction column
+            margin-bottom 130px
 
             .select-point
                 width 100%
