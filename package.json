@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.6",
-    "dragscroll": "^0.0.8",
+    "dragscroll": "0.0.8",
     "gulp": "^3.9.1",
     "gulp-notify": "^3.2.0",
     "gulp-stylus": "^2.7.0",
