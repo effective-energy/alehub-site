@@ -20,6 +20,9 @@
                          v-for="(member, i) in team.serokell"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
                         <img :src="member.src" alt="">
+                        <!--<div class="hover">-->
+                            <!--asd-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -221,5 +224,12 @@
                     margin 10px 20px 0 20px
                     height 266px
                     width 200px
+
+            .hover
+                display none
+
+            .image:hover > .hover
+                position absolute
+                display block
 
 </style>
