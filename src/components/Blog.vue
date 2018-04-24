@@ -9,7 +9,7 @@
 			<div class="row news-section">
 				<div class="col-6">
 					<div class="news-block">
-						<img src="http://via.placeholder.com/150x94" alt="" class="picture">
+						<img src="../../static/images/news-pictures/news.png" alt="" class="picture">
 						<div class="news-info">
 							<a href="#" class="news-title">Alehub IOS application beta 1</a>
 							<i class="news-date">Feb 11, 2018</i>
@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-6">
 					<div class="news-block">
-						<img src="http://via.placeholder.com/150x94" alt="" class="picture">
+						<img src="../../static/images/news-pictures/news.jpg" alt="" class="picture">
 						<div class="news-info">
 							<a href="#" class="news-title">How to invest in an ICO</a>
 							<i class="news-date">Feb 17, 2018</i>
@@ -27,7 +27,7 @@
 				</div>
 				<div class="col-6">
 					<div class="news-block">
-						<img src="http://via.placeholder.com/150x94" alt="" class="picture">
+						<img src="../../static/images/news-pictures/news2.jpg" alt="" class="picture">
 						<div class="news-info">
 							<a href="#" class="news-title">Push into billion-dollar Southeast Asian token markets</a>
 							<i class="news-date">Feb 23, 2018</i>
@@ -36,7 +36,7 @@
 				</div>
 				<div class="col-6">
 					<div class="news-block">
-						<img src="http://via.placeholder.com/150x94" alt="" class="picture">
+						<img src="../../static/images/news-pictures/news3.jpg" alt="" class="picture">
 						<div class="news-info">
 							<a href="#" class="news-title">Alehub iOS application beta 2</a>
 							<i class="news-date">Apr 12, 2018</i>
@@ -45,7 +45,7 @@
 				</div>
 				<div class="col-6">
 					<div class="news-block">
-						<img src="http://via.placeholder.com/150x94" alt="" class="picture">
+						<img src="../../static/images/news-pictures/news4.jpg" alt="" class="picture">
 						<div class="news-info">
 							<a href="#" class="news-title">Alehub Desktop application release</a>
 							<i class="news-date">Apr 12, 2018</i>
@@ -119,6 +119,11 @@
 			margin 32px 16px
 			display flex
 			justify-content flex-start
+
+			.picture
+				max-width 150px
+				width 150px
+				object-fit cover
 
 			.news-info
 				margin 4px 16px
