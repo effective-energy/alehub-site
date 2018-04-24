@@ -6,14 +6,19 @@
         <div class="separator"></div>
         <div class="advantages-body">
             <div class="select-point">
-                <div class="point">
-                    ALE vs Project Management Systems
+                <div class="point point-left-inactive">
+                    <div class="point__inner">
+                        ALE vs Project Management Systems
+                    </div>
                 </div>
                 <div class="point point-right-active">
-                    ALE vs Other Blockchain Platforms
+                    <div class="point__inner">
+                        ALE vs Other Blockchain Platforms
+                    </div>
                 </div>
             </div>
-            <div class="block-advantages">
+            <div class="block-advantages"
+                 :class="{'block-advantages__active': advantagesFlag === 'first', 'block-advantages__right': advantagesFlag === 'second'}">
                 <div class="advantage">
                     <div class="item item-title">
                         <p>
@@ -38,27 +43,33 @@
                         </p>
                     </div>
                 </div>
-
-                <!--<div class="advantage-item">-->
-                    <!--<ul class="advantages-list">-->
-                        <!--<li class="list-title">-->
-                            <!--ALE-->
-                        <!--</li>-->
-                        <!--<li v-for="item in advantage.first">-->
-                            <!--{{ item }}-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<div class="advantage-item">-->
-                    <!--<ul class="advantages-list">-->
-                        <!--<li class="list-title">-->
-                            <!--Other Blockchain Platforms-->
-                        <!--</li>-->
-                        <!--<li v-for="item in advantage.second">-->
-                            <!--{{ item }}-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
+            </div>
+            <div class="block-advantages"
+                 :class="{'block-advantages__active': advantagesFlag === 'second', 'block-advantages__left': advantagesFlag === 'first'}">
+                <div class="advantage">
+                    <div class="item item-title">
+                        <p>
+                            ALE
+                        </p>
+                    </div>
+                    <div class="item item-title">
+                        <p>
+                            Other Blockchain Platforms
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage" v-for="advantage in advantages.second">
+                    <div class="item">
+                        <p>
+                            {{ advantage.first }}
+                        </p>
+                    </div>
+                    <div class="item">
+                        <p>
+                            {{ advantage.second }}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -69,6 +80,7 @@
         name: 'Screen3',
         data() {
             return {
+                advantagesFlag: 'first',
                 advantages: {
                     first: [
                         {
@@ -121,45 +133,42 @@
                             first: 'Text first 1 6',
                             second: 'Text second 1 6'
                         },
-                    ],
-                    third: [
-                        {
-                            first: 'Text first 2 1',
-                            second: 'Text second 2 1'
-                        },
-                        {
-                            first: 'Text first 2 2',
-                            second: 'Text second 2 2'
-                        },
-                        {
-                            first: 'Text first 2 3',
-                            second: 'Text second 2 3'
-                        },
-                        {
-                            first: 'Text first 2 4',
-                            second: 'Text second 2 4'
-                        },
-                        {
-                            first: 'Text first 2 5',
-                            second: 'Text second 2 5'
-                        },
-                        {
-                            first: 'Text first 2 6',
-                            second: 'Text second 2 6'
-                        },
                     ]
                 }
             }
         },
-        computed: {
-
+        watch: {
+            advantagesFlag: function (val) {
+                console.log(val, 'val');
+            }
         },
-        methods: {
-
-        },
+        computed: {},
+        methods: {},
         mounted() {
-            let point = anime({
+            let self = this;
+            document.querySelector('.point-left-inactive').addEventListener('click', function () {
+                if (!this.classList.contains('point-left-active')) {
+                    this.classList.add('point-left-active');
+                    this.classList.remove('point-left-inactive');
 
+                    document.querySelector('.point-right-active').classList.add('point-right-inactive');
+                    document.querySelector('.point-right-active').classList.remove('point-right-active');
+
+                    self.advantagesFlag = 'second';
+                }
+            });
+
+
+            document.querySelector('.point-right-active').addEventListener('click', function () {
+                if (!this.classList.contains('point-right-active')) {
+                    this.classList.add('point-right-active');
+                    this.classList.remove('point-right-inactive');
+
+                    document.querySelector('.point-left-active').classList.add('point-left-inactive');
+                    document.querySelector('.point-left-active').classList.remove('point-left-active');
+
+                    self.advantagesFlag = 'first';
+                }
             });
         }
     }
@@ -173,7 +182,7 @@
         justify-content center
         flex-direction column
         width 100%
-        padding 0 10%
+        padding 0 15%
         min-height 100vh
         background-color #f5f5f7
 
@@ -196,7 +205,9 @@
 
             .select-point
                 width 100%
+                padding 0 10%
                 margin-bottom 30px
+                position relative
                 /*display flex*/
                 /*justify-content center*/
 
@@ -208,21 +219,66 @@
                     text-align center
                     color #34343e
                     opacity 0.3
-                    /*margin-right 30px*/
+                    -webkit-transition -webkit-transform 0.5s
+                    transition all 0.5s
+                    -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                    -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                    transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
 
-                .point-right-active
+                .point-right-active, .point-left-active
                     cursor default
                     opacity 1
-                    border-bottom 2px solid #ffbc00
+
+                    .point__inner
+                        height 27px
+                        display inline
+                        border-bottom 2px solid #ffbc00
+                        -webkit-transition -webkit-transform 0.5s
+                        transition all 0.5s
+                        -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                        -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                        transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+
+                .point-right-active
+                    transform translateX(0)
 
                 .point-left-active
-                    margin-left 33%
+                    transform translateX(100%)
 
+                .point-right-inactive
+                    opacity 0.3
+                    transform translateX(100%)
+
+                    .point__inner
+                        border-bottom 2px solid transparent
+
+                .point-left-inactive
+                    opacity 0.3
+                    transform translateX(0)
+
+                    .point__inner
+                        border-bottom 2px solid transparent
+
+            .block-advantages__active
+                transform translateX(0)
+
+            .block-advantages__left
+                position absolute
+                transform translateX(-150%)
+
+            .block-advantages__right
+                position absolute
+                transform translateX(150%)
 
             .block-advantages
                 display flex
                 flex-direction column
                 width 100%
+                -webkit-transition -webkit-transform 0.5s
+                transition all 0.5s
+                -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
 
                 .advantage
                     width 100%
@@ -237,7 +293,7 @@
                     align-items center
                     border-bottom 2px solid transparent
                     -webkit-border-image -webkit-gradient(left top, right top, color-stop(0%, rgba(227, 227, 230, 0)), color-stop(50%, #ceced1), color-stop(100%, rgba(227, 227, 230, 0)))
-                    -webkit-border-image  -webkit-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #ceced1 50%, rgba(227, 227, 230, 0) 100%)
+                    -webkit-border-image -webkit-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #ceced1 50%, rgba(227, 227, 230, 0) 100%)
                     -moz-border-image -moz-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #ceced1 50%, rgba(227, 227, 230, 0) 100%)
                     -o-border-image -o-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #ceced1 50%, rgba(227, 227, 230, 0) 100%)
                     border-image linear-gradient(to right, rgba(227, 227, 230, 0), #ceced1 50%, rgba(227, 227, 230, 0))
@@ -251,14 +307,14 @@
                     font-weight 700
                     border-bottom 2px solid transparent
                     -webkit-border-image -webkit-gradient(left top, right top, color-stop(0%, rgba(227, 227, 230, 0)), color-stop(50%, #b0b0b5), color-stop(100%, rgba(227, 227, 230, 0)))
-                    -webkit-border-image  -webkit-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
+                    -webkit-border-image -webkit-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
                     -moz-border-image -moz-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
                     -o-border-image -o-linear-gradient(left, rgba(227, 227, 230, 0) 0%, #b0b0b5 50%, rgba(227, 227, 230, 0) 100%)
                     border-image linear-gradient(to right, rgba(227, 227, 230, 0), #b0b0b5 50%, rgba(227, 227, 230, 0))
                     border-image-slice 1
 
-                /*.advantage-item*/
-                    /*width 50%*/
+            /*.advantage-item*/
+            /*width 50%*/
 
             .advantages-list
                 list-style none
@@ -268,12 +324,19 @@
                 padding 0
 
                 /*li*/
-                    /*width 100%*/
-                    /*margin-bottom 10px*/
-                    /*border-bottom 1px solid #34343e*/
+                /*width 100%*/
+                /*margin-bottom 10px*/
+                /*border-bottom 1px solid #34343e*/
 
                 .list-title
                     font-weight 700
 
+    @media (max-width: 1655px)
+        .select-point
+            padding 0 !important
+
+    @media (max-width: 1330px)
+        .advantages
+            padding 0 10%
 
 </style>

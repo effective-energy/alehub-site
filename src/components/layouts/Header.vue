@@ -29,7 +29,7 @@
 
 <script>
     export default {
-        name: 'Header',
+        name: 'Header', //rename
         data () {
             return {
                 navbar: [

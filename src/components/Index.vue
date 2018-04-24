@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <header />
+        <Header />
         <screen1 />
         <screen2 />
         <screen3 />
