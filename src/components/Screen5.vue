@@ -1,6 +1,6 @@
 <template>
-    <div class="team">
-        <div class="our-team" id="team">
+    <div class="team" id="team">
+        <div class="our-team">
 
             <h3 class="title">
                 Our team
@@ -41,7 +41,7 @@
             </div>
 
             <div class="effective-energy">
-                <p>Effective Energy team</p>
+                <p>Effective Energy</p>
 
                 <div class="images">
                     <div class="image"
@@ -188,12 +188,12 @@
                         {
                             name: 'Denis Tikhonov',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/mostovoy@3x.png'
+                            src: '../../static/images/avatars/tikhonov@3x.png'
                         },
                         {
                             name: 'Galina Sergeeva',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/elagin@3x.png'
+                            src: '../../static/images/avatars/sergeeva@3x.png'
                         },
                         {
                             name: 'Dmitry Zhuravlev',
@@ -343,7 +343,7 @@
                     font-size 18px
                     display inline-block
                     position absolute
-                    top 65%
+                    top 50%
                     left 50%
                     -moz-transform translate(-50%, -50%)
                     -webkit-transform translate(-50%, -50%)

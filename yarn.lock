@@ -1979,7 +1979,7 @@ domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
-dragscroll@^0.0.8:
+dragscroll@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/dragscroll/-/dragscroll-0.0.8.tgz#de4771e5f3a14d77b583ecef5d38bd9618f27563"
 

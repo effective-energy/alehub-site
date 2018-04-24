@@ -39,8 +39,8 @@
 					</a>
 				</div>
 				<div class="subscribe-form">
-					<input type="text" placeholder="Your e-mail address" />
-					<button>Subscribe to news</button>
+					<input style="font-weight: 700;" type="text" placeholder="Your e-mail address" />
+					<button style="font-weight: 700;">Subscribe to news</button>
 				</div>
 			</div>
 		</div>
@@ -64,6 +64,7 @@
 			align-items center
 
 		.back-to-top
+			cursor pointer
 			display flex
 			justify-content center
 
@@ -78,26 +79,26 @@
 				button
 					background-color #ffd24f
 					font-family MuseoSansCyrl300
-					font-size 18px
+					font-size 16px
 					font-weight 500
 					font-style normal
 					font-stretch normal
 					line-height normal
 					letter-spacing normal
-					color: #34343e
-					padding 6px 16.8px
+					color #34343e
+					padding 6px 20px
 					margin-left 12px
 					border 1px solid #ffd24f
-					border-radius 2px
+					border-radius 3px
 					white-space nowrap
 
 				input
 					background none
 					opacity 0.4
-					border-radius 2px
-					border solid 0.5px #0d1717
+					border-radius 3px
+					border solid 0.5px rgba(13, 23, 23, 0.4)
 					font-family MuseoSansCyrl300
-					font-size 18px
+					font-size 16px
 					color #34343e
 					padding 5px 14px
 
@@ -238,11 +239,11 @@
 						input
 							margin-bottom 8px
 
-						button 
+						button
 							margin-left 0
 
 				.back-to-top
 					order 1
-					align-self center 
+					align-self center
 					margin-bottom 24px
 </style>
