@@ -182,7 +182,8 @@
                         <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
                         <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
                     </div>
-                    <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>e
+                    <img src="../../static/images/desctop.png" class="desktop-for-mobile">
+                    <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
                 </div>
                 <div class="col-lg-6 desc">
                     <h1 class="title">What is Alehub</h1>
@@ -321,6 +322,35 @@ export default {
                     .desktop
                         left 0px
                         width 600px
+                @media (max-width: 1460px)
+                    padding-top 100px
+                    .slider-container
+                        width 393px
+                        height 247px
+                        left 70px
+                        top 122px
+                    .desktop
+                        left 0px
+                        width 500px
+                @media (max-width: 1240px)
+                    padding-top 100px
+                    .slider-container
+                        width 315px
+                        height 197px
+                        left 59px
+                        top 118px
+                    .desktop
+                        left 0px
+                        width 400px
+                @media (max-width: 991px)
+                    padding-top 0
+                    .slider-container
+                        display none
+                    .desktop
+                        display none
+            @media (max-width: 991px)
+                .desktop-for-mobile
+                    display block
                 
            // @media (max-width: 2400px)
                 

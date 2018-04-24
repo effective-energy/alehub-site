@@ -20,12 +20,13 @@ Vue.config.productionTip = false;
 
 import messages from './i18n.js';
 const i18n = new VueI18n({
-  locale: 'rus',
+  locale: 'eng',
   messages,
 })
 
 new Vue({
     el: '#app',
+    i18n,
     router,
     render: h => h(App)
 });

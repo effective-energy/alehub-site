@@ -2,25 +2,24 @@
     <div class="section economy-section" id="ico">
         <div class="container">
             <h1 class="section-title is-center">
-                Economy of ICO
+                {{ $t('economy.title') }}
             </h1>
             <p class="section-subtitle is-center">
-                <span class="bold">ALE</span> — security token. To ensure liquidity and fast placement on exchanges, the
-                <span class="bold">ALE</span> protocol is mirrored to the Ethereum according to the ERC20 standard
+                {{ $t('economy.subTitle') }}
             </p>
 
             <div class="row figures-panel">
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">Emission</h1>
-                    <h3 class="figures-subtitle">100,500,000,000 ALE</h3>
+                    <h1 class="figures-title">{{ $t('economy.ICOinfo.emission.title') }}</h1>
+                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.emission.amount') }} ALE</h3>
                 </div>
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">Hardcap</h1>
-                    <h3 class="figures-subtitle">77,000 ETH</h3>
+                    <h1 class="figures-title">{{ $t('economy.ICOinfo.hardCap.title') }}</h1>
+                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.hardCap.amount') }} ETH</h3>
                 </div>
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">Softcap</h1>
-                    <h3 class="figures-subtitle">4,500 ETH</h3>
+                    <h1 class="figures-title">{{ $t('economy.ICOinfo.softCap.title') }}</h1>
+                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.softCap.amount') }} ETH</h3>
                 </div>
             </div>
 
@@ -45,12 +44,10 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <h1 class="section-title is-white is-right mt0">Distribution of tokens</h1>
+                    <h1 class="section-title is-white is-right mt0">{{ $t('economy.distribution.title') }}</h1>
                     <div class="divider"></div>
                     <p class="small">
-                        The ALE product is primarily a service for consumers to find counterparties for projects in the
-                        IT field and to manage these projects at the management and financial level. On the one hand,
-                        they are programmers or their associations, and on the other hand, they are IT Customers.
+                        {{ $t('economy.distribution.description') }}
                     </p>
                 </div>
             </div>
