@@ -8,7 +8,7 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
-            <div class="slides-body dragscroll">
+            <div class="slides-body dragscroll" v-on:scroll="scrollSlide">
                 <div class="slide"
                      v-for="(slide, slideIndex) in slides"
                      :key="slideIndex">
@@ -39,6 +39,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="scroll-block">
+            	<div class="arrow-prev"></div>
+            	<div class="scroll-element" v-on:scroll="scrollForSlide" id="scroll-element">
+            		<div class="scroll-content" :style="'width:'+slidesPanelWidth+'px'" id="scroll-content"></div>
+            	</div>
+            	<div class="arrow-next"></div>
+            </div>
+
         </div>
     </div>
 </template>
@@ -50,6 +59,7 @@
         name: 'Roadmap',
         data() {
             return {
+            	slidesWidth: 0,
                 slides: [
                     {
                         title: 'Launch and publication MVP version of ALEHUB in centralised mode',
@@ -74,27 +84,14 @@
                         progress: 72
                     },
                     {
-                        title: 'Launch of full ALEHUB version in centralised mode',
-                        date: 'Saturday, September 1, 2018',
-                        responsibles: [1, 2],
+                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
+                        date: 'Wednesday, August 1, 2018',
+                        responsibles: [1],
                         members: [
-                            '../../static/images/osipenko@3x.png',
-                            '../../static/images/grudinin@3x.png'
-                        ],
-                        state: 'Implementing',
-                        progress: 24
-                    },
-                    {
-                        title: 'Launch and publication MVP version of ALEHUB in centralised mode',
-                        date: 'Sunday, April 15, 2018',
-                        responsibles: [1, 2, 3],
-                        members: [
-                            '../../static/images/gromyko@3x.png',
-                            '../../static/images/grudinin@3x.png',
                             '../../static/images/osipenko@3x.png'
                         ],
-                        state: 'Deployed',
-                        progress: 100
+                        state: 'Review',
+                        progress: 72
                     },
                     {
                         title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
@@ -107,18 +104,53 @@
                         progress: 72
                     },
                     {
-                        title: 'Launch of full ALEHUB version in centralised mode',
-                        date: 'Saturday, September 1, 2018',
-                        responsibles: [1, 2],
+                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
+                        date: 'Wednesday, August 1, 2018',
+                        responsibles: [1],
                         members: [
-                            '../../static/images/osipenko@3x.png',
-                            '../../static/images/grudinin@3x.png'
+                            '../../static/images/osipenko@3x.png'
                         ],
-                        state: 'Implementing',
-                        progress: 24
+                        state: 'Review',
+                        progress: 72
+                    },
+                    {
+                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
+                        date: 'Wednesday, August 1, 2018',
+                        responsibles: [1],
+                        members: [
+                            '../../static/images/osipenko@3x.png'
+                        ],
+                        state: 'Review',
+                        progress: 72
+                    },
+                    {
+                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
+                        date: 'Wednesday, August 1, 2018',
+                        responsibles: [1],
+                        members: [
+                            '../../static/images/osipenko@3x.png'
+                        ],
+                        state: 'Review',
+                        progress: 72
                     }
                 ]
             }
+        },
+        methods: {
+        	scrollSlide () {
+        		document.getElementsByClassName('scroll-element')[0].scrollLeft = document.getElementsByClassName('slides-body')[0].scrollLeft;
+        	},
+        	scrollForSlide () {
+        		document.getElementsByClassName('slides-body')[0].scrollLeft = 891.5-document.getElementById('scroll-content').getBoundingClientRect().left;
+        	}
+        },
+        computed: {
+        	slidesPanelWidth () {
+        		return this.slidesWidth
+        	}
+        },
+        mounted () {
+        	this.slidesWidth = 768+(document.querySelectorAll(".slide")[0].offsetWidth*document.querySelectorAll(".slide").length)-screen.width;
         }
     }
 </script>
@@ -150,6 +182,33 @@
     .is-white
         color #ffffff
 
+    .scroll-block
+    	display flex
+    	justify-content center
+    	align-items center
+
+    	.arrow-prev
+    		width 8px
+    		height 12px
+    		background-image url('../../static/images/roadmap/arrow-left.svg')
+    		background-size cover
+
+    	.arrow-next
+    		width 8px
+    		height 12px
+    		background-image url('../../static/images/roadmap/arrow-right.svg')
+    		background-size cover
+
+    	.scroll-element
+    		max-width 768px
+    		height 6px
+    		overflow-x scroll
+    		border-radius 2px
+    		margin 0 12px
+
+    		.scroll-content
+    			height 1px
+
     .roadmap-slides
         margin-top 46px
         .topline
@@ -162,13 +221,14 @@
             display flex
             overflow-x scroll
             cursor -webkit-grab
+            overflow hidden
             &:active
                 cursor -webkit-grabbing
 
             .slide
                 min-width 512px
                 max-width 512px
-                margin 0 18px
+                padding 0 18px
                 .slide-content
                     background-color rgba(255, 255, 255, 0.05)
                     min-height 273px

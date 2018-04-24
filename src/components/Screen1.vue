@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-xl-12 col-lg-11">
                         <div class="countdown">
                             <h2 class="title">
                                 Round 1 will begin:
@@ -101,6 +101,13 @@
                         <div class="bonus-desc">
                             <span>Bonus 25% up to 7 April 2018</span>
                             <span>Now not available</span>
+                        </div>
+                        <div class="play-video">
+                            <button class="play-button">
+                                <div class="wrap-ic">
+                                    <img src="../../static/images/play-ic.svg">
+                                </div>
+                            </button>
                         </div>
 
                         <div class="crypto">
@@ -164,23 +171,28 @@
                 <a href="#" class="social-item tw"></a>
                 <a href="#" class="social-item tg"></a>
                 <a href="#" class="social-item vk"></a>
+                <a class="scrol-ic" v-scroll-to="'#description'">
+                    <img src="../../static/images/scroll-ic.svg" alt="">
+                </a>
             </div>
         </div>
         <div class="container-fluid partners">
             <div class="title">Our partners:</div>
-            <img src="../../static/images/itmo.png" alt="">
-            <img src="../../static/images/crypto.png" alt="">
-            <img src="../../static/images/beer.png" alt="">
-            <img src="../../static/images/serokell.png" alt="">
+            <div class="row partners-icons">
+                <img src="../../static/images/itmo.png" alt="" height="60px" width="114px">
+                <img src="../../static/images/crypto.png" alt="" height="46px" width="158px">
+                <img src="../../static/images/beer.png" alt="" height="59px" width="57px">
+                <img src="../../static/images/serokell.png" alt="" height="43px" width="87px">
+            </div>
         </div>
         <div class="container-fluid what-is" id="description">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
-                    <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
-                    <!-- <img src="../../static/images/screen1.png" class="screenshot" style="visibility:visible" alt="">
-                    <img src="../../static/images/screen2.png" class="screenshot" style="visibility:hidden" alt="">
-                    <img src="../../static/images/screen3.png" class="screenshot" style="visibility:hidden" alt=""> -->
+                    <div class="desktop-outer">
+                        <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
+                        <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
+                    </div>
+                    <img src="../../static/images/desctop.png" class="desktop-for-mobile">
                     <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
                 </div>
                 <div class="col-lg-6 desc">
@@ -265,3 +277,128 @@ export default {
 	}
 }
 </script>
+
+<style lang="stylus" scoped>
+#screen1
+    .container-fluid
+        &.what-is
+            .desktop-outer
+                margin 0 auto
+                .slider-container
+                    width 100%
+                    position absolute
+                    height auto
+                .desktop
+                    position relative
+                @media (max-width: 2600px)
+                    .slider-container
+                        width 709px
+                        height 443px
+                        left 252px
+                        top 40px
+                    .desktop
+                        left 140px
+                        width 900px
+                @media (max-width: 2365px)
+                    .slider-container
+                        left 162px
+                    .desktop
+                        left 50px
+                @media (max-width: 2150px)
+                    .slider-container
+                        width 630px
+                        height 395px
+                        left 102px
+                        top 36px
+                    .desktop
+                        left 0px
+                        width 800px
+                @media (max-width: 1860px)
+                    .slider-container
+                        width 552px
+                        height 345px
+                        left 91px
+                        top 32px
+                    .desktop
+                        left 0px
+                        width 700px
+                @media (max-width: 1640px)
+                    padding-top 50px
+                    .slider-container
+                        width 473px
+                        height 296px
+                        left 80px
+                        top 77px
+                    .desktop
+                        left 0px
+                        width 600px
+                @media (max-width: 1460px)
+                    padding-top 100px
+                    .slider-container
+                        width 393px
+                        height 247px
+                        left 70px
+                        top 122px
+                    .desktop
+                        left 0px
+                        width 500px
+                @media (max-width: 1240px)
+                    padding-top 100px
+                    .slider-container
+                        width 315px
+                        height 197px
+                        left 59px
+                        top 118px
+                    .desktop
+                        left 0px
+                        width 400px
+                @media (max-width: 991px)
+                    padding-top 0
+                    .slider-container
+                        display none
+                    .desktop
+                        display none
+            @media (max-width: 991px)
+                .desktop-for-mobile
+                    display block
+
+    .play-video
+        display inline-block
+        position relative
+        top -15px
+        left 25%
+        .play-button
+            cursor pointer
+            width 110px
+            height 110px
+            border none
+            border-radius 50%
+            background-color #ffd24f
+            margin-bottom 20px
+
+            &:focus
+                outline 0
+
+            .wrap-ic
+                padding-left 7px
+
+                img
+                    width 35px
+                    height 35px
+        @media (max-width: 1500px)
+            left 20%
+        @media (max-width: 1400px)
+            left 15%
+        @media (max-width: 1274px)
+            position unset
+            margin 60px auto 0
+            display block
+            text-align center
+            .play-button
+                margin 0
+    .scrol-ic
+        margin-right auto
+        margin-left calc(100% - 396px)
+        @media (max-width: 1124px)
+            display none
+</style>

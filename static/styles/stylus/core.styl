@@ -13,6 +13,7 @@ body
     height 74px
     padding-left 64px
     padding-right 64px
+    box-shadow 0px 3px 21px -11px #000000
 
     &.bg-white
         background #FFF
@@ -181,13 +182,15 @@ body
             padding 0 225px
             display flex
             align-items center
+            justify-content center
             .title
                 margin-right 96px
                 font-family MuseoSansCyrl700
                 font-size 30px
                 color #34343e
+                z-index 10
             img
-                margin 0 64px
+                margin 16px 64px 0
         &.what-is
             margin-top 40px
             padding 125px 125px 0
@@ -197,11 +200,6 @@ body
                 z-index 15
             .slider-container
                 z-index 14
-                position absolute
-                top 4.6%
-                left 12%
-                width 77%
-                height 53.3%
                 .slider-pagination-bullets
                     display none
             .screenshot
@@ -235,7 +233,7 @@ body
                     height 16px
                     margin-top -4px
                     margin-right 14px
-            .promo
+            .desktop-outer
                 display flex
                 flex-direction column
             .desc
@@ -244,6 +242,12 @@ body
 .social-line
     height 54px
     margin-top 80px
+
+.desktop-for-mobile
+    display none
+    width 100%
+.promo 
+    text-align center
 
 .btn-buy-tokens
     margin-right 5px
