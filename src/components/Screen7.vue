@@ -207,8 +207,8 @@
 
         .responsible
             width 100%;
-            height 80px
-            margin 16px 0 0px
+            height 48px
+            margin 16px 0 16px
             display flex
 
             .avatar
