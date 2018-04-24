@@ -89,6 +89,7 @@
 					margin-left 12px
 					border 1px solid #ffd24f
 					border-radius 2px
+					white-space nowrap
 
 				input
 					background none
@@ -202,9 +203,46 @@
 					letter-spacing normal
 					color #34343e
 					text-decoration underline
+					white-space nowrap
 
 		.top-icon
 			width 32px
 			height 8px
 			background-image url('../../../static/images/go-home-ic.svg')
+
+	@media(max-width: 1200px)
+		.footer
+			.back-to-top
+				min-width 100px
+				align-self stretch
+
+	@media(max-width: 960px)
+		.footer
+			.footer-row
+				flex-direction column
+
+				.copyright-block
+					order 3
+
+					.ale-logo
+						margin 0 auto
+						margin-bottom 12px
+
+				.social-block
+					order 2
+					margin-bottom 24px
+
+					.subscribe-form
+						flex-direction column
+
+						input
+							margin-bottom 8px
+
+						button 
+							margin-left 0
+
+				.back-to-top
+					order 1
+					align-self center 
+					margin-bottom 24px
 </style>
