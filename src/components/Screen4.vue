@@ -1,5 +1,23 @@
 <template>
     <div class="application" id="features">
+        <vue-particles
+            color="#fff"
+            :particleOpacity="0.4"
+            :particlesNumber="80"
+            shapeType="circle"
+            :particleSize="4"
+            linesColor="#fff"
+            :linesWidth="1"
+            :lineLinked="true"
+            :lineOpacity="0.4"
+            :linesDistance="150"
+            :moveSpeed="3"
+            :hoverEffect="false"
+            hoverMode="repulse"
+            :clickEffect="true"
+            clickMode="remove"
+          >
+          </vue-particles>
         <div class="section-1">
             <h3 class="title">
                 Alehub - frist application
@@ -175,6 +193,14 @@
         name: 'Screen4'
     }
 </script>
+
+<style>
+    #particles-js {
+        width: 100%;
+        position: absolute;
+        margin-top: 15%;
+    }
+</style>
 
 <style lang="stylus" scoped>
     .application
