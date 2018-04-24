@@ -211,15 +211,15 @@ const messages = {
 			ICOinfo: {
 				emission: {
 					title: 'Emission',
-					amount: 100500000000
+					amount: "100,500,000,000"
 				},
 				hardCap: {
 					title: 'Hardcap',
-					amount: 77000
+					amount: "77,000"
 				},
 				softCap: {
 					title: 'Softcap',
-					amount: 4500
+					amount: "4,500"
 				}
 			},
 			distribution: {
