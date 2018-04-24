@@ -12,12 +12,12 @@
             :lineOpacity="0.4"
             :linesDistance="150"
             :moveSpeed="3"
-            :hoverEffect="false"
-            hoverMode="repulse"
+            :hoverEffect="true"
+            hoverMode="grab"
             :clickEffect="true"
-            clickMode="remove"
-          >
+            clickMode="push">
           </vue-particles>
+
         <div class="section-1">
             <h3 class="title">
                 Alehub - first application
@@ -195,6 +195,7 @@
 <style>
     #particles-js {
         width: 100%;
+        height: 100%;
         position: absolute;
         margin-top: 15%;
     }
