@@ -16,6 +16,13 @@ Vue.use(VueScrollTo, {
 Vue.use(VueParticles);
 Vue.use(VueI18n);
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false;
 
 import messages from './i18n.js';
