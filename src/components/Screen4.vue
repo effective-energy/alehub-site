@@ -117,6 +117,7 @@
         <div class="section-3">
 
             <div class="figure">
+                <img src="../../static/images/layer.png" alt="" style="width: 100%;">
             </div>
 
             <div class="info-block">
@@ -207,7 +208,7 @@
         flex-direction column
         justify-content center
         align-items center
-        padding 80px 15%
+        padding 80px 10%
         background rgba(253,208,74,1)
         background -moz-linear-gradient(top, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
         background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,208,74,1)), color-stop(100%, rgba(255,160,7,1)))
@@ -281,7 +282,7 @@
                 .item
                     display flex
                     margin-bottom 35px
-                    padding-right 35px
+                    padding-right 70px
                     width 33%
 
                     .right
@@ -299,6 +300,7 @@
                 width 30%
             .info-block
                 width 70%
+                padding-left 5%
                 .title
                     font-size 40px
                     margin-bottom 60px

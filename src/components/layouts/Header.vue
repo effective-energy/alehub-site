@@ -258,7 +258,7 @@
         transition all 0.4s ease
 
     .bg-yellow
-        background-color #ffbc00
+        background-color #fdc135
 
         .btn-login
             background-color #343a49
