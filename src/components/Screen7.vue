@@ -8,7 +8,7 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
-            <div class="slides-body">
+            <div class="slides-body dragscroll">
                 <div class="slide"
                      v-for="(slide, slideIndex) in slides"
                      :key="slideIndex">
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+	import Dragscroll from 'dragscroll';
+
     export default {
         name: 'Roadmap',
         data() {
