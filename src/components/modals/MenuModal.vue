@@ -64,11 +64,10 @@
         },
         methods: {
             closeModal: function (name) {
+                this.$parent.$emit('closeModal1', false);
                 this.$modal.hide(name);
-
-                this.$parent.$emit('closeModal1', true);
-            }
-        }
+            },
+        },
     }
 </script>
 

@@ -49,8 +49,8 @@
                             type="button"
                             data-toggle="dropdown"
                             aria-haspopup="true"
-                            aria-expanded="false"
-                            @click="toggleDropdown">
+                            aria-expanded="false">
+                        <!--@click="toggleDropdown">-->
                         en
                     </button>
                     <div class="dropdown-menu"
@@ -62,12 +62,19 @@
                 </div>
             </div>
         </div>
+
+        <menu-modal/>
     </nav>
 </template>
 
 <script>
+    import MenuModal from '../modals/MenuModal';
+
     export default {
         name: 'Header', //rename
+        components: {
+            MenuModal
+        },
         data() {
             return {
                 isBlack: false,
@@ -172,8 +179,7 @@
             }
         },
         mounted() {
-            this.$on('closeModal1', val => {
-                console.log(123123123);
+            this.$on('closeModal1', function (val) {
                 this.activeHamburger = val;
             });
 
