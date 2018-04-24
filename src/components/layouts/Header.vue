@@ -121,6 +121,12 @@
             }
         },
         methods: {
+            openModal: function (name) {
+                this.$modal.show(name);
+            },
+            closeModal: function (name) {
+                this.$modal.hide(name);
+            },
             changeLineWidth: function (index) {
                 let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
@@ -139,22 +145,27 @@
                     top: box.top + pageYOffset,
                     left: box.left + pageXOffset
                 };
-
             },
             toggleDropdown: function () {
                 this.dropdownOpen = !this.dropdownOpen;
             },
             toggleHamburger: function () {
                 this.activeHamburger = !this.activeHamburger;
+
+                (this.activeHamburger) ? this.openModal('menu-modal') : this.closeModal('menu-modal');
             }
         },
         mounted() {
+            this.$on('closeModal1', val => {
+                console.log(123123123);
+                this.activeHamburger = val;
+            });
+
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
             }, 100);
 
             let navbar = document.getElementById('navbar'),
-                featuresYOffset = this.getCoords(document.getElementById('features')).top,
                 navbarYOffset = navbar.offsetHeight;
 
             window.addEventListener('scroll', () => {
@@ -204,10 +215,6 @@
     .hamburger
         display none
 
-    @media (max-width 768px)
-        .hamburger
-            display block
-
     .line__white
         background-color #ffffff !important
 
@@ -215,10 +222,10 @@
         .line
             cursor pointer
             width 50px
-            height 5px
+            height 3px
             background-color #3e3d42
             display block
-            margin 8px auto
+            margin 10px auto
             -webkit-transition all 0.3s ease-in-out
             -o-transition all 0.3s ease-in-out
             transition all 0.3s ease-in-out
@@ -315,4 +322,13 @@
         .nav-link
             transition all 0.4s ease
             color #fff !important
+
+
+    @media (max-width 768px)
+        .navbar
+            padding-left 32px
+            padding-right 32px
+        .hamburger
+            display block
+
 </style>

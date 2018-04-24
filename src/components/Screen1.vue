@@ -217,16 +217,20 @@
                 </div>
             </div>
         </div>
+
+        <menu-modal/>
     </section>
 </template>
 
 <script>
 import slider from 'vue-concise-slider';
+import MenuModal from './modals/MenuModal';
 
 export default {
     name: 'Screen1',
     components: {
-        slider
+        slider,
+        MenuModal
     },
     data () {
         return {
@@ -245,7 +249,7 @@ export default {
                 currentPage: 0,
                 thresholdDistance: 100,
                 thresholdTime: 300,
-                loop:true,
+                loop: true,
                 infinite:1,
                 slidesToScroll:1,
                 autoplay:'5000'
@@ -253,11 +257,11 @@ export default {
         }
     },
     methods: {
-        startAnime () {
-			var pathEls = document.querySelectorAll('path');
-			for (var i = 0; i < pathEls.length; i++) {
-			  var pathEl = pathEls[i];
-			  var offset = anime.setDashoffset(pathEl);
+        startAnime: function () {
+			let pathEls = document.querySelectorAll('path');
+			for (let i = 0; i < pathEls.length; i++) {
+			  let pathEl = pathEls[i];
+			  let offset = anime.setDashoffset(pathEl);
 			  pathEl.setAttribute('stroke-dashoffset', offset);
 			  anime({
 			    targets: pathEl,

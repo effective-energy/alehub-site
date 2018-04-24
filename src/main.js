@@ -1,8 +1,9 @@
 import Vue from 'vue';
-import BootstrapVue from "bootstrap-vue";
+import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue';
 import router from './router';
 import VueScrollTo from 'vue-scrollto';
+import VModal from 'vue-js-modal';
 import VueParticles from 'vue-particles';
 import VueI18n from 'vue-i18n';
 
@@ -15,6 +16,7 @@ Vue.use(VueScrollTo, {
 });
 Vue.use(VueParticles);
 Vue.use(VueI18n);
+Vue.use(VModal);
 
 Vue.config.productionTip = false;
 
