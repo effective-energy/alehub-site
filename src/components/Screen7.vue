@@ -20,9 +20,9 @@
                         </h1>
                         <i class="date">{{ slide.date }}</i>
                         <div class="responsible">
-                            <img class="avatar"
-                                 v-for="item in slide.members"
-                                 :src="item">
+                            <div class="avatar" v-for="(item, index) in slide.members" :key="index">
+                                <img :src="item" alt="">
+                            </div>
                         </div>
                         <div class="slide-progress">
                             <div class="progress-line"></div>

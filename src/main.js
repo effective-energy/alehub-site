@@ -8,7 +8,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.use(BootstrapVue);
-Vue.use(VueScrollTo);
+Vue.use(VueScrollTo, {
+    offset: -70
+});
 
 Vue.config.productionTip = false;
 

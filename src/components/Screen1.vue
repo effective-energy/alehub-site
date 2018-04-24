@@ -250,7 +250,7 @@ export default {
 			  anime({
 			    targets: pathEl,
 			    strokeDashoffset: [offset, 0],
-			    duration: anime.random(1000, 3000),
+			    duration: anime.random(6500, 9000),
 			    delay: anime.random(0, 2000),
 			    loop: true,
 			    direction: 'alternate',

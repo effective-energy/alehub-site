@@ -1,6 +1,7 @@
 body {
   background: #ececf0;
   font-family: MuseoSansCyrl300;
+  overflow-x: hidden;
 }
 .navbar {
   height: 74px;
@@ -198,8 +199,8 @@ body {
   margin: 0 64px;
 }
 #screen1 .container-fluid.what-is {
-  margin-top: 142px;
-  padding: 0 125px;
+  margin-top: 40px;
+  padding: 125px 125px 0;
   background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
 }
 #screen1 .container-fluid.what-is .desktop {

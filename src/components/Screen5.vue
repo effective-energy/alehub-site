@@ -220,10 +220,15 @@
             margin-bottom 60px
             .image
                 margin 0 15px 30px 15px
+                padding 20px 40px 0 40px
+                height 304px
+                width 304px
+                overflow hidden
+                text-align center
                 img
-                    margin 10px 20px 0 20px
-                    height 266px
-                    width 200px
+                    height 284px
+                    width auto
+                    margin auto
 
             .hover
                 display none
