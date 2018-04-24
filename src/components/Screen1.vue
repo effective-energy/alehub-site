@@ -102,6 +102,13 @@
                             <span>Bonus 25% up to 7 April 2018</span>
                             <span>Now not available</span>
                         </div>
+                        <div class="play-video">
+                            <button class="play-button">
+                                <div class="wrap-ic">
+                                    <img src="../../static/images/play-ic.svg">
+                                </div>
+                            </button>
+                        </div>
 
                         <div class="crypto">
                             <div class="title">Accepted for collection:</div>
@@ -164,6 +171,9 @@
                 <a href="#" class="social-item tw"></a>
                 <a href="#" class="social-item tg"></a>
                 <a href="#" class="social-item vk"></a>
+                <a class="scrol-ic" v-scroll-to="'#description'">
+                    <img src="../../static/images/scroll-ic.svg" alt="">
+                </a>
             </div>
         </div>
         <div class="container-fluid partners">
@@ -351,7 +361,44 @@ export default {
             @media (max-width: 991px)
                 .desktop-for-mobile
                     display block
-                
-           // @media (max-width: 2400px)
-                
+
+    .play-video
+        display inline-block
+        position relative
+        top -15px
+        left 25%
+        .play-button
+            cursor pointer
+            width 110px
+            height 110px
+            border none
+            border-radius 50%
+            background-color #ffd24f
+            margin-bottom 20px
+
+            &:focus
+                outline 0
+
+            .wrap-ic
+                padding-left 7px
+
+                img
+                    width 35px
+                    height 35px
+        @media (max-width: 1500px)
+            left 20%
+        @media (max-width: 1400px)
+            left 15%
+        @media (max-width: 1274px)
+            position unset
+            margin 60px auto 0
+            display block
+            text-align center
+            .play-button
+                margin 0
+    .scrol-ic
+        margin-right auto
+        margin-left calc(100% - 396px)
+        @media (max-width: 1124px)
+            display none
 </style>
