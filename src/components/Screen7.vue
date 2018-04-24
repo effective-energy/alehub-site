@@ -18,14 +18,16 @@
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
-                        <i class="date">{{ slide.date }}</i>
+                        <span class="date">{{ slide.date }}</span>
                         <div class="responsible">
                             <div class="avatar" v-for="(item, index) in slide.members" :key="index">
                                 <img :src="item" alt="">
                             </div>
                         </div>
                         <div class="slide-progress">
-                            <div class="progress-line"></div>
+                            <div class="progress-line-outer">
+                                <div class="progress-line" :style="{width: slide.progress+'%'}"></div>
+                            </div>
                             <div class="state">
                                 <p class="status">
                                     State:
@@ -198,7 +200,9 @@
                         color #ffffff
 
                     .date
-                        font-family MuseoSansCyrl300
+                        font-family MuseoSansCyrl100
+                        font-size 18px
+
             font-size 14px
             font-weight 300
             font-style normal
@@ -228,6 +232,8 @@
                 margin-left 12px
 
         .slide-progress
+            .progress-line-outer
+                background-color rgba(226, 232, 232, .3)
             .progress-line
                 margin 10px 0
                 height 4px
