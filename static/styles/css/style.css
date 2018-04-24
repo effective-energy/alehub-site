@@ -229,11 +229,6 @@ body {
 }
 #screen1 .container-fluid.what-is .slider-container {
   z-index: 14;
-  position: absolute;
-  top: 4.6%;
-  left: 12%;
-  width: 77%;
-  height: 53.3%;
 }
 #screen1 .container-fluid.what-is .slider-container .slider-pagination-bullets {
   display: none;
@@ -276,7 +271,7 @@ body {
   margin-top: -4px;
   margin-right: 14px;
 }
-#screen1 .container-fluid.what-is .promo {
+#screen1 .container-fluid.what-is .desktop-outer {
   display: flex;
   flex-direction: column;
 }

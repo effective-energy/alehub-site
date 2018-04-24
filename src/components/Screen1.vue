@@ -176,12 +176,11 @@
         <div class="container-fluid what-is" id="description">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
-                    <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
-                    <!-- <img src="../../static/images/screen1.png" class="screenshot" style="visibility:visible" alt="">
-                    <img src="../../static/images/screen2.png" class="screenshot" style="visibility:hidden" alt="">
-                    <img src="../../static/images/screen3.png" class="screenshot" style="visibility:hidden" alt=""> -->
-                    <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
+                    <div class="desktop-outer">
+                        <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
+                        <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
+                    </div>
+                    <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>e
                 </div>
                 <div class="col-lg-6 desc">
                     <h1 class="title">What is Alehub</h1>
@@ -265,3 +264,62 @@ export default {
 	}
 }
 </script>
+
+<style lang="stylus" scoped>
+#screen1
+    .container-fluid
+        &.what-is
+            .desktop-outer
+                margin 0 auto
+                .slider-container
+                    width 100%
+                    position absolute
+                    height auto
+                .desktop
+                    position relative
+                @media (max-width: 2600px)
+                    .slider-container
+                        width 709px
+                        height 443px
+                        left 252px
+                        top 40px
+                    .desktop
+                        left 140px
+                        width 900px
+                @media (max-width: 2365px)
+                    .slider-container
+                        left 162px
+                    .desktop
+                        left 50px
+                @media (max-width: 2150px)
+                    .slider-container
+                        width 630px
+                        height 395px
+                        left 102px
+                        top 36px
+                    .desktop
+                        left 0px
+                        width 800px
+                @media (max-width: 1860px)
+                    .slider-container
+                        width 552px
+                        height 345px
+                        left 91px
+                        top 32px
+                    .desktop
+                        left 0px
+                        width 700px
+                @media (max-width: 1640px)
+                    padding-top 50px
+                    .slider-container
+                        width 473px
+                        height 296px
+                        left 80px
+                        top 77px
+                    .desktop
+                        left 0px
+                        width 600px
+                
+           // @media (max-width: 2400px)
+                
+</style>
