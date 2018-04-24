@@ -176,7 +176,11 @@
         <div class="container-fluid what-is">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <img src="../../static/images/desctop.png" class="desktop" alt="">
+                    <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
+                    <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
+                    <!-- <img src="../../static/images/screen1.png" class="screenshot" style="visibility:visible" alt="">
+                    <img src="../../static/images/screen2.png" class="screenshot" style="visibility:hidden" alt="">
+                    <img src="../../static/images/screen3.png" class="screenshot" style="visibility:hidden" alt=""> -->
                     <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
                 </div>
                 <div class="col-lg-6 desc">
@@ -205,8 +209,37 @@
 </template>
 
 <script>
+import slider from 'vue-concise-slider';
+
 export default {
     name: 'Screen1',
+    components: {
+        slider
+    },
+    data () {
+        return {
+            pages: [
+                {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                },
+                {
+                    html: '<img src="../../static/images/screen2.png" class="screenshot" alt="">'
+                },
+                {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                }
+            ],
+            sliderinit: {
+                currentPage: 0,
+                thresholdDistance: 100,
+                thresholdTime: 300,
+                loop:true,
+                infinite:1,
+                slidesToScroll:1,
+                autoplay:'5000'
+        }
+        }
+    },
     methods: {
         startAnime () {
 			var pathEls = document.querySelectorAll('path');

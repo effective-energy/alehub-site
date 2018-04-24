@@ -204,6 +204,21 @@ body {
 }
 #screen1 .container-fluid.what-is .desktop {
   width: 100%;
+  z-index: 15;
+}
+#screen1 .container-fluid.what-is .slider-container {
+  z-index: 14;
+  position: absolute;
+  top: 4.6%;
+  left: 12%;
+  width: 77%;
+  height: 53.3%;
+}
+#screen1 .container-fluid.what-is .slider-container .slider-pagination-bullets {
+  display: none;
+}
+#screen1 .container-fluid.what-is .screenshot {
+  width: 100%;
 }
 #screen1 .container-fluid.what-is .title {
   margin-top: 15px;
