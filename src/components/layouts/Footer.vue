@@ -64,6 +64,7 @@
 			align-items center
 
 		.back-to-top
+			cursor pointer
 			display flex
 			justify-content center
 

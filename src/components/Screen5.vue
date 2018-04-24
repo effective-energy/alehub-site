@@ -188,12 +188,12 @@
                         {
                             name: 'Denis Tikhonov',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/mostovoy@3x.png'
+                            src: '../../static/images/avatars/tikhonov@3x.png'
                         },
                         {
                             name: 'Galina Sergeeva',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/elagin@3x.png'
+                            src: '../../static/images/avatars/sergeeva@3x.png'
                         },
                         {
                             name: 'Dmitry Zhuravlev',
