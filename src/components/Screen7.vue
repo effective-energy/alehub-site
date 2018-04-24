@@ -159,6 +159,9 @@
             height 400px
             display flex
             overflow-x scroll
+            cursor -webkit-grab
+            &:active
+                cursor -webkit-grabbing
 
             .slide
                 min-width 512px
