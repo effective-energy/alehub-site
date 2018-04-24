@@ -15,7 +15,7 @@
 			</span>
 			</div>
 			<div class="col-2 back-to-top">
-				<div class="top-icon" @click="scrollTop"></div>
+				<div class="top-icon" v-scroll-to="'#home'"></div>
 			</div>
 			<div class="col-5 social-block">
 				<div class="social-networks">
@@ -49,12 +49,7 @@
 
 <script>
     export default {
-        name: 'Footer',
-        methods: {
-        	scrollTop () {
-        		window.scrollTo(0, 0);
-        	}
-        }
+        name: 'Footer'
     }
 </script>
 
