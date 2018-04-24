@@ -14,7 +14,7 @@
 
                 <div class="images">
                     <div class="image"
-                         v-for="(member, i) in team.serokell"
+                         v-for="(member, i) in team.serokell" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
                         <img class="layer__bottom"
                              :src="member.src"
@@ -47,7 +47,7 @@
                     <swiper :options="swiperOption">
                         <swiper-slide
                             class="image"
-                            v-for="(member, i) in team.energy"
+                            v-for="(member, i) in team.energy" :key="i"
                             :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }"
                         >
                             <img class="layer__bottom" :src="member.src" :alt="member.name" />
@@ -58,7 +58,7 @@
                 <div class="images" v-if="false">
                     <div class="image"
                          style=""
-                         v-for="(member, i) in team.energy"
+                         v-for="(member, i) in team.energy" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
 
                         <img class="layer__bottom"
@@ -98,7 +98,7 @@
                 <div class="images">
                     <div class="image"
                          style=""
-                         v-for="(member, i) in team.advisors"
+                         v-for="(member, i) in team.advisors" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
 
                         <img class="layer__bottom"
