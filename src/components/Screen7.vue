@@ -118,6 +118,7 @@ export default {
     		background-color #ffbc00
 
     	.slides-body
+		    height 400px
     		display flex
     		overflow-x scroll
 

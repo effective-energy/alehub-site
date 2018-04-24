@@ -25,7 +25,6 @@
 
 	    	<div class="row distribution">
 	    		<div class="col-3">
-
 	    			<div class="steep-statis steep-sale">
 	    				<div class="steep-team">
 	    					<div class="steep-referral">
