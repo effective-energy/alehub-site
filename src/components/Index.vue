@@ -9,7 +9,7 @@
         <screen6 />
         <screen7 />
         <Blog />
-        <footer />
+        <Footer />
     </div>
 </template>
 

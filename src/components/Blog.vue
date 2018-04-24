@@ -76,8 +76,7 @@
 
 <style lang="stylus" scoped>
 	.section
-		padding 71px 0
-		padding-bottom 130px
+		padding 71px 0 0 0
 
 	.is-center
 		text-align center
