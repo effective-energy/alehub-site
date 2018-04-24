@@ -30,7 +30,7 @@
                         <div class="steep-team">
                             <div class="steep-referral">
                                 <div class="steep-bounty">
-                                    <span class="steep-count">100%</span>
+                                    <span class="steep-count">{{ activeDistribution }}</span>
                                 </div>
                             </div>
                         </div>
@@ -38,21 +38,9 @@
                 </div>
                 <div class="col-3">
                     <div class="steep-list">
-                        <div class="item-list">
-                            <div class="color-steep steep-sale"></div>
-                            <span>Sale for ICO</span>
-                        </div>
-                        <div class="item-list">
-                            <div class="color-steep steep-team"></div>
-                            <span>Team</span>
-                        </div>
-                        <div class="item-list">
-                            <div class="color-steep steep-referral"></div>
-                            <span>Referral program, advisors</span>
-                        </div>
-                        <div class="item-list">
-                            <div class="color-steep steep-bounty"></div>
-                            <span>Bounty</span>
+                        <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
+                            <div class="color-steep steep-sale" :class="['steep-'+dist.type]"></div>
+                            <span>{{ dist.title }}</span>
                         </div>
                     </div>
                 </div>
@@ -72,7 +60,40 @@
 
 <script>
     export default {
-        name: 'Economy'
+        name: 'Economy',
+        data () {
+        	return {
+        		selectedDistributionIndex: -1,
+        		distributionList: [{
+        			title: 'Sale for ICO',
+        			type: 'sale',
+        			count: 77
+        		}, {
+        			title: 'Team',
+        			type: 'team',
+        			count: 11
+        		}, {
+        			title: 'Referral program, advisors',
+        			type: 'referral',
+        			count: 10
+        		}, {
+        			title: 'Bounty',
+        			type: 'bounty',
+        			count: 2
+        		}]
+        	}
+        },
+        computed: {
+        	activeDistribution () {
+        		if(this.selectedDistributionIndex === -1) return '100%';
+        		else return this.distributionList[this.selectedDistributionIndex].count+'%';
+        	}
+        },
+        methods: {
+        	showDist (index) {
+        		this.selectedDistributionIndex = index;
+        	}
+        }
     }
 </script>
 
