@@ -11,6 +11,9 @@
   #screen1 .container-fluid.partners img {
     margin: 16px 34px 0;
   }
+  #screen1 .container-fluid.what-is {
+    padding-bottom: 60px;
+  }
   #screen1 .container-fluid.what-is .title {
     font-size: 50px;
   }
@@ -22,6 +25,9 @@
   }
   #screen1 .container-fluid.what-is .btn-yellow {
     margin-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
   }
   .bonus-desc {
     margin-top: 16px;
@@ -29,6 +35,14 @@
   .partners-icons {
     align-items: center;
     justify-content: space-around;
+  }
+}
+@media (max-width: 1100px) {
+  #screen1 .container-fluid.what-is {
+    padding: 100px 100px 60px;
+  }
+  #screen1 .container-fluid.what-is .desc {
+    padding-left: 20px;
   }
 }
 @media (max-width: 1024px) {
@@ -78,14 +92,13 @@
   .crypto {
     margin-top: 60px;
   }
-  .btn-yellow,
   .btn-black {
     font-size: 14px;
     padding-left: 15px;
     padding-right: 15px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .screen1 .title {
     font-size: 30px;
   }

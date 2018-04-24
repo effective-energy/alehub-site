@@ -15,6 +15,8 @@
                     margin 16px 34px 0
 
             &.what-is
+                padding-bottom 60px
+
                 .title
                     font-size 50px
 
@@ -25,7 +27,10 @@
                     font-size 16px
 
                 .btn-yellow
-                    margin-bottom 12px   
+                    margin-bottom 12px
+                    padding-left 15px
+                    padding-right 15px 
+                    font-size 14px  
 
     .bonus-desc
         margin-top 16px
@@ -33,6 +38,15 @@
     .partners-icons
         align-items center
         justify-content space-around
+
+@media(max-width: 1100px)
+    #screen1
+        .container-fluid
+            &.what-is
+                padding 100px 100px 60px
+
+                .desc
+                    padding-left 20px
 
 @media(max-width: 1024px)
     .screen1
@@ -83,12 +97,12 @@
     .crypto
         margin-top 60px
 
-    .btn-yellow, .btn-black
+    .btn-black
         font-size 14px
         padding-left 15px
         padding-right 15px
 
-@media(max-width: 768px)
+@media(max-width: 960px)
     .screen1
         .title
             font-size 30px
