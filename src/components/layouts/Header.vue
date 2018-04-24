@@ -1,9 +1,14 @@
 <template>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white" id="navbar">
         <a href="#" class="navbar-brand">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
-                 alt="ALEHUB">
+                 alt="ALEHUB"
+                 v-if="isBlack">
+            <img class="d-inline-block align-top"
+                 src="../../../static/images/ale-logo-white.svg"
+                 alt="ALEHUB"
+                 v-else>
             ALEHUB
         </a>
         <button class="navbar-toggler"
@@ -20,11 +25,11 @@
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{active: index == activeItem}">
+                    :class="{active: index === activeItem}">
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
-                       <!--:href="item.path">-->
+                        <!--:href="item.path">-->
                         {{item.name}}
                     </a>
                 </li>
@@ -56,6 +61,7 @@
         name: 'Header', //rename
         data() {
             return {
+                isBlack: true,
                 navbar: [
                     {
                         path: '#home',
@@ -103,7 +109,7 @@
             }
         },
         methods: {
-            changeLineWidth(index) {
+            changeLineWidth: function (index) {
                 let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 
@@ -113,12 +119,85 @@
                     scope += document.querySelectorAll('.nav-item')[i].offsetWidth;
                 }
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
+            },
+            getCoords: function (elem) {
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+
             }
         },
         mounted() {
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
             }, 100);
+
+            let navbar = document.getElementById('navbar'),
+                featuresYOffset = this.getCoords(document.getElementById('features')).top,
+                navbarYOffset = navbar.offsetHeight;
+
+            console.log(featuresYOffset, 'featuresYOffset');
+            console.log(navbarYOffset, 'navbarYOffset');
+
+            window.addEventListener('scroll', () => {
+                // console.log(window.scrollY, 'scroll');
+
+                if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                    if (!navbar.classList.contains('bg-white')) {
+                        navbar.classList.add('bg-white');
+                        navbar.classList.remove('bg-dark-blue');
+                        navbar.classList.remove('bg-yellow');
+
+                        this.isBlack = true;
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    if (!navbar.classList.contains('bg-yellow')) {
+                        navbar.classList.add('bg-yellow');
+                        navbar.classList.remove('bg-dark-blue');
+                        navbar.classList.remove('bg-white');
+
+                        this.isBlack = true;
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                    if (!navbar.classList.contains('bg-white')) {
+                        navbar.classList.add('bg-white');
+                        navbar.classList.remove('bg-dark-blue');
+                        navbar.classList.remove('bg-yellow');
+
+                        this.isBlack = true;
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                    if (!navbar.classList.contains('bg-dark-blue')) {
+                        navbar.classList.add('bg-dark-blue');
+                        navbar.classList.remove('bg-white');
+                        navbar.classList.remove('bg-yellow');
+
+                        this.isBlack = false;
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                    if (!navbar.classList.contains('bg-white')) {
+                        navbar.classList.add('bg-white');
+                        navbar.classList.remove('bg-dark-blue');
+                        navbar.classList.remove('bg-yellow');
+
+                        this.isBlack = true;
+                    }
+                }
+            })
         }
     }
 </script>
@@ -126,4 +205,33 @@
 <style lang="stylus" scoped>
     .nav-item
         cursor pointer
+
+    .navbar
+        -webkit-box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
+        -moz-box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
+        box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
+        transition all 0.4s ease
+
+    .bg-yellow
+        background-color #fdcc45
+
+        .nav-line
+            border 1px solid #fdcc45
+            border-width 0 24px
+            background #ffffff
+
+    .bg-dark-blue
+        background-color #343a49
+
+        .nav-line
+            border 1px solid #343a49
+            border-width 0 24px
+            background #fdcc45
+
+        .navbar-brand
+            color #fff
+
+        .nav-link
+            transition all 0.4s ease
+            color #fff !important
 </style>
