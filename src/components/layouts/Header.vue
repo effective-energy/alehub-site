@@ -153,6 +153,22 @@
                 this.activeHamburger = !this.activeHamburger;
 
                 (this.activeHamburger) ? this.openModal('menu-modal') : this.closeModal('menu-modal');
+            },
+            initScroll: function () {
+                let _this = this;
+                window.addEventListener('scroll', function () {
+                    _this.checkActive()
+                })
+            },
+            checkActive: function () {
+                for (let i = 0; i < this.navbar.length; i++) {
+                    if(document.querySelector(this.navbar[i].path) === null) return false;
+                    let offset = document.querySelector(this.navbar[i].path).offsetTop-74
+                    let height = document.querySelector(this.navbar[i].path).offsetHeight
+                    if (window.scrollY > offset && window.scrollY <= offset+height) {
+                        this.activeItem = i;
+                    }
+                }
             }
         },
         mounted() {
@@ -167,6 +183,8 @@
 
             let navbar = document.getElementById('navbar'),
                 navbarYOffset = navbar.offsetHeight;
+
+            this.initScroll();
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {

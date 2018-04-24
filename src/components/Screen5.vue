@@ -1,6 +1,6 @@
 <template>
-    <div class="team" id="team">
-        <div class="our-team">
+    <div class="team">
+        <div class="our-team" id="team">
 
             <h3 class="title">
                 Our team
@@ -41,9 +41,21 @@
             </div>
 
             <div class="effective-energy">
-                <p>Effective Energy</p>
+                <p>Effective Energy team</p>
 
-                <div class="images">
+                <div class="container">
+                    <swiper :options="swiperOption">
+                        <swiper-slide
+                            class="image"
+                            v-for="(member, i) in team.energy"
+                            :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }"
+                        >
+                            <img class="layer__bottom" :src="member.src" :alt="member.name" />
+                        </swiper-slide>
+                    </swiper>
+                </div>
+
+                <div class="images" v-if="false">
                     <div class="image"
                          style=""
                          v-for="(member, i) in team.energy"
@@ -121,6 +133,19 @@
         name: 'Screen5',
         data() {
             return {
+                swiperOption: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                    slidesPerGroup: 4,
+                    loop: true,
+                    centeredSlides: true,
+                    breakpoints: {
+                        1024: { slidesPerView: 4 },
+                        768: { slidesPerView: 3 },
+                        640: { slidesPerView: 2 },
+                        320: { slidesPerView: 1 }
+                    }
+                },
                 team: {
                     serokell: [
                         {
@@ -188,12 +213,12 @@
                         {
                             name: 'Denis Tikhonov',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/tikhonov@3x.png'
+                            src: '../../static/images/avatars/mostovoy@3x.png'
                         },
                         {
                             name: 'Galina Sergeeva',
                             position: 'Frontend Developer',
-                            src: '../../static/images/avatars/sergeeva@3x.png'
+                            src: '../../static/images/avatars/elagin@3x.png'
                         },
                         {
                             name: 'Dmitry Zhuravlev',
@@ -233,6 +258,24 @@
         }
     }
 </script>
+
+<style>
+    @media screen and (min-width: 1300px) {
+        .swiper-container {
+            width: 1300px;
+            margin-left: -100px;
+        }
+
+        .swiper-slide {
+            width: 25%!important;
+        }
+    }
+    /*@media screen and (max-width: 800px) {
+        .swiper-slide {
+            width: 300px!important;
+        }
+    }*/
+</style>
 
 <style lang="stylus" scoped>
 
@@ -343,7 +386,7 @@
                     font-size 18px
                     display inline-block
                     position absolute
-                    top 50%
+                    top 65%
                     left 50%
                     -moz-transform translate(-50%, -50%)
                     -webkit-transform translate(-50%, -50%)

@@ -402,7 +402,7 @@ export default {
                 margin 0
     .scrol-ic
         margin-right auto
-        margin-left calc(100% - 396px)
+        margin-left calc(50% - 396px)
         @media (max-width: 1124px)
             display none
 </style>
