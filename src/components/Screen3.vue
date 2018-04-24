@@ -46,9 +46,6 @@
                 </div>
             </div>
 
-            <!--получать значение отступа блока advantages-body и считать от него-->
-            <!--<img src="../../static/images/arrow-left.svg" style="position: absolute; top: 300px; left: 10%; width: 24px; height: 48px;">-->
-
             <div class="block-advantages"
                  :class="{'block-advantages__active': advantagesFlag === 'second', 'block-advantages__left': advantagesFlag === 'first'}">
                 <div class="advantage">
@@ -251,6 +248,7 @@
                     transform translateX(100%)
 
                 .point-right-inactive
+                    cursor pointer
                     opacity 0.3
                     transform translateX(100%)
 
@@ -258,6 +256,7 @@
                         border-bottom 2px solid transparent
 
                 .point-left-inactive
+                    cursor pointer
                     opacity 0.3
                     transform translateX(0)
 
