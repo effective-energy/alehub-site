@@ -2,7 +2,7 @@
     <div class="application" id="features">
         <div class="section-1">
             <h3 class="title">
-                Alehub - frist application
+                Alehub - first application
             </h3>
             <p class="description">
                 <b>Alehub</b> is the first project using the <b>ALE</b> platform. <b>Alehub</b> is aimed at the IT
@@ -97,9 +97,10 @@
         </div>
 
         <div class="section-3">
-            <div class="figure">
 
+            <div class="figure">
             </div>
+
             <div class="info-block">
                 <h3 class="title">
                     The main distinguishing
@@ -162,11 +163,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </template>
 
@@ -214,12 +212,16 @@
                 justify-content center
 
                 .play-button
+                    cursor pointer
                     width 85px
                     height 85px
                     border none
                     border-radius 50%
                     background-color #ffffff
                     margin-bottom 20px
+
+                    &:focus
+                        outline 0
 
                     .wrap-ic
                         padding-left 7px
