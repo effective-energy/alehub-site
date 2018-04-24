@@ -1,5 +1,7 @@
 <template>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white" id="navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light"
+         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow, 'bg-yellow': isYellow }"
+         id="navbar">
         <a href="#" class="navbar-brand">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
@@ -11,21 +13,20 @@
                  v-else>
             ALEHUB
         </a>
-        <button class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarText"
-                aria-controls="navbarText"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="hamburger"
+             id="hamburger-6"
+             :class="{ 'is-active': activeHamburger }"
+             @click="toggleHamburger">
+            <span class="line" :class="{ 'line__white': isBlack }"></span>
+            <span class="line" :class="{ 'line__white': isBlack }"></span>
+            <span class="line" :class="{ 'line__white': isBlack }"></span>
+        </div>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto ml-auto">
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{active: index === activeItem}">
+                    :class="{ active: index === activeItem }">
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
@@ -72,6 +73,7 @@
                 isBlack: false,
                 isYellow: false,
                 dropdownOpen: false,
+                activeHamburger: false,
                 navbar: [
                     {
                         path: '#home',
@@ -141,6 +143,9 @@
             },
             toggleDropdown: function () {
                 this.dropdownOpen = !this.dropdownOpen;
+            },
+            toggleHamburger: function () {
+                this.activeHamburger = !this.activeHamburger;
             }
         },
         mounted() {
@@ -152,18 +157,9 @@
                 featuresYOffset = this.getCoords(document.getElementById('features')).top,
                 navbarYOffset = navbar.offsetHeight;
 
-            console.log(featuresYOffset, 'featuresYOffset');
-            console.log(navbarYOffset, 'navbarYOffset');
-
             window.addEventListener('scroll', () => {
-                // console.log(window.scrollY, 'scroll');
-
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (!navbar.classList.contains('bg-white')) {
-                        navbar.classList.add('bg-white');
-                        navbar.classList.remove('bg-dark-blue');
-                        navbar.classList.remove('bg-yellow');
-
+                    if (this.isBlack || this.isYellow) {
                         this.isBlack = false;
                         this.isYellow = false;
                     }
@@ -171,11 +167,7 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!navbar.classList.contains('bg-yellow')) {
-                        navbar.classList.add('bg-yellow');
-                        navbar.classList.remove('bg-dark-blue');
-                        navbar.classList.remove('bg-white');
-
+                    if (!this.isYellow) {
                         this.isBlack = false;
                         this.isYellow = true;
                     }
@@ -183,11 +175,7 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (!navbar.classList.contains('bg-white')) {
-                        navbar.classList.add('bg-white');
-                        navbar.classList.remove('bg-dark-blue');
-                        navbar.classList.remove('bg-yellow');
-
+                    if (this.isBlack || this.isYellow) {
                         this.isBlack = false;
                         this.isYellow = false;
                     }
@@ -195,22 +183,14 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (!navbar.classList.contains('bg-dark-blue')) {
-                        navbar.classList.add('bg-dark-blue');
-                        navbar.classList.remove('bg-white');
-                        navbar.classList.remove('bg-yellow');
-
+                    if (!this.isBlack) {
                         this.isBlack = true;
                         this.isYellow = false;
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (!navbar.classList.contains('bg-white')) {
-                        navbar.classList.add('bg-white');
-                        navbar.classList.remove('bg-dark-blue');
-                        navbar.classList.remove('bg-yellow');
-
+                    if (this.isBlack || this.isYellow) {
                         this.isBlack = false;
                         this.isYellow = false;
                     }
@@ -221,6 +201,61 @@
 </script>
 
 <style lang="stylus" scoped>
+    .hamburger
+        display none
+
+    @media (max-width 768px)
+        .hamburger
+            display block
+
+    .line__white
+        background-color #ffffff !important
+
+    .hamburger
+        .line
+            cursor pointer
+            width 50px
+            height 5px
+            background-color #3e3d42
+            display block
+            margin 8px auto
+            -webkit-transition all 0.3s ease-in-out
+            -o-transition all 0.3s ease-in-out
+            transition all 0.3s ease-in-out
+
+    #hamburger-6.is-active
+        -webkit-transition all 0.3s ease-in-out
+        -o-transition all 0.3s ease-in-out
+        transition all 0.3s ease-in-out
+        -webkit-transition-delay 0.6s
+        -o-transition-delay 0.6s
+        transition-delay 0.6s
+        -webkit-transform rotate(45deg)
+        -ms-transform rotate(45deg)
+        -o-transform rotate(45deg)
+        transform rotate(45deg)
+
+    #hamburger-6.is-active .line:nth-child(2)
+        width 0
+
+    #hamburger-6.is-active
+        .line:nth-child(1), .line:nth-child(3)
+            -webkit-transition-delay 0.3s
+            -o-transition-delay 0.3s
+            transition-delay 0.3s
+
+        .line:nth-child(1)
+            -webkit-transform translateY(13px)
+            -ms-transform translateY(13px)
+            -o-transform translateY(13px)
+            transform translateY(13px)
+
+        .line:nth-child(3)
+            -webkit-transform translateY(-13px) rotate(90deg)
+            -ms-transform translateY(-13px) rotate(90deg)
+            -o-transform translateY(-13px) rotate(90deg)
+            transform translateY(-13px) rotate(90deg)
+
     .btn-login
         &:focus
             box-shadow none
