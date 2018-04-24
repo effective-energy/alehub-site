@@ -205,13 +205,19 @@
 
         .responsible
             width 100%;
-            height 48px
-            margin 16px 0
+            height 80px
+            margin 16px 0 0px
             display flex
 
             .avatar
-                width 36px
+                width 48px
                 height 48px
+                overflow hidden
+                border-radius 50%
+                text-align center
+                img
+                    height 48px
+                    width auto
 
             .avatar:not(:first-child)
                 margin-left 12px
