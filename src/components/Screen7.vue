@@ -8,7 +8,7 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
-            <div class="slides-body">
+            <div class="slides-body dragscroll">
                 <div class="slide"
                      v-for="(slide, slideIndex) in slides"
                      :key="slideIndex">
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+	import Dragscroll from 'dragscroll';
+
     export default {
         name: 'Roadmap',
         data() {
@@ -157,6 +159,9 @@
             height 400px
             display flex
             overflow-x scroll
+            cursor -webkit-grab
+            &:active
+                cursor -webkit-grabbing
 
             .slide
                 min-width 512px
@@ -206,12 +211,18 @@
         .responsible
             width 100%;
             height 48px
-            margin 16px 0
+            margin 16px 0 16px
             display flex
 
             .avatar
-                width 36px
+                width 48px
                 height 48px
+                overflow hidden
+                border-radius 50%
+                text-align center
+                img
+                    height 48px
+                    width auto
 
             .avatar:not(:first-child)
                 margin-left 12px

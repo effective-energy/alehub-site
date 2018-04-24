@@ -8,6 +8,7 @@
         <screen5 />
         <screen6 />
         <screen7 />
+        <Blog />
         <footer />
     </div>
 </template>
@@ -21,6 +22,7 @@ import Screen4 from './Screen4'
 import Screen5 from './Screen5'
 import Screen6 from './Screen6'
 import Screen7 from './Screen7'
+import Blog from './Blog'
 import Footer from './layouts/Footer'
 
 export default {
@@ -34,6 +36,7 @@ export default {
         Screen5,
         Screen6,
         Screen7,
+        Blog,
         Footer
     }
 }
