@@ -196,7 +196,7 @@ body {
   color: #34343e;
 }
 #screen1 .container-fluid.partners img {
-  margin: 0 64px;
+  margin: 16px 64px 0;
 }
 #screen1 .container-fluid.what-is {
   margin-top: 40px;

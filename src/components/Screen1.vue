@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-7">
+                    <div class="col-xl-12 col-lg-11">
                         <div class="countdown">
                             <h2 class="title">
                                 Round 1 will begin:
@@ -168,10 +168,12 @@
         </div>
         <div class="container-fluid partners">
             <div class="title">Our partners:</div>
-            <img src="../../static/images/itmo.png" alt="">
-            <img src="../../static/images/crypto.png" alt="">
-            <img src="../../static/images/beer.png" alt="">
-            <img src="../../static/images/serokell.png" alt="">
+            <div class="row partners-icons">
+                <img src="../../static/images/itmo.png" alt="" height="60px" width="114px">
+                <img src="../../static/images/crypto.png" alt="" height="46px" width="158px">
+                <img src="../../static/images/beer.png" alt="" height="59px" width="57px">
+                <img src="../../static/images/serokell.png" alt="" height="43px" width="87px">
+            </div>
         </div>
         <div class="container-fluid what-is" id="description">
             <div class="row">
