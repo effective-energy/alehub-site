@@ -1,5 +1,5 @@
 <template>
-    <div class="application">
+    <div class="application" id="features">
         <div class="section-1">
             <h3 class="title">
                 Alehub - frist application

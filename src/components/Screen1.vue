@@ -60,7 +60,7 @@
 				</g>
 			</svg>
 		</div>
-        <div class="first-screen">
+        <div class="first-screen" id="home">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -173,7 +173,7 @@
             <img src="../../static/images/beer.png" alt="">
             <img src="../../static/images/serokell.png" alt="">
         </div>
-        <div class="container-fluid what-is">
+        <div class="container-fluid what-is" id="description">
             <div class="row">
                 <div class="col-lg-6 promo">
                     <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">

@@ -23,7 +23,8 @@
                     :class="{active: index == activeItem}">
                     <a @click="activeItem = index"
                        class="nav-link"
-                       :href="item.path">
+                       v-scroll-to="item.path">
+                       <!--:href="item.path">-->
                         {{item.name}}
                     </a>
                 </li>
@@ -57,40 +58,40 @@
             return {
                 navbar: [
                     {
-                        path: '#',
+                        path: '#home',
                         name: 'Home'
                     },
                     {
-                        path: '#',
+                        path: '#description',
                         name: 'Description'
                     },
                     {
-                        path: '#',
+                        path: '#advantages',
                         name: 'Advantages'
                     },
                     {
-                        path: '#',
+                        path: '#features',
                         name: 'Features'
                     },
                     {
-                        path: '#',
+                        path: '#team',
                         name: 'Team'
                     },
                     {
-                        path: '#',
-                        name: 'Advisor'
+                        path: '#advisors',
+                        name: 'Advisors'
                     },
                     {
-                        path: '#',
-                        name: 'Bounty'
+                        path: '#ico',
+                        name: 'ICO'
                     },
                     {
-                        path: '#',
+                        path: '#roadmap',
+                        name: 'Roadmap'
+                    },
+                    {
+                        path: '#blog',
                         name: 'Blog'
-                    },
-                    {
-                        path: '#',
-                        name: 'Contact'
                     },
                 ],
                 activeItem: 0
@@ -121,3 +122,8 @@
         }
     }
 </script>
+
+<style lang="stylus" scoped>
+    .nav-item
+        cursor pointer
+</style>

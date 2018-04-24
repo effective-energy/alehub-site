@@ -1,5 +1,5 @@
 <template>
-    <div class="advantages">
+    <div class="advantages" id="advantages">
         <h3 class="advantages-title">
             ALE advantages
         </h3>

@@ -1,5 +1,5 @@
 <template>
-    <div class="section economy-section">
+    <div class="section economy-section" id="ico">
         <div class="container">
             <h1 class="section-title is-center">
                 Economy of ICO

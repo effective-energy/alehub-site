@@ -1,6 +1,6 @@
 <template>
     <div class="team">
-        <div class="our-team">
+        <div class="our-team" id="team">
 
             <h3 class="title">
                 Our team
@@ -41,7 +41,7 @@
             </div>
 
         </div>
-        <div class="advisors">
+        <div class="advisors" id="advisors">
             <h3 class="title">
                 Advisors
             </h3>
