@@ -211,39 +211,98 @@
 			height 8px
 			background-image url('../../../static/images/go-home-ic.svg')
 
-	@media(max-width: 1200px)
+	@media(max-width: 1199px)
 		.footer
 			.back-to-top
 				min-width 100px
 				align-self stretch
 
-	@media(max-width: 960px)
+			.footer-row
+				align-items flex-end
+
+			.copyright-block
+				.copyright-text
+					white-space nowrap
+					
+				.creator-and-terms
+					.creator
+						white-space nowrap
+
+	@media(max-width: 1023px)
+		.footer
+			.copyright-block
+				.creator-and-terms
+					flex-direction column
+					align-items flex-start
+
+					.terms
+						margin-left 0
+
+			.social-block
+				align-items flex-end
+
+				.subscribe-form
+					flex-direction column
+					align-items flex-end
+					width 100%
+					max-width 280px
+
+					input
+						margin-bottom 8px
+						width 100%
+
+					button 
+						margin-left 0
+						width 100%
+
+
+	@media(max-width: 768px)
+		.footer
+			padding-right 32px
+			padding-left 32px
+
+	@media(max-width: 760px)
 		.footer
 			.footer-row
 				flex-direction column
+				align-items center
 
 				.copyright-block
 					order 3
-
+					
 					.ale-logo
 						margin 0 auto
 						margin-bottom 12px
 
-				.social-block
-					order 2
-					margin-bottom 24px
-
-					.subscribe-form
+					&.col-5
+						max-width 100%
+						display flex
 						flex-direction column
+						align-items center
 
-						input
-							margin-bottom 8px
-
-						button
-							margin-left 0
+					.creator-and-terms
+						align-items center
 
 				.back-to-top
 					order 1
 					align-self center
 					margin-bottom 24px
+
+				.social-block
+					order 2
+					margin-bottom 24px
+
+					&.col-5
+						max-width 100%
+						display flex
+						flex-direction column
+						align-items center
+
+					.social-networks
+						width 280px
+
+						.social-item
+							&:last-child
+								margin-right 0
+
 </style>
