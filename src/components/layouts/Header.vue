@@ -185,7 +185,7 @@
 
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
-            }, 100);
+            }, 500);
 
             let navbar = document.getElementById('navbar'),
                 navbarYOffset = navbar.offsetHeight;

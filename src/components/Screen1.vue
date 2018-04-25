@@ -128,22 +128,22 @@
                             <div class="timer">
                                 <div class="days">
                                     <div class="numbers">
-                                        <div class="first">0</div>
-                                        <div class="second">1</div>
+                                        <div class="first">{{ timer.days.first }}</div>
+                                        <div class="second">{{ timer.days.second }}</div>
                                     </div>
                                     <div class="title">Days</div>
                                 </div>
                                 <div class="hours">
                                     <div class="numbers">
-                                        <div class="first">2</div>
-                                        <div class="second">4</div>
+                                        <div class="first">{{ timer.hours.first }}</div>
+                                        <div class="second">{{ timer.hours.second }}</div>
                                     </div>
                                     <div class="title">Hours</div>
                                 </div>
                                 <div class="minutes">
                                     <div class="numbers">
-                                        <div class="first">5</div>
-                                        <div class="second">9</div>
+                                        <div class="first">{{ timer.minutes.first }}</div>
+                                        <div class="second">{{ timer.minutes.second }}</div>
                                     </div>
                                     <div class="title">Minutes</div>
                                 </div>
@@ -305,7 +305,27 @@
                     infinite: 1,
                     slidesToScroll: 1,
                     autoplay: '5000'
-                }
+                },
+                timer: {
+                    days: {
+                        first: 0,
+                        second: 0
+                    },
+                    hours: {
+                        first: 0,
+                        second: 0
+                    },
+                    minutes: {
+                        first: 0,
+                        second: 0
+                    },
+                    seconds: {
+                        first: 0,
+                        second: 0
+                    }
+                },
+                endtime: 1527206400000,
+                timeinterval: 0,
             }
         },
         methods: {
@@ -326,10 +346,40 @@
                         autoplay: true
                     });
                 }
+            },
+            getTimeRemaining() {
+                var t = this.endtime - Date.parse(new Date());
+                var seconds = Math.floor((t / 1000) % 60);
+                var minutes = Math.floor((t / 1000 / 60) % 60);
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                let format = function (count, isSecond) {
+                    let result = 0;
+                    if (isSecond) 
+                        result = ('0' + count).slice(-1)
+                    else {
+                        if (('0' + count).length === 3)
+                            result = ('' + count).slice(0,1);
+                        else if (('0' + count).length === 2)
+                            result = '0';
+                    };
+                    return result;
+                };
+                if (t <= 0)
+                    return clearInterval(this.timeinterval);
+                this.timer.days.first = format(days);
+                this.timer.days.second = format(days, true);
+                this.timer.hours.first = format(hours);
+                this.timer.hours.second = format(hours, true);
+                this.timer.minutes.first = format(minutes);
+                this.timer.minutes.second = format(minutes, true);
+                this.timer.seconds.first = format(seconds);
+                this.timer.seconds.second = format(seconds, true);
             }
         },
         mounted() {
             this.startAnime();
+            this.timeinterval = setInterval(this.getTimeRemaining, 1000);
         }
     }
 </script>
