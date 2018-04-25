@@ -7,7 +7,7 @@
 			<div class="divider"></div>
 
 			<div class="row news-section">
-				<div class="col-6">
+				<div class="col-md-6 col-sm-12">
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news.png" alt="" class="picture">
 						<div class="news-info">
@@ -16,7 +16,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-sm-12">
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news.jpg" alt="" class="picture">
 						<div class="news-info">
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-sm-12">
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news2.jpg" alt="" class="picture">
 						<div class="news-info">
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-sm-12">
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news3.jpg" alt="" class="picture">
 						<div class="news-info">
@@ -43,7 +43,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-sm-12">
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news4.jpg" alt="" class="picture">
 						<div class="news-info">
@@ -69,12 +69,18 @@
 </script>
 
 <style>
+
 	.blog-section {
 		background-color: #ffffff;
 	}
 </style>
 
 <style lang="stylus" scoped>
+	@media screen and (max-width: 600px) {
+		.news-title {
+			font-size 5vw !important
+		}
+	}
 	.section
 		padding 71px 0 0 0
 
