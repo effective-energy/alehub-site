@@ -212,6 +212,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="ico-progress">
+                            <div class="state">
+                                <div class="title">Soft cap</div>
+                                <div class="count">{{ collected }} / {{ softCap }} ETH</div>
+                            </div>
+                            <div class="progress-bar-outer">
+                                <div class="progress-bar-inner" :style="{width: (collected/softCap)*100+'%'}"></div>
+                            </div>
+                            <div class="state hard-cap">
+                                <div class="title">Hard cap</div>
+                                <div class="count">{{ collected }} / {{ hardCap }} ETH</div>
+                            </div>
+                            <div class="progress-bar-outer">
+                                <div class="progress-bar-inner" :style="{width: (collected/hardCap)*100+'%'}"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -326,6 +342,9 @@
                 },
                 endtime: 1527206400000,
                 timeinterval: 0,
+                collected: 1440,
+                softCap: 2000,
+                hardCap: 33000
             }
         },
         methods: {
@@ -515,4 +534,23 @@
             margin-left calc(50% - 396px)
             @media (max-width: 1124px)
                 display none
+        .ico-progress
+            width 448px
+            font-family MuseoSansCyrl500
+            font-size 20px
+            color #34343e
+            margin-top 60px
+            .state
+                display flex
+                flex-direction row
+                justify-content space-between
+                &.hard-cap
+                    margin-top 24px
+            .progress-bar-outer
+                height 4px
+                background-color #FFF
+                .progress-bar-inner
+                    background-color #ffbc00
+                    box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
+                    height 100%
 </style>
