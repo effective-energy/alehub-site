@@ -8,7 +8,7 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
-            <div class="slides-body dragscroll" v-on:scroll="scrollSlide">
+            <div class="slides-body">
                 <div class="slide"
                      v-for="(slide, slideIndex) in slides"
                      :key="slideIndex">
@@ -137,9 +137,6 @@
             }
         },
         methods: {
-        	scrollSlide () {
-        		document.getElementsByClassName('scroll-element')[0].scrollLeft = document.getElementsByClassName('slides-body')[0].scrollLeft;
-        	},
         	scrollForSlide () {
         		document.getElementsByClassName('slides-body')[0].scrollLeft = 891.5-document.getElementById('scroll-content').getBoundingClientRect().left;
         	}
