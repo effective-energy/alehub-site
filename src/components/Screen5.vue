@@ -48,8 +48,8 @@
                         <swiper-slide
                             class="image"
                             v-for="(member, i) in team.energy" :key="i"
-                            :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }"
-                        >
+                            :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
+
                             <img class="layer__bottom" :src="member.src" :alt="member.name" />
                         </swiper-slide>
                     </swiper>
