@@ -386,7 +386,8 @@
                     font-size 18px
                     display inline-block
                     position absolute
-                    top 65%
+                    width 80%
+                    top 70%
                     left 50%
                     -moz-transform translate(-50%, -50%)
                     -webkit-transform translate(-50%, -50%)
@@ -397,14 +398,16 @@
                         font-weight 700
                         font-size 24px
 
-                    .p
-                        font-size 14px
+                    p
+                        font-size 12px
                         margin-bottom 25px
+                        text-transform uppercase
+                        font-family MuseoSansCyrl500
 
                     .icons
                         width 100%
                         display flex
-                        justify-content space-around
+                        justify-content center
 
                         .telegram
                             width 18px
@@ -421,5 +424,7 @@
                         .in
                             width 17px
                             height 17px
+                        img
+                            margin auto 15px
 
 </style>
