@@ -353,7 +353,6 @@
                 var minutes = Math.floor((t / 1000 / 60) % 60);
                 var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
                 var days = Math.floor(t / (1000 * 60 * 60 * 24));
-                console.log(this.endtime)
                 let format = function (count, isSecond) {
                     let result = 0;
                     if (isSecond) 
