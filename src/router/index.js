@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Index from '@/components/Index';
 import BlogEntries from '@/components/BlogEntries';
+import FullNews from '@/components/FullNews';
 
 Vue.use(Router);
 
@@ -13,9 +14,13 @@ const router = new Router({
     	name: 'Index',
     	component: Index
     }, {
-    	path: '/blog',
-    	name: 'BlogEntries',
-    	component: BlogEntries
+        path: '/blog',
+        name: 'BlogEntries',
+        component: BlogEntries
+    }, {
+        path: '/blog/:id',
+        name: 'FullNews',
+        component: FullNews
     }]
 });
 
