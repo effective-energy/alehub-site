@@ -43,19 +43,7 @@
             <div class="effective-energy">
                 <p>Effective Energy team</p>
 
-                <div class="container">
-                    <swiper :options="swiperOption">
-                        <swiper-slide
-                            class="image"
-                            v-for="(member, i) in team.energy" :key="i"
-                            :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }"
-                        >
-                            <img class="layer__bottom" :src="member.src" :alt="member.name" />
-                        </swiper-slide>
-                    </swiper>
-                </div>
-
-                <div class="images" v-if="false">
+                <div class="images">
                     <div class="image"
                          style=""
                          v-for="(member, i) in team.energy" :key="i"
@@ -386,7 +374,8 @@
                     font-size 18px
                     display inline-block
                     position absolute
-                    top 65%
+                    width 80%
+                    top 70%
                     left 50%
                     -moz-transform translate(-50%, -50%)
                     -webkit-transform translate(-50%, -50%)
@@ -397,14 +386,16 @@
                         font-weight 700
                         font-size 24px
 
-                    .p
-                        font-size 14px
+                    p
+                        font-size 12px
                         margin-bottom 25px
+                        text-transform uppercase
+                        font-family MuseoSansCyrl500
 
                     .icons
                         width 100%
                         display flex
-                        justify-content space-around
+                        justify-content center
 
                         .telegram
                             width 18px
@@ -421,5 +412,7 @@
                         .in
                             width 17px
                             height 17px
+                        img
+                            margin auto 15px
 
 </style>
