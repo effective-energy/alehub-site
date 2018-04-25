@@ -68,6 +68,36 @@
 					</div>
 
 				</div>
+
+				<div class="more-news">
+					<h1 class="more-news-title">More news</h1>
+
+					<div class="more-news-content">
+						<div class="news-item">
+							<img src="../../static/images/news-pictures/news.png" alt="" />
+							<a href="#" class="news-link">Alehub IOS application beta 1</a>
+							<i class="date">Feb 11, 2018</i>
+						</div>
+
+						<div class="news-item">
+							<img src="../../static/images/news-pictures/news.jpg" alt="" />
+							<a href="#" class="news-link">How to invest in an ICO</a>
+							<i class="date">Feb 11, 2018</i>
+						</div>
+
+						<div class="news-item">
+							<img src="../../static/images/news-pictures/news2.jpg" alt="" />
+							<a href="#" class="news-link">Push into billion-dollar Southeast Asian token markets</a>
+							<i class="date">Feb 11, 2018</i>
+						</div>
+
+						<div class="news-item">
+							<img src="../../static/images/news-pictures/news3.jpg" alt="" />
+							<a href="#" class="news-link">Alehub iOS application beta 2</a>
+							<i class="date">Feb 11, 2018</i>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<Footer />
@@ -259,4 +289,54 @@
 
 						&:not(:first-child)
 							margin-left 12px
+
+			.more-news
+				margin-top 36px
+
+				.more-news-title
+					text-transform uppercase
+					font-family MuseoSansCyrl500
+					font-size 24px
+					font-weight bold
+					line-height 1.21
+					color #34343e
+					margin-bottom 16px
+
+				.more-news-content
+					display flex
+					justify-content space-between
+
+					.news-item
+						display flex
+						flex-direction column
+						margin 0 10px
+						width 25%
+
+						img
+							width 100%
+							height 130px
+							object-fit cover
+
+						.news-link
+							font-family MuseoSansCyrl500
+							font-size 20px
+							font-weight bold
+							line-height 1.2
+							color #34343e
+							text-decoration underline
+							margin 8px 0
+
+						.date
+							opacity 0.4
+							font-family MuseoSansCyrl500
+							font-size 14px
+							font-weight 500
+							line-height 1.21
+							color #34343e
+
+					.news-item:first-child
+						margin-left 0
+
+					.news-item:last-child
+						margin-right 0
 </style>
