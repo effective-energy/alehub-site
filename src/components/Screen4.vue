@@ -331,4 +331,135 @@
     @media (max-width: 1250px)
         .application
             padding 80px 5%
+
+    @media(max-width: 768px)
+        .application
+            .section-2
+                .list-items
+                    .item
+                        width 50%
+                        padding-right 16px
+                        margin-bottom 24px
+
+            .section-3
+                .figure
+                    width 50%
+                    display flex
+                    flex-direction column
+                    justify-content center
+
+                .info-block
+                    width 50%
+                    padding-left 0
+
+                    .title
+                        margin-bottom 24px
+                        font-size 34px
+
+                    .list-items
+                        .item
+                            width 100%
+                            padding-right 0
+                            margin-bottom 24px
+
+    @media(max-width: 575px)
+        .application
+            .section-3
+                .figure
+                    display none
+
+                .info-block
+                    width 100%
+
+    @media(max-width: 425px)
+        .application
+            .section-1
+                margin-bottom 24px
+
+                .title
+                    text-align center
+                    font-size 30px
+                    margin-bottom 24px
+
+                .description
+                    font-size 16px
+
+                .watch
+                    .play-button
+                        width 75px
+                        height 75px
+
+            .section-2
+                margin-bottom 24px
+
+                .title
+                    font-size 30px
+                    margin-bottom 24px
+
+                .list-items
+                    .item
+                        width 100%
+                        padding-right 0
+                        padding-left 15px
+
+                        &:nth-child(4)
+                            .left
+                                margin-right 20px
+
+            .section-3
+                .info-block
+                    .title
+                        font-size 30px
+                        margin-bottom 24px
+                        text-align center 
+
+                    .list-items
+                        .item
+                            padding-left 15px
+
+                            &:first-child
+                                .left
+                                    margin-right 38px
+
+    @media(max-width: 320px)
+        .application
+            .section-2
+                .list-items
+                    .item
+                        display flex
+                        flex-direction column
+                        padding-left 0
+                        align-items center
+
+                        &:nth-child(4)
+                            .left
+                                margin-right 0
+
+                        .left
+                            margin-right 0
+                            margin-bottom 12px
+
+                        .right
+                            text-align center
+
+            .section-3
+                .info-block
+                    .list-items
+                        .item
+                            display flex
+                            flex-direction column
+                            padding-left 0
+                            align-items center
+
+                            &:first-child
+                                .left
+                                    margin-right 0
+
+                            .left
+                                margin-right 0
+                                margin-bottom 12px
+
+                            .right
+                                text-align center
+                        
 </style>
