@@ -305,7 +305,7 @@
         background-color #ffbc00
 
     .nav-line__yellow
-        border 1px solid #ffbc00
+        border 1px solid #fdc135
         border-width 0 24px
         background-color #343a49
 

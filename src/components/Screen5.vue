@@ -42,7 +42,24 @@
 
             <div class="effective-energy">
                 <p>Effective Energy team</p>
+<<<<<<< HEAD
                 <div class="images">
+=======
+
+                <div class="container">
+                    <swiper :options="swiperOption">
+                        <swiper-slide
+                            class="image"
+                            v-for="(member, i) in team.energy" :key="i"
+                            :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
+
+                            <img class="layer__bottom" :src="member.src" :alt="member.name" />
+                        </swiper-slide>
+                    </swiper>
+                </div>
+
+                <div class="images" v-if="false">
+>>>>>>> c919b1051da17c2ba0217c4faa0099fdc179daee
                     <div class="image"
                          style=""
                          v-for="(member, i) in team.energy" :key="i"
