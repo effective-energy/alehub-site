@@ -24,7 +24,7 @@
             </div>
 
             <div class="row distribution">
-                <div class="col-3">
+                <div class="col-xs-6 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="steep-statis steep-sale">
                         <div class="steep-team">
                             <div class="steep-referral">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list">
                         <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
                             <div class="color-steep steep-sale" :class="['steep-'+dist.type]"></div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-md-5 col-sm-12">
                     <h1 class="section-title is-white is-right mt0">{{ $t('economy.distribution.title') }}</h1>
                     <div class="divider"></div>
                     <p class="small">
@@ -172,6 +172,7 @@
             letter-spacing normal
             text-align center
             color #ffffff
+            white-space nowrap
 
     .distribution
         padding 64px
@@ -273,4 +274,241 @@
                     line-height 1.25
                     letter-spacing normal
                     color #ffffff
+
+    @media(max-width: 1199px)
+        .figures-panel
+            .figures-subtitle
+                font-size 26px
+
+        .distribution
+            padding 24px
+
+            .steep-statis
+                &.steep-sale
+                    width 200px
+                    height 200px
+
+                    .steep-team
+                        width 160px
+                        height 160px
+
+                        .steep-referral
+                            width 120px
+                            height 120px
+
+                            .steep-bounty
+                                width 80px
+                                height 80px
+
+            .section-title
+                font-size 2.5em
+
+    @media(max-width: 991px)
+        .figures-panel
+            .figures-subtitle
+                font-size 20px
+
+        .section-title
+            font-size 2.5em
+
+        .section-subtitle
+            font-size 1.2em
+
+        .distribution
+            .section-title
+                font-size 1.6em
+                margin 16px 0
+
+            .divider
+                margin-bottom 24px
+
+            .steep-list
+                .item-list
+                    span
+                        font-size 14px
+
+                    .color-steep
+                        width 12px
+                        height 12px
+                        margin-right 10px
+
+            .steep-statis
+                &.steep-sale
+                    width 180px
+                    height 180px
+
+                    .steep-team
+                        width 140px
+                        height 140px
+
+                        .steep-referral
+                            width 100px
+                            height 100px
+
+                            .steep-bounty
+                                width 60px
+                                height 60px
+
+                                .steep-count
+                                    font-size 18px
+
+        .col-lg-3
+            padding-right 0
+
+    @media(max-width: 767px)
+        .figures-panel
+            .figures-title
+                font-size 20px
+                margin-bottom 12px
+            
+            .figures-subtitle
+                font-size 16px
+
+        .figures-panel
+            padding 12px 0 32px
+
+        .col-lg-3
+            padding-right 15px
+
+        .distribution
+            .steep-statis
+                &.steep-sale
+                    width 220px
+                    height 220px
+                    margin-bottom 24px
+
+                    .steep-team
+                        width 180px
+                        height 180px
+
+                        .steep-referral
+                            width 140px
+                            height 140px
+
+                            .steep-bounty
+                                width 100px
+                                height 100px
+
+                                .steep-count
+                                    font-size 22px
+
+            .steep-list
+                .item-list
+                    span
+                        font-size 16px
+
+                    .color-steep
+                        width 20px
+                        height 20px
+                        margin-right 15px
+
+            .section-title
+                font-size 2.5em
+                text-align center 
+
+            .divider
+                display none
+
+            .small
+                text-align justify
+
+    @media(max-width: 575px)
+        .distribution
+            .steep-list
+                .item-list
+                    span
+                        font-size 14px
+
+                    .color-steep
+                        width 12px
+                        height 12px
+                        margin-right 10px
+
+            .steep-statis
+                &.steep-sale
+                    width 180px
+                    height 180px
+
+                    .steep-team
+                        width 140px
+                        height 140px
+
+                        .steep-referral
+                            width 100px
+                            height 100px
+
+                            .steep-bounty
+                                width 60px
+                                height 60px
+
+                                .steep-count
+                                    font-size 18px
+
+    @media(max-width: 425px)
+        .section-title
+            font-size 1.9em
+        .section-subtitle
+            font-size 1em
+            margin-bottom 0
+
+        .figures-panel
+            padding 12px 0 0
+            display flex
+            flex-direction column
+            align-items center
+
+            .figures-title
+                font-size 20px
+            
+            .figures-subtitle
+                font-size 20px
+                margin-bottom 24px
+                width 100%
+
+        .col-6 
+            min-width 100%
+            display flex
+            justify-content center
+
+        .col-4
+            min-width 100%
+
+        .distribution
+            .section-title
+                font-size 1.9em
+
+            .steep-statis
+                &.steep-sale
+                    width 220px
+                    height 220px
+                    margin-bottom 24px
+
+                    .steep-team
+                        width 180px
+                        height 180px
+
+                        .steep-referral
+                            width 140px
+                            height 140px
+
+                            .steep-bounty
+                                width 100px
+                                height 100px
+
+                                .steep-count
+                                    font-size 22px
+
+            .steep-list
+                margin-bottom 32px
+
+                .item-list
+                    span
+                        font-size 16px
+
+                    .color-steep
+                        width 20px
+                        height 20px
+                        margin-right 15px
+
+
 </style>
