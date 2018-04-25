@@ -42,7 +42,6 @@
 
             <div class="effective-energy">
                 <p>Effective Energy team</p>
-
                 <div class="images">
                     <div class="image"
                          style=""
