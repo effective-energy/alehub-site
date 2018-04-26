@@ -60,6 +60,7 @@
                         <a class="dropdown-item" href="#">ru</a>
                     </div>
                 </div>
+                <button type="button" class="btn btn-actions">ok</button>
             </div>
         </div>
 
@@ -179,7 +180,7 @@
             }
         },
         mounted() {
-            this.$on('closeModal1', function (val) {
+            this.$on('closeModal', function (val) {
                 this.activeHamburger = val;
             });
 
@@ -190,7 +191,11 @@
             let navbar = document.getElementById('navbar'),
                 navbarYOffset = navbar.offsetHeight;
 
+            //сделать только один лисенер скролла
+
             this.initScroll();
+
+            //переместить в index
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
@@ -245,11 +250,11 @@
     .hamburger
         .line
             cursor pointer
-            width 50px
-            height 3px
+            width 30px
+            height 2px
             background-color #3e3d42
             display block
-            margin 10px auto
+            margin 8px auto
             -webkit-transition all 0.3s ease-in-out
             -o-transition all 0.3s ease-in-out
             transition all 0.3s ease-in-out
@@ -276,20 +281,23 @@
             transition-delay 0.3s
 
         .line:nth-child(1)
-            -webkit-transform translateY(13px)
-            -ms-transform translateY(13px)
-            -o-transform translateY(13px)
-            transform translateY(13px)
+            -webkit-transform translateY(10px)
+            -ms-transform translateY(10px)
+            -o-transform translateY(10px)
+            transform translateY(10px)
 
         .line:nth-child(3)
-            -webkit-transform translateY(-13px) rotate(90deg)
-            -ms-transform translateY(-13px) rotate(90deg)
-            -o-transform translateY(-13px) rotate(90deg)
-            transform translateY(-13px) rotate(90deg)
+            -webkit-transform translateY(-10px) rotate(90deg)
+            -ms-transform translateY(-10px) rotate(90deg)
+            -o-transform translateY(-10px) rotate(90deg)
+            transform translateY(-10px) rotate(90deg)
 
     .btn-login
         &:focus
             box-shadow none
+
+    .btn-actions
+        display none
 
     .dropdown-menu
         display block
@@ -330,6 +338,7 @@
         .btn-login
             background-color #343a49
             color white
+            margin-left 16px
 
     .bg-dark-blue
         background-color #343a49
@@ -348,6 +357,59 @@
             transition all 0.4s ease
             color #fff !important
 
+
+    @media(max-width: 1440px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 15px
+                    padding-right 15px
+
+                &:first-child
+                    .nav-link
+                        padding-left 0
+
+                &:last-child
+                    .nav-link
+                        padding-right 16px
+
+        .dropdown-toggle
+            font-size 16px
+
+    @media(max-width: 1300px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 10px
+                    padding-right 10px
+
+    @media(max-width: 1200px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 6px
+                    padding-right 6px
+
+        .btn-login
+            padding-right 6px
+            padding-left 6px
+
+        .dropdown-button
+            padding-right 8px
+            padding-left 8px
+
+        .navbar-brand
+            margin-right 8px
+
+    @media(max-width 1100px)
+        .btn-login
+            display none
+
+        .dropdown
+            display none
+
+        .btn-actions
+            display unset
 
     @media (max-width 768px)
         .navbar

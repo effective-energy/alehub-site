@@ -1,22 +1,22 @@
 <template>
     <div class="application" id="features">
-        <vue-particles
-            color="#fff"
-            :particleOpacity="0.4"
-            :particlesNumber="80"
-            shapeType="circle"
-            :particleSize="4"
-            linesColor="#fff"
-            :linesWidth="1"
-            :lineLinked="true"
-            :lineOpacity="0.4"
-            :linesDistance="150"
-            :moveSpeed="3"
-            :hoverEffect="true"
-            hoverMode="grab"
-            :clickEffect="true"
-            clickMode="push">
-          </vue-particles>
+        <vue-particles v-if="isFeatures"
+                       color="#fff"
+                       :particleOpacity="0.4"
+                       :particlesNumber="80"
+                       shapeType="circle"
+                       :particleSize="4"
+                       linesColor="#fff"
+                       :linesWidth="1"
+                       :lineLinked="true"
+                       :lineOpacity="0.4"
+                       :linesDistance="150"
+                       :moveSpeed="3"
+                       :hoverEffect="true"
+                       hoverMode="grab"
+                       :clickEffect="true"
+                       clickMode="push">
+        </vue-particles>
 
         <div class="section-1">
             <h3 class="title">
@@ -189,7 +189,17 @@
 
 <script>
     export default {
-        name: 'Screen4'
+        name: 'Screen4',
+        props: {
+            isFeatures: {
+                required: true
+            }
+        },
+        data() {
+            return {
+
+            }
+        }
     }
 </script>
 
@@ -209,13 +219,13 @@
         justify-content center
         align-items center
         padding 80px 10%
-        background rgba(253,208,74,1)
-        background -moz-linear-gradient(top, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
-        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253,208,74,1)), color-stop(100%, rgba(255,160,7,1)))
-        background -webkit-linear-gradient(top, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
-        background -o-linear-gradient(top, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
-        background -ms-linear-gradient(top, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
-        background linear-gradient(to bottom, rgba(253,208,74,1) 0%, rgba(255,160,7,1) 100%)
+        background rgba(253, 208, 74, 1)
+        background -moz-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253, 208, 74, 1)), color-stop(100%, rgba(255, 160, 7, 1)))
+        background -webkit-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background -o-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background -ms-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background linear-gradient(to bottom, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
 
         .section-1
             display flex
@@ -332,7 +342,7 @@
         .application
             padding 80px 5%
 
-    @media(max-width: 768px)
+    @media (max-width: 768px)
         .application
             .section-2
                 .list-items
@@ -362,7 +372,7 @@
                             padding-right 0
                             margin-bottom 24px
 
-    @media(max-width: 575px)
+    @media (max-width: 575px)
         .application
             .section-3
                 .figure
@@ -371,7 +381,7 @@
                 .info-block
                     width 100%
 
-    @media(max-width: 425px)
+    @media (max-width: 425px)
         .application
             .section-1
                 margin-bottom 24px
@@ -411,7 +421,7 @@
                     .title
                         font-size 30px
                         margin-bottom 24px
-                        text-align center 
+                        text-align center
 
                     .list-items
                         .item
@@ -421,7 +431,7 @@
                                 .left
                                     margin-right 38px
 
-    @media(max-width: 320px)
+    @media (max-width: 320px)
         .application
             .section-2
                 .list-items
@@ -461,5 +471,5 @@
 
                             .right
                                 text-align center
-                        
+
 </style>
