@@ -128,10 +128,14 @@
 	.container-news
 		display flex
 		padding 71px 0
+		position relative
 
 		.share-block
 			min-width 36px
 			height 300px
+			position absolute
+			left -70px
+			top 80px
 
 			.share-item
 				width 36px
@@ -176,8 +180,6 @@
 
 
 		.news-block
-			padding-left 48px
-
 			.title
 				font-family MuseoSansCyrl500
 				font-size 50px
@@ -311,6 +313,7 @@
 						flex-direction column
 						margin 0 10px
 						width 25%
+						max-width 200px
 
 						img
 							width 100%
@@ -339,4 +342,156 @@
 
 					.news-item:last-child
 						margin-right 0
+
+	@media(max-width: 1440px)
+		.container-news
+			max-width 1000px
+
+	@media(max-width: 1200px)
+		.container-news
+			max-width 700px
+
+	@media(max-width: 1024px)
+		.container-news
+			max-width 600px
+
+			.news-block
+				.title
+					font-size 40px
+
+				.news-content
+					.quote-block
+						.title
+							font-size 24px
+
+	@media(max-width: 860px)
+		.container-news
+			max-width 500px
+
+			.news-block
+				.title
+					font-size 34px
+
+				.news-content
+					.quote-block
+						.title
+							font-size 20px
+
+				.more-news
+					.more-news-title
+						font-size 20px
+
+					.more-news-content
+						flex-wrap wrap
+						.news-item
+							margin 0
+							width 48%
+
+							.news-link
+								font-size 18px
+
+
+	@media(max-width: 700px)
+		.container-news
+			padding-right 32px
+			padding-left 32px 
+			max-width unset
+
+			.share-block
+				display flex
+				top 48px
+				left -10px
+				padding-left 32px
+				height 50px
+
+			.news-block
+				margin-top 24px
+
+				.title
+					font-size 30px
+
+				.news-info
+					margin-bottom 12px
+
+					.info
+						span 
+							font-size 14px
+
+				.news-content
+					p, i, b
+						font-size 16px
+
+				.more-news
+					.more-news-title
+						font-size 18px
+
+					.more-news-content
+						.news-item
+							margin-bottom 24px
+
+							.news-link
+								font-size 14px
+
+	@media(max-width: 425px)
+		.container-news
+			.news-block
+				.title
+					font-size 24px
+					margin-bottom 12px
+
+				.picture-block
+					.image
+						height 300px
+
+	@media(max-width: 375px)
+		.container-news
+			.share-block
+				width 100%
+				justify-content center 
+
+			.news-block
+				.title
+					font-size 20px
+					text-align center
+
+				.news-info
+					justify-content center
+
+				.news-content
+					p
+						text-align justify
+
+					.tags-block
+						justify-content center
+
+				.more-news
+					.more-news-title
+						text-align center
+
+	@media(max-width: 320px)
+		.container-news
+			.news-block
+				.title
+					font-size 18px
+
+				.news-info
+					.info
+						span 
+							font-size 12px
+
+				.more-news
+					.more-news-title
+						font-size 18px
+
+					.more-news-content
+						.news-item
+							width 100%
+							max-width 260px
+
+							.news-link
+								text-align center 
+
+							.date
+								text-align center
+				
 </style>
