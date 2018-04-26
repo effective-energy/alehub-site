@@ -60,6 +60,7 @@
                         <a class="dropdown-item" href="#">ru</a>
                     </div>
                 </div>
+                <button type="button" class="btn btn-actions">ok</button>
             </div>
         </div>
 
@@ -291,6 +292,9 @@
         &:focus
             box-shadow none
 
+    .btn-actions
+        display none
+
     .dropdown-menu
         display block
 
@@ -329,6 +333,7 @@
         .btn-login
             background-color #343a49
             color white
+            margin-left 16px
 
     .bg-dark-blue
         background-color #343a49
@@ -347,6 +352,59 @@
             transition all 0.4s ease
             color #fff !important
 
+
+    @media(max-width: 1440px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 15px
+                    padding-right 15px
+
+                &:first-child
+                    .nav-link
+                        padding-left 0
+
+                &:last-child
+                    .nav-link
+                        padding-right 16px
+
+        .dropdown-toggle
+            font-size 16px
+
+    @media(max-width: 1300px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 10px
+                    padding-right 10px
+
+    @media(max-width: 1200px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 6px
+                    padding-right 6px
+
+        .btn-login
+            padding-right 6px
+            padding-left 6px
+
+        .dropdown-button
+            padding-right 8px
+            padding-left 8px
+
+        .navbar-brand
+            margin-right 8px
+            
+    @media(max-width 1100px)
+        .btn-login
+            display none
+        
+        .dropdown
+            display none 
+
+        .btn-actions
+            display unset
 
     @media (max-width 768px)
         .navbar
