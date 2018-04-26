@@ -32,7 +32,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="advantage" v-for="advantage in advantages.first">
+                <div class="advantage" v-for="(advantage, index) in advantages.first" :key="index">
                     <div class="item left">
                         <p>
                             {{ advantage.first }}
@@ -60,7 +60,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="advantage" v-for="advantage in advantages.second">
+                <div class="advantage" v-for="(advantage, index) in advantages.second" :key="index">
                     <div class="item">
                         <p>
                             {{ advantage.first }}

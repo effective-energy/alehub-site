@@ -508,6 +508,13 @@
                 border-radius 50%
                 background-color #ffd24f
                 margin-bottom 20px
+                @media (max-width: 425px)
+                    width 80px
+                    height 80px
+                    .wrap-ic
+                        img
+                            width 25px !important
+                            height 25px !important
 
                 &:focus
                     outline 0
@@ -524,7 +531,7 @@
                 left 15%
             @media (max-width: 1274px)
                 position unset
-                margin 60px auto 0
+                margin 48px auto 0
                 display block
                 text-align center
                 .play-button
@@ -553,4 +560,6 @@
                     background-color #ffbc00
                     box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     height 100%
+            @media (max-width: 600px)
+                width 100%
 </style>
