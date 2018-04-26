@@ -9,3 +9,9 @@ export default {
   name: 'app'
 }
 </script>
+
+<style>
+	body {
+	    background-color: #ededf1;
+	}
+</style>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -25,3 +26,20 @@ const router = new Router({
 });
 
 export default router;
+=======
+import Vue from 'vue'
+import Router from 'vue-router'
+import Index from '@/components/Index'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Index',
+      component: Index
+    }
+  ]
+})
+>>>>>>> remotes/origin/temp
