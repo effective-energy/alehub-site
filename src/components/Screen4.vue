@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="section-3">
+        <div class="section-3" id="main-features">
 
             <div class="figure">
                 <img src="../../static/images/layer.png" alt="" style="width: 100%;">
@@ -232,7 +232,7 @@
             flex-direction column
             justify-content center
             align-items center
-            margin-bottom 80px
+            /*margin-bottom 80px*/
 
             .title
                 font-size 40px
@@ -273,16 +273,16 @@
                     font-size 26px
 
         .section-2
+            padding-top 80px
             width 100%
             display flex
             flex-direction column
             justify-content center
             align-items center
-            margin-bottom 60px
 
             .title
                 font-size 40px
-                margin-bottom 60px
+                margin-bottom 25px
 
             .list-items
                 width 100%
@@ -291,7 +291,7 @@
 
                 .item
                     display flex
-                    margin-bottom 35px
+                    padding-top 35px
                     padding-right 70px
                     width 33%
 
@@ -304,6 +304,7 @@
                         margin-right 30px
 
         .section-3
+            padding-top 105px
             width 100%
             display flex
             .figure

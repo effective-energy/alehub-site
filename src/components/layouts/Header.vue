@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
-         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow, 'bg-yellow': isYellow }"
+         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
         <a href="#" class="navbar-brand">
             <img class="d-inline-block align-top"
@@ -35,6 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
+                <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
                 <li class="nav-line nav-line__black" v-else-if="isBlack"></li>
                 <li class="nav-line nav-line__white" v-else></li>
             </ul>
@@ -80,6 +81,7 @@
             return {
                 isBlack: false,
                 isYellow: false,
+                isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
                 navbar: [
@@ -199,40 +201,54 @@
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
                     if (!this.isYellow) {
                         this.isBlack = false;
+                        this.isOrange = false;
                         this.isYellow = true;
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    if (!this.isOrange) {
+                        this.isBlack = false;
+                        this.isYellow = false;
+                        this.isOrange = true;
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
                     if (!this.isBlack) {
-                        this.isBlack = true;
                         this.isYellow = false;
+                        this.isOrange = false;
+                        this.isBlack = true;
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
                     }
                 }
             })
@@ -317,6 +333,11 @@
         border-width 0 24px
         background-color #343a49
 
+    .nav-line__orange
+        border 1px solid #feaf1c
+        border-width 0 24px
+        background-color #343a49
+
     .nav-line__black
         border 1px solid #343a49
         border-width 0 24px
@@ -332,8 +353,13 @@
         transition all 0.4s ease
         max-width 100vw
 
+    .bg-orange
+        background-color #feaf1c
+
     .bg-yellow
         background-color #fdc135
+
+    .bg-yellow, .bg-orange
 
         .btn-login
             background-color #343a49
@@ -353,9 +379,9 @@
         .navbar-brand
             color #fff
 
-        .nav-link
-            transition all 0.4s ease
-            color #fff !important
+        //.nav-link
+            /*transition all 0.4s ease*/
+            //color #fff !important
 
 
     @media(max-width: 1440px)
