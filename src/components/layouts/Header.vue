@@ -330,6 +330,7 @@
         -moz-box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
         box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
         transition all 0.4s ease
+        max-width 100vw
 
     .bg-yellow
         background-color #fdc135

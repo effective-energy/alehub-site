@@ -6,19 +6,25 @@
         <div class="separator"></div>
         <div class="advantages-body">
             <div class="select-point">
-                <div class="point point-left-inactive">
+                <div class="point" :class="{
+                    'point-left-active' : selectedType === 0,
+                    'point-left-inactive' : selectedType === 1
+                }" @click="selectedType = 0">
                     <div class="point__inner">
                         ALE vs Project Management Systems
                     </div>
                 </div>
-                <div class="point point-right-active">
+                <div class="point" :class="{
+                    'point-right-active' : selectedType === 1,
+                    'point-right-inactive' : selectedType === 0
+                }" @click="selectedType = 1">
                     <div class="point__inner">
                         ALE vs Other Blockchain Platforms
                     </div>
                 </div>
             </div>
 
-            <div class="block-advantages"
+            <!-- <div class="block-advantages"
                  :class="{'block-advantages__active': advantagesFlag === 'first', 'block-advantages__right': advantagesFlag === 'second'}">
                 <div class="advantage">
                     <div class="item item-title">
@@ -72,7 +78,84 @@
                         </p>
                     </div>
                 </div>
+            </div> -->
+
+            <transition name="fade">
+                <div class="project-managment" v-if="selectedType === 1" key="OBP">
+                    <div class="left-block">
+                        <h1 class="title">Other Blockchain Platforms</h1>
+                        <ul>
+                            <li v-for="(item, index) in advantages.first" :key="index">
+                                {{ item.second }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-block">
+                        <h1 class="title">ALE</h1>
+                        <ul>
+                            <li v-for="(item, index) in advantages.first" :key="index">
+                                {{ item.first }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="other-blockchain" v-if="selectedType === 0" key="PMS">
+                    <div class="left-block">
+                        <h1 class="title">Project Management Systems</h1>
+                        <ul>
+                            <li v-for="(item, index) in advantages.second" :key="index">
+                                {{ item.second }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-block">
+                        <h1 class="title">ALE</h1>
+                        <ul>
+                            <li v-for="(item, index) in advantages.second" :key="index">
+                                {{ item.first }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </transition>
+            <div class="project-managment" v-if="selectedType === 1" style="opacity: 0; position: unset;">
+                <div class="left-block">
+                    <h1 class="title">Other Blockchain Platforms</h1>
+                    <ul>
+                        <li v-for="(item, index) in advantages.first" :key="index">
+                            {{ item.second }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-block">
+                    <h1 class="title">ALE</h1>
+                    <ul>
+                        <li v-for="(item, index) in advantages.first" :key="index">
+                            {{ item.first }}
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <div class="other-blockchain" v-if="selectedType === 0" style="opacity: 0; position: unset;">
+                <div class="left-block">
+                    <h1 class="title">Project Management Systems</h1>
+                    <ul>
+                        <li v-for="(item, index) in advantages.second" :key="index">
+                            {{ item.second }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-block">
+                    <h1 class="title">ALE</h1>
+                    <ul>
+                        <li v-for="(item, index) in advantages.second" :key="index">
+                            {{ item.first }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
@@ -83,6 +166,7 @@
         data() {
             return {
                 advantagesFlag: 'first',
+                selectedType: 1,
                 advantages: {
                     first: [
                         {
@@ -147,31 +231,31 @@
         computed: {},
         methods: {},
         mounted() {
-            let self = this;
-            document.querySelector('.point-left-inactive').addEventListener('click', function () {
-                if (!this.classList.contains('point-left-active')) {
-                    this.classList.add('point-left-active');
-                    this.classList.remove('point-left-inactive');
+            // let self = this;
+            // document.querySelector('.point-left-inactive').addEventListener('click', function () {
+            //     if (!this.classList.contains('point-left-active')) {
+            //         this.classList.add('point-left-active');
+            //         this.classList.remove('point-left-inactive');
 
-                    document.querySelector('.point-right-active').classList.add('point-right-inactive');
-                    document.querySelector('.point-right-active').classList.remove('point-right-active');
+            //         document.querySelector('.point-right-active').classList.add('point-right-inactive');
+            //         document.querySelector('.point-right-active').classList.remove('point-right-active');
 
-                    self.advantagesFlag = 'second';
-                }
-            });
+            //         self.advantagesFlag = 'second';
+            //     }
+            // });
 
 
-            document.querySelector('.point-right-active').addEventListener('click', function () {
-                if (!this.classList.contains('point-right-active')) {
-                    this.classList.add('point-right-active');
-                    this.classList.remove('point-right-inactive');
+            // document.querySelector('.point-right-active').addEventListener('click', function () {
+            //     if (!this.classList.contains('point-right-active')) {
+            //         this.classList.add('point-right-active');
+            //         this.classList.remove('point-right-inactive');
 
-                    document.querySelector('.point-left-active').classList.add('point-left-inactive');
-                    document.querySelector('.point-left-active').classList.remove('point-left-active');
+            //         document.querySelector('.point-left-active').classList.add('point-left-inactive');
+            //         document.querySelector('.point-left-active').classList.remove('point-left-active');
 
-                    self.advantagesFlag = 'first';
-                }
-            });
+            //         self.advantagesFlag = 'first';
+            //     }
+            // });
         }
     }
 </script>
@@ -181,7 +265,7 @@
         font-family MuseoSansCyrl500
         display flex
         align-items center
-        justify-content center
+        justify-content start
         flex-direction column
         width 100%
         padding 0 15%
@@ -199,13 +283,14 @@
             justify-content center
             width 100%
             font-family MuseoSansCyrl300
-            margin-top 130px
+            margin-top 60px
 
         .advantages-body
             width 100%
             display flex
             flex-direction column
-            margin-bottom 130px
+            margin-bottom 60px
+            position relative
 
             .select-point
                 width 100%
@@ -344,5 +429,140 @@
     @media (max-width: 1330px)
         .advantages
             padding 0 10%
+    .project-managment, .other-blockchain
+        display flex
+        justify-content center
+        position absolute
+        top 50px
+        width 100%
+        .left-block, .right-block
+            width 50%
+            max-width 650px
+            display flex
+            flex-direction column
+            padding 20px 20px
+            .title
+                font-size 18px
+                text-transform uppercase
+                margin 0
+                height 40px
+                display flex
+                justify-content center
+                align-items center
+                text-align center
+        .left-block
+            opacity .6
+            .title
+                background #fff
+            ul
+                padding 5px 0px
+                li
+                    list-style none
+                    height 60px
+                    display flex
+                    align-items center
+                    line-height 1.2
+                    justify-content flex-end
+                    text-align right
+                    margin 10px 0
+                    background #fff
+                    padding 0 40px
+                    border-right solid 4px #e2e2e2
+        .right-block
+            .title
+                box-shadow 0 0 30px rgba(0, 0, 0, 0.1)
+                background #fff
+            ul
+                padding 5px 0px
+                li
+                    list-style none
+                    height 60px
+                    display flex
+                    align-items center
+                    line-height 1.2
+                    justify-content flex-start
+                    text-align left
+                    margin 10px 0
+                    background #fff
+                    padding 0 40px
+                    &:nth-child(even)
+                        border-left solid 4px #34343e
+                    &:nth-child(odd)
+                        border-left solid 4px #fdd04a
 
+    .fade-enter-active, 
+    .fade-leave-active
+        transition all .5s
+    .fade-enter, 
+    .fade-leave-active
+        opacity 0
+    .other-blockchain.fade-enter
+        transform translateX(-100%)
+    .project-managment.fade-enter
+        transform translateX(100%)
+    .other-blockchain.fade-leave-active
+        transform translateX(-100%)
+    .project-managment.fade-leave-active
+        transform translateX(100%)
+    @media (max-width: 1440px)
+        .project-managment, .other-blockchain
+            .left-block, .right-block
+                ul
+                    li
+                        height 70px
+                .title
+                    height 60px
+    @media (max-width: 1024px)
+        .project-managment, .other-blockchain
+            .left-block, .right-block
+                ul
+                    li
+                        height 90px
+                        padding 0 20px
+                .title
+                    height 60px
+    @media (max-width: 768px)
+        .project-managment, .other-blockchain
+            .left-block, .right-block
+                ul
+                    li
+                        height 120px
+                        padding 0 20px
+                .title
+                    height 80px
+        .advantages 
+            .advantages-body 
+                .select-point
+                    display flex
+                    justify-content space-between
+                    .point
+                        width 50%
+                    .point-left-active,
+                    .point-right-inactive
+                        transform: translateX(0%)
+    @media (max-width: 630px)
+        .project-managment, .other-blockchain
+            top 100px
+            .left-block, .right-block
+                ul
+                    li
+                        height 180px
+                        padding 0 10px
+                        text-align center
+                .title
+                    height 100px
+    @media (max-width: 425px)
+        .project-managment, .other-blockchain
+            .left-block, .right-block
+                padding 0
+                ul
+                    li
+                        height 180px
+                        padding 0 10px
+                        text-align center
+                        margin 5px 0
+                .title
+                    height 100px
+        .advantages
+            padding 0 10px
 </style>
