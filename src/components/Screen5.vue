@@ -164,8 +164,7 @@
         },
         watch: {
             'isTeam': function (val) {
-                console.log(val, 'isTeam');
-                // this.options.autoplay = val;
+                this.options.autoplay = val;
             }
         },
         data() {

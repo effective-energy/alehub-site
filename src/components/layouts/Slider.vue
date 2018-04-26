@@ -73,6 +73,7 @@
         },
         data() {
             return {
+                autoplay: null,
                 carousel: null,
                 opt: {
                     position: 0,
@@ -82,16 +83,61 @@
         },
         watch: {
             'options.autoplay': function (val) {
-                console.log(this.options, 'options');
+                console.log(this.privates1, 'this.privates1');
                 console.log(val, 'autoplay');
-                this.Carousel(this.settings, this.options);
+
+                this.resume1(3000, val);
+
+                // this.Carousel(this.settings, this.options);
             }
         },
         methods: {
-            nextSlide: function () {
-                console.log(123);
+            prevSlide: function () {
 
-                console.log(this.privates, 'privates');
+                let sel = {
+                    wrap: document.querySelector(this.privates.wrap),
+                    children: document.querySelector(this.privates.wrap).children,
+                    prev: document.querySelector(this.privates.prev),
+                    next: document.querySelector(this.privates.next)
+                };
+
+                // this.privates.isAnimationEnd = true;
+                // });
+
+                // if (this.privates.settings.autoplay === true) {
+                //     this.privates.timer.become();
+                // }
+
+
+
+                // if (!privates.isAnimationEnd) {
+                //     return;
+                // }
+                //
+                // privates.isAnimationEnd = false;
+
+                --this.opt.position;
+
+                if (this.opt.position < 0) {
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.max_position * 25}%)`;
+                    this.opt.position = this.opt.maxPosition - 1;
+                }
+
+                setTimeout(() => {
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.position * 25}%)`;
+                }, 40);
+
+                // sel.wrap.addEventListener('transitionend', () => {
+                //     privates.isAnimationEnd = true;
+                // });
+
+                // if (privates.settings.autoplay === true) {
+                //     privates.timer.become();
+                // }
+            },
+            nextSlide: function () {
+
+                // console.log('check autoplay');
 
                 let sel = {
                     wrap: document.querySelector(this.privates.wrap),
@@ -123,25 +169,29 @@
 
                 sel.wrap.style['transform'] = `translateX(-${this.opt.position * 25}%)`;
 
-                console.log(sel.wrap, 'sel.wrap');
+                // console.log(sel.wrap, 'sel.wrap');
 
                 // sel.wrap.addEventListener('transitionstart', () => {
-                    if (this.opt.position >= this.opt.maxPosition) {
-                        sel.wrap.style['transform'] = 'translateX(0)';
-                        this.opt.position = 0;
-                    }
+                if (this.opt.position >= this.opt.maxPosition) {
+                    sel.wrap.style['transform'] = 'translateX(0)';
+                    this.opt.position = 0;
+                }
 
-                    // this.privates.isAnimationEnd = true;
+                // this.privates.isAnimationEnd = true;
                 // });
 
                 // if (this.privates.settings.autoplay === true) {
                 //     this.privates.timer.become();
                 // }
             },
-            resume1: function (delay) {
-                setInterval(() => {
-                    this.nextSlide();
-                }, delay);
+            resume1: function (delay, autoplay) {
+                if (autoplay) {
+                    this.autoplay = setInterval(() => {
+                        this.nextSlide();
+                    }, delay);
+                } else {
+                    clearInterval(this.autoplay);
+                }
             },
 
             Timer: function (callback, delay) {
@@ -274,9 +324,9 @@
 
                 // Control
                 if (privates.sel.prev !== null) {
-                    privates.sel.prev.addEventListener('click', () => {
-                        this.prev_slide();
-                    });
+                    // privates.sel.prev.addEventListener('click', () => {
+                    //     this.prev_slide();
+                    // });
                 }
 
                 if (privates.sel.next !== null) {
@@ -333,6 +383,12 @@
             document.querySelector(this.privates.next).addEventListener('click', () => {
                 this.nextSlide();
             });
+
+            document.querySelector(this.privates.prev).addEventListener('click', () => {
+                this.prevSlide();
+            });
+
+            this.resume1(3000, this.privates1.autoplay);
 
             this.Carousel(this.settings, this.options);
         }
