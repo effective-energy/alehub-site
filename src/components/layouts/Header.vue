@@ -179,7 +179,7 @@
             }
         },
         mounted() {
-            this.$on('closeModal1', function (val) {
+            this.$on('closeModal', function (val) {
                 this.activeHamburger = val;
             });
 
@@ -190,7 +190,11 @@
             let navbar = document.getElementById('navbar'),
                 navbarYOffset = navbar.offsetHeight;
 
+            //сделать только один лисенер скролла
+
             this.initScroll();
+
+            //переместить в index
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
@@ -245,11 +249,11 @@
     .hamburger
         .line
             cursor pointer
-            width 50px
-            height 3px
+            width 30px
+            height 2px
             background-color #3e3d42
             display block
-            margin 10px auto
+            margin 8px auto
             -webkit-transition all 0.3s ease-in-out
             -o-transition all 0.3s ease-in-out
             transition all 0.3s ease-in-out
@@ -276,16 +280,16 @@
             transition-delay 0.3s
 
         .line:nth-child(1)
-            -webkit-transform translateY(13px)
-            -ms-transform translateY(13px)
-            -o-transform translateY(13px)
-            transform translateY(13px)
+            -webkit-transform translateY(10px)
+            -ms-transform translateY(10px)
+            -o-transform translateY(10px)
+            transform translateY(10px)
 
         .line:nth-child(3)
-            -webkit-transform translateY(-13px) rotate(90deg)
-            -ms-transform translateY(-13px) rotate(90deg)
-            -o-transform translateY(-13px) rotate(90deg)
-            transform translateY(-13px) rotate(90deg)
+            -webkit-transform translateY(-10px) rotate(90deg)
+            -ms-transform translateY(-10px) rotate(90deg)
+            -o-transform translateY(-10px) rotate(90deg)
+            transform translateY(-10px) rotate(90deg)
 
     .btn-login
         &:focus
