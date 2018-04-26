@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Vue from 'vue';
 import Router from 'vue-router';
 
@@ -9,11 +8,11 @@ import FullNews from '@/components/FullNews';
 Vue.use(Router);
 
 const router = new Router({
-	mode: 'history',
+    mode: 'history',
     routes: [{
-    	path: '/',
-    	name: 'Index',
-    	component: Index
+        path: '/',
+        name: 'Index',
+        component: Index
     }, {
         path: '/blog',
         name: 'BlogEntries',
@@ -26,20 +25,3 @@ const router = new Router({
 });
 
 export default router;
-=======
-import Vue from 'vue'
-import Router from 'vue-router'
-import Index from '@/components/Index'
-
-Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index
-    }
-  ]
-})
->>>>>>> remotes/origin/temp

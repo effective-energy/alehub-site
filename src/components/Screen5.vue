@@ -44,10 +44,10 @@
             <div class="effective-energy" style="width: 100%;">
                 <p>Effective Energy team</p>
 
-                <slider :items="team.energy"
-                        :settings="settings"
-                        :options="options"
-                        :privates1="Object.assign(settings, options)"/>
+                <!--<slider :items="team.energy"-->
+                        <!--:settings="settings"-->
+                        <!--:options="options"-->
+                        <!--:privates1="Object.assign(settings, options)"/>-->
 
                 <!--<div style="width: 100%; display: flex; justify-content: center;">-->
                 <!--<button class="b-carousel__prev js-carousel__prev"-->

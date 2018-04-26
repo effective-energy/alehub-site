@@ -1,15 +1,15 @@
 <template>
     <div class="app">
-        <Header/>
-        <screen1/>
-        <screen2/>
-        <screen3/>
+        <Header />
+        <screen1 />
+        <screen2 />
+        <screen3 />
         <screen4 :is-features="isFeatures"/>
         <screen5 :is-team="isTeam"/>
-        <screen6/>
-        <screen7/>
-        <Blog/>
-        <Footer/>
+        <screen6 />
+        <screen7 />
+        <Blog />
+        <Footer />
     </div>
 </template>
 

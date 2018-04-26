@@ -91,16 +91,16 @@
 </template>
 
 <script>
-	import Header from './layouts/Header';
-	import Footer from './layouts/Footer';
+    import Header from './layouts/Header';
+    import Footer from './layouts/Footer';
 
-	export default {
-		name: 'BlogEntries',
-		components: {
-			Header,
-			Footer
-		}
-	}
+    export default {
+        name: 'BlogEntries',
+        components: {
+            Header,
+            Footer
+        }
+    }
 </script>
 
 <style>
