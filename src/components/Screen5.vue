@@ -414,4 +414,17 @@
                         img
                             margin auto 15px
 
+    @media(max-width: 425px)
+        .team
+            .our-team
+                .title
+                    font-size 30px
+
+            .advisors
+                .title
+                    font-size 30px
+
+            .separator
+                margin 12px 0 24px
+
 </style>
