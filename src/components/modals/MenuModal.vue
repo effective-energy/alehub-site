@@ -1,5 +1,5 @@
 <template>
-    <modal name="menu-modal" class="menu">
+    <modal name="menu-modal" class="menu" @opened="initModalScreen" @closed="closedModal">
         <div class="heading">
 
         </div>
@@ -64,21 +64,34 @@
         },
         methods: {
             closeModal: function (name) {
-                this.$parent.$emit('closeModal', false);
+                this.$parent.$emit('closeModal');
                 this.$modal.hide(name);
             },
+            closedModal: function () {
+                this.$parent.$emit('closeModal');
+            },
+            initModalScreen: function () {
+                this.$parent.$emit('changeNavbar');
+            }
         },
     }
 </script>
 
 <style lang="stylus">
     .menu
+        top 74px !important
         .v--modal-background-click
             .v--modal-box
-                top 74px !important
+                top 0 !important
                 left 0 !important
                 width 100% !important
                 height calc(100vh - 74px) !important
+
+            .v--modal
+                -webkit-box-shadow none !important
+                -moz-box-shadow none !important
+                box-shadow none !important
+                border-radius 0
 
 </style>
 
@@ -91,7 +104,7 @@
         align-items center
 
         div
-            padding 16px 0
+            padding 1.1rem 0
             a
                 font-weight 700
                 text-transform uppercase

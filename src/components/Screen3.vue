@@ -27,24 +27,24 @@
             <!-- <div class="block-advantages"
                  :class="{'block-advantages__active': advantagesFlag === 'first', 'block-advantages__right': advantagesFlag === 'second'}">
                 <div class="advantage">
-                    <div class="item item-title">
+                    <div class="item item-title left left-title">
                         <p>
                             ALE
                         </p>
                     </div>
-                    <div class="item item-title">
+                    <div class="item item-title right right-title">
                         <p>
                             Other Blockchain Platforms
                         </p>
                     </div>
                 </div>
-                <div class="advantage" v-for="advantage in advantages.first">
-                    <div class="item">
+                <div class="advantage" v-for="(advantage, index) in advantages.first" :key="index">
+                    <div class="item left">
                         <p>
                             {{ advantage.first }}
                         </p>
                     </div>
-                    <div class="item">
+                    <div class="item right">
                         <p>
                             {{ advantage.second }}
                         </p>
@@ -66,7 +66,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="advantage" v-for="advantage in advantages.second">
+                <div class="advantage" v-for="(advantage, index) in advantages.second" :key="index">
                     <div class="item">
                         <p>
                             {{ advantage.first }}
@@ -261,6 +261,27 @@
 </script>
 
 <style lang="stylus" scoped>
+    @media screen and (max-width: 748px) {
+        .item{
+            height 190px !important
+        }
+        .left-title{
+            background-color #ffc107aa !important
+        }
+        .right-title{
+            background-color #6c757dfa !important
+        }
+        .left{
+            margin-right 5px
+            background-color #ffc1078a
+            box-shadow 0px 0px 20px #ffc1078a
+        }
+        .right{
+            margin-right 5px
+            background-color #6c757d8a
+            box-shadow 0px 0px 20px #6c757d8a
+        }
+    }
     .advantages
         font-family MuseoSansCyrl500
         display flex

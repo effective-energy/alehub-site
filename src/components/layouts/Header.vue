@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
-         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow, 'bg-yellow': isYellow }"
+         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
         <a href="#" class="navbar-brand">
             <img class="d-inline-block align-top"
@@ -35,6 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
+                <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
                 <li class="nav-line nav-line__black" v-else-if="isBlack"></li>
                 <li class="nav-line nav-line__white" v-else></li>
             </ul>
@@ -78,8 +79,11 @@
         },
         data() {
             return {
+                isFeatures: false,
+                isTeam: false,
                 isBlack: false,
                 isYellow: false,
+                isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
                 navbar: [
@@ -163,26 +167,35 @@
 
                 (this.activeHamburger) ? this.openModal('menu-modal') : this.closeModal('menu-modal');
             },
-            initScroll: function () {
-                let _this = this;
-                window.addEventListener('scroll', function () {
-                    _this.checkActive()
-                })
-            },
+            // initScroll: function () {
+            //     window.addEventListener('scroll', () => {
+            //         this.checkActive();
+            //     })
+            // },
             checkActive: function () {
                 for (let i = 0; i < this.navbar.length; i++) {
-                    if(document.querySelector(this.navbar[i].path) === null) return false;
-                    let offset = document.querySelector(this.navbar[i].path).offsetTop-74
-                    let height = document.querySelector(this.navbar[i].path).offsetHeight
-                    if (window.scrollY > offset && window.scrollY <= offset+height) {
+                    if (document.querySelector(this.navbar[i].path) === null)
+                        return false;
+                    let offset = document.querySelector(this.navbar[i].path).offsetTop - 74;
+                    let height = document.querySelector(this.navbar[i].path).offsetHeight;
+                    if (window.scrollY > offset && window.scrollY <= offset + height) {
                         this.activeItem = i;
                     }
                 }
             }
         },
         mounted() {
-            this.$on('closeModal', function (val) {
-                this.activeHamburger = val;
+            this.$on('closeModal', () => {
+                this.activeHamburger = false;
+                document.getElementById('navbar').classList.remove('no-boxshadow');
+            });
+
+            this.$on('changeNavbar', () => {
+                document.getElementById('navbar').classList.add('no-boxshadow');
+            });
+
+            this.$on('closedModal', () => {
+                document.getElementById('navbar').classList.remove('no-boxshadow');
             });
 
             setTimeout(() => {
@@ -194,46 +207,112 @@
 
             //сделать только один лисенер скролла
 
-            this.initScroll();
+            // this.initScroll();
+
+            //переместить в index
 
             //переместить в index
 
             window.addEventListener('scroll', () => {
+                this.checkActive();
+                
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
                     if (!this.isYellow) {
                         this.isBlack = false;
+                        this.isOrange = false;
                         this.isYellow = true;
+                    }
+                    if (!this.isFeatures) {
+                        this.isFeatures = true;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    if (!this.isOrange) {
+                        this.isBlack = false;
+                        this.isYellow = false;
+                        this.isOrange = true;
+                    }
+                    if (!this.isFeatures) {
+                        this.isFeatures = true;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (!this.isTeam) {
+                        this.isTeam = true;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
                     if (!this.isBlack) {
-                        this.isBlack = true;
                         this.isYellow = false;
+                        this.isOrange = false;
+                        this.isBlack = true;
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow) {
+                    if (this.isBlack || this.isYellow || this.isOrange) {
                         this.isBlack = false;
                         this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
             })
@@ -242,6 +321,11 @@
 </script>
 
 <style lang="stylus" scoped>
+    .no-boxshadow
+        -webkit-box-shadow none !important
+        -moz-box-shadow none !important
+        box-shadow none !important
+
     .hamburger
         display none
 
@@ -318,6 +402,11 @@
         border-width 0 24px
         background-color #343a49
 
+    .nav-line__orange
+        border 1px solid #feaf1c
+        border-width 0 24px
+        background-color #343a49
+
     .nav-line__black
         border 1px solid #343a49
         border-width 0 24px
@@ -333,8 +422,13 @@
         transition all 0.4s ease
         max-width 100vw
 
+    .bg-orange
+        background-color #feaf1c
+
     .bg-yellow
         background-color #fdc135
+
+    .bg-yellow, .bg-orange
 
         .btn-login
             background-color #343a49
@@ -358,6 +452,58 @@
             transition all 0.4s ease
             color #fff !important
 
+    @media (max-width: 1440px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 15px
+                    padding-right 15px
+
+                &:first-child
+                    .nav-link
+                        padding-left 0
+
+                &:last-child
+                    .nav-link
+                        padding-right 16px
+
+        .dropdown-toggle
+            font-size 16px
+
+    @media (max-width: 1300px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 10px
+                    padding-right 10px
+
+    @media (max-width: 1200px)
+        .navbar-nav
+            .nav-item
+                .nav-link
+                    padding-left 6px
+                    padding-right 6px
+
+        .btn-login
+            padding-right 6px
+            padding-left 6px
+
+        .dropdown-button
+            padding-right 8px
+            padding-left 8px
+
+        .navbar-brand
+            margin-right 8px
+
+    @media (max-width 1100px)
+        .btn-login
+            display none
+
+        .dropdown
+            display none
+
+        .btn-actions
+            display unset
 
     @media(max-width: 1440px)
         .navbar-nav
@@ -416,6 +562,7 @@
         .navbar
             padding-left 32px
             padding-right 32px
+
         .hamburger
             display block
 
