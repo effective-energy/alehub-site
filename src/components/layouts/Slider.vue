@@ -7,9 +7,14 @@
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
 
-        <div class="wrap" id="effective-energy">
-            <div class="b-carousel js-carousel">
-                <div class="b-carousel__wrap js-carousel__wrap">
+        <div class="wrap" id="effective-energy" style="user-select: none;">
+            <div class="b-carousel js-carousel"
+                 @mousedown="dragStart($event)"
+                 @mouseup="dragEnd()"
+                 @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
+                <div class="b-carousel__wrap js-carousel__wrap"
+                     @touchstart="(privates1.touch) ? touchStart($event) : 'false'"
+                     @touchmove="(privates1.touch) ? touchMove($event) : 'false'">
                     <div class="image b-carousel__item"
                          @mouseover="stopAutoplay"
                          @mouseleave="resume1(3000, 'false')"
@@ -17,32 +22,32 @@
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
 
-                        <div class="b-carousel__outer">
-                            <div class="b-carousel__inner"
-                                 :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
-                                <img class="layer__bottom b-carousel__img"
-                                     :src="member.src"
-                                     :alt="member.name">
+                        <div class="b-carousel__inner"
+                             :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
 
-                                <div class="layer__top">
-                                    <div class="layer__text">
-                                        <h3>
-                                            {{ member.name }}
-                                        </h3>
-                                        <p>
-                                            {{ member.position }}
-                                        </p>
+                            <img class="layer__bottom b-carousel__img"
+                                 :src="member.src"
+                                 :alt="member.name">
 
-                                        <div class="icons">
-                                            <img class="telegram" src="../../../static/images/telegram-ic.svg"
-                                                 alt="telegram">
-                                            <img class="vk" src="../../../static/images/vk.svg" alt="vk">
-                                            <img class="fb" src="../../../static/images/fb.svg" alt="fb">
-                                            <img class="in" src="../../../static/images/in.svg" alt="in">
-                                        </div>
+                            <div class="layer__top">
+                                <div class="layer__text">
+                                    <h3>
+                                        {{ member.name }}
+                                    </h3>
+                                    <p>
+                                        {{ member.position }}
+                                    </p>
+
+                                    <div class="icons">
+                                        <img class="telegram" src="../../../static/images/telegram-ic.svg"
+                                             alt="telegram">
+                                        <img class="vk" src="../../../static/images/vk.svg" alt="vk">
+                                        <img class="fb" src="../../../static/images/fb.svg" alt="fb">
+                                        <img class="in" src="../../../static/images/in.svg" alt="in">
                                     </div>
                                 </div>
                             </div>
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -96,6 +101,8 @@
                 xDown: 0,
                 yDown: 0,
 
+                xDrag: 0,
+                yDrag: 0,
 
                 asd: false
             }
@@ -121,6 +128,51 @@
                 this.stopAutoplay();
                 this.prevSlide();
                 this.resume1(3000, true);
+            },
+            dragStart: function (e) {
+                this.xDrag = e.pageX;
+                this.yDrag = e.pageY;
+            },
+            dragEnd: function (e) {
+                this.xDrag = 0;
+                this.yDrag = 0;
+            },
+            dragMove: function (e) {
+                // console.log(e.pageX, 'mouse move X');
+
+                let xMove = e.pageX;
+                let yMove = e.pageY;
+
+                let xDiff = this.xDrag - xMove;
+                let yDiff = this.yDrag - yMove;
+
+                console.log(xDiff, 'xDiff');
+                console.log(yDiff, 'yDiff');
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    //ширина фотки всегда 304, но лучше получать из DOM
+
+                    if (xDiff > 0) {
+
+                        if (Math.abs(xDiff) > 152) {
+                            this.nextSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+
+                    if (xDiff < 0) {
+
+                        if (Math.abs(xDiff) > 152) {
+                            this.prevSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+                }
+
             },
             touchStart: function (e) {
                 // console.log(e, 'event touch start');
@@ -229,85 +281,6 @@
 
                     // private.isAnimationEnd = true;
                 });
-
-                // console.log(sel.wrap, 'sel.wrap');
-
-                // let opt = {
-                //     position: 0,
-                //     max_position: document.querySelector(this.privates.wrap).children.length - 3
-                // };
-
-                // this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length - 3;
-
-                // console.log(this.privates, 'animation');
-
-                // if (!this.privates.isAnimationEnd) {
-                //     return;
-                // }
-                //
-                // this.privates.isAnimationEnd = false;
-
-
-                // sel.wrap.addEventListener('transitionstart', () => {
-
-                // if (this.opt.position <= this.opt.maxPosition) {
-                //     ++this.opt.position;
-                // }
-                // ++this.opt.position;
-                // ++this.tmpPos;
-
-                // if (this.opt.position <= this.opt.maxPosition) {
-                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
-                // }
-
-
-                // if (this.opt.position > this.opt.maxPosition) {
-                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition - 50}%)`;
-                //     console.log(sel.wrap.style['transform'], 'after 1');
-                //     sel.wrap.appendChild(sel.children[0].cloneNode(true));
-                //     sel.wrap.removeChild(sel.children[0]);
-                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition - 25}%)`;
-                //     console.log(sel.wrap.style['transform'], 'after 2');
-                //     --this.opt.position;
-                //     // sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
-                //     // --this.opt.position;
-                // }
-
-                // if (this.asd) {
-                //     ++this.opt.position;
-                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
-                // }
-
-                // if (!this.asd) {
-
-
-                // if (this.opt.position !== this.opt.maxPosition) {
-                // if (!this.asd) {
-
-                // }
-                // }
-                // }
-
-                // if (this.asd) {
-                //     console.log(this.opt.position, 'this.opt.position');
-                //     console.log(sel.wrap.style['transform'], 'before');
-                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
-                //     console.log(sel.wrap.style['transform'], 'after');
-                // }
-
-
-                // console.log(this.opt.position, 'this.opt.position');
-                //
-                // console.log(this.opt.maxPosition, 'this.opt.maxPosition');
-                //
-                // console.log(sel.wrap.style['transform'], 'sel.wrap.style[\'transform\']');
-
-                // this.privates.isAnimationEnd = true;
-                // });
-
-                // if (this.privates.settings.autoplay === true) {
-                //     this.privates.timer.become();
-                // }
             },
             resume1: function (delay, autoplay) {
                 clearInterval(this.autoplay);
@@ -322,187 +295,6 @@
             stopAutoplay: function () {
                 clearInterval(this.autoplay);
             },
-
-            // Timer: function (callback, delay) {
-            //
-            //     let timerId, start, remaining = delay;
-            //
-            //     /* Public methods */
-            //     this.resume = () => {
-            //         // console.log('resume');
-            //
-            //         start = new Date();
-            //         timerId = setTimeout(() => {
-            //             remaining = delay;
-            //             this.resume();
-            //             callback();
-            //         }, remaining);
-            //
-            //     };
-            //
-            //     this.pause = () => {
-            //         clearTimeout(timerId);
-            //         remaining -= new Date() - start;
-            //     };
-            //
-            //     this.become = () => {
-            //         clearTimeout(timerId);
-            //         remaining = delay;
-            //
-            //         this.resume();
-            //     };
-            //
-            //     this.resume();
-            // },
-            // Carousel: function (settings, options) {
-            //
-            //     let privates = {},
-            //         xDown, yDown, xUp, yUp, xDiff, yDiff;
-            //
-            //     privates.default = options;
-            //     privates.default.autoplay = false;
-            //
-            //     // console.log(privates.default, 'privates.default');
-            //     // privates.default.autoplay = this.isTeam;
-            //
-            //     // console.log(privates.default, 'privates.default');
-            //
-            //     privates.settings = Object.assign(privates.default, settings);
-            //
-            //     privates.isAnimationEnd = true;
-            //
-            //     privates.sel = {
-            //         wrap: document.querySelector(privates.settings.wrap),
-            //         children: document.querySelector(privates.settings.wrap).children,
-            //         prev: document.querySelector(privates.settings.prev),
-            //         next: document.querySelector(privates.settings.next)
-            //     };
-            //
-            //     privates.opt = {
-            //         position: 0,
-            //         max_position: document.querySelector(privates.settings.wrap).children.length - 3
-            //     };
-            //
-            //     //с помощью этого сделать loop слайдера
-            //     // privates.sel.wrap.appendChild(privates.sel.children[0].cloneNode(true));
-            //
-            //     // Prev slide
-            //     this.prev_slide = () => {
-            //         // console.log(2);
-            //         if (!privates.isAnimationEnd) {
-            //             return;
-            //         }
-            //
-            //         privates.isAnimationEnd = false;
-            //
-            //         --privates.opt.position;
-            //
-            //         if (privates.opt.position < 0) {
-            //             privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.max_position * 25}%)`;
-            //             privates.opt.position = privates.opt.max_position - 1;
-            //         }
-            //
-            //         setTimeout(() => {
-            //             privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.position * 25}%)`;
-            //         }, 10);
-            //
-            //         privates.sel.wrap.addEventListener('transitionend', () => {
-            //             privates.isAnimationEnd = true;
-            //         });
-            //
-            //         if (privates.settings.autoplay === true) {
-            //             privates.timer.become();
-            //         }
-            //     };
-            //
-            //
-            //     // Next slide
-            //     this.next_slide = () => {
-            //         // console.log(1);
-            //         if (!privates.isAnimationEnd) {
-            //             return;
-            //         }
-            //
-            //         privates.isAnimationEnd = false;
-            //
-            //         if (privates.opt.position < privates.opt.max_position) {
-            //             ++privates.opt.position;
-            //         }
-            //
-            //         privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.position * 25}%)`;
-            //
-            //         privates.sel.wrap.addEventListener('transitionend', () => {
-            //             if (privates.opt.position >= privates.opt.max_position) {
-            //                 privates.sel.wrap.style['transform'] = 'translateX(0)';
-            //                 privates.opt.position = 0;
-            //             }
-            //
-            //             privates.isAnimationEnd = true;
-            //         });
-            //
-            //         if (privates.settings.autoplay === true) {
-            //             privates.timer.become();
-            //         }
-            //     };
-            //
-            //     // Autoplay
-            //     if (privates.settings.autoplay === true) {
-            //         privates.timer = new this.Timer(this.next_slide, privates.settings.autoplayDelay);
-            //     }
-            //
-            //
-            //     // Control
-            //     if (privates.sel.prev !== null) {
-            //         // privates.sel.prev.addEventListener('click', () => {
-            //         //     this.prev_slide();
-            //         // });
-            //     }
-            //
-            //     if (privates.sel.next !== null) {
-            //         // privates.sel.next.addEventListener('click', () => {
-            //         //     this.next_slide();
-            //         // });
-            //     }
-            //
-            //     // Pause on hover
-            //     if (privates.settings.autoplay === true && privates.settings.pauseOnHover === true) {
-            //         privates.sel.wrap.addEventListener('mouseenter', () => {
-            //             privates.timer.pause();
-            //         });
-            //
-            //         privates.sel.wrap.addEventListener('mouseleave', () => {
-            //             privates.timer.become();
-            //         });
-            //     }
-            //
-            //     // Touch events
-            //     if (privates.settings.touch === true) {
-            //         privates.sel.wrap.addEventListener('touchstart', privates.hts, false);
-            //         privates.sel.wrap.addEventListener('touchmove', privates.htm, false);
-            //     }
-            //
-            //     privates.hts = (e) => {
-            //         xDown = e.touches[0].clientX;
-            //         yDown = e.touches[0].clientY;
-            //     };
-            //
-            //     privates.htm = (e) => {
-            //         if (!xDown || !yDown)
-            //             return;
-            //
-            //         xUp = e.touches[0].clientX;
-            //         yUp = e.touches[0].clientY;
-            //
-            //         xDiff = xDown - xUp;
-            //         yDiff = yDown - yUp;
-            //
-            //         if (Math.abs(xDiff) > Math.abs(yDiff))
-            //             (xDiff > 0) ? this.next_slide() : this.prev_slide();
-            //
-            //         xDown = 0;
-            //         yDown = 0;
-            //     }
-            // }
         },
         created() {
             //в инит функцию
@@ -519,38 +311,17 @@
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[2].cloneNode(true));
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[3].cloneNode(true));
 
-            // document.querySelector(this.privates.next).addEventListener('click', () => {
-            //     this.stopAutoplay();
-            //     this.nextSlide();
-            //     this.resume1(3000, true);
-            // });
-            //
-            // document.querySelector(this.privates.prev).addEventListener('click', () => {
-            //     this.stopAutoplay();
-            //     this.prevSlide();
-            //     this.resume1(3000, true);
-            // });
 
-            //мб слабое место для модуля
-            // let carouselItem = document.getElementsByClassName('b-carousel__item');
-            // for (let i = 0; i < carouselItem.length; i++) {
-            //     //перенести в темплейт
-            //     carouselItem[i].addEventListener('mouseover', () => {
-            //         this.stopAutoplay();
-            //     });
-            //     carouselItem[i].addEventListener('mouseout', () => {
-            //         this.resume1(3000, true);
-            //     });
+            // if (this.privates.touch === true) {
+            //     document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
+            //     document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
             // }
 
-            if (this.privates.touch === true) {
-                document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
-                document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
-            }
+            //if (this.privates.drag === true) {
 
-            // this.resume1(3000, this.privates.autoplay);
+            // document.querySelector('.js-carousel').addEventListener('mousedown', this.dragStart, false);
+            // document.querySelector('.js-carousel').addEventListener('mousemove', this.dragMove, false);
 
-            // this.Carousel(this.settings, this.options);
         }
     }
 </script>
@@ -562,6 +333,9 @@
         display flex
         justify-content center
 
+        &:active
+            cursor -webkit-grab !important
+
         .b-carousel
             width 100%
             overflow hidden
@@ -569,6 +343,9 @@
             box-sizing border-box
             display flex
             flex-direction column
+
+            &:active
+                cursor -webkit-grab !important
 
             .b-carousel__wrap
                 display flex
@@ -578,6 +355,9 @@
                 z-index 1
                 height 100%
 
+                &:active
+                    cursor -webkit-grab !important
+
                 .b-carousel__item
                     /*flex 0 0 25%*/
                     overflow hidden
@@ -585,16 +365,30 @@
                     align-items center
                     justify-content center
 
-                    .b-carousel__outer
+                    &:active
+                        cursor -webkit-grab !important
+
+                    .b-carousel__inner
+                        position relative
                         margin 0 15px
+                        padding 40px 20px 0 20px
                         width 304px
                         /*width 100%*/
 
-                        .b-carousel__inner
-                            padding 40px 20px 0 20px
+                        &:active
+                            cursor -webkit-grab !important
 
-                            .b-carousel__img
-                                display block
+                        .b-carousel__img
+                            display block
+
+                            &:active
+                                cursor -webkit-grab !important
+
+    /*.b-carousel__inner*/
+    /*padding 40px 20px 0 20px*/
+
+    /*.b-carousel__img*/
+    /*display block*/
 
     .b-carousel__prev
         margin-right 20px
@@ -623,85 +417,88 @@
         overflow hidden
         text-align center
 
-        &:hover
+        .b-carousel__inner
+            &:hover
+                .layer__top
+                    opacity 1
+
+            img
+                max-width 100%
+                height 284px
+                width auto
+                margin auto
+
+            .layer__bottom
+                display block
+
             .layer__top
-                opacity 1
+                opacity 0
+                position absolute
+                z-index 10000
+                top 0
+                left 0
+                right 0
+                bottom 0
+                width 304px
+                //width calc(100% - 30px)
+                height 100%
+                background rgba(255, 210, 79, 0.8)
+                color #fff
+                padding 15px
+                -moz-transition all 0.4s ease-in-out 0s
+                -webkit-transition all 0.4s ease-in-out 0s
+                -ms-transition all 0.4s ease-in-out 0s
+                transition all 0.4s ease-in-out 0s
 
-        img
-            max-width 100%
-            height 284px
-            width auto
-            margin auto
+                &:active
+                    cursor -webkit-grab !important
 
-        .layer__bottom
-            display block
+            .layer__text
+                color #34343e
+                text-align center
+                font-size 18px
+                display inline-block
+                position absolute
+                width 80%
+                top 70%
+                left 50%
+                -moz-transform translate(-50%, -50%)
+                -webkit-transform translate(-50%, -50%)
+                -ms-transform translate(-50%, -50%)
+                transform translate(-50%, -50%)
 
-        .layer__top
-            opacity 0
-            position absolute
-            z-index 10000
-            top 0
-            /*left 39px*/
-            left 5%
-            right 0
-            bottom 0
-            width 304px
-            //width calc(100% - 30px)
-            height 100%
-            background rgba(255, 210, 79, 0.8)
-            color #fff
-            padding 15px
-            -moz-transition all 0.4s ease-in-out 0s
-            -webkit-transition all 0.4s ease-in-out 0s
-            -ms-transition all 0.4s ease-in-out 0s
-            transition all 0.4s ease-in-out 0s
+                .h3
+                    font-weight 700
+                    font-size 24px
 
-        .layer__text
-            color #34343e
-            text-align center
-            font-size 18px
-            display inline-block
-            position absolute
-            width 80%
-            top 70%
-            left 50%
-            -moz-transform translate(-50%, -50%)
-            -webkit-transform translate(-50%, -50%)
-            -ms-transform translate(-50%, -50%)
-            transform translate(-50%, -50%)
+                p
+                    font-size 12px
+                    margin-bottom 25px
+                    text-transform uppercase
+                    font-family MuseoSansCyrl500
 
-            .h3
-                font-weight 700
-                font-size 24px
+                .icons
+                    width 100%
+                    display flex
+                    justify-content center
 
-            p
-                font-size 12px
-                margin-bottom 25px
-                text-transform uppercase
-                font-family MuseoSansCyrl500
+                    .telegram
+                        width 18px
+                        height 14.5px
 
-            .icons
-                width 100%
-                display flex
-                justify-content center
+                    .vk
+                        width 21px
+                        height 13px
 
-                .telegram
-                    width 18px
-                    height 14.5px
+                    .fb
+                        width 9px
+                        height 18px
 
-                .vk
-                    width 21px
-                    height 13px
-
-                .fb
-                    width 9px
-                    height 18px
-
-                .in
-                    width 17px
-                    height 17px
-                img
-                    margin auto 15px
+                    .in
+                        width 17px
+                        height 17px
+                    img
+                        margin auto 15px
 
     .s-notransition
         transition 0s !important
