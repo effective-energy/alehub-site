@@ -131,7 +131,9 @@
 			height auto
 			display flex
 			justify-content center
-			align-items center
+			align-items flex-start
+			padding-top 170px
+			min-width 90px
 
 			.filter-list
 				text-align center
@@ -143,7 +145,9 @@
 			height auto
 			display flex
 			justify-content center
-			align-items center
+			align-items flex-start
+			padding-top 110px
+			min-width 90px
 
 			.filter-list
 				text-align center
@@ -170,12 +174,13 @@
 
 	.blog-post
 		width 100%
-		height 130px
 		margin 49px 0 49px 0
 		display flex
 
 		.image-preview
 			object-fit cover
+			width 200px
+			height 120px
 
 		.post-content
 			display flex
@@ -211,4 +216,94 @@
 			.post-content
 				.title
 					font-size 16px
+
+	@media(max-width: 1024px)
+		.blog-post
+			.post-content
+				.post-info
+					span 
+						font-size 14px
+
+	@media(max-width: 991px)
+		.blog-content
+			.posts
+				padding-right 32px
+				padding-left 32px
+
+		.blog-post
+			align-items center
+
+	@media(max-width: 900px)
+		.blog-post
+			flex-direction column
+
+			.image-preview
+				margin-bottom 12px
+
+			.post-content
+				.title
+					text-align center
+					margin-bottom 12px
+
+				.post-info
+					margin 0 auto
+					
+					span 
+						font-size 12px
+
+	@media(max-width: 660px)
+		.blog-content
+			.date-filter, .tags-filter
+				display none 
+
+			.posts
+				padding-right 0
+				padding-left 0
+
+		.section
+			padding-right 32px
+			padding-left 32px
+
+			.section-title
+				font-size 2rem
+				padding-bottom 12px
+
+		.blog-post
+			flex-direction row
+
+	@media(max-width: 575px)
+		.blog-post
+			.post-content
+				.title
+					font-size 14px
+					text-align left
+					margin-bottom 0
+
+				.post-info
+					margin 12px 0 0 0
+
+	@media(max-width: 500px)
+		.blog-post
+			flex-direction column
+
+			.post-content
+				.title
+					text-align center
+					margin-bottom 12px 
+
+				.post-info
+					margin 0 auto
+
+	@media(max-width: 320px)
+		.section
+			padding-top 40px
+			padding-bottom 40px
+
+		.blog-post
+			margin 24px 0
+
+			.post-content
+				padding 0
+
+			
 </style>

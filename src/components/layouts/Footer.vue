@@ -1,120 +1,50 @@
 <template>
-    <footer>
-        <b-container>
-            <b-row>
-                <b-col lg="6" md="5">
-                    <div class="info">
-                        <div class="logo"></div>
-                        <p>Effective Energy LLC © 2018 All rights reserved.</p>
-                        <a href="#">Terms and conditions</a>
-                    </div>
-                </b-col>
-                <b-col lg="6" md="7">
-                    <div class="actions">
-                        <div class="social-icons">
-                            <div class="icon-item">
-                                <a href="#">
-                                    <img src="../../assets/img/social/telegram.svg" alt="" />
-                                </a>
-                            </div>
-                            <div class="icon-item">
-                                <a href="#">
-                                    <img src="../../assets/img/social/facebook.svg" alt="" />
-                                </a>
-                            </div>
-                            <div class="icon-item">
-                                <a href="#">
-                                    <img src="../../assets/img/social/twitter.svg" alt="" />
-                                </a>
-                            </div>
-                            <div class="icon-item">
-                                <a href="#">
-                                    <img src="../../assets/img/social/vk.svg" alt="" />
-                                </a>
-                            </div>
-                            <div class="icon-item">
-                                <a href="#">
-                                    <img src="../../assets/img/social/reddit.svg" alt="" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="subscribe">
-                            <b-btn variant="outline-secondary">Subscribe to news</b-btn>
-                        </div>
-                    </div>
-                    <ul class="menu">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Description</a>
-                        </li>
-                        <li>
-                            <a href="#">Advantages</a>
-                        </li>
-                        <li>
-                            <a href="#">Features</a>
-                        </li>
-                        <li>
-                            <a href="#">Bounty</a>
-                        </li>
-                        <li>
-                            <a href="#">Team</a>
-                        </li>
-                        <li>
-                            <a href="#">News</a>
-                        </li>
-                    </ul>
-                </b-col>
-            </b-row>
-        </b-container>
-    </footer>
-	<!--<div class="footer">-->
-		<!--<div class="row footer-row">-->
-			<!--<div class="col-5 copyright-block">-->
-				<!--<div class="ale-logo"></div>-->
-				<!--<span class="copyright-text">-->
-				<!--Effective Energy LLC © 2018 All rights reserved.-->
-				<!--<div class="creator-and-terms">-->
-					<!--<div class="creator">-->
-						<!--<div class="rukin-logo"></div>-->
-						<!--<span class="rukin-about">Design by Alexander Rukin and ledesign</span>-->
-					<!--</div>-->
-					<!--<a href="#" class="terms">Terms and conditions</a>-->
-				<!--</div>-->
-			<!--</span>-->
-			<!--</div>-->
-			<!--<div class="col-2 back-to-top">-->
-				<!--<div class="top-icon" v-scroll-to="'#home'"></div>-->
-			<!--</div>-->
-			<!--<div class="col-5 social-block">-->
-				<!--<div class="social-networks">-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-fb"></i>-->
-					<!--</a>-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-insta"></i>-->
-					<!--</a>-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-youtube"></i>-->
-					<!--</a>-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-twitter"></i>-->
-					<!--</a>-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-tg"></i>-->
-					<!--</a>-->
-					<!--<a href="#" class="social-item" target="_blank">-->
-						<!--<i class="social-icon social-icon-vk"></i>-->
-					<!--</a>-->
-				<!--</div>-->
-				<!--<div class="subscribe-form">-->
-					<!--<input style="font-weight: 700;" type="text" placeholder="Your e-mail address" />-->
-					<!--<button style="font-weight: 700;">Subscribe to news</button>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
+	<div class="footer">
+		<div class="row footer-row">
+			<div class="col-5 copyright-block">
+				<div class="ale-logo"></div>
+				<span class="copyright-text">
+				Effective Energy LLC © 2018 All rights reserved.
+				<div class="creator-and-terms">
+					<div class="creator">
+						<div class="rukin-logo"></div>
+						<span class="rukin-about">Design by Alexander Rukin and ledesign</span>
+					</div>
+					<a href="#" class="terms">Terms and conditions</a>
+				</div>
+			</span>
+			</div>
+			<div class="col-2 back-to-top">
+				<div class="top-icon" v-scroll-to="'#home'"></div>
+			</div>
+			<div class="col-5 social-block">
+				<div class="social-networks">
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-fb"></i>
+					</a>
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-insta"></i>
+					</a>
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-youtube"></i>
+					</a>
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-twitter"></i>
+					</a>
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-tg"></i>
+					</a>
+					<a href="#" class="social-item" target="_blank">
+						<i class="social-icon social-icon-vk"></i>
+					</a>
+				</div>
+				<div class="subscribe-form">
+					<input style="font-weight: 700;" type="text" placeholder="Your e-mail address" />
+					<button style="font-weight: 700;">Subscribe to news</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -375,95 +305,5 @@
 							&:last-child
 								margin-right 0
 
-
-	footer
-		padding 3em 0
-
-		.info
-			.logo
-				background-image url('../../assets/img/logo.png')
-				width 167px
-				height 28px
-				background-size contain
-
-			p
-				margin-top 1.5em
-				margin-bottom 0
-				color #96969F
-				font-size 12px
-
-			a
-				margin-top 0.5em
-				margin-bottom 0
-				color #96969F
-				font-size 12px
-				text-decoration underline
-
-		.menu
-			list-style none
-			display flex
-			justify-content space-between
-			padding-left 0
-
-			li
-				font-size 14px
-				letter-spacing 0.6px
-
-				a
-					color #96969F
-
-		.actions
-			display flex
-			justify-content space-between
-			margin-bottom 20px
-
-			.social-icons
-				display flex
-				justify-content space-between
-
-				.icon-item
-					width 40px
-					height 40px
-					margin 0 10px
-					display flex
-					justify-content center
-					align-items center
-
-					a
-						img
-							width 50%
-
-				.icon-item:first-child
-					margin-left 0
-
-				.icon-item:last-child
-					margin-right 0
-
-		@media(max-width: 991px)
-			.actions
-				.social-icons
-					.icon-item
-						margin 0
-
-		@media(max-width: 575px)
-			.menu
-				display none
-
-		@media(max-width: 375px)
-			.actions
-				flex-direction column-reverse
-				align-items center
-
-				.subscribe
-					margin-top 15px
-					margin-bottom 15px
-
-				.social-icons
-					padding-left 15px
-            
-			.info
-				display flex
-				flex-direction column
-				align-items center
-			
 </style>
+			
