@@ -217,6 +217,7 @@
 				.image
 					width 100%
 					height 400px
+					-o-object-fit cover
 					object-fit cover
 
 				.resource-image
@@ -319,6 +320,7 @@
 						img
 							width 100%
 							height 130px
+							-o-object-fit cover
 							object-fit cover
 
 						.news-link

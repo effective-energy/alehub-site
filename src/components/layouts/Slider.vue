@@ -537,10 +537,14 @@
             width 100%
             overflow hidden
             position relative
+            -webkit-box-sizing border-box
+            -moz-box-sizing border-box
             box-sizing border-box
 
             .b-carousel__wrap
                 display flex
+                -webkit-transition transform .5s
+                -o-transition transform .5s
                 transition transform .5s
                 will-change transform
                 position relative
@@ -673,6 +677,8 @@
 
 
     .s-notransition
+        -webkit-transition 0s !important
+        -o-transition 0s !important
         transition 0s !important
 
     @media (max-width 425px)
