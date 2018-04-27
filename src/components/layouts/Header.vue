@@ -379,9 +379,9 @@
         .navbar-brand
             color #fff
 
-        //.nav-link
-            /*transition all 0.4s ease*/
-            //color #fff !important
+        .nav-link
+            transition all 0.4s ease
+            color #fff !important
 
 
     @media(max-width: 1440px)

@@ -8,7 +8,10 @@
             <div class="b-carousel js-carousel">
                 <div class="b-carousel__wrap js-carousel__wrap">
                     <div class="image b-carousel__item"
-                         v-for="(member, i) in items" :key="i">
+                         @mouseover="stopAutoplay"
+                         @mouseleave="resume1(3000, 'true')"
+                         v-for="(member, i) in items"
+                         :key="i">
 
                         <div class="b-carousel__outer">
                             <div class="b-carousel__inner"
@@ -88,16 +91,8 @@
         },
         watch: {
             'options.autoplay': function (val) {
-                console.log(this.privates1, 'this.privates1');
-                console.log(val, 'autoplay');
-
-                // this.resume1(3000, val);
-
-                // this.Carousel(this.settings, this.options);
+                this.resume1(3000, val);
             },
-            'opt.maxPosition': function (val) {
-                console.log(val, 'opt.maxPosition');
-            }
         },
         methods: {
             touchStart: function (e) {
@@ -180,7 +175,7 @@
             },
             nextSlide: function () {
 
-                console.log(this.privates);
+                // console.log(this.privates);
 
                 // console.log('check autoplay');
 
@@ -288,13 +283,17 @@
                 // }
             },
             resume1: function (delay, autoplay) {
+                clearInterval(this.autoplay);
                 if (autoplay) {
                     this.autoplay = setInterval(() => {
+                        console.log(123);
                         this.nextSlide();
                     }, delay);
-                } else {
-                    clearInterval(this.autoplay);
                 }
+            },
+
+            stopAutoplay: function () {
+                clearInterval(this.autoplay);
             },
 
             Timer: function (callback, delay) {
@@ -494,19 +493,35 @@
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[3].cloneNode(true));
 
             document.querySelector(this.privates.next).addEventListener('click', () => {
+                this.stopAutoplay();
                 this.nextSlide();
+                this.resume1(3000, true);
             });
 
             document.querySelector(this.privates.prev).addEventListener('click', () => {
+                this.stopAutoplay();
                 this.prevSlide();
+                this.resume1(3000, true);
             });
+
+            //мб слабое место для модуля
+            // let carouselItem = document.getElementsByClassName('b-carousel__item');
+            // for (let i = 0; i < carouselItem.length; i++) {
+            //     //перенести в темплейт
+            //     carouselItem[i].addEventListener('mouseover', () => {
+            //         this.stopAutoplay();
+            //     });
+            //     carouselItem[i].addEventListener('mouseout', () => {
+            //         this.resume1(3000, true);
+            //     });
+            // }
 
             if (this.privates.touch === true) {
                 document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
                 document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
             }
 
-            // this.resume1(3000, this.privates1.autoplay);
+            // this.resume1(3000, this.privates.autoplay);
 
             this.Carousel(this.settings, this.options);
         }
