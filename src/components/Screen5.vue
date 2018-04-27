@@ -470,6 +470,8 @@
 </script>
 
 <style lang="stylus" scoped>
+    .b-carousel__prev
+        margin-right 20px
 
     .team
         background-color #ffffff
