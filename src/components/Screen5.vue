@@ -12,7 +12,7 @@
 
             <div class="serokell">
                 <p>Serokell</p>
-
+                <!--v-show="!isMobileScreen"-->
                 <div class="images" id="serokell-gallery">
                     <div class="image"
                          v-for="(member, i) in team.serokell" :key="i"
@@ -39,6 +39,11 @@
                         </div>
                     </div>
                 </div>
+
+                <!--<slider :items="team.serokell"-->
+                        <!--:settings="settings"-->
+                        <!--:options="options"-->
+                        <!--:privates1="Object.assign(settings, options)"/>-->
             </div>
 
             <div class="effective-energy" style="width: 100%;">
@@ -151,7 +156,7 @@
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
                             src: '../../static/images/avatars/elagin@3x.png'
-                        }
+                        },
                     ],
                     energy: [
                         {
@@ -241,6 +246,10 @@
             }
         },
         computed: {
+            //добавить чек по типу устройства (браузера с которого заходили)
+            isMobileScreen: function () {
+                return window.innerWidth <= 425;
+            },
             positionMultiplier: function () {
                 let windowWidth = window.innerWidth;
 

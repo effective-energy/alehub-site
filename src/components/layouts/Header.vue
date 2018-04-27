@@ -425,7 +425,6 @@
         .btn-login
             background-color #343a49
             color white
-            margin-left 16px
 
     .bg-dark-blue
         background-color #343a49
