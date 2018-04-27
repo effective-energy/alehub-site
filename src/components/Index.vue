@@ -45,43 +45,14 @@
                 isTeam: false,
             }
         },
-        methods: {
-            getCoords: function (elem) {
-                let box = elem.getBoundingClientRect();
-
-                return {
-                    top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
-                };
-            },
-        },
         mounted() {
-            let navbar = document.getElementById('navbar'),
-                navbarYOffset = navbar.offsetHeight;
+            this.$on('checkIsFeatures', (isFeatures) => {
+                this.isFeatures = isFeatures;
+            });
 
-            window.addEventListener('scroll', () => {
-                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isFeatures) {
-                        this.isFeatures = true;
-                    }
-                } else {
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (!this.isTeam) {
-                        this.isTeam = true;
-                    }
-                } else {
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                    }
-                }
-            })
+            this.$on('checkIsTeam', (isTeam) => {
+                this.isTeam = isTeam;
+            });
         }
     }
 </script>

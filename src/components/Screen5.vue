@@ -102,8 +102,6 @@
         components: {
             TinySlider,
             Slider
-
-            // slider
         },
         props: {
             isTeam: {
@@ -112,8 +110,8 @@
             }
         },
         watch: {
-            'isTeam': function (val) {
-                this.options.autoplay = val;
+            'isTeam': function (isAutoplay) {
+                this.options.autoplay = isAutoplay;
             }
         },
         data() {
@@ -131,7 +129,6 @@
                     pauseOnFocus: true,
                     pauseOnHover: true,
                     positionMultiplier: 25,
-                    // subtrahendMaxPosition: 0
                 },
                 team: {
                     serokell: [

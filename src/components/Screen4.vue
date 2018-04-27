@@ -14,8 +14,7 @@
                        :moveSpeed="3"
                        :hoverEffect="true"
                        hoverMode="grab"
-                       :clickEffect="true"
-                       clickMode="push">
+                       :clickEffect="false">
         </vue-particles>
 
         <div class="section-1">
