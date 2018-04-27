@@ -116,7 +116,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="screen1 title">Welcome to the future <br> of the HR industry</h1>
+                        <h1 class="screen1 title">
+                            Welcome to the future <br>
+                            of the HR industry
+                        </h1>
                     </div>
                 </div>
                 <div class="row">
@@ -128,28 +131,42 @@
                             <div class="timer">
                                 <div class="days">
                                     <div class="numbers">
-                                        <div class="first">{{ timer.days.first }}</div>
-                                        <div class="second">{{ timer.days.second }}</div>
+                                        <div class="first">
+                                            {{ timer.days.first }}
+                                        </div>
+                                        <div class="second">
+                                            {{ timer.days.second }}
+                                        </div>
                                     </div>
                                     <div class="title">Days</div>
                                 </div>
                                 <div class="hours">
                                     <div class="numbers">
-                                        <div class="first">{{ timer.hours.first }}</div>
-                                        <div class="second">{{ timer.hours.second }}</div>
+                                        <div class="first">
+                                            {{ timer.hours.first }}
+                                        </div>
+                                        <div class="second">
+                                            {{ timer.hours.second }}
+                                        </div>
                                     </div>
                                     <div class="title">Hours</div>
                                 </div>
                                 <div class="minutes">
                                     <div class="numbers">
-                                        <div class="first">{{ timer.minutes.first }}</div>
-                                        <div class="second">{{ timer.minutes.second }}</div>
+                                        <div class="first">
+                                            {{ timer.minutes.first }}
+                                        </div>
+                                        <div class="second">
+                                            {{ timer.minutes.second }}
+                                        </div>
                                     </div>
                                     <div class="title">Minutes</div>
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-buy-tokens">Buy tokens</button>
+                        <button type="button" class="btn btn-buy-tokens">
+                            Buy tokens
+                        </button>
                         <div class="bonus-desc">
                             <span>Bonus 25% up to 7 April 2018</span>
                             <span>Now not available</span>
@@ -214,18 +231,30 @@
                         </div>
                         <div class="ico-progress">
                             <div class="state">
-                                <div class="title">Soft cap</div>
-                                <div class="count">{{ collected }} / {{ softCap }} ETH</div>
+                                <div class="title">
+                                    Soft cap
+                                </div>
+                                <div class="count">
+                                    {{ collected }} / {{ softCap }} ETH
+                                </div>
                             </div>
                             <div class="progress-bar-outer">
-                                <div class="progress-bar-inner" :style="{width: (collected/softCap)*100+'%'}"></div>
+                                <div class="progress-bar-inner"
+                                     :style="{width: (collected/softCap)*100+'%'}">
+                                </div>
                             </div>
                             <div class="state hard-cap">
-                                <div class="title">Hard cap</div>
-                                <div class="count">{{ collected }} / {{ hardCap }} ETH</div>
+                                <div class="title">
+                                    Hard cap
+                                </div>
+                                <div class="count">
+                                    {{ collected }} / {{ hardCap }} ETH
+                                </div>
                             </div>
                             <div class="progress-bar-outer">
-                                <div class="progress-bar-inner" :style="{width: (collected/hardCap)*100+'%'}"></div>
+                                <div class="progress-bar-inner"
+                                     :style="{width: (collected/hardCap)*100+'%'}">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -523,6 +552,7 @@
             position relative
             top -15px
             left 25%
+
             .play-button
                 cursor pointer
                 width 110px
@@ -560,25 +590,36 @@
                 .play-button
                     margin 0
         .scrol-ic
+            cursor pointer
             margin-right auto
             margin-left calc(50% - 396px)
+            background-color transparent
+            border none
+            transition transform .5s ease
+            &:active
+                transform translateY(20px)
             @media (max-width: 1124px)
                 display none
+
         .ico-progress
             width 448px
             font-family MuseoSansCyrl500
             font-size 20px
             color #34343e
             margin-top 60px
+
             .state
                 display flex
                 flex-direction row
                 justify-content space-between
+
                 &.hard-cap
                     margin-top 24px
+
             .progress-bar-outer
                 height 4px
-                background-color #FFF
+                background-color #fff
+
                 .progress-bar-inner
                     background-color #ffbc00
                     -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)

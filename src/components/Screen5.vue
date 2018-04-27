@@ -12,7 +12,7 @@
 
             <div class="serokell">
                 <p>Serokell</p>
-
+                <!--v-show="!isMobileScreen"-->
                 <div class="images" id="serokell-gallery">
                     <div class="image"
                          v-for="(member, i) in team.serokell" :key="i"
@@ -39,6 +39,11 @@
                         </div>
                     </div>
                 </div>
+
+                <!--<slider :items="team.serokell"-->
+                <!--:settings="settings"-->
+                <!--:options="options"-->
+                <!--:privates1="Object.assign(settings, options)"/>-->
             </div>
 
             <div class="effective-energy" style="width: 100%;">
@@ -47,7 +52,9 @@
                 <slider :items="team.energy"
                         :settings="settings"
                         :options="options"
-                        :privates1="Object.assign(settings, options)"/>
+                        :privates1="Object.assign(settings, options)"
+                        :multiplier-position="multiplierPosition"/>
+                <!--:num-item-in-wrap="numItemInWrap"-->
 
             </div>
         </div>
@@ -114,18 +121,6 @@
                 this.options.autoplay = isAutoplay;
             }
         },
-        props: {
-            isTeam: {
-                type: [Boolean],
-                required: true
-            }
-        },
-        watch: {
-            'isTeam': function (val) {
-                console.log(val, 'isTeam');
-                // this.options.autoplay = val;
-            }
-        },
         data() {
             return {
                 settings: {
@@ -140,7 +135,7 @@
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
                     pauseOnHover: true,
-                    positionMultiplier: 25,
+                    multiplierPosition: 25,
                 },
                 team: {
                     serokell: [
@@ -163,7 +158,7 @@
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
                             src: '../../static/images/avatars/elagin@3x.png'
-                        }
+                        },
                     ],
                     energy: [
                         {
@@ -253,227 +248,42 @@
             }
         },
         computed: {
-            positionMultiplier: function () {
-                let windowWidth = window.innerWidth;
-
+            //добавить чек по типу устройства (браузера с которого заходили)
+            isMobileScreen: function () {
+                return window.innerWidth <= 425;
+            },
+            numItemInWrap: function () {
+                if (window.innerWidth <= 425)
+                    return 1;
+                else if (window.innerWidth > 425 && window.innerWidth <= 1024)
+                    return 2;
+                else if (window.innerWidth > 1024 && window.innerWidth <= 1571)
+                    return 3;
+                else
+                    return 4;
+            },
+            multiplierPosition: function () {
                 //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
-                if (windowWidth <= 425)
+                if (window.innerWidth <= 785)
                     return 100;
-                else if (windowWidth > 425 && windowWidth <= 1024)
+                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
                     return 50;
-                else if (windowWidth > 1024 && windowWidth <= 1440)
-                    return 33.333;
+                else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
+                    return 33.33333;
                 else
                     return 25;
             },
-            // subtrahendMaxPosition: function () {
-            //     let windowWidth = window.innerWidth;
-            //
-            //     if (windowWidth <= 425)
-            //         return 1;
-            //     else if (windowWidth > 425 && windowWidth <= 1024)
-            //         return 2;
-            //     else if (windowWidth > 1024 && windowWidth <= 1440)
-            //         return 3;
-            //     else
-            //         return 4;
-            // }
+
         },
         methods: {
-            Timer: function (callback, delay) {
 
-                let timerId, start, remaining = delay;
-
-                /* Public methods */
-                this.resume = () => {
-                    start = new Date();
-                    timerId = setTimeout(() => {
-                        remaining = delay;
-                        this.resume();
-                        callback();
-                    }, remaining);
-                };
-
-                this.pause = () => {
-                    clearTimeout(timerId);
-                    remaining -= new Date() - start;
-                };
-
-                this.become = () => {
-                    clearTimeout(timerId);
-                    remaining = delay;
-
-                    this.resume();
-                };
-
-                this.resume();
-            },
-            Carousel: function (settings, options) {
-
-                let privates = {},
-                    xDown, yDown, xUp, yUp, xDiff, yDiff;
-
-                privates.default = options;
-                // privates.default.autoplay = this.isTeam;
-
-                // console.log(privates.default, 'privates.default');
-
-                privates.settings = Object.assign(privates.default, settings);
-
-                privates.isAnimationEnd = true;
-
-                privates.sel = {
-                    wrap: document.querySelector(privates.settings.wrap),
-                    children: document.querySelector(privates.settings.wrap).children,
-                    prev: document.querySelector(privates.settings.prev),
-                    next: document.querySelector(privates.settings.next)
-                };
-
-                privates.opt = {
-                    position: 0,
-                    max_position: document.querySelector(privates.settings.wrap).children.length - 3
-                };
-
-                privates.sel.wrap.appendChild(privates.sel.children[0].cloneNode(true));
-
-                // Prev slide
-                this.prev_slide = () => {
-                    console.log(2);
-                    if (!privates.isAnimationEnd) {
-                        return;
-                    }
-
-                    privates.isAnimationEnd = false;
-
-                    --privates.opt.position;
-
-                    if (privates.opt.position < 0) {
-                        privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.max_position * 25}%)`;
-                        privates.opt.position = privates.opt.max_position - 1;
-                    }
-
-                    setTimeout(() => {
-                        privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.position * 25}%)`;
-                    }, 10);
-
-                    privates.sel.wrap.addEventListener('transitionend', () => {
-                        privates.isAnimationEnd = true;
-                    });
-
-                    if (privates.settings.autoplay === true) {
-                        privates.timer.become();
-                    }
-                };
-
-
-                // Next slide
-                this.next_slide = () => {
-                    console.log(1);
-                    if (!privates.isAnimationEnd) {
-                        return;
-                    }
-
-                    privates.isAnimationEnd = false;
-
-                    if (privates.opt.position < privates.opt.max_position) {
-                        ++privates.opt.position;
-                    }
-
-                    privates.sel.wrap.style['transform'] = `translateX(-${privates.opt.position * 25}%)`;
-
-                    privates.sel.wrap.addEventListener('transitionend', () => {
-                        if (privates.opt.position >= privates.opt.max_position) {
-                            privates.sel.wrap.style['transform'] = 'translateX(0)';
-                            privates.opt.position = 0;
-                        }
-
-                        privates.isAnimationEnd = true;
-                    });
-
-                    if (privates.settings.autoplay === true) {
-                        privates.timer.become();
-                    }
-                };
-
-                // Autoplay
-                if (privates.settings.autoplay === true) {
-                    privates.timer = new this.Timer(this.next_slide, privates.settings.autoplayDelay);
-                }
-
-
-                // Control
-                if (privates.sel.prev !== null) {
-                    privates.sel.prev.addEventListener('click', () => {
-                        this.prev_slide();
-                    });
-                }
-
-                if (privates.sel.next !== null) {
-                    privates.sel.next.addEventListener('click', () => {
-                        this.next_slide();
-                    });
-                }
-
-                // Touch events
-                if (privates.settings.touch === true) {
-                    privates.sel.wrap.addEventListener('touchstart', privates.hts, false);
-                    privates.sel.wrap.addEventListener('touchmove', privates.htm, false);
-                }
-
-                // Pause on hover
-                if (privates.settings.autoplay === true && privates.settings.pauseOnHover === true) {
-                    privates.sel.wrap.addEventListener('mouseenter', () => {
-                        privates.timer.pause();
-                    });
-
-                    privates.sel.wrap.addEventListener('mouseleave', () => {
-                        privates.timer.become();
-                    });
-                }
-
-                privates.hts = (e) => {
-                    xDown = e.touches[0].clientX;
-                    yDown = e.touches[0].clientY;
-                };
-
-                privates.htm = (e) => {
-                    if (!xDown || !yDown)
-                        return;
-
-                    xUp = e.touches[0].clientX;
-                    yUp = e.touches[0].clientY;
-
-                    xDiff = xDown - xUp;
-                    yDiff = yDown - yUp;
-
-                    if (Math.abs(xDiff) > Math.abs(yDiff))
-                        (xDiff > 0) ? this.next_slide() : this.prev_slide();
-
-                    xDown = 0;
-                    yDown = 0;
-                }
-            }
         },
         created() {
-            this.options.positionMultiplier = this.positionMultiplier;
+            this.options.multiplierPosition = this.multiplierPosition;
             // this.options.subtrahendMaxPosition = this.subtrahendMaxPosition;
         },
         mounted() {
-            // console.log(window.innerWidth, 'window.innerWidth');
-            // this.Carousel({
-            //     main: '.js-carousel',
-            //     wrap: '.js-carousel__wrap',
-            //     prev: '.js-carousel__prev',
-            //     next: '.js-carousel__next'
-            // }, {
-            //     touch: true,
-            //     autoplay: true,
-            //     autoplayDelay: 3000,
-            //     pauseOnFocus: true,
-            //     pauseOnHover: true
-            // });
-
-            document.getElementById('effective-energy').style.width = document.getElementById('serokell-gallery').offsetWidth + 'px';
+            // document.getElementById('effective-energy').style.width = document.getElementById('serokell-gallery').offsetWidth + 'px';
         }
     }
 </script>
@@ -483,14 +293,25 @@
         margin-right 20px
 
     .team
-        background-color #ffffff
+        background-color #fff
+
         .our-team
-            padding 80px 5% 40px 5%
+            padding 80px 7.5% 40px 7.5%
             display flex
             flex-direction column
             justify-content center
             align-items center
-            background-color #ffffff
+            background-color #fff
+
+            @media (min-width 650px) and (max-width 785px)
+                padding 80px 20% 40px 20%
+
+            @media (min-width 490px) and (max-width 650px)
+                padding 80px 25% 40px 25%
+
+            @media (max-width 490px)
+                padding 80px 10% 40px 10%
+
 
             .title
                 font-size 40px
@@ -516,6 +337,8 @@
             background-color #34343e
 
         .effective-energy
+            width 100%
+
             .image,
             .image *
                 -webkit-box-sizing border-box
@@ -614,15 +437,23 @@
 
         .serokell
             p
-                margin-bottom 30px
+                margin-bottom 50px
                 font-size 20px
 
         .serokell, .effective-energy
+            width 100%
             display flex
             flex-direction column
             justify-content center
             align-items center
             margin-bottom 60px
+
+        .serokell
+            .images
+                width 100%
+                display flex
+                flex-wrap wrap
+                justify-content space-around
 
         .advisors-team
             width 100%
@@ -632,12 +463,14 @@
                 width 100%
                 justify-content center !important
 
-        .serokell, .advisors-team
+        .advisors-team
 
             .images
                 display flex
                 flex-wrap wrap
                 justify-content center
+
+        .serokell, .advisors-team
 
             .image,
             .image *
