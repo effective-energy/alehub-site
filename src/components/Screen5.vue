@@ -49,57 +49,6 @@
                         :options="options"
                         :privates1="Object.assign(settings, options)"/>
 
-                <!--<div style="width: 100%; display: flex; justify-content: center;">-->
-                <!--<button class="b-carousel__prev js-carousel__prev"-->
-                <!--style="background: transparent; border: none; cursor: pointer;">-->
-                <!--<img src="../../static/images/arrow-left-dark.svg" alt="prev">-->
-                <!--</button>-->
-
-                <!--<div class="wrap" style="display: flex; justify-content: center;" id="effective-energy">-->
-                <!--<div class="b-carousel js-carousel">-->
-                <!--&lt;!&ndash;<button class="b-carousel__prev js-carousel__prev"></button>&ndash;&gt;-->
-                <!--&lt;!&ndash;<button class="b-carousel__next js-carousel__next"></button>&ndash;&gt;-->
-                <!--<div class="b-carousel__wrap js-carousel__wrap">-->
-                <!--<div class="image b-carousel__item"-->
-                <!--v-for="(member, i) in team.energy" :key="i">-->
-
-                <!--<div style="margin: 0 15px; width: 100%;">-->
-                <!--<div style="padding: 40px 20px 0 20px;"-->
-                <!--:style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">-->
-                <!--<img class="layer__bottom b-carousel__img"-->
-                <!--:src="member.src"-->
-                <!--:alt="member.name">-->
-
-                <!--<div class="layer__top">-->
-                <!--<div class="layer__text">-->
-                <!--<h3>-->
-                <!--{{ member.name }}-->
-                <!--</h3>-->
-                <!--<p>-->
-                <!--{{ member.position }}-->
-                <!--</p>-->
-
-                <!--<div class="icons">-->
-                <!--<img class="telegram" src="../../static/images/telegram-ic.svg"-->
-                <!--alt="telegram">-->
-                <!--<img class="vk" src="../../static/images/vk.svg" alt="vk">-->
-                <!--<img class="fb" src="../../static/images/fb.svg" alt="fb">-->
-                <!--<img class="in" src="../../static/images/in.svg" alt="in">-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-
-                <!--<button class="b-carousel__next js-carousel__next">-->
-                <!--<img src="../../static/images/arrow-left-dark.svg" alt="prev"-->
-                <!--style="transform: rotate(180deg);">-->
-                <!--</button>-->
-                <!--</div>-->
             </div>
         </div>
         <div class="advisors" id="advisors">
@@ -180,7 +129,9 @@
                     autoplay: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
-                    pauseOnHover: true
+                    pauseOnHover: true,
+                    positionMultiplier: 25,
+                    subtrahendMaxPosition: 0
                 },
                 team: {
                     serokell: [
@@ -290,6 +241,33 @@
                         }
                     ]
                 }
+            }
+        },
+        computed: {
+            positionMultiplier: function () {
+                let windowWidth = window.innerWidth;
+
+                //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
+                if (windowWidth <= 425)
+                    return 100;
+                else if (windowWidth > 425 && windowWidth <= 1024)
+                    return 50;
+                else if (windowWidth > 1024 && windowWidth <= 1440)
+                    return 33.333;
+                else
+                    return 25;
+            },
+            subtrahendMaxPosition: function () {
+                let windowWidth = window.innerWidth;
+
+                if (windowWidth <= 425)
+                    return 1;
+                else if (windowWidth > 425 && windowWidth <= 1024)
+                    return 2;
+                else if (windowWidth > 1024 && windowWidth <= 1440)
+                    return 3;
+                else
+                    return 4;
             }
         },
         methods: {
@@ -467,7 +445,12 @@
                 }
             }
         },
+        created() {
+            this.options.positionMultiplier = this.positionMultiplier;
+            // this.options.subtrahendMaxPosition = this.subtrahendMaxPosition;
+        },
         mounted() {
+            // console.log(window.innerWidth, 'window.innerWidth');
             // this.Carousel({
             //     main: '.js-carousel',
             //     wrap: '.js-carousel__wrap',
@@ -487,53 +470,6 @@
 </script>
 
 <style lang="stylus" scoped>
-    .b-carousel__prev
-        margin-right 20px
-
-    .b-carousel__next
-        margin-left 20px
-
-    .b-carousel__next
-        &:active
-            transform translateX(20px)
-
-    .b-carousel__prev
-        &:active
-            transform translateX(-20px)
-
-    .b-carousel__prev, .b-carousel__next
-        background transparent
-        border none
-        cursor pointer
-        transition transform 0.5s ease
-
-        &:focus
-            outline 0
-
-    .b-carousel
-        width 100%
-        overflow hidden
-        position relative
-        box-sizing border-box
-
-    .b-carousel__wrap
-        display flex
-        transition transform .5s
-        will-change transform
-        position relative
-        z-index 1
-        height 100%
-
-    .b-carousel__item
-        flex 0 0 25%
-        overflow hidden
-        display flex
-        align-items center
-        justify-content center
-
-    .b-carousel__img
-        width 100%
-        display block
 
     .team
         background-color #ffffff
@@ -668,7 +604,7 @@
                 margin-bottom 30px
                 font-size 20px
 
-        .serokell, .effective-energy, .advisors-team
+        .serokell, .effective-energy
             display flex
             flex-direction column
             justify-content center
@@ -677,10 +613,11 @@
 
         .advisors-team
             width 100%
+            margin-bottom 60px
 
             .images
                 width 100%
-                justify-content space-between !important
+                justify-content center !important
 
         .serokell, .advisors-team
 

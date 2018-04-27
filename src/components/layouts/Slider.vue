@@ -1,18 +1,17 @@
 <template>
     <div style="width: 100%; display: flex; justify-content: center;">
-        <button class="b-carousel__prev js-carousel__prev"
-                style="background: transparent; border: none; cursor: pointer;">
+        <button class="b-carousel__prev js-carousel__prev">
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
 
-        <div class="wrap" style="display: flex; justify-content: center;" id="effective-energy">
+        <div class="wrap" id="effective-energy">
             <div class="b-carousel js-carousel">
                 <div class="b-carousel__wrap js-carousel__wrap">
                     <div class="image b-carousel__item"
                          v-for="(member, i) in items" :key="i">
 
-                        <div style="margin: 0 15px; width: 100%;">
-                            <div style="padding: 40px 20px 0 20px;"
+                        <div class="b-carousel__outer">
+                            <div class="b-carousel__inner"
                                  :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
                                 <img class="layer__bottom b-carousel__img"
                                      :src="member.src"
@@ -44,8 +43,7 @@
         </div>
 
         <button class="b-carousel__next js-carousel__next">
-            <img src="../../../static/images/arrow-left-dark.svg" alt="prev"
-                 style="transform: rotate(180deg);">
+            <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
     </div>
 </template>
@@ -75,10 +73,17 @@
             return {
                 autoplay: null,
                 carousel: null,
+                privates: null,
+                tmpPos: 0,
                 opt: {
                     position: 0,
                     maxPosition: 0
-                }
+                },
+                xDown: 0,
+                yDown: 0,
+
+
+                asd: false
             }
         },
         watch: {
@@ -86,12 +91,38 @@
                 console.log(this.privates1, 'this.privates1');
                 console.log(val, 'autoplay');
 
-                this.resume1(3000, val);
+                // this.resume1(3000, val);
 
                 // this.Carousel(this.settings, this.options);
+            },
+            'opt.maxPosition': function (val) {
+                console.log(val, 'opt.maxPosition');
             }
         },
         methods: {
+            touchStart: function (e) {
+                console.log(e, 'event touch start');
+                this.xDown = e.touches[0].clientX;
+                this.yDown = e.touches[0].clientY;
+            },
+            touchMove: function (e) {
+                console.log(e, 'event touch move');
+                if (!this.xDown || !this.yDown)
+                    return;
+
+                let xUp = e.touches[0].clientX;
+                let yUp = e.touches[0].clientY;
+
+                let xDiff = this.xDown - xUp;
+                let yDiff = this.yDown - yUp;
+
+                if (Math.abs(xDiff) > Math.abs(yDiff))
+                    (xDiff > 0) ? this.nextSlide() : this.prevSlide();
+
+                this.xDown = 0;
+                this.yDown = 0;
+
+            },
             prevSlide: function () {
 
                 let sel = {
@@ -109,7 +140,6 @@
                 // }
 
 
-
                 // if (!privates.isAnimationEnd) {
                 //     return;
                 // }
@@ -118,14 +148,25 @@
 
                 --this.opt.position;
 
+                // console.log(this.opt.position, 'prev this.opt.position');
+
                 if (this.opt.position < 0) {
-                    sel.wrap.style['transform'] = `translateX(-${this.opt.max_position * 25}%)`;
-                    this.opt.position = this.opt.maxPosition - 1;
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.positionMultiplier}%)`;
+                    this.opt.position = this.opt.maxPosition;
                 }
 
-                setTimeout(() => {
-                    sel.wrap.style['transform'] = `translateX(-${this.opt.position * 25}%)`;
-                }, 40);
+                if (this.opt.position === 0) {
+                    sel.wrap.style['transform'] = 'translateX(0)';
+                    this.opt.position = 0;
+                }
+
+                // setTimeout(() => {
+                sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                // }, 40);
+
+                console.log(this.opt.position * this.privates.positionMultiplier, 'check');
+
+                console.log(sel.wrap.style['transform'], 'prev transform');
 
                 // sel.wrap.addEventListener('transitionend', () => {
                 //     privates.isAnimationEnd = true;
@@ -137,6 +178,8 @@
             },
             nextSlide: function () {
 
+                console.log(this.privates);
+
                 // console.log('check autoplay');
 
                 let sel = {
@@ -146,6 +189,28 @@
                     next: document.querySelector(this.privates.next)
                 };
 
+
+                if(this.opt.position < this.opt.maxPosition) {
+                    ++this.opt.position;
+                }
+
+                console.log(this.opt.maxPosition, 'this.opt.maxPosition');
+                console.log(this.opt.position, 'this.opt.position');
+
+                sel.wrap.classList.remove('s-notransition');
+                sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+
+                sel.wrap.addEventListener('transitionend', () => {
+                    if(this.opt.position >= this.opt.maxPosition) {
+                        sel.wrap.style['transform'] = 'translateX(0)';
+                        sel.wrap.classList.add('s-notransition');
+                        console.log(sel.wrap);
+                        this.opt.position = 0;
+                    }
+
+                    // private.isAnimationEnd = true;
+                });
+
                 // console.log(sel.wrap, 'sel.wrap');
 
                 // let opt = {
@@ -153,7 +218,7 @@
                 //     max_position: document.querySelector(this.privates.wrap).children.length - 3
                 // };
 
-                this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length - 3;
+                // this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length - 3;
 
                 // console.log(this.privates, 'animation');
 
@@ -163,19 +228,60 @@
                 //
                 // this.privates.isAnimationEnd = false;
 
-                if (this.opt.position < this.opt.maxPosition) {
-                    ++this.opt.position;
-                }
-
-                sel.wrap.style['transform'] = `translateX(-${this.opt.position * 25}%)`;
-
-                // console.log(sel.wrap, 'sel.wrap');
 
                 // sel.wrap.addEventListener('transitionstart', () => {
-                if (this.opt.position >= this.opt.maxPosition) {
-                    sel.wrap.style['transform'] = 'translateX(0)';
-                    this.opt.position = 0;
-                }
+
+                // if (this.opt.position <= this.opt.maxPosition) {
+                //     ++this.opt.position;
+                // }
+                // ++this.opt.position;
+                // ++this.tmpPos;
+
+                // if (this.opt.position <= this.opt.maxPosition) {
+                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                // }
+
+
+                // if (this.opt.position > this.opt.maxPosition) {
+                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier - 50}%)`;
+                //     console.log(sel.wrap.style['transform'], 'after 1');
+                //     sel.wrap.appendChild(sel.children[0].cloneNode(true));
+                //     sel.wrap.removeChild(sel.children[0]);
+                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier - 25}%)`;
+                //     console.log(sel.wrap.style['transform'], 'after 2');
+                //     --this.opt.position;
+                //     // sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                //     // --this.opt.position;
+                // }
+
+                // if (this.asd) {
+                //     ++this.opt.position;
+                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                // }
+
+                // if (!this.asd) {
+
+
+                // if (this.opt.position !== this.opt.maxPosition) {
+                // if (!this.asd) {
+
+                // }
+                // }
+                // }
+
+                // if (this.asd) {
+                //     console.log(this.opt.position, 'this.opt.position');
+                //     console.log(sel.wrap.style['transform'], 'before');
+                //     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                //     console.log(sel.wrap.style['transform'], 'after');
+                // }
+
+
+                // console.log(this.opt.position, 'this.opt.position');
+                //
+                // console.log(this.opt.maxPosition, 'this.opt.maxPosition');
+                //
+                // console.log(sel.wrap.style['transform'], 'sel.wrap.style[\'transform\']');
 
                 // this.privates.isAnimationEnd = true;
                 // });
@@ -335,12 +441,6 @@
                     // });
                 }
 
-                // Touch events
-                if (privates.settings.touch === true) {
-                    privates.sel.wrap.addEventListener('touchstart', privates.hts, false);
-                    privates.sel.wrap.addEventListener('touchmove', privates.htm, false);
-                }
-
                 // Pause on hover
                 if (privates.settings.autoplay === true && privates.settings.pauseOnHover === true) {
                     privates.sel.wrap.addEventListener('mouseenter', () => {
@@ -350,6 +450,12 @@
                     privates.sel.wrap.addEventListener('mouseleave', () => {
                         privates.timer.become();
                     });
+                }
+
+                // Touch events
+                if (privates.settings.touch === true) {
+                    privates.sel.wrap.addEventListener('touchstart', privates.hts, false);
+                    privates.sel.wrap.addEventListener('touchmove', privates.htm, false);
                 }
 
                 privates.hts = (e) => {
@@ -376,9 +482,19 @@
             }
         },
         created() {
+            //в инит функцию
             this.privates = this.privates1;
         },
         mounted() {
+
+            this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length - this.privates.subtrahendMaxPosition;
+
+            document.querySelector(this.privates.wrap).style['transform'] = 'translateX(0)';
+
+            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[0].cloneNode(true));
+            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[1].cloneNode(true));
+            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[2].cloneNode(true));
+            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[3].cloneNode(true));
 
             document.querySelector(this.privates.next).addEventListener('click', () => {
                 this.nextSlide();
@@ -388,7 +504,12 @@
                 this.prevSlide();
             });
 
-            this.resume1(3000, this.privates1.autoplay);
+            if (this.privates.touch === true) {
+                document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
+                document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
+            }
+
+            // this.resume1(3000, this.privates1.autoplay);
 
             this.Carousel(this.settings, this.options);
         }
@@ -396,19 +517,55 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .s-notransition
+        transition 0s !important
+
+    .wrap
+        display flex
+        justify-content center
+
+        .b-carousel
+            width 100%
+            overflow hidden
+            position relative
+            box-sizing border-box
+
+            .b-carousel__wrap
+                display flex
+                transition transform .5s
+                will-change transform
+                position relative
+                z-index 1
+                height 100%
+
+                .b-carousel__item
+                    flex 0 0 25%
+                    overflow hidden
+                    display flex
+                    align-items center
+                    justify-content center
+
+                    .b-carousel__outer
+                        margin 0 15px
+                        width 304px
+                        /*width 100%*/
+
+                        .b-carousel__inner
+                            padding 40px 20px 0 20px
+
+                            .b-carousel__img
+                                display block
+
     .b-carousel__prev
         margin-right 20px
+        &:active
+            transform translateX(-20px)
 
     .b-carousel__next
         margin-left 20px
-
-    .b-carousel__next
         &:active
             transform translateX(20px)
-
-    .b-carousel__prev
-        &:active
-            transform translateX(-20px)
 
     .b-carousel__prev, .b-carousel__next
         background transparent
@@ -418,31 +575,6 @@
 
         &:focus
             outline 0
-
-    .b-carousel
-        width 100%
-        overflow hidden
-        position relative
-        box-sizing border-box
-
-    .b-carousel__wrap
-        display flex
-        transition transform .5s
-        will-change transform
-        position relative
-        z-index 1
-        height 100%
-
-    .b-carousel__item
-        flex 0 0 25%
-        overflow hidden
-        display flex
-        align-items center
-        justify-content center
-
-    .b-carousel__img
-        width 100%
-        display block
 
     .image
         cursor pointer
@@ -473,7 +605,8 @@
             left 15px
             right 0
             bottom 0
-            width calc(100% - 30px)
+            width 304px
+            //width calc(100% - 30px)
             height 100%
             background rgba(255, 210, 79, 0.8)
             color #fff
@@ -529,4 +662,14 @@
                     height 17px
                 img
                     margin auto 15px
+
+    @media (max-width 425px)
+        .b-carousel__prev, .b-carousel__next
+            display none
+
+        .b-carousel__item
+            flex 0 0 100% !important
+
+        .layer__top
+            left 40px !important
 </style>
