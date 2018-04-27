@@ -17,7 +17,7 @@
                      @touchmove="(privates1.touch) ? touchMove($event) : 'false'">
                     <div class="image b-carousel__item"
                          @mouseover="stopAutoplay"
-                         @mouseleave="resume1(3000, 'false')"
+                         @mouseleave="resume1(3000, 'true')"
                          v-for="(member, i) in items"
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
@@ -110,7 +110,7 @@
         watch: {
             'options.autoplay': function (val) {
                 // this.resume1(3000, val);
-                this.resume1(3000, false);
+                this.resume1(3000, val);
             },
         },
         computed: {
@@ -284,7 +284,7 @@
             },
             resume1: function (delay, autoplay) {
                 clearInterval(this.autoplay);
-                if (false) {
+                if (autoplay) {
                     this.autoplay = setInterval(() => {
                         console.log('resume1');
                         this.nextSlide();
