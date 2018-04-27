@@ -180,11 +180,13 @@
                         </div>
 
                         <div class="crypto">
-                            <div class="title">Accepted for collection:</div>
+                            <div class="title">
+                                Accepted for collection:
+                            </div>
                             <div class="collection">
                                 <div class="item">
                                     <div class="cur-logo">
-                                        <img src="../../static/images/btc.svg" alt="">
+                                        <img src="../../static/images/btc.svg" alt="Bitcoin">
                                     </div>
                                     <div class="description">
                                         <span class="count">2,389 ALE</span>
@@ -193,7 +195,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="cur-logo">
-                                        <img src="../../static/images/eth.svg" alt="">
+                                        <img src="../../static/images/eth.svg" alt="Etherium">
                                     </div>
                                     <div class="description">
                                         <span class="count">1,337 ALE</span>
@@ -202,7 +204,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="cur-logo">
-                                        <img src="../../static/images/bch.svg" alt="">
+                                        <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
                                     </div>
                                     <div class="description">
                                         <span class="count">2,228 ALE</span>
@@ -211,7 +213,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="cur-logo">
-                                        <img src="../../static/images/ltc.svg" alt="">
+                                        <img src="../../static/images/ltc.svg" alt="Litecoin">
                                     </div>
                                     <div class="description">
                                         <span class="count">1,488 ALE</span>
@@ -220,7 +222,7 @@
                                 </div>
                                 <div class="item">
                                     <div class="cur-logo">
-                                        <img src="../../static/images/dash.svg" alt="">
+                                        <img src="../../static/images/dash.svg" alt="Dash">
                                     </div>
                                     <div class="description">
                                         <span class="count">2,228 ALE</span>
@@ -269,31 +271,53 @@
                 <a href="#" class="social-item tg"></a>
                 <a href="#" class="social-item vk"></a>
                 <a class="scrol-ic" v-scroll-to="'#description'">
-                    <img src="../../static/images/scroll-ic.svg" alt="">
+                    <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
                 </a>
             </div>
         </div>
         <div class="container-fluid partners">
             <div class="title">Our partners:</div>
             <div class="row partners-icons">
-                <img src="../../static/images/itmo.png" alt="" height="60px" width="114px">
-                <img src="../../static/images/crypto.png" alt="" height="46px" width="158px">
-                <img src="../../static/images/beer.png" alt="" height="59px" width="57px">
-                <img src="../../static/images/serokell.png" alt="" height="43px" width="87px">
+                <img src="../../static/images/itmo.png"
+                     height="60px"
+                     width="114px"
+                     alt="ITMO">
+                <img src="../../static/images/crypto.png"
+                     height="46px"
+                     width="158px"
+                     alt="CryptoB2B">
+                <img src="../../static/images/beer.png"
+                     height="59px"
+                     width="57px"
+                     alt="BEAR">
+                <img src="../../static/images/serokell.png"
+                     height="43px"
+                     width="87px"
+                     alt="Serokell">
             </div>
         </div>
         <div class="container-fluid what-is" id="description">
             <div class="row">
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
-                        <img src="../../static/images/desctop-transparent.png" class="desktop" alt="">
-                        <slider ref="slider" :pages="pages" :sliderinit="sliderinit"></slider>
+                        <img src="../../static/images/desctop-transparent.png"
+                             class="desktop">
+                        <slider ref="slider"
+                                :pages="pages"
+                                :sliderinit="sliderInit">
+                        </slider>
                     </div>
-                    <img src="../../static/images/desctop.png" class="desktop-for-mobile">
-                    <a href="#" class="btn btn-black"><img src="../../static/images/request-ic.svg" alt="">Download</a>
+                    <img src="../../static/images/desctop.png"
+                         class="desktop-for-mobile">
+                    <a href="#" class="btn btn-black">
+                        <img src="../../static/images/request-ic.svg">
+                        Download
+                    </a>
                 </div>
                 <div class="col-lg-6 desc">
-                    <h1 class="title">What is Alehub</h1>
+                    <h1 class="title">
+                        What is Alehub
+                    </h1>
                     <h3 class="subtitle">
                         WE ARE ATTRACTING BLOCKCHAIN TECHNOLOGY IN THE WORLD OF HR
                     </h3>
@@ -308,8 +332,12 @@
                         project parties (in the first stage of IT projects).
                     </p>
                     <div class="buttons">
-                        <a href="#" class="btn btn-yellow">White paper</a>
-                        <a href="#" class="btn btn-yellow">Technical details of pre ICO</a>
+                        <a href="#" class="btn btn-yellow">
+                            White paper
+                        </a>
+                        <a href="#" class="btn btn-yellow">
+                            Technical details of pre ICO
+                        </a>
                     </div>
                 </div>
             </div>
@@ -320,8 +348,11 @@
 </template>
 
 <script>
-    import slider from 'vue-concise-slider';
     import MenuModal from './modals/MenuModal';
+
+    //заменить на свой слайдер
+    import slider from 'vue-concise-slider';
+    import anime from 'animejs';
 
     export default {
         name: 'Screen1',
@@ -342,7 +373,7 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
-                sliderinit: {
+                sliderInit: {
                     currentPage: 0,
                     thresholdDistance: 100,
                     thresholdTime: 300,
@@ -369,8 +400,8 @@
                         second: 0
                     }
                 },
-                endtime: 1527206400000,
-                timeinterval: 0,
+                endTime: 1527206400000,
+                timeInterval: 0,
                 collected: 1440,
                 softCap: 2000,
                 hardCap: 33000
@@ -395,39 +426,42 @@
                     });
                 }
             },
+            format: function (count, isSecond) {
+                let result = 0;
+                if (isSecond) {
+                    result = ('0' + count).slice(-1);
+                } else {
+                    if (('0' + count).length === 3)
+                        result = ('' + count).slice(0, 1);
+                    else if (('0' + count).length === 2)
+                        result = '0';
+                }
+
+                return result;
+            },
             getTimeRemaining() {
-                var t = this.endtime - Date.parse(new Date());
-                var seconds = Math.floor((t / 1000) % 60);
-                var minutes = Math.floor((t / 1000 / 60) % 60);
-                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-                var days = Math.floor(t / (1000 * 60 * 60 * 24));
-                let format = function (count, isSecond) {
-                    let result = 0;
-                    if (isSecond) 
-                        result = ('0' + count).slice(-1)
-                    else {
-                        if (('0' + count).length === 3)
-                            result = ('' + count).slice(0,1);
-                        else if (('0' + count).length === 2)
-                            result = '0';
-                    };
-                    return result;
-                };
+                let t = this.endTime - Date.parse(new Date()),
+                    seconds = Math.floor((t / 1000) % 60),
+                    minutes = Math.floor((t / 1000 / 60) % 60),
+                    hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+                    days = Math.floor(t / (1000 * 60 * 60 * 24));
+                
                 if (t <= 0)
-                    return clearInterval(this.timeinterval);
-                this.timer.days.first = format(days);
-                this.timer.days.second = format(days, true);
-                this.timer.hours.first = format(hours);
-                this.timer.hours.second = format(hours, true);
-                this.timer.minutes.first = format(minutes);
-                this.timer.minutes.second = format(minutes, true);
-                this.timer.seconds.first = format(seconds);
-                this.timer.seconds.second = format(seconds, true);
+                    return clearInterval(this.timeInterval);
+                
+                this.timer.days.first = this.format(days);
+                this.timer.days.second = this.format(days, true);
+                this.timer.hours.first = this.format(hours);
+                this.timer.hours.second = this.format(hours, true);
+                this.timer.minutes.first = this.format(minutes);
+                this.timer.minutes.second = this.format(minutes, true);
+                this.timer.seconds.first = this.format(seconds);
+                this.timer.seconds.second = this.format(seconds, true);
             }
         },
         mounted() {
             this.startAnime();
-            this.timeinterval = setInterval(this.getTimeRemaining, 1000);
+            this.timeInterval = setInterval(this.getTimeRemaining, 1000);
         }
     }
 </script>
@@ -435,7 +469,7 @@
 <style lang="stylus" scoped>
     #screen1
         .container-fluid
-            &.partners 
+            &.partners
                 justify-content space-between
 
                 .title
@@ -445,18 +479,22 @@
                     justify-content space-around
                     width 100%
                     flex-wrap nowrap
-                    @media(max-width 960px)
+
+                    @media (max-width 960px)
                         flex-wrap wrap
 
             &.what-is
                 .desktop-outer
                     margin 0 auto
+
                     .slider-container
                         width 100%
                         position absolute
                         height auto
+
                     .desktop
                         position relative
+
                     @media (max-width: 2600px)
                         .slider-container
                             width 709px
@@ -467,12 +505,14 @@
                         .desktop
                             left 140px
                             width 900px
+
                     @media (max-width: 2365px)
                         .slider-container
                             left 162px
 
                         .desktop
                             left 50px
+
                     @media (max-width: 2150px)
                         .slider-container
                             width 630px
@@ -483,6 +523,7 @@
                         .desktop
                             left 0px
                             width 800px
+
                     @media (max-width: 1860px)
                         .slider-container
                             width 552px
@@ -493,8 +534,10 @@
                         .desktop
                             left 0px
                             width 700px
+
                     @media (max-width: 1640px)
                         padding-top 50px
+
                         .slider-container
                             width 473px
                             height 296px
@@ -504,8 +547,10 @@
                         .desktop
                             left 0px
                             width 600px
+
                     @media (max-width: 1460px)
                         padding-top 100px
+
                         .slider-container
                             width 393px
                             height 247px
@@ -515,8 +560,10 @@
                         .desktop
                             left 0px
                             width 500px
+
                     @media (max-width: 1240px)
                         padding-top 100px
+
                         .slider-container
                             width 315px
                             height 197px
@@ -526,13 +573,16 @@
                         .desktop
                             left 0px
                             width 400px
+
                     @media (max-width: 991px)
                         padding-top 0
+
                         .slider-container
                             display none
 
                         .desktop
                             display none
+
                 @media (max-width: 991px)
                     .desktop-for-mobile
                         display block
@@ -551,9 +601,11 @@
                 border-radius 50%
                 background-color #ffd24f
                 margin-bottom 20px
-                @media (max-width: 425px)
+
+                @media (max-width 425px)
                     width 80px
                     height 80px
+
                     .wrap-ic
                         img
                             width 25px !important
@@ -568,6 +620,7 @@
                     img
                         width 35px
                         height 35px
+
             @media (max-width: 1500px)
                 left 20%
             @media (max-width: 1400px)
@@ -577,8 +630,10 @@
                 margin 48px auto 0
                 display block
                 text-align center
+
                 .play-button
                     margin 0
+
         .scrol-ic
             cursor pointer
             margin-right auto
@@ -586,8 +641,10 @@
             background-color transparent
             border none
             transition transform .5s ease
+
             &:active
                 transform translateY(20px)
+
             @media (max-width: 1124px)
                 display none
 
@@ -616,6 +673,7 @@
                     -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     height 100%
+
             @media (max-width: 600px)
                 width 100%
 </style>

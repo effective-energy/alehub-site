@@ -195,10 +195,8 @@
             }
         },
         data() {
-            return {
-
-            }
-        }
+            return {}
+        },
     }
 </script>
 

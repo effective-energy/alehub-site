@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "bootstrap-vue": "^2.0.0-rc.6",
     "dragscroll": "0.0.8",
     "gulp": "^3.9.1",
