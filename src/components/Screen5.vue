@@ -131,7 +131,7 @@
                     pauseOnFocus: true,
                     pauseOnHover: true,
                     positionMultiplier: 25,
-                    subtrahendMaxPosition: 0
+                    // subtrahendMaxPosition: 0
                 },
                 team: {
                     serokell: [
@@ -257,18 +257,18 @@
                 else
                     return 25;
             },
-            subtrahendMaxPosition: function () {
-                let windowWidth = window.innerWidth;
-
-                if (windowWidth <= 425)
-                    return 1;
-                else if (windowWidth > 425 && windowWidth <= 1024)
-                    return 2;
-                else if (windowWidth > 1024 && windowWidth <= 1440)
-                    return 3;
-                else
-                    return 4;
-            }
+            // subtrahendMaxPosition: function () {
+            //     let windowWidth = window.innerWidth;
+            //
+            //     if (windowWidth <= 425)
+            //         return 1;
+            //     else if (windowWidth > 425 && windowWidth <= 1024)
+            //         return 2;
+            //     else if (windowWidth > 1024 && windowWidth <= 1440)
+            //         return 3;
+            //     else
+            //         return 4;
+            // }
         },
         methods: {
             Timer: function (callback, delay) {

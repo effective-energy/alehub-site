@@ -182,8 +182,17 @@
             }
         },
         mounted() {
-            this.$on('closeModal', function (val) {
-                this.activeHamburger = val;
+            this.$on('closeModal', () => {
+                this.activeHamburger = false;
+                document.getElementById('navbar').classList.remove('no-boxshadow');
+            });
+
+            this.$on('changeNavbar', () => {
+                document.getElementById('navbar').classList.add('no-boxshadow');
+            });
+
+            this.$on('closedModal', () => {
+                document.getElementById('navbar').classList.remove('no-boxshadow');
             });
 
             setTimeout(() => {
@@ -257,6 +266,11 @@
 </script>
 
 <style lang="stylus" scoped>
+    .no-boxshadow
+        -webkit-box-shadow none !important
+        -moz-box-shadow none !important
+        box-shadow none !important
+
     .hamburger
         display none
 
@@ -364,7 +378,6 @@
         .btn-login
             background-color #343a49
             color white
-            margin-left 16px
 
     .bg-dark-blue
         background-color #343a49

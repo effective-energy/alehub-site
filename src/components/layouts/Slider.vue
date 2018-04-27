@@ -96,12 +96,12 @@
         },
         methods: {
             touchStart: function (e) {
-                console.log(e, 'event touch start');
+                // console.log(e, 'event touch start');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
-                console.log(e, 'event touch move');
+                // console.log(e, 'event touch move');
                 if (!this.xDown || !this.yDown)
                     return;
 
@@ -286,7 +286,6 @@
                 clearInterval(this.autoplay);
                 if (autoplay) {
                     this.autoplay = setInterval(() => {
-                        console.log(123);
                         this.nextSlide();
                     }, delay);
                 }
@@ -302,7 +301,7 @@
 
                 /* Public methods */
                 this.resume = () => {
-                    console.log('resume');
+                    // console.log('resume');
 
                     start = new Date();
                     timerId = setTimeout(() => {
@@ -361,7 +360,7 @@
 
                 // Prev slide
                 this.prev_slide = () => {
-                    console.log(2);
+                    // console.log(2);
                     if (!privates.isAnimationEnd) {
                         return;
                     }
@@ -391,7 +390,7 @@
 
                 // Next slide
                 this.next_slide = () => {
-                    console.log(1);
+                    // console.log(1);
                     if (!privates.isAnimationEnd) {
                         return;
                     }
@@ -483,7 +482,7 @@
         },
         mounted() {
 
-            this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length - this.privates.subtrahendMaxPosition;
+            this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length;
 
             document.querySelector(this.privates.wrap).style['transform'] = 'translateX(0)';
 
@@ -683,6 +682,6 @@
         .b-carousel__item
             flex 0 0 100% !important
 
-        .layer__top
-            left 40px !important
+        /*.layer__top*/
+            /*left 40px !important*/
 </style>
