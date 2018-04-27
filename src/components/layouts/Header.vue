@@ -147,6 +147,7 @@
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
             },
             getCoords: function (elem) {
+                console.log(elem, 'elem');
                 let box = elem.getBoundingClientRect();
 
                 return {
@@ -400,13 +401,13 @@
 
         .navbar-brand
             margin-right 8px
-
+            
     @media(max-width 1100px)
         .btn-login
             display none
-
+        
         .dropdown
-            display none
+            display none 
 
         .btn-actions
             display unset
