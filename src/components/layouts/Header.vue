@@ -151,7 +151,6 @@
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
             },
             getCoords: function (elem) {
-                console.log(elem, 'elem');
                 let box = elem.getBoundingClientRect();
 
                 return {
@@ -205,13 +204,6 @@
             let navbar = document.getElementById('navbar'),
                 navbarYOffset = navbar.offsetHeight;
 
-            //сделать только один лисенер скролла
-
-            // this.initScroll();
-
-            //переместить в index
-
-            //переместить в index
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
