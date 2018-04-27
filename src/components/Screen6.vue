@@ -59,37 +59,37 @@
     export default {
         name: 'Economy',
         data () {
-        	return {
-        		selectedDistributionIndex: -1,
-        		distributionList: [{
-        			title: 'Sale for ICO',
-        			type: 'sale',
-        			count: 77
-        		}, {
-        			title: 'Team',
-        			type: 'team',
-        			count: 11
-        		}, {
-        			title: 'Referral program, advisors',
-        			type: 'referral',
-        			count: 10
-        		}, {
-        			title: 'Bounty',
-        			type: 'bounty',
-        			count: 2
-        		}]
-        	}
+            return {
+                selectedDistributionIndex: -1,
+                distributionList: [{
+                    title: 'Sale for ICO',
+                    type: 'sale',
+                    count: 77
+                }, {
+                    title: 'Team',
+                    type: 'team',
+                    count: 11
+                }, {
+                    title: 'Referral program, advisors',
+                    type: 'referral',
+                    count: 10
+                }, {
+                    title: 'Bounty',
+                    type: 'bounty',
+                    count: 2
+                }]
+            }
         },
         computed: {
-        	activeDistribution () {
-        		if(this.selectedDistributionIndex === -1) return '100%';
-        		else return this.distributionList[this.selectedDistributionIndex].count+'%';
-        	}
+            activeDistribution () {
+                if(this.selectedDistributionIndex === -1) return '100%';
+                else return this.distributionList[this.selectedDistributionIndex].count+'%';
+            }
         },
         methods: {
-        	showDist (index) {
-        		this.selectedDistributionIndex = index;
-        	}
+            showDist (index) {
+                this.selectedDistributionIndex = index;
+            }
         }
     }
 </script>
@@ -360,7 +360,7 @@
             .figures-title
                 font-size 20px
                 margin-bottom 12px
-            
+
             .figures-subtitle
                 font-size 16px
 
@@ -404,7 +404,7 @@
 
             .section-title
                 font-size 2.5em
-                text-align center 
+                text-align center
 
             .divider
                 display none
@@ -459,13 +459,13 @@
 
             .figures-title
                 font-size 20px
-            
+
             .figures-subtitle
                 font-size 20px
                 margin-bottom 24px
                 width 100%
 
-        .col-6 
+        .col-6
             min-width 100%
             display flex
             justify-content center

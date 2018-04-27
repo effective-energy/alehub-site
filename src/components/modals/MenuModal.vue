@@ -64,7 +64,7 @@
         },
         methods: {
             closeModal: function (name) {
-                this.$parent.$emit('closeModal1', false);
+                this.$parent.$emit('closeModal', false);
                 this.$modal.hide(name);
             },
         },
@@ -91,11 +91,11 @@
         align-items center
 
         div
-            padding 0.7rem 0
+            padding 16px 0
             a
                 font-weight 700
                 text-transform uppercase
-                font-size 1.5rem
+                font-size 20px
                 border-bottom 2px solid #34343e
                 padding-bottom 0.2rem
 
