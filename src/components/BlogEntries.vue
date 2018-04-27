@@ -37,6 +37,8 @@
 						</div>
 					</div>
 
+					<div class="divider"></div>
+
 					<div class="blog-post">
 						<img src="../../static/images/news-pictures/news.jpg" alt="" class="image-preview" />
 						<div class="post-content">
@@ -49,6 +51,8 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="divider"></div>
 
 					<div class="blog-post">
 						<img src="../../static/images/news-pictures/news.png" alt="" class="image-preview" />
@@ -87,16 +91,16 @@
 </template>
 
 <script>
-	import Header from './layouts/Header';
-	import Footer from './layouts/Footer';
+    import Header from './layouts/Header';
+    import Footer from './layouts/Footer';
 
-	export default {
-		name: 'BlogEntries',
-		components: {
-			Header,
-			Footer
-		}
-	}
+    export default {
+        name: 'BlogEntries',
+        components: {
+            Header,
+            Footer
+        }
+    }
 </script>
 
 <style>
@@ -111,7 +115,7 @@
 
 <style lang="stylus" scoped>
 	.section
-		padding 71px 0
+		padding 71px 80px
 
 	.is-center
 		text-align center
@@ -146,9 +150,17 @@
 				list-style none
 				padding 0
 
+				.filter-item
+					white-space nowrap
+
 		.posts
 			padding-right 77.5px
 			padding-left 77.5px
+
+			.divider
+				background-color #000000
+				height 0.8px
+				opacity 0.2
 
 	.is-divider
 		width 120px
@@ -179,6 +191,9 @@
 				color #34343e
 				text-decoration underline
 
+				&:hover
+					color #f3b300
+
 			.post-info
 				margin 12px 0 0 0
 
@@ -191,4 +206,9 @@
 					text-align left
 					color #34343e
 
+	@media(max-width: 1200px)
+		.blog-post
+			.post-content
+				.title
+					font-size 16px
 </style>

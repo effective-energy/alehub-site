@@ -23,7 +23,8 @@
 				</div>
 			</div>
 			<div class="news-block">
-				<h1 class="title">Alehub iOS application beta 1.  <br /> Two line title.</h1>
+				<h1 class="title">Alehub iOS application beta 1.
+					<br /> Two line title.</h1>
 				<div class="news-info">
 					<img src="http://via.placeholder.com/36x36" alt="" class="news-author-image" />
 					<div class="info">
@@ -105,16 +106,16 @@
 </template>
 
 <script>
-	import Header from './layouts/Header';
-	import Footer from './layouts/Footer';
+    import Header from './layouts/Header';
+    import Footer from './layouts/Footer';
 
-	export default {
-		name: 'FullNews',
-		components: {
-			Header,
-			Footer
-		}
-	}
+    export default {
+        name: 'FullNews',
+        components: {
+            Header,
+            Footer
+        }
+    }
 </script>
 
 <style lang="stylus">
@@ -394,7 +395,7 @@
 	@media(max-width: 700px)
 		.container-news
 			padding-right 32px
-			padding-left 32px 
+			padding-left 32px
 			max-width unset
 
 			.share-block
@@ -414,7 +415,7 @@
 					margin-bottom 12px
 
 					.info
-						span 
+						span
 							font-size 14px
 
 				.news-content
@@ -447,7 +448,7 @@
 		.container-news
 			.share-block
 				width 100%
-				justify-content center 
+				justify-content center
 
 			.news-block
 				.title
@@ -476,7 +477,7 @@
 
 				.news-info
 					.info
-						span 
+						span
 							font-size 12px
 
 				.more-news
@@ -489,9 +490,9 @@
 							max-width 260px
 
 							.news-link
-								text-align center 
+								text-align center
 
 							.date
 								text-align center
-				
+
 </style>

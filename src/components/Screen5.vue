@@ -114,6 +114,18 @@
                 this.options.autoplay = isAutoplay;
             }
         },
+        props: {
+            isTeam: {
+                type: [Boolean],
+                required: true
+            }
+        },
+        watch: {
+            'isTeam': function (val) {
+                console.log(val, 'isTeam');
+                // this.options.autoplay = val;
+            }
+        },
         data() {
             return {
                 settings: {
@@ -467,6 +479,8 @@
 </script>
 
 <style lang="stylus" scoped>
+    .b-carousel__prev
+        margin-right 20px
 
     .team
         background-color #ffffff
