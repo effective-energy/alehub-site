@@ -1,23 +1,26 @@
 <template>
     <div style="width: 100%; display: flex; justify-content: center;">
+
         <button class="b-carousel__prev js-carousel__prev"
                 v-if="isControlButton"
                 @click="clickPrev">
-
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
 
         <div class="wrap" id="effective-energy" style="user-select: none;">
+
             <div class="b-carousel js-carousel"
                  @mousedown="dragStart($event)"
                  @mouseup="dragEnd()"
                  @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
+
                 <div class="b-carousel__wrap js-carousel__wrap"
                      @touchstart="(privates1.touch) ? touchStart($event) : 'false'"
                      @touchmove="(privates1.touch) ? touchMove($event) : 'false'">
+
                     <div class="image b-carousel__item"
                          @mouseover="stopAutoplay"
-                         @mouseleave="resume1(3000, 'true')"
+                         @mouseleave="startAutoplay('true')"
                          v-for="(member, i) in items"
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
@@ -39,11 +42,18 @@
                                     </p>
 
                                     <div class="icons">
-                                        <img class="telegram" src="../../../static/images/telegram-ic.svg"
+                                        <img class="telegram"
+                                             src="../../../static/images/telegram-ic.svg"
                                              alt="telegram">
-                                        <img class="vk" src="../../../static/images/vk.svg" alt="vk">
-                                        <img class="fb" src="../../../static/images/fb.svg" alt="fb">
-                                        <img class="in" src="../../../static/images/in.svg" alt="in">
+                                        <img class="vk"
+                                             src="../../../static/images/vk.svg"
+                                             alt="vk">
+                                        <img class="fb"
+                                             src="../../../static/images/fb.svg"
+                                             alt="fb">
+                                        <img class="in"
+                                             src="../../../static/images/in.svg"
+                                             alt="in">
                                     </div>
                                 </div>
                             </div>
@@ -57,9 +67,9 @@
         <button class="b-carousel__next js-carousel__next"
                 v-if="isControlButton"
                 @click="clickNext">
-
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
+
     </div>
 </template>
 
@@ -91,6 +101,7 @@
         data() {
             return {
                 autoplay: null,
+                isAutoplay: false,
                 carousel: null,
                 privates: null,
                 tmpPos: 0,
@@ -108,26 +119,43 @@
             }
         },
         watch: {
-            'options.autoplay': function (val) {
-                // this.resume1(3000, val);
-                this.resume1(3000, val);
+            'options.inBlockTeam': function (inBlockTeam) {
+                // this.startAutoplay(3000, val);
+
+                // console.log(inBlockTeam, 'inBlockTeam');
+
+                // if (this.options.autoplay && inBlockTeam)
+                //     this.startAutoplay(3000, this.options.autoplay);  //true
+                // else
+                //     this.startAutoplay(3000, this.options.autoplay);  //false
+
+                this.startAutoplay(true);
             },
+            isAutoplay: function () {
+                this.initAutoplay(3000);
+            }
         },
         computed: {
             isControlButton: function () {
                 return !(window.innerWidth <= 490);
+            },
+            inBlockTeam: function () {
+                return this.options.inBlockTeam;
+            },
+            isOptAutoplay: function () {
+                return this.options.autoplay;
             }
         },
         methods: {
             clickNext: function () {
                 this.stopAutoplay();
                 this.nextSlide();
-                this.resume1(3000, true);
+                this.startAutoplay(true);
             },
             clickPrev: function () {
                 this.stopAutoplay();
                 this.prevSlide();
-                this.resume1(3000, true);
+                this.startAutoplay(true);
             },
             dragStart: function (e) {
                 this.xDrag = e.pageX;
@@ -146,8 +174,8 @@
                 let xDiff = this.xDrag - xMove;
                 let yDiff = this.yDrag - yMove;
 
-                console.log(xDiff, 'xDiff');
-                console.log(yDiff, 'yDiff');
+                // console.log(xDiff, 'xDiff');
+                // console.log(yDiff, 'yDiff');
 
                 if (Math.abs(xDiff) > Math.abs(yDiff)) {
                     //ширина фотки всегда 304, но лучше получать из DOM
@@ -282,17 +310,23 @@
                     // private.isAnimationEnd = true;
                 });
             },
-            resume1: function (delay, autoplay) {
+            startAutoplay: function (val) {
+                // console.log(val, 'startAutoplay');
+                if (this.inBlockTeam && this.isOptAutoplay)
+                    this.isAutoplay = val;
+
+            },
+            initAutoplay: function (delay) {
                 clearInterval(this.autoplay);
-                if (autoplay) {
+                if (this.isAutoplay) {
                     this.autoplay = setInterval(() => {
-                        console.log('resume1');
                         this.nextSlide();
                     }, delay);
                 }
             },
-
             stopAutoplay: function () {
+                // console.log('stopAutoplay');
+                this.isAutoplay = false;
                 clearInterval(this.autoplay);
             },
         },
@@ -302,10 +336,16 @@
         },
         mounted() {
 
+            this.startAutoplay(true);
+
+            // this.initAutoplay(3000);
+
             this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length;
 
             document.querySelector(this.privates.wrap).style['transform'] = 'translateX(0)';
 
+
+            // в зависимости от количества на стартовом врэппе
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[0].cloneNode(true));
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[1].cloneNode(true));
             document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[2].cloneNode(true));

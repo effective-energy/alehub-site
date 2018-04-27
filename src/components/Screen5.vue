@@ -13,7 +13,9 @@
             <div class="serokell">
                 <p>Serokell</p>
                 <!--v-show="!isMobileScreen"-->
-                <div class="images" id="serokell-gallery">
+                <div class="images"
+                     id="serokell-gallery"
+                     v-if="!isMobileScreen">
                     <div class="image"
                          v-for="(member, i) in team.serokell" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
@@ -30,23 +32,32 @@
                                 </p>
 
                                 <div class="icons">
-                                    <img class="telegram" src="../../static/images/telegram-ic.svg" alt="telegram">
-                                    <img class="vk" src="../../static/images/vk.svg" alt="vk">
-                                    <img class="fb" src="../../static/images/fb.svg" alt="fb">
-                                    <img class="in" src="../../static/images/in.svg" alt="in">
+                                    <img class="telegram"
+                                         src="../../static/images/telegram-ic.svg"
+                                         alt="telegram">
+                                    <img class="vk"
+                                         src="../../static/images/vk.svg"
+                                         alt="vk">
+                                    <img class="fb"
+                                         src="../../static/images/fb.svg"
+                                         alt="fb">
+                                    <img class="in"
+                                         src="../../static/images/in.svg"
+                                         alt="in">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!--<slider :items="team.serokell"-->
-                <!--:settings="settings"-->
-                <!--:options="options"-->
-                <!--:privates1="Object.assign(settings, options)"/>-->
+                <slider :items="team.serokell"
+                        :settings="settings"
+                        :options="options"
+                        :privates1="Object.assign(settings, options)"
+                        :multiplier-position="multiplierPosition"/>
             </div>
 
-            <div class="effective-energy" style="width: 100%;">
+            <div class="effective-energy">
                 <p>Effective Energy team</p>
 
                 <slider :items="team.energy"
@@ -54,8 +65,6 @@
                         :options="options"
                         :privates1="Object.assign(settings, options)"
                         :multiplier-position="multiplierPosition"/>
-                <!--:num-item-in-wrap="numItemInWrap"-->
-
             </div>
         </div>
         <div class="advisors" id="advisors">
@@ -86,10 +95,18 @@
                                 </p>
 
                                 <div class="icons">
-                                    <img class="telegram" src="../../static/images/telegram-ic.svg" alt="telegram">
-                                    <img class="vk" src="../../static/images/vk.svg" alt="vk">
-                                    <img class="fb" src="../../static/images/fb.svg" alt="fb">
-                                    <img class="in" src="../../static/images/in.svg" alt="in">
+                                    <img class="telegram"
+                                         src="../../static/images/telegram-ic.svg"
+                                         alt="telegram">
+                                    <img class="vk"
+                                         src="../../static/images/vk.svg"
+                                         alt="vk">
+                                    <img class="fb"
+                                         src="../../static/images/fb.svg"
+                                         alt="fb">
+                                    <img class="in"
+                                         src="../../static/images/in.svg"
+                                         alt="in">
                                 </div>
                             </div>
                         </div>
@@ -117,8 +134,8 @@
             }
         },
         watch: {
-            'isTeam': function (isAutoplay) {
-                this.options.autoplay = isAutoplay;
+            'isTeam': function (inBlockTeam) {
+                this.options.inBlockTeam = inBlockTeam;
             }
         },
         data() {
@@ -132,6 +149,7 @@
                 options: {
                     touch: true,
                     autoplay: false,
+                    inBlockTeam: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
                     pauseOnHover: true,
@@ -250,18 +268,18 @@
         computed: {
             //добавить чек по типу устройства (браузера с которого заходили)
             isMobileScreen: function () {
-                return window.innerWidth <= 425;
+                return window.innerWidth <= 785;
             },
-            numItemInWrap: function () {
-                if (window.innerWidth <= 425)
-                    return 1;
-                else if (window.innerWidth > 425 && window.innerWidth <= 1024)
-                    return 2;
-                else if (window.innerWidth > 1024 && window.innerWidth <= 1571)
-                    return 3;
-                else
-                    return 4;
-            },
+            // numItemInWrap: function () {
+            //     if (window.innerWidth <= 425)
+            //         return 1;
+            //     else if (window.innerWidth > 425 && window.innerWidth <= 1024)
+            //         return 2;
+            //     else if (window.innerWidth > 1024 && window.innerWidth <= 1571)
+            //         return 3;
+            //     else
+            //         return 4;
+            // },
             multiplierPosition: function () {
                 //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
                 if (window.innerWidth <= 785)
@@ -275,9 +293,7 @@
             },
 
         },
-        methods: {
-
-        },
+        methods: {},
         created() {
             this.options.multiplierPosition = this.multiplierPosition;
             // this.options.subtrahendMaxPosition = this.subtrahendMaxPosition;
@@ -311,7 +327,6 @@
 
             @media (max-width 490px)
                 padding 80px 10% 40px 10%
-
 
             .title
                 font-size 40px
