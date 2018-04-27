@@ -132,41 +132,43 @@
                     next: document.querySelector(this.privates.next)
                 };
 
-                // this.privates.isAnimationEnd = true;
-                // });
-
-                // if (this.privates.settings.autoplay === true) {
-                //     this.privates.timer.become();
-                // }
-
-
-                // if (!privates.isAnimationEnd) {
-                //     return;
-                // }
-                //
-                // privates.isAnimationEnd = false;
-
                 --this.opt.position;
 
                 // console.log(this.opt.position, 'prev this.opt.position');
 
-                if (this.opt.position < 0) {
-                    sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.positionMultiplier}%)`;
-                    this.opt.position = this.opt.maxPosition;
-                }
+                // sel.wrap.addEventListener('transitionend', () => {
+                    if (this.opt.position < 0) {
+                        // sel.wrap.classList.add('s-notransaction');
+                        sel.wrap.style['transition'] = '0s';
+                        // setTimeout(() => {
+                        sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.positionMultiplier}%)`;
+                        this.opt.position = this.opt.maxPosition - 1;
+                        // }, 40);
+                    }
+
+                    // private.isAnimationEnd = true;
+                // });
+
+                // if (this.opt.position < 0) {
+                //     sel.wrap.classList.add('s-notransaction');
+                //     setTimeout(() => {
+                //         sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.positionMultiplier}%)`;
+                //         this.opt.position = this.opt.maxPosition - 1;
+                //     }, 40);
+                // }
 
                 if (this.opt.position === 0) {
                     sel.wrap.style['transform'] = 'translateX(0)';
                     this.opt.position = 0;
                 }
 
-                // setTimeout(() => {
-                sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
-                // }, 40);
+                setTimeout(() => {
+                    // sel.wrap.classList.remove('s-notransaction');
 
-                console.log(this.opt.position * this.privates.positionMultiplier, 'check');
+                    sel.wrap.style['transition'] = '';
 
-                console.log(sel.wrap.style['transform'], 'prev transform');
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
+                }, 40);
 
                 // sel.wrap.addEventListener('transitionend', () => {
                 //     privates.isAnimationEnd = true;
@@ -189,22 +191,17 @@
                     next: document.querySelector(this.privates.next)
                 };
 
-
-                if(this.opt.position < this.opt.maxPosition) {
+                if (this.opt.position < this.opt.maxPosition) {
                     ++this.opt.position;
                 }
 
-                console.log(this.opt.maxPosition, 'this.opt.maxPosition');
-                console.log(this.opt.position, 'this.opt.position');
-
-                sel.wrap.classList.remove('s-notransition');
+                sel.wrap.style['transition'] = '';
                 sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.positionMultiplier}%)`;
 
                 sel.wrap.addEventListener('transitionend', () => {
-                    if(this.opt.position >= this.opt.maxPosition) {
+                    if (this.opt.position >= this.opt.maxPosition) {
                         sel.wrap.style['transform'] = 'translateX(0)';
-                        sel.wrap.classList.add('s-notransition');
-                        console.log(sel.wrap);
+                        sel.wrap.style['transition'] = '0s';
                         this.opt.position = 0;
                     }
 
@@ -518,9 +515,6 @@
 
 <style lang="stylus" scoped>
 
-    .s-notransition
-        transition 0s !important
-
     .wrap
         display flex
         justify-content center
@@ -662,6 +656,10 @@
                     height 17px
                 img
                     margin auto 15px
+
+
+    .s-notransition
+        transition 0s !important
 
     @media (max-width 425px)
         .b-carousel__prev, .b-carousel__next
