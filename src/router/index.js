@@ -8,11 +8,11 @@ import FullNews from '@/components/FullNews';
 Vue.use(Router);
 
 const router = new Router({
-	mode: 'history',
+    mode: 'history',
     routes: [{
-    	path: '/',
-    	name: 'Index',
-    	component: Index
+        path: '/',
+        name: 'Index',
+        component: Index
     }, {
         path: '/blog',
         name: 'BlogEntries',
