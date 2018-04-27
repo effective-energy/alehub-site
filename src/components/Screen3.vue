@@ -500,11 +500,11 @@
                     font-size 18px
                     text-transform uppercase
                     margin 0
-                    height 40px
                     display flex
                     justify-content center
                     align-items center
                     text-align center
+                    height 100%
         .left-block
             opacity .6
             .title
