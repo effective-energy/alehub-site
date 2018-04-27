@@ -310,6 +310,9 @@
             margin 25px 0
             background-color #34343e
 
+            @media(max-width: 425px)
+                margin-top 12px
+
         .advantages-title
             font-size 60px
             display flex
@@ -317,6 +320,12 @@
             width 100%
             font-family MuseoSansCyrl300
             margin-top 60px
+
+            @media(max-width: 1024px)
+                font-size 40px
+
+            @media(max-width: 425px)
+                font-size 30px
 
         .advantages-body
             width 100%
@@ -346,6 +355,9 @@
                     -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
                     -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
                     transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                    
+                    @media(max-width: 320px)
+                        font-size 16px
 
                 .point-right-active, .point-left-active
                     cursor default
