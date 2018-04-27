@@ -83,7 +83,9 @@
             <transition name="fade">
                 <div class="project-managment" v-if="selectedType === 1" key="OBP">
                     <div class="left-block">
-                        <h1 class="title">Other Blockchain Platforms</h1>
+                        <div class="title">
+                            <h1>Other Blockchain Platforms</h1>
+                        </div>
                         <ul>
                             <li v-for="(item, index) in advantages.first" :key="index">
                                 {{ item.second }}
@@ -91,7 +93,9 @@
                         </ul>
                     </div>
                     <div class="right-block">
-                        <h1 class="title">ALE</h1>
+                        <div class="title">
+                            <h1 class="title">ALE</h1>
+                        </div>
                         <ul>
                             <li v-for="(item, index) in advantages.first" :key="index">
                                 {{ item.first }}
@@ -102,7 +106,9 @@
 
                 <div class="other-blockchain" v-if="selectedType === 0" key="PMS">
                     <div class="left-block">
-                        <h1 class="title">Project Management Systems</h1>
+                        <div class="title">
+                            <h1 class="title">Project Management Systems</h1>
+                        </div>
                         <ul>
                             <li v-for="(item, index) in advantages.second" :key="index">
                                 {{ item.second }}
@@ -110,7 +116,9 @@
                         </ul>
                     </div>
                     <div class="right-block">
-                        <h1 class="title">ALE</h1>
+                        <div class="title">
+                            <h1 class="title">ALE</h1>
+                        </div>
                         <ul>
                             <li v-for="(item, index) in advantages.second" :key="index">
                                 {{ item.first }}
@@ -274,11 +282,15 @@
         .left{
             margin-right 5px
             background-color #ffc1078a
+            -webkit-box-shadow 0px 0px 20px #ffc1078a
+            -moz-box-shadow 0px 0px 20px #ffc1078a
             box-shadow 0px 0px 20px #ffc1078a
         }
         .right{
             margin-right 5px
             background-color #6c757d8a
+            -webkit-box-shadow 0px 0px 20px #ffc1078a
+            -moz-box-shadow 0px 0px 20px #6c757d8a
             box-shadow 0px 0px 20px #6c757d8a
         }
     }
@@ -350,14 +362,23 @@
                         transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
 
                 .point-right-active
+                    -webkit-transform translateX(0)
+                    -ms-transform translateX(0)
+                    -o-transform translateX(0)
                     transform translateX(0)
 
                 .point-left-active
+                    -webkit-transform translateX(100%)
+                    -ms-transform translateX(100%)
+                    -o-transform translateX(100%)
                     transform translateX(100%)
 
                 .point-right-inactive
                     cursor pointer
                     opacity 0.3
+                    -webkit-transform translateX(100%)
+                    -ms-transform translateX(100%)
+                    -o-transform translateX(100%)
                     transform translateX(100%)
 
                     .point__inner
@@ -366,20 +387,32 @@
                 .point-left-inactive
                     cursor pointer
                     opacity 0.3
+                    -webkit-transform translateX(0)
+                    -ms-transform translateX(0)
+                    -o-transform translateX(0)
                     transform translateX(0)
 
                     .point__inner
                         border-bottom 2px solid transparent
 
             .block-advantages__active
+                -webkit-transform translateX(0)
+                -ms-transform translateX(0)
+                -o-transform translateX(0)
                 transform translateX(0)
 
             .block-advantages__left
                 position absolute
+                -webkit-transform translateX(-150%)
+                -ms-transform translateX(-150%)
+                -o-transform translateX(-150%)
                 transform translateX(-150%)
 
             .block-advantages__right
                 position absolute
+                -webkit-transform translateX(-150%)
+                -ms-transform translateX(-150%)
+                -o-transform translateX(-150%)
                 transform translateX(150%)
 
             .block-advantages
@@ -463,14 +496,15 @@
             flex-direction column
             padding 20px 20px
             .title
-                font-size 18px
-                text-transform uppercase
-                margin 0
-                height 40px
-                display flex
-                justify-content center
-                align-items center
-                text-align center
+                h1
+                    font-size 18px
+                    text-transform uppercase
+                    margin 0
+                    display flex
+                    justify-content center
+                    align-items center
+                    text-align center
+                    height 100%
         .left-block
             opacity .6
             .title
@@ -491,7 +525,9 @@
                     border-right solid 4px #e2e2e2
         .right-block
             .title
-                box-shadow 0 0 30px rgba(0, 0, 0, 0.1)
+                -webkit-box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
+                -moz-box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
+                box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
                 background #fff
             ul
                 padding 5px 0px
@@ -513,17 +549,31 @@
 
     .fade-enter-active, 
     .fade-leave-active
+        -webkit-transition all .5s
+        -o-transition all .5s
         transition all .5s
     .fade-enter, 
     .fade-leave-active
         opacity 0
     .other-blockchain.fade-enter
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
         transform translateX(-100%)
     .project-managment.fade-enter
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
         transform translateX(100%)
     .other-blockchain.fade-leave-active
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
         transform translateX(-100%)
     .project-managment.fade-leave-active
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
         transform translateX(100%)
     @media (max-width: 1440px)
         .project-managment, .other-blockchain
@@ -560,6 +610,9 @@
                         width 50%
                     .point-left-active,
                     .point-right-inactive
+                        -webkit-transform translateX(-100%)
+                        -ms-transform translateX(-100%)
+                        -o-transform translateX(-100%)
                         transform: translateX(0%)
     @media (max-width: 630px)
         .project-managment, .other-blockchain

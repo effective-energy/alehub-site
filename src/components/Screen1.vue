@@ -435,6 +435,19 @@
 <style lang="stylus" scoped>
     #screen1
         .container-fluid
+            &.partners 
+                justify-content space-between
+
+                .title
+                    white-space nowrap
+
+                .partners-icons
+                    justify-content space-around
+                    width 100%
+                    flex-wrap nowrap
+                    @media(max-width 960px)
+                        flex-wrap wrap
+
             &.what-is
                 .desktop-outer
                     margin 0 auto
@@ -599,6 +612,8 @@
 
                 .progress-bar-inner
                     background-color #ffbc00
+                    -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
+                    -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     height 100%
             @media (max-width: 600px)

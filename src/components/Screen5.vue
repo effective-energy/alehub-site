@@ -341,6 +341,8 @@
 
             .image,
             .image *
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
                 box-sizing border-box
 
             .image
@@ -472,6 +474,8 @@
 
             .image,
             .image *
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
                 box-sizing border-box
 
             .image

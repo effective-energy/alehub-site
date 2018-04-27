@@ -31,6 +31,8 @@ body {
   height: 74px;
   padding-left: 64px;
   padding-right: 64px;
+  -webkit-box-shadow: 0px 3px 21px -11px #000;
+  -moz-box-shadow: 0px 3px 21px -11px #000;
   box-shadow: 0px 3px 21px -11px #000;
 }
 .navbar.bg-white {
@@ -225,6 +227,10 @@ body {
 #screen1 .container-fluid.what-is {
   margin-top: 40px;
   padding: 125px 125px 0;
+  -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
+  -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
+  -moz-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
+  -o-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
   background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
 }
 #screen1 .container-fluid.what-is .desktop {
@@ -297,13 +303,35 @@ body {
   margin-right: 5px;
   margin-left: 5px;
   background: #ffd24f;
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da);
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da);
+  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da);
+  -o-background-image: linear-gradient(45deg, #fda503, #fff5da);
   background: linear-gradient(45deg, #fda503, #fff5da);
   background-size: 200% 200%;
+  -webkit-animation-name: movingcolor;
+  -moz-animation-name: movingcolor;
+  -o-animation-name: movingcolor;
   animation-name: movingcolor;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
   animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  -o-animation-delay: 0s;
   animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
   animation-direction: alternate;
   padding-left: 25px;
   padding-right: 25px;
@@ -568,6 +596,15 @@ a {
     justify-content: space-around;
   }
 }
+@media (max-width: 1200px) {
+  #screen1 .container-fluid.partners {
+    padding: 0 160px;
+  }
+  #screen1 .container-fluid.partners .title {
+    font-size: 20px;
+    margin-right: 30px;
+  }
+}
 @media (max-width: 1100px) {
   #screen1 .container-fluid.what-is {
     padding: 100px 100px 60px;
@@ -594,9 +631,6 @@ a {
   }
   #screen1 .container-fluid.partners .title {
     font-size: 18px;
-  }
-  #screen1 .container-fluid.partners img {
-    margin: 0 26px;
   }
   #screen1 .container-fluid.what-is {
     padding: 70px 70px 0;
@@ -660,16 +694,13 @@ a {
   #screen1 .container-fluid.partners {
     margin-top: 60px;
   }
-  #screen1 .container-fluid.partners img {
-    margin-top: 16px;
+  #screen1 .container-fluid.partners .partners-icons {
+    flex-wrap: wrap;
+    align-items: center;
   }
   .bonus-desc {
     margin-top: 24px;
     margin-left: 5px;
-  }
-  .partners-icons {
-    align-items: center;
-    justify-content: space-around;
   }
   .social-line {
     margin-top: 60px;

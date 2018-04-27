@@ -128,6 +128,7 @@
 			.picture
 				max-width 150px
 				width 150px
+				-o-object-fit cover
 				object-fit cover
 
 			.news-info

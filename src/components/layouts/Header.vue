@@ -371,6 +371,8 @@
 
     .btn-login
         &:focus
+            -webkit-box-shadow none
+            -moz-box-shadow none 
             box-shadow none
 
     .btn-actions
@@ -382,6 +384,8 @@
     .btn.dropdown-toggle
         background-color transparent
         &:focus
+            -webkit-box-shadow none
+            -moz-box-shadow none 
             box-shadow none
 
     .nav-line__white
@@ -411,6 +415,8 @@
         -webkit-box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
         -moz-box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
         box-shadow 0px 2px 2px 0px rgba(0, 0, 0, 0.2)
+        -webkit-transition all 0.4s ease
+        -o-transition all 0.4s ease
         transition all 0.4s ease
         max-width 100vw
 
@@ -440,6 +446,8 @@
             color #fff
 
         .nav-link
+            -webkit-transition all 0.4s ease
+            -o-transition all 0.4s ease
             transition all 0.4s ease
             color #fff !important
 
