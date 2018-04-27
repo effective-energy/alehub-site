@@ -508,6 +508,7 @@
             flex-direction column
             padding 20px 20px
             .title
+                height 60px
                 h1
                     font-size 18px
                     text-transform uppercase
