@@ -406,6 +406,19 @@
 <style lang="stylus" scoped>
     #screen1
         .container-fluid
+            &.partners 
+                justify-content space-between
+
+                .title
+                    white-space nowrap
+
+                .partners-icons
+                    justify-content space-around
+                    width 100%
+                    flex-wrap nowrap
+                    @media(max-width 960px)
+                        flex-wrap wrap
+
             &.what-is
                 .desktop-outer
                     margin 0 auto
