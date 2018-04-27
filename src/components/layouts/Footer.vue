@@ -376,94 +376,94 @@
 								margin-right 0
 
 
-	/*footer*/
-		/*padding 3em 0*/
+	footer
+		padding 3em 0
 
-		/*.info*/
-			/*.logo*/
-				/*background-image url('../../assets/img/logo.png')*/
-				/*width 167px*/
-				/*height 28px*/
-				/*background-size contain*/
+		.info
+			.logo
+				background-image url('../../assets/img/logo.png')
+				width 167px
+				height 28px
+				background-size contain
 
-			/*p*/
-				/*margin-top 1.5em*/
-				/*margin-bottom 0*/
-				/*color #96969F*/
-				/*font-size 12px*/
+			p
+				margin-top 1.5em
+				margin-bottom 0
+				color #96969F
+				font-size 12px
 
-			/*a*/
-				/*margin-top 0.5em*/
-				/*margin-bottom 0*/
-				/*color #96969F*/
-				/*font-size 12px*/
-				/*text-decoration underline*/
+			a
+				margin-top 0.5em
+				margin-bottom 0
+				color #96969F
+				font-size 12px
+				text-decoration underline
 
-		/*.menu*/
-			/*list-style none*/
-			/*display flex*/
-			/*justify-content space-between*/
-			/*padding-left 0*/
+		.menu
+			list-style none
+			display flex
+			justify-content space-between
+			padding-left 0
 
-			/*li*/
-				/*font-size 14px*/
-				/*letter-spacing 0.6px*/
+			li
+				font-size 14px
+				letter-spacing 0.6px
 
-				/*a*/
-					/*color #96969F*/
+				a
+					color #96969F
 
-		/*.actions*/
-			/*display flex*/
-			/*justify-content space-between*/
-			/*margin-bottom 20px*/
+		.actions
+			display flex
+			justify-content space-between
+			margin-bottom 20px
 
-			/*.social-icons*/
-				/*display flex*/
-				/*justify-content space-between*/
+			.social-icons
+				display flex
+				justify-content space-between
 
-				/*.icon-item*/
-					/*width 40px*/
-					/*height 40px*/
-					/*margin 0 10px*/
-					/*display flex*/
-					/*justify-content center*/
-					/*align-items center*/
+				.icon-item
+					width 40px
+					height 40px
+					margin 0 10px
+					display flex
+					justify-content center
+					align-items center
 
-					/*a*/
-						/*img*/
-							/*width 50%*/
+					a
+						img
+							width 50%
 
-				/*.icon-item:first-child*/
-					/*margin-left 0*/
+				.icon-item:first-child
+					margin-left 0
 
-				/*.icon-item:last-child*/
-					/*margin-right 0*/
+				.icon-item:last-child
+					margin-right 0
 
-		/*@media(max-width: 991px)*/
-			/*.actions*/
-				/*.social-icons*/
-					/*.icon-item*/
-						/*margin 0*/
+		@media(max-width: 991px)
+			.actions
+				.social-icons
+					.icon-item
+						margin 0
 
-		/*@media(max-width: 575px)*/
-			/*.menu*/
-				/*display none*/
+		@media(max-width: 575px)
+			.menu
+				display none
 
-		/*@media(max-width: 375px)*/
-			/*.actions*/
-				/*flex-direction column-reverse*/
-				/*align-items center*/
+		@media(max-width: 375px)
+			.actions
+				flex-direction column-reverse
+				align-items center
 
-				/*.subscribe*/
-					/*margin-top 15px*/
-					/*margin-bottom 15px*/
+				.subscribe
+					margin-top 15px
+					margin-bottom 15px
 
-				/*.social-icons*/
-					/*padding-left 15px*/
-            /**/
-			/*.info*/
-				/*display flex*/
-				/*flex-direction column*/
-				/*align-items center*/
+				.social-icons
+					padding-left 15px
+            
+			.info
+				display flex
+				flex-direction column
+				align-items center
 			
 </style>
