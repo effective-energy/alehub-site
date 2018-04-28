@@ -381,6 +381,9 @@
 
     @media (max-width: 425px)
         .application
+            padding-top 60px
+            padding-bottom 60px
+            
             .section-1
                 margin-bottom 24px
 
@@ -398,7 +401,8 @@
                         height 75px
 
             .section-2
-                margin-bottom 24px
+                margin-bottom 0
+                padding-top 30px
 
                 .title
                     font-size 30px
@@ -409,12 +413,16 @@
                         width 100%
                         padding-right 0
                         padding-left 15px
+                        padding-top 12px
+                        margin-bottom 12px
 
                         &:nth-child(4)
                             .left
                                 margin-right 20px
 
             .section-3
+                padding-top 30px
+
                 .info-block
                     .title
                         font-size 30px
@@ -424,6 +432,7 @@
                     .list-items
                         .item
                             padding-left 15px
+                            margin-bottom 12px
 
                             &:first-child
                                 .left

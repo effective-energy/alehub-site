@@ -491,6 +491,16 @@
                     @media (max-width 960px)
                         flex-wrap wrap
 
+            .crypto
+                @media(max-width: 320px)
+                    .collection
+                        .item
+                            margin-right 10px
+                            width 40px
+
+                            &:last-child
+                                margin-right 0
+
             &.what-is
                 .desktop-outer
                     margin 0 auto
