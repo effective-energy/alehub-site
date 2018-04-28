@@ -270,7 +270,7 @@
                 <a href="#" class="social-item tw"></a>
                 <a href="#" class="social-item tg"></a>
                 <a href="#" class="social-item vk"></a>
-                <a class="scrol-ic" v-scroll-to="'#description'">
+                <a class="scroll-ic" v-scroll-to="'#description'">
                     <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
                 </a>
             </div>
@@ -634,7 +634,7 @@
                 .play-button
                     margin 0
 
-        .scrol-ic
+        .scroll-ic
             cursor pointer
             margin-right auto
             margin-left calc(50% - 396px)

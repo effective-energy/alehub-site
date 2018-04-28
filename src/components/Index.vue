@@ -37,15 +37,18 @@
             Screen6,
             Screen7,
             Blog,
-            Footer
+            Footer,
         },
         data() {
             return {
                 isFeatures: false,
                 isTeam: false,
+                // isLoading: true
             }
         },
         mounted() {
+
+            // console.time('loading');
             this.$on('checkIsFeatures', (isFeatures) => {
                 this.isFeatures = isFeatures;
             });
@@ -53,6 +56,10 @@
             this.$on('checkIsTeam', (isTeam) => {
                 this.isTeam = isTeam;
             });
+
+            // console.timeEnd('loading');
+
+            // this.isLoading = false;
         }
     }
 </script>
