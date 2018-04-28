@@ -215,7 +215,14 @@
 
                     if (this.loadValue === 100) {
                         clearInterval(this.loadingInterval);
-                        this.$parent.$emit('isLoading', false);
+                        setTimeout(() => {
+                            this.$parent.$emit('isShow', true);
+
+                            document.getElementById('loading-screen').style['opacity'] = 0;
+                            document.getElementById('loading-screen').addEventListener('transitionend', () => {
+                                this.$parent.$emit('isLoading', false);
+                            });
+                        }, 40);
                     }
 
                 }, 40);
@@ -250,6 +257,9 @@
         background-color #34343e
         width 100%
         height 100vh
+        opacity 1
+        -webkit-transition opacity 2s cubic-bezier(1, 0, .6, .65)
+        transition opacity 2s cubic-bezier(1, 0, .6, .65)
 
         .anim
             width 100%
@@ -325,6 +335,7 @@
                         font-size 60px
                         color #34343e
                         text-transform uppercase
+                        -webkit-transition color 4.2s cubic-bezier(1, 0, .6, .65)
                         transition color 4.2s cubic-bezier(1, 0, .6, .65)
 
                         @media (min-width 320px) and (max-width 375px)
@@ -342,8 +353,6 @@
                         text-align center
                         width 100%
                         margin 0
-                        -webkit-transition color 4.2s cubic-bezier(1, 0, .6, .65)
-                        transition color 4.2s cubic-bezier(1, 0, .6, .65)
 
                         @media (min-width 320px) and (max-width 375px)
                             font-size 16px

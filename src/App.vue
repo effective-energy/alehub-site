@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <!--<loading-screen v-if="!$data"/>-->
-        <loading-screen v-if="true"/>
-        <router-view v-else />
+        <loading-screen v-if="isLoading" />
+        <router-view v-if="isShow" />
         <!--<router-view v-if="false" />-->
     </div>
 </template>
@@ -18,25 +18,19 @@
         data() {
             return {
                 isLoading: true,
+                isShow: false,
                 loadingTimer: 0
             }
         },
         created() {
-            console.time('created');
 
-            console.timeEnd('created');
         },
         mounted() {
-            console.time('mounted');
-
-            console.timeEnd('mounted');
-
-            setTimeout(() => {
-                this.isLoading = false;
-            }, 5000);
+            this.$on('isShow', (val) => {
+                this.isShow = val;
+            });
 
             this.$on('isLoading', (val) => {
-                console.log(val, 'val');
                 this.isLoading = val;
             });
         }
