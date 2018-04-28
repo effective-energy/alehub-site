@@ -467,7 +467,15 @@
 </script>
 
 <style lang="stylus" scoped>
+    path
+        opacity 0.7 !important
+
     #screen1
+        /*background-color #34343e*/
+        /*transition background-color 20s linear*/
+        /*&:hover*/
+            /*background-color #858591*/
+
         .container-fluid
             &.partners
                 justify-content space-between

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <!--<loading-screen v-if="!$data"/>-->
-        <loading-screen v-if="true"/>
+        <loading-screen v-if="isLoading"/>
         <router-view v-else />
         <!--<router-view v-if="false" />-->
     </div>
