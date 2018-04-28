@@ -418,7 +418,7 @@
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         duration: anime.random(6500, 9000),
-                        delay: anime.random(0, 2000),
+                        delay: anime.random(2500, 4000),
                         loop: true,
                         direction: 'alternate',
                         easing: 'easeInOutSine',

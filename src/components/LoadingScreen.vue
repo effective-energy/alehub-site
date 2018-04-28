@@ -1,7 +1,7 @@
 <template>
     <div id="loading-screen" class="loading-screen">
 
-        <div class="anim" v-if="!isMobile">
+        <div class="anim" v-if="!isMobile && !closeAnimation">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
                     <path stroke="#ecdba8"
@@ -137,7 +137,7 @@
                            progress-color="#ffd24f"
                            knob-color="#ffd24f"
                            :side="sizeSideCircleSlider"
-                           :min="0"
+                           :min="1"
                            :max="100"
                            :step-size="1"
                            :circle-width="3"
@@ -165,7 +165,8 @@
         data() {
             return {
                 loadValue: 0,
-                loadingInterval: null
+                loadingInterval: null,
+                closeAnimation: false
             }
         },
         computed: {
@@ -183,7 +184,7 @@
                     return 300;
                 else if (window.innerWidth >= 320 && window.innerWidth <= 375)
                     return 250;
-            }
+            },
         },
         methods: {
             startAnimate: function () {
@@ -211,17 +212,30 @@
             },
             doProcessLoading: function () {
                 this.loadingInterval = setInterval(() => {
-                    this.loadValue++;
+                    ++this.loadValue;
+
+                    if (this.loadValue === 80) {
+                        //сделать тут отключение анимации и начало исчезновения свг
+                    }
 
                     if (this.loadValue === 100) {
-                        clearInterval(this.loadingInterval);
+                            clearInterval(this.loadingInterval);
+
+                            // this.closeAnimation = true;
+
                         setTimeout(() => {
+
+                            //если мобильник или планшет - то никаких подобных анимаций
+                            if (!this.isMobile) {
+                                document.getElementById('loading-screen').addEventListener('transitionend', () => {
+                                    this.$parent.$emit('endOfLoadingWideScreen', true);
+                                });
+                                document.getElementById('loading-screen').style['opacity'] = 0;
+                            } else {
+                                this.$parent.$emit('endOfLoadingNarrowScreen', true);
+                            }
                             this.$parent.$emit('isShow', true);
 
-                            document.getElementById('loading-screen').style['opacity'] = 0;
-                            document.getElementById('loading-screen').addEventListener('transitionend', () => {
-                                this.$parent.$emit('isLoading', false);
-                            });
                         }, 40);
                     }
 
@@ -258,8 +272,8 @@
         width 100%
         height 100vh
         opacity 1
-        -webkit-transition opacity 2s cubic-bezier(1, 0, .6, .65)
-        transition opacity 2s cubic-bezier(1, 0, .6, .65)
+        -webkit-transition opacity 2s ease-out
+        transition opacity 2s ease-out
 
         .anim
             width 100%

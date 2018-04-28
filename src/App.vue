@@ -1,9 +1,9 @@
 <template>
     <div id="app">
-        <!--<loading-screen v-if="!$data"/>-->
-        <loading-screen v-if="isLoading" />
-        <router-view v-if="isShow" />
-        <!--<router-view v-if="false" />-->
+        <!--<loading-screen />-->
+        <!--<loading-screen v-if="isLoading" />-->
+        <!--<router-view v-if="isShow" />-->
+        <router-view />
     </div>
 </template>
 
@@ -27,11 +27,17 @@
         },
         mounted() {
             this.$on('isShow', (val) => {
+                console.log('content');
                 this.isShow = val;
             });
 
-            this.$on('isLoading', (val) => {
-                this.isLoading = val;
+            this.$on('endOfLoadingWideScreen', (val) => {
+                console.log('preloader');
+                this.isLoading = !val;
+            });
+
+            this.$on('endOfLoadingNarrowScreen', (val) => {
+                this.isLoading = !val;
             });
         }
     }

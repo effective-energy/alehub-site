@@ -1,7 +1,7 @@
 <template>
     <div style="width: 100%; display: flex; justify-content: center;">
 
-        <button class="b-carousel__prev js-carousel__prev"
+        <button :class="['b-carousel__prev', settings.prev]"
                 v-if="isControlButton"
                 @click="clickPrev">
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
@@ -9,12 +9,12 @@
 
         <div class="wrap" id="effective-energy" style="user-select: none;">
 
-            <div class="b-carousel js-carousel"
+            <div :class="['b-carousel', settings.main]"
                  @mousedown="dragStart($event)"
                  @mouseup="dragEnd()"
                  @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
 
-                <div class="b-carousel__wrap js-carousel__wrap"
+                <div :class="['b-carousel__wrap', settings.wrap]"
                      @touchstart="(privates1.touch) ? touchStart($event) : 'false'"
                      @touchmove="(privates1.touch) ? touchMove($event) : 'false'">
 
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <button class="b-carousel__next js-carousel__next"
+        <button :class="['b-carousel__next', settings.next]"
                 v-if="isControlButton"
                 @click="clickNext">
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
@@ -97,6 +97,10 @@
                 type: Number,
                 required: true
             },
+            numItemsInWrap: {
+                type: Number,
+                required: true
+            }
         },
         data() {
             return {
@@ -148,11 +152,13 @@
         },
         methods: {
             clickNext: function () {
+                console.log('next');
                 this.stopAutoplay();
                 this.nextSlide();
                 this.startAutoplay(true);
             },
             clickPrev: function () {
+                console.log('prev');
                 this.stopAutoplay();
                 this.prevSlide();
                 this.startAutoplay(true);
@@ -204,6 +210,7 @@
             },
             touchStart: function (e) {
                 // console.log(e, 'event touch start');
+                console.log('touchStart');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
@@ -228,10 +235,10 @@
             prevSlide: function () {
 
                 let sel = {
-                    wrap: document.querySelector(this.privates.wrap),
-                    children: document.querySelector(this.privates.wrap).children,
-                    prev: document.querySelector(this.privates.prev),
-                    next: document.querySelector(this.privates.next)
+                    wrap: document.querySelector('.' + this.privates.wrap),
+                    children: document.querySelector('.' + this.privates.wrap).children,
+                    prev: document.querySelector('.' + this.privates.prev),
+                    next: document.querySelector('.' + this.privates.next)
                 };
 
                 --this.opt.position;
@@ -287,10 +294,10 @@
                 // console.log('check autoplay');
 
                 let sel = {
-                    wrap: document.querySelector(this.privates.wrap),
-                    children: document.querySelector(this.privates.wrap).children,
-                    prev: document.querySelector(this.privates.prev),
-                    next: document.querySelector(this.privates.next)
+                    wrap: document.querySelector('.' + this.privates.wrap),
+                    children: document.querySelector('.' + this.privates.wrap).children,
+                    prev: document.querySelector('.' + this.privates.prev),
+                    next: document.querySelector('.' + this.privates.next)
                 };
 
                 if (this.opt.position < this.opt.maxPosition) {
@@ -333,6 +340,11 @@
         created() {
             //в инит функцию
             this.privates = this.privates1;
+
+            // this.privates.main = '.' + this.privates.main;
+            // this.privates.wrap = '.' + this.privates.wrap;
+            // this.privates.prev = '.' + this.privates.prev;
+            // this.privates.next = '.' + this.privates.next;
         },
         mounted() {
 
@@ -340,16 +352,18 @@
 
             // this.initAutoplay(3000);
 
-            this.opt.maxPosition = document.querySelector(this.privates.wrap).children.length;
+            this.opt.maxPosition = document.querySelector('.' + this.privates.wrap).children.length;
 
-            document.querySelector(this.privates.wrap).style['transform'] = 'translateX(0)';
+            document.querySelector('.' + this.privates.wrap).style['transform'] = 'translateX(0)';
 
 
             // в зависимости от количества на стартовом врэппе
-            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[0].cloneNode(true));
-            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[1].cloneNode(true));
-            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[2].cloneNode(true));
-            document.querySelector(this.privates.wrap).appendChild(document.querySelector(this.privates.wrap).children[3].cloneNode(true));
+            for (let i = 0; i < this.numItemsInWrap; i++) {
+                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[0].cloneNode(true));
+                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[1].cloneNode(true));
+                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[2].cloneNode(true));
+                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[3].cloneNode(true));
+            }
 
 
             // if (this.privates.touch === true) {

@@ -1,5 +1,6 @@
 <template>
     <div class="index">
+        <!--rename-->
         <Header />
         <screen1 />
         <screen2 />
@@ -8,7 +9,7 @@
         <screen5 :is-team="isTeam"/>
         <screen6 />
         <screen7 />
-        <Blog />
+        <blog />
         <Footer />
     </div>
 </template>
@@ -63,3 +64,9 @@
         }
     }
 </script>
+
+<style lang="stylus">
+    .index
+        -webkit-transition opacity 2s cubic-bezier(1, 0, .6, .65)
+        transition opacity 2s cubic-bezier(1, 0, .6, .65)
+</style>

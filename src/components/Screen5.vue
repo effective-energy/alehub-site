@@ -51,20 +51,22 @@
                 </div>
 
                 <slider :items="team.serokell"
-                        :settings="settings"
-                        :options="options"
-                        :privates1="Object.assign(settings, options)"
-                        :multiplier-position="multiplierPosition"/>
+                        :settings="settings.serokell"
+                        :options="options.serokell"
+                        :privates1="Object.assign(settings.serokell, options.serokell)"
+                        :multiplier-position="multiplierPosition"
+                        :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
             <div class="effective-energy">
                 <p>Effective Energy team</p>
 
                 <slider :items="team.energy"
-                        :settings="settings"
-                        :options="options"
-                        :privates1="Object.assign(settings, options)"
-                        :multiplier-position="multiplierPosition"/>
+                        :settings="settings.effectiveEnergy"
+                        :options="options.effectiveEnergy"
+                        :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
+                        :multiplier-position="multiplierPosition"
+                        :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
         <div class="advisors" id="advisors">
@@ -135,25 +137,47 @@
         },
         watch: {
             'isTeam': function (inBlockTeam) {
-                this.options.inBlockTeam = inBlockTeam;
+                this.options.serokell.inBlockTeam = inBlockTeam;
+                this.options.effectiveEnergy.inBlockTeam = inBlockTeam;
             }
         },
         data() {
             return {
                 settings: {
-                    main: '.js-carousel',
-                    wrap: '.js-carousel__wrap',
-                    prev: '.js-carousel__prev',
-                    next: '.js-carousel__next'
+                    serokell: {
+                        main: 's-js-carousel',
+                        wrap: 's-js-carousel__wrap',
+                        prev: 's-js-carousel__prev',
+                        next: 's-js-carousel__next'
+                    },
+                    effectiveEnergy: {
+                        main: 'ee-js-carousel',
+                        wrap: 'ee-js-carousel__wrap',
+                        prev: 'ee-js-carousel__prev',
+                        next: 'ee-js-carousel__next'
+                    }
                 },
                 options: {
-                    touch: true,
-                    autoplay: false,
-                    inBlockTeam: false,
-                    autoplayDelay: 3000,
-                    pauseOnFocus: true,
-                    pauseOnHover: true,
-                    multiplierPosition: 25,
+                    serokell: {
+                        touch: true,
+                        autoplay: false,
+                        inBlockTeam: false,
+                        autoplayDelay: 3000,
+                        pauseOnFocus: true,
+                        pauseOnHover: true,
+                        multiplierPosition: 25,
+                        numItemsInWrap: 4
+                    },
+                    effectiveEnergy: {
+                        touch: true,
+                        autoplay: false,
+                        inBlockTeam: false,
+                        autoplayDelay: 3000,
+                        pauseOnFocus: true,
+                        pauseOnHover: true,
+                        multiplierPosition: 25,
+                        numItemsInWrap: 4
+                    }
                 },
                 team: {
                     serokell: [
@@ -270,16 +294,16 @@
             isMobileScreen: function () {
                 return window.innerWidth <= 785;
             },
-            // numItemInWrap: function () {
-            //     if (window.innerWidth <= 425)
-            //         return 1;
-            //     else if (window.innerWidth > 425 && window.innerWidth <= 1024)
-            //         return 2;
-            //     else if (window.innerWidth > 1024 && window.innerWidth <= 1571)
-            //         return 3;
-            //     else
-            //         return 4;
-            // },
+            numItemsInWrap: function () {
+                if (window.innerWidth <= 785)
+                    return 1;
+                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
+                    return 2;
+                else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
+                    return 3;
+                else
+                    return 4;
+            },
             multiplierPosition: function () {
                 //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
                 if (window.innerWidth <= 785)
@@ -295,7 +319,10 @@
         },
         methods: {},
         created() {
-            this.options.multiplierPosition = this.multiplierPosition;
+            this.options.serokell.multiplierPosition = this.multiplierPosition;
+            this.options.effectiveEnergy.multiplierPosition = this.multiplierPosition;
+            this.options.serokell.numItemsInWrap = this.numItemsInWrap;
+            this.options.effectiveEnergy.numItemsInWrap = this.numItemsInWrap;
             // this.options.subtrahendMaxPosition = this.subtrahendMaxPosition;
         },
         mounted() {
