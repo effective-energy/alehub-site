@@ -1,7 +1,7 @@
 <template>
     <div id="loading-screen" class="loading-screen">
 
-        <div class="anim">
+        <div class="anim" v-if="!isMobile">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
                     <path stroke="#ecdba8"
@@ -115,12 +115,11 @@
             </svg>
         </div>
 
-        <div class="wrap-loader" disabled="true">
+        <div class="wrap-loader">
             <div class="logo-block">
                 <div class="logo-block__wrap">
 
-                    <h3 class="logo-block__logo"
-                        style="color: #34343e; transition: color 5s cubic-bezier(1, 0, .6, .65);">
+                    <h3 class="logo-block__logo">
                         Alehub
                     </h3>
                     <p class="logo-block__percent">
@@ -129,24 +128,30 @@
                 </div>
             </div>
 
-            <div class="tmp-blocker">
+            <div class="tmp-blocker" v-if="!isXSMobile">
             </div>
-                <circle-slider
-                        v-model="loadValue"
-                        circle-color="#dedfe1"
-                        progress-color="#ffd24f"
-                        knob-color="#ffd24f"
-                        :side="350"
-                        :min="0"
-                        :max="100"
-                        :step-size="1"
-                        :circle-width="3"
-                        :progress-width="7"
-                        :knob-radius="6"
-                        @click.stop.prevent="zzzzz"
-                        style="position: absolute; z-index: 2;"
-                        class="circle-slider">
-                </circle-slider>
+
+            <circle-slider v-if="!isXSMobile"
+                           v-model="loadValue"
+                           circle-color="#dedfe1"
+                           progress-color="#ffd24f"
+                           knob-color="#ffd24f"
+                           :side="sizeSideCircleSlider"
+                           :min="0"
+                           :max="100"
+                           :step-size="1"
+                           :circle-width="3"
+                           :progress-width="7"
+                           :knob-radius="6"
+                           style="position: absolute; z-index: 2;"
+                           class="circle-loader">
+            </circle-slider>
+
+            <div class="xs-load-band" v-else>
+                <div class="xs-loader">
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -164,84 +169,73 @@
             }
         },
         computed: {
-            // sideCircleSlider: function () {
-            //     // return window.innerWidth / 5.5;
-            //     return 350;
-            // },
-            // heightLogoBlock: function () {
-            //     // return this.sideCircleSlider / 2;
-            //     return 175;
-            // },
-            // widthLogo: function () {
-            //     // return this.sideCircleSlider / 1.5;
-            //     return 130
-            // },
-            // paddingTopLogoBlock: function () {
-            //     // return this.heightLogoBlock / 2;
-            //     return 50;
-            // }
+            //добавить проверку на то, действительно ли человек сидит с мобильника (по клиенту браузера и ОСИ)
+            isMobile: function () {
+                return window.innerWidth <= 425;
+            },
+            isXSMobile: function () {
+                return window.innerWidth <= 300;
+            },
+            sizeSideCircleSlider: function () {
+                if (window.innerWidth > 425)
+                    return 350;
+                else if (window.innerWidth > 375 && window.innerWidth <= 425)
+                    return 300;
+                else if (window.innerWidth >= 320 && window.innerWidth <= 375)
+                    return 250;
+            }
         },
         methods: {
-            zzzzz: function () {
-                console.log('zzzzzzzz');
-            },
             startAnimate: function () {
-                let pathEls = document.querySelector('.anim').querySelectorAll('path');
-                for (let i = 0; i < pathEls.length; i++) {
-                    let pathEl = pathEls[i];
-                    let offset = anime.setDashoffset(pathEl);
-                    pathEl.setAttribute('stroke-dashoffset', offset);
-                    anime({
-                        targets: pathEl,
-                        strokeDashoffset: [offset, 0],
-                        // duration: anime.random(6500, 9000),
-                        duration: 4300,
-                        delay: anime.random(0, 2000),
-                        loop: true,
-                        direction: 'alternate',
-                        easing: 'easeInOutSine',
-                        autoplay: true
-                    });
+                if (document.querySelector('.anim').querySelectorAll('path')) {
+                    let pathEls = document.querySelector('.anim').querySelectorAll('path');
+                    for (let i = 0; i < pathEls.length; i++) {
+                        let pathEl = pathEls[i];
+                        let offset = anime.setDashoffset(pathEl);
+                        pathEl.setAttribute('stroke-dashoffset', offset);
+                        anime({
+                            targets: pathEl,
+                            strokeDashoffset: [offset, 0],
+                            // duration: anime.random(6500, 9000),
+                            duration: 4300,
+                            delay: anime.random(0, 2000),
+                            loop: true,
+                            direction: 'alternate',
+                            easing: 'easeInOutSine',
+                            autoplay: true
+                        });
+                    }
+                } else {
+                    return false;
                 }
             },
             doProcessLoading: function () {
-                // console.time('i');
                 this.loadingInterval = setInterval(() => {
                     this.loadValue++;
 
                     if (this.loadValue === 100) {
-                        // console.timeEnd('i');
                         clearInterval(this.loadingInterval);
                         this.$parent.$emit('isLoading', false);
                     }
 
                 }, 40);
             },
-
-            handleClick(e) {
-                this.touchPosition.setNewPosition(e)
-                if (this.touchPosition.isTouchWithinSliderRange) {
-                    const newAngle = this.touchPosition.sliderAngle
-                    this.animateSlider(this.angle, newAngle)
-                }
-            },
         },
         mounted() {
 
+            if (document.querySelector('.logo-block__logo') && !this.isXSMobile)
+                document.querySelector('.logo-block__logo').style['color'] = '#dcdcdc';
 
-            // document.querySelector('.circle-slider svg').removeEventListener('click', this.handleClick, false);
+            if (document.querySelector('.xs-loader') && this.isXSMobile) {
+                setTimeout(() => {
+                    document.querySelector('.xs-loader').style['width'] = '100%';
+                }, 40);
+            }
 
-            // document.querySelector('.circle-slider').addEventListener('click', (e) => {
-            //     e.stopPropagation();
-            //     console.log(123);
-            // });
-
-            document.querySelector('.logo-block__logo').style['color'] = '#dcdcdc';
-
-            // console.time('test');
             this.doProcessLoading();
-            // console.timeEnd('test');
-            this.startAnimate();
+
+            if (!this.isMobile)
+                this.startAnimate();
         }
     }
 </script>
@@ -250,9 +244,6 @@
     svg
         &:not(:root)
             overflow hidden
-
-    /*@media (max-width 768px)*/
-    /*viewBox*/
 
     .loading-screen
         position fixed
@@ -273,10 +264,19 @@
             width 100%
 
             .tmp-blocker
-                width 350px
-                height 350px
+                width 360px
+                height 360px
                 position absolute
                 z-index 5
+                margin-bottom 7px
+
+                @media (min-width 375px) and (max-width 420px)
+                    width 310px
+                    height 310px
+
+                @media (min-width 320px) and (max-width 375px)
+                    width 260px
+                    height 260px
 
             .logo-block
                 display flex
@@ -292,6 +292,23 @@
                 background #34343e
                 z-index 2
 
+                @media (min-width 375px) and (max-width 420px)
+                    width 300px
+                    height 300px
+
+                @media (min-width 320px) and (max-width 375px)
+                    width 250px
+                    height 250px
+
+                @media (max-width 300px)
+                    width 100%
+                    height 200px
+                    background transparent
+                    margin-bottom 0
+                    border-radius 0
+                    border none
+                    border-bottom 2px solid #ffd24f
+
                 .logo-block__wrap
                     padding-top 30px
                     width 100%
@@ -300,10 +317,22 @@
                     justify-content center
                     align-items center
 
+                    @media (max-width 300px)
+                        padding-top 20px
+
                     .logo-block__logo
                         font-family Fairview
                         font-size 60px
+                        color #34343e
                         text-transform uppercase
+                        transition color 4.2s cubic-bezier(1, 0, .6, .65)
+
+                        @media (min-width 320px) and (max-width 375px)
+                            font-size 50px
+
+                        @media (max-width 300px)
+                            font-size 48px
+                            color #dcdcdc
 
                     .logo-block__percent
                         font-family MuseoSansCyrl500
@@ -313,5 +342,24 @@
                         text-align center
                         width 100%
                         margin 0
+                        -webkit-transition color 4.2s cubic-bezier(1, 0, .6, .65)
+                        transition color 4.2s cubic-bezier(1, 0, .6, .65)
 
+                        @media (min-width 320px) and (max-width 375px)
+                            font-size 16px
+
+            .xs-load-band
+                position absolute
+                left 0
+                width 100%
+                height 20px
+                bottom calc(50% - 100px)
+                background-color #62626d
+
+                .xs-loader
+                    height 100%
+                    width 0
+                    background-color #ffd24f
+                    -webkit-transition width 4.5s cubic-bezier(1, 0, .6, .65)
+                    transition width 4.5s cubic-bezier(1, 0, .6, .65)
 </style>
