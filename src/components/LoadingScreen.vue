@@ -115,7 +115,7 @@
             </svg>
         </div>
 
-        <div class="wrap-loader">
+        <div class="wrap-loader" disabled="true">
             <div class="logo-block">
                 <div class="logo-block__wrap">
 
@@ -129,21 +129,24 @@
                 </div>
             </div>
 
-            <circle-slider
-                    v-model="loadValue"
-                    circle-color="#dedfe1"
-                    progress-color="#ffd24f"
-                    knob-color="#ffd24f"
-                    :side="350"
-                    :min="0"
-                    :max="100"
-                    :step-size="1"
-                    :circle-width="3"
-                    :progress-width="7"
-                    :knob-radius="6"
-                    style="position: absolute; z-index: 2;"
-                    class="circle-slider">
-            </circle-slider>
+            <div class="tmp-blocker">
+            </div>
+                <circle-slider
+                        v-model="loadValue"
+                        circle-color="#dedfe1"
+                        progress-color="#ffd24f"
+                        knob-color="#ffd24f"
+                        :side="350"
+                        :min="0"
+                        :max="100"
+                        :step-size="1"
+                        :circle-width="3"
+                        :progress-width="7"
+                        :knob-radius="6"
+                        @click.stop.prevent="zzzzz"
+                        style="position: absolute; z-index: 2;"
+                        class="circle-slider">
+                </circle-slider>
         </div>
 
     </div>
@@ -179,7 +182,10 @@
             // }
         },
         methods: {
-            startAnime: function () {
+            zzzzz: function () {
+                console.log('zzzzzzzz');
+            },
+            startAnimate: function () {
                 let pathEls = document.querySelector('.anim').querySelectorAll('path');
                 for (let i = 0; i < pathEls.length; i++) {
                     let pathEl = pathEls[i];
@@ -189,7 +195,7 @@
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         // duration: anime.random(6500, 9000),
-                        duration: 5000,
+                        duration: 4300,
                         delay: anime.random(0, 2000),
                         loop: true,
                         direction: 'alternate',
@@ -199,32 +205,54 @@
                 }
             },
             doProcessLoading: function () {
+                // console.time('i');
                 this.loadingInterval = setInterval(() => {
                     this.loadValue++;
 
-                    if (this.loadValue === 100)
+                    if (this.loadValue === 100) {
+                        // console.timeEnd('i');
                         clearInterval(this.loadingInterval);
+                        this.$parent.$emit('isLoading', false);
+                    }
 
-                }, 50) //5000/100
+                }, 40);
             },
-            testLoading: function () {
-                // document.querySelector('#test').style['border-bottom-width']
-            }
+
+            handleClick(e) {
+                this.touchPosition.setNewPosition(e)
+                if (this.touchPosition.isTouchWithinSliderRange) {
+                    const newAngle = this.touchPosition.sliderAngle
+                    this.animateSlider(this.angle, newAngle)
+                }
+            },
         },
         mounted() {
+
+
+            // document.querySelector('.circle-slider svg').removeEventListener('click', this.handleClick, false);
+
+            // document.querySelector('.circle-slider').addEventListener('click', (e) => {
+            //     e.stopPropagation();
+            //     console.log(123);
+            // });
+
             document.querySelector('.logo-block__logo').style['color'] = '#dcdcdc';
 
-            console.time('test');
+            // console.time('test');
             this.doProcessLoading();
-            console.timeEnd('test');
-            this.startAnime();
+            // console.timeEnd('test');
+            this.startAnimate();
         }
     }
 </script>
 
 <style lang="stylus" scoped>
-    svg:not(:root)
-        overflow hidden
+    svg
+        &:not(:root)
+            overflow hidden
+
+    /*@media (max-width 768px)*/
+    /*viewBox*/
 
     .loading-screen
         position fixed
@@ -243,6 +271,12 @@
             align-items center
             height 100%
             width 100%
+
+            .tmp-blocker
+                width 350px
+                height 350px
+                position absolute
+                z-index 5
 
             .logo-block
                 display flex

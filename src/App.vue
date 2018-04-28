@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <!--<loading-screen v-if="!$data"/>-->
-        <loading-screen v-if="isLoading"/>
+        <loading-screen v-if="true"/>
         <router-view v-else />
         <!--<router-view v-if="false" />-->
     </div>
@@ -34,6 +34,11 @@
             setTimeout(() => {
                 this.isLoading = false;
             }, 5000);
+
+            this.$on('isLoading', (val) => {
+                console.log(val, 'val');
+                this.isLoading = val;
+            });
         }
     }
 </script>
