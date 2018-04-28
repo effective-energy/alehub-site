@@ -15,7 +15,7 @@
                 <!--v-show="!isMobileScreen"-->
                 <div class="images"
                      id="serokell-gallery"
-                     v-if="!isMobileScreen">
+                     v-if="isWideScreen">
                     <div class="image"
                          v-for="(member, i) in team.serokell" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
@@ -50,7 +50,8 @@
                     </div>
                 </div>
 
-                <slider :items="team.serokell"
+                <slider v-else
+                        :items="team.serokell"
                         :settings="settings.serokell"
                         :options="options.serokell"
                         :privates1="Object.assign(settings.serokell, options.serokell)"
@@ -78,7 +79,8 @@
             </div>
 
             <div class="advisors-team">
-                <div class="images">
+                <div class="images"
+                     v-if="!isMobileScreen">
                     <div class="image"
                          style=""
                          v-for="(member, i) in team.advisors" :key="i"
@@ -114,6 +116,15 @@
                         </div>
                     </div>
                 </div>
+
+                <slider v-else
+                        :items="team.advisors"
+                        :settings="settings.advisors"
+                        :options="options.advisors"
+                        :privates1="Object.assign(settings.advisors, options.advisors)"
+                        :multiplier-position="multiplierPosition"
+                        :num-items-in-wrap="numItemsInWrap"/>
+
             </div>
         </div>
     </div>
@@ -155,6 +166,12 @@
                         wrap: 'ee-js-carousel__wrap',
                         prev: 'ee-js-carousel__prev',
                         next: 'ee-js-carousel__next'
+                    },
+                    advisors: {
+                        main: 'a-js-carousel',
+                        wrap: 'a-js-carousel__wrap',
+                        prev: 'a-js-carousel__prev',
+                        next: 'a-js-carousel__next'
                     }
                 },
                 options: {
@@ -169,6 +186,16 @@
                         numItemsInWrap: 4
                     },
                     effectiveEnergy: {
+                        touch: true,
+                        autoplay: false,
+                        inBlockTeam: false,
+                        autoplayDelay: 3000,
+                        pauseOnFocus: true,
+                        pauseOnHover: true,
+                        multiplierPosition: 25,
+                        numItemsInWrap: 4
+                    },
+                    advisors: {
                         touch: true,
                         autoplay: false,
                         inBlockTeam: false,
@@ -292,7 +319,19 @@
         computed: {
             //добавить чек по типу устройства (браузера с которого заходили)
             isMobileScreen: function () {
+                return window.innerWidth <= 425;
+            },
+            isTabletScreen: function () {
                 return window.innerWidth <= 785;
+            },
+            isLaptopScreen: function () {
+                return window.innerWidth > 785 && window.innerWidth <= 1178;
+            },
+            isLargeScreen: function () {
+                return window.innerWidth > 1178 && window.innerWidth <= 1571;
+            },
+            isWideScreen: function () {
+                return window.innerWidth > 1571;
             },
             numItemsInWrap: function () {
                 if (window.innerWidth <= 785)
@@ -320,10 +359,14 @@
         methods: {},
         created() {
             this.options.serokell.multiplierPosition = this.multiplierPosition;
-            this.options.effectiveEnergy.multiplierPosition = this.multiplierPosition;
             this.options.serokell.numItemsInWrap = this.numItemsInWrap;
+
+            this.options.effectiveEnergy.multiplierPosition = this.multiplierPosition;
             this.options.effectiveEnergy.numItemsInWrap = this.numItemsInWrap;
-            // this.options.subtrahendMaxPosition = this.subtrahendMaxPosition;
+
+            this.options.advisors.multiplierPosition = this.multiplierPosition;
+            this.options.advisors.numItemsInWrap = this.numItemsInWrap;
+
         },
         mounted() {
             // document.getElementById('effective-energy').style.width = document.getElementById('serokell-gallery').offsetWidth + 'px';

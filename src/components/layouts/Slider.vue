@@ -7,7 +7,7 @@
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
 
-        <div class="wrap" id="effective-energy" style="user-select: none;">
+        <div class="wrap" style="user-select: none;">
 
             <div :class="['b-carousel', settings.main]"
                  @mousedown="dragStart($event)"
@@ -210,7 +210,7 @@
             },
             touchStart: function (e) {
                 // console.log(e, 'event touch start');
-                console.log('touchStart');
+                // console.log('touchStart');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
@@ -359,10 +359,7 @@
 
             // в зависимости от количества на стартовом врэппе
             for (let i = 0; i < this.numItemsInWrap; i++) {
-                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[0].cloneNode(true));
-                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[1].cloneNode(true));
-                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[2].cloneNode(true));
-                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[3].cloneNode(true));
+                document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[i].cloneNode(true));
             }
 
 
