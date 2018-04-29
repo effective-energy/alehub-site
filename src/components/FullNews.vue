@@ -118,10 +118,10 @@
     }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 	body
-		padding-top 74px
-		background-color #ffffff!important
+		/*padding-top 74px*/
+		/*background-color #ffffff !important*/
 
 	.footer
 		background-color #e8ebef

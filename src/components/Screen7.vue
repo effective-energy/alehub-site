@@ -20,7 +20,9 @@
                         </h1>
                         <span class="date">{{ slide.date }}</span>
                         <div class="responsible">
-                            <div class="avatar" v-for="(item, index) in slide.members" :key="index">
+                            <div class="avatar"
+                                 v-for="(item, index) in slide.members"
+                                 :key="index">
                                 <img :src="item" alt="">
                             </div>
                         </div>
@@ -42,8 +44,13 @@
 
             <div class="scroll-block">
             	<div class="arrow-prev"></div>
-            	<div class="scroll-element" v-on:scroll="scrollForSlide" id="scroll-element">
-            		<div class="scroll-content" :style="'width:'+slidesPanelWidth+'px'" id="scroll-content"></div>
+            	<div id="scroll-element"
+                     class="scroll-element"
+                     v-on:scroll="scrollForSlide">
+            		<div id="scroll-content"
+                         class="scroll-content"
+                         :style="'width:'+slidesPanelWidth+'px'">
+                    </div>
             	</div>
             	<div class="arrow-next"></div>
             </div>

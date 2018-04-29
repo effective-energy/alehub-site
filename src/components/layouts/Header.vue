@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
          :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
-        <a href="#" class="navbar-brand">
+        <router-link tag="a" to="/" class="navbar-brand">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
                  alt="ALEHUB"
@@ -12,7 +12,18 @@
                  alt="ALEHUB"
                  v-else>
             ALEHUB
-        </a>
+        </router-link>
+        <!--<a href="#" class="navbar-brand">-->
+            <!--<img class="d-inline-block align-top"-->
+                 <!--src="../../../static/images/ale-logo.svg"-->
+                 <!--alt="ALEHUB"-->
+                 <!--v-if="!isBlack">-->
+            <!--<img class="d-inline-block align-top"-->
+                 <!--src="../../../static/images/ale-logo-white.svg"-->
+                 <!--alt="ALEHUB"-->
+                 <!--v-else>-->
+            <!--ALEHUB-->
+        <!--</a>-->
         <div class="hamburger"
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
