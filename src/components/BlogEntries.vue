@@ -109,7 +109,7 @@
 
 <style>
     body {
-        padding-top: 74px;
+        /*padding-top: 74px;*/
         background-color: #ffffff !important;
     }
 
@@ -119,6 +119,10 @@
 </style>
 
 <style lang="stylus" scoped>
+    body
+        /*padding-top 74px*/
+        background-color #ffffff !important
+
     .section
         padding 71px 80px
 
