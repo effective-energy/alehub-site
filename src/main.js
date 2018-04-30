@@ -29,7 +29,7 @@ Vue.use(VueAwesomeSwiper);
 Vue.config.productionTip = false;
 
 let systemLang = '';
-if(localStorage.getItem('systemLang') !== 'eng' || localStorage.getItem('systemLang') !== 'rus' ||) systemLang = 'eng';
+if(localStorage.getItem('systemLang') !== 'eng' || localStorage.getItem('systemLang') !== 'rus') systemLang = 'eng';
 else systemLang = localStorage.getItem('systemLang');
 
 import messages from './i18n.js';
