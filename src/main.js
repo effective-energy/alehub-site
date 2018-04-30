@@ -5,7 +5,9 @@ import VueScrollTo from 'vue-scrollto';
 import VModal from 'vue-js-modal';
 import VueParticles from 'vue-particles';
 import VueI18n from 'vue-i18n';
-import VueCircleSlider from 'vue-circle-slider'
+import VueCircleSlider from 'vue-circle-slider';
+import VueResource from 'vue-resource';
+import Moment from 'vue-moment';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -18,6 +20,8 @@ Vue.use(VueParticles);
 Vue.use(VueI18n);
 Vue.use(VModal);
 Vue.use(VueCircleSlider);
+Vue.use(VueResource);
+Vue.use(Moment);
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
