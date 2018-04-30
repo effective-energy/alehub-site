@@ -35,7 +35,7 @@
                             <div class="layer__top">
                                 <div class="layer__text">
                                     <h3>
-                                        {{ member.name }}
+                                        {{ member.name }}{{$t("team.name.members.name")}}
                                     </h3>
                                     <p>
                                         {{ member.position }}

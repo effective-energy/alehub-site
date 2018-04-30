@@ -2,7 +2,7 @@
 	<div class="section blog-section" id="blog">
 		<div class="container">
 			<h1 class="section-title is-center">
-				Blog
+				{{ $t("blog.title") }}
 			</h1>
 			<div class="divider"></div>
 
@@ -11,9 +11,9 @@
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news.png" alt="" class="picture">
 						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub IOS application beta 1
-                            </router-link>
+							<router-link tag="a" to="/blog/1" class="news-title">
+								Alehub IOS application beta 1
+							</router-link>
 							<i class="news-date">Feb 11, 2018</i>
 						</div>
 					</div>
@@ -22,9 +22,9 @@
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news.jpg" alt="" class="picture">
 						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                How to invest in an ICO
-                            </router-link>
+							<router-link tag="a" to="/blog/1" class="news-title">
+								How to invest in an ICO
+							</router-link>
 							<i class="news-date">Feb 17, 2018</i>
 						</div>
 					</div>
@@ -42,9 +42,9 @@
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news3.jpg" alt="" class="picture">
 						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub iOS application beta 2
-                            </router-link>
+							<router-link tag="a" to="/blog/1" class="news-title">
+								Alehub iOS application beta 2
+							</router-link>
 							<i class="news-date">Apr 12, 2018</i>
 						</div>
 					</div>
@@ -53,9 +53,9 @@
 					<div class="news-block">
 						<img src="../../static/images/news-pictures/news4.jpg" alt="" class="picture">
 						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub Desktop application release
-                            </router-link>
+							<router-link tag="a" to="/blog/1" class="news-title">
+								Alehub Desktop application release
+							</router-link>
 							<i class="news-date">Apr 12, 2018</i>
 						</div>
 					</div>
@@ -63,8 +63,8 @@
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
 						<router-link tag="a" to="/blog" class="btn btn-warning">
-                            All posts
-                        </router-link>
+							{{ $t("blog.allPostsBtn") }}
+						</router-link>
 					</div>
 				</div>
 			</div>

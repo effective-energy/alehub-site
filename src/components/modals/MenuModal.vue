@@ -6,7 +6,7 @@
         <div class="body">
             <div v-for="item in menu">
                 <a v-scroll-to="item.path"
-                    @click="closeModal('menu-modal')">
+                   @click="closeModal('menu-modal')">
                     {{ item.name }}
                 </a>
             </div>

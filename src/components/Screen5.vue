@@ -4,7 +4,7 @@
         <div class="our-team">
 
             <h3 class="title">
-                Our team
+                {{$t("team.title")}}
             </h3>
 
             <div class="separator">

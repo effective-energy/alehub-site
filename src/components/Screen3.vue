@@ -1,7 +1,7 @@
 <template>
     <div class="advantages" id="advantages">
         <h3 class="advantages-title">
-            ALE advantages
+            {{$t("advantages.title")}}
         </h3>
         <div class="separator"></div>
         <div class="advantages-body">
@@ -11,7 +11,7 @@
                     'point-left-inactive' : selectedType === 1
                 }" @click="selectedType = 0">
                     <div class="point__inner">
-                        ALE vs Project Management Systems
+                        {{$t("advantages.lists[0].title")}}
                     </div>
                 </div>
                 <div class="point" :class="{
@@ -19,7 +19,7 @@
                     'point-right-inactive' : selectedType === 0
                 }" @click="selectedType = 1">
                     <div class="point__inner">
-                        ALE vs Other Blockchain Platforms
+                        {{$t("advantages.lists[1].title")}}
                     </div>
                 </div>
             </div>
