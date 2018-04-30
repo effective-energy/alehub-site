@@ -162,6 +162,7 @@
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
             },
             getCoords: function (elem) {
+                if (!elem) return false
                 let box = elem.getBoundingClientRect();
 
                 return {
