@@ -285,7 +285,7 @@ const messages = {
 			}, {
 				title: 'Баунти'
 			}],
-			loginBtn: 'Log in'
+			loginBtn: 'Войти'
 		},
 		greeting: {
 			title: 'The new era of project management is coming',

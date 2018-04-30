@@ -53,26 +53,18 @@
             <div class="right-menu">
                 <button type="button"
                         class="btn btn-login">
-                    Log in
+                    {{ $t('navbar.loginBtn') }}
                 </button>
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle"
-                            id="dropdownMenuButton"
-                            type="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                        <!--@click="toggleDropdown">-->
-                        en
-                    </button>
-                    <div class="dropdown-menu"
-                         aria-labelledby="dropdownMenuButton"
-                         v-if="dropdownOpen">
-                        <a class="dropdown-item" href="#">cn</a>
-                        <a class="dropdown-item" href="#">ru</a>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-actions">ok</button>
+                <b-dropdown :text="currentLang">
+                    <b-dropdown-item
+                        :active="lang === currentLang"
+                        v-for="(lang, langIndex) in languagesList"
+                        @click="changeLanguage(langIndex)"
+                        :key="langIndex"
+                    >
+                        {{ lang }}
+                    </b-dropdown-item>
+                </b-dropdown>
             </div>
         </div>
 
@@ -135,7 +127,9 @@
                         name: 'Blog'
                     },
                 ],
-                activeItem: 0
+                activeItem: 0,
+                languagesList: ['eng', 'rus'],
+                selectedLanguage: localStorage.getItem('systemLang')
             }
         },
         watch: {
@@ -143,7 +137,23 @@
                 this.changeLineWidth(index);
             }
         },
+        computed: {
+            currentLang () {
+                if(this.selectedLanguage === 'eng') {
+                    return 'eng';
+                } else if(this.selectedLanguage === 'rus') {
+                    return 'rus';
+                } else {
+                    return 'eng';
+                }
+            }
+        },
         methods: {
+            changeLanguage (index) {
+                this.selectedLanguage = this.languagesList[index];
+                localStorage.setItem('systemLang', this.selectedLanguage);
+                this.$i18n.locale = this.selectedLanguage
+            },
             openModal: function (name) {
                 this.$modal.show(name);
             },

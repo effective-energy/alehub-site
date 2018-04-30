@@ -33,8 +33,14 @@ Vue.use(VueAwesomeSwiper);
 Vue.config.productionTip = false;
 
 let systemLang = '';
-if(localStorage.getItem('systemLang') !== 'eng' || localStorage.getItem('systemLang') !== 'rus') systemLang = 'eng';
-else systemLang = localStorage.getItem('systemLang');
+if(localStorage.getItem('systemLang') !== 'eng' && localStorage.getItem('systemLang') !== 'rus') {
+	localStorage.setItem('systemLang', 'eng');
+	systemLang = 'eng';
+} else if(localStorage.getItem('systemLang') === 'eng') {
+	systemLang = 'eng';
+} else if(localStorage.getItem('systemLang') === 'rus') {
+	systemLang = 'rus';
+}
 
 import messages from './i18n.js';
 const i18n = new VueI18n({
