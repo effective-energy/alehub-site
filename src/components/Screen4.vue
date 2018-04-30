@@ -110,6 +110,19 @@
                         </p>
                     </div>
                 </div>
+                <div class="item">
+                    <div class="left">
+                        <img src="../../static/images/icon-money.svg">
+                    </div>
+                    <div class="right">
+                        <p class="right__title">
+                            Volatility of the payment instrument
+                        </p>
+                        <p>
+                            Explanation text can be placed here
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -299,6 +312,10 @@
 
                     .left
                         margin-right 30px
+                        text-align center
+
+                        img
+                            width 30px
 
         .section-3
             padding-top 105px
