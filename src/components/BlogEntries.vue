@@ -15,14 +15,11 @@
                             <li class="active">February</li>
                             <li>January</li>
                         </ul>
-                        <li class="filter-item">2017</li>
-                        <li class="filter-item">2016</li>
-                        <li class="filter-item">2015</li>
                     </ul>
                     <div class="arrow-prev"></div>
                 </div>
 
-                <div class="posts" v-if="content !== ''">
+                <div class="posts">
 
                     <div class="blog-post" v-for="item in content" :key="item._id">
                         <img :src="'http://alehub.io:8099/'+item.preview_image" alt="" class="image-preview">
@@ -80,7 +77,7 @@
         methods: {
 			getNews: function () {
 				this.$http.get(`http://alehub.io:8099/ale-news`).then(response => {
-					this.content = response.body;
+					this.content = response.body.reverse();
 				}, response => {
 					console.log('Error getting news', response);
 				});
@@ -154,6 +151,7 @@
         .posts
             padding-right 77.5px
             padding-left 77.5px
+            min-width 70%
 
             .divider
                 background-color #000000

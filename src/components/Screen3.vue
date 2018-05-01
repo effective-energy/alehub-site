@@ -87,7 +87,7 @@
                             <h1>{{$t('table.second.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.second.desc')">
+                            <li v-for="(desc,index) in $t('table.second.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -97,8 +97,9 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.first.desc')">
+                            <li v-for="(desc,index) in $t('table.first.desc')" :key="index">
                                 {{ desc }}
+                                <div class="hovered-underline"></div>
                             </li>
                         </ul>
                     </div>
@@ -110,7 +111,7 @@
                             <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.third.desc')">
+                            <li v-for="(desc,index) in $t('table.four.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -120,14 +121,15 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="desc in $t('table.third.desc')">
+                            <li v-for="(desc,index) in $t('table.third.desc')" :key="index">
                                 {{ desc }}
+                                <div class="hovered-underline"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </transition>
-            <div class="project-managment" v-if="selectedType === 1" style="opacity: 0; position: unset;">
+            <div class="project-managment" v-if="selectedType === 1" style="opacity: 0; position: unset; z-index: -1;">
                 <div class="left-block">
                     <h1 class="title">Other Blockchain Platforms</h1>
                     <ul>
@@ -145,7 +147,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="other-blockchain" v-if="selectedType === 0" style="opacity: 0; position: unset;">
+            <div class="other-blockchain" v-if="selectedType === 0" style="opacity: 0; position: unset; z-index: -1;">
                 <div class="left-block">
                     <h1 class="title">Project Management Systems</h1>
                     <ul>
@@ -548,17 +550,32 @@
                     list-style none
                     height 60px
                     display flex
-                    align-items center
+                    align-items flex-start
                     line-height 1.2
-                    justify-content flex-start
+                    justify-content center
                     text-align left
                     margin 10px 0
                     background #fff
                     padding 0 40px
+                    flex-direction column
                     &:nth-child(even)
                         border-left solid 4px #34343e
                     &:nth-child(odd)
                         border-left solid 4px #fdd04a
+                    .hovered-underline
+                        width 0px
+                        height 3px
+                        margin-top 2px
+                        margin-bottom -5px
+                        background #fdd04a
+                    &:hover
+                        .hovered-underline
+                            width 100%
+                            -webkit-transition -webkit-transform 0.35s
+                            transition all 0.35s
+                            -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                            -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
+                            transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
 
     .fade-enter-active, 
     .fade-leave-active
@@ -636,6 +653,8 @@
                         height 180px
                         padding 0 10px
                         text-align center
+                        display flex
+                        justify-content center
                 .title
                     height 100px
     @media (max-width: 425px)

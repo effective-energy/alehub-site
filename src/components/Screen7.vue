@@ -6,7 +6,7 @@
             </h1>
         </div>
 
-        <div class="roadmap-slides">
+        <div class="roadmap-slides dragscroll">
             <div class="topline"></div>
             <div class="slides-body">
                 <div class="slide"
