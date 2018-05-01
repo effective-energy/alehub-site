@@ -1,7 +1,7 @@
 <template>
 	<div class="section section-full-news">
-		<Header />
-		<div class="container container-news">
+		<Header :show="'blog'" />
+		<div class="container container-news" v-if="content">
 			<div class="share-block">
 				<div class="share-item">
 					<div class="icon-twitter"></div>
@@ -23,79 +23,32 @@
 				</div>
 			</div>
 			<div class="news-block">
-				<h1 class="title">Alehub iOS application beta 1.
-					<br /> Two line title.</h1>
+				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
-					<img src="http://via.placeholder.com/36x36" alt="" class="news-author-image" />
+					<img v-if="false" src="http://via.placeholder.com/36x36" alt="" class="news-author-image" />
 					<div class="info">
-						<span class="datetime">12:20 Friday, February 23, 2018</span>
-						<span class="author-name">Storyteller – Alexander Voroncov</span>
+						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
+						<span class="author-name" v-if="false">Storyteller – Alexander Voroncov</span>
 					</div>
 				</div>
 				<div class="picture-block">
-					<img src="https://images.unsplash.com/photo-1519895173443-d259e1fc4962?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7b751cf508d1137fd7c06736b0811897&auto=format&fit=crop&w=2022&q=80" alt="" class="image" />
-					<p class="resource-image">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
+					<img :src="`http://alehub.io:8099/${content.preview_image}`" alt="" class="image" />
+					<p class="resource-image" v-if="false">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
 				</div>
-				<div class="news-content">
-					<p>
-						This is the week MCU fans everywhere have been eagerly awaiting, as Marvel Studios’ “Avengers: Infinity War” is released worldwide on Friday, April 27. Of course, everyone won’t be able to see the movie at the exact time, and with some audiences beginning to see the film before others, the filmmakers and cast of “Infinity War” have a special message.
-					</p>
-					<p>And one more line.</p>
-
-					<div class="quote-block">
-						<div class="quote"></div>
-						<h1 class="title">I feel the POWER!</h1>
-						<p class="subtitle">— commented CEO of ALEHUB</p>
-					</div>
-
-					<p>
-						<i>Kind of interview:</i>
-					</p>
-					<p>
-						<b>Is your system best in the world?</b>
-					</p>
-					<p>Yes, it is.</p>
-
-					<div class="tags-block">
-						<div class="tag-item">
-							<span>Alehub</span>
-						</div>
-						<div class="tag-item">
-							<span>crypto</span>
-						</div>
-						<div class="tag-item">
-							<span>cool thing</span>
-						</div>
-					</div>
+				<div class="news-content" v-html="content.content">
 
 				</div>
 
-				<div class="more-news">
+				<div class="more-news" v-if="more">
 					<h1 class="more-news-title">More news</h1>
 
 					<div class="more-news-content">
-						<div class="news-item">
-							<img src="../../static/images/news-pictures/news.png" alt="" />
-							<a href="#" class="news-link">Alehub IOS application beta 1</a>
-							<i class="date">Feb 11, 2018</i>
-						</div>
-
-						<div class="news-item">
-							<img src="../../static/images/news-pictures/news.jpg" alt="" />
-							<a href="#" class="news-link">How to invest in an ICO</a>
-							<i class="date">Feb 11, 2018</i>
-						</div>
-
-						<div class="news-item">
-							<img src="../../static/images/news-pictures/news2.jpg" alt="" />
-							<a href="#" class="news-link">Push into billion-dollar Southeast Asian token markets</a>
-							<i class="date">Feb 11, 2018</i>
-						</div>
-
-						<div class="news-item">
-							<img src="../../static/images/news-pictures/news3.jpg" alt="" />
-							<a href="#" class="news-link">Alehub iOS application beta 2</a>
-							<i class="date">Feb 11, 2018</i>
+						<div class="news-item" v-for="item in more" :key="item._id">
+							<img :src="`http://alehub.io:8099/${item.preview_image}`" alt="" />
+							<router-link tag="a" :to="`./${item._id}`" class="news-link">
+                                {{ item.title }}
+                            </router-link>
+							<i class="date">{{ item.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 					</div>
 				</div>
@@ -114,7 +67,38 @@
         components: {
             Header,
             Footer
-        }
+		},
+		data () {
+			return {
+				content: '',
+				more: ''
+			}
+		},
+		watch: {
+			'$route' () {
+				this.getNews();
+			}
+		},
+		methods: {
+			getNews: function () {
+				this.$http.get(`http://alehub.io:8099/ale-news/${this.$route.params.id}`).then(response => {
+					this.content = response.body;
+				}, response => {
+					console.log('Error getting news', response);
+				});
+			},
+			getLastNews: function () {
+				this.$http.get(`http://alehub.io:8099/ale-news/last/4`).then(response => {
+					this.more = response.body;
+				}, response => {
+					console.log('Error getting news', response);
+				});
+			}
+		},
+		created () {
+			this.getNews();
+			this.getLastNews();
+		}
     }
 </script>
 
@@ -125,6 +109,9 @@
 
 	.footer
 		background-color #e8ebef
+
+	.section-full-news
+		padding-top 70px
 
 	.container-news
 		display flex

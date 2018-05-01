@@ -19,14 +19,10 @@
 
         <div class="section-1">
             <h3 class="title">
-                Alehub - first application
+                {{$t("alePlatform.title")}}
             </h3>
             <p class="description">
-                <b>Alehub</b> is the first project using the <b>ALE</b> platform. <b>Alehub</b> is aimed at the IT
-                industry
-                and provides an
-                opportunity to carry out the project "from scratch": from the Contractor's search, to mutual
-                settlements.
+                {{$t("alePlatform.subTitle")}}
             </p>
             <div class="watch">
                 <button class="play-button">
@@ -35,13 +31,13 @@
                     </div>
                 </button>
 
-                <p class="watch-text">Watch demo</p>
+                <p class="watch-text">{{$t("alePlatform.watchDemo")}}</p>
             </div>
         </div>
 
         <div class="section-2">
             <h3 class="title">
-                Solving problems
+                {{$t("alePlatform.solvingProblems.title")}}
             </h3>
 
             <div class="list-items">
@@ -51,10 +47,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            Legality of means of payment
+                            {{$t("alePlatform.solvingProblems.list[0].title")}}
                         </p>
                         <p>
-                            Explanation text can be placed here
+                            {{$t("alePlatform.solvingProblems.list[0].description")}}
                         </p>
                     </div>
                 </div>
@@ -64,10 +60,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            Legal significance of electronic documents
+                            {{$t("alePlatform.solvingProblems.list[1].title")}}
                         </p>
                         <p>
-                            Explanation text can be placed here
+                            {{$t("alePlatform.solvingProblems.list[1].description")}}
                         </p>
                     </div>
                 </div>
@@ -77,10 +73,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            The inevitability of the fulfillment of the obligations of the parties to the contract
+                            {{$t("alePlatform.solvingProblems.list[2].title")}}
                         </p>
                         <p>
-                            Explanation text can be placed here
+                            {{$t("alePlatform.solvingProblems.list[2].description")}}
                         </p>
                     </div>
                 </div>
@@ -90,10 +86,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            Integrity and unalterability of project communication and documentation
+                            {{$t("alePlatform.solvingProblems.list[3].title")}}
                         </p>
                         <p>
-                            Explanation text can be placed here
+                            {{$t("alePlatform.solvingProblems.list[3].description")}}
                         </p>
                     </div>
                 </div>
@@ -103,10 +99,23 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            Volatility of the payment instrument
+                            {{$t("alePlatform.solvingProblems.list[4].title")}}
                         </p>
                         <p>
-                            Explanation text can be placed here
+                            {{$t("alePlatform.solvingProblems.list[4].description")}}
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left">
+                        <img src="../../static/images/icon-money.svg">
+                    </div>
+                    <div class="right">
+                        <p class="right__title">
+                            {{$t("alePlatform.solvingProblems.list[5].title")}}
+                        </p>
+                        <p>
+                            {{$t("alePlatform.solvingProblems.list[5].description")}}
                         </p>
                     </div>
                 </div>
@@ -121,9 +130,7 @@
 
             <div class="info-block">
                 <h3 class="title">
-                    The main distinguishing
-                    <br>
-                    features of ALE
+                    {{$t("features.title")}}
                 </h3>
                 <div class="list-items">
                     <div class="item">
@@ -132,10 +139,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                Choice of encryption algorithm for communication and documentation
+                                {{$t("features.list[0].title")}}
                             </p>
                             <p>
-                                In accordance with legislation
+                                {{$t("features.list[0].description")}}
                             </p>
                         </div>
                     </div>
@@ -145,10 +152,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                Automating relationships with TTP
+                                {{$t("features.list[1].title")}}
                             </p>
                             <p>
-                                Explanation text can be placed here
+                                {{$t("features.list[1].description")}}
                             </p>
                         </div>
                     </div>
@@ -158,12 +165,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                The choice of any methodology for project management
+                                {{$t("features.list[2].title")}}
                             </p>
                             <p>
-                                Users of services based on ALE have the opportunity to create their own methodological
-                                algorithms, in addition to the well known <span style="opacity: 0.5">(DIN 69901, GOST R 54869 - 2011, PMBOK Guide,
-                                ISO 10006-97, APM Body of Knowledge, Prince 2, OPM 3)</span>
+                                {{$t("features.list[2].description")}}
                             </p>
                         </div>
                     </div>
@@ -173,10 +178,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                Mutual settlements are made using an internal token
+                                {{$t("features.list[3].title")}}
                             </p>
                             <p>
-                                A container of phiatic or cryptographic cost
+                                {{$t("features.list[3].description")}}
                             </p>
                         </div>
                     </div>
@@ -299,6 +304,10 @@
 
                     .left
                         margin-right 30px
+                        text-align center
+
+                        img
+                            width 30px
 
         .section-3
             padding-top 105px

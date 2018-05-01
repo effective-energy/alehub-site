@@ -4,13 +4,13 @@
 			<div class="col-5 copyright-block">
 				<div class="ale-logo"></div>
 				<span class="copyright-text">
-				Effective Energy LLC © 2018 All rights reserved.
+				 {{ $t('footer.right.copyright')}}
 				<div class="creator-and-terms">
 					<div class="creator">
 						<div class="rukin-logo"></div>
-						<span class="rukin-about">Design by Alexander Rukin and ledesign</span>
+						<span class="rukin-about">{{ $t('footer.right.designBy')}}</span>
 					</div>
-					<a href="#" class="terms">Terms and conditions</a>
+					<a href="#" class="terms">{{ $t('footer.right.terms')}}</a>
 				</div>
 			</span>
 			</div>
@@ -39,8 +39,8 @@
 					</a>
 				</div>
 				<div class="subscribe-form">
-					<input style="font-weight: 700;" type="text" placeholder="Your e-mail address" />
-					<button style="font-weight: 700;">Subscribe to news</button>
+					<input style="font-weight: 700;" type="text" :placeholder="$t('footer.left.subscribe.input')" />
+					<button style="font-weight: 700;">{{ $t('footer.left.subscribe.btn')}}</button>
 				</div>
 			</div>
 		</div>

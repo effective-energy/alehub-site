@@ -24,12 +24,11 @@
                          v-for="(member, i) in items"
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
-
                         <div class="b-carousel__inner"
                              :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
 
                             <img class="layer__bottom b-carousel__img"
-                                 :src="member.src"
+                                 :src="member.image"
                                  :alt="member.name">
 
                             <div class="layer__top">

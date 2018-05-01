@@ -14,15 +14,15 @@
             ALEHUB
         </router-link>
         <!--<a href="#" class="navbar-brand">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/ale-logo.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-if="!isBlack">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/ale-logo-white.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-else>-->
-            <!--ALEHUB-->
+        <!--<img class="d-inline-block align-top"-->
+        <!--src="../../../static/images/ale-logo.svg"-->
+        <!--alt="ALEHUB"-->
+        <!--v-if="!isBlack">-->
+        <!--<img class="d-inline-block align-top"-->
+        <!--src="../../../static/images/ale-logo-white.svg"-->
+        <!--alt="ALEHUB"-->
+        <!--v-else>-->
+        <!--ALEHUB-->
         <!--</a>-->
         <div class="hamburger"
              id="hamburger-6"
@@ -37,12 +37,13 @@
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{ active: index === activeItem }">
+                    :class="{ active: index === activeItem }"
+                    v-if="(show == 'blog' && item.name == 'Blog') || (show == undefined)">
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
                         <!--:href="item.path">-->
-                        {{item.name}}
+                        {{$t("navbar.menuList["+index+"].title")}}
                     </a>
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
@@ -53,24 +54,18 @@
             <div class="right-menu">
                 <button type="button"
                         class="btn btn-login">
-                    Log in
+                    {{$t("navbar.loginBtn")}}
                 </button>
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle"
-                            id="dropdownMenuButton"
-                            type="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false">
-                        <!--@click="toggleDropdown">-->
-                        en
-                    </button>
-                    <div class="dropdown-menu"
-                         aria-labelledby="dropdownMenuButton"
-                         v-if="dropdownOpen">
-                        <a class="dropdown-item" href="#">cn</a>
-                        <a class="dropdown-item" href="#">ru</a>
-                    </div>
+                <b-dropdown :text="currentLang">
+                    <b-dropdown-item
+                            :active="lang === currentLang"
+                            v-for="(lang, langIndex) in languagesList"
+                            @click="changeLanguage(langIndex)"
+                            :key="langIndex"
+                    >
+                        {{ lang }}
+                    </b-dropdown-item>
+                </b-dropdown>
                 </div>
                 <button type="button" class="btn btn-actions">ok</button>
             </div>
@@ -88,6 +83,7 @@
         components: {
             MenuModal
         },
+        props: ['show'],
         data() {
             return {
                 isFeatures: false,
@@ -135,7 +131,9 @@
                         name: 'Blog'
                     },
                 ],
-                activeItem: 0
+                activeItem: 0,
+                languagesList: ['eng', 'rus'],
+                selectedLanguage: localStorage.getItem('systemLang')
             }
         },
         watch: {
@@ -143,7 +141,23 @@
                 this.changeLineWidth(index);
             }
         },
+        computed: {
+            currentLang () {
+                if(this.selectedLanguage === 'eng') {
+                    return 'eng';
+                } else if(this.selectedLanguage === 'rus') {
+                    return 'rus';
+                } else {
+                    return 'eng';
+                }
+            }
+        },
         methods: {
+            changeLanguage (index) {
+                this.selectedLanguage = this.languagesList[index];
+                localStorage.setItem('systemLang', this.selectedLanguage);
+                this.$i18n.locale = this.selectedLanguage
+            },
             openModal: function (name) {
                 this.$modal.show(name);
             },
@@ -162,6 +176,7 @@
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
             },
             getCoords: function (elem) {
+                if (!elem) return false
                 let box = elem.getBoundingClientRect();
 
                 return {
