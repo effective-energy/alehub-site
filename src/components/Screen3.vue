@@ -87,7 +87,7 @@
                             <h1>{{$t('table.second.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.second.desc')" :key="index">
+                            <li v-for="(desc,index) in $t('table.second.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -97,7 +97,7 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.first.desc')">
+                            <li v-for="(desc,index) in $t('table.first.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -110,7 +110,7 @@
                             <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.third.desc')" :key="index">
+                            <li v-for="(desc,index) in $t('table.four.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -120,7 +120,7 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="desc in $t('table.third.desc')" :key="index">
+                            <li v-for="(desc,index) in $t('table.third.desc')" :key="index">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -636,6 +636,8 @@
                         height 180px
                         padding 0 10px
                         text-align center
+                        display flex
+                        justify-content center
                 .title
                     height 100px
     @media (max-width: 425px)
