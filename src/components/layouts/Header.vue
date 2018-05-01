@@ -88,7 +88,11 @@
         props: {
             isMainDark: {
                 type: [Boolean],
-                required: true
+                required: false
+            },
+            show: {
+                type: [String],
+                required: false
             }
         },
         data() {
