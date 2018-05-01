@@ -513,6 +513,8 @@
                 buttonAbsPos = zxc + a;
 
 
+            console.log(this.$route, 'this.$route');
+
             if (window.innerWidth > 420 && document.getElementById('button-choose')) {
 
                 window.addEventListener('scroll', () => {

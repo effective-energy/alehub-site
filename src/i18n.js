@@ -207,12 +207,12 @@ const messages = {
                     {
                         name: 'Denis Tikhonov',
                         position: 'Frontend Developer',
-                        src: '../static/images/avatars/mostovoy@3x.png'
+                        src: '../static/images/avatars/tikhonov@3x.png'
                     },
                     {
                         name: 'Galina Sergeeva',
                         position: 'Frontend Developer',
-                        src: '../static/images/avatars/elagin@3x.png'
+                        src: '../static/images/avatars/sergeeva@3x.png'
                     },
                     {
                         name: 'Dmitry Zhuravlev',
@@ -505,17 +505,17 @@ const messages = {
                     {
                         name: 'Александр Воронцов',
                         position: 'Fullstack Разработчик',
-                        image: '../static/images/avatars/voroncov@3x.png'
+                        src: '../static/images/avatars/voroncov@3x.png'
                     },
                     {
                         name: 'Денис Тихонов',
                         position: 'Frontend Разработчик',
-                        src: '../static/images/avatars/mostovoy@3x.png'
+                        src: '../static/images/avatars/tikhonov@3x.png'
                     },
                     {
                         name: 'Галина Сергеевна',
                         position: 'Frontend Developer',
-                        src: '../static/images/avatars/elagin@3x.png'
+                        src: '../static/images/avatars/sergeeva@3x.png'
                     },
                     {
                         name: 'Дмитрий Журавлев',
