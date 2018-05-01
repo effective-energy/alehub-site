@@ -51,7 +51,7 @@
                 </div>
 
                 <slider v-else
-                        :items="team.serokell"
+                        :items="$t('team.serokell[0].members')"
                         :settings="settings.serokell"
                         :options="options.serokell"
                         :privates1="Object.assign(settings.serokell, options.serokell)"
@@ -60,9 +60,9 @@
             </div>
 
             <div class="effective-energy">
-                <p>Effective Energy team</p>
+                <p>{{$t('team.effectiveEnergy[0].name')}}</p>
 
-                <slider :items="team.energy"
+                <slider :items="$t('team.effectiveEnergy[0].members')"
                         :settings="settings.effectiveEnergy"
                         :options="options.effectiveEnergy"
                         :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
@@ -72,7 +72,7 @@
         </div>
         <div class="advisors" id="advisors">
             <h3 class="title">
-                Advisors
+                {{$t('advisors.title')}}
             </h3>
 
             <div class="separator">
@@ -83,11 +83,10 @@
                      v-if="!isMobileScreen">
                     <div class="image"
                          style=""
-                         v-for="(member, i) in team.advisors" :key="i"
+                         v-for="(member, i) in $t('advisors.members')" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
-
                         <img class="layer__bottom"
-                             :src="member.src"
+                             :src="$t('advisors.members['+i+'].image')"
                              :alt="member.name">
                         <div class="layer__top">
                             <div class="layer__text">

@@ -84,11 +84,11 @@
                 <div class="project-managment" v-if="selectedType === 1" key="OBP">
                     <div class="left-block">
                         <div class="title">
-                            <h1>Other Blockchain Platforms</h1>
+                            <h1>{{$t('table.second.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.first" :key="index">
-                                {{ item.second }}
+                            <li v-for="(desc) in $t('table.second.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -97,8 +97,8 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.first" :key="index">
-                                {{ item.first }}
+                            <li v-for="(desc) in $t('table.first.desc')">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -107,11 +107,11 @@
                 <div class="other-blockchain" v-if="selectedType === 0" key="PMS">
                     <div class="left-block">
                         <div class="title">
-                            <h1 class="title">Project Management Systems</h1>
+                            <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.second" :key="index">
-                                {{ item.second }}
+                            <li v-for="(desc) in $t('table.third.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -120,8 +120,8 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.second" :key="index">
-                                {{ item.first }}
+                            <li v-for="desc in $t('table.third.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>

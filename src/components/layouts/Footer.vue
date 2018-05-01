@@ -39,8 +39,8 @@
 					</a>
 				</div>
 				<div class="subscribe-form">
-					<input style="font-weight: 700;" type="text" :placeholder="$t('footer.subscribe.btn')" />
-					<button style="font-weight: 700;">{{ $t('footer.subscribe.btn')}}</button>
+					<input style="font-weight: 700;" type="text" :placeholder="$t('footer.left.subscribe.input')" />
+					<button style="font-weight: 700;">{{ $t('footer.left.subscribe.btn')}}</button>
 				</div>
 			</div>
 		</div>
