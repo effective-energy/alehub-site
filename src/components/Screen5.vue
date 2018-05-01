@@ -86,7 +86,7 @@
                          v-for="(member, i) in $t('advisors.members')" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
                         <img class="layer__bottom"
-                             :src="$t('advisors.members['+i+'].image')"
+                             :src="$t('advisors.members['+i+'].src')"
                              :alt="member.name">
                         <div class="layer__top">
                             <div class="layer__text">
