@@ -314,7 +314,7 @@ const messages = {
             }, {
                 title: 'Команда'
             }, {
-                title: 'Адвайзеры'
+                title: 'Советники'
             }, {
                 title: 'ICO'
             }, {
@@ -494,7 +494,7 @@ const messages = {
                     },
                     {
                         name: 'Артем Левашев',
-                        position: 'Главный консультант по юредическим делам',
+                        position: 'Главный консультант по юридическим делам',
                         src: '../static/images/avatars/levashow@3x.png'
                     },
                     {
@@ -525,7 +525,7 @@ const messages = {
             }]
         },
         advisors: {
-            title: 'Создатели',
+            title: 'Советники',
             members: [
                 {
                     name: 'Михаил Громыко',
