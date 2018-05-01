@@ -1,6 +1,6 @@
 <template>
     <div class="blog-entries">
-        <Header/>
+        <Header :show="'blog'"/>
         <div class="section blogEntries-section">
             <h1 class="section-title is-center is-divider">Blog</h1>
 
@@ -22,55 +22,23 @@
                     <div class="arrow-prev"></div>
                 </div>
 
-                <div class="posts">
+                <div class="posts" v-if="content !== ''">
 
-                    <div class="blog-post">
-                        <img src="../../static/images/news-pictures/news2.jpg" alt="" class="image-preview"/>
+                    <div class="blog-post" v-for="item in content" :key="item._id">
+                        <img :src="'http://alehub.io:8099/'+item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
-                            <router-link tag="a" to="/blog/1" class="title">
-                                Push into billion-dollar Southeast Asian token markets. An now we just try to imagine
-                                that our news header is three lines ling. This title is so big, that it need to be
-                                separated like this example
+                            <router-link tag="a" :to="`/blog/${item._id}`" class="title">
+                                {{ item.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">February 23. Storyteller - </span>
-                                <span class="author">Vadim Dudin</span>
+                                <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
+                                <span v-if="false" class="author">Vadim Dudin</span>
                             </div>
                         </div>
+                        <div class="divider"></div>
                     </div>
 
-                    <div class="divider"></div>
-
-                    <div class="blog-post">
-                        <img src="../../static/images/news-pictures/news.jpg" alt="" class="image-preview"/>
-                        <div class="post-content">
-                            <router-link tag="a" to="/blog/1" class="title">
-                                How to invest in an ICO. An now we just try to imagine that this news header is two line
-                                long and this link was also already opened
-                            </router-link>
-                            <div class="post-info">
-                                <span class="date">February 17. Storyteller – </span>
-                                <span class="author">Alexej Osipenko</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="divider"></div>
-
-                    <div class="blog-post">
-                        <img src="../../static/images/news-pictures/news.png" alt="" class="image-preview"/>
-                        <div class="post-content">
-                            <router-link tag="a" to="/blog/1" class="title">
-                                Alehub iOS application beta 1. Hovered link
-                            </router-link>
-
-                            <div class="post-info">
-                                <span class="date">February 11. Storyteller – </span>
-                                <span class="author">Alexander Voroncov</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                 </div>
 
                 <div class="tags-filter">
@@ -103,7 +71,24 @@
         components: {
             Header,
             Footer
-        }
+        },
+        data() {
+            return {
+                content: ''
+            }
+        },
+        methods: {
+			getNews: function () {
+				this.$http.get(`http://alehub.io:8099/ale-news`).then(response => {
+					this.content = response.body;
+				}, response => {
+					console.log('Error getting news', response);
+				});
+			}
+		},
+		created () {
+			this.getNews();
+		}
     }
 </script>
 
@@ -124,7 +109,7 @@
         background-color #ffffff !important
 
     .section
-        padding 71px 80px
+        padding 141px 80px
 
     .is-center
         text-align center

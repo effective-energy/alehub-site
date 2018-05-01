@@ -37,7 +37,8 @@
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{ active: index === activeItem }">
+                    :class="{ active: index === activeItem }"
+                    v-if="(show == 'blog' && item.name == 'Blog') || (show == undefined)">
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
@@ -80,6 +81,7 @@
         components: {
             MenuModal
         },
+        props: ['show'],
         data() {
             return {
                 isFeatures: false,

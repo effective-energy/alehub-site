@@ -7,56 +7,14 @@
 			<div class="divider"></div>
 
 			<div class="row news-section">
-				<div class="col-md-6 col-sm-12">
+				<div class="col-md-6 col-sm-12" v-for="(n, i) in news" :key="i">
 					<div class="news-block">
-						<img src="../../static/images/news-pictures/news.png" alt="" class="picture">
+						<img :src="'http://alehub.io:8099/'+n.preview_image" alt="" class="picture">
 						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub IOS application beta 1
+                            <router-link tag="a" :to="`/blog/${n._id}`" class="news-title">
+                                {{ n.title }}
                             </router-link>
-							<i class="news-date">Feb 11, 2018</i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<div class="news-block">
-						<img src="../../static/images/news-pictures/news.jpg" alt="" class="picture">
-						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                How to invest in an ICO
-                            </router-link>
-							<i class="news-date">Feb 17, 2018</i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<div class="news-block">
-						<img src="../../static/images/news-pictures/news2.jpg" alt="" class="picture">
-						<div class="news-info">
-							<a href="#" class="news-title">Push into billion-dollar Southeast Asian token markets</a>
-							<i class="news-date">Feb 23, 2018</i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<div class="news-block">
-						<img src="../../static/images/news-pictures/news3.jpg" alt="" class="picture">
-						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub iOS application beta 2
-                            </router-link>
-							<i class="news-date">Apr 12, 2018</i>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-12">
-					<div class="news-block">
-						<img src="../../static/images/news-pictures/news4.jpg" alt="" class="picture">
-						<div class="news-info">
-                            <router-link tag="a" to="/blog/1" class="news-title">
-                                Alehub Desktop application release
-                            </router-link>
-							<i class="news-date">Apr 12, 2018</i>
+							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 					</div>
 				</div>
@@ -74,7 +32,24 @@
 
 <script>
     export default {
-        name: "Blog"
+		name: "Blog",
+		data () {
+			return {
+				news: []
+			}
+		},
+		methods: {
+			getNews: function () {
+				this.$http.get('http://alehub.io:8099/ale-news').then(response => {
+					this.news = response.body;
+				}, response => {
+					console.log('Error getting news', response);
+				});
+			}
+		},
+		created () {
+			this.getNews();
+		}
     }
 </script>
 
