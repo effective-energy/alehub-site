@@ -75,11 +75,14 @@
         watch: {
 			'$route' () {
 				this.getNews();
+            },
+            '$i18n.locale' () {
+				this.getNews();
 			}
 		},
         methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
                     this.allNews = response.body.reverse();
                     this.content = response.body.filter(item => {
                         return item.categories.indexOf(this.$route.params.id) !== -1;
@@ -90,6 +93,7 @@
 				});
             },
             filtersConfigure: function () {
+                this.filters = [];
                 for (let i = 0; i < this.allNews.length; i++) {
                     if (this.allNews[i].categories) {
                         for (let l = 0; l < this.allNews[i].categories.length; l++) {
