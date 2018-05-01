@@ -431,7 +431,9 @@
                 timeInterval: 0,
                 collected: 1440,
                 softCap: 2000,
-                hardCap: 33000
+                hardCap: 33000,
+                anime: '',
+                isPaused: false
             }
         },
         computed: {
@@ -442,11 +444,12 @@
         methods: {
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
+                window.animejsconfig = [];
                 for (let i = 0; i < pathEls.length; i++) {
                     let pathEl = pathEls[i];
                     let offset = anime.setDashoffset(pathEl);
                     pathEl.setAttribute('stroke-dashoffset', offset);
-                    anime({
+                    window.animejsconfig.push(anime({
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         duration: anime.random(6500, 9000),
@@ -455,7 +458,7 @@
                         direction: 'alternate',
                         easing: 'easeInOutSine',
                         autoplay: true
-                    });
+                    }));
                 }
             },
             format: function (count, isSecond) {
@@ -500,6 +503,20 @@
                     left: box.left + pageXOffset
                 };
             },
+            play: function () {
+                if (!this.isPaused) return false;
+                this.isPaused = false;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].play();
+                }
+            },
+            pause: function () {
+                if (this.isPaused) return false;
+                this.isPaused = true;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].pause();
+                }
+            }
         },
         mounted() {
             this.startAnime();
@@ -512,18 +529,17 @@
             let navbarYOffset = document.getElementById('navbar').offsetHeight,
                 buttonAbsPos = zxc + a;
 
-
-            console.log(this.$route, 'this.$route');
-
             if (window.innerWidth > 420 && document.getElementById('button-choose')) {
 
                 window.addEventListener('scroll', () => {
                     // console.log(buttonAbsPos, 'offset top');
                     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
                         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
+                        this.pause();
                         document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
                         document.getElementById('button-choose').classList.add('button-choose__stop');
                     } else {
+                        this.play();
                         document.getElementById('button-choose').style['top'] = '40%';
                         document.getElementById('button-choose').classList.remove('button-choose__stop');
                     }
