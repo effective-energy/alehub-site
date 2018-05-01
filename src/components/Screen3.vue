@@ -86,22 +86,38 @@
                         <div class="title">
                             <h1>{{$t('table.second.title')}}</h1>
                         </div>
-                        <ul>
-                            <li v-for="(desc,index) in $t('table.second.desc')" :key="index">
+                        <!--<ul>-->
+                            <!--<li v-for="(desc,index) in $t('table.second.desc')" :key="index">-->
+                                <!--{{ desc }}-->
+                            <!--</li>-->
+                        <!--</ul>-->
+
+                        <div class="item-table" v-for="(desc, index) in $t('table.second.desc')" :key="index">
+                            <span class="item-text">
                                 {{ desc }}
-                            </li>
-                        </ul>
+                            </span>
+                        </div>
+
                     </div>
                     <div class="right-block">
                         <div class="title">
                             <h1 class="title">ALE</h1>
                         </div>
-                        <ul>
-                            <li v-for="(desc,index) in $t('table.first.desc')" :key="index">
+                        <!--<ul>-->
+                            <!--<li v-for="(desc,index) in $t('table.first.desc')" :key="index">-->
+                                <!--{{ desc }}-->
+                                <!--<div class="hovered-underline"></div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+
+                        <div class="item-table" v-for="(desc, index) in $t('table.first.desc')" :key="index">
+                            <div class="band">
+                            </div>
+                            <span class="item-text">
                                 {{ desc }}
-                                <div class="hovered-underline"></div>
-                            </li>
-                        </ul>
+                            </span>
+                            <div class="hovered-underline"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -110,22 +126,31 @@
                         <div class="title">
                             <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
-                        <ul>
-                            <li v-for="(desc,index) in $t('table.four.desc')" :key="index">
+                        <!--<ul>-->
+                            <!--<li v-for="(desc,index) in $t('table.four.desc')" :key="index">-->
+                                <!--{{ desc }}-->
+                            <!--</li>-->
+                        <!--</ul>-->
+
+                        <div class="item-table" v-for="(desc, index) in $t('table.four.desc')" :key="index">
+                            <span class="item-text">
                                 {{ desc }}
-                            </li>
-                        </ul>
+                            </span>
+                        </div>
                     </div>
                     <div class="right-block">
                         <div class="title">
                             <h1 class="title">ALE</h1>
                         </div>
-                        <ul>
-                            <li v-for="(desc,index) in $t('table.third.desc')" :key="index">
+
+                        <div class="item-table" v-for="(desc, index) in $t('table.third.desc')" :key="index">
+                            <div class="band">
+                            </div>
+                            <span class="item-text">
                                 {{ desc }}
-                                <div class="hovered-underline"></div>
-                            </li>
-                        </ul>
+                            </span>
+                            <div class="hovered-underline"></div>
+                        </div>
                     </div>
                 </div>
             </transition>
@@ -503,14 +528,17 @@
         position absolute
         top 50px
         width 100%
+
         .left-block, .right-block
             width 50%
             max-width 650px
             display flex
             flex-direction column
             padding 20px 20px
+
             .title
                 height 60px
+
                 h1
                     font-size 18px
                     text-transform uppercase
@@ -522,10 +550,26 @@
                     height 100%
         .left-block
             opacity .6
+
             .title
                 background #fff
+                margin-bottom 10px
+
+            .item-table
+                position relative
+                height 70px
+                display flex
+                align-items flex-start
+                line-height 1.2
+                justify-content center
+                text-align left
+                margin 5px 0
+                background #fff
+                padding 0 40px
+                flex-direction column
+
             ul
-                padding 5px 0px
+                padding 5px 0
                 li
                     list-style none
                     height 60px
@@ -544,6 +588,59 @@
                 -moz-box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
                 box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
                 background #fff
+                margin-bottom 10px
+
+            .item-table
+                position relative
+                height 70px
+                display flex
+                align-items flex-start
+                line-height 1.2
+                justify-content center
+                text-align left
+                margin 5px 0
+                background #fff
+                padding 0 40px
+                flex-direction column
+                -webkit-transition all 0.5s ease-in-out
+                -o-transition all 0.5s ease-in-out
+                transition all 0.5s ease-in-out
+                cursor pointer
+
+                &:nth-child(even)
+                    &:hover
+                        .item-text
+                            color #f7f7f7
+                    .band
+                        background-color #34343e
+                &:nth-child(odd)
+                    .band
+                        background-color #fdd04a
+
+                .item-text
+                    -webkit-transition color 0.5s ease-in-out
+                    -o-transition color 0.5s ease-in-out
+                    transition color 0.5s ease-in-out
+                    z-index 1000
+
+                &:hover
+                    -webkit-box-shadow 0 0 7px 0 rgba(0,0,0,0.2)
+                    -moz-box-shadow 0 0 7px 0 rgba(0,0,0,0.2)
+                    box-shadow 0 0 7px 0 rgba(0,0,0,0.2)
+
+                    .band
+                        width 100%
+
+                .band
+                    z-index 100
+                    width 5px
+                    height 100%
+                    left 0
+                    position absolute
+                    -webkit-transition width 0.5s ease-in-out
+                    -o-transition width 0.5s ease-in-out
+                    transition width 0.5s ease-in-out
+
             ul
                 padding 5px 0px
                 li
@@ -572,9 +669,10 @@
                         margin-bottom -5px
                         background #fdd04a
                     &:hover
-                        -webkit-box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
-                        -moz-box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
-                        box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
+                        -webkit-box-shadow 0 0 7px 0 rgba(0,0,0,0.1)
+                        -moz-box-shadow 0 0 7px 0 rgba(0,0,0,0.1)
+                        box-shadow 0 0 7px 0 rgba(0,0,0,0.1)
+
                         .hovered-underline
                             width 100%
                             -webkit-transition -webkit-transform 0.35s
@@ -611,7 +709,8 @@
         -ms-transform translateX(-100%)
         -o-transform translateX(-100%)
         transform translateX(100%)
-    @media (max-width: 1440px)
+
+    @media (max-width 1440px)
         .project-managment, .other-blockchain
             .left-block, .right-block
                 ul
@@ -619,18 +718,28 @@
                         height 70px
                 .title
                     height 60px
-    @media (max-width: 1024px)
+
+    @media (max-width 1024px)
         .project-managment, .other-blockchain
             .left-block, .right-block
+                .item-table
+                    height 90px
+                    padding 0 20px
+
                 ul
                     li
                         height 90px
                         padding 0 20px
                 .title
                     height 60px
-    @media (max-width: 768px)
+
+    @media (max-width 768px)
         .project-managment, .other-blockchain
             .left-block, .right-block
+                .item-table
+                    height 120px
+                    padding 0 20px
+
                 ul
                     li
                         height 120px
@@ -650,10 +759,18 @@
                         -ms-transform translateX(-100%)
                         -o-transform translateX(-100%)
                         transform: translateX(0%)
-    @media (max-width: 630px)
+
+    @media (max-width 630px)
         .project-managment, .other-blockchain
             top 100px
             .left-block, .right-block
+                .item-table
+                    height 180px
+                    padding 0 10px
+                    text-align center
+                    display flex
+                    justify-content center
+
                 ul
                     li
                         height 180px
@@ -663,9 +780,16 @@
                         justify-content center
                 .title
                     height 100px
-    @media (max-width: 425px)
+
+    @media (max-width 425px)
         .project-managment, .other-blockchain
             .left-block, .right-block
+                .item-table
+                    height 180px
+                    text-align center
+                    padding 0 10px
+                    margin 5px 0
+
                 padding 0
                 ul
                     li

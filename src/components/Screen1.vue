@@ -513,7 +513,7 @@
                 buttonAbsPos = zxc + a;
 
 
-            if (window.innerWidth > 420) {
+            if (window.innerWidth > 420 && document.getElementById('button-choose')) {
 
                 window.addEventListener('scroll', () => {
                     // console.log(buttonAbsPos, 'offset top');
@@ -615,6 +615,9 @@
 
     .collection
         .item
+            -webkit-transition all .3s ease-in-out
+            -o-transition all color .3s ease-in-out
+            transition all color .3s ease-in-out
             cursor pointer
 
     section
