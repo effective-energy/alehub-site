@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
-						<h5 v-if="news.length === 0">News not found</h5>
+						<h5 v-if="news.length === 0">{{ $t("blog.notFound") }}</h5>
 						<router-link v-else tag="a" to="/blog" class="btn btn-warning">
 							{{ $t("blog.allPostsBtn") }}
 						</router-link>
