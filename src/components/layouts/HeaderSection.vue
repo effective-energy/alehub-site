@@ -90,7 +90,7 @@
     import LanguagesModal from '../modals/LanguagesModal';
 
     export default {
-        name: 'Header', //rename
+        name: 'HeaderSection', //rename
         components: {
             MenuModal,
             LanguagesModal
@@ -137,10 +137,10 @@
                         path: '#team',
                         name: 'Team'
                     },
-                    {
-                        path: '#advisors',
-                        name: 'Advisors'
-                    },
+                    // {
+                    //     path: '#advisors',
+                    //     name: 'Advisors'
+                    // },
                     {
                         path: '#ico',
                         name: 'ICO'

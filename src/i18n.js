@@ -1,25 +1,35 @@
 const messages = {
     eng: {
         navbar: {
-            menuList: [{
-                title: 'Home'
-            }, {
-                title: 'About'
-            }, {
-                title: 'Advantages'
-            }, {
-                title: 'ALE'
-            }, {
-                title: 'Team'
-            }, {
-                title: 'Advisors'
-            }, {
-                title: 'ICO'
-            }, {
-                title: 'Roadmap'
-            }, {
-                title: 'Blog'
-            }],
+            menuList: [
+                {
+                    title: 'Home'
+                },
+                {
+                    title: 'About'
+                },
+                {
+                    title: 'Advantages'
+                },
+                {
+                    title: 'ALE'
+                },
+                {
+                    title: 'Team'
+                },
+                // {
+                //     title: 'Advisors'
+                // },
+                {
+                    title: 'ICO'
+                },
+                {
+                    title: 'Roadmap'
+                },
+                {
+                    title: 'Blog'
+                }
+            ],
             loginBtn: 'Log in',
             blog: 'Blog'
         },
@@ -104,35 +114,35 @@ const messages = {
                 description: 'A container of phiatic or cryptographic cost'
             }]
         },
-        table:{
-			first:{
-				desc:["Multilateral smart contracts",
-					"Participants establish rules of interaction",
-					"Full compliance with the jurisdictions of most countries for participants",
-					"Empowering the legal economy",
-					"Container payment of real currency",
+        table: {
+            first: {
+                desc: ["Multilateral smart contracts",
+                    "Participants establish rules of interaction",
+                    "Full compliance with the jurisdictions of most countries for participants",
+                    "Empowering the legal economy",
+                    "Container payment of real currency",
                     "Possibility of formal arbitration"],
-			},
-            second:{
-                title:"Other platform armor",
-                desc:["Only through DAO",
+            },
+            second: {
+                title: "Other platform armor",
+                desc: ["Only through DAO",
                     "The rules of interaction between participants are determined in advance",
                     "Unclear legitimacy",
                     "Replacement of legal economy",
                     "Volatile Crypto-Currency Payment",
                     "-"],
             },
-            third:{
-                desc:["The inevitability of fulfilling obligations",
+            third: {
+                desc: ["The inevitability of fulfilling obligations",
                     "Project Management, Finance and Contractors",
                     "Universality of project management methodologies",
                     "The universality of encryption methods for private data",
                     "Regulated by consensus of users",
                     "Payments without intermediaries"],
             },
-            four:{
-                title:"Project management systems",
-                desc:["-",
+            four: {
+                title: "Project management systems",
+                desc: ["-",
                     "Project management, financial management and contractors search through various applications",
                     "Binding to one method of debt",
                     "Binding to one or more methods",

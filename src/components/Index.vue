@@ -1,44 +1,41 @@
 <template>
     <div class="index">
         <!--rename-->
-        <Header :is-main-dark="isDark"/>
-        <screen1 />
-        <screen2 />
-        <screen3 />
-        <screen4 :is-features="isFeatures"/>
-        <screen5 :is-team="isTeam"/>
-        <screen6 />
-        <screen7 />
-        <blog />
-        <Footer />
+        <header-section :is-main-dark="isDark"/>
+        <home-section/>
+        <advantages-section/>
+        <features-section :is-features="isFeatures"/>
+        <team-section :is-team="isTeam"/>
+        <ico-section/>
+        <roadmap-section/>
+        <blog-section/>
+        <footer-section/>
     </div>
 </template>
 
 <script>
-    import Header from './layouts/Header'
-    import Screen1 from './Screen1'
-    import Screen2 from './Screen2'
-    import Screen3 from './Screen3'
-    import Screen4 from './Screen4'
-    import Screen5 from './Screen5'
-    import Screen6 from './Screen6'
-    import Screen7 from './Screen7'
-    import Blog from './Blog'
-    import Footer from './layouts/Footer'
+    import HeaderSection from './layouts/HeaderSection'
+    import HomeSection from './HomeSection'
+    import AdvantagesSection from './AdvantagesSection'
+    import FeaturesSection from './FeaturesSection'
+    import TeamSection from './TeamSection'
+    import IcoSection from './IcoSection'
+    import RoadmapSection from './RoadmapSection'
+    import BlogSection from './BlogSection'
+    import FooterSection from './layouts/FooterSection'
 
     export default {
         name: 'Index',
         components: {
-            Header,
-            Screen1,
-            Screen2,
-            Screen3,
-            Screen4,
-            Screen5,
-            Screen6,
-            Screen7,
-            Blog,
-            Footer,
+            HeaderSection,
+            HomeSection,
+            AdvantagesSection,
+            FeaturesSection,
+            TeamSection,
+            IcoSection,
+            RoadmapSection,
+            BlogSection,
+            FooterSection,
         },
         data() {
             return {
