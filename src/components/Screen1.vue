@@ -628,7 +628,7 @@
         left 20px
         top 40%
         width 40px
-        z-index 10000
+        z-index 1000
 
         .button-choose__active
             opacity 1 !important

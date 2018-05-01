@@ -326,7 +326,7 @@ const messages = {
             blog: 'Блог'
         },
         greeting: {
-            title: 'Наступает новая эра прожект менеджмента',
+            title: 'Наступает новая эра ведения проектов',
             countDown: {
                 title: 'pre-ICO начинается через',
                 time: {

@@ -24,6 +24,13 @@
         <!--v-else>-->
         <!--ALEHUB-->
         <!--</a>-->
+
+        <div class="choose-languages" @click="asd">
+            <span>
+                {{ selectedLanguage }}
+            </span>
+        </div>
+
         <div class="hamburger"
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
@@ -37,8 +44,8 @@
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{ active: index === activeItem }"
-                    >
+                    :class="{ active: index === activeItem }">
+
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
@@ -73,17 +80,20 @@
             <button type="button" class="btn btn-actions">ok</button>
         </div>
 
+        <languages-modal/>
         <menu-modal/>
     </nav>
 </template>
 
 <script>
     import MenuModal from '../modals/MenuModal';
+    import LanguagesModal from '../modals/LanguagesModal';
 
     export default {
         name: 'Header', //rename
         components: {
-            MenuModal
+            MenuModal,
+            LanguagesModal
         },
         props: {
             isMainDark: {
@@ -93,6 +103,7 @@
         },
         data() {
             return {
+                isLanguagesModal: false,
                 isFeatures: false,
                 mainIsDark: false,
                 isTeam: false,
@@ -149,7 +160,7 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
-                console.log(dark, 'dark');
+                // console.log(dark, 'dark');
                 if (dark) {
                     this.mainIsDark = true;
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
@@ -179,6 +190,15 @@
             }
         },
         methods: {
+            asd: function () {
+                if (!this.isLanguagesModal) {
+                    this.openModal('languages-modal');
+                    this.isLanguagesModal = true;
+                } else {
+                    this.closeModal('languages-modal');
+                    this.isLanguagesModal = false;
+                }
+            },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
                 localStorage.setItem('systemLang', this.selectedLanguage);
@@ -238,6 +258,10 @@
             }
         },
         mounted() {
+            this.$on('changeModalLanguage', (val) => {
+                this.selectedLanguage = val;
+            });
+
             this.$on('closeModal', () => {
                 this.activeHamburger = false;
                 document.getElementById('navbar').classList.remove('no-boxshadow');
@@ -388,6 +412,19 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .choose-languages
+        display none
+
+    @media (max-width 420px)
+        .choose-languages
+            text-transform uppercase
+            color #34343e
+            display block
+            font-size 22px
+            font-weight 600
+            text-decoration underline
+
     .no-boxshadow
         -webkit-box-shadow none !important
         -moz-box-shadow none !important

@@ -347,7 +347,7 @@
         },
         mounted() {
 
-            console.log(this.items, 'items');
+            // console.log(this.items, 'items');
 
             this.startAutoplay(true);
 

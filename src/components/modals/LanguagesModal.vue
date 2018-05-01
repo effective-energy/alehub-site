@@ -1,63 +1,31 @@
 <template>
-    <modal name="menu-modal"
-           class="menu"
+    <modal name="languages-modal"
+           class="languages"
            @opened="initModalScreen"
-           @closed="closedModal('menu-modal')">
+           @closed="closedModal('languages-modal')">
 
         <div class="body">
-            <div v-for="item in menu">
-                <a v-scroll-to="item.path"
-                   @click="closeModal('menu-modal')">
+            <div v-for="(item, langIndex) in languages">
+                <p @click="changeLanguage(langIndex)">
                     {{ item.name }}
-                </a>
+                </p>
             </div>
         </div>
-
     </modal>
 </template>
 
 <script>
     export default {
-        name: 'MenuModal',
+        name: 'LanguagesModal',
         data() {
             return {
-                menu: [
+                languages: [
                     {
-                        path: '#home',
-                        name: 'Home'
+                        name: 'eng'
                     },
                     {
-                        path: '#description',
-                        name: 'Description'
-                    },
-                    {
-                        path: '#advantages',
-                        name: 'Advantages'
-                    },
-                    {
-                        path: '#features',
-                        name: 'Features'
-                    },
-                    {
-                        path: '#team',
-                        name: 'Team'
-                    },
-                    {
-                        path: '#advisors',
-                        name: 'Advisors'
-                    },
-                    {
-                        path: '#ico',
-                        name: 'ICO'
-                    },
-                    {
-                        path: '#roadmap',
-                        name: 'Roadmap'
-                    },
-                    {
-                        path: '#blog',
-                        name: 'Blog'
-                    },
+                        name: 'rus'
+                    }
                 ],
             }
         },
@@ -70,15 +38,21 @@
                 this.$parent.$emit('closeModal');
             },
             initModalScreen: function () {
-                // this.closeModal('languages-modal');
+                // this.closeModal('menu-modal');
                 this.$parent.$emit('changeNavbar');
-            }
+            },
+            changeLanguage(index) {
+                localStorage.setItem('systemLang', this.languages[index].name);
+                this.$i18n.locale = this.languages[index].name;
+                this.$parent.$emit('changeModalLanguage', this.languages[index].name);
+                this.closeModal('languages-modal');
+            },
         },
     }
 </script>
 
 <style lang="stylus">
-    .menu
+    .languages
         top 74px !important
         .v--modal-background-click
             .v--modal-box
@@ -105,10 +79,12 @@
 
         div
             padding 1.1rem 0
-            a
+            p
                 font-weight 700
                 text-transform uppercase
                 font-size 20px
                 border-bottom 2px solid #34343e
                 padding-bottom 0.2rem
+
+
 </style>
