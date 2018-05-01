@@ -295,7 +295,8 @@ const messages = {
         },
         blog: {
             title: 'Blog',
-            allPostsBtn: 'All posts'
+            allPostsBtn: 'All posts',
+            notFound: 'News not found'
         },
         footer: {
             right: {
@@ -599,7 +600,8 @@ const messages = {
         },
         blog: {
             title: 'Блог',
-            allPostsBtn: 'Все записи'
+            allPostsBtn: 'Все записи',
+            notFound: 'Новости не найдены'
         },
         footer: {
             right: {

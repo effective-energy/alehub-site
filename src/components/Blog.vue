@@ -1,8 +1,9 @@
 <template>
     <div class="blog-entries">
-        <Header :show="'blog'"/>
+        <header-section :show="'blog'"/>
         <div class="section blogEntries-section">
             <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
+
 
 
             <div class="blog-content">
@@ -35,7 +36,7 @@
                         <div class="divider"></div>
                     </div>
 
-                    
+
                 </div>
 
                 <div class="tags-filter">
@@ -51,19 +52,19 @@
             </div>
 
         </div>
-        <Footer/>
+        <footer-section/>
     </div>
 </template>
 
 <script>
-    import Header from './layouts/HeaderSection';
-    import Footer from './layouts/FooterSection';
+    import HeaderSection from './layouts/HeaderSection';
+    import FooterSection from './layouts/FooterSection';
 
     export default {
-        name: 'BlogEntries',
+        name: 'Blog',
         components: {
-            Header,
-            Footer
+            HeaderSection,
+            FooterSection
         },
         data() {
             return {
@@ -77,13 +78,13 @@
 			}
 		},
         methods: {
-			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
+            getNews: function () {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
                     this.content = response.body.reverse();
                     this.filtersConfigure();
-				}, response => {
-					console.log('Error getting news', response);
-				});
+                }, response => {
+                    console.log('Error getting news', response);
+                });
             },
             filtersConfigure: function () {
                 this.filters = [];
@@ -97,10 +98,10 @@
                     }
                 }
             }
-		},
-		created () {
-			this.getNews();
-		}
+        },
+        created () {
+            this.getNews();
+        }
     }
 </script>
 
@@ -121,7 +122,7 @@
         background-color #ffffff !important
 
     .section
-        padding 141px 80px
+        padding 142px 80px
 
     .is-center
         text-align center
