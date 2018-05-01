@@ -197,7 +197,7 @@
             display flex
             overflow-x scroll
             cursor -webkit-grab
-            -webkit-overflow-scrolling: touch;
+            -webkit-overflow-scrolling touch
             &:active
                 cursor -webkit-grabbing
 
