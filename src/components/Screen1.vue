@@ -16,6 +16,7 @@
 
         <div id="svg-anim"
              class="anim"
+             v-if="checkWindowWidth"
              :class="{ 'anim__dark': isDark }">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
@@ -529,9 +530,10 @@
             let navbarYOffset = document.getElementById('navbar').offsetHeight,
                 buttonAbsPos = zxc + a;
 
-            if (window.innerWidth > 420 && document.getElementById('button-choose')) {
+            if (window.innerWidth > 420 && this.$route.path === '/') {
 
                 window.addEventListener('scroll', () => {
+
                     // console.log(buttonAbsPos, 'offset top');
                     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
                         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
@@ -555,7 +557,58 @@
                     this.$parent.$emit('isDarkTheme', false);
                 });
             }
-        }
+        },
+        beforeDestroy() {
+            // console.log('beforeDestroy');
+            // window.removeEventListener('scroll', () => {
+            //     // console.log(buttonAbsPos, 'offset top');
+            //     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+            //         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
+            //         document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+            //         document.getElementById('button-choose').classList.add('button-choose__stop');
+            //     } else {
+            //         document.getElementById('button-choose').style['top'] = '40%';
+            //         document.getElementById('button-choose').classList.remove('button-choose__stop');
+            //     }
+            // });
+            //
+            // document.getElementById('do-dark-theme').removeEventListener('click', () => {
+            //     this.isDark = true;
+            //     this.$parent.$emit('isDarkTheme', true);
+            // });
+            //
+            // document.getElementById('do-light-theme').removeEventListener('click', () => {
+            //     this.isDark = false;
+            //     this.$parent.$emit('isDarkTheme', false);
+            // });
+        },
+        destroyed() {
+            // if (window.innerWidth > 420 && this.$route.path === '/') {
+            //     console.log('destroyed');
+                // window.removeEventListener('scroll', () => {
+                //     // console.log(buttonAbsPos, 'offset top');
+                //     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                //         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
+                //         document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+                //         document.getElementById('button-choose').classList.add('button-choose__stop');
+                //     } else {
+                //         document.getElementById('button-choose').style['top'] = '40%';
+                //         document.getElementById('button-choose').classList.remove('button-choose__stop');
+                //     }
+                // });
+                //
+                // document.getElementById('do-dark-theme').addEventListener('click', () => {
+                //     this.isDark = true;
+                //     this.$parent.$emit('isDarkTheme', true);
+                // });
+                //
+                // document.getElementById('do-light-theme').addEventListener('click', () => {
+                //     this.isDark = false;
+                //     this.$parent.$emit('isDarkTheme', false);
+                // });
+            }
+        // }
+
     }
 </script>
 
