@@ -444,9 +444,9 @@
                     .b-carousel__inner
                         position relative
                         margin 0 15px
-                        padding 40px 20px 0 20px
+                        padding 20px 20px 0 20px
                         width 304px
-                        /*width 100%*/
+                        clip-path circle(50% at center)
 
                         @media (max-width 490px)
                             position relative
@@ -523,7 +523,6 @@
                 left 0
                 right 0
                 bottom 0
-                /*width 304px*/
                 width 100%
                 height 100%
                 background rgba(255, 210, 79, 0.8)
@@ -533,9 +532,7 @@
                 -webkit-transition all 0.4s ease-in-out 0s
                 -ms-transition all 0.4s ease-in-out 0s
                 transition all 0.4s ease-in-out 0s
-
-                /*@media (min-width 320px) and (max-width 375px)*/
-                    /*width 270px*/
+                clip-path circle(50% at center)
 
                 &:active
                     cursor -webkit-grab !important

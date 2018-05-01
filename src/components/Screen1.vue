@@ -287,13 +287,26 @@
                  class="container-fluid social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
-                <a href="https://www.facebook.com/alehub.io/" class="social-item fb" target="_blank"></a>
-                <a href="https://www.instagram.com/alehub.io/" class="social-item ins" target="_blank"></a>
-                <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg" class="social-item yt" target="_blank"></a>
-                <a href="https://twitter.com/alehub_io" class="social-item tw" target="_blank"></a>
-                <a href="https://t.me/alehub" class="social-item tg" target="_blank"></a>
-                <a href="https://vk.com/alehub" class="social-item vk" target="_blank"></a>
-                <a class="scroll-ic" v-scroll-to="'#description'">
+                <a href="https://www.facebook.com/alehub.io/"
+                   class="social-item fb"
+                   target="_blank"></a>
+                <a href="https://www.instagram.com/alehub.io/"
+                   class="social-item ins"
+                   target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
+                   class="social-item yt"
+                   target="_blank"></a>
+                <a href="https://twitter.com/alehub_io"
+                   class="social-item tw"
+                   target="_blank"></a>
+                <a href="https://t.me/alehub"
+                   class="social-item tg"
+                   target="_blank"></a>
+                <a href="https://vk.com/alehub"
+                   class="social-item vk"
+                   target="_blank"></a>
+                <a class="scroll-ic"
+                   v-scroll-to="'#description'">
                     <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
                 </a>
             </div>
@@ -642,16 +655,40 @@
             border-color #f7f7f7 !important
         .social-item.fb
             background-image url(../../static/images/fb-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/fb-hovered.svg) !important
+
         .social-item.ins
             background-image url(../../static/images/instagram-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/instagram-hovered.svg) !important
+
         .social-item.yt
             background-image url(../../static/images/yt-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/yt-hovered.svg) !important
+
         .social-item.tw
             background-image url(../../static/images/twitter-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/twitter-hovered.svg) !important
+
         .social-item.tg
             background-image url(../../static/images/telegram-ic-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/telegram-ic-hovered.svg) !important
+
         .social-item.vk
             background-image url(../../static/images/vk-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/vk-hovered.svg) !important
+
 
     .description__dark
         background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
@@ -740,6 +777,7 @@
             -webkit-transition background .3s ease-in-out
             -o-transition background color .3s ease-in-out
             transition background color .3s ease-in-out
+
 
     #screen1
         /*background-color #34343e*/

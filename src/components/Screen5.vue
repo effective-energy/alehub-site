@@ -374,6 +374,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .image
+        clip-path circle(50% at center)
+
     .b-carousel__prev
         margin-right 20px
 
