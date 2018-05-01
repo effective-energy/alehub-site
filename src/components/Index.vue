@@ -1,6 +1,5 @@
 <template>
     <div class="index">
-        <!--rename-->
         <header-section :is-main-dark="isDark"/>
         <home-section/>
         <advantages-section/>

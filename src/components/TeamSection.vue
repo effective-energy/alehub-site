@@ -80,7 +80,7 @@
 
             <div class="advisors-team">
                 <div class="images"
-                     v-if="!isMobileScreen">
+                     v-if="isWideScreen">
                     <div class="image"
                          style=""
                          v-for="(member, i) in $t('advisors.members')" :key="i"

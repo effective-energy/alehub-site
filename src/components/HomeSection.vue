@@ -514,32 +514,25 @@
                     left: box.left + pageXOffset
                 };
             },
+            handlerScroll: function () {
+                let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
+
+                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                    document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+                    document.getElementById('button-choose').classList.add('button-choose__stop');
+                } else {
+                    document.getElementById('button-choose').style['top'] = '40%';
+                    document.getElementById('button-choose').classList.remove('button-choose__stop');
+                }
+            }
         },
         mounted() {
             this.startAnime();
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
-            let a = window.innerHeight * 0.4;
-
-            let zxc = this.getCoords(document.getElementById('description')).top;
-
-            let navbarYOffset = document.getElementById('navbar').offsetHeight,
-                buttonAbsPos = zxc + a;
-
             if (window.innerWidth > 420 && this.$route.path === '/') {
 
-                window.addEventListener('scroll', () => {
-
-                    // console.log(buttonAbsPos, 'offset top');
-                    if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
-                        //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
-                        document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
-                        document.getElementById('button-choose').classList.add('button-choose__stop');
-                    } else {
-                        document.getElementById('button-choose').style['top'] = '40%';
-                        document.getElementById('button-choose').classList.remove('button-choose__stop');
-                    }
-                });
+                window.addEventListener('scroll', this.handlerScroll, false);
 
                 document.getElementById('do-dark-theme').addEventListener('click', () => {
                     this.isDark = true;
@@ -553,56 +546,8 @@
             }
         },
         beforeDestroy() {
-            // console.log('beforeDestroy');
-            // window.removeEventListener('scroll', () => {
-            //     // console.log(buttonAbsPos, 'offset top');
-            //     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
-            //         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
-            //         document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
-            //         document.getElementById('button-choose').classList.add('button-choose__stop');
-            //     } else {
-            //         document.getElementById('button-choose').style['top'] = '40%';
-            //         document.getElementById('button-choose').classList.remove('button-choose__stop');
-            //     }
-            // });
-            //
-            // document.getElementById('do-dark-theme').removeEventListener('click', () => {
-            //     this.isDark = true;
-            //     this.$parent.$emit('isDarkTheme', true);
-            // });
-            //
-            // document.getElementById('do-light-theme').removeEventListener('click', () => {
-            //     this.isDark = false;
-            //     this.$parent.$emit('isDarkTheme', false);
-            // });
+            window.removeEventListener('scroll', this.handlerScroll, false);
         },
-        destroyed() {
-            // if (window.innerWidth > 420 && this.$route.path === '/') {
-            //     console.log('destroyed');
-                // window.removeEventListener('scroll', () => {
-                //     // console.log(buttonAbsPos, 'offset top');
-                //     if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
-                //         //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
-                //         document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
-                //         document.getElementById('button-choose').classList.add('button-choose__stop');
-                //     } else {
-                //         document.getElementById('button-choose').style['top'] = '40%';
-                //         document.getElementById('button-choose').classList.remove('button-choose__stop');
-                //     }
-                // });
-                //
-                // document.getElementById('do-dark-theme').addEventListener('click', () => {
-                //     this.isDark = true;
-                //     this.$parent.$emit('isDarkTheme', true);
-                // });
-                //
-                // document.getElementById('do-light-theme').addEventListener('click', () => {
-                //     this.isDark = false;
-                //     this.$parent.$emit('isDarkTheme', false);
-                // });
-            }
-        // }
-
     }
 </script>
 
