@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <!--rename-->
-        <Header />
+        <Header :is-main-dark="isDark"/>
         <screen1 />
         <screen2 />
         <screen3 />
@@ -44,6 +44,7 @@
             return {
                 isFeatures: false,
                 isTeam: false,
+                isDark: false,
                 // isLoading: true
             }
         },
@@ -57,6 +58,11 @@
             this.$on('checkIsTeam', (isTeam) => {
                 this.isTeam = isTeam;
             });
+
+            this.$on('isDarkTheme', (val) => {
+                this.isDark = val;
+            });
+
 
             // console.timeEnd('loading');
 

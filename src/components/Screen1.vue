@@ -1,6 +1,22 @@
 <template>
     <section id="screen1">
-        <div class="anim">
+
+        <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
+            <button type="button"
+                    id="do-light-theme"
+                    class="button-choose_light"
+                    :class="{ 'button-choose__active': !isDark }">
+            </button>
+            <button type="button"
+                    id="do-dark-theme"
+                    class="button-choose_dark"
+                    :class="{ 'button-choose__active': isDark }">
+            </button>
+        </div>
+
+        <div id="svg-anim"
+             class="anim"
+             :class="{ 'anim__dark': isDark }">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
                     <path stroke="#ffd24f"
@@ -112,7 +128,9 @@
                 </g>
             </svg>
         </div>
-        <div class="first-screen" id="home">
+        <div class="first-screen"
+             :class="{ 'home__dark': isDark }"
+             id="home">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -127,7 +145,8 @@
                             <h2 class="title">
                                 {{$t("greeting.countDown.title")}}
                             </h2>
-                            <div class="timer">
+                            <div class="timer"
+                                 :class="{ 'timer__dark': isDark }">
                                 <div class="days">
                                     <div class="numbers">
                                         <div class="first">
@@ -182,7 +201,8 @@
                             <div class="title">
                                 {{$t("greeting.acceptedCrypto.title")}}
                             </div>
-                            <div class="collection">
+                            <div class="collection"
+                                 :class="{ 'collection__dark': isDark }">
                                 <div class="item">
                                     <div class="cur-logo">
                                         <img src="../../static/images/btc.svg" alt="Bitcoin">
@@ -230,7 +250,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ico-progress">
+                        <div class="ico-progress"
+                             :class="{ 'ico-progress__dark': isDark }">
                             <div class="state">
                                 <div class="title">
                                     Soft cap
@@ -261,7 +282,9 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid social-line">
+            <div id="social-line"
+                 class="container-fluid social-line"
+                 :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
                 <a href="#" class="social-item fb"></a>
                 <a href="#" class="social-item ins"></a>
@@ -274,28 +297,31 @@
                 </a>
             </div>
         </div>
-        <div class="container-fluid partners">
+        <div class="container-fluid partners"
+             :class="{ 'partners__dark': isDark }">
             <div class="title">{{$t("partners.title")}}</div>
             <div class="row partners-icons">
-                <img src="../../static/images/itmo.png"
+                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
                      height="60px"
                      width="114px"
                      alt="ITMO">
-                <img src="../../static/images/crypto.png"
+                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
                      height="46px"
                      width="158px"
                      alt="CryptoB2B">
-                <img src="../../static/images/beer.png"
+                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
                      height="59px"
                      width="57px"
                      alt="BEAR">
-                <img src="../../static/images/serokell.png"
+                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
                      height="43px"
                      width="87px"
                      alt="Serokell">
             </div>
         </div>
-        <div class="container-fluid what-is" id="description">
+        <div id="description"
+             class="container-fluid what-is"
+             :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
@@ -313,7 +339,7 @@
                         {{$t("about.btnGroup.download")}}
                     </a>
                 </div>
-                <div class="col-lg-6 desc">
+                <div class="col-lg-6 desc" style="align-self: flex-start;">
                     <h1 class="title">
                         {{$t("about.title")}}
                     </h1>
@@ -354,6 +380,7 @@
         },
         data() {
             return {
+                isDark: false,
                 pages: [
                     {
                         html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
@@ -399,6 +426,11 @@
                 hardCap: 33000
             }
         },
+        computed: {
+            checkWindowWidth: function () {
+                return window.innerWidth > 420;
+            }
+        },
         methods: {
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
@@ -410,7 +442,7 @@
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         duration: anime.random(6500, 9000),
-                        delay: anime.random(2500, 4000),
+                        delay: anime.random(500, 2500),
                         loop: true,
                         direction: 'alternate',
                         easing: 'easeInOutSine',
@@ -437,10 +469,10 @@
                     minutes = Math.floor((t / 1000 / 60) % 60),
                     hours = Math.floor((t / (1000 * 60 * 60)) % 24),
                     days = Math.floor(t / (1000 * 60 * 60 * 24));
-                
+
                 if (t <= 0)
                     return clearInterval(this.timeInterval);
-                
+
                 this.timer.days.first = this.format(days);
                 this.timer.days.second = this.format(days, true);
                 this.timer.hours.first = this.format(hours);
@@ -449,24 +481,208 @@
                 this.timer.minutes.second = this.format(minutes, true);
                 this.timer.seconds.first = this.format(seconds);
                 this.timer.seconds.second = this.format(seconds, true);
-            }
+            },
+            getCoords: function (elem) {
+                if (!elem)
+                    return false;
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+            },
         },
         mounted() {
             this.startAnime();
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
+
+            let a = window.innerHeight * 0.4;
+
+            let zxc = this.getCoords(document.getElementById('description')).top;
+
+            let navbarYOffset = document.getElementById('navbar').offsetHeight,
+                buttonAbsPos = zxc + a;
+
+
+            if (window.innerWidth > 420) {
+
+                window.addEventListener('scroll', () => {
+                    // console.log(buttonAbsPos, 'offset top');
+                    if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                        //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
+                        document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+                        document.getElementById('button-choose').classList.add('button-choose__stop');
+                    } else {
+                        document.getElementById('button-choose').style['top'] = '40%';
+                        document.getElementById('button-choose').classList.remove('button-choose__stop');
+                    }
+                });
+
+                document.getElementById('do-dark-theme').addEventListener('click', () => {
+                    this.isDark = true;
+                    this.$parent.$emit('isDarkTheme', true);
+                });
+
+                document.getElementById('do-light-theme').addEventListener('click', () => {
+                    this.isDark = false;
+                    this.$parent.$emit('isDarkTheme', false);
+                });
+            }
         }
     }
 </script>
 
 <style lang="stylus" scoped>
-    path
-        opacity 0.7 !important
+    /*.section__dark*/
+    /*background-color #34343e*/
+
+    #description
+        @media (min-width 420px)
+            height 100vh
+
+        .row
+            align-items center
+
+    .anim
+        opacity 0.7
+
+    .anim__dark
+        opacity 0.25
+
+    .home__dark
+        background-color #343a49
+        color #f7f7f7
+
+        div
+            .row
+                div
+                    .crypto
+                        .title
+                            color #f7f7f7 !important
+
+    .collection__dark
+        color #343a49
+
+    .timer__dark
+        .first, .second
+            background-color #f7f7f7
+            color #34343e
+
+    .ico-progress__dark
+        color #f7f7f7 !important
+
+    .partners__dark
+        background-color #343a49
+        .title
+            color #f7f7f7 !important
+
+    .social-line__dark
+        .line
+            border-color #f7f7f7 !important
+        .social-item.fb
+            background-image url(../../static/images/fb-dark.svg) !important
+        .social-item.ins
+            background-image url(../../static/images/instagram-dark.svg) !important
+        .social-item.yt
+            background-image url(../../static/images/yt-dark.svg) !important
+        .social-item.tw
+            background-image url(../../static/images/twitter-dark.svg) !important
+        .social-item.tg
+            background-image url(../../static/images/telegram-ic-dark.svg) !important
+        .social-item.vk
+            background-image url(../../static/images/vk-dark.svg) !important
+
+    .description__dark
+        background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background -webkit-gradient(bottom top, bottom top, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(60%, rgba(83, 92, 112, 1)), color-stop(100%, rgba(247, 247, 247, 1))) !important
+        background -webkit-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background -o-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+
+        .desc
+            .title, .subtitle, .description
+                color #f7f7f7 !important
+
+    .collection
+        .item
+            cursor pointer
+
+    section
+        position relative
+
+    .button-choose__stop
+        position absolute !important
+
+    .button-choose
+        position fixed
+        left 20px
+        top 40%
+        width 40px
+        z-index 10000
+
+        .button-choose__active
+            opacity 1 !important
+            border 2px solid #ffd24f !important
+
+        .button-choose_light
+            opacity 0.8
+            cursor pointer
+            width 40px
+            height 40px
+            margin-bottom 15px
+            background-color #f7f7f7
+            border-radius 50%
+            border 1px solid #f7f7f7
+            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+
+            &:focus
+                outline none
+
+        .button-choose_dark
+            opacity 0.8
+            cursor pointer
+            width 40px
+            height 40px
+            background-color #343a49
+            border-radius 50%
+            border 1px solid #343a49
+            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+
+            &:focus
+                outline none
+
+    #screen1
+        .container-fluid.partners
+            margin-top 0 !important
+            padding-top 150px !important
+
+    #screen1
+        .container-fluid.what-is
+            margin-top 0
+            padding 165px 125px 0
+
+            @media (max-width 420px)
+                padding-left 32px
+                padding-right 32px
+                padding-top 20px
+
+    .social-line
+        .social-item
+            -webkit-transition background .3s ease-in-out
+            -o-transition background color .3s ease-in-out
+            transition background color .3s ease-in-out
 
     #screen1
         /*background-color #34343e*/
         /*transition background-color 20s linear*/
         /*&:hover*/
-            /*background-color #858591*/
+        /*background-color #858591*/
 
         .container-fluid
             &.partners
@@ -484,7 +700,7 @@
                         flex-wrap wrap
 
             .crypto
-                @media(max-width: 320px)
+                @media (max-width: 320px)
                     .collection
                         .item
                             margin-right 10px

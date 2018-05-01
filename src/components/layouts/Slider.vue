@@ -171,7 +171,7 @@
                 this.yDrag = 0;
             },
             dragMove: function (e) {
-                // console.log(e.pageX, 'mouse move X');
+                console.log(e.pageX, 'mouse move X');
 
                 let xMove = e.pageX;
                 let yMove = e.pageY;
@@ -183,7 +183,7 @@
                 // console.log(yDiff, 'yDiff');
 
                 if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    //ширина фотки всегда 304, но лучше получать из DOM
+                    //ширина фотки получать из DOM
 
                     if (xDiff > 0) {
 
@@ -361,6 +361,20 @@
                 document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[i].cloneNode(true));
             }
 
+            let carouselInner = document.getElementsByClassName('b-carousel__inner');
+
+            for (let i = 0; i < carouselInner.length; i++) {
+                carouselInner[i].addEventListener('touchend', () => {
+                    if (!carouselInner[i].querySelector('.layer__top').classList.contains('layer__top-visible'))
+                        carouselInner[i].querySelector('.layer__top').classList.add('layer__top-visible');
+                }, false)
+            }
+
+            document.querySelector('body').addEventListener('touchstart', () => {
+                if (document.querySelector('body').querySelector('.layer__top-visible'))
+                    document.querySelector('body').querySelector('.layer__top-visible').classList.remove('layer__top-visible');
+            }, false);
+
 
             // if (this.privates.touch === true) {
             //     document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
@@ -419,6 +433,9 @@
                     align-items center
                     justify-content center
 
+                    @media (max-width 320px)
+                        width 270px
+
                     &:active
                         cursor -webkit-grab !important
 
@@ -428,6 +445,14 @@
                         padding 40px 20px 0 20px
                         width 304px
                         /*width 100%*/
+
+                        @media (max-width 490px)
+                            position relative
+                            margin 0 5px
+
+                        @media (max-width 320px)
+                            position relative
+                            width 270px
 
                         &:active
                             cursor -webkit-grab !important
@@ -472,9 +497,12 @@
         text-align center
 
         .b-carousel__inner
-            &:hover
-                .layer__top
-                    opacity 1
+            .layer__top-visible
+                opacity 1 !important
+            @media (min-width 420px)
+                &:hover
+                    .layer__top
+                        opacity 1
 
             img
                 max-width 100%
@@ -493,8 +521,8 @@
                 left 0
                 right 0
                 bottom 0
-                width 304px
-                //width calc(100% - 30px)
+                /*width 304px*/
+                width 100%
                 height 100%
                 background rgba(255, 210, 79, 0.8)
                 color #fff
@@ -503,6 +531,9 @@
                 -webkit-transition all 0.4s ease-in-out 0s
                 -ms-transition all 0.4s ease-in-out 0s
                 transition all 0.4s ease-in-out 0s
+
+                /*@media (min-width 320px) and (max-width 375px)*/
+                    /*width 270px*/
 
                 &:active
                     cursor -webkit-grab !important
