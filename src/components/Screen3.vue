@@ -558,6 +558,9 @@
                     background #fff
                     padding 0 40px
                     flex-direction column
+                    transition all 0.35s
+                    cursor pointer
+
                     &:nth-child(even)
                         border-left solid 4px #34343e
                     &:nth-child(odd)
@@ -569,6 +572,9 @@
                         margin-bottom -5px
                         background #fdd04a
                     &:hover
+                        -webkit-box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
+                        -moz-box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
+                        box-shadow: 0 0 7px 0px rgba(0,0,0,0.1);
                         .hovered-underline
                             width 100%
                             -webkit-transition -webkit-transform 0.35s

@@ -117,7 +117,7 @@
                 </div>
 
                 <slider v-else
-                        :items="team.advisors"
+                        :items="$t('advisors.members')"
                         :settings="settings.advisors"
                         :options="options.advisors"
                         :privates1="Object.assign(settings.advisors, options.advisors)"

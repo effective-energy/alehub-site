@@ -28,7 +28,7 @@
                              :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
 
                             <img class="layer__bottom b-carousel__img"
-                                 :src="member.image"
+                                 :src="member.src"
                                  :alt="member.name">
 
                             <div class="layer__top">
@@ -346,6 +346,8 @@
             // this.privates.next = '.' + this.privates.next;
         },
         mounted() {
+
+            console.log(this.items, 'items');
 
             this.startAutoplay(true);
 
