@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<div class="picture-block">
-					<img :src="`http://alehub.io:8099/${content.preview_image}`" alt="" class="image" />
+					<img :src="`https://alehub.eu-4.evennode.com/${content.preview_image}`" alt="" class="image" />
 					<p class="resource-image" v-if="false">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
 				</div>
 				<div class="news-content" v-html="content.content">
@@ -44,7 +44,7 @@
 
 					<div class="more-news-content">
 						<div class="news-item" v-for="item in more" :key="item._id">
-							<img :src="`http://alehub.io:8099/${item.preview_image}`" alt="" />
+							<img :src="`https://alehub.eu-4.evennode.com/${item.preview_image}`" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
                             </router-link>
@@ -102,10 +102,38 @@
     }
 </script>
 
-<style>
-	body {
-		background-color: #fff !important;
-	}
+<style lang="stylus">
+	body
+		background-color #fff !important
+
+	blockquote
+		padding 14px 30px
+		position relative
+		font-family MuseoSansCyrl500
+
+		&:before
+			content " "
+			width 26px
+			height 20px
+			background-image url('../../static/images/invalid-name.svg')
+			position absolute
+			left 0
+
+		.title
+			font-family MuseoSansCyrl900
+			font-size 32px
+			font-weight 900
+			line-height 1.22
+			color #34343e
+			margin-top 4px
+
+		.subtitle
+			font-family MuseoSansCyrl300
+			font-size 14px
+			font-weight 300
+			line-height 1.21
+			text-align left
+			color #34343e
 </style>
 
 
@@ -226,6 +254,7 @@
 			.news-content
 				border-bottom 1px solid rgba(52, 52, 62, 0.2)
 				padding-bottom 16px
+
 				p
 					font-family MuseoSansCyrl300
 					font-size 18px
@@ -233,7 +262,7 @@
 					line-height 1.22
 					color #34343e
 
-				.quote-block
+				blockquote
 					padding 14px 30px
 
 					.quote

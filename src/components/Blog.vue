@@ -9,7 +9,7 @@
 			<div class="row news-section">
 				<div class="col-md-6 col-sm-12" v-for="(n, i) in news" :key="i">
 					<div class="news-block">
-						<img :src="'http://alehub.io:8099/'+n.preview_image" alt="" class="picture">
+						<img :src="'https://alehub.eu-4.evennode.com/'+n.preview_image" alt="" class="picture">
 						<div class="news-info">
                             <router-link tag="a" :to="`/blog/${n._id}`" class="news-title">
                                 {{ n.title }}
