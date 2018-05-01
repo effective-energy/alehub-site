@@ -1,12 +1,12 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
-         :class="{ 'bg-dark-blue': isBlack, 'bg-white': !isBlack && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
+         :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
         <router-link tag="a" to="/" class="navbar-brand">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
                  alt="ALEHUB"
-                 v-if="!isBlack">
+                 v-if="!isDark">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo-white.svg"
                  alt="ALEHUB"
@@ -17,7 +17,7 @@
         <!--<img class="d-inline-block align-top"-->
         <!--src="../../../static/images/ale-logo.svg"-->
         <!--alt="ALEHUB"-->
-        <!--v-if="!isBlack">-->
+        <!--v-if="!isDark">-->
         <!--<img class="d-inline-block align-top"-->
         <!--src="../../../static/images/ale-logo-white.svg"-->
         <!--alt="ALEHUB"-->
@@ -28,17 +28,17 @@
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
              @click="toggleHamburger">
-            <span class="line" :class="{ 'line__white': isBlack }"></span>
-            <span class="line" :class="{ 'line__white': isBlack }"></span>
-            <span class="line" :class="{ 'line__white': isBlack }"></span>
+            <span class="line" :class="{ 'line__white': isDark }"></span>
+            <span class="line" :class="{ 'line__white': isDark }"></span>
+            <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto ml-auto">
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{ active: index === activeItem }"
-                    v-if="(show == 'blog' && item.name == 'Blog') || (show == undefined)">
+                    :class="{ active: index === activeItem }">
+                    <!--v-if="(show == 'blog' && item.name == 'Blog') || (show == undefined)">-->
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
@@ -48,7 +48,7 @@
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
                 <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
-                <li class="nav-line nav-line__black" v-else-if="isBlack"></li>
+                <li class="nav-line nav-line__black" v-else-if="isDark"></li>
                 <li class="nav-line nav-line__white" v-else></li>
             </ul>
             <div class="right-menu">
@@ -57,18 +57,15 @@
                     {{$t("navbar.loginBtn")}}
                 </button>
                 <b-dropdown :text="currentLang">
-                    <b-dropdown-item
-                            :active="lang === currentLang"
-                            v-for="(lang, langIndex) in languagesList"
-                            @click="changeLanguage(langIndex)"
-                            :key="langIndex"
-                    >
+                    <b-dropdown-item :active="lang === currentLang"
+                                     v-for="(lang, langIndex) in languagesList"
+                                     @click="changeLanguage(langIndex)"
+                                     :key="langIndex">
                         {{ lang }}
                     </b-dropdown-item>
                 </b-dropdown>
-                </div>
-                <button type="button" class="btn btn-actions">ok</button>
             </div>
+            <button type="button" class="btn btn-actions">ok</button>
         </div>
 
         <menu-modal/>
@@ -83,12 +80,18 @@
         components: {
             MenuModal
         },
-        props: ['show'],
+        props: {
+            isMainDark: {
+                type: [Boolean],
+                required: true
+            }
+        },
         data() {
             return {
                 isFeatures: false,
+                mainIsDark: false,
                 isTeam: false,
-                isBlack: false,
+                isDark: false,
                 isYellow: false,
                 isOrange: false,
                 dropdownOpen: false,
@@ -139,13 +142,31 @@
         watch: {
             activeItem: function (index) {
                 this.changeLineWidth(index);
+            },
+            isMainDark: function (dark) {
+                console.log(dark, 'dark');
+                if (dark) {
+                    this.mainIsDark = true;
+                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
+                        this.isDark = true;
+                        this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                } else {
+                    this.mainIsDark = false;
+                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
+                        this.isDark = false;
+                        this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                }
             }
         },
         computed: {
-            currentLang () {
-                if(this.selectedLanguage === 'eng') {
+            currentLang() {
+                if (this.selectedLanguage === 'eng') {
                     return 'eng';
-                } else if(this.selectedLanguage === 'rus') {
+                } else if (this.selectedLanguage === 'rus') {
                     return 'rus';
                 } else {
                     return 'eng';
@@ -153,7 +174,7 @@
             }
         },
         methods: {
-            changeLanguage (index) {
+            changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
                 localStorage.setItem('systemLang', this.selectedLanguage);
                 this.$i18n.locale = this.selectedLanguage
@@ -176,7 +197,8 @@
                 document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
             },
             getCoords: function (elem) {
-                if (!elem) return false
+                if (!elem)
+                    return false;
                 let box = elem.getBoundingClientRect();
 
                 return {
@@ -227,16 +249,20 @@
                 this.changeLineWidth(this.activeItem);
             }, 500);
 
-            let navbar = document.getElementById('navbar'),
-                navbarYOffset = navbar.offsetHeight;
+            let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
-                
+
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow || this.isOrange) {
-                        this.isBlack = false;
+                    if (!this.mainIsDark && (this.isDark || this.isYellow || this.isOrange)) {
+                        this.isDark = false;
+                        this.isYellow = false;
+                        this.isOrange = false;
+                    }
+                    if (this.mainIsDark && (!this.isDark || this.isYellow || this.isOrange)) {
+                        this.isDark = true;
                         this.isYellow = false;
                         this.isOrange = false;
                     }
@@ -250,10 +276,27 @@
                     }
                 }
 
+                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                    if (this.isDark || this.isYellow || this.isOrange) {
+                        this.isDark = false;
+                        this.isOrange = false;
+                        this.isYellow = false;
+                    }
+                    if (!this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
                 if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
                     if (!this.isYellow) {
-                        this.isBlack = false;
+                        this.isDark = false;
                         this.isOrange = false;
                         this.isYellow = true;
                     }
@@ -270,7 +313,7 @@
                 if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
                     if (!this.isOrange) {
-                        this.isBlack = false;
+                        this.isDark = false;
                         this.isYellow = false;
                         this.isOrange = true;
                     }
@@ -286,8 +329,8 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow || this.isOrange) {
-                        this.isBlack = false;
+                    if (this.isDark || this.isYellow || this.isOrange) {
+                        this.isDark = false;
                         this.isYellow = false;
                         this.isOrange = false;
                     }
@@ -303,10 +346,10 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (!this.isBlack) {
+                    if (!this.isDark) {
                         this.isYellow = false;
                         this.isOrange = false;
-                        this.isBlack = true;
+                        this.isDark = true;
                     }
                     if (this.isFeatures) {
                         this.isFeatures = false;
@@ -319,8 +362,8 @@
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (this.isBlack || this.isYellow || this.isOrange) {
-                        this.isBlack = false;
+                    if (this.isDark || this.isYellow || this.isOrange) {
+                        this.isDark = false;
                         this.isYellow = false;
                         this.isOrange = false;
                     }
@@ -398,7 +441,7 @@
     .btn-login
         &:focus
             -webkit-box-shadow none
-            -moz-box-shadow none 
+            -moz-box-shadow none
             box-shadow none
 
     .btn-actions
@@ -411,7 +454,7 @@
         background-color transparent
         &:focus
             -webkit-box-shadow none
-            -moz-box-shadow none 
+            -moz-box-shadow none
             box-shadow none
 
     .nav-line__white
@@ -530,7 +573,7 @@
         .btn-actions
             display unset
 
-    @media(max-width: 1440px)
+    @media (max-width: 1440px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -548,14 +591,14 @@
         .dropdown-toggle
             font-size 16px
 
-    @media(max-width: 1300px)
+    @media (max-width: 1300px)
         .navbar-nav
             .nav-item
                 .nav-link
                     padding-left 10px
                     padding-right 10px
 
-    @media(max-width: 1200px)
+    @media (max-width: 1200px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -572,13 +615,13 @@
 
         .navbar-brand
             margin-right 8px
-            
-    @media(max-width 1100px)
+
+    @media (max-width 1100px)
         .btn-login
             display none
-        
+
         .dropdown
-            display none 
+            display none
 
         .btn-actions
             display unset

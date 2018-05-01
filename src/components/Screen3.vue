@@ -81,13 +81,13 @@
             </div> -->
 
             <transition name="fade">
-                <div class="project-managment" v-if="selectedType === 1" key="OBP">
+                <div class="project-managment" v-if="selectedType === 1">
                     <div class="left-block">
                         <div class="title">
                             <h1>{{$t('table.second.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.second.desc')" :key="index">
+                            <li v-for="(desc) in $t('table.second.desc')">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -104,13 +104,13 @@
                     </div>
                 </div>
 
-                <div class="other-blockchain" v-if="selectedType === 0" key="PMS">
+                <div class="other-blockchain" v-if="selectedType === 0">
                     <div class="left-block">
                         <div class="title">
                             <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(desc) in $t('table.third.desc')" :key="index">
+                            <li v-for="(desc) in $t('table.third.desc')">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -120,7 +120,7 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="desc in $t('table.third.desc')" :key="index">
+                            <li v-for="desc in $t('table.third.desc')">
                                 {{ desc }}
                             </li>
                         </ul>
@@ -131,7 +131,7 @@
                 <div class="left-block">
                     <h1 class="title">Other Blockchain Platforms</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.first" :key="index">
+                        <li v-for="(item, index) in advantages.first">
                             {{ item.second }}
                         </li>
                     </ul>
@@ -139,7 +139,7 @@
                 <div class="right-block">
                     <h1 class="title">ALE</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.first" :key="index">
+                        <li v-for="(item, index) in advantages.first">
                             {{ item.first }}
                         </li>
                     </ul>
@@ -149,7 +149,7 @@
                 <div class="left-block">
                     <h1 class="title">Project Management Systems</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.second" :key="index">
+                        <li v-for="(item, index) in advantages.second">
                             {{ item.second }}
                         </li>
                     </ul>
@@ -157,7 +157,7 @@
                 <div class="right-block">
                     <h1 class="title">ALE</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.second" :key="index">
+                        <li v-for="(item, index) in advantages.second">
                             {{ item.first }}
                         </li>
                     </ul>

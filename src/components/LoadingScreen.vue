@@ -268,7 +268,7 @@
 
     .loading-screen
         position fixed
-        background-color #34343e
+        background-color #343a49
         width 100%
         height 100vh
         opacity 1
@@ -310,10 +310,10 @@
                 flex-wrap wrap
                 width 350px
                 height 350px
-                border 1px solid #34343e
+                border 1px solid #343a49
                 border-radius 50%
                 margin-bottom 7px
-                background #34343e
+                background #343a49
                 z-index 2
 
                 @media (min-width 375px) and (max-width 420px)
@@ -347,7 +347,7 @@
                     .logo-block__logo
                         font-family Fairview
                         font-size 60px
-                        color #34343e
+                        color #343a49
                         text-transform uppercase
                         -webkit-transition color 4.2s cubic-bezier(1, 0, .6, .65)
                         transition color 4.2s cubic-bezier(1, 0, .6, .65)
