@@ -286,12 +286,12 @@
                  class="container-fluid social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
-                <a href="#" class="social-item fb"></a>
-                <a href="#" class="social-item ins"></a>
-                <a href="#" class="social-item yt"></a>
-                <a href="#" class="social-item tw"></a>
-                <a href="#" class="social-item tg"></a>
-                <a href="#" class="social-item vk"></a>
+                <a href="https://www.facebook.com/alehub.io/" class="social-item fb" target="_blank"></a>
+                <a href="https://www.instagram.com/alehub.io/" class="social-item ins" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg" class="social-item yt" target="_blank"></a>
+                <a href="https://twitter.com/alehub_io" class="social-item tw" target="_blank"></a>
+                <a href="https://t.me/alehub" class="social-item tg" target="_blank"></a>
+                <a href="https://vk.com/alehub" class="social-item vk" target="_blank"></a>
                 <a class="scroll-ic" v-scroll-to="'#description'">
                     <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
                 </a>
@@ -301,22 +301,30 @@
              :class="{ 'partners__dark': isDark }">
             <div class="title">{{$t("partners.title")}}</div>
             <div class="row partners-icons">
-                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
+                <a href="http://ifmo.ru/ru/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
                      height="60px"
                      width="114px"
                      alt="ITMO">
-                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
+                </a>
+                <a href="https://cryptob2b.io/ru/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
                      height="46px"
                      width="158px"
                      alt="CryptoB2B">
-                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
+                </a>
+                <a href="https://www.blockchain-spb.org/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
                      height="59px"
                      width="57px"
                      alt="BEAR">
-                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
+                </a>
+                <a href="https://serokell.io/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
                      height="43px"
                      width="87px"
                      alt="Serokell">
+                </a>
             </div>
         </div>
         <div id="description"
@@ -620,7 +628,7 @@
         left 20px
         top 40%
         width 40px
-        z-index 10000
+        z-index 1000
 
         .button-choose__active
             opacity 1 !important
