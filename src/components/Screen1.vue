@@ -1,7 +1,7 @@
 <template>
     <section id="screen1">
 
-        <div class="button-choose" id="button-choose" v-if="'window.innerWidth' > 420">
+        <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
             <button type="button"
                     id="do-light-theme"
                     class="button-choose_light"
@@ -424,6 +424,11 @@
                 collected: 1440,
                 softCap: 2000,
                 hardCap: 33000
+            }
+        },
+        computed: {
+            checkWindowWidth: function () {
+                return window.innerWidth > 420;
             }
         },
         methods: {
