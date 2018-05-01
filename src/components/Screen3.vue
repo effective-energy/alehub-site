@@ -81,7 +81,7 @@
             </div> -->
 
             <transition name="fade">
-                <div class="project-managment" v-if="selectedType === 1">
+                <div class="project-managment" v-if="selectedType === 1" key="one">
                     <div class="left-block">
                         <div class="title">
                             <h1>{{$t('table.second.title')}}</h1>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="other-blockchain" v-if="selectedType === 0">
+                <div class="other-blockchain" v-if="selectedType === 0" key="two">
                     <div class="left-block">
                         <div class="title">
                             <h1 class="title">{{$t('table.four.title')}}</h1>
