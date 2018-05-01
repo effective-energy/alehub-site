@@ -230,6 +230,7 @@
         background linear-gradient(to bottom, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
 
         .section-1
+            z-index 100
             display flex
             flex-direction column
             justify-content center
@@ -275,6 +276,7 @@
                     font-size 26px
 
         .section-2
+            z-index 100
             padding-top 80px
             width 100%
             display flex
@@ -310,6 +312,7 @@
                             width 30px
 
         .section-3
+            z-index 100
             padding-top 105px
             width 100%
             display flex

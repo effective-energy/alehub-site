@@ -1,7 +1,7 @@
 <template>
     <section id="screen1">
 
-        <div class="button-choose" id="button-choose">
+        <div class="button-choose" id="button-choose" v-if="'window.innerWidth' > 420">
             <button type="button"
                     id="do-light-theme"
                     class="button-choose_light"
@@ -146,7 +146,7 @@
                                 {{$t("greeting.countDown.title")}}
                             </h2>
                             <div class="timer"
-                            :class="{ 'timer__dark': isDark }">
+                                 :class="{ 'timer__dark': isDark }">
                                 <div class="days">
                                     <div class="numbers">
                                         <div class="first">
@@ -321,8 +321,7 @@
         </div>
         <div id="description"
              class="container-fluid what-is"
-             :class="{ 'description__dark': isDark }"
-             style="height: 100vh;">
+             :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
@@ -501,32 +500,30 @@
                 buttonAbsPos = zxc + a;
 
 
-            console.log(zxc, 'zxc');
-            console.log(window.innerHeight, 'window.innerHeight');
+            if (window.innerWidth > 420) {
 
+                window.addEventListener('scroll', () => {
+                    // console.log(buttonAbsPos, 'offset top');
+                    if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                        //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
+                        document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+                        document.getElementById('button-choose').classList.add('button-choose__stop');
+                    } else {
+                        document.getElementById('button-choose').style['top'] = '40%';
+                        document.getElementById('button-choose').classList.remove('button-choose__stop');
+                    }
+                });
 
-            window.addEventListener('scroll', () => {
-                console.log(a, 'a');
-                // console.log(buttonAbsPos, 'offset top');
-                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
-                    //получать начальную позицию блока и вычитая из виндоу иннер присваивать сюда
-                    document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
-                    document.getElementById('button-choose').classList.add('button-choose__stop');
-                } else {
-                    document.getElementById('button-choose').style['top'] = '40%';
-                    document.getElementById('button-choose').classList.remove('button-choose__stop');
-                }
-            });
+                document.getElementById('do-dark-theme').addEventListener('click', () => {
+                    this.isDark = true;
+                    this.$parent.$emit('isDarkTheme', true);
+                });
 
-            document.getElementById('do-dark-theme').addEventListener('click', () => {
-                this.isDark = true;
-                this.$parent.$emit('isDarkTheme', true);
-            });
-
-            document.getElementById('do-light-theme').addEventListener('click', () => {
-                this.isDark = false;
-                this.$parent.$emit('isDarkTheme', false);
-            })
+                document.getElementById('do-light-theme').addEventListener('click', () => {
+                    this.isDark = false;
+                    this.$parent.$emit('isDarkTheme', false);
+                });
+            }
         }
     }
 </script>
@@ -536,6 +533,9 @@
     /*background-color #34343e*/
 
     #description
+        @media (min-width 420px)
+            height 100vh
+
         .row
             align-items center
 
@@ -661,6 +661,11 @@
         .container-fluid.what-is
             margin-top 0
             padding 165px 125px 0
+
+            @media (max-width 420px)
+                padding-left 32px
+                padding-right 32px
+                padding-top 20px
 
     .social-line
         .social-item
