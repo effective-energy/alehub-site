@@ -6,7 +6,7 @@
             </h1>
         </div>
 
-        <div class="roadmap-slides dragscroll">
+        <div class="roadmap-slides">
             <div class="topline"></div>
             <div class="slides-body">
                 <div class="slide"
@@ -42,26 +42,11 @@
                 </div>
             </div>
 
-            <div class="scroll-block">
-            	<div class="arrow-prev"></div>
-            	<div id="scroll-element"
-                     class="scroll-element"
-                     v-on:scroll="scrollForSlide">
-            		<div id="scroll-content"
-                         class="scroll-content"
-                         :style="'width:'+slidesPanelWidth+'px'">
-                    </div>
-            	</div>
-            	<div class="arrow-next"></div>
-            </div>
-
         </div>
     </div>
 </template>
 
 <script>
-	import Dragscroll from 'dragscroll';
-
     export default {
         name: 'Roadmap',
         data() {
@@ -142,19 +127,6 @@
                     }
                 ]
             }
-        },
-        methods: {
-        	scrollForSlide () {
-        		document.getElementsByClassName('slides-body')[0].scrollLeft = 891.5-document.getElementById('scroll-content').getBoundingClientRect().left;
-        	}
-        },
-        computed: {
-        	slidesPanelWidth () {
-        		return this.slidesWidth
-        	}
-        },
-        mounted () {
-        	this.slidesWidth = 768+(document.querySelectorAll(".slide")[0].offsetWidth*document.querySelectorAll(".slide").length)-screen.width;
         }
     }
 </script>
@@ -225,7 +197,7 @@
             display flex
             overflow-x scroll
             cursor -webkit-grab
-            overflow hidden
+            -webkit-overflow-scrolling: touch;
             &:active
                 cursor -webkit-grabbing
 
@@ -316,4 +288,9 @@
 
                 .count
                     margin 0
+
+    @media(max-width: 800px)
+        .slide
+            min-width 100%!important
+            max-width 100%!important
 </style>
