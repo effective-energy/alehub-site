@@ -1,5 +1,6 @@
 <template>
-    <div class="section roadmap-section" id="roadmap">
+    <div class="section roadmap-section"
+         id="roadmap">
         <div class="container">
             <h1 class="section-title is-center">
                 Roadmap
@@ -28,20 +29,38 @@
                         </div>
                         <div class="slide-progress">
                             <div class="progress-line-outer">
-                                <div class="progress-line" :style="{width: slide.progress+'%'}"></div>
+                                <div class="progress-line"
+                                     :style="{ width: slide.progress + '%' }">
+                                </div>
                             </div>
                             <div class="state">
                                 <p class="status">
                                     State:
-                                    <span class="bold">{{ slide.state }}</span>
+                                    <span class="bold">
+                                        {{ slide.state }}
+                                    </span>
                                 </p>
-                                <p class="count">{{ slide.progress }}%</p>
+                                <p class="count">
+                                    {{ slide.progress }}%
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="scroll-block">
+                <div class="arrow-prev"></div>
+                <div id="scroll-element"
+                     class="scroll-element"
+                     v-on:scroll="scrollForSlide">
+                    <div id="scroll-content"
+                         class="scroll-content"
+                         :style="'width:'+slidesPanelWidth+'px'">
+                    </div>
+                </div>
+                <div class="arrow-next"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -51,7 +70,7 @@
         name: 'Roadmap',
         data() {
             return {
-            	slidesWidth: 0,
+                slidesWidth: 0,
                 slides: [
                     {
                         title: 'Launch and publication MVP version of ALEHUB in centralised mode',
@@ -127,6 +146,19 @@
                     }
                 ]
             }
+        },
+        computed: {
+            slidesPanelWidth() {
+                return this.slidesWidth
+            }
+        },
+        methods: {
+            scrollForSlide() {
+                document.getElementsByClassName('slides-body')[0].scrollLeft = 891.5 - document.getElementById('scroll-content').getBoundingClientRect().left;
+            }
+        },
+        mounted() {
+            this.slidesWidth = 768 + (document.querySelectorAll(".slide")[0].offsetWidth * document.querySelectorAll(".slide").length) - screen.width;
         }
     }
 </script>
@@ -159,31 +191,31 @@
         color #ffffff
 
     .scroll-block
-    	display flex
-    	justify-content center
-    	align-items center
+        display flex
+        justify-content center
+        align-items center
 
-    	.arrow-prev
-    		width 8px
-    		height 12px
-    		background-image url('../../static/images/roadmap/arrow-left.svg')
-    		background-size cover
+        .arrow-prev
+            width 8px
+            height 12px
+            background-image url('../../static/images/roadmap/arrow-left.svg')
+            background-size cover
 
-    	.arrow-next
-    		width 8px
-    		height 12px
-    		background-image url('../../static/images/roadmap/arrow-right.svg')
-    		background-size cover
+        .arrow-next
+            width 8px
+            height 12px
+            background-image url('../../static/images/roadmap/arrow-right.svg')
+            background-size cover
 
-    	.scroll-element
-    		max-width 768px
-    		height 6px
-    		overflow-x scroll
-    		border-radius 2px
-    		margin 0 12px
+        .scroll-element
+            max-width 768px
+            height 6px
+            overflow-x scroll
+            border-radius 2px
+            margin 0 12px
 
-    		.scroll-content
-    			height 1px
+            .scroll-content
+                height 1px
 
     .roadmap-slides
         margin-top 46px
@@ -195,7 +227,7 @@
         .slides-body
             height 400px
             display flex
-            overflow-x scroll
+            overflow-x hidden
             cursor -webkit-grab
             -webkit-overflow-scrolling touch
             &:active
@@ -289,8 +321,8 @@
                 .count
                     margin 0
 
-    @media(max-width: 800px)
+    @media (max-width: 800px)
         .slide
-            min-width 100%!important
-            max-width 100%!important
+            min-width 100% !important
+            max-width 100% !important
 </style>

@@ -63,7 +63,7 @@
     import Footer from './layouts/FooterSection';
 
     export default {
-        name: 'FullNews',
+        name: 'BlogPost',
         components: {
             Header,
             Footer
