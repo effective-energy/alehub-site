@@ -25,10 +25,10 @@
 			<div class="news-block">
 				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
-					<img v-if="false" src="http://via.placeholder.com/36x36" alt="" class="news-author-image" />
+					<img :src="`https://alehub.eu-4.evennode.com/${content.author_image}`" alt="" class="news-author-image" />
 					<div class="info">
 						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
-						<span class="author-name" v-if="false">Storyteller – Alexander Voroncov</span>
+						<span class="author-name">{{ content.author_name }}</span>
 					</div>
 				</div>
 				<div class="picture-block">
@@ -109,7 +109,8 @@
 	blockquote
 		padding 14px 30px
 		position relative
-		font-family MuseoSansCyrl500
+		font-family MuseoSansCyrl900
+		font-size 32px
 
 		&:before
 			content " "
@@ -117,7 +118,7 @@
 			height 20px
 			background-image url('../../static/images/invalid-name.svg')
 			position absolute
-			left 0
+			top -5px
 
 		.title
 			font-family MuseoSansCyrl900
@@ -134,6 +135,10 @@
 			line-height 1.21
 			text-align left
 			color #34343e
+	
+	.news-content
+		p
+			margin 0
 </style>
 
 
