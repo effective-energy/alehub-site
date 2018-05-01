@@ -398,6 +398,9 @@
             @media (max-width 490px)
                 padding 80px 10% 40px 10%
 
+            @media (max-width 490px)
+                padding 80px 5% 40px 5%
+
             .title
                 font-size 40px
 
@@ -468,6 +471,7 @@
                     -webkit-transition all 0.4s ease-in-out 0s
                     -ms-transition all 0.4s ease-in-out 0s
                     transition all 0.4s ease-in-out 0s
+
 
                 .layer__text
                     color #34343e
