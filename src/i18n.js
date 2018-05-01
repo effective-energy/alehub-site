@@ -4,7 +4,7 @@ const messages = {
 			menuList: [{
 				title: 'Home'
 			}, {
-				title: 'ALEHUB'
+				title: 'About'
 			}, {
 				title: 'Advantages'
 			}, {
@@ -12,13 +12,13 @@ const messages = {
 			}, {
 				title: 'Team'
 			}, {
+				title: 'Advisors'
+			}, {
 				title: 'ICO'
 			}, {
 				title: 'Roadmap'
 			}, {
 				title: 'Blog'
-			}, {
-				title: 'Bounty'
 			}],
 			loginBtn: 'Log in'
 		},
@@ -313,13 +313,13 @@ const messages = {
 			}, {
 				title: 'Команда'
 			}, {
+				title: 'Адвайзеры'
+			}, {
 				title: 'ICO'
 			}, {
-				title: 'План'
+				title: 'Roadmap'
 			}, {
 				title: 'Блог'
-			}, {
-				title: 'Баунти'
 			}],
 			loginBtn: 'Войти'
 		},
