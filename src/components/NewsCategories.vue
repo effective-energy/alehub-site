@@ -40,10 +40,10 @@
 
                 <div class="tags-filter">
                     <ul class="filter-list">
-                        <router-link tag="li" :to="`/blog`" class="filter-item active">
+                        <router-link tag="li" :to="`/blog`" class="filter-item">
                             All
                         </router-link>
-                        <router-link v-for="item in filters" :key="item" tag="li" :to="`/blog/categories/${item}`" class="filter-item">
+                        <router-link v-for="item in filters" :key="item" tag="li" :to="`/blog/categories/${item}`" class="filter-item" :class="{active: $route.params.id === item}">
                             {{ item }}
                         </router-link>
                     </ul>
@@ -68,24 +68,33 @@
         data() {
             return {
                 content: '',
+                allNews: '',
                 filters: []
             }
         },
+        watch: {
+			'$route' () {
+				this.getNews();
+			}
+		},
         methods: {
 			getNews: function () {
 				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news`).then(response => {
-                    this.content = response.body.reverse();
+                    this.allNews = response.body.reverse();
+                    this.content = response.body.filter(item => {
+                        return item.categories.indexOf(this.$route.params.id) !== -1;
+                    }).reverse()
                     this.filtersConfigure();
 				}, response => {
 					console.log('Error getting news', response);
 				});
             },
             filtersConfigure: function () {
-                for (let i = 0; i < this.content.length; i++) {
-                    if (this.content[i].categories) {
-                        for (let l = 0; l < this.content[i].categories.length; l++) {
-                            if (this.filters.indexOf(this.content[i].categories[l]) === -1) {
-                                this.filters.push(this.content[i].categories[l]);
+                for (let i = 0; i < this.allNews.length; i++) {
+                    if (this.allNews[i].categories) {
+                        for (let l = 0; l < this.allNews[i].categories.length; l++) {
+                            if (this.filters.indexOf(this.allNews[i].categories[l]) === -1) {
+                                this.filters.push(this.allNews[i].categories[l]);
                             }
                         }
                     }
@@ -116,6 +125,7 @@
 
     .section
         padding 141px 80px
+        min-height calc(100vh - 165px)
 
     .is-center
         text-align center

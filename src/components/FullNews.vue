@@ -81,14 +81,14 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get(`http://alehub.io:8099/ale-news/${this.$route.params.id}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`).then(response => {
 					this.content = response.body;
 				}, response => {
 					console.log('Error getting news', response);
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`http://alehub.io:8099/ale-news/last/4`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`).then(response => {
 					this.more = response.body;
 				}, response => {
 					console.log('Error getting news', response);
@@ -101,6 +101,13 @@
 		}
     }
 </script>
+
+<style>
+	body {
+		background-color: #fff !important;
+	}
+</style>
+
 
 <style lang="stylus" scoped>
 	body
@@ -199,13 +206,12 @@
 
 			.picture-block
 				margin-bottom 20px
-				border-bottom 1px solid rgba(52, 52, 62, 0.2)
 
 				.image
 					width 100%
-					height 400px
-					-o-object-fit cover
-					object-fit cover
+					height auto
+					-o-object-fit contain
+					object-fit contain
 
 				.resource-image
 					padding 12px 0
