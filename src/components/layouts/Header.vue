@@ -33,12 +33,12 @@
             <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto ml-auto">
+            <ul class="navbar-nav mr-auto ml-auto" v-if="!show">
                 <li v-for="(item, index) in navbar"
                     :key="index"
                     class="nav-item"
-                    :class="{ active: index === activeItem }">
-                    <!--v-if="(show == 'blog' && item.name == 'Blog') || (show == undefined)">-->
+                    :class="{ active: index === activeItem }"
+                    >
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
@@ -50,6 +50,11 @@
                 <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
                 <li class="nav-line nav-line__black" v-else-if="isDark"></li>
                 <li class="nav-line nav-line__white" v-else></li>
+            </ul>
+            <ul class="navbar-nav mr-auto ml-auto" v-else-if="show == 'blog'">
+                <router-link tag="li" :to="`/blog`" class="nav-item">
+                    <a href="#" class="nav-link">{{$t("navbar.blog")}}</a>
+                </router-link>
             </ul>
             <div class="right-menu">
                 <button type="button"
@@ -186,6 +191,7 @@
                 this.$modal.hide(name);
             },
             changeLineWidth: function (index) {
+                if (!document.querySelector('.nav-line')) return false
                 let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 

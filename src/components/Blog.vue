@@ -40,7 +40,7 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get('http://alehub.io:8099/ale-news').then(response => {
+				this.$http.get('https://alehub.eu-4.evennode.com/ale-news').then(response => {
 					this.news = response.body.reverse();
 				}, response => {
 					console.log('Error getting news', response);

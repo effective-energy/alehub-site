@@ -20,7 +20,8 @@ const messages = {
             }, {
                 title: 'Blog'
             }],
-            loginBtn: 'Log in'
+            loginBtn: 'Log in',
+            blog: 'Blog'
         },
         greeting: {
             title: 'The new era of project management is coming',
@@ -321,7 +322,8 @@ const messages = {
             }, {
                 title: 'Блог'
             }],
-            loginBtn: 'Войти'
+            loginBtn: 'Войти',
+            blog: 'Блог'
         },
         greeting: {
             title: 'Наступает новая эра прожект менеджмента',
@@ -603,6 +605,6 @@ const messages = {
             }
         }
     }
-}
+};
 
 export default messages;
