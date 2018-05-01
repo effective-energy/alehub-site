@@ -301,22 +301,30 @@
              :class="{ 'partners__dark': isDark }">
             <div class="title">{{$t("partners.title")}}</div>
             <div class="row partners-icons">
-                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
+                <a href="http://ifmo.ru/ru/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
                      height="60px"
                      width="114px"
                      alt="ITMO">
-                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
+                </a>
+                <a href="https://cryptob2b.io/ru/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
                      height="46px"
                      width="158px"
                      alt="CryptoB2B">
-                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
+                </a>
+                <a href="https://www.blockchain-spb.org/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
                      height="59px"
                      width="57px"
                      alt="BEAR">
-                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
+                </a>
+                <a href="https://serokell.io/" target="_blank">
+                  <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
                      height="43px"
                      width="87px"
                      alt="Serokell">
+                </a>
             </div>
         </div>
         <div id="description"
