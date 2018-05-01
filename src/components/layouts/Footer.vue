@@ -19,22 +19,22 @@
 			</div>
 			<div class="col-5 social-block">
 				<div class="social-networks">
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://www.facebook.com/alehub.io/" class="social-item" target="_blank">
 						<i class="social-icon social-icon-fb"></i>
 					</a>
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://www.instagram.com/alehub.io/" class="social-item" target="_blank">
 						<i class="social-icon social-icon-insta"></i>
 					</a>
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg" class="social-item" target="_blank">
 						<i class="social-icon social-icon-youtube"></i>
 					</a>
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://twitter.com/alehub_io" class="social-item" target="_blank">
 						<i class="social-icon social-icon-twitter"></i>
 					</a>
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://t.me/alehub" class="social-item" target="_blank">
 						<i class="social-icon social-icon-tg"></i>
 					</a>
-					<a href="#" class="social-item" target="_blank">
+					<a href="https://vk.com/alehub" class="social-item" target="_blank">
 						<i class="social-icon social-icon-vk"></i>
 					</a>
 				</div>

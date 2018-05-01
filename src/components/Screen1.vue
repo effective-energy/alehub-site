@@ -286,12 +286,12 @@
                  class="container-fluid social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
-                <a href="#" class="social-item fb"></a>
-                <a href="#" class="social-item ins"></a>
-                <a href="#" class="social-item yt"></a>
-                <a href="#" class="social-item tw"></a>
-                <a href="#" class="social-item tg"></a>
-                <a href="#" class="social-item vk"></a>
+                <a href="https://www.facebook.com/alehub.io/" class="social-item fb" target="_blank"></a>
+                <a href="https://www.instagram.com/alehub.io/" class="social-item ins" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg" class="social-item yt" target="_blank"></a>
+                <a href="https://twitter.com/alehub_io" class="social-item tw" target="_blank"></a>
+                <a href="https://t.me/alehub" class="social-item tg" target="_blank"></a>
+                <a href="https://vk.com/alehub" class="social-item vk" target="_blank"></a>
                 <a class="scroll-ic" v-scroll-to="'#description'">
                     <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
                 </a>
