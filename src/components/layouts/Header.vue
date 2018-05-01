@@ -14,15 +14,15 @@
             ALEHUB
         </router-link>
         <!--<a href="#" class="navbar-brand">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/ale-logo.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-if="!isBlack">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/ale-logo-white.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-else>-->
-            <!--ALEHUB-->
+        <!--<img class="d-inline-block align-top"-->
+        <!--src="../../../static/images/ale-logo.svg"-->
+        <!--alt="ALEHUB"-->
+        <!--v-if="!isBlack">-->
+        <!--<img class="d-inline-block align-top"-->
+        <!--src="../../../static/images/ale-logo-white.svg"-->
+        <!--alt="ALEHUB"-->
+        <!--v-else>-->
+        <!--ALEHUB-->
         <!--</a>-->
         <div class="hamburger"
              id="hamburger-6"
@@ -43,7 +43,7 @@
                        class="nav-link"
                        v-scroll-to="item.path">
                         <!--:href="item.path">-->
-                        {{item.name}}
+                        {{$t("navbar.menuList["+index+"].title")}}
                     </a>
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
@@ -54,18 +54,20 @@
             <div class="right-menu">
                 <button type="button"
                         class="btn btn-login">
-                    {{ $t('navbar.loginBtn') }}
+                    {{$t("navbar.loginBtn")}}
                 </button>
                 <b-dropdown :text="currentLang">
                     <b-dropdown-item
-                        :active="lang === currentLang"
-                        v-for="(lang, langIndex) in languagesList"
-                        @click="changeLanguage(langIndex)"
-                        :key="langIndex"
+                            :active="lang === currentLang"
+                            v-for="(lang, langIndex) in languagesList"
+                            @click="changeLanguage(langIndex)"
+                            :key="langIndex"
                     >
                         {{ lang }}
                     </b-dropdown-item>
                 </b-dropdown>
+                </div>
+                <button type="button" class="btn btn-actions">ok</button>
             </div>
         </div>
 

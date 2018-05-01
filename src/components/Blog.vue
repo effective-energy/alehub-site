@@ -2,7 +2,7 @@
 	<div class="section blog-section" id="blog">
 		<div class="container">
 			<h1 class="section-title is-center">
-				Blog
+				{{ $t("blog.title") }}
 			</h1>
 			<div class="divider"></div>
 
@@ -21,8 +21,8 @@
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
 						<router-link tag="a" to="/blog" class="btn btn-warning">
-                            All posts
-                        </router-link>
+							{{ $t("blog.allPostsBtn") }}
+						</router-link>
 					</div>
 				</div>
 			</div>

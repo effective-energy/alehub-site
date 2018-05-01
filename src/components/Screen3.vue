@@ -1,7 +1,7 @@
 <template>
     <div class="advantages" id="advantages">
         <h3 class="advantages-title">
-            ALE advantages
+            {{$t("advantages.title")}}
         </h3>
         <div class="separator"></div>
         <div class="advantages-body">
@@ -11,7 +11,7 @@
                     'point-left-inactive' : selectedType === 1
                 }" @click="selectedType = 0">
                     <div class="point__inner">
-                        ALE vs Project Management Systems
+                        {{$t("advantages.lists[0].title")}}
                     </div>
                 </div>
                 <div class="point" :class="{
@@ -19,7 +19,7 @@
                     'point-right-inactive' : selectedType === 0
                 }" @click="selectedType = 1">
                     <div class="point__inner">
-                        ALE vs Other Blockchain Platforms
+                        {{$t("advantages.lists[1].title")}}
                     </div>
                 </div>
             </div>
@@ -84,11 +84,11 @@
                 <div class="project-managment" v-if="selectedType === 1" key="OBP">
                     <div class="left-block">
                         <div class="title">
-                            <h1>Other Blockchain Platforms</h1>
+                            <h1>{{$t('table.second.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.first" :key="index">
-                                {{ item.second }}
+                            <li v-for="(desc) in $t('table.second.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -97,8 +97,8 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.first" :key="index">
-                                {{ item.first }}
+                            <li v-for="(desc) in $t('table.first.desc')">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -107,11 +107,11 @@
                 <div class="other-blockchain" v-if="selectedType === 0" key="PMS">
                     <div class="left-block">
                         <div class="title">
-                            <h1 class="title">Project Management Systems</h1>
+                            <h1 class="title">{{$t('table.four.title')}}</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.second" :key="index">
-                                {{ item.second }}
+                            <li v-for="(desc) in $t('table.third.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>
@@ -120,8 +120,8 @@
                             <h1 class="title">ALE</h1>
                         </div>
                         <ul>
-                            <li v-for="(item, index) in advantages.second" :key="index">
-                                {{ item.first }}
+                            <li v-for="desc in $t('table.third.desc')" :key="index">
+                                {{ desc }}
                             </li>
                         </ul>
                     </div>

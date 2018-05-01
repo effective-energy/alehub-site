@@ -117,8 +117,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="screen1 title">
-                            Welcome to the future <br>
-                            of the HR industry
+                            {{$t("greeting.title")}}
                         </h1>
                     </div>
                 </div>
@@ -126,7 +125,7 @@
                     <div class="col-xl-12 col-lg-11">
                         <div class="countdown">
                             <h2 class="title">
-                                Round 1 will begin:
+                                {{$t("greeting.countDown.title")}}
                             </h2>
                             <div class="timer">
                                 <div class="days">
@@ -138,7 +137,7 @@
                                             {{ timer.days.second }}
                                         </div>
                                     </div>
-                                    <div class="title">Days</div>
+                                    <div class="title">{{$t("greeting.countDown.time.days")}}</div>
                                 </div>
                                 <div class="hours">
                                     <div class="numbers">
@@ -149,7 +148,7 @@
                                             {{ timer.hours.second }}
                                         </div>
                                     </div>
-                                    <div class="title">Hours</div>
+                                    <div class="title">{{$t("greeting.countDown.time.hours")}}</div>
                                 </div>
                                 <div class="minutes">
                                     <div class="numbers">
@@ -160,16 +159,16 @@
                                             {{ timer.minutes.second }}
                                         </div>
                                     </div>
-                                    <div class="title">Minutes</div>
+                                    <div class="title">{{$t("greeting.countDown.time.minutes")}}</div>
                                 </div>
                             </div>
                         </div>
                         <button type="button" class="btn btn-buy-tokens">
-                            Buy tokens
+                            {{ $t("greeting.countDown.btnBuyTokens") }}
                         </button>
                         <div class="bonus-desc">
-                            <span>Bonus 25% up to 7 April 2018</span>
-                            <span>Now not available</span>
+                            <span>{{$t("greeting.countDown.bonus")}}</span>
+                            <span>{{$t("greeting.countDown.notAvailable")}}</span>
                         </div>
                         <div class="play-video">
                             <button class="play-button">
@@ -181,7 +180,7 @@
 
                         <div class="crypto">
                             <div class="title">
-                                Accepted for collection:
+                                {{$t("greeting.acceptedCrypto.title")}}
                             </div>
                             <div class="collection">
                                 <div class="item">
@@ -276,7 +275,7 @@
             </div>
         </div>
         <div class="container-fluid partners">
-            <div class="title">Our partners:</div>
+            <div class="title">{{$t("partners.title")}}</div>
             <div class="row partners-icons">
                 <img src="../../static/images/itmo.png"
                      height="60px"
@@ -311,32 +310,25 @@
                          class="desktop-for-mobile">
                     <a href="#" class="btn btn-black">
                         <img src="../../static/images/request-ic.svg">
-                        Download
+                        {{$t("about.btnGroup.download")}}
                     </a>
                 </div>
                 <div class="col-lg-6 desc">
                     <h1 class="title">
-                        What is Alehub
+                        {{$t("about.title")}}
                     </h1>
                     <h3 class="subtitle">
-                        WE ARE ATTRACTING BLOCKCHAIN TECHNOLOGY IN THE WORLD OF HR
+                        {{$t("about.subTitle")}}
                     </h3>
                     <p class="description">
-                        The ALE product is primarily a service for consumers to find
-                        counterparties for projects in the IT field and to manage
-                        these projects at the management and financial level. On the
-                        one hand, they are programmers or their associations, and on
-                        the other hand, they are IT Customers. ALE in this sense is
-                        an online distributed information and financial platform /
-                        project management system, the location and interaction of
-                        project parties (in the first stage of IT projects).
+                        {{$t("about.description")}}
                     </p>
                     <div class="buttons">
                         <a href="#" class="btn btn-yellow">
-                            White paper
+                            {{$t("about.btnGroup.whitePaper")}}
                         </a>
                         <a href="#" class="btn btn-yellow">
-                            Technical details of pre ICO
+                            {{$t("about.btnGroup.techDetails")}}
                         </a>
                     </div>
                 </div>

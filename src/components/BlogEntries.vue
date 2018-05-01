@@ -2,7 +2,7 @@
     <div class="blog-entries">
         <Header :show="'blog'"/>
         <div class="section blogEntries-section">
-            <h1 class="section-title is-center is-divider">Blog</h1>
+            <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
 
 
             <div class="blog-content">

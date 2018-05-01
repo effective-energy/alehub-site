@@ -110,19 +110,19 @@ const messages = {
 				members: [{
 					name: 'Arseniy Seroka',
 					position: 'Lead Serokell Developer',
-					image: 'seroka@3x.png'
+					image: '../static/images/avatars/seroka@3x.png'
 				}, {
                     name: 'John Mostovoy',
                     position: 'Lead Serokell Developer',
-					image: 'mostovoy@3x.png'
+					image: '../static/images/avatars/mostovoy@3x.png'
                 }, {
                     name: 'Alexander Rukin',
                     position: 'UI/UX Designer',
-					image: 'rukin@3x.png'
+					image: '../static/images/avatars/rukin@3x.png'
                 }, {
                     name: 'Kirill Elagin',
                     position: 'Backend Engineer',
-					image: 'elagin@3x.png'
+					image: '../static/images/avatars/elagin@3x.png'
                 }]
 			}],
 			effectiveEnergy: [{
@@ -130,57 +130,57 @@ const messages = {
 				members: [{
                     name: 'Mikhail Gromyko',
                     position: 'Chief Executive Officer',
-                    image: 'gromyko@3x.png'
+                    image: '../static/images/avatars/gromyko@3x.png'
                 },
                 {
                     name: 'Vladimir Grudinin',
                     position: 'Blockchain Expert',
-                    image: 'grudinin@3x.png'
+                    image: '../static/images/avatars/grudinin@3x.png'
                 },
                 {
                     name: 'Alexej Osipenko',
                     position: 'Chief Operating Officer',
-                    image: 'osipenko@3x.png'
+                    image: '../static/images/avatars/osipenko@3x.png'
                 },
                 {
                     name: 'Elena Tsymbalyuk',
                     position: 'Head of Marketing Operations',
-                    image: 'elena@3x.png'
+                    image: '../static/images/avatars/elena@3x.png'
                 },
                 {
                     name: 'Egor Loktev',
                     position: 'Chief Marketing Officer',
-                    image: 'loktev@3x.png'
+                    image: '../static/images/avatars/loktev@3x.png'
                 },
                 {
                     name: 'Artem Levashov',
                     position: 'Chief Legal Officer',
-                    image: 'levashow@3x.png'
+                    image: '../static/images/avatars/levashow@3x.png'
                 },
                 {
                     name: 'Vadim Dudin',
                     position: 'Fullstack Developer',
-                    image: 'dudin@3x.png'
+                    image: '../static/images/avatars/dudin@3x.png'
                 },
                 {
                     name: 'Alexander Voroncov',
                     position: 'Fullstack Developer',
-                    image: 'voroncov@3x.png'
+                    image: '../static/images/avatars/voroncov@3x.png'
                 },
                 {
                     name: 'Denis Tikhonov',
                     position: 'Frontend Developer',
-                    image: 'mostovoy@3x.png'
+                    image: '../static/images/avatars/mostovoy@3x.png'
                 },
                 {
                     name: 'Galina Sergeeva',
                     position: 'Frontend Developer',
-                    image: 'elagin@3x.png'
+                    image: '../static/images/avatars/elagin@3x.png'
                 },
                 {
                     name: 'Dmitry Zhuravlev',
                     position: 'Mobile developer',
-                    image: 'zhuravlev@3x.png'
+                    image: '../static/images/avatars/zhuravlev@3x.png'
                 }]
 			}]
 		},
@@ -189,23 +189,23 @@ const messages = {
 			members: [{
 	            name: 'Mikhail Gromyko',
 	            position: 'Chief Executive Officer',
-	            image: 'gromyko@3x.png'
+	            image: '../static/images/avatars/gromyko@3x.png'
 	        }, {
 	            name: 'Vladimir Grudinin',
 	            position: 'Blockchain Expert',
-	            image: 'grudinin@3x.png'
+	            image: '../static/images/avatars/grudinin@3x.png'
 	        }, {
 	            name: 'Alexej Osipenko',
 	            position: 'Chief Operating Officer',
-	            image: 'osipenko@3x.png'
+	            image: '../static/images/avatars/osipenko@3x.png'
 	        }, {
 	            name: 'Elena Tsymbalyuk',
 	            position: 'Head of Marketing Operations',
-	            image: 'elena@3x.png'
+	            image: '../static/images/avatars/elena@3x.png'
 	        }, {
 	            name: 'Egor Loktev',
 	            position: 'Chief Marketing Officer',
-	            image: 'loktev@3x.png'
+	            image: '../static/images/avatars/loktev@3x.png'
 	        }]
 		},
 		economy: {
@@ -288,7 +288,7 @@ const messages = {
 			loginBtn: 'Войти'
 		},
 		greeting: {
-			title: 'The new era of project management is coming',
+			title: 'Наступает новая эра прожект менеджмента',
 			countDown: {
 				title: 'pre-ICO начинается через',
 				time: {
@@ -309,8 +309,8 @@ const messages = {
 		},
 		about: {
 			title: 'Что такое Alehub',
-			subTitle: 'Первый проект системы ALE',
-			description: 'ALEHUB - платформа для управления проектами и поиска подрядчиков в IT сфере. ALEHUB объединяет преимущества распределённых реестров и классических сервисов управления проектами. Подбор исполнителей, управление их работой, контроль и взаиморасчеты, регулируемые смарт-контрактами системы ALE, обеспечивают безопасность, надежность и дешевизну аутсорсинга IT специалистов.',
+			subTitle: 'ALEHUB - платформа для управления проектами и поиска подрядчиков в IT сфере и Hi Tech.',
+			description: 'ALEHUB объединяет преимущества распределённых реестров и классических сервисов управления проектами. Подбор контрагентов (заказчики и исполнители), управление их работой, контроль и взаиморасчеты, регулируемые смарт-контрактами системы ALE, обеспечивают безопасность, надежность и дешевизну аутсорсинга IT специалистов.',
 			btnGroup: {
 				whitePaper: 'White paper',
 				techDetails: 'Подробнее про ALE',
@@ -368,109 +368,145 @@ const messages = {
 				description: 'Не допускающее двойственности, поощрения безответственности и замораживания непропорциональных объемов ликвидности в качестве залогов.'
 			}]
 		},
+		table:{
+			first:{
+				desc:["Многосторонние смарт-контракты",
+					"Участники устанавливают правила взаимодействия",
+					"Полное соответствие юрисдикциям большинства стран для участников",
+					"Расширение возможностей легальной экономики",
+					"Платеж контейнером реальной валюты",
+                    "Возможность официального арбитража"],
+			},
+            second:{
+                title:"Системы прожект менеджмента",
+                desc:["Только посредством DAO",
+                    "Правила взаимодействия участников определны заранее",
+                    "Неясная легитимность",
+                    "Замещение легальной экономики",
+                    "Платеж волатильной криптовалютой",
+                    "-"],
+            },
+            third:{
+                desc:["Неизбежность исполнения обязательств",
+                    "Объединение управление проектом, финансами и поиском подрядчиков",
+                    "Универсальность методологий управления проектами",
+                    "Универсальность методов шифрования приватных данных",
+                    "Регулируется консенсусом пользователей",
+                    "Платежи без посрдеников"],
+            },
+            four:{
+                title:"Системы прожект менеджмента",
+                desc:["-",
+                    "Управление проектами, управление финансами и поиск подрядчиков через различные приложения",
+                    "Привязка к одной методолгии",
+                    "Привязка к одному/нескольким методам",
+                    "Регулируется централизовано",
+                    "Платежи через посредников\n"],
+            }
+		},
 		team: {
 			title: 'Команда',
 			serokell: [{
 				name: 'Serokell',
 				members: [{
-					name: 'Arseniy Seroka',
-					position: 'Lead Serokell Developer',
-					image: 'seroka@3x.png'
+					name: 'Арсений Серока',
+					position: 'Ведущий разработчик Serokell',
+					image: '../static/images/avatars/seroka@3x.png'
 				}, {
-										name: 'John Mostovoy',
-										position: 'Lead Serokell Developer',
-					image: 'mostovoy@3x.png'
+										name: 'Йон Мостовой',
+										position: 'Ведущий разработчик Serokell',
+					image: '../static/images/avatars/mostovoy@3x.png'
 								}, {
-										name: 'Alexander Rukin',
-										position: 'UI/UX Designer',
-					image: 'rukin@3x.png'
+										name: 'Александр Рукин',
+										position: 'UI/UX Дизайнер',
+					image: '../static/images/avatars/rukin@3x.png'
 								}, {
-										name: 'Kirill Elagin',
-										position: 'Backend Engineer',
-					image: 'elagin@3x.png'
+										name: 'Кирилл Елагин',
+										position: 'Backend Разработчик',
+					image: '../static/images/avatars/elagin@3x.png'
 								}]
 			}],
 			effectiveEnergy: [{
 				name: 'Effective Energy',
 				members: [{
-										name: 'Mikhail Gromyko',
-										position: 'Chief Executive Officer',
-										image: 'gromyko@3x.png'
+										name: 'Михаил Громыко',
+										position: 'Директор компании',
+										image: '../static/images/avatars/gromyko@3x.png'
 								},
 								{
-										name: 'Vladimir Grudinin',
-										position: 'Blockchain Expert',
-										image: 'grudinin@3x.png'
+										name: 'Владимир Грудинин',
+										position: 'Блокчейн Эксперт',
+										image: '../static/images/avatars/grudinin@3x.png'
 								},
 								{
-										name: 'Alexej Osipenko',
-										position: 'Chief Operating Officer',
-										image: 'osipenko@3x.png'
+										name: 'Алексей Остапенко',
+										position: 'Главный операционный директор',
+										image: '../static/images/avatars/osipenko@3x.png'
 								},
 								{
-										name: 'Elena Tsymbalyuk',
-										position: 'Head of Marketing Operations',
-										image: 'elena@3x.png'
+										name: 'Елена Цимбалюк',
+										position: 'Начальник отдела маркетинговых операций',
+										image: '../static/images/avatars/elena@3x.png'
 								},
 								{
-										name: 'Egor Loktev',
-										position: 'Chief Marketing Officer',
-										image: 'loktev@3x.png'
+										name: 'Егор Локтев',
+										position: 'Директор по маркетингу',
+										image: '../static/images/avatars/loktev@3x.png'
 								},
 								{
-										name: 'Artem Levashov',
-										position: 'Chief Legal Officer',
-										image: 'levashow@3x.png'
+										name: 'Артем Левашев',
+										position: 'Главный консультант по юредическим делам',
+										image: '../static/images/avatars/levashow@3x.png'
 								},
 								{
-										name: 'Vadim Dudin',
-										position: 'Fullstack Developer',
-										image: 'dudin@3x.png'
+										name: 'Вадим Дудин',
+										position: 'Fullstack Разработчик',
+										image: '../static/images/avatars/dudin@3x.png'
 								},
 								{
-										name: 'Alexander Voroncov',
-										position: 'Fullstack Developer',
-										image: 'voroncov@3x.png'
+										name: 'Александр Воронцов',
+										position: 'Fullstack Разработчик',
+										image: '../static/images/avatars/voroncov@3x.png'
 								},
 								{
-										name: 'Denis Tikhonov',
+										name: 'Денис Тихонов',
+										position: 'Frontend Разработчик',
+										image: '../static/images/avatars/mostovoy@3x.png'
+								},
+								{
+										name: 'Галина Сергеевна',
 										position: 'Frontend Developer',
-										image: 'mostovoy@3x.png'
+										image: '../static/images/avatars/elagin@3x.png'
 								},
 								{
-										name: 'Galina Sergeeva',
-										position: 'Frontend Developer',
-										image: 'elagin@3x.png'
-								},
-								{
-										name: 'Dmitry Zhuravlev',
-										position: 'Mobile developer',
-										image: 'zhuravlev@3x.png'
+										name: 'Дмитрий Журавлев',
+										position: 'Mobile Разработчик',
+										image: '../static/images/avatars/zhuravlev@3x.png'
 								}]
 			}]
 		},
 		advisors: {
-			title: 'Advisors',
+			title: 'Создатели',
 			members: [{
-							name: 'Mikhail Gromyko',
-							position: 'Chief Executive Officer',
-							image: 'gromyko@3x.png'
+                name: 'Михаил Громыко',
+                position: 'Директор компании',
+                image: '../static/images/avatars/gromyko@3x.png'
 					}, {
-							name: 'Vladimir Grudinin',
-							position: 'Blockchain Expert',
-							image: 'grudinin@3x.png'
+                name: 'Владимир Грудинин',
+                position: 'Блокчейн Эксперт',
+                image: '../static/images/avatars/grudinin@3x.png'
 					}, {
-							name: 'Alexej Osipenko',
-							position: 'Chief Operating Officer',
-							image: 'osipenko@3x.png'
+                name: 'Алексей Остапенко',
+                position: 'Главный операционный директор',
+                image: '../static/images/avatars/osipenko@3x.png'
 					}, {
-							name: 'Elena Tsymbalyuk',
-							position: 'Head of Marketing Operations',
-							image: 'elena@3x.png'
+                name: 'Елена Цимбалюк',
+                position: 'Начальник отдела маркетинговых операций',
+                image: '../static/images/avatars/elena@3x.png'
 					}, {
-							name: 'Egor Loktev',
-							position: 'Chief Marketing Officer',
-							image: 'loktev@3x.png'
+                name: 'Егор Локтев',
+                position: 'Директор по маркетингу',
+                image: '../static/images/avatars/loktev@3x.png'
 					}]
 		},
 		economy: {
