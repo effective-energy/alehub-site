@@ -2,7 +2,9 @@
     <div class="footer">
         <div class="row footer-row">
             <div class="col-5 copyright-block">
-                <div class="ale-logo"></div>
+                <router-link tag="a" to="/">
+                    <div class="ale-logo"></div>
+                </router-link>
                 <span class="copyright-text">
 				 {{ $t('footer.right.copyright') }}
 				<div class="creator-and-terms">

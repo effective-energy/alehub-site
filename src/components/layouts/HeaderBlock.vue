@@ -73,14 +73,69 @@
                         class="btn btn-login">
                     {{ $t("navbar.loginBtn") }}
                 </button>
-                <b-dropdown :text="currentLang">
-                    <b-dropdown-item :active="lang === currentLang"
-                                     v-for="(lang, langIndex) in languagesList"
-                                     @click="changeLanguage(langIndex)"
-                                     :key="langIndex">
-                        {{ lang }}
-                    </b-dropdown-item>
-                </b-dropdown>
+                <div id="select-lang" class="select-lang" @click="toggleDropdown">
+                    EN
+
+                    <div class="select-lang__dropdown"
+                         v-if="dropdownOpen">
+
+                        <div class="select-lang__item select-lang__fr">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>FR</span>
+                        </div>
+                        <div class="select-lang__item select-lang__de">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>DE</span>
+                        </div>
+                        <div class="select-lang__item select-lang__es">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>ES</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ar">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>AR</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ko">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>KO</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ja">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>JA</span>
+                        </div>
+                        <div class="select-lang__item select-lang__zh">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>ZH</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ru">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>RU</span>
+                        </div>
+                        <div class="select-lang__item select-lang__en selected">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>EN</span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--<b-dropdown :text="currentLang">-->
+                    <!--<b-dropdown-item :active="lang === currentLang"-->
+                                     <!--v-for="(lang, langIndex) in languagesList"-->
+                                     <!--@click="changeLanguage(langIndex)"-->
+                                     <!--:key="langIndex">-->
+                        <!--{{ lang }}-->
+                    <!--</b-dropdown-item>-->
+                <!--</b-dropdown>-->
             </div>
             <button type="button" class="btn btn-actions">ok</button>
         </div>
@@ -156,7 +211,9 @@
                 ],
                 activeItem: 0,
                 languagesList: ['eng', 'rus'],
-                selectedLanguage: localStorage.getItem('systemLang')
+                selectedLanguage: localStorage.getItem('systemLang'),
+
+                heightLangItem: 0
             }
         },
         watch: {
@@ -197,6 +254,10 @@
             },
             isModalIsOpen: function () {
                 return this.modalIsOpen;
+            },
+
+            isHeightLangItem: function () {
+                return this.heightLangItem;
             }
         },
         methods: {
@@ -415,12 +476,117 @@
                         this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
-            })
+            });
+
+            if (document.getElementById('select-lang'))
+                this.heightLangItem = document.getElementById('select-lang').offsetHeight;
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+
+    .select-lang
+        cursor pointer
+        /*position relative*/
+        display flex
+        justify-content center
+        align-items center
+        padding 0 20px
+        margin-left 20px
+        font-weight 700
+
+        .select-lang__dropdown
+            right 60px
+            top 74px
+            /*width 540px*/
+            position absolute
+            display flex
+            justify-content center
+            align-items center
+            -webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
+            -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
+            box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
+
+            .selected
+                .select-lang__cover
+                    background-color #fff !important
+                    opacity 0.2 !important
+
+                span
+                    opacity 0 !important
+
+            .select-lang__item
+                position relative
+                background-color #fff
+                width 60px
+                height 60px
+                background-size cover
+                background-repeat no-repeat
+                background-position 50% 0
+
+                &:hover
+                    .select-lang__cover
+                        background-color #fff
+                        opacity 0.2
+
+                    span
+                        opacity 0
+                        /*color #34343e*/
+                        /*text-shadow:
+                                -1px -1px 0 #fff,
+                                1px -1px 0 #fff,
+                                -1px 1px 0 #fff,
+                                1px 1px 0 #fff;*/
+
+                span
+                    position absolute
+                    top calc(50% - 12px)
+                    left calc(50% - 10.5px)
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
+
+                .select-lang__cover
+                    opacity 1
+                    background-color #fff
+                    width 100%
+                    height 100%
+                    display flex
+                    justify-content center
+                    align-items center
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
+
+            .select-lang__en
+                background-image url(../../../static/images/flags/en@2x.png)
+
+            .select-lang__ru
+                background-image url(../../../static/images/flags/ru@2x.png)
+
+            .select-lang__zh
+                background-position 0 0
+                background-image url(../../../static/images/flags/zh@2x.png)
+
+            .select-lang__ja
+                background-image url(../../../static/images/flags/ja@2x.png)
+
+            .select-lang__ko
+                background-image url(../../../static/images/flags/ko@2x.png)
+
+            .select-lang__ar
+                background-image url(../../../static/images/flags/ar@2x.png)
+
+            .select-lang__es
+                background-image url(../../../static/images/flags/es@2x.png)
+
+            .select-lang__de
+                background-image url(../../../static/images/flags/de@2x.png)
+
+            .select-lang__fr
+                background-image url(../../../static/images/flags/fr@2x.png)
+
 
     .choose-languages
         display none

@@ -597,6 +597,9 @@
     /*.section__dark*/
     /*background-color #34343e*/
 
+    #screen1
+        padding-top 74px
+
     #description
         @media (min-width 420px)
             height 100vh
