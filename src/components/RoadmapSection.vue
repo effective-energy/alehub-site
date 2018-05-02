@@ -12,7 +12,7 @@
             <div class="slides-body"
                  @mousedown="dragStart($event)"
                  @mouseup="dragEnd()"
-                 @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'"
+                 @mousemove="(xDrag && yDrag && !isDisableTouch) ? dragMove($event) : 'false'"
                  @touchstart="touchStart($event)"
                  @touchmove="touchMove($event)">
 
@@ -96,13 +96,17 @@
                 yDown: 0,
                 scrollContentWidth: 0,
                 slideWidth: 0,
-                disableControls: false
+                disableControls: false,
+                disableTouch: false
             }
         },
         computed: {
             roadmapPanelWidth: function () {
                 return this.scrollContentWidth;
             },
+            isDisableTouch: function () {
+                return this.disableTouch;
+            }
         },
         methods: {
             dragStart: function (e) {
@@ -142,8 +146,6 @@
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
-                //повесить стоп
-
                 if (!this.xDown || !this.yDown)
                     return;
 
@@ -153,14 +155,17 @@
                 let xDiff = this.xDown - xUp;
                 let yDiff = this.yDown - yUp;
 
-                if (Math.abs(xDiff) > Math.abs(yDiff))
+                if (Math.abs(xDiff) > Math.abs(yDiff) && !this.isDisableTouch) {
+                    console.log('trigger move slide');
                     (xDiff > 0) ? this.nextSlide() : this.prevSlide();
+                }
 
                 this.xDown = 0;
                 this.yDown = 0;
             },
             nextSlide: function () {
                 this.disableControls = true;
+                this.disableTouch = true;
 
                 let start = document.getElementById('scroll-element').scrollLeft,
                     gap = start % this.slideWidth,
@@ -179,6 +184,7 @@
                         setTimeout(animateScroll, increment);
                     } else {
                         this.disableControls = false;
+                        this.disableTouch = false;
                     }
                 };
 
@@ -186,6 +192,7 @@
             },
             prevSlide: function () {
                 this.disableControls = true;
+                this.disableTouch = true;
 
                 let start = document.getElementById('scroll-element').scrollLeft,
                     gap = (start % this.slideWidth) ? start % this.slideWidth : this.slideWidth,
@@ -204,6 +211,7 @@
                         setTimeout(animateScroll, increment);
                     } else {
                         this.disableControls = false;
+                        this.disableTouch = false;
                     }
                 };
 
@@ -396,8 +404,8 @@
 
         .responsible
             width 100%
-            max-height 144px
-            margin 16px 0 16px
+            max-height 216px
+            margin 16px 0 0 0
             display flex
             flex-wrap wrap
             justify-content flex-start
@@ -405,6 +413,7 @@
             .avatar
                 width 48px
                 height 48px
+                margin 6px 12px 6px 0
                 overflow hidden
                 text-align center
                 background-color #6f757f
@@ -414,10 +423,9 @@
                     height 48px
                     width auto
 
-            .avatar:not(:first-child)
-                margin-left 12px
-
         .slide-progress
+            margin-top 18px
+
             .progress-line-outer
                 background-color rgba(226, 232, 232, .3)
 
