@@ -567,15 +567,12 @@
         mounted() {
             setTimeout(() => {
                 if (localStorage.getItem('color-theme') === 'dark') {
-                    console.log(1);
                     this.isDark = true;
                     this.$parent.$emit('isDarkTheme', true);
                 } else if (localStorage.getItem('color-theme') === 'light') {
-                    console.log(2);
                     this.isDark = false;
                     this.$parent.$emit('isDarkTheme', false);
                 } else {
-                    console.log(3);
                     localStorage.setItem('color-theme', 'light');
                     this.$parent.$emit('isDarkTheme', false);
                 }

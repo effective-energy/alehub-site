@@ -79,6 +79,8 @@
                     <div class="select-lang__dropdown"
                          v-if="dropdownOpen">
 
+
+                        <!--классы поместить в массив с названиями языков в data()-->
                         <div class="select-lang__item select-lang__fr">
                             <div class="select-lang__cover">
                             </div>
@@ -114,12 +116,16 @@
                             </div>
                             <span>ZH</span>
                         </div>
-                        <div class="select-lang__item select-lang__ru">
+                        <div class="select-lang__item select-lang__ru"
+                             :class="{ 'selected': currentLang === 'ru' }"
+                             @click="changeLanguage(1)">
                             <div class="select-lang__cover">
                             </div>
                             <span>RU</span>
                         </div>
-                        <div class="select-lang__item select-lang__en selected">
+                        <div class="select-lang__item select-lang__en"
+                             :class="{ 'selected': currentLang === 'en' }"
+                             @click="changeLanguage(0)">
                             <div class="select-lang__cover">
                             </div>
                             <span>EN</span>
@@ -129,12 +135,12 @@
 
                 </div>
                 <!--<b-dropdown :text="currentLang">-->
-                    <!--<b-dropdown-item :active="lang === currentLang"-->
-                                     <!--v-for="(lang, langIndex) in languagesList"-->
-                                     <!--@click="changeLanguage(langIndex)"-->
-                                     <!--:key="langIndex">-->
-                        <!--{{ lang }}-->
-                    <!--</b-dropdown-item>-->
+                <!--<b-dropdown-item :active="lang === currentLang"-->
+                <!--v-for="(lang, langIndex) in languagesList"-->
+                <!--@click="changeLanguage(langIndex)"-->
+                <!--:key="langIndex">-->
+                <!--{{ lang }}-->
+                <!--</b-dropdown-item>-->
                 <!--</b-dropdown>-->
             </div>
             <button type="button" class="btn btn-actions">ok</button>
@@ -210,7 +216,7 @@
                     },
                 ],
                 activeItem: 0,
-                languagesList: ['eng', 'rus'],
+                languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
 
                 heightLangItem: 0
@@ -241,13 +247,12 @@
         },
         computed: {
             currentLang: function () {
-                if (this.selectedLanguage === 'eng') {
-                    return 'eng';
-                } else if (this.selectedLanguage === 'rus') {
-                    return 'rus';
-                } else {
-                    return 'eng';
-                }
+                if (this.selectedLanguage === 'en')
+                    return 'en';
+                else if (this.selectedLanguage === 'ru')
+                    return 'ru';
+
+                return 'en';
             },
             isNavLinks: function () {
                 return this.navLinks;
@@ -258,7 +263,7 @@
 
             isHeightLangItem: function () {
                 return this.heightLangItem;
-            }
+            },
         },
         methods: {
             changeLanguage(index) {
@@ -273,16 +278,19 @@
                 this.$modal.hide(name);
             },
             changeLineWidth: function (index) {
-                if (!document.querySelector('.nav-line')) return false
+                if (!document.querySelector('.nav-line'))
+                    return false;
+
                 let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 
                 let scope = 0;
                 for (let i = 0; i <= index; i++) {
-                    if (index === 0 || index === i) continue;
+                    if (index === 0 || index === i)
+                        continue;
                     scope += document.querySelectorAll('.nav-item')[i].offsetWidth;
                 }
-                document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
+                document.querySelector('.nav-line').style.transform = `translate3D(${ scope }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -295,7 +303,52 @@
                 };
             },
             toggleDropdown: function () {
-                this.dropdownOpen = !this.dropdownOpen;
+                let tmpDropdownOpen = !this.dropdownOpen;
+
+                if (tmpDropdownOpen) {
+
+                    this.dropdownOpen = tmpDropdownOpen;
+
+                    setTimeout(() => {
+                        let duration = 900,
+                            currentTime = 0,
+                            increment = 100,
+                            i = document.getElementsByClassName('select-lang__item').length - 1;
+
+                        let animateScroll = () => {
+                            currentTime += increment;
+                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 1;
+                            i--;
+                            if (currentTime < duration) {
+                                setTimeout(animateScroll, increment);
+                            }
+                        };
+
+                        animateScroll();
+                    }, 40);
+                } else {
+                    setTimeout(() => {
+                        let duration = 900,
+                            currentTime = 0,
+                            increment = 100,
+                            i = 0;
+
+                        let animateScroll = () => {
+                            currentTime += increment;
+                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 0;
+                            i++;
+                            if (currentTime < duration) {
+                                setTimeout(animateScroll, increment);
+                            } else {
+                                setTimeout(() => {
+                                    this.dropdownOpen = tmpDropdownOpen;
+                                }, increment);
+                            }
+                        };
+
+                        animateScroll();
+                    }, 40);
+                }
             },
             toggleMenuModal: function () {
                 if (this.activeHamburger)
@@ -503,10 +556,9 @@
             position absolute
             display flex
             justify-content center
-            align-items center
-            -webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
+            align-items center /*-webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
             -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
-            box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
+            box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)*/
 
             .selected
                 .select-lang__cover
@@ -517,6 +569,7 @@
                     opacity 0 !important
 
             .select-lang__item
+                opacity 0
                 position relative
                 background-color #fff
                 width 60px
@@ -524,6 +577,22 @@
                 background-size cover
                 background-repeat no-repeat
                 background-position 50% 0
+                -webkit-transition all .3s ease-out
+                -o-transition all .3s ease-out
+                transition all .3s ease-out
+
+                &:before
+                    width 60px
+                    height 3px
+                    content ""
+                    position absolute
+                    bottom -3px
+                    background -moz-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
+                    background -webkit-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -o-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -ms-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
 
                 &:hover
                     .select-lang__cover
@@ -532,12 +601,12 @@
 
                     span
                         opacity 0
-                        /*color #34343e*/
-                        /*text-shadow:
-                                -1px -1px 0 #fff,
-                                1px -1px 0 #fff,
-                                -1px 1px 0 #fff,
-                                1px 1px 0 #fff;*/
+                /*color #34343e*/
+                /*text-shadow:
+                        -1px -1px 0 #fff,
+                        1px -1px 0 #fff,
+                        -1px 1px 0 #fff,
+                        1px 1px 0 #fff;*/
 
                 span
                     position absolute
@@ -562,7 +631,22 @@
             .select-lang__en
                 background-image url(../../../static/images/flags/en@2x.png)
 
+                &:after
+                    height 60px
+                    width 3px
+                    content ""
+                    position absolute
+                    right -3px
+                    top 2px
+                    background -moz-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(204, 204, 204, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
+                    background -webkit-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -o-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -ms-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background linear-gradient(to right, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+
             .select-lang__ru
+                position relative
                 background-image url(../../../static/images/flags/ru@2x.png)
 
             .select-lang__zh
@@ -587,6 +671,19 @@
             .select-lang__fr
                 background-image url(../../../static/images/flags/fr@2x.png)
 
+                &:after
+                    height 60px
+                    width 3px
+                    content ""
+                    position absolute
+                    left -3px
+                    top 2px
+                    background -moz-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(236, 236, 240, 1)), color-stop(100%, rgba(204, 204, 204, 1)))
+                    background -webkit-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -o-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -ms-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background linear-gradient(to right, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
 
     .choose-languages
         display none

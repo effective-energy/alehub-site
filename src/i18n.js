@@ -1,5 +1,5 @@
 const messages = {
-    eng: {
+    en: {
         navbar: {
             menuList: [
                 {
@@ -502,7 +502,7 @@ const messages = {
             }
         }
     },
-    rus: {
+    ru: {
         navbar: {
             menuList: [
                 {
