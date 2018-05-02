@@ -349,7 +349,7 @@
                     <div class="desktop-outer">
                         <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
-                        <slider ref="slider"
+                        <slider v-if="reBuild" ref="slider"
                                 :pages="pages"
                                 :sliderinit="sliderInit">
                         </slider>
@@ -414,6 +414,7 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
+                reBuild: true,
                 sliderInit: {
                     currentPage: 0,
                     thresholdDistance: 100,
@@ -554,11 +555,31 @@
                 document.getElementById('do-dark-theme').addEventListener('click', () => {
                     this.isDark = true;
                     this.$parent.$emit('isDarkTheme', true);
+                    this.pages[0] = {
+                        html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
+                    };
+                    this.pages[2] = {
+                        html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
+                    };
+                    this.reBuild = false;
+                    setTimeout(() => {
+                        this.reBuild = true;
+                    }, 100);
                 });
 
                 document.getElementById('do-light-theme').addEventListener('click', () => {
                     this.isDark = false;
                     this.$parent.$emit('isDarkTheme', false);
+                    this.pages[0] = {
+                        html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                    };
+                    this.pages[2] = {
+                        html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                    };
+                    this.reBuild = false;
+                    setTimeout(() => {
+                        this.reBuild = true;
+                    }, 100);
                 });
             }
         },
