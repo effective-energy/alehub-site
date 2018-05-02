@@ -21,7 +21,7 @@
                      :key="slideIndex">
                     <div class="line"></div>
                     <div class="slide-content"
-                         :class="{ 'deployed': slide.state === 'Deployed' }">
+                         :class="{ 'active': slide.state === 'Deployed' }">
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
@@ -329,14 +329,14 @@
         line-height normal
         letter-spacing normal
         text-align center
-        color #ffffff
+        color #f7f7f7
         margin 24px 0
 
     .is-center
         text-align center
 
     .is-white
-        color #ffffff
+        color #f7f7f7
 
     .scroll-block
         display flex
@@ -404,7 +404,7 @@
             line-height normal
             letter-spacing normal
             text-align left
-            color #ffffff
+            color #f7f7f7
 
             &:active
                 cursor -webkit-grabbing
@@ -427,8 +427,17 @@
 
                 .slide-content
                     padding 32px 24px
+                    -webkit-transition all .3s ease-in-out
+                    -o-transition all .3s ease-in-out
+                    transition all .3s ease-in-out
 
-                    &.deployed
+                    &:hover
+                        background-color rgba(255, 188, 0, 0.05)
+
+                        .slide-title
+                            color #ffbc00
+
+                    &.active
                         background-color rgba(255, 188, 0, 0.05)
 
                         .slide-title
@@ -442,7 +451,10 @@
                         font-stretch normal
                         line-height 1.5
                         letter-spacing normal
-                        color #ffffff
+                        color #f7f7f7
+                        -webkit-transition color .3s ease-in-out
+                        -o-transition color .3s ease-in-out
+                        transition color .3s ease-in-out
 
                     .date
                         font-family MuseoSansCyrl100
@@ -460,6 +472,7 @@
                 overflow hidden
                 border-radius 50%
                 text-align center
+
                 img
                     height 48px
                     width auto

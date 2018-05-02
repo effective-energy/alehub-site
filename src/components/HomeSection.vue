@@ -667,8 +667,8 @@
     .collection
         .item
             -webkit-transition all .3s ease-in-out
-            -o-transition all color .3s ease-in-out
-            transition all color .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
             cursor pointer
 
     section
