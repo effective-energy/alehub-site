@@ -24,8 +24,8 @@
                          v-for="(member, i) in items"
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
-                        <div class="b-carousel__inner"
-                             :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
+
+                        <div class="b-carousel__inner">
 
                             <img class="layer__bottom b-carousel__img"
                                  :src="member.src"
@@ -391,6 +391,20 @@
 </script>
 
 <style lang="stylus" scoped>
+    .b-carousel__item
+        &:nth-child(even)
+            .b-carousel__inner
+                background-color #e8ebef
+        &:nth-child(odd)
+            .b-carousel__inner
+                background-color #abb8c6
+
+
+    .a-js-carousel__wrap
+        .b-carousel__item
+            &:nth-child(even)
+                .b-carousel__inner
+                    background-color #dbe0e9
 
     .wrap
         width 100%
