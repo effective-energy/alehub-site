@@ -1,10 +1,6 @@
 <template>
-    <!--<div class="wrapper" data-anim="base wrapper">-->
-        <!--<div class="circle" data-anim="base left"></div>-->
-        <!--<div class="circle" data-anim="base right"></div>-->
-    <!--</div>-->
 
-    <div class="col-xs-6 col-lg-3 col-md-4 col-sm-6 col-6">
+    <div class="circle mirror col-xs-6 col-lg-3 col-md-4 col-sm-6 col-6">
         <div class="progress first">
                 <span class="progress-left">
                     <span class="progress-bar"></span>
@@ -34,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-            <div class="progress-value">{{ $parent.activeDistribution }}</div>
+            <div :style="{color: $parent.activeDistribution.color}" class="mirror progress-value">{{ $parent.activeDistribution.count ? $parent.activeDistribution.count + "%" : "100%"  }}</div>
         </div>
     </div>
 </template>
@@ -46,11 +42,13 @@
 </script>
 
 <style scoped>
-
+    .mirror{
+        transform: scale(-1, 1)
+    }
     .progress{
         width: 160px;
         height: 160px;
-        line-height: 160px;
+        line-height: 150px;
         background: none;
         margin: 0 auto;
         box-shadow: none;
@@ -60,6 +58,7 @@
         content: "";
         width: 100%;
         height: 100%;
+        border: solid 0.5px #324f64;
         border-radius: 60%;
         position: absolute;
         top: 0;
@@ -97,7 +96,7 @@
         right: 0;
     }
     .progress .progress-right .progress-bar{
-        left: -102%;
+        left: -100%;
         border-top-left-radius: 80px;
         border-bottom-left-radius: 80px;
         border-right: hidden;
@@ -108,16 +107,17 @@
         width: 85%;
         height: 85%;
         border-radius: 50%;
-        font-size: 32px;
-        line-height: 125px;
+        font-size: 24px;
+        line-height: 550%;
         text-align: center;
         position: absolute;
         top: 7.5%;
         left: 7.5%;
     }
 
-    .progress .progress-right .progress-bar{
-        animation: loading-1 1.8s linear forwards;
+
+    .progress.first .progress-left .progress-bar{
+        animation: loading-1-1 1.5s linear forwards 1.8s;
     }
     .progress.first .progress-bar{
         border-color: #139ac9;
@@ -125,8 +125,8 @@
     .progress.first .progress-value{
         color: #139ac9;
     }
-    .progress.first .progress-left .progress-bar{
-        animation: loading-2 1.5s linear forwards 1.8s;
+    .progress .progress-right .progress-bar{
+        animation: loading-1 1.8s linear forwards;
     }
 
     .progress.second .progress-right .progress-bar{
@@ -170,7 +170,7 @@
             transform: rotate(180deg);
         }
     }
-    @keyframes loading-2{
+    @keyframes loading-1-1{
         0%{
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -180,17 +180,17 @@
             transform: rotate(97.2deg);
         }
     }
-    @keyframes loading-3{
+    @keyframes loading-2{
         0%{
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
         }
         100%{
-            -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+            -webkit-transform: rotate(39.6deg);
+            transform: rotate(39.6deg);
         }
     }
-    @keyframes loading-4{
+    @keyframes loading-3{
         0%{
             -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -200,77 +200,18 @@
             transform: rotate(36deg);
         }
     }
+    @keyframes loading-4{
+        0%{
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100%{
+            -webkit-transform: rotate(7.2deg);
+            transform: rotate(7.2deg);
+        }
+    }
     @media only screen and (max-width: 990px){
         .progress{ margin-bottom: 20px; }
     }
-    /*.ciircle{*/
-        /*display: flex;*/
-        /*justify-content: center;*/
-        /*width: 80% !important;*/
-        /*height: 80% !important;*/
-        /*align-items: center;*/
-    /*}*/
-    /*.wrapper {*/
-        /*width: 100px; !* Set the size of the progress bar *!*/
-        /*height: 100px;*/
-        /*position: absolute; !* Enable clipping *!*/
-        /*clip: rect(0px, 100px, 100px, 50px); !* Hide half of the progress bar *!*/
-    /*}*/
-    /*!* Set the sizes of the elements that make up the progress bar *!*/
-    /*.circle {*/
-        /*width: 80px;*/
-        /*height: 80px;*/
-        /*border: 3px solid four;*/
-        /*border-radius: 50px;*/
-        /*position: absolute;*/
-        /*clip: rect(0px, 50px, 100px, 0px);*/
-    /*}*/
-    /*!* Using the data attributes for the animation selectors. *!*/
-    /*!* Base settings for all animated elements *!*/
-    /*div[data-anim~=base] {*/
-        /*-webkit-animation-iteration-count: 1;  !* Only run once *!*/
-        /*-webkit-animation-fill-mode: forwards; !* Hold the last keyframe *!*/
-        /*-webkit-animation-timing-function:linear; !* Linear animation *!*/
-    /*}*/
-
-    /*.wrapper[data-anim~=wrapper] {*/
-        /*-webkit-animation-duration: 0.01s; !* Complete keyframes asap *!*/
-        /*-webkit-animation-delay: 3s; !* Wait half of the animation *!*/
-        /*-webkit-animation-name: close-wrapper; !* Keyframes name *!*/
-    /*}*/
-
-    /*.circle[data-anim~=left] {*/
-        /*-webkit-animation-duration: 6s; !* Full animation time *!*/
-        /*-webkit-animation-name: left-spin;*/
-    /*}*/
-
-    /*.circle[data-anim~=right] {*/
-        /*-webkit-animation-duration: 3s; !* Half animation time *!*/
-        /*-webkit-animation-name: right-spin;*/
-    /*}*/
-    /*!* Rotate the right side of the progress bar from 0 to 180 degrees *!*/
-    /*@-webkit-keyframes right-spin {*/
-        /*from {*/
-            /*-webkit-transform: rotate(0deg);*/
-        /*}*/
-        /*to {*/
-            /*-webkit-transform: rotate(180deg);*/
-        /*}*/
-    /*}*/
-    /*!* Rotate the left side of the progress bar from 0 to 360 degrees *!*/
-    /*@-webkit-keyframes left-spin {*/
-        /*from {*/
-            /*-webkit-transform: rotate(0deg);*/
-        /*}*/
-        /*to {*/
-            /*-webkit-transform: rotate(360deg);*/
-        /*}*/
-    /*}*/
-    /*!* Set the wrapper clip to auto, effectively removing the clip *!*/
-    /*@-webkit-keyframes close-wrapper {*/
-        /*to {*/
-            /*clip: rect(auto, auto, auto, auto);*/
-        /*}*/
-    /*}*/
 
 </style>
