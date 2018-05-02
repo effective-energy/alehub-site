@@ -117,8 +117,6 @@
 
                 xDrag: 0,
                 yDrag: 0,
-
-                asd: false
             }
         },
         watch: {

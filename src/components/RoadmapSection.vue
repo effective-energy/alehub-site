@@ -9,7 +9,13 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
-            <div class="slides-body">
+            <div class="slides-body"
+                 @mousedown="dragStart($event)"
+                 @mouseup="dragEnd()"
+                 @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'"
+                 @touchstart="touchStart($event)"
+                 @touchmove="touchMove($event)">
+
                 <div class="slide"
                      v-for="(slide, slideIndex) in slides"
                      :key="slideIndex">
@@ -82,7 +88,11 @@
         name: 'Roadmap',
         data() {
             return {
-                roadmapWidth: 0,
+                xDrag: 0,
+                yDrag: 0,
+                xDown: 0,
+                yDown: 0,
+                scrollContentWidth: 0,
                 slideWidth: 0,
                 disableControls: false,
                 slides: [
@@ -163,19 +173,61 @@
         },
         computed: {
             roadmapPanelWidth: function () {
-                return this.roadmapWidth;
+                return this.scrollContentWidth;
             },
         },
         methods: {
-            getCoords: function (elem) {
-                if (!elem)
-                    return false;
-                let box = elem.getBoundingClientRect();
+            dragStart: function (e) {
+                this.xDrag = e.pageX;
+                this.yDrag = e.pageY;
+            },
+            dragEnd: function () {
+                this.xDrag = 0;
+                this.yDrag = 0;
+            },
+            dragMove: function (e) {
+                let xMove = e.pageX;
+                let yMove = e.pageY;
 
-                return {
-                    top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
-                };
+                let xDiff = this.xDrag - xMove;
+                let yDiff = this.yDrag - yMove;
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    if (xDiff > 0) {
+                        if (Math.abs(xDiff) > this.slideWidth / 3) {
+                            this.nextSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+                    } else if (xDiff < 0) {
+                        if (Math.abs(xDiff) > this.slideWidth / 3) {
+                            this.prevSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+                    }
+                }
+
+            },
+            touchStart: function (e) {
+                this.xDown = e.touches[0].clientX;
+                this.yDown = e.touches[0].clientY;
+            },
+            touchMove: function (e) {
+                if (!this.xDown || !this.yDown)
+                    return;
+
+                let xUp = e.touches[0].clientX;
+                let yUp = e.touches[0].clientY;
+
+                let xDiff = this.xDown - xUp;
+                let yDiff = this.yDown - yUp;
+
+                if (Math.abs(xDiff) > Math.abs(yDiff))
+                    (xDiff > 0) ? this.nextSlide() : this.prevSlide();
+
+                this.xDown = 0;
+                this.yDown = 0;
             },
             nextSlide: function () {
                 this.disableControls = true;
@@ -227,54 +279,19 @@
 
                 animateScroll();
             },
-            dragStart: function (e) {
-                this.xDrag = e.pageX;
-                this.yDrag = e.pageY;
-            },
-            dragEnd: function (e) {
-                this.xDrag = 0;
-                this.yDrag = 0;
-            },
-            dragMove: function (e) {
-                console.log(e.pageX, 'mouse move X');
-
-                let xMove = e.pageX;
-                let yMove = e.pageY;
-
-                let xDiff = this.xDrag - xMove;
-                let yDiff = this.yDrag - yMove;
-
-                // console.log(xDiff, 'xDiff');
-                // console.log(yDiff, 'yDiff');
-
-                if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    //ширина фотки получать из DOM
-
-                    if (xDiff > 0) {
-
-                        if (Math.abs(xDiff) > 152) {
-                            this.nextSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
-
-                    }
-
-                    if (xDiff < 0) {
-
-                        if (Math.abs(xDiff) > 152) {
-                            this.prevSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
-
-                    }
-                }
-
-            },
             scrollForSlide: function (e) {
                 document.querySelector('.slides-body').scrollLeft = e.target.scrollLeft;
-            }
+            },
+            getCoords: function (elem) {
+                if (!elem)
+                    return false;
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+            },
         },
         created() {
             Math.easeInOutQuad = function (t, b, c, d) {
@@ -286,7 +303,7 @@
             };
         },
         mounted() {
-            this.roadmapWidth = document.querySelector('.slide').offsetWidth * document.getElementsByClassName('slide').length -
+            this.scrollContentWidth = document.querySelector('.slide').offsetWidth * document.getElementsByClassName('slide').length -
                 this.getCoords(document.getElementById('scroll-element')).left * 2;
 
             this.slideWidth = document.querySelector('.slide').offsetWidth;
@@ -325,6 +342,7 @@
         display flex
         justify-content center
         align-items center
+        margin-top 50px
 
         .arrow-prev, .arrow-next
             cursor pointer
@@ -357,7 +375,9 @@
             .scroll-content
                 height 1px
 
-    /*  @media () and () */
+            @media (max-width 420px)
+                width 75%
+
 
     .roadmap-slides
         user-select none
@@ -370,8 +390,10 @@
 
         .slides-body
             /*width 3584px*/
-            height 400px
+            /*height 400px*/
+            max-height 600px
             display flex
+            overflow-y hidden
             overflow-x hidden
             cursor -webkit-grab
             -webkit-overflow-scrolling touch
