@@ -218,22 +218,46 @@ const messages = {
                         {
                             name: 'Vadim Dudin',
                             position: 'Fullstack Developer',
-                            src: '../static/images/avatars/dudin@3x.png'
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexander Voroncov',
                             position: 'Fullstack Developer',
-                            src: '../static/images/avatars/voroncov@3x.png'
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Denis Tikhonov',
                             position: 'Frontend Developer',
-                            src: '../static/images/avatars/tikhonov@3x.png'
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
                         },
                         {
                             name: 'Galina Sergeeva',
                             position: 'Frontend Developer',
-                            src: '../static/images/avatars/sergeeva@3x.png'
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
@@ -697,22 +721,46 @@ const messages = {
                         {
                             name: 'Вадим Дудин',
                             position: 'Fullstack Разработчик',
-                            src: '../static/images/avatars/dudin@3x.png'
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
                         },
                         {
                             name: 'Александр Воронцов',
                             position: 'Fullstack Разработчик',
-                            src: '../static/images/avatars/voroncov@3x.png'
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Денис Тихонов',
                             position: 'Frontend Разработчик',
-                            src: '../static/images/avatars/tikhonov@3x.png'
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
                         },
                         {
                             name: 'Галина Сергеевна',
                             position: 'Frontend Разработчик',
-                            src: '../static/images/avatars/sergeeva@3x.png'
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Дмитрий Журавлев',

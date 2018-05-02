@@ -45,8 +45,6 @@
             }
         },
         mounted() {
-
-            // console.time('loading');
             this.$on('checkIsFeatures', (isFeatures) => {
                 this.isFeatures = isFeatures;
             });
@@ -58,11 +56,6 @@
             this.$on('isDarkTheme', (val) => {
                 this.isDark = val;
             });
-
-
-            // console.timeEnd('loading');
-
-            // this.isLoading = false;
         }
     }
 </script>
