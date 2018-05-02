@@ -471,7 +471,7 @@
 
 				.picture-block
 					.image
-						height 300px
+						height auto
 
 	@media(max-width: 375px)
 		.container-news
@@ -482,10 +482,10 @@
 			.news-block
 				.title
 					font-size 20px
-					text-align center
+					text-align left
 
 				.news-info
-					justify-content center
+					justify-content flex-start
 
 				.news-content
 					p
