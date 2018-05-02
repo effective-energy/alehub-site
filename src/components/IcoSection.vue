@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="row distribution">
-                <Circle1></Circle1>
+                <Circle1 :index="this.selectedDistributionIndex"></Circle1>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list">
                         <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
@@ -57,26 +57,30 @@
                 distributionList: [{
                     title: 'Sale for ICO',
                     type: 'sale',
-                    count: 77
+                    count: 77,
+                    color: '#139ac9'
                 }, {
                     title: 'Team',
                     type: 'team',
-                    count: 11
+                    count: 11,
+                    color: '#6289fd'
                 }, {
                     title: 'Referral program, advisors',
                     type: 'referral',
-                    count: 10
+                    count: 10,
+                    color: '#80ff89'
                 }, {
                     title: 'Bounty',
                     type: 'bounty',
-                    count: 2
+                    count: 2,
+                    color: '#fab604'
                 }]
             }
         },
         computed: {
             activeDistribution () {
                 if(this.selectedDistributionIndex === -1) return '100%';
-                else return this.distributionList[this.selectedDistributionIndex].count+'%';
+                else return this.distributionList[this.selectedDistributionIndex];
             }
         },
         methods: {
