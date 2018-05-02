@@ -50,16 +50,24 @@
             </div>
 
             <div class="scroll-block">
-                <div class="arrow-prev"></div>
+                <div class="arrow-prev">
+                    <!--@click="переместить роадмэп влево на Х"-->
+                </div>
+
                 <div id="scroll-element"
                      class="scroll-element"
-                     v-on:scroll="scrollForSlide">
+                     v-on:scroll="scrollForSlide($event)">
+
                     <div id="scroll-content"
                          class="scroll-content"
-                         :style="'width:'+slidesPanelWidth+'px'">
+                         :style="'width: ' + roadmapPanelWidth + 'px'">
                     </div>
+
                 </div>
-                <div class="arrow-next"></div>
+
+                <div class="arrow-next"
+                    @click="nextSlide">
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +78,8 @@
         name: 'Roadmap',
         data() {
             return {
-                slidesWidth: 0,
+                roadmapWidth: 0,
+                slideWidth: 0,
                 slides: [
                     {
                         title: 'Launch and publication MVP version of ALEHUB in centralised mode',
@@ -148,17 +157,106 @@
             }
         },
         computed: {
-            slidesPanelWidth() {
-                return this.slidesWidth
-            }
+            roadmapPanelWidth: function () {
+                return this.roadmapWidth;
+            },
         },
         methods: {
-            scrollForSlide() {
-                document.getElementsByClassName('slides-body')[0].scrollLeft = 891.5 - document.getElementById('scroll-content').getBoundingClientRect().left;
+            getCoords: function (elem) {
+                if (!elem)
+                    return false;
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+            },
+            nextSlide: function () {
+                let start = document.getElementById('scroll-element').scrollLeft,
+                    to = start + this.slideWidth - start % this.slideWidth,
+                    change = to - start,
+                    currentTime = 0,
+                    increment = 20;
+
+                let animateScroll = function(){
+                    currentTime += increment;
+                    let val = Math.easeInOutQuad(currentTime, start, change, 500);
+                    document.querySelector('.slides-body').scrollLeft = val;
+                    document.getElementById('scroll-element').scrollLeft = val;
+                    if(currentTime < 500) {
+                        setTimeout(animateScroll, increment);
+                    }
+                };
+
+                animateScroll();
+            },
+            prevSlide: function () {
+
+            },
+            dragStart: function (e) {
+                this.xDrag = e.pageX;
+                this.yDrag = e.pageY;
+            },
+            dragEnd: function (e) {
+                this.xDrag = 0;
+                this.yDrag = 0;
+            },
+            dragMove: function (e) {
+                console.log(e.pageX, 'mouse move X');
+
+                let xMove = e.pageX;
+                let yMove = e.pageY;
+
+                let xDiff = this.xDrag - xMove;
+                let yDiff = this.yDrag - yMove;
+
+                // console.log(xDiff, 'xDiff');
+                // console.log(yDiff, 'yDiff');
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    //ширина фотки получать из DOM
+
+                    if (xDiff > 0) {
+
+                        if (Math.abs(xDiff) > 152) {
+                            this.nextSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+
+                    if (xDiff < 0) {
+
+                        if (Math.abs(xDiff) > 152) {
+                            this.prevSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+                }
+
+            },
+            scrollForSlide: function (e) {
+                document.querySelector('.slides-body').scrollLeft = e.target.scrollLeft;
             }
         },
+        created() {
+            Math.easeInOutQuad = function (t, b, c, d) {
+                t /= d / 2;
+                if (t < 1)
+                    return c / 2 * t * t + b;
+                t--;
+                return - c / 2 * (t * (t - 2) - 1) + b;
+            };
+        },
         mounted() {
-            this.slidesWidth = 768 + (document.querySelectorAll(".slide")[0].offsetWidth * document.querySelectorAll(".slide").length) - screen.width;
+            this.roadmapWidth = document.querySelector('.slide').offsetWidth * document.getElementsByClassName('slide').length -
+                this.getCoords(document.getElementById('scroll-element')).left * 2;
+
+            this.slideWidth = document.querySelector('.slide').offsetWidth;
         }
     }
 </script>
@@ -191,6 +289,7 @@
         color #ffffff
 
     .scroll-block
+        cursor pointer
         display flex
         justify-content center
         align-items center
@@ -208,8 +307,9 @@
             background-size cover
 
         .scroll-element
-            max-width 768px
             height 6px
+            max-width 768px
+            width 768px
             overflow-x scroll
             border-radius 2px
             margin 0 12px
@@ -217,19 +317,35 @@
             .scroll-content
                 height 1px
 
+          /*  @media () and () */
+
+
+
     .roadmap-slides
+        user-select none
         margin-top 46px
+
         .topline
             width 100%
             height 2px
             background-color #ffbc00
 
         .slides-body
+            /*width 3584px*/
             height 400px
             display flex
             overflow-x hidden
             cursor -webkit-grab
             -webkit-overflow-scrolling touch
+            font-size 14px
+            font-weight 300
+            font-style normal
+            font-stretch normal
+            line-height normal
+            letter-spacing normal
+            text-align left
+            color #ffffff
+
             &:active
                 cursor -webkit-grabbing
 
@@ -237,6 +353,7 @@
                 min-width 512px
                 max-width 512px
                 padding 0 18px
+
                 .slide-content
                     background-color rgba(255, 255, 255, 0.05)
                     min-height 273px
@@ -271,17 +388,8 @@
                         font-family MuseoSansCyrl100
                         font-size 18px
 
-            font-size 14px
-            font-weight 300
-            font-style normal
-            font-stretch normal
-            line-height normal
-            letter-spacing normal
-            text-align left
-            color #ffffff
-
         .responsible
-            width 100%;
+            width 100%
             height 48px
             margin 16px 0 16px
             display flex

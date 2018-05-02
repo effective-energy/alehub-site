@@ -194,6 +194,7 @@
             }
         },
         methods: {
+            //rename
             asd: function () {
                 if (!this.isLanguagesModal) {
                     this.openModal('languages-modal');

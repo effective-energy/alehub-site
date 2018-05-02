@@ -171,7 +171,7 @@
                 this.yDrag = 0;
             },
             dragMove: function (e) {
-                console.log(e.pageX, 'mouse move X');
+                // console.log(e.pageX, 'mouse move X');
 
                 let xMove = e.pageX;
                 let yMove = e.pageY;
