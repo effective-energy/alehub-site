@@ -1,6 +1,6 @@
 <template>
 	<div class="section section-full-news">
-		<Header :show="'blog'" />
+		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
 			<div class="share-block">
 				<div class="share-item">
@@ -54,19 +54,19 @@
 				</div>
 			</div>
 		</div>
-		<Footer />
+		<footer-block />
 	</div>
 </template>
 
 <script>
-    import Header from './layouts/HeaderSection';
-    import Footer from './layouts/FooterSection';
+    import HeaderBlock from './layouts/HeaderBlock';
+    import FooterBlock from './layouts/FooterBlock';
 
     export default {
         name: 'BlogPost',
         components: {
-            Header,
-            Footer
+            HeaderBlock,
+            FooterBlock
 		},
 		data () {
 			return {

@@ -25,12 +25,6 @@
         <!--ALEHUB-->
         <!--</a>-->
 
-        <div class="choose-languages" @click="asd">
-            <span>
-                {{ selectedLanguage }}
-            </span>
-        </div>
-
         <div class="hamburger"
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
@@ -41,7 +35,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto ml-auto" v-if="!show">
-                <li v-for="(item, index) in navbar"
+                <li v-for="(item, index) in $t('navbar.menuList')"
                     :key="index"
                     class="nav-item"
                     :class="{ active: index === activeItem }">
@@ -49,8 +43,7 @@
                     <a @click="activeItem = index"
                        class="nav-link"
                        v-scroll-to="item.path">
-                        <!--:href="item.path">-->
-                        {{$t("navbar.menuList["+index+"].title")}}
+                        {{ item.name }}
                     </a>
                 </li>
                 <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
@@ -58,15 +51,22 @@
                 <li class="nav-line nav-line__black" v-else-if="isDark"></li>
                 <li class="nav-line nav-line__white" v-else></li>
             </ul>
-            <ul class="navbar-nav mr-auto ml-auto" v-else-if="show == 'blog'">
-                <router-link tag="li" :to="`/blog`" class="nav-item">
-                    <a href="#" class="nav-link">{{$t("navbar.blog")}}</a>
+
+            <ul class="navbar-nav mr-auto ml-auto"
+                v-else-if="show === 'blog'">
+
+                <router-link class="nav-item"
+                             tag="li"
+                             :to="`/blog`">
+                    <a href="#" class="nav-link">
+                        {{ $t("navbar.blog") }}
+                    </a>
                 </router-link>
             </ul>
             <div class="right-menu">
                 <button type="button"
                         class="btn btn-login">
-                    {{$t("navbar.loginBtn")}}
+                    {{ $t("navbar.loginBtn") }}
                 </button>
                 <b-dropdown :text="currentLang">
                     <b-dropdown-item :active="lang === currentLang"
@@ -80,20 +80,17 @@
             <button type="button" class="btn btn-actions">ok</button>
         </div>
 
-        <languages-modal/>
         <menu-modal/>
     </nav>
 </template>
 
 <script>
     import MenuModal from '../modals/MenuModal';
-    import LanguagesModal from '../modals/LanguagesModal';
 
     export default {
         name: 'HeaderSection', //rename
         components: {
             MenuModal,
-            LanguagesModal
         },
         props: {
             isMainDark: {
@@ -107,6 +104,7 @@
         },
         data() {
             return {
+                modalIsOpen: false,
                 isLanguagesModal: false,
                 isFeatures: false,
                 mainIsDark: false,
@@ -137,10 +135,6 @@
                         path: '#team',
                         name: 'Team'
                     },
-                    // {
-                    //     path: '#advisors',
-                    //     name: 'Advisors'
-                    // },
                     {
                         path: '#ico',
                         name: 'ICO'
@@ -164,7 +158,6 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
-                // console.log(dark, 'dark');
                 if (dark) {
                     this.mainIsDark = true;
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
@@ -183,7 +176,7 @@
             }
         },
         computed: {
-            currentLang() {
+            currentLang: function () {
                 if (this.selectedLanguage === 'eng') {
                     return 'eng';
                 } else if (this.selectedLanguage === 'rus') {
@@ -191,19 +184,15 @@
                 } else {
                     return 'eng';
                 }
+            },
+            isNavLinks: function () {
+                return this.navLinks;
+            },
+            isModalIsOpen: function () {
+                return this.modalIsOpen;
             }
         },
         methods: {
-            //rename
-            asd: function () {
-                if (!this.isLanguagesModal) {
-                    this.openModal('languages-modal');
-                    this.isLanguagesModal = true;
-                } else {
-                    this.closeModal('languages-modal');
-                    this.isLanguagesModal = false;
-                }
-            },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
                 localStorage.setItem('systemLang', this.selectedLanguage);
@@ -243,7 +232,13 @@
             toggleHamburger: function () {
                 this.activeHamburger = !this.activeHamburger;
 
-                (this.activeHamburger) ? this.openModal('menu-modal') : this.closeModal('menu-modal');
+                if (this.activeHamburger) {
+                    this.openModal('menu-modal');
+                    this.modalIsOpen = true;
+                } else {
+                    this.closeModal('menu-modal');
+                    this.modalIsOpen = false;
+                }
             },
             // initScroll: function () {
             //     window.addEventListener('scroll', () => {
@@ -272,7 +267,7 @@
                 document.getElementById('navbar').classList.remove('no-boxshadow');
             });
 
-            this.$on('changeNavbar', () => {
+            this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
             });
 
@@ -425,10 +420,13 @@
         .choose-languages
             text-transform uppercase
             color #34343e
-            display block
-            font-size 22px
+            /*display block*/
+            font-size 20px
             font-weight 600
             text-decoration underline
+            height 100%
+            display flex
+            align-items center
 
     .no-boxshadow
         -webkit-box-shadow none !important

@@ -1,15 +1,35 @@
 <template>
     <modal name="menu-modal"
            class="menu"
-           @opened="initModalScreen"
+           @opened="opened"
            @closed="closedModal('menu-modal')">
 
         <div class="body">
-            <div v-for="item in menu">
-                <a v-scroll-to="item.path"
-                   @click="closeModal('menu-modal')">
-                    {{ item.name }}
-                </a>
+            <div class="body__menu" v-if="!isSelectingLanguage">
+                <div v-for="item in $t('navbar.menuList')">
+                    <a v-scroll-to="item.path"
+                       @click="closeModal('menu-modal')">
+                        {{ item.name }}
+                    </a>
+                </div>
+            </div>
+            <div class="body__languages" v-if="isSelectingLanguage">
+                <div v-for="(item, langIndex) in languages">
+                    <button type="button"
+                            @click="changeLanguage(langIndex)">
+                        {{ item.name }}
+                    </button>
+                </div>
+            </div>
+            <div class="body__bottom">
+                <button type="button" v-if="!isSelectingLanguage"
+                        @click="toSelectLanguage">
+                    {{ $t('menuModal.selectLang') }}
+                </button>
+                <button type="button" v-else
+                        @click="toNavigationMenu">
+                    {{ $t('menuModal.navigationMenu') }}
+                </button>
             </div>
         </div>
 
@@ -21,44 +41,20 @@
         name: 'MenuModal',
         data() {
             return {
-                menu: [
+                selectingLanguage: false,
+                languages: [
                     {
-                        path: '#home',
-                        name: 'Home'
+                        name: 'eng'
                     },
                     {
-                        path: '#description',
-                        name: 'Description'
-                    },
-                    {
-                        path: '#advantages',
-                        name: 'Advantages'
-                    },
-                    {
-                        path: '#features',
-                        name: 'Features'
-                    },
-                    {
-                        path: '#team',
-                        name: 'Team'
-                    },
-                    {
-                        path: '#advisors',
-                        name: 'Advisors'
-                    },
-                    {
-                        path: '#ico',
-                        name: 'ICO'
-                    },
-                    {
-                        path: '#roadmap',
-                        name: 'Roadmap'
-                    },
-                    {
-                        path: '#blog',
-                        name: 'Blog'
-                    },
+                        name: 'rus'
+                    }
                 ],
+            }
+        },
+        computed: {
+            isSelectingLanguage: function () {
+                return this.selectingLanguage;
             }
         },
         methods: {
@@ -67,12 +63,25 @@
                 this.$modal.hide(name);
             },
             closedModal: function () {
+                this.selectingLanguage = false;
                 this.$parent.$emit('closeModal');
             },
-            initModalScreen: function () {
-                // this.closeModal('languages-modal');
-                this.$parent.$emit('changeNavbar');
-            }
+            opened: function () {
+                this.$parent.$emit('openedModalMenu');
+            },
+            toSelectLanguage: function () {
+                this.selectingLanguage = true;
+            },
+            toNavigationMenu: function () {
+                this.selectingLanguage = false;
+            },
+
+            changeLanguage: function (index) {
+                localStorage.setItem('systemLang', this.languages[index].name);
+                this.$i18n.locale = this.languages[index].name;
+                this.$parent.$emit('changeModalLanguage', this.languages[index].name);
+                this.closeModal('menu-modal');
+            },
         },
     }
 </script>
@@ -103,12 +112,64 @@
         justify-content center
         align-items center
 
-        div
-            padding 1.1rem 0
-            a
+        .body__menu
+            display flex
+            flex-direction column
+            align-items center
+            padding-bottom 100px
+
+            div
+                padding 1.1rem 0
+
+                a
+                    cursor pointer
+                    font-weight 700
+                    text-transform uppercase
+                    font-size 20px
+                    border-bottom 2px solid #343a49
+                    padding-bottom 0.2rem
+
+        .body__languages
+            padding-bottom 100px
+
+            div
+                padding 1.1rem 0
+
+                button
+                    cursor pointer
+                    background-color transparent
+                    border none
+                    font-weight 700
+                    text-transform uppercase
+                    font-size 20px
+                    color #343a49
+                    border-bottom 2px solid #343a49
+                    padding-bottom 0.2rem
+                    margin-bottom 0
+
+
+        .body__bottom
+            display flex
+            justify-content center
+            align-items center
+            background-color #343a49
+            width 100%
+            position absolute
+            height 100px
+            bottom 0
+
+            button
+                cursor pointer
+                background-color transparent
+                border none
                 font-weight 700
                 text-transform uppercase
                 font-size 20px
-                border-bottom 2px solid #34343e
+                color #f7f7f7
+                border-bottom 2px solid #f7f7f7
                 padding-bottom 0.2rem
+                margin-bottom 0
+
+                &:focus
+                    outline none
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="index">
-        <header-section :is-main-dark="isDark"/>
+        <header-block :is-main-dark="isDark"/>
         <home-section/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
@@ -8,12 +8,12 @@
         <ico-section/>
         <roadmap-section/>
         <blog-section/>
-        <footer-section/>
+        <footer-block/>
     </div>
 </template>
 
 <script>
-    import HeaderSection from './layouts/HeaderSection'
+    import HeaderBlock from './layouts/HeaderBlock'
     import HomeSection from './HomeSection'
     import AdvantagesSection from './AdvantagesSection'
     import FeaturesSection from './FeaturesSection'
@@ -21,12 +21,12 @@
     import IcoSection from './IcoSection'
     import RoadmapSection from './RoadmapSection'
     import BlogSection from './BlogSection'
-    import FooterSection from './layouts/FooterSection'
+    import FooterBlock from './layouts/FooterBlock'
 
     export default {
         name: 'Index',
         components: {
-            HeaderSection,
+            HeaderBlock,
             HomeSection,
             AdvantagesSection,
             FeaturesSection,
@@ -34,7 +34,7 @@
             IcoSection,
             RoadmapSection,
             BlogSection,
-            FooterSection,
+            FooterBlock,
         },
         data() {
             return {

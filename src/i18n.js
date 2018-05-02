@@ -3,35 +3,44 @@ const messages = {
         navbar: {
             menuList: [
                 {
-                    title: 'Home'
+                    path: '#home',
+                    name: 'Home'
                 },
                 {
-                    title: 'About'
+                    path: '#description',
+                    name: 'Description'
                 },
                 {
-                    title: 'Advantages'
+                    path: '#advantages',
+                    name: 'Advantages'
                 },
                 {
-                    title: 'ALE'
+                    path: '#features',
+                    name: 'Features'
                 },
                 {
-                    title: 'Team'
-                },
-                // {
-                //     title: 'Advisors'
-                // },
-                {
-                    title: 'ICO'
+                    path: '#team',
+                    name: 'Team'
                 },
                 {
-                    title: 'Roadmap'
+                    path: '#ico',
+                    name: 'ICO'
                 },
                 {
-                    title: 'Blog'
+                    path: '#roadmap',
+                    name: 'Roadmap'
+                },
+                {
+                    path: '#blog',
+                    name: 'Blog'
                 }
             ],
             loginBtn: 'Log in',
             blog: 'Blog'
+        },
+        menuModal: {
+            selectLang: 'Select language',
+            navigationMenu: 'Back to menu'
         },
         greeting: {
             title: 'The new era of project management is coming',
@@ -473,35 +482,44 @@ const messages = {
         navbar: {
             menuList: [
                 {
-                    title: 'Домой'
+                    path: '#home',
+                    name: 'Домой'
                 },
                 {
-                    title: 'О проекте'
+                    path: '#description',
+                    name: 'О проекте'
                 },
                 {
-                    title: 'Преимущества'
+                    path: '#advantages',
+                    name: 'Преимущества'
                 },
                 {
-                    title: 'Платформа'
+                    path: '#features',
+                    name: 'Платформа'
                 },
                 {
-                    title: 'Команда'
+                    path: '#team',
+                    name: 'Команда'
                 },
                 {
-                    title: 'Советники'
+                    path: '#ico',
+                    name: 'ICO'
                 },
                 {
-                    title: 'ICO'
+                    path: '#roadmap',
+                    name: 'Карта проекта'
                 },
                 {
-                    title: 'Roadmap'
-                },
-                {
-                    title: 'Блог'
+                    path: '#blog',
+                    name: 'Блог'
                 }
             ],
             loginBtn: 'Войти',
             blog: 'Блог'
+        },
+        menuModal: {
+            selectLang: 'Выберите язык',
+            navigationMenu: 'Вернуться к меню'
         },
         greeting: {
             title: 'Наступает новая эра ведения проектов',

@@ -56,8 +56,8 @@
 </template>
 
 <script>
-    import Header from './layouts/HeaderSection';
-    import Footer from './layouts/FooterSection';
+    import Header from './layouts/HeaderBlock';
+    import Footer from './layouts/FooterBlock';
 
     export default {
         name: 'BlogEntries',

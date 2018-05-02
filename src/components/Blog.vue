@@ -1,6 +1,6 @@
 <template>
     <div class="blog-entries">
-        <header-section :show="'blog'"/>
+        <header-block :show="'blog'"/>
         <div class="section blogEntries-section">
             <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
 
@@ -52,19 +52,19 @@
             </div>
 
         </div>
-        <footer-section/>
+        <footer-block/>
     </div>
 </template>
 
 <script>
-    import HeaderSection from './layouts/HeaderSection';
-    import FooterSection from './layouts/FooterSection';
+    import HeaderBlock from './layouts/HeaderBlock';
+    import FooterBlock from './layouts/FooterBlock';
 
     export default {
         name: 'Blog',
         components: {
-            HeaderSection,
-            FooterSection
+            HeaderBlock,
+            FooterBlock
         },
         data() {
             return {
