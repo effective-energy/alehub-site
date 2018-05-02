@@ -600,7 +600,10 @@
                 }
             }, 40);
 
-            this.startAnime();
+            setTimeout(() => {
+                this.startAnime();
+            }, 2500);
+
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
             if (window.innerWidth > 420 && this.$route.path === '/')
