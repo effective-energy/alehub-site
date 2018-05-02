@@ -2,6 +2,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
+
         <router-link tag="a"
                      to="/"
                      class="navbar-brand"
@@ -16,6 +17,7 @@
                  v-else>
             ALEHUB
         </router-link>
+
         <!--<a href="#" class="navbar-brand">-->
         <!--<img class="d-inline-block align-top"-->
         <!--src="../../../static/images/ale-logo.svg"-->
@@ -162,6 +164,7 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
+                console.log(dark, 'dark');
                 if (dark) {
                     this.mainIsDark = true;
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
