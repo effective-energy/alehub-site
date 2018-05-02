@@ -35,19 +35,12 @@
                                     {{ member.position }}
                                 </p>
 
-                                <div class="icons">
-                                    <img class="telegram"
-                                         src="../../static/images/telegram-ic.svg"
-                                         alt="telegram">
-                                    <img class="vk"
-                                         src="../../static/images/vk.svg"
-                                         alt="vk">
-                                    <img class="fb"
-                                         src="../../static/images/fb.svg"
-                                         alt="fb">
-                                    <img class="in"
-                                         src="../../static/images/in.svg"
-                                         alt="in">
+                                <div class="icons" v-if="member.social !== undefined && member.length !== 0">
+                                    <a :href="social.link" v-for="social in member.social" target="_blank">
+                                        <img :class="{ 'in': social.type === 'linkedin' }"
+                                             src="../../static/images/in.svg"
+                                             alt="in" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -101,19 +94,12 @@
                                     {{ member.position }}
                                 </p>
 
-                                <div class="icons">
-                                    <img class="telegram"
-                                         src="../../static/images/telegram-ic.svg"
-                                         alt="telegram">
-                                    <img class="vk"
-                                         src="../../static/images/vk.svg"
-                                         alt="vk">
-                                    <img class="fb"
-                                         src="../../static/images/fb.svg"
-                                         alt="fb">
-                                    <img class="in"
-                                         src="../../static/images/in.svg"
-                                         alt="in">
+                                <div class="icons" v-if="member.social !== undefined && member.length !== 0">
+                                    <a :href="social.link" v-for="social in member.social" target="_blank">
+                                        <img :class="{ 'in': social.type === 'linkedin' }"
+                                             src="../../static/images/in.svg"
+                                             alt="in" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
