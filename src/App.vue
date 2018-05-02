@@ -22,9 +22,6 @@
                 loadingTimer: 0
             }
         },
-        created() {
-
-        },
         mounted() {
             this.$on('isShow', (val) => {
                 console.log('content');
@@ -47,8 +44,4 @@
 <style lang="stylus">
     body
         background-color #ededf1
-
-    [v-cloak]
-        display none
-
 </style>

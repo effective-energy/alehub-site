@@ -74,7 +74,8 @@
                     {{ $t("navbar.loginBtn") }}
                 </button>
                 <div id="select-lang" class="select-lang" @click="toggleDropdown">
-                    EN
+
+                    {{ currentLang }}
 
                     <div class="select-lang__dropdown"
                          v-if="dropdownOpen">
@@ -548,6 +549,10 @@
         padding 0 20px
         margin-left 20px
         font-weight 700
+        text-transform uppercase
+
+        @media (max-width 420px)
+            display none
 
         .select-lang__dropdown
             right 60px
