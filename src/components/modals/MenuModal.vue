@@ -4,7 +4,8 @@
            @opened="opened"
            @closed="closedModal('menu-modal')">
 
-        <div class="body">
+        <div class="body"
+        :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
             <div class="body__menu" v-if="!isSelectingLanguage">
                 <div v-for="item in $t('navbar.menuList')">
                     <a v-scroll-to="item.path"
@@ -39,6 +40,20 @@
 <script>
     export default {
         name: 'MenuModal',
+        props: {
+            dark: {
+                type: Boolean,
+                required: true
+            },
+            yellow: {
+                type: Boolean,
+                required: true
+            },
+            orange: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
                 selectingLanguage: false,
@@ -55,6 +70,15 @@
         computed: {
             isSelectingLanguage: function () {
                 return this.selectingLanguage;
+            },
+            isDark: function () {
+                return this.dark;
+            },
+            isYellow: function () {
+                return this.yellow;
+            },
+            isOrange: function () {
+                return this.orange;
             }
         },
         methods: {
@@ -126,6 +150,7 @@
                     font-weight 700
                     text-transform uppercase
                     font-size 20px
+                    color #343a49
                     border-bottom 2px solid #343a49
                     padding-bottom 0.2rem
 
@@ -172,4 +197,71 @@
 
                 &:focus
                     outline none
+
+
+    .body__dark
+        background-color #343a49
+
+        .body__menu
+            div
+                a
+                    color #f7f7f7
+                    border-color #f7f7f7
+
+        .body__languages
+            div
+                button
+                    color #f7f7f7
+                    border-color #f7f7f7
+
+        .body__bottom
+            background-color #fdd04a
+
+            button
+                color #343a49
+                border-color #343a49
+
+    .body__yellow
+        background-color #fdc135
+
+        .body__menu
+            div
+                a
+                    color #343a49
+                    border-color #343a49
+
+        .body__languages
+            div
+                button
+                    color #343a49
+                    border-color #343a49
+
+        .body__bottom
+            background-color #343a49
+
+            button
+                color #f7f7f7
+                border-color #f7f7f7
+
+    .body__orange
+        background-color #feaf1c
+
+        .body__menu
+            div
+                a
+                    color #343a49
+                    border-color #343a49
+
+        .body__languages
+            div
+                button
+                    color #343a49
+                    border-color #343a49
+
+        .body__bottom
+            background-color #343a49
+
+            button
+                color #f7f7f7
+                border-color #f7f7f7
 </style>

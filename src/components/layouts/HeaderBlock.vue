@@ -2,7 +2,10 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light"
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
-        <router-link tag="a" to="/" class="navbar-brand">
+        <router-link tag="a"
+                     to="/"
+                     class="navbar-brand"
+                     @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
                  alt="ALEHUB"
@@ -80,7 +83,9 @@
             <button type="button" class="btn btn-actions">ok</button>
         </div>
 
-        <menu-modal/>
+        <menu-modal :dark="isDark"
+                    :yellow="isYellow"
+                    :orange="isOrange"/>
     </nav>
 </template>
 
@@ -104,7 +109,6 @@
         },
         data() {
             return {
-                modalIsOpen: false,
                 isLanguagesModal: false,
                 isFeatures: false,
                 mainIsDark: false,
@@ -229,15 +233,17 @@
             toggleDropdown: function () {
                 this.dropdownOpen = !this.dropdownOpen;
             },
+            toggleMenuModal: function () {
+                if (this.activeHamburger)
+                    this.closeModal('menu-modal');
+            },
             toggleHamburger: function () {
                 this.activeHamburger = !this.activeHamburger;
 
                 if (this.activeHamburger) {
                     this.openModal('menu-modal');
-                    this.modalIsOpen = true;
                 } else {
                     this.closeModal('menu-modal');
-                    this.modalIsOpen = false;
                 }
             },
             // initScroll: function () {
