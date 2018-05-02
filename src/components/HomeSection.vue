@@ -527,9 +527,11 @@
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
 
                 if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                    this.pause();
                     document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
                     document.getElementById('button-choose').classList.add('button-choose__stop');
                 } else {
+                    this.play();
                     document.getElementById('button-choose').style['top'] = '40%';
                     document.getElementById('button-choose').classList.remove('button-choose__stop');
                 }
