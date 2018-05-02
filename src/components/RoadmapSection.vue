@@ -21,7 +21,7 @@
                      :key="slideIndex">
                     <div class="line"></div>
                     <div class="slide-content"
-                         :class="{ 'active': slide.state === 'Deployed' }">
+                         :class="{ 'deployed': slide.state === 'Deployed' }">
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
@@ -392,6 +392,7 @@
             /*width 3584px*/
             /*height 400px*/
             max-height 600px
+            padding-bottom 5px
             display flex
             overflow-y hidden
             overflow-x hidden
@@ -432,12 +433,15 @@
                     transition all .3s ease-in-out
 
                     &:hover
-                        background-color rgba(255, 188, 0, 0.05)
+                        /*background-color #31394f*/
+                        -webkit-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
+                        -moz-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
+                        box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
 
                         .slide-title
                             color #ffbc00
 
-                    &.active
+                    &.deployed
                         background-color rgba(255, 188, 0, 0.05)
 
                         .slide-title
@@ -483,6 +487,7 @@
         .slide-progress
             .progress-line-outer
                 background-color rgba(226, 232, 232, .3)
+
             .progress-line
                 margin 10px 0
                 height 4px
@@ -490,6 +495,7 @@
                 -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                 -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                 box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
+
             .state
                 display flex
                 justify-content space-between
