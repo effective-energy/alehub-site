@@ -5,12 +5,14 @@
             <button type="button"
                     id="do-light-theme"
                     class="button-choose_light"
-                    :class="{ 'button-choose__active': !isDark }">
+                    :class="{ 'button-choose__active': !isDark }"
+                    @click="doLightTheme">
             </button>
             <button type="button"
                     id="do-dark-theme"
                     class="button-choose_dark"
-                    :class="{ 'button-choose__active': isDark }">
+                    :class="{ 'button-choose__active': isDark }"
+                    @click="doDarkTheme">
             </button>
         </div>
 
@@ -136,7 +138,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="screen1 title">
-                            {{$t("greeting.title")}}
+                            {{ $t("greeting.title") }}
                         </h1>
                     </div>
                 </div>
@@ -144,7 +146,7 @@
                     <div class="col-xl-12 col-lg-11">
                         <div class="countdown">
                             <h2 class="title">
-                                {{$t("greeting.countDown.title")}}
+                                {{ $t("greeting.countDown.title") }}
                             </h2>
                             <div class="timer"
                                  :class="{ 'timer__dark': isDark }">
@@ -168,7 +170,9 @@
                                             {{ timer.hours.second }}
                                         </div>
                                     </div>
-                                    <div class="title">{{$t("greeting.countDown.time.hours")}}</div>
+                                    <div class="title">
+                                        {{ $t("greeting.countDown.time.hours") }}
+                                    </div>
                                 </div>
                                 <div class="minutes">
                                     <div class="numbers">
@@ -179,7 +183,9 @@
                                             {{ timer.minutes.second }}
                                         </div>
                                     </div>
-                                    <div class="title">{{$t("greeting.countDown.time.minutes")}}</div>
+                                    <div class="title">
+                                        {{ $t("greeting.countDown.time.minutes") }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -316,28 +322,28 @@
             <div class="title">{{$t("partners.title")}}</div>
             <div class="row partners-icons">
                 <a href="http://ifmo.ru/ru/" target="_blank">
-                  <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
-                     height="60px"
-                     width="114px"
-                     alt="ITMO">
+                    <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
+                         height="60px"
+                         width="114px"
+                         alt="ITMO">
                 </a>
                 <a href="https://cryptob2b.io/ru/" target="_blank">
-                  <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
-                     height="46px"
-                     width="158px"
-                     alt="CryptoB2B">
+                    <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
+                         height="46px"
+                         width="158px"
+                         alt="CryptoB2B">
                 </a>
                 <a href="https://www.blockchain-spb.org/" target="_blank">
-                  <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
-                     height="59px"
-                     width="57px"
-                     alt="BEAR">
+                    <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
+                         height="59px"
+                         width="57px"
+                         alt="BEAR">
                 </a>
                 <a href="https://serokell.io/" target="_blank">
-                  <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
-                     height="43px"
-                     width="87px"
-                     alt="Serokell">
+                    <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
+                         height="43px"
+                         width="87px"
+                         alt="Serokell">
                 </a>
             </div>
         </div>
@@ -541,26 +547,43 @@
                 for (let i = 0; i < window.animejsconfig.length; i++) {
                     window.animejsconfig[i].pause();
                 }
+            },
+            doLightTheme: function () {
+                this.isDark = false;
+                this.$parent.$emit('isDarkTheme', false);
+                localStorage.setItem('color-theme', 'light');
+            },
+            doDarkTheme: function () {
+                this.isDark = true;
+                this.$parent.$emit('isDarkTheme', true);
+                localStorage.setItem('color-theme', 'dark');
             }
         },
+        created() {
+
+        },
         mounted() {
+            setTimeout(() => {
+                if (localStorage.getItem('color-theme') === 'dark') {
+                    console.log(1);
+                    this.isDark = true;
+                    this.$parent.$emit('isDarkTheme', true);
+                } else if (localStorage.getItem('color-theme') === 'light') {
+                    console.log(2);
+                    this.isDark = false;
+                    this.$parent.$emit('isDarkTheme', false);
+                } else {
+                    console.log(3);
+                    localStorage.setItem('color-theme', 'light');
+                    this.$parent.$emit('isDarkTheme', false);
+                }
+            }, 40);
+
             this.startAnime();
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
-            if (window.innerWidth > 420 && this.$route.path === '/') {
-
+            if (window.innerWidth > 420 && this.$route.path === '/')
                 window.addEventListener('scroll', this.handlerScroll, false);
-
-                document.getElementById('do-dark-theme').addEventListener('click', () => {
-                    this.isDark = true;
-                    this.$parent.$emit('isDarkTheme', true);
-                });
-
-                document.getElementById('do-light-theme').addEventListener('click', () => {
-                    this.isDark = false;
-                    this.$parent.$emit('isDarkTheme', false);
-                });
-            }
         },
         beforeDestroy() {
             window.removeEventListener('scroll', this.handlerScroll, false);
@@ -651,6 +674,12 @@
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
 
+    #screen1 .container-fluid.what-is
+        @media (max-width 420px)
+            background #ececf0
+
+            p.description
+                color #142038
 
     .description__dark
         background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
@@ -659,6 +688,9 @@
         background -o-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
         background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
         background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+
+        @media (max-width 420px)
+            background #343a49 !important
 
         .desc
             .title, .subtitle, .description
@@ -739,7 +771,6 @@
             -webkit-transition background .3s ease-in-out
             -o-transition background color .3s ease-in-out
             transition background color .3s ease-in-out
-
 
     #screen1
         /*background-color #34343e*/
