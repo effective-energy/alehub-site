@@ -335,7 +335,7 @@
 
 				.more-news-content
 					display flex
-					justify-content space-between
+					justify-content flex-start
 
 					.news-item
 						display flex
