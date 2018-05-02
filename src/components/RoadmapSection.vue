@@ -50,9 +50,11 @@
             </div>
 
             <div class="scroll-block">
-                <div class="arrow-prev">
-                    <!--@click="переместить роадмэп влево на Х"-->
-                </div>
+                <button type="button"
+                        class="arrow-prev"
+                        :disabled="disableControls"
+                        @click="prevSlide">
+                </button>
 
                 <div id="scroll-element"
                      class="scroll-element"
@@ -65,9 +67,11 @@
 
                 </div>
 
-                <div class="arrow-next"
-                    @click="nextSlide">
-                </div>
+                <button type="button"
+                        class="arrow-next"
+                        :disabled="disableControls"
+                        @click="nextSlide">
+                </button>
             </div>
         </div>
     </div>
@@ -80,6 +84,7 @@
             return {
                 roadmapWidth: 0,
                 slideWidth: 0,
+                disableControls: false,
                 slides: [
                     {
                         title: 'Launch and publication MVP version of ALEHUB in centralised mode',
@@ -173,26 +178,54 @@
                 };
             },
             nextSlide: function () {
+                this.disableControls = true;
+
                 let start = document.getElementById('scroll-element').scrollLeft,
-                    to = start + this.slideWidth - start % this.slideWidth,
+                    gap = start % this.slideWidth,
+                    to = start + this.slideWidth - gap,
                     change = to - start,
+                    duration = 500,
                     currentTime = 0,
                     increment = 20;
 
-                let animateScroll = function(){
+                let animateScroll = () => {
                     currentTime += increment;
-                    let val = Math.easeInOutQuad(currentTime, start, change, 500);
+                    let val = Math.easeInOutQuad(currentTime, start, change, duration);
                     document.querySelector('.slides-body').scrollLeft = val;
                     document.getElementById('scroll-element').scrollLeft = val;
-                    if(currentTime < 500) {
+                    if (currentTime < duration) {
                         setTimeout(animateScroll, increment);
+                    } else {
+                        this.disableControls = false;
                     }
                 };
 
                 animateScroll();
             },
             prevSlide: function () {
+                this.disableControls = true;
 
+                let start = document.getElementById('scroll-element').scrollLeft,
+                    gap = (start % this.slideWidth) ? start % this.slideWidth : this.slideWidth,
+                    to = start - gap,
+                    change = to - start,
+                    duration = 500,
+                    currentTime = 0,
+                    increment = 20;
+
+                let animateScroll = () => {
+                    currentTime += increment;
+                    let val = Math.easeInOutQuad(currentTime, start, change, duration);
+                    document.querySelector('.slides-body').scrollLeft = val;
+                    document.getElementById('scroll-element').scrollLeft = val;
+                    if (currentTime < duration) {
+                        setTimeout(animateScroll, increment);
+                    } else {
+                        this.disableControls = false;
+                    }
+                };
+
+                animateScroll();
             },
             dragStart: function (e) {
                 this.xDrag = e.pageX;
@@ -249,7 +282,7 @@
                 if (t < 1)
                     return c / 2 * t * t + b;
                 t--;
-                return - c / 2 * (t * (t - 2) - 1) + b;
+                return -c / 2 * (t * (t - 2) - 1) + b;
             };
         },
         mounted() {
@@ -289,24 +322,31 @@
         color #ffffff
 
     .scroll-block
-        cursor pointer
         display flex
         justify-content center
         align-items center
 
+        .arrow-prev, .arrow-next
+            cursor pointer
+            background-color transparent
+            border none
+            width 15px
+            height 20px
+            padding 0
+
+            &:focus
+                outline none
+
         .arrow-prev
-            width 8px
-            height 12px
             background-image url('../../static/images/roadmap/arrow-left.svg')
             background-size cover
 
         .arrow-next
-            width 8px
-            height 12px
             background-image url('../../static/images/roadmap/arrow-right.svg')
             background-size cover
 
         .scroll-element
+            cursor pointer
             height 6px
             max-width 768px
             width 768px
@@ -317,9 +357,7 @@
             .scroll-content
                 height 1px
 
-          /*  @media () and () */
-
-
+    /*  @media () and () */
 
     .roadmap-slides
         user-select none
