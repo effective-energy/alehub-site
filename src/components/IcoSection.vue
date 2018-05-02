@@ -22,19 +22,8 @@
                     <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.softCap.amount') }} ETH</h3>
                 </div>
             </div>
-
             <div class="row distribution">
-                <div class="col-xs-6 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="steep-statis steep-sale">
-                        <div class="steep-team">
-                            <div class="steep-referral">
-                                <div class="steep-bounty">
-                                    <span class="steep-count">{{ activeDistribution }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Circle1></Circle1>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list">
                         <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
@@ -56,8 +45,12 @@
 </template>
 
 <script>
+    import Circle1 from "./layouts/Circle";
     export default {
         name: 'Economy',
+        components:{
+          Circle1
+        },
         data () {
             return {
                 selectedDistributionIndex: -1,
