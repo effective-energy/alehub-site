@@ -198,8 +198,8 @@
                             targets: pathEl,
                             strokeDashoffset: [offset, 0],
                             // duration: anime.random(6500, 9000),
-                            duration: 4300,
-                            delay: anime.random(0, 2000),
+                            duration: anime.random(4500, 6000),
+                            delay: anime.random(500, 2500),
                             loop: true,
                             direction: 'alternate',
                             easing: 'easeInOutSine',
@@ -212,7 +212,7 @@
             },
             doProcessLoading: function () {
                 this.loadingInterval = setInterval(() => {
-                    ++this.loadValue;
+                    this.loadValue = this.loadValue + 2;
 
                     if (this.loadValue === 80) {
                         //сделать тут отключение анимации и начало исчезновения свг
@@ -239,7 +239,7 @@
                         }, 40);
                     }
 
-                }, 40);
+                }, 10);
             },
         },
         mounted() {
@@ -274,6 +274,7 @@
         opacity 1
         -webkit-transition opacity 2s ease-out
         transition opacity 2s ease-out
+        z-index 9999
 
         .anim
             width 100%

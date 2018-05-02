@@ -54,19 +54,24 @@
 				</div>
 			</div>
 		</div>
+		<div class="spinner" v-else>
+			<spinner />
+		</div>
 		<footer-block />
 	</div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
-    import FooterBlock from './layouts/FooterBlock';
+	import FooterBlock from './layouts/FooterBlock';
+	import Spinner from './layouts/Spinner.vue';
 
     export default {
         name: 'BlogPost',
         components: {
             HeaderBlock,
-            FooterBlock
+			FooterBlock,
+			Spinner
 		},
 		data () {
 			return {
@@ -81,6 +86,7 @@
 		},
 		methods: {
 			getNews: function () {
+				this.content = '';
 				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`).then(response => {
 					this.content = response.body;
 				}, response => {
@@ -146,6 +152,11 @@
 	body
 		/*padding-top 74px*/
 		/*background-color #ffffff !important*/
+
+	.spinner
+		min-height calc(100vh - 165px)
+		display flex
+		justify-content center
 
 	.footer
 		background-color #e8ebef

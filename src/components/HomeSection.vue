@@ -355,7 +355,7 @@
                     <div class="desktop-outer">
                         <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
-                        <slider ref="slider"
+                        <slider v-if="reBuild" ref="slider"
                                 :pages="pages"
                                 :sliderinit="sliderInit">
                         </slider>
@@ -420,6 +420,7 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
+                reBuild: true,
                 sliderInit: {
                     currentPage: 0,
                     thresholdDistance: 100,
@@ -554,11 +555,31 @@
                 this.isDark = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
             },
             doDarkTheme: function () {
                 this.isDark = true;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
             }
         },
         created() {
@@ -578,7 +599,10 @@
                 }
             }, 40);
 
-            this.startAnime();
+            setTimeout(() => {
+                this.startAnime();
+            }, 2500);
+
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
             if (window.innerWidth > 420 && this.$route.path === '/')
