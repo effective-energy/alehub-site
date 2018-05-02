@@ -200,7 +200,7 @@
 
                         <div class="crypto">
                             <div class="title">
-                                {{$t("greeting.acceptedCrypto.title")}}
+                                {{ $t("greeting.acceptedCrypto.title") }}
                             </div>
                             <div class="collection"
                                  :class="{ 'collection__dark': isDark }">

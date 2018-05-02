@@ -94,7 +94,10 @@
 <style lang="stylus" scoped>
 
     .section
-        padding 71px 0
+        padding 74px 0
+
+        @media (max-width 420px)
+            padding-bottom 37px
 
     .economy-section
         background-color #343a49
@@ -143,6 +146,7 @@
         .bold
             font-family MuseoSansCyrl500
             font-weight bold
+            letter-spacing 0.2px
 
     .figures-panel
         padding 24px 0 71px 0
@@ -173,6 +177,7 @@
 
     .distribution
         padding 64px
+
         .small
             font-family MuseoSansCyrl300
             font-size 14px
