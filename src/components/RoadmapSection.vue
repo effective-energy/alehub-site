@@ -96,81 +96,7 @@
                 yDown: 0,
                 scrollContentWidth: 0,
                 slideWidth: 0,
-                disableControls: false,
-                slides: [
-                    {
-                        title: 'Launch and publication MVP version of ALEHUB in centralised mode',
-                        date: 'Sunday, April 15, 2018',
-                        responsibles: [1, 2, 3],
-                        members: [
-                            '../../static/images/gromyko@3x.png',
-                            '../../static/images/elena@3x.png',
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Deployed',
-                        progress: 100
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    },
-                    {
-                        title: 'YellowPaper publication – description of  AleVirtualMachine running smart-contracts',
-                        date: 'Wednesday, August 1, 2018',
-                        responsibles: [1],
-                        members: [
-                            '../../static/images/osipenko@3x.png'
-                        ],
-                        state: 'Review',
-                        progress: 72
-                    }
-                ]
+                disableControls: false
             }
         },
         computed: {
@@ -470,16 +396,19 @@
 
         .responsible
             width 100%
-            height 48px
+            max-height 144px
             margin 16px 0 16px
             display flex
+            flex-wrap wrap
+            justify-content flex-start
 
             .avatar
                 width 48px
                 height 48px
                 overflow hidden
-                border-radius 50%
                 text-align center
+                background-color #6f757f
+                clip-path circle(50% at center)
 
                 img
                     height 48px
