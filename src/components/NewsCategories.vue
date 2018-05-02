@@ -120,6 +120,10 @@
     .footer {
         background-color: #e8ebef;
     }
+
+    .blog-entries {
+        min-height: 100vh;
+    } 
 </style>
 
 <style lang="stylus" scoped>
