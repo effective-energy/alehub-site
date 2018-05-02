@@ -51,7 +51,7 @@ const messages = {
             }
         },
         partners: {
-            'title': 'Our partners'
+            title: 'Our partners',
         },
         about: {
             title: 'What is Alehub',
@@ -172,88 +172,98 @@ const messages = {
                     src: '../static/images/avatars/elagin@3x.png'
                 }]
             }],
-            effectiveEnergy: [{
-                name: 'Effective Energy team',
-                members: [{
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy team',
+                    members: [
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png'
+                        },
+                        {
+                            name: 'Vladimir Grudinin',
+                            position: 'Blockchain Expert',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Alexej Osipenko',
+                            position: 'Chief Operating Officer',
+                            src: '../static/images/avatars/osipenko@3x.png'
+                        },
+                        {
+                            name: 'Elena Tsymbalyuk',
+                            position: 'Head of Marketing Operations',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Egor Loktev',
+                            position: 'Chief Marketing Officer',
+                            src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Artem Levashov',
+                            position: 'Chief Legal Officer',
+                            src: '../static/images/avatars/levashow@3x.png'
+                        },
+                        {
+                            name: 'Vadim Dudin',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/dudin@3x.png'
+                        },
+                        {
+                            name: 'Alexander Voroncov',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/voroncov@3x.png'
+                        },
+                        {
+                            name: 'Denis Tikhonov',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/tikhonov@3x.png'
+                        },
+                        {
+                            name: 'Galina Sergeeva',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/sergeeva@3x.png'
+                        },
+                        {
+                            name: 'Dmitry Zhuravlev',
+                            position: 'Mobile developer',
+                            src: '../static/images/avatars/zhuravlev@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: 'Advisors',
+            members: [
+                {
                     name: 'Mikhail Gromyko',
                     position: 'Chief Executive Officer',
                     src: '../static/images/avatars/gromyko@3x.png'
                 },
-                    {
-                        name: 'Vladimir Grudinin',
-                        position: 'Blockchain Expert',
-                        src: '../static/images/avatars/grudinin@3x.png'
-                    },
-                    {
-                        name: 'Alexej Osipenko',
-                        position: 'Chief Operating Officer',
-                        src: '../static/images/avatars/osipenko@3x.png'
-                    },
-                    {
-                        name: 'Elena Tsymbalyuk',
-                        position: 'Head of Marketing Operations',
-                        src: '../static/images/avatars/elena@3x.png'
-                    },
-                    {
-                        name: 'Egor Loktev',
-                        position: 'Chief Marketing Officer',
-                        src: '../static/images/avatars/loktev@3x.png'
-                    },
-                    {
-                        name: 'Artem Levashov',
-                        position: 'Chief Legal Officer',
-                        src: '../static/images/avatars/levashow@3x.png'
-                    },
-                    {
-                        name: 'Vadim Dudin',
-                        position: 'Fullstack Developer',
-                        src: '../static/images/avatars/dudin@3x.png'
-                    },
-                    {
-                        name: 'Alexander Voroncov',
-                        position: 'Fullstack Developer',
-                        src: '../static/images/avatars/voroncov@3x.png'
-                    },
-                    {
-                        name: 'Denis Tikhonov',
-                        position: 'Frontend Developer',
-                        src: '../static/images/avatars/tikhonov@3x.png'
-                    },
-                    {
-                        name: 'Galina Sergeeva',
-                        position: 'Frontend Developer',
-                        src: '../static/images/avatars/sergeeva@3x.png'
-                    },
-                    {
-                        name: 'Dmitry Zhuravlev',
-                        position: 'Mobile developer',
-                        src: '../static/images/avatars/zhuravlev@3x.png'
-                    }]
-            }]
-        },
-        advisors: {
-            title: 'Advisors',
-            members: [{
-                name: 'Mikhail Gromyko',
-                position: 'Chief Executive Officer',
-                src: '../static/images/avatars/gromyko@3x.png'
-            }, {
-                name: 'Vladimir Grudinin',
-                position: 'Blockchain Expert',
-                src: '../static/images/avatars/grudinin@3x.png'
-            }, {
-                name: 'Alexej Osipenko',
-                position: 'Chief Operating Officer',
-                src: '../static/images/avatars/osipenko@3x.png'
-            }, {
-                name: 'Elena Tsymbalyuk',
-                position: 'Head of Marketing Operations',
-                src: '../static/images/avatars/elena@3x.png'
-            }, {
-                name: 'Egor Loktev',
-                position: 'Chief Marketing Officer',
-                src: '../static/images/avatars/loktev@3x.png'
-            }]
+                {
+                    name: 'Vladimir Grudinin',
+                    position: 'Blockchain Expert',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                },
+                {
+                    name: 'Alexej Osipenko',
+                    position: 'Chief Operating Officer',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                },
+                {
+                    name: 'Elena Tsymbalyuk',
+                    position: 'Head of Marketing Operations',
+                    src: '../static/images/avatars/elena@3x.png'
+                },
+                {
+                    name: 'Egor Loktev',
+                    position: 'Chief Marketing Officer',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }
+            ]
         },
         economy: {
             title: 'Economy of ICO',
@@ -291,7 +301,154 @@ const messages = {
             }
         },
         roadmap: {
-            title: 'Roadmap'
+            title: 'Roadmap',
+            stateLabel: 'state',
+            stateStatus: {
+                deployed: 'deployed',
+                implementing: 'implementing',
+                review: 'review',
+                notNow: 'the stage did not begin'
+            },
+            stages: [
+                {
+                    title: 'The emergence of the idea',
+                    date: 'January 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Expertise from specialists in project management. Definition of requirements.',
+                    date: 'February - March 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Construction of a mathematical model',
+                    date: 'April - May 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Formation of the Terms of Reference',
+                    date: 'June - July 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Partnership with Serokell OU. The beginning of development.',
+                    date: 'August 2017',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'implementing'
+                },
+                {
+                    title: 'PreSale',
+                    date: 'November - December 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'MVP Publication',
+                    date: 'May 15, 2018',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Pre-ICO',
+                    date: '05/25/2018 - 06/24/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'ICO',
+                    date: '06/25/2018 - 09/07/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Development of Yellow Paper',
+                    date: '07/02/2018 - 01/01/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Decentralization of MVP solutions',
+                    date: '01.12.2018 - 01/02/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Realization of private blockhouses',
+                    date: '01/03/2019 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the system of the dispute',
+                    date: '05/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the voting system for changes',
+                    date: '08/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Closed system testing',
+                    date: '10/01/2019 - 01/01/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Publication of the source code of the system and documentation',
+                    date: '01/01/2020 - 01/02/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Starting the system operation',
+                    date: '01/02/2020 – 01/03/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                }
+            ]
         },
         blog: {
             title: 'Blog',
@@ -314,25 +471,35 @@ const messages = {
     },
     rus: {
         navbar: {
-            menuList: [{
-                title: 'Домой'
-            }, {
-                title: 'О Alehub'
-            }, {
-                title: 'Преимущества'
-            }, {
-                title: 'Платформа'
-            }, {
-                title: 'Команда'
-            }, {
-                title: 'Советники'
-            }, {
-                title: 'ICO'
-            }, {
-                title: 'Roadmap'
-            }, {
-                title: 'Блог'
-            }],
+            menuList: [
+                {
+                    title: 'Домой'
+                },
+                {
+                    title: 'О проекте'
+                },
+                {
+                    title: 'Преимущества'
+                },
+                {
+                    title: 'Платформа'
+                },
+                {
+                    title: 'Команда'
+                },
+                {
+                    title: 'Советники'
+                },
+                {
+                    title: 'ICO'
+                },
+                {
+                    title: 'Roadmap'
+                },
+                {
+                    title: 'Блог'
+                }
+            ],
             loginBtn: 'Войти',
             blog: 'Блог'
         },
@@ -475,65 +642,68 @@ const messages = {
                     src: '../static/images/avatars/elagin@3x.png'
                 }]
             }],
-            effectiveEnergy: [{
-                name: 'Effective Energy',
-                members: [
-                    {
-                        name: 'Михаил Громыко',
-                        position: 'Генеральный директор',
-                        src: '../static/images/avatars/gromyko@3x.png'
-                    },
-                    {
-                        name: 'Владимир Грудинин',
-                        position: 'Блокчейн эксперт',
-                        src: '../static/images/avatars/grudinin@3x.png'
-                    },
-                    {
-                        name: 'Алексей Остапенко',
-                        position: 'Главный операционный директор',
-                        src: '../static/images/avatars/osipenko@3x.png'
-                    },
-                    {
-                        name: 'Елена Цимбалюк',
-                        position: 'Начальник отдела маркетинговых операций',
-                        src: '../static/images/avatars/elena@3x.png'
-                    },
-                    {
-                        name: 'Егор Локтев',
-                        position: 'Директор по маркетингу',
-                        src: '../static/images/avatars/loktev@3x.png'
-                    },
-                    {
-                        name: 'Артем Левашев',
-                        position: 'Главный консультант по юридическим делам',
-                        src: '../static/images/avatars/levashow@3x.png'
-                    },
-                    {
-                        name: 'Вадим Дудин',
-                        position: 'Fullstack Разработчик',
-                        src: '../static/images/avatars/dudin@3x.png'
-                    },
-                    {
-                        name: 'Александр Воронцов',
-                        position: 'Fullstack Разработчик',
-                        src: '../static/images/avatars/voroncov@3x.png'
-                    },
-                    {
-                        name: 'Денис Тихонов',
-                        position: 'Frontend Разработчик',
-                        src: '../static/images/avatars/tikhonov@3x.png'
-                    },
-                    {
-                        name: 'Галина Сергеевна',
-                        position: 'Frontend Разработчик',
-                        src: '../static/images/avatars/sergeeva@3x.png'
-                    },
-                    {
-                        name: 'Дмитрий Журавлев',
-                        position: 'Разработчик мобильных приложений',
-                        src: '../static/images/avatars/zhuravlev@3x.png'
-                    }]
-            }]
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy',
+                    members: [
+                        {
+                            name: 'Михаил Громыко',
+                            position: 'Генеральный директор',
+                            src: '../static/images/avatars/gromyko@3x.png'
+                        },
+                        {
+                            name: 'Владимир Грудинин',
+                            position: 'Блокчейн эксперт',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Алексей Остапенко',
+                            position: 'Главный операционный директор',
+                            src: '../static/images/avatars/osipenko@3x.png'
+                        },
+                        {
+                            name: 'Елена Цимбалюк',
+                            position: 'Начальник отдела маркетинговых операций',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Егор Локтев',
+                            position: 'Директор по маркетингу',
+                            src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Артем Левашев',
+                            position: 'Главный консультант по юридическим делам',
+                            src: '../static/images/avatars/levashow@3x.png'
+                        },
+                        {
+                            name: 'Вадим Дудин',
+                            position: 'Fullstack Разработчик',
+                            src: '../static/images/avatars/dudin@3x.png'
+                        },
+                        {
+                            name: 'Александр Воронцов',
+                            position: 'Fullstack Разработчик',
+                            src: '../static/images/avatars/voroncov@3x.png'
+                        },
+                        {
+                            name: 'Денис Тихонов',
+                            position: 'Frontend Разработчик',
+                            src: '../static/images/avatars/tikhonov@3x.png'
+                        },
+                        {
+                            name: 'Галина Сергеевна',
+                            position: 'Frontend Разработчик',
+                            src: '../static/images/avatars/sergeeva@3x.png'
+                        },
+                        {
+                            name: 'Дмитрий Журавлев',
+                            position: 'Разработчик мобильных приложений',
+                            src: '../static/images/avatars/zhuravlev@3x.png'
+                        }
+                    ]
+                }
+            ]
         },
         advisors: {
             title: 'Советники',
@@ -596,7 +766,154 @@ const messages = {
             }
         },
         roadmap: {
-            title: 'Дорожная карта'
+            title: 'Дорожная карта проекта',
+            stateLabel: 'статус',
+            stateStatus: {
+                deployed: 'готово',
+                implementing: 'разработка',
+                review: 'проверка',
+                notNow: 'этап ещё не начался'
+            },
+            stages: [
+                {
+                    title: 'Появление идеи',
+                    date: 'Январь 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Экспертиза от специалистов по управлению проектами. Определение требований.',
+                    date: 'Февраль - Март 2017-го',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Построение математической модели',
+                    date: 'Апрель - Май 2017-го',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Формирование Технического задания',
+                    date: 'Июнь - Июль 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Партнерство с Serokell OU. Начало разработки.',
+                    date: 'Август 2017-го',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'разработка'
+                },
+                {
+                    title: 'PreSale',
+                    date: 'Ноябрь - Декабрь 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Публикация MVP',
+                    date: '15 Мая 2018-го',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Pre-ICO',
+                    date: '25.05.2018 – 24.06.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'ICO',
+                    date: '25.06.2018 – 09.07.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    date: '02.07.2018 - 01.09.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Децентрализация MVP решения',
+                    date: '01.12.2018 - 01.02.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация приватных блокчейнов',
+                    date: '01.03.2019 – 01.05.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация системы диспута',
+                    date: '01.05.2019 – 01.08.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация системы голосования за изменения',
+                    date: '01.08.2019 - 01.10.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Закрытое тестирование работы системы',
+                    date: '01.10.2019 - 01.01.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Публикация исходного кода системы и документации',
+                    date: '01.01.2020 – 01.02.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Запуск эксплуатации системы',
+                    date: '01.02.2020 – 01.03.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                }
+            ]
         },
         blog: {
             title: 'Блог',

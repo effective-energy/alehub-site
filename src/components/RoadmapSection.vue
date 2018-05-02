@@ -3,7 +3,7 @@
          id="roadmap">
         <div class="container">
             <h1 class="section-title is-center">
-                Roadmap
+                {{ $t('roadmap.title') }}
             </h1>
         </div>
 
@@ -17,15 +17,17 @@
                  @touchmove="touchMove($event)">
 
                 <div class="slide"
-                     v-for="(slide, slideIndex) in slides"
+                     v-for="(slide, slideIndex) in $t('roadmap.stages')"
                      :key="slideIndex">
                     <div class="line"></div>
                     <div class="slide-content"
-                         :class="{ 'deployed': slide.state === 'Deployed' }">
+                         :class="{ 'deployed': slide.progress === 100 }">
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
-                        <span class="date">{{ slide.date }}</span>
+                        <span class="date">
+                            {{ slide.date }}
+                        </span>
                         <div class="responsible">
                             <div class="avatar"
                                  v-for="(item, index) in slide.members"
@@ -41,7 +43,7 @@
                             </div>
                             <div class="state">
                                 <p class="status">
-                                    State:
+                                    {{ $t('roadmap.stateLabel') }}:
                                     <span class="bold">
                                         {{ slide.state }}
                                     </span>
@@ -214,6 +216,8 @@
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
+                //повесить стоп
+
                 if (!this.xDown || !this.yDown)
                     return;
 
@@ -314,7 +318,7 @@
 <style lang="stylus" scoped>
 
     .section
-        padding 71px 0
+        padding 74px 0
         padding-bottom 130px
 
     .roadmap-section
@@ -434,9 +438,9 @@
 
                     &:hover
                         /*background-color #31394f*/
-                        -webkit-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
-                        -moz-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
-                        box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 14px 0 rgba(255, 188, 0, 0.3)
+                        -webkit-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
+                        -moz-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
+                        box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
 
                         .slide-title
                             color #ffbc00
@@ -504,6 +508,11 @@
                 .status
                     margin 0
                     text-transform uppercase
+
+                    .bold
+                        font-family MuseoSansCyrl500
+                        font-weight 900
+                        letter-spacing 0.2px
 
                 .count
                     margin 0
