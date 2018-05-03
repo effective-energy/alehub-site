@@ -450,7 +450,7 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 1440,
+                collected: 2000,
                 softCap: 2000,
                 hardCap: 33000,
                 anime: '',
