@@ -112,7 +112,9 @@
                             </div>
                             <span>JA</span>
                         </div>
-                        <div class="select-lang__item select-lang__zh">
+                        <div class="select-lang__item select-lang__zh"
+                             :class="{ 'selected': currentLang === 'ch' }"
+                             @click="changeLanguage(2)">
                             <div class="select-lang__cover">
                             </div>
                             <span>ZH</span>
@@ -217,7 +219,7 @@
                     },
                 ],
                 activeItem: 0,
-                languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
+                languagesList: ['en', 'ru', 'ch', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
 
                 heightLangItem: 0
@@ -252,6 +254,8 @@
                     return 'en';
                 else if (this.selectedLanguage === 'ru')
                     return 'ru';
+                else if (this.selectedLanguage === 'ch')
+                    return 'ch';
 
                 return 'en';
             },

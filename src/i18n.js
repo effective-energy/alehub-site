@@ -1,26 +1,26 @@
 const messages = {
-    en: {
+    ch: {
         navbar: {
             menuList: [
                 {
                     path: '#home',
-                    name: 'Home'
+                    name: '家'
                 },
                 {
                     path: '#description',
-                    name: 'Description'
+                    name: '描述'
                 },
                 {
                     path: '#advantages',
-                    name: 'Advantages'
+                    name: '描述'
                 },
                 {
                     path: '#features',
-                    name: 'Features'
+                    name: '特征'
                 },
                 {
                     path: '#team',
-                    name: 'Team'
+                    name: '球队'
                 },
                 {
                     path: '#ico',
@@ -28,30 +28,30 @@ const messages = {
                 },
                 {
                     path: '#roadmap',
-                    name: 'Roadmap'
+                    name: '路线图'
                 },
                 {
                     path: '#blog',
-                    name: 'Blog'
+                    name: '博客'
                 }
             ],
-            loginBtn: 'Log in',
-            blog: 'Blog'
+            loginBtn: '登录',
+            blog: '博客'
         },
         menuModal: {
-            selectLang: 'Select language',
+            selectLang: '选择语言',
             navigationMenu: 'Back to menu'
         },
         greeting: {
-            title: 'The new era of project management is coming',
+            title: '项目管理的新时代即将到来',
             countDown: {
                 title: 'Round 1 will begin',
                 time: {
-                    days: 'Days',
-                    hours: 'Hours',
-                    minutes: 'Minutes'
+                    days: '天',
+                    hours: '小时',
+                    minutes: '分钟'
                 },
-                btnBuyTokens: 'Buy tokens',
+                btnBuyTokens: '购买代币',
                 bonus: 'Bonus 25% up to 7 April 2018',
                 notAvailable: 'Now not available'
             },
@@ -60,107 +60,107 @@ const messages = {
             }
         },
         partners: {
-            title: 'Our partners',
+            title: '我们的伙伴',
         },
         about: {
-            title: 'What is Alehub',
-            subTitle: 'ALEHUB – is a platform for the IT industry for project management and contractors search.',
-            description: 'ALEHUB combines the advantages of distributed registry systems (blockchain) and classic project management services. The selection of contractors (customers and executors), their work management, control and mutual settlements are regulated by multilateral smart contracts of the ALE system, which ensure the safety, reliability and low costs of outsourcing IT professionals.',
+            title: 'ALE系统的第一个项目',
+            subTitle: 'ALEHUB – 是一个为IT行业提供项目管理和承包商搜索的平台。',
+            description: 'ALEHUB 兼备了分布式注册系统（区块链）和传统项目管理服务的优势。承包商的选择（客户和执行人）、他们工作的管理、控制以及共同结算都是由ALE系统的多边智能合约所调节，因此确保了IT外包专业人员的安全性、可靠性以及低成本。',
             btnGroup: {
-                whitePaper: 'White paper',
-                techDetails: 'More about ALE',
-                download: 'Download'
+                whitePaper: '白皮书',
+                techDetails: '关于ALE的更多信息',
+                download: '下载'
             }
         },
         advantages: {
-            title: 'ALE advantages',
+            title: '优势',
             lists: [{
-                title: 'ALE vs Project Management Systems'
+                title: 'ALE与项目管理系统相比'
             }, {
-                title: 'ALE vs Other Blockchain Platforms'
+                title: 'ALE与其他区块链平台相比'
             }]
         },
         alePlatform: {
-            title: 'ALE platform',
-            subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
+            title: 'ALE 平台',
+            subTitle: 'ALE是一种可以修改并结合实体经济和加密经济优势的结构，以便于创建出一种全新的生态系统—复合经济。ALE重塑了现有的金融和法律结构，以使他们更灵活且跟符合法律，并确认了大多数国家在识别金融机构、存储私人数据方面的价值，并提供了数字支付手段的流动性和合法性。   ',
             watchDemo: 'Watch demo',
             solvingProblems: {
-                title: 'Solved problems',
+                title: '所解决的问题',
                 list: [{
-                    title: 'The legal nature of payment.',
-                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
+                    title: '支付的法律性质。',
+                    description: '对于相互结算，ALE使用包含真是货币的“扩容器”。'
                 }, {
-                    title: 'Legal value of the electronic contract.',
-                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
+                    title: '电子合约的法律价值、',
+                    description: '在ALE平台内完成的所有合约都具有法律意义，因为其内容符合国家对文件的要求。'
                 }, {
-                    title: 'Highly volatile means of payment.',
-                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
+                    title: '高度不稳定的支付方式。',
+                    description: '加密货币的不稳定性使他们成为一种不可行的实际业务支付方式。 持有“扩容器”的现金系统解决了这一问题。'
                 }, {
-                    title: 'Contradiction to national and industrial standards. ',
-                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
+                    title: '与国家和行业标准的矛盾。 ',
+                    description: 'ALE允许用户在ALE平台内选择交互的规则。因此，一个人应该按照立法和商业的要求行事。'
                 }, {
-                    title: 'The inevitability of fulfilling obligations.',
-                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
+                    title: '履行义务的必然性。',
+                    description: '金融义务受智能合约的约束，所以形成了一个可信的环境。'
                 }, {
-                    title: 'Integrity and unchangeability of documentation.',
-                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
+                    title: '文档的完整性和不可更改性。',
+                    description: '被区块链中的存储库确认，所以ALE生态系统中的文档是有法律保障的。'
                 }]
             }
         },
         features: {
-            title: 'The main distinguishing features of ALE',
+            title: 'ALE的主要优势特点',
             list: [{
-                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
+                title: '根据用户需求发展的变动以及经济条件的改变迅速建立共识。',
                 description: ' '
             }, {
-                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
+                title: '在处理数据、功能和参数方面（在交互界面的层次上）简单且直观的产品。',
                 description: ' '
             }, {
-                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
+                title: '消除世界现有核查机构的替代，以充分证明该关系在平台上的合法性',
                 description: ' '
             }, {
-                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
+                title: '通过避免二元性、鼓励不负责任并冻结不成比例的流动性金额作为抵押品，以此来确保多方安排的承诺和财务支持。',
                 description: ' '
             }]
         },
         table: {
             first: {
-                desc: ["Multilateral smart contracts",
-                    "Participants establish rules",
-                    "Full compliance with the majority of jurisdictions",
-                    "Expansion of the possibilities of a legal economic system",
-                    "Payment by real currency containers",
-                    "Possibility of formal arbitration"],
+                desc: ["多边智能合约",
+                    "参与者制定规则",
+                    "完全符合大多数司法管辖区的规定",
+                    "法律经济制度可扩展",
+                    "真是货币进行支付",
+                    "可进行正式仲裁"],
             },
             second: {
-                title: "Other blockchain platforms",
+                title: "其他区块链平台",
                 desc: ["DAO",
-                    "Interaction rules are predetermined",
-                    "Uncertain legitimacy",
-                    "Substitution of legal economy",
-                    "Payment by high-volatile cryptocurrency",
+                    "交互规则是预先确定的",
+                    "合法性不确定",
+                    "法制经济的替代",
+                    "使用高波动性的加密货币支付",
                     "-"],
             },
             third: {
-                desc: ["Joint project management, finance and contractor administration",
-                    "Universality of project management methods",
-                    "Universality of encryption methods of private data",
-                    "Regulated by consensus of users",
-                    "Payments without intermediaries",
-                    "The imminence of execution obligations"],
+                desc: ["联合了项目管理、金融管理以及承包商管理",
+                    "通用性的项目管理方法",
+                    "通用性的私人数据加密方法",
+                    "根据用户的一致意见进行管理",
+                    "无中介支付",
+                    "执行义务的紧迫性"],
             },
             four: {
-                title: "Project management systems",
+                title: "项目管理系统",
                 desc: ["-",
-                    "Project management, financial services through different applications",
-                    "Bound to one method",
-                    "Bound to one or several methods",
-                    "Centrally regulated",
-                    "Payments through intermediaries"],
+                    "通过不同的应用程序进行项目管理和金融服务",
+                    "使用一种方法",
+                    "使用一个或多个方法",
+                    "集中管理",
+                    "通过中介支付"],
             }
         },
         team: {
-            title: 'Our team',
+            title: '团队',
             serokell: [{
                 name: 'Serokell',
                 members: [{
@@ -269,7 +269,7 @@ const messages = {
             ]
         },
         advisors: {
-            title: 'Advisors',
+            title: '顾问',
             members: [
                 {
                     name: 'Mikhail Gromyko',
@@ -299,8 +299,8 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO Economy',
-            subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
+            title: 'ICO 经济',
+            subTitle: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
             ICOinfo: {
                 emission: {
                     title: 'Emission',
@@ -316,25 +316,25 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Sale during the ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                title: '在ICO期间出售',
+                description: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
                 list: [{
-                    title: 'Sale for ICO',
+                    title: '为ICO出售',
                     amount: 77
                 }, {
-                    title: 'Team',
+                    title: '团队',
                     amount: 11
                 }, {
-                    title: 'Referral program, advisors',
+                    title: '推荐计划和顾问',
                     amount: 10
                 }, {
-                    title: 'Bounty',
+                    title: '赏金',
                     amount: 2
                 }]
             }
         },
         roadmap: {
-            title: 'Roadmap',
+            title: '路线图',
             stateLabel: 'state',
             stateStatus: {
                 deployed: 'deployed',
@@ -344,8 +344,9 @@ const messages = {
             },
             stages: [
                 {
-                    title: 'The idea',
-                    date: 'January 2017',
+                    title: '构思',
+                    desk: '理念形成',
+                    date: '一月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -354,8 +355,9 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
-                    date: 'February - March 2017',
+                    title: '来自项目管理专家的专业意见. 定义需求',
+                    desk: '与实体经济部门的项目管理专家进行磋商. 收集需求并定义问题',
+                    date: '二月 - 游行 2017',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -363,8 +365,9 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
-                    date: 'April - May 2017',
+                    title: '数学建模',
+                    desk: '与金融专家磋商. 与ITMO大学合作进行数学建模',
+                    date: '四月 - 五月 2017',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -372,8 +375,11 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
-                    date: 'June - July 2017',
+                    title: '职权范围的形成',
+                    desk: '与区块链专家和开发者磋商\n' +
+                    '\n' +
+                    '形成产品形象和职权范围',
+                    date: '六月 - 七月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -383,8 +389,8 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Partnership with Serokell OU. The beginning of development.',
-                    date: 'August 2017',
+                    title: '与SerokeII OU达成或作伙伴关系，并开始开发.',
+                    date: '八月 2017',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -400,8 +406,9 @@ const messages = {
                     state: 'implementing'
                 },
                 {
-                    title: 'PreSale',
-                    date: 'November - December 2017',
+                    title: '预售',
+                    desk:'筹集到100多万美元',
+                    date: '十一月 - 十二月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -412,8 +419,8 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Publishing MVP',
-                    date: 'May 15, 2018',
+                    title: '发行最小可行性产品（MVP）',
+                    date: '五月 15, 2018',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -434,49 +441,55 @@ const messages = {
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Development of Yellow Paper',
+                    title: '黄皮书开发',
+                    desk:'黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Decentralization of MVP solutions',
+                    title: '去中心化的MVP解决方案',
+                    desc: '构建实施以下组件的系统版本：对等网络；使用内置代币和其他代币的自定义交易；',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Realization of private blockhouses',
+                    title: '私人区块链',
+                    desk: '开发私人区块链并集成到现有的基础设施中。确保Oracle 的不间断运作。 在整个系统的完整版本中进行注册—但还没存在争端机制（仲裁）。',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Implementation of the system of the dispute',
+                    title: '争端解决机制的实施',
+                    desk:'在去中心化的应用框架内完善争议解决机制。',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Implementation of the voting system for changes',
+                    title: '变更投票制度的实施',
+                    desk:'随着时间的变化进行系统修改。',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Closed system testing',
+                    title: '系统发布',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Publication of the source code of the system and documentation',
+                    title: '公开系统的源代码以及相关文件',
+                    desk:'将系统的源代码和相关文件发布到公开的存储库中',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Starting the system operation',
+                    title: '启动系统',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
                     state: 'the stage did not begin'
@@ -484,9 +497,9 @@ const messages = {
             ]
         },
         blog: {
-            title: 'Blog',
-            allPostsBtn: 'All posts',
-            notFound: 'News not found'
+            title: '博客',
+            allPostsBtn: '所有帖子',
+            notFound: '未找到新闻'
         },
         footer: {
             right: {
@@ -999,7 +1012,516 @@ const messages = {
                 }
             }
         }
-    }
+    },
+    en: {
+        navbar: {
+            menuList: [
+                {
+                    path: '#home',
+                    name: 'Home'
+                },
+                {
+                    path: '#description',
+                    name: 'Description'
+                },
+                {
+                    path: '#advantages',
+                    name: 'Advantages'
+                },
+                {
+                    path: '#features',
+                    name: 'Features'
+                },
+                {
+                    path: '#team',
+                    name: 'Team'
+                },
+                {
+                    path: '#ico',
+                    name: 'ICO'
+                },
+                {
+                    path: '#roadmap',
+                    name: 'Roadmap'
+                },
+                {
+                    path: '#blog',
+                    name: 'Blog'
+                }
+            ],
+            loginBtn: 'Log in',
+            blog: 'Blog'
+        },
+        menuModal: {
+            selectLang: 'Select language',
+            navigationMenu: 'Back to menu'
+        },
+        greeting: {
+            title: 'The new era of project management is coming',
+            countDown: {
+                title: 'Round 1 will begin',
+                time: {
+                    days: 'Days',
+                    hours: 'Hours',
+                    minutes: 'Minutes'
+                },
+                btnBuyTokens: 'Buy tokens',
+                bonus: 'Bonus 25% up to 7 April 2018',
+                notAvailable: 'Now not available'
+            },
+            acceptedCrypto: {
+                title: 'Accepted for collection:'
+            }
+        },
+        partners: {
+            title: 'Our partners',
+        },
+        about: {
+            title: 'What is Alehub',
+            subTitle: 'ALEHUB – is a platform for the IT industry for project management and contractors search.',
+            description: 'ALEHUB combines the advantages of distributed registry systems (blockchain) and classic project management services. The selection of contractors (customers and executors), their work management, control and mutual settlements are regulated by multilateral smart contracts of the ALE system, which ensure the safety, reliability and low costs of outsourcing IT professionals.',
+            btnGroup: {
+                whitePaper: 'White paper',
+                techDetails: 'More about ALE',
+                download: 'Download'
+            }
+        },
+        advantages: {
+            title: 'ALE advantages',
+            lists: [{
+                title: 'ALE vs Project Management Systems'
+            }, {
+                title: 'ALE vs Other Blockchain Platforms'
+            }]
+        },
+        alePlatform: {
+            title: 'ALE platform',
+            subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
+            watchDemo: 'Watch demo',
+            solvingProblems: {
+                title: 'Solved problems',
+                list: [{
+                    title: 'The legal nature of payment.',
+                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
+                }, {
+                    title: 'Legal value of the electronic contract.',
+                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
+                }, {
+                    title: 'Highly volatile means of payment.',
+                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
+                }, {
+                    title: 'Contradiction to national and industrial standards. ',
+                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
+                }, {
+                    title: 'The inevitability of fulfilling obligations.',
+                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
+                }, {
+                    title: 'Integrity and unchangeability of documentation.',
+                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
+                }]
+            }
+        },
+        features: {
+            title: 'The main distinguishing features of ALE',
+            list: [{
+                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
+                description: ' '
+            }, {
+                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
+                description: ' '
+            }, {
+                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
+                description: ' '
+            }, {
+                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
+                description: ' '
+            }]
+        },
+        table: {
+            first: {
+                desc: ["Multilateral smart contracts",
+                    "Participants establish rules",
+                    "Full compliance with the majority of jurisdictions",
+                    "Expansion of the possibilities of a legal economic system",
+                    "Payment by real currency containers",
+                    "Possibility of formal arbitration"],
+            },
+            second: {
+                title: "Other blockchain platforms",
+                desc: ["DAO",
+                    "Interaction rules are predetermined",
+                    "Uncertain legitimacy",
+                    "Substitution of legal economy",
+                    "Payment by high-volatile cryptocurrency",
+                    "-"],
+            },
+            third: {
+                desc: ["Joint project management, finance and contractor administration",
+                    "Universality of project management methods",
+                    "Universality of encryption methods of private data",
+                    "Regulated by consensus of users",
+                    "Payments without intermediaries",
+                    "The imminence of execution obligations"],
+            },
+            four: {
+                title: "Project management systems",
+                desc: ["Project management, financial services through different applications",
+                    "Bound to one method",
+                    "Bound to one or several methods",
+                    "Centrally regulated",
+                    "Payments through intermediaries",
+                    "-"],
+            }
+        },
+        team: {
+            title: 'Our team',
+            serokell: [{
+                name: 'Serokell',
+                members: [{
+                    name: 'Arseniy Seroka',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/seroka@3x.png'
+                }, {
+                    name: 'John Mostovoy',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/mostovoy@3x.png'
+                }, {
+                    name: 'Alexander Rukin',
+                    position: 'UI/UX Designer',
+                    src: '../static/images/avatars/rukin@3x.png'
+                }, {
+                    name: 'Kirill Elagin',
+                    position: 'Backend Engineer',
+                    src: '../static/images/avatars/elagin@3x.png'
+                }]
+            }],
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy team',
+                    members: [
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png'
+                        },
+                        {
+                            name: 'Vladimir Grudinin',
+                            position: 'Blockchain Expert',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Alexej Osipenko',
+                            position: 'Chief Operating Officer',
+                            src: '../static/images/avatars/osipenko@3x.png'
+                        },
+                        {
+                            name: 'Elena Tsymbalyuk',
+                            position: 'Head of Marketing Operations',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Egor Loktev',
+                            position: 'Chief Marketing Officer',
+                            src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Artem Levashov',
+                            position: 'Chief Legal Officer',
+                            src: '../static/images/avatars/levashow@3x.png'
+                        },
+                        {
+                            name: 'Vadim Dudin',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Alexander Voroncov',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Denis Tikhonov',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Galina Sergeeva',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Dmitry Zhuravlev',
+                            position: 'Mobile developer',
+                            src: '../static/images/avatars/zhuravlev@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: 'Advisors',
+            members: [
+                {
+                    name: 'Mikhail Gromyko',
+                    position: 'Chief Executive Officer',
+                    src: '../static/images/avatars/gromyko@3x.png'
+                },
+                {
+                    name: 'Vladimir Grudinin',
+                    position: 'Blockchain Expert',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                },
+                {
+                    name: 'Alexej Osipenko',
+                    position: 'Chief Operating Officer',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                },
+                {
+                    name: 'Elena Tsymbalyuk',
+                    position: 'Head of Marketing Operations',
+                    src: '../static/images/avatars/elena@3x.png'
+                },
+                {
+                    name: 'Egor Loktev',
+                    position: 'Chief Marketing Officer',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }
+            ]
+        },
+        economy: {
+            title: 'ICO Economy',
+            subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
+            ICOinfo: {
+                emission: {
+                    title: 'Emission',
+                    amount: "100,500,000,000"
+                },
+                hardCap: {
+                    title: 'Hardcap',
+                    amount: "77,000"
+                },
+                softCap: {
+                    title: 'Softcap',
+                    amount: "4,500"
+                }
+            },
+            distribution: {
+                title: 'Sale during the ICO',
+                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                list: [{
+                    title: 'Sale for ICO',
+                    amount: 77
+                }, {
+                    title: 'Team',
+                    amount: 11
+                }, {
+                    title: 'Referral program, advisors',
+                    amount: 10
+                }, {
+                    title: 'Bounty',
+                    amount: 2
+                }]
+            }
+        },
+        roadmap: {
+            title: 'Roadmap',
+            stateLabel: 'state',
+            stateStatus: {
+                deployed: 'deployed',
+                implementing: 'implementing',
+                review: 'review',
+                notNow: 'the stage did not begin'
+            },
+            stages: [
+                {
+                    title: 'Conception',
+                    desk: 'The idea',
+                    date: 'January 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Expertise from specialists in project management. Definition of requirements',
+                    desk: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
+                    date: 'February - March 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Mathematical modeling',
+                    desk: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
+                    date: 'April - May 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Formation of the Terms of Reference',
+                    desk: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
+                    date: 'June - July 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Partnership with Serokell OU. The beginning of development.',
+                    date: 'August 2017',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'implementing'
+                },
+                {
+                    title: 'PreSale',
+                    desk:'Raised more than 1,000,000 USD',
+                    date: 'November - December 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Publishing MVP',
+                    date: 'May 15, 2018',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Pre-ICO',
+                    date: '05/25/2018 - 06/24/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'ICO',
+                    date: '06/25/2018 - 09/07/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Yellow Paper development',
+                    desk:'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
+                    date: '07/02/2018 - 01/01/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Decentralization of MVP solutions',
+                    date: '01.12.2018 - 01/02/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Private blockchains',
+                    date: '01/03/2019 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the dispute system',
+                    date: '05/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the voting system for changes',
+                    date: '08/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Closed system testing',
+                    date: '10/01/2019 - 01/01/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Publication of the source code of the system and documentation',
+                    date: '01/01/2020 - 01/02/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Booting the system ',
+                    date: '01/02/2020 – 01/03/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                }
+            ]
+        },
+        blog: {
+            title: 'Blog',
+            allPostsBtn: 'All posts',
+            notFound: 'News not found'
+        },
+        footer: {
+            right: {
+                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
+                designBy: 'Design by Alexander Rukin and ledesign',
+                terms: 'Terms and conditions'
+            },
+            left: {
+                subscribe: {
+                    input: 'Your e-mail address',
+                    btn: 'Subscribe to news'
+                }
+            }
+        }
+    },
 };
 
 export default messages;

@@ -28,7 +28,7 @@
                     <div class="steep-list">
                         <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
                             <div class="color-steep steep-sale" :class="['steep-'+dist.type]"></div>
-                            <span>{{ dist.title }}</span>
+                            <span>{{$t('economy.distribution.list['+distIndex+'].title')}}</span>
                         </div>
                     </div>
                 </div>
@@ -55,22 +55,18 @@
             return {
                 selectedDistributionIndex: -1,
                 distributionList: [{
-                    title: 'Sale for ICO',
                     type: 'sale',
                     count: 77,
                     color: '#139ac9'
                 }, {
-                    title: 'Team',
                     type: 'team',
                     count: 11,
                     color: '#6289fd'
                 }, {
-                    title: 'Referral program, advisors',
                     type: 'referral',
                     count: 10,
                     color: '#80ff89'
                 }, {
-                    title: 'Bounty',
                     type: 'bounty',
                     count: 2,
                     color: '#fab604'
