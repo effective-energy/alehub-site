@@ -20,7 +20,7 @@
                      id="serokell-gallery"
                      v-if="isWideScreen">
                     <div class="image"
-                         v-for="(member, i) in team.serokell"
+                         v-for="(member, i) in $t('team.serokell[0].members')"
                          :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
                         <img class="layer__bottom"
