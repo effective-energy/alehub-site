@@ -1,0 +1,14 @@
+{  
+  "name": "LetReach",  
+  "short_name": "LetReach Push",  
+  "icons": [{  
+        "src": "static/images/icon-192x192.jpg",  
+        "sizes": "192x192",
+        "type": "image/jpeg" 
+      }],  
+  "start_url": "/index.html?homescreen=1",  
+  "display": "standalone",  
+  "gcm_sender_id": "437226745110",  
+  "gcm_user_visible_only": true  ,
+	"permissions": ["gcm","storage"]
+}
