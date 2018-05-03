@@ -55,22 +55,22 @@
             return {
                 selectedDistributionIndex: -1,
                 distributionList: [{
-                    title: 'Sale for ICO',
+                    title: this.$t('economy.distribution.list[0].title'),
                     type: 'sale',
                     count: 77,
                     color: '#139ac9'
                 }, {
-                    title: 'Team',
+                    title: this.$t('economy.distribution.list[1].title'),
                     type: 'team',
                     count: 11,
                     color: '#6289fd'
                 }, {
-                    title: 'Referral program, advisors',
+                    title: this.$t('economy.distribution.list[2].title'),
                     type: 'referral',
                     count: 10,
                     color: '#80ff89'
                 }, {
-                    title: 'Bounty',
+                    title: this.$t('economy.distribution.list[3].title'),
                     type: 'bounty',
                     count: 2,
                     color: '#fab604'
