@@ -25,6 +25,9 @@
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
+                        <h6>
+                            {{ slide.desk }}
+                        </h6>
                         <span class="date">
                             {{ slide.date }}
                         </span>
@@ -250,6 +253,10 @@
 </script>
 
 <style lang="stylus" scoped>
+    h6
+        border-top #343a49 1px solid
+        margin-bottom 12px
+        padding-top 12px
 
     .section
         padding 74px 0
