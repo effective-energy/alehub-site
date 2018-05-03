@@ -44,7 +44,7 @@
 
 					<div class="more-news-content">
 						<div class="news-item" v-for="item in more" :key="item._id">
-							<img :src="item.preview_image" alt="" />
+							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
                             </router-link>
@@ -99,6 +99,9 @@
 				}, response => {
 					console.log('Error getting news', response);
 				});
+			},
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
 			}
 		},
 		created () {
@@ -360,6 +363,7 @@
 							height 130px
 							-o-object-fit cover
 							object-fit cover
+							cursor pointer
 
 						.news-link
 							font-family MuseoSansCyrl500

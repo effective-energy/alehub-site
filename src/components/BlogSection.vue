@@ -9,7 +9,7 @@
 			<div class="row news-section">
 				<div class="col-md-6 col-sm-12" v-for="(n, i) in news" :key="i">
 					<div class="news-block">
-						<img :src="n.preview_image" alt="" class="picture">
+						<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
 						<div class="news-info">
                             <router-link tag="a" :to="`/blog/${n._id}`" class="news-title">
                                 {{ n.title }}
@@ -50,6 +50,9 @@
 				}, response => {
 					console.log('Error getting news', response);
 				});
+			},
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
 			}
 		},
 		created () {
