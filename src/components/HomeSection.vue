@@ -269,7 +269,7 @@
                             </div>
                             <div class="progress-bar-outer">
                                 <div class="progress-bar-inner"
-                                     :style="{width: (collected/softCap)*100+'%'}">
+                                     :style="{width: softCapWidth}">
                                 </div>
                             </div>
                             <div class="state hard-cap">
@@ -282,7 +282,7 @@
                             </div>
                             <div class="progress-bar-outer">
                                 <div class="progress-bar-inner"
-                                     :style="{width: (collected/hardCap)*100+'%'}">
+                                     :style="{width: hardCapWidth}">
                                 </div>
                             </div>
                         </div>
@@ -460,6 +460,16 @@
         computed: {
             checkWindowWidth: function () {
                 return window.innerWidth > 420;
+            },
+            softCapWidth: function () {
+                if (this.collected <= this.softCap)
+                    return (this.collected/this.softCap)*100+'%';
+                else return '100%';
+            },
+            hardCapWidth: function () {
+                if (this.collected <= this.hardCap)
+                    return (this.collected/this.hardCap)*100+'%';
+                else return '100%';
             }
         },
         methods: {
