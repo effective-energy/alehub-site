@@ -64,11 +64,11 @@ const messages = {
         },
         about: {
             title: 'What is Alehub',
-            subTitle: 'We are attracting blockchain technology in the world of hr',
-            description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers. ALE in this sense is an online distributed information and financial platform / project management system, the location and interaction of project parties (in the first stage of IT projects).',
+            subTitle: 'ALEHUB – is a platform for the IT industry for project management and contractors search.',
+            description: 'ALEHUB combines the advantages of distributed registry systems (blockchain) and classic project management services. The selection of contractors (customers and executors), their work management, control and mutual settlements are regulated by multilateral smart contracts of the ALE system, which ensure the safety, reliability and low costs of outsourcing IT professionals.',
             btnGroup: {
                 whitePaper: 'White paper',
-                techDetails: 'Technical details of pre ICO',
+                techDetails: 'More about ALE',
                 download: 'Download'
             }
         },
@@ -81,82 +81,82 @@ const messages = {
             }]
         },
         alePlatform: {
-            title: 'Alehub - first application',
-            subTitle: 'Alehub is the first project using the platform. is aimed at the IT industry and provides an opportunity to carry out the project "from scratch": from the Contractors search, to mutual settlements.',
+            title: 'ALE platform',
+            subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
             watchDemo: 'Watch demo',
             solvingProblems: {
-                title: 'Solving problems',
+                title: 'Solved problems',
                 list: [{
-                    title: 'Legality of means of payment',
-                    description: 'Explanation text can be placed here'
+                    title: 'The legal nature of payment.',
+                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
                 }, {
-                    title: 'Legal significance of electronic documents',
-                    description: 'Explanation text can be placed here'
+                    title: 'Legal value of the electronic contract.',
+                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
                 }, {
-                    title: 'The inevitability of the fulfillment of the obligations of the parties to the contract',
-                    description: 'Explanation text can be placed here'
+                    title: 'Highly volatile means of payment.',
+                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
                 }, {
-                    title: 'Integrity and unalterability of project communication and documentation',
-                    description: 'Explanation text can be placed here'
+                    title: 'Contradiction to national and industrial standards. ',
+                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
                 }, {
-                    title: 'Volatility of the payment instrument',
-                    description: 'Explanation text can be placed here'
+                    title: 'The inevitability of fulfilling obligations.',
+                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
                 }, {
-                    title: 'Volatility of the payment instrument',
-                    description: 'Explanation text can be placed here'
+                    title: 'Integrity and unchangeability of documentation.',
+                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
                 }]
             }
         },
         features: {
             title: 'The main distinguishing features of ALE',
             list: [{
-                title: 'Choice of encryption algorithm for communication and documentation',
-                description: 'In accordance with legislation'
+                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
+                description: ' '
             }, {
-                title: 'Automating relationships with TTP',
-                description: 'Explanation text can be placed here'
+                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
+                description: ' '
             }, {
-                title: 'The choice of any methodology for project management',
-                description: 'Users of services based on ALE have the opportunity to create their own methodological algorithms, in addition to the well known (DIN 69901, GOST R 54869 - 2011, PMBOK Guide, ISO 10006-97, APM Body of Knowledge, Prince 2, OPM 3)'
+                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
+                description: ' '
             }, {
-                title: 'Mutual settlements are made using an internal token',
-                description: 'A container of phiatic or cryptographic cost'
+                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
+                description: ' '
             }]
         },
         table: {
             first: {
                 desc: ["Multilateral smart contracts",
-                    "Participants establish rules of interaction",
-                    "Full compliance with the jurisdictions of most countries for participants",
-                    "Empowering the legal economy",
-                    "Container payment of real currency",
+                    "Participants establish rules",
+                    "Full compliance with the majority of jurisdictions",
+                    "Expansion of the possibilities of a legal economic system",
+                    "Payment by real currency containers",
                     "Possibility of formal arbitration"],
             },
             second: {
-                title: "Other platform armor",
-                desc: ["Only through DAO",
-                    "The rules of interaction between participants are determined in advance",
-                    "Unclear legitimacy",
-                    "Replacement of legal economy",
-                    "Volatile Crypto-Currency Payment",
+                title: "Other blockchain platforms",
+                desc: ["DAO",
+                    "Interaction rules are predetermined",
+                    "Uncertain legitimacy",
+                    "Substitution of legal economy",
+                    "Payment by high-volatile cryptocurrency",
                     "-"],
             },
             third: {
-                desc: ["The inevitability of fulfilling obligations",
-                    "Project Management, Finance and Contractors",
-                    "Universality of project management methodologies",
-                    "The universality of encryption methods for private data",
+                desc: ["Joint project management, finance and contractor administration",
+                    "Universality of project management methods",
+                    "Universality of encryption methods of private data",
                     "Regulated by consensus of users",
-                    "Payments without intermediaries"],
+                    "Payments without intermediaries",
+                    "The imminence of execution obligations"],
             },
             four: {
                 title: "Project management systems",
                 desc: ["-",
-                    "Project management, financial management and contractors search through various applications",
-                    "Binding to one method of debt",
-                    "Binding to one or more methods",
-                    "Adjustable centrally",
-                    "Payments through intermediaries\n"],
+                    "Project management, financial services through different applications",
+                    "Bound to one method",
+                    "Bound to one or several methods",
+                    "Centrally regulated",
+                    "Payments through intermediaries"],
             }
         },
         team: {
@@ -299,8 +299,8 @@ const messages = {
             ]
         },
         economy: {
-            title: 'Economy of ICO',
-            subTitle: 'ALE — security token. To ensure liquidity and fast placement on exchanges, the ALE protocol is mirrored to the Ethereum according to the ERC20 standard',
+            title: 'ICO Economy',
+            subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
             ICOinfo: {
                 emission: {
                     title: 'Emission',
@@ -316,7 +316,7 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Distribution of tokens',
+                title: 'Sale during the ICO',
                 description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
                 list: [{
                     title: 'Sale for ICO',
@@ -344,7 +344,7 @@ const messages = {
             },
             stages: [
                 {
-                    title: 'The emergence of the idea',
+                    title: 'The idea',
                     date: 'January 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -354,7 +354,7 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Expertise from specialists in project management. Definition of requirements.',
+                    title: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
                     date: 'February - March 2017',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
@@ -363,7 +363,7 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Construction of a mathematical model',
+                    title: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
                     date: 'April - May 2017',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
@@ -372,7 +372,7 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'Formation of the Terms of Reference',
+                    title: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
                     date: 'June - July 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -412,7 +412,7 @@ const messages = {
                     state: 'deployed'
                 },
                 {
-                    title: 'MVP Publication',
+                    title: 'Publishing MVP',
                     date: 'May 15, 2018',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
