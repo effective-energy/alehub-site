@@ -59,10 +59,10 @@
                 selectingLanguage: false,
                 languages: [
                     {
-                        name: 'eng'
+                        name: 'en'
                     },
                     {
-                        name: 'rus'
+                        name: 'ru'
                     }
                 ],
             }

@@ -355,7 +355,7 @@
                     <div class="desktop-outer">
                         <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
-                        <slider ref="slider"
+                        <slider v-if="reBuild" ref="slider"
                                 :pages="pages"
                                 :sliderinit="sliderInit">
                         </slider>
@@ -420,6 +420,7 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
+                reBuild: true,
                 sliderInit: {
                     currentPage: 0,
                     thresholdDistance: 100,
@@ -527,9 +528,11 @@
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
 
                 if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                    this.pause();
                     document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
                     document.getElementById('button-choose').classList.add('button-choose__stop');
                 } else {
+                    this.play();
                     document.getElementById('button-choose').style['top'] = '40%';
                     document.getElementById('button-choose').classList.remove('button-choose__stop');
                 }
@@ -552,11 +555,31 @@
                 this.isDark = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
             },
             doDarkTheme: function () {
                 this.isDark = true;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
             }
         },
         created() {
@@ -565,21 +588,21 @@
         mounted() {
             setTimeout(() => {
                 if (localStorage.getItem('color-theme') === 'dark') {
-                    console.log(1);
                     this.isDark = true;
                     this.$parent.$emit('isDarkTheme', true);
                 } else if (localStorage.getItem('color-theme') === 'light') {
-                    console.log(2);
                     this.isDark = false;
                     this.$parent.$emit('isDarkTheme', false);
                 } else {
-                    console.log(3);
                     localStorage.setItem('color-theme', 'light');
                     this.$parent.$emit('isDarkTheme', false);
                 }
             }, 40);
 
-            this.startAnime();
+            setTimeout(() => {
+                this.startAnime();
+            }, 2500);
+
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
             if (window.innerWidth > 420 && this.$route.path === '/')
@@ -594,6 +617,9 @@
 <style lang="stylus" scoped>
     /*.section__dark*/
     /*background-color #34343e*/
+
+    #screen1
+        padding-top 74px
 
     #description
         @media (min-width 420px)

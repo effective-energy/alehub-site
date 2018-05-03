@@ -33,13 +33,13 @@ Vue.use(VueAwesomeSwiper);
 Vue.config.productionTip = false;
 
 let systemLang = '';
-if(localStorage.getItem('systemLang') !== 'eng' && localStorage.getItem('systemLang') !== 'rus') {
-	localStorage.setItem('systemLang', 'eng');
-	systemLang = 'eng';
-} else if(localStorage.getItem('systemLang') === 'eng') {
-	systemLang = 'eng';
-} else if(localStorage.getItem('systemLang') === 'rus') {
-	systemLang = 'rus';
+if(localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
+	localStorage.setItem('systemLang', 'en');
+	systemLang = 'en';
+} else if(localStorage.getItem('systemLang') === 'en') {
+	systemLang = 'en';
+} else if(localStorage.getItem('systemLang') === 'ru') {
+	systemLang = 'ru';
 }
 
 import messages from './i18n.js';

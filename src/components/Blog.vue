@@ -79,7 +79,7 @@
 		},
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`).then(response => {
                     this.content = response.body.reverse();
                     this.filtersConfigure();
                 }, response => {

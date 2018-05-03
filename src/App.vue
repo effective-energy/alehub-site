@@ -2,7 +2,7 @@
     <div id="app">
         <!--<loading-screen />-->
         <loading-screen v-if="isLoading" />
-        <router-view v-if="isShow" />
+        <router-view v-if="true" />
         <!-- <router-view /> -->
     </div>
 </template>
@@ -22,9 +22,6 @@
                 loadingTimer: 0
             }
         },
-        created() {
-
-        },
         mounted() {
             this.$on('isShow', (val) => {
                 console.log('content');
@@ -34,6 +31,7 @@
             this.$on('endOfLoadingWideScreen', (val) => {
                 console.log('preloader');
                 this.isLoading = !val;
+                window.preloaderState = true;
             });
 
             this.$on('endOfLoadingNarrowScreen', (val) => {
@@ -46,8 +44,4 @@
 <style lang="stylus">
     body
         background-color #ededf1
-
-    [v-cloak]
-        display none
-
 </style>
