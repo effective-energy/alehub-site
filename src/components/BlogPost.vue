@@ -25,14 +25,14 @@
 			<div class="news-block">
 				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
-					<img :src="`https://alehub.eu-4.evennode.com/${content.author_image}`" alt="" class="news-author-image" />
+					<img :src="content.author_image" alt="" class="news-author-image" />
 					<div class="info">
 						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
 						<span class="author-name">{{ content.author_name }}</span>
 					</div>
 				</div>
 				<div class="picture-block">
-					<img :src="`https://alehub.eu-4.evennode.com/${content.preview_image}`" alt="" class="image" />
+					<img :src="content.preview_image" alt="" class="image" />
 					<p class="resource-image" v-if="false">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
 				</div>
 				<div class="news-content" v-html="content.content">
@@ -44,7 +44,7 @@
 
 					<div class="more-news-content">
 						<div class="news-item" v-for="item in more" :key="item._id">
-							<img :src="`https://alehub.eu-4.evennode.com/${item.preview_image}`" alt="" />
+							<img :src="item.preview_image" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
                             </router-link>
