@@ -302,37 +302,11 @@ body {
 .btn-buy-tokens {
   margin-right: 5px;
   margin-left: 5px;
-  background: #ffd24f !important;
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -o-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  background: linear-gradient(45deg, #fda503, #fff5da) !important;
+  background: linear-gradient(45deg, #fda503, #fff5da);
   background-size: 200% 200%;
-  -webkit-animation-name: movingcolor;
-  -moz-animation-name: movingcolor;
-  -o-animation-name: movingcolor;
-  animation-name: movingcolor;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  -o-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-timing-function: ease;
-  -o-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-delay: 0s;
-  -moz-animation-delay: 0s;
-  -o-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -moz-animation-direction: alternate;
-  -o-animation-direction: alternate;
-  animation-direction: alternate;
+  -webkit-animation: movecolors 10s ease infinite;
+  -moz-animation: movecolors 10s ease infinite;
+  animation: movecolors 10s ease infinite;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 0.475rem;
@@ -343,6 +317,79 @@ body {
   position: relative;
   top: -15px;
   border: none;
+}
+@-webkit-keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
+}
+@-moz-keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
+}
+.btn-buy-tokens:hover {
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -o-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  background: linear-gradient(45deg, #fff5da, #fda503) !important;
+}
+@-moz-keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
+}
+@-webkit-keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
+}
+@-o-keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
+}
+@keyframes movecolors {
+  0% {
+    background-position: 0% 79%;
+  }
+  50% {
+    background-position: 100% 22%;
+  }
+  100% {
+    background-position: 0% 79%;
+  }
 }
 .dropdown-toggle {
   font-size: 18px;
