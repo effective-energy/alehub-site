@@ -54,7 +54,7 @@
                        target="_blank">
                         <i class="social-icon social-icon-tg"></i>
                     </a>
-                    <a href="https://vk.com/alehub"
+                    <a href="https://vk.com/alehub" v-if="false"
                        class="social-item"
                        target="_blank">
                         <i class="social-icon social-icon-vk"></i>
@@ -237,7 +237,7 @@
                 justify-content flex-end
 
                 .social-item
-                    width 36px
+                    width 46px
                     height 36px
                     margin 0 6px
                     display flex

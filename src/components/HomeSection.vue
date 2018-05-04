@@ -205,7 +205,7 @@
                             <div class="main-player" v-if="mainPlayer">
                                 <iframe
                                     class="iframe"
-                                    src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1"
+                                    src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media"
                                     allowfullscreen
@@ -317,7 +317,7 @@
                 <a href="https://t.me/alehub"
                    class="social-item tg"
                    target="_blank"></a>
-                <a href="https://vk.com/alehub"
+                <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
                 <a class="scroll-ic"
@@ -643,7 +643,7 @@
 
     #description
         @media (min-width 420px)
-            height 100vh
+            min-height 100vh
 
         .row
             align-items center
@@ -671,7 +671,7 @@
 
         .iframe
             width 700px
-            height 392px
+            height 394px
 
         @media (max-width: 1680px)
             right -255px
@@ -703,7 +703,7 @@
         @media (max-width: 1120px)
             .iframe
                 width 700px
-                height 392px
+                height 394px
 
         @media (max-width: 850px)
             .iframe

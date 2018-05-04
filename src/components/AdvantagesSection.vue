@@ -158,7 +158,7 @@
                 <div class="left-block">
                     <h1 class="title">Other Blockchain Platforms</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.first">
+                        <li v-for="(item, index) in advantages.first" :key="index">
                             {{ item.second }}
                         </li>
                     </ul>
@@ -166,7 +166,7 @@
                 <div class="right-block">
                     <h1 class="title">ALE</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.first">
+                        <li v-for="(item, index) in advantages.first" :key="index">
                             {{ item.first }}
                         </li>
                     </ul>
@@ -176,7 +176,7 @@
                 <div class="left-block">
                     <h1 class="title">Project Management Systems</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.second">
+                        <li v-for="(item, index) in advantages.second" :key="index">
                             {{ item.second }}
                         </li>
                     </ul>
@@ -184,7 +184,7 @@
                 <div class="right-block">
                     <h1 class="title">ALE</h1>
                     <ul>
-                        <li v-for="(item, index) in advantages.second">
+                        <li v-for="(item, index) in advantages.second" :key="index">
                             {{ item.first }}
                         </li>
                     </ul>
