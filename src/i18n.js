@@ -304,7 +304,7 @@ const messages = {
             ICOinfo: {
                 emission: {
                     title: 'Emission',
-                    amount: "100,500,000,000"
+                    amount: "110,000,000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -815,7 +815,7 @@ const messages = {
             ICOinfo: {
                 emission: {
                     title: 'Объем эмиссии',
-                    amount: "100,500,000,000"
+                    amount: "110,000,000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -1329,7 +1329,7 @@ const messages = {
             ICOinfo: {
                 emission: {
                     title: 'Emission',
-                    amount: "100,500,000,000"
+                    amount: "110,000,000"
                 },
                 hardCap: {
                     title: 'Hardcap',
