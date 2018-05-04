@@ -677,7 +677,7 @@
         padding-top 74px
 
     #description
-        @media (min-width 420px)
+        @media (min-width 425px)
             height 100vh
 
         .row
@@ -756,12 +756,12 @@
                 background-image url(../../static/images/vk-hovered.svg) !important
 
     #screen1 .container-fluid.what-is
-        @media (max-width 420px)
+        @media (max-width 425px)
             padding-top 50px !important
             background #ececf0
 
             p.description
-                color #142038
+                color #142538
 
     .description__dark
         background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
@@ -771,7 +771,7 @@
         background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
         background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
 
-        @media (max-width 420px)
+        @media (max-width 425px)
             background #343a49 !important
 
         .desc
@@ -838,7 +838,7 @@
             margin-top 0 !important
             padding-top 150px !important
 
-            @media (max-width 420px)
+            @media (max-width 425px)
                 padding-top 50px !important
                 margin-bottom 50px !important
 
@@ -850,7 +850,7 @@
             margin-top 0
             padding 165px 125px 0
 
-            @media (max-width 420px)
+            @media (max-width 425px)
                 padding-left 32px
                 padding-right 32px
                 padding-top 20px
@@ -874,7 +874,7 @@
                 .title
                     white-space nowrap
 
-                    @media (max-width 420px)
+                    @media (max-width 425px)
                         margin-bottom 40px
 
                 .partners-icons
@@ -882,7 +882,7 @@
                     width 100%
                     flex-wrap nowrap
 
-                    @media (max-width 420px)
+                    @media (max-width 425px)
                         display flex
                         flex-direction column
                         justify-content center

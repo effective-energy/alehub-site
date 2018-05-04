@@ -110,6 +110,9 @@
         padding 80px 20%
 
         @media (max-width 1024px)
+            padding 80px 10%
+
+        @media (max-width 1024px)
             height auto
 
         .title
@@ -125,17 +128,8 @@
             align-items center
             flex-wrap wrap
 
-            @media (max-width 1024px)
+            @media (max-width 768px)
                 width 100%
-
-            /*.apple-block*/
-            /*width 250px*/
-
-            /*.windows-block*/
-            /*width 200px*/
-
-            /*.linux-block*/
-            /*width 150px*/
 
             .logo
                 position relative
@@ -143,8 +137,6 @@
                 flex-direction column
                 justify-content center
                 align-items center
-                /*background-color #888*/
-                /*height 500px*/
                 width 33.33333%
                 padding 50px 50px
 
@@ -164,7 +156,7 @@
                                 transform translateY(7px)
 
 
-                @media (max-width 1024px)
+                @media (max-width 768px)
                     width 100%
 
 
@@ -192,6 +184,9 @@
                         -webkit-transition all .25s ease-in-out
                         -o-transition all .25s ease-in-out
                         transition all .25s ease-in-out
+
+                    @media (max-width 1024px)
+                        display none
 
                 .logo__fade
                     position absolute

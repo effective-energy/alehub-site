@@ -135,16 +135,8 @@
                     </div>
 
                 </div>
-                <!--<b-dropdown :text="currentLang">-->
-                <!--<b-dropdown-item :active="lang === currentLang"-->
-                <!--v-for="(lang, langIndex) in languagesList"-->
-                <!--@click="changeLanguage(langIndex)"-->
-                <!--:key="langIndex">-->
-                <!--{{ lang }}-->
-                <!--</b-dropdown-item>-->
-                <!--</b-dropdown>-->
             </div>
-            <button type="button" class="btn btn-actions">
+            <button type="button" class="btn btn-actions" v-if="false">
                 ok
             </button>
         </div>
@@ -555,12 +547,15 @@
         font-weight 700
         text-transform uppercase
 
+        @media (max-width 1024px)
+            margin-left 10px
+
         @media (max-width 420px)
             display none
 
         .select-lang__dropdown
             right 60px
-            top 74px
+            top 75px
             /*width 540px*/
             position absolute
             display flex
@@ -585,10 +580,14 @@
                 height 60px
                 background-size cover
                 background-repeat no-repeat
-                background-position 50% 0
-                -webkit-transition all .3s ease-out
-                -o-transition all .3s ease-out
-                transition all .3s ease-out
+                background-position calc(50% + 1px) 0
+                border-left .5px solid #e0e0e0
+                /*-webkit-transition all .3s ease-out*/
+                /*-o-transition all .3s ease-out*/
+                /*transition all .3s ease-out*/
+                /*-webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)
+                -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)
+                box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)*/
 
                 &:before
                     width 60px
@@ -630,9 +629,6 @@
                     background-color #fff
                     width 100%
                     height 100%
-                    display flex
-                    justify-content center
-                    align-items center
                     -webkit-transition all .3s ease-out
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
@@ -679,6 +675,7 @@
 
             .select-lang__fr
                 background-image url(../../../static/images/flags/fr@2x.png)
+                border-left none
 
                 &:after
                     height 60px
@@ -1017,8 +1014,8 @@
             margin-right 8px
 
     @media (max-width 1100px)
-        .btn-login
-            display none
+        /*.btn-login*/
+            /*display none*/
 
         .dropdown
             display none
@@ -1069,15 +1066,15 @@
         .navbar-brand
             margin-right 8px
 
-    @media (max-width 1100px)
-        .btn-login
-            display none
+    /*@media (max-width 1100px)*/
+        /*!*.btn-login*!*/
+            /*!*display none*!*/
 
-        .dropdown
-            display none
+        /*.dropdown*/
+            /*display none*/
 
-        .btn-actions
-            display unset
+        /*.btn-actions*/
+            /*display unset*/
 
     @media (max-width 768px)
         .navbar

@@ -167,7 +167,7 @@
                 .subscribe-form__wrap
                     position relative
 
-                    @media (max-width 420px)
+                    @media (max-width 425px)
                         width 100% !important
 
                     .subscribe-form__email
@@ -185,7 +185,7 @@
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
 
-                        @media (max-width 420px)
+                        @media (max-width 425px)
                             font-size 16px
                             height 50px
                             text-align center
@@ -229,7 +229,7 @@
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
 
-                    @media (max-width 420px)
+                    @media (max-width 425px)
                         font-size 16px
                         height 50px
                         margin-bottom 15px
@@ -245,7 +245,7 @@
                 margin-bottom 10px
                 justify-content flex-end
 
-                @media (max-width 420px)
+                @media (max-width 425px)
                     justify-content center
                     margin-bottom 30px
 
@@ -333,7 +333,7 @@
                 letter-spacing normal
                 color #34343e
 
-                @media (max-width 420px)
+                @media (max-width 425px)
                     text-align center
 
             .creator-and-terms
