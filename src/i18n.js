@@ -308,11 +308,11 @@ const messages = {
                 },
                 hardCap: {
                     title: 'Hardcap',
-                    amount: "77,000"
+                    amount: "33,000"
                 },
                 softCap: {
                     title: 'Softcap',
-                    amount: "4,500"
+                    amount: "2,000"
                 }
             },
             distribution: {
@@ -819,11 +819,11 @@ const messages = {
                 },
                 hardCap: {
                     title: 'Hardcap',
-                    amount: "77,000"
+                    amount: "33,000"
                 },
                 softCap: {
                     title: 'Softcap',
-                    amount: "4,500"
+                    amount: "2,000"
                 }
             },
             distribution: {
@@ -1333,11 +1333,11 @@ const messages = {
                 },
                 hardCap: {
                     title: 'Hardcap',
-                    amount: "77,000"
+                    amount: "33,000"
                 },
                 softCap: {
                     title: 'Softcap',
-                    amount: "4,500"
+                    amount: "2,000"
                 }
             },
             distribution: {
