@@ -319,7 +319,7 @@
 
     @media (max-width: 320px)
         .section
-            padding-top 40px
+            padding-top 100px
             padding-bottom 40px
 
         .blog-post

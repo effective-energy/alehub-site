@@ -166,6 +166,7 @@
 
                 .subscribe-form__wrap
                     position relative
+                    width 100%
 
                     .subscribe-form__email
                         background none
@@ -458,6 +459,7 @@
                 .social-block
                     .social-networks
                         width 100%
+                        justify-content center
             .copyright-block
                 .copyright-text
                     white-space normal
