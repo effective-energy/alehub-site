@@ -6,12 +6,12 @@
         <div class="os-avail-list">
             <div class="logo">
 
-                <div class="logo__fade">
-                </div>
+                <!--<div class="logo__fade">-->
+                <!--</div>-->
 
-                <button type="button" class="button button__fade">
-                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
-                </button>
+                <!--<button type="button" class="button button__fade">-->
+                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
+                <!--</button>-->
 
                 <div class="logo__wrap">
                     <img class="logo__apple" src="../../static/images/logo/apple-logo.svg" alt="Apple logo">
@@ -35,12 +35,12 @@
             </div>
             <div class="logo">
 
-                <div class="logo__fade">
-                </div>
+                <!--<div class="logo__fade">-->
+                <!--</div>-->
 
-                <button type="button" class="button button__fade">
-                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
-                </button>
+                <!--<button type="button" class="button button__fade">-->
+                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
+                <!--</button>-->
 
                 <div class="logo__wrap">
                     <img class="logo__windows" src="../../static/images/logo/windows-logo.svg" alt="Windows logo">
@@ -64,12 +64,12 @@
             </div>
             <div class="logo">
 
-                <div class="logo__fade">
-                </div>
+                <!--<div class="logo__fade">-->
+                <!--</div>-->
 
-                <button type="button" class="button button__fade">
-                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
-                </button>
+                <!--<button type="button" class="button button__fade">-->
+                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
+                <!--</button>-->
 
                 <div class="logo__wrap">
                     <img class="logo__linux" src="../../static/images/logo/linux-logo.svg" alt="Linux logo">
@@ -254,7 +254,6 @@
                         margin-bottom 24px
 
                 .button__download
-                    display none
                     cursor pointer
                     color #34343e
                     font-family MuseoSansCyrl500

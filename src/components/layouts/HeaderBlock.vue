@@ -580,14 +580,8 @@
                 height 60px
                 background-size cover
                 background-repeat no-repeat
-                background-position calc(50% + 1px) 0
-                border-left .5px solid #e0e0e0
-                /*-webkit-transition all .3s ease-out*/
-                /*-o-transition all .3s ease-out*/
-                /*transition all .3s ease-out*/
-                /*-webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)
-                -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)
-                box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.2)*/
+                background-position 50% 0
+                border-left 1px solid #e0e0e0
 
                 &:before
                     width 60px

@@ -340,13 +340,6 @@ body {
     background-position: 0% 79%;
   }
 }
-.btn-buy-tokens:hover {
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  -o-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
-  background: linear-gradient(45deg, #fff5da, #fda503) !important;
-}
 @-moz-keyframes movecolors {
   0% {
     background-position: 0% 79%;

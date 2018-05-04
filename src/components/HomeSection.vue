@@ -135,7 +135,7 @@
                 </g>
             </svg>
         </div>
-        <div class="first-screen"
+        <div class="first-screen home"
              :class="{ 'home__dark': isDark }"
              id="home">
             <div class="container-fluid">
@@ -649,6 +649,9 @@
 <style lang="stylus" scoped>
     /*.section__dark*/
     /*background-color #34343e*/
+
+    .home
+        max-height calc(100vh - 74px) !important
 
     a
         &:hover
