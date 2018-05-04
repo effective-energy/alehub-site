@@ -9,7 +9,7 @@
 			<div class="row news-section">
 				<div class="col-md-6 col-sm-12" v-for="(n, i) in news" :key="i">
 					<div class="news-block">
-						<img :src="'https://alehub.eu-4.evennode.com/'+n.preview_image" alt="" class="picture">
+						<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
 						<div class="news-info">
                             <router-link tag="a" :to="`/blog/${n._id}`" class="news-title">
                                 {{ n.title }}
@@ -45,11 +45,14 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/last/'+this.$i18n.locale}/6`).then(response => {
 					this.news = response.body.reverse();
 				}, response => {
 					console.log('Error getting news', response);
 				});
+			},
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
 			}
 		},
 		created () {

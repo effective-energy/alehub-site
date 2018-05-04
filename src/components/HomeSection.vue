@@ -215,7 +215,7 @@
                                         <img src="../../static/images/btc.svg" alt="Bitcoin">
                                     </div>
                                     <div class="description">
-                                        <span class="count">2,389 ALE</span>
+                                        <span class="count">32,256 ALE</span>
                                         <span class="name">BTC</span>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@
                                         <img src="../../static/images/eth.svg" alt="Etherium">
                                     </div>
                                     <div class="description">
-                                        <span class="count">1,337 ALE</span>
+                                        <span class="count">2,606 ALE</span>
                                         <span class="name">ETH</span>
                                     </div>
                                 </div>
@@ -233,7 +233,7 @@
                                         <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
                                     </div>
                                     <div class="description">
-                                        <span class="count">2,228 ALE</span>
+                                        <span class="count">4,946 ALE</span>
                                         <span class="name">BCH</span>
                                     </div>
                                 </div>
@@ -242,7 +242,7 @@
                                         <img src="../../static/images/ltc.svg" alt="Litecoin">
                                     </div>
                                     <div class="description">
-                                        <span class="count">1,488 ALE</span>
+                                        <span class="count">530 ALE</span>
                                         <span class="name">LTC</span>
                                     </div>
                                 </div>
@@ -251,7 +251,7 @@
                                         <img src="../../static/images/dash.svg" alt="Dash">
                                     </div>
                                     <div class="description">
-                                        <span class="count">2,228 ALE</span>
+                                        <span class="count">1,650 ALE</span>
                                         <span class="name">DASH</span>
                                     </div>
                                 </div>
@@ -792,6 +792,9 @@
             margin-top 0 !important
             padding-top 150px !important
 
+            @media (max-width 320px)
+                padding-top 50px !important
+
     #screen1
         .container-fluid.what-is
             margin-top 0
@@ -1010,6 +1013,9 @@
             font-size 20px
             color #34343e
             margin-top 60px
+
+            @media (max-width: 320px)
+                font-size 14px
 
             .state
                 display flex

@@ -384,7 +384,7 @@
                     transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
                     
                     @media(max-width: 320px)
-                        font-size 16px
+                        font-size 14px
 
                 .point-right-active, .point-left-active
                     cursor default
@@ -548,6 +548,10 @@
                     align-items center
                     text-align center
                     height 100%
+                    
+                    @media (max-width: 320px)
+                        font-size 13px
+
         .left-block
             opacity .6
 
@@ -567,6 +571,10 @@
                 background #fff
                 padding 0 40px
                 flex-direction column
+
+                .item-text
+                    @media (max-width: 320px)
+                        font-size 12px
 
             ul
                 padding 5px 0
@@ -622,6 +630,9 @@
                     -o-transition color 0.5s ease-in-out
                     transition color 0.5s ease-in-out
                     z-index 1000
+
+                    @media (max-width: 320px)
+                        font-size 12px
 
                 &:hover
                     -webkit-box-shadow 0 0 7px 0 rgba(0,0,0,0.2)

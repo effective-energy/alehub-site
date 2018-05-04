@@ -399,6 +399,12 @@
                 .b-carousel__inner
                     background-color #dbe0e9
 
+    .advisors-team
+        .wrap
+            width 80%
+            @media (max-width 320px)
+                width 100%
+
     .wrap
         width 100%
         display flex
@@ -459,7 +465,8 @@
 
                         @media (max-width 320px)
                             position relative
-                            width 270px
+                            width 100%
+                            margin 0
 
                         &:active
                             cursor -webkit-grab !important

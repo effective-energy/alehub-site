@@ -449,6 +449,18 @@
                         .social-item
                             &:last-child
                                 margin-right 0
+    @media (max-width 760px)
+        .footer
+            .footer-row
+                .social-block
+                    .social-networks
+                        width 100%
+            .copyright-block
+                .copyright-text
+                    white-space normal
+                .creator-and-terms
+                    .creator
+                        white-space normal
 
 </style>
 			

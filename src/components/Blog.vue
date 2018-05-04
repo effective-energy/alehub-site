@@ -22,8 +22,8 @@
 
                 <div class="posts">
 
-                    <div class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="'https://alehub.eu-4.evennode.com/'+item.preview_image" alt="" class="image-preview">
+                    <div class="blog-post" v-for="item in content" :key="item._id" @click="goToNews(item._id)">
+                        <img :src="item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
                                 {{ item.title }}
@@ -97,7 +97,10 @@
                         }
                     }
                 }
-            }
+            },
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
+			}
         },
         created () {
             this.getNews();
@@ -113,7 +116,15 @@
 
     .footer {
         background-color: #e8ebef;
-    }
+	}
+	
+	.blog-entries {
+		min-height: 100vh;
+	}
+
+	.blog-post {
+		cursor: pointer;
+	}
 </style>
 
 <style lang="stylus" scoped>
