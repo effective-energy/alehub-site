@@ -106,10 +106,19 @@
 
 			.btn-warning
 				background-color #ffd24f
-				padding 10px 28px
-				font-size 18px
+				padding 8px 20px
+				font-size 14px
+				font-weight 700
 				color #34343e
 				font-family MuseoSansCyrl300
+				border 1px solid #ffd24f
+				border-radius 3px
+
+				&:active 
+					border 1px solid #d39e00
+
+				&:focus
+					box-shadow none 
 
 		.news-block
 			width 100%
