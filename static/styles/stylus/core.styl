@@ -391,6 +391,10 @@ body
         display flex
         flex-direction row
         margin-top 25px
+
+        @media (max-width: 320px)
+            flex-wrap wrap
+
         .item
             padding 14px 5px
             width 72px
@@ -401,6 +405,11 @@ body
             align-items center
             background #FFFFFF
             margin-right 18px
+
+            @media (max-width: 320px)
+                margin-top 10px
+                width 50px
+
             .cur-logo
                 display flex
                 justify-content center

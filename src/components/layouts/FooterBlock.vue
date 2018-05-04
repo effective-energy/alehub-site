@@ -182,6 +182,9 @@
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
 
+                        @media (max-width: 320px)
+                            min-width 100%
+
                         &:focus
                             color #34343e
                             border-color #34343e

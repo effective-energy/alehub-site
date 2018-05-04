@@ -426,6 +426,10 @@
                 background-color #6f757f
                 clip-path circle(50% at center)
 
+                @media (max-width: 320px)
+                    width 45px
+                    height 45px
+
                 img
                     height 48px
                     width auto

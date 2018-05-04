@@ -118,11 +118,18 @@
 			display flex
 			justify-content flex-start
 
+			@media (max-width 320px)
+				flex-direction column
+
 			.picture
 				max-width 150px
 				width 150px
 				-o-object-fit cover
 				object-fit cover
+
+				@media (max-width 320px)
+					max-width 85%
+					width 85%
 
 			.news-info
 				margin 4px 16px
@@ -140,6 +147,9 @@
 					color #34343e
 					margin-bottom 8px
 
+					@media (max-width 320px)
+						font-size 16px !important
+
 				.news-date
 					font-family MuseoSansCyrl300
 					font-size 18px
@@ -150,4 +160,8 @@
 					letter-spacing normal
 					text-align left
 					color #34343e
+
+					@media (max-width 320px)
+						font-size 14px !important
+						color #ccc
 </style>

@@ -837,7 +837,7 @@
                     .collection
                         .item
                             margin-right 10px
-                            width 40px
+                            width 50px
 
                             &:last-child
                                 margin-right 0
