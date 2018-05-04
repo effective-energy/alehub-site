@@ -45,7 +45,7 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/last/'+this.$i18n.locale}/6`).then(response => {
 					this.news = response.body.reverse();
 				}, response => {
 					console.log('Error getting news', response);

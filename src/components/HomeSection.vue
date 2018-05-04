@@ -792,6 +792,9 @@
             margin-top 0 !important
             padding-top 150px !important
 
+            @media (max-width 320px)
+                padding-top 50px !important
+
     #screen1
         .container-fluid.what-is
             margin-top 0
@@ -1010,6 +1013,9 @@
             font-size 20px
             color #34343e
             margin-top 60px
+
+            @media (max-width: 320px)
+                font-size 14px
 
             .state
                 display flex

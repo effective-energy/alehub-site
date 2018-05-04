@@ -445,6 +445,11 @@ body {
 .crypto .collection .item .description .count {
   display: none;
 }
+@media (max-width: 320px) {
+  .crypto .collection .item .description {
+    font-size: 10px;
+  }
+}
 .crypto .collection .item:hover {
   padding-bottom: 7px;
   background: #ffd24f;
