@@ -24,91 +24,12 @@
                 </div>
             </div>
 
-            <!-- <div class="block-advantages"
-                 :class="{'block-advantages__active': advantagesFlag === 'first', 'block-advantages__right': advantagesFlag === 'second'}">
-                <div class="advantage">
-                    <div class="item item-title left left-title">
-                        <p>
-                            ALE
-                        </p>
-                    </div>
-                    <div class="item item-title right right-title">
-                        <p>
-                            Other Blockchain Platforms
-                        </p>
-                    </div>
-                </div>
-                <div class="advantage" v-for="(advantage, index) in advantages.first" :key="index">
-                    <div class="item left">
-                        <p>
-                            {{ advantage.first }}
-                        </p>
-                    </div>
-                    <div class="item right">
-                        <p>
-                            {{ advantage.second }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block-advantages"
-                 :class="{'block-advantages__active': advantagesFlag === 'second', 'block-advantages__left': advantagesFlag === 'first'}">
-                <div class="advantage">
-                    <div class="item item-title">
-                        <p>
-                            ALE
-                        </p>
-                    </div>
-                    <div class="item item-title">
-                        <p>
-                            Other Blockchain Platforms
-                        </p>
-                    </div>
-                </div>
-                <div class="advantage" v-for="(advantage, index) in advantages.second" :key="index">
-                    <div class="item">
-                        <p>
-                            {{ advantage.first }}
-                        </p>
-                    </div>
-                    <div class="item">
-                        <p>
-                            {{ advantage.second }}
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-
             <transition name="fade">
                 <div class="project-managment" v-if="selectedType === 1" key="one">
                     <div class="left-block">
                         <div class="title">
-                            <h1>{{$t('table.second.title')}}</h1>
-                        </div>
-                        <!--<ul>-->
-                            <!--<li v-for="(desc,index) in $t('table.second.desc')" :key="index">-->
-                                <!--{{ desc }}-->
-                            <!--</li>-->
-                        <!--</ul>-->
-
-                        <div class="item-table" v-for="(desc, index) in $t('table.second.desc')" :key="index">
-                            <span class="item-text">
-                                {{ desc }}
-                            </span>
-                        </div>
-
-                    </div>
-                    <div class="right-block">
-                        <div class="title">
                             <h1 class="title">ALE</h1>
                         </div>
-                        <!--<ul>-->
-                            <!--<li v-for="(desc,index) in $t('table.first.desc')" :key="index">-->
-                                <!--{{ desc }}-->
-                                <!--<div class="hovered-underline"></div>-->
-                            <!--</li>-->
-                        <!--</ul>-->
 
                         <div class="item-table" v-for="(desc, index) in $t('table.first.desc')" :key="index">
                             <div class="band">
@@ -119,26 +40,21 @@
                             <div class="hovered-underline"></div>
                         </div>
                     </div>
-                </div>
-
-                <div class="other-blockchain" v-if="selectedType === 0" key="two">
-                    <div class="left-block">
+                    <div class="right-block">
                         <div class="title">
-                            <h1 class="title">{{$t('table.four.title')}}</h1>
+                            <h1>{{$t('table.second.title')}}</h1>
                         </div>
-                        <!--<ul>-->
-                            <!--<li v-for="(desc,index) in $t('table.four.desc')" :key="index">-->
-                                <!--{{ desc }}-->
-                            <!--</li>-->
-                        <!--</ul>-->
 
-                        <div class="item-table" v-for="(desc, index) in $t('table.four.desc')" :key="index">
+                        <div class="item-table" v-for="(desc, index) in $t('table.second.desc')" :key="index">
                             <span class="item-text">
                                 {{ desc }}
                             </span>
                         </div>
                     </div>
-                    <div class="right-block">
+                </div>
+
+                <div class="other-blockchain" v-if="selectedType === 0" key="two">
+                    <div class="left-block">
                         <div class="title">
                             <h1 class="title">ALE</h1>
                         </div>
@@ -150,6 +66,17 @@
                                 {{ desc }}
                             </span>
                             <div class="hovered-underline"></div>
+                        </div>
+                    </div>
+                    <div class="right-block">
+                        <div class="title">
+                            <h1 class="title">{{$t('table.four.title')}}</h1>
+                        </div>
+
+                        <div class="item-table" v-for="(desc, index) in $t('table.four.desc')" :key="index">
+                            <span class="item-text">
+                                {{ desc }}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -552,7 +479,7 @@
                     @media (max-width: 320px)
                         font-size 13px
 
-        .left-block
+        .right-block
             opacity .6
 
             .title
@@ -590,11 +517,12 @@
                     background #fff
                     padding 0 40px
                     border-right solid 4px #e2e2e2
-        .right-block
+
+        .left-block
             .title
-                -webkit-box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
-                -moz-box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
-                box-shadow 0 0 7px 0px rgba(0, 0, 0, 0.1)
+                -webkit-box-shadow 0 0 7px 0 rgba(0, 0, 0, .1)
+                -moz-box-shadow 0 0 7px 0 rgba(0, 0, 0, .1)
+                box-shadow 0 0 7px 0 rgba(0, 0, 0, .1)
                 background #fff
                 margin-bottom 10px
 
