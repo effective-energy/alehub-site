@@ -757,6 +757,7 @@
 
     #screen1 .container-fluid.what-is
         @media (max-width 420px)
+            padding-top 50px !important
             background #ececf0
 
             p.description
@@ -837,6 +838,10 @@
             margin-top 0 !important
             padding-top 150px !important
 
+            @media (max-width 420px)
+                padding-top 50px !important
+                margin-bottom 50px !important
+
             @media (max-width 320px)
                 padding-top 50px !important
 
@@ -869,16 +874,28 @@
                 .title
                     white-space nowrap
 
+                    @media (max-width 420px)
+                        margin-bottom 40px
+
                 .partners-icons
                     justify-content space-around
                     width 100%
                     flex-wrap nowrap
 
+                    @media (max-width 420px)
+                        display flex
+                        flex-direction column
+                        justify-content center
+                        align-items center
+
+                        a
+                            margin-bottom 20px
+
                     @media (max-width 960px)
                         flex-wrap wrap
 
             .crypto
-                @media (max-width: 320px)
+                @media (max-width 320px)
                     .collection
                         .item
                             margin-right 10px

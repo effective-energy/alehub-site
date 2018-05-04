@@ -167,6 +167,9 @@
                 .subscribe-form__wrap
                     position relative
 
+                    @media (max-width 420px)
+                        width 100% !important
+
                     .subscribe-form__email
                         background none
                         border-radius 3px
@@ -181,6 +184,12 @@
                         -webkit-transition all .3s ease-out
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
+
+                        @media (max-width 420px)
+                            font-size 16px
+                            height 50px
+                            text-align center
+                            margin-bottom 15px
 
                         &:focus
                             color #34343e
@@ -220,6 +229,11 @@
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
 
+                    @media (max-width 420px)
+                        font-size 16px
+                        height 50px
+                        margin-bottom 15px
+
                     &:active
                         border 1px solid #d39e00
 
@@ -230,6 +244,10 @@
                 display flex
                 margin-bottom 10px
                 justify-content flex-end
+
+                @media (max-width 420px)
+                    justify-content center
+                    margin-bottom 30px
 
                 .social-item
                     width 36px
@@ -314,6 +332,9 @@
                 line-height 1.57
                 letter-spacing normal
                 color #34343e
+
+                @media (max-width 420px)
+                    text-align center
 
             .creator-and-terms
                 display flex

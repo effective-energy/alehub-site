@@ -9,16 +9,9 @@
                 <div class="logo__fade">
                 </div>
 
-                <div class="test">
-                    <div class="test1">
-
-                    </div>
-                    <div class="test1">
-                        <button type="button" class="button button__fade">
-                            <img src="../../static/images/request-ic.svg" alt="Download">
-                        </button>
-                    </div>
-                </div>
+                <button type="button" class="button button__fade">
+                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
+                </button>
 
                 <div class="logo__wrap">
                     <img class="logo__apple" src="../../static/images/logo/apple-logo.svg" alt="Apple logo">
@@ -36,28 +29,17 @@
                     Release notes - 05/2018
                 </p>
 
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
+                <button type="button" class="button button__download">
+                    Download
+                </button>
             </div>
             <div class="logo">
 
                 <div class="logo__fade">
                 </div>
 
-                <div class="test">
-                    <div class="test1">
-
-                    </div>
-                    <div class="test1">
-                        <button type="button" class="button button__fade">
-                            <img src="../../static/images/request-ic.svg" alt="Download">
-                        </button>
-                    </div>
-                </div>
-
                 <button type="button" class="button button__fade">
-                    <img src="../../static/images/request-dark-ic.svg" alt="Download">
+                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
                 </button>
 
                 <div class="logo__wrap">
@@ -76,28 +58,17 @@
                     Release notes - 05/2018
                 </p>
 
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
+                <button type="button" class="button button__download">
+                    Download
+                </button>
             </div>
             <div class="logo">
 
                 <div class="logo__fade">
                 </div>
 
-                <div class="test">
-                    <div class="test1">
-
-                    </div>
-                    <div class="test1">
-                        <button type="button" class="button button__fade">
-                            <img src="../../static/images/request-ic.svg" alt="Download">
-                        </button>
-                    </div>
-                </div>
-
                 <button type="button" class="button button__fade">
-                    <img src="../../static/images/request-dark-ic.svg" alt="Download">
+                    <img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">
                 </button>
 
                 <div class="logo__wrap">
@@ -116,9 +87,9 @@
                     Release notes - 05/2018
                 </p>
 
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
+                <button type="button" class="button button__download">
+                    Download
+                </button>
             </div>
             <!--Доступно для следующих дистрибутивов-->
         </div>
@@ -138,6 +109,9 @@
         width 100%
         padding 80px 20%
 
+        @media (max-width 1024px)
+            height auto
+
         .title
             text-align center
             font-size 40px
@@ -149,15 +123,19 @@
             flex-direction row
             justify-content center
             align-items center
+            flex-wrap wrap
+
+            @media (max-width 1024px)
+                width 100%
 
             /*.apple-block*/
-                /*width 250px*/
+            /*width 250px*/
 
             /*.windows-block*/
-                /*width 200px*/
+            /*width 200px*/
 
             /*.linux-block*/
-                /*width 150px*/
+            /*width 150px*/
 
             .logo
                 position relative
@@ -170,63 +148,30 @@
                 width 33.33333%
                 padding 50px 50px
 
-                .test
-                    position absolute
-                    width 100%
-                    height 100%
-                    display flex
-                    flex-direction column
-                    justify-content center
-                    align-self center
-
-                    .test1
-                        position relative
-                        width 100%
-                        height 50%
-                        display flex
-                        flex-direction row
-                        justify-content center
-                        align-self center
-
-                        .button__fade
-                            cursor pointer
-                            position absolute
-                            opacity 0
-                            width 80px
-                            height 80px
-                            /*border 2px solid #585d66*/
-                            border none
-                            border-radius 3px
-                            //background-color rgba(255, 210, 79, 0.8)
-                            background-color #343a49
-                            /*background-color transparent*/
-                            -webkit-transition all .3s ease-in-out
-                            -o-transition all .3s ease-in-out
-                            transition all .3s ease-in-out
-                            z-index 1010
-
-                        img
-                            width 40px
-                            height 40px
-
-
                 &:hover
                     .logo__fade
                         opacity .4
 
-                    .test
-                        .test1
-                            .button__fade
-                                opacity 1
+                    .button__fade
+                        opacity 1
 
-                                &:hover
-                                    -webkit-box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
-                                    -moz-box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
-                                    box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
+                        &:hover
+                            -webkit-box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
+                            -moz-box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
+                            box-shadow 0 0 7px 0 rgba(0, 0, 0, .4)
+
+                            .download-ic
+                                transform translateY(7px)
+
+
+                @media (max-width 1024px)
+                    width 100%
+
 
                 .button__fade
                     cursor pointer
                     position absolute
+                    bottom 20%
                     opacity 0
                     width 80px
                     height 80px
@@ -241,10 +186,12 @@
                     transition all .3s ease-in-out
                     z-index 1010
 
-                    img
-                        width 40px
-                        height 40px
-
+                    .download-ic
+                        width 30px
+                        height 30px
+                        -webkit-transition all .25s ease-in-out
+                        -o-transition all .25s ease-in-out
+                        transition all .25s ease-in-out
 
                 .logo__fade
                     position absolute
@@ -257,12 +204,15 @@
                     transition all .3s ease-in-out
                     z-index 1000
 
+                    @media (max-width 1024px)
+                        display none
+
                 .logo__wrap
                     flex-direction row
                     justify-content center
                     align-items center
                     height 180px
-                    margin-bottom 20px
+                    margin-bottom 24px
 
                     img
                         height auto
@@ -275,6 +225,10 @@
 
                     .logo__linux
                         width 150px
+
+                    @media (max-width 1024px)
+                        margin-bottom 36px
+                        height auto
 
                 .logo__title
                     font-family MuseoSansCyrl500
@@ -293,19 +247,25 @@
                     color #434350
                     margin-bottom 36px
 
+                    @media (max-width 1024px)
+                        margin-bottom 12px
+
                 .release
                     font-size 12px
                     color #34343e
                     text-transform uppercase
-                    /*margin-bottom 36px*/
+
+                    @media (max-width 1024px)
+                        margin-bottom 24px
 
                 .button__download
+                    display none
                     cursor pointer
                     color #34343e
                     font-family MuseoSansCyrl500
                     font-weight 500
-                    /*background-color #ffd24f*/
-                    /*border 1px solid transparent*/
+                    background-color #ffd24f
+                    border 1px solid transparent
                     padding 8px 20px
                     border-radius 3px
                     -webkit-transition all .3s ease-in-out
@@ -317,5 +277,8 @@
 
                     &:active
                         border 1px solid #ffd24f
+
+                    @media (max-width 1024px)
+                        display block
 
 </style>

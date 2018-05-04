@@ -2,7 +2,7 @@
     <div class="index">
         <header-block :is-main-dark="isDark"/>
         <home-section/>
-        <download-application/>
+        <download-application-section/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -16,7 +16,7 @@
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
     import HomeSection from './HomeSection';
-    import DownloadApplication from './DownloadApplication';
+    import DownloadApplicationSection from './DownloadApplicationSection';
     import AdvantagesSection from './AdvantagesSection';
     import FeaturesSection from './FeaturesSection';
     import TeamSection from './TeamSection';
@@ -30,7 +30,7 @@
         components: {
             HeaderBlock,
             HomeSection,
-            DownloadApplication,
+            DownloadApplicationSection,
             AdvantagesSection,
             FeaturesSection,
             TeamSection,
