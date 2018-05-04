@@ -167,6 +167,7 @@
                 .subscribe-form__wrap
                     position relative
                     width 100%
+                    text-align right
 
                     .subscribe-form__email
                         background none
