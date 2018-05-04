@@ -407,7 +407,7 @@ const messages = {
                 },
                 {
                     title: '预售',
-                    desk:'筹集到100多万美元',
+                    desk: '筹集到100多万美元',
                     date: '十一月 - 十二月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -442,7 +442,7 @@ const messages = {
                 },
                 {
                     title: '黄皮书开发',
-                    desk:'黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
+                    desk: '黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
                     state: 'the stage did not begin'
@@ -463,14 +463,14 @@ const messages = {
                 },
                 {
                     title: '争端解决机制的实施',
-                    desk:'在去中心化的应用框架内完善争议解决机制。',
+                    desk: '在去中心化的应用框架内完善争议解决机制。',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
                     title: '变更投票制度的实施',
-                    desk:'随着时间的变化进行系统修改。',
+                    desk: '随着时间的变化进行系统修改。',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
@@ -483,7 +483,7 @@ const messages = {
                 },
                 {
                     title: '公开系统的源代码以及相关文件',
-                    desk:'将系统的源代码和相关文件发布到公开的存储库中',
+                    desk: '将系统的源代码和相关文件发布到公开的存储库中',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'the stage did not begin'
@@ -502,16 +502,16 @@ const messages = {
             notFound: '未找到新闻'
         },
         footer: {
-            right: {
+            left: {
                 copyright: 'Effective Energy LLC © 2018 All rights reserved.',
                 designBy: 'Design by Alexander Rukin and ledesign',
                 terms: 'Terms and conditions'
             },
-            left: {
-                subscribe: {
-                    input: 'Your e-mail address',
-                    btn: 'Subscribe to news'
-                }
+            right: {
+                input: 'Your e-mail address',
+                btn: 'Subscribe to news',
+                error: 'incorrect address',
+                success: 'correct address'
             }
         }
     },
@@ -1011,16 +1011,16 @@ const messages = {
             notFound: 'Новости не найдены'
         },
         footer: {
-            right: {
+            left: {
                 copyright: 'Effective Energy LLC © 2018 All rights reserved.',
                 designBy: 'Design by Alexander Rukin and ledesign',
                 terms: 'Terms and conditions'
             },
-            left: {
-                subscribe: {
-                    input: 'Ваш e-mail',
-                    btn: 'Подписаться'
-                }
+            right: {
+                input: 'Ваш e-mail',
+                btn: 'Подписаться',
+                error: 'невалидный адрес',
+                success: 'валидный адрес'
             }
         }
     },
@@ -1430,7 +1430,7 @@ const messages = {
                 },
                 {
                     title: 'PreSale',
-                    desk:'Raised more than 1,000,000 USD',
+                    desk: 'Raised more than 1,000,000 USD',
                     date: 'November - December 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -1465,7 +1465,7 @@ const messages = {
                 },
                 {
                     title: 'Yellow Paper development',
-                    desk:'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
+                    desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
                     state: 'the stage did not begin'
@@ -1520,16 +1520,16 @@ const messages = {
             notFound: 'News not found'
         },
         footer: {
-            right: {
+            left: {
                 copyright: 'Effective Energy LLC © 2018 All rights reserved.',
                 designBy: 'Design by Alexander Rukin and ledesign',
                 terms: 'Terms and conditions'
             },
-            left: {
-                subscribe: {
-                    input: 'Your e-mail address',
-                    btn: 'Subscribe to news'
-                }
+            right: {
+                input: 'Your e-mail address',
+                btn: 'Subscribe to news',
+                error: 'incorrect address',
+                success: 'correct address'
             }
         }
     },

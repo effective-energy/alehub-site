@@ -6,23 +6,25 @@
                     <div class="ale-logo"></div>
                 </router-link>
                 <span class="copyright-text">
-				 {{ $t('footer.right.copyright') }}
+				    {{ $t('footer.left.copyright') }}
 				<div class="creator-and-terms">
 					<div class="creator">
 						<div class="rukin-logo"></div>
 						<span class="rukin-about">
-                            {{ $t('footer.right.designBy') }}
+                            {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
 					<a href="#" class="terms">
-                        {{ $t('footer.right.terms') }}
+                        {{ $t('footer.left.terms') }}
                     </a>
 				</div>
 			</span>
             </div>
             <div class="col-2 back-to-top">
-                <div class="top-icon" v-scroll-to="'#home'">
-                    <img src="../../../static/images/go-home-ic.svg" alt="To top page">
+                <div class="top-icon"
+                     v-scroll-to="'#home'">
+                    <img src="../../../static/images/go-home-ic.svg"
+                         alt="To top page">
                 </div>
             </div>
             <div class="col-5 social-block">
@@ -59,9 +61,24 @@
                     </a>
                 </div>
                 <div class="subscribe-form">
-                    <input style="font-weight: 700;" type="text" :placeholder="$t('footer.left.subscribe.input')"/>
-                    <button style="font-weight: 700;">
-                        {{ $t('footer.left.subscribe.btn') }}
+                    <div class="subscribe-form__wrap">
+                        <input class="subscribe-form__email"
+                               :class="{ 'error': isError }"
+                               type="text"
+                               :placeholder="$t('footer.right.input')"
+                               v-model="email"
+                               @blur="checkCorrectEmail"
+                               @input="inputCheckCorrectEmail"/>
+                        <label class="subscribe-form__error" v-if="isError">
+                            {{ $t('footer.right.error') }}
+                        </label>
+                        <label class="subscribe-form__success" v-if="isSuccess">
+                            {{ $t('footer.right.success') }}
+                        </label>
+                    </div>
+                    <button class="subscribe-form__submit"
+                            @click="subscribe">
+                        {{ $t('footer.right.btn') }}
                     </button>
                 </div>
             </div>
@@ -71,7 +88,56 @@
 
 <script>
     export default {
-        name: 'FooterSection'
+        name: 'FooterSection',
+        data() {
+            return {
+                email: '',
+                error: false,
+                initialFocus: false
+            }
+        },
+        watch: {
+            error: function (val) {
+                console.log(val, 'error');
+            }
+        },
+        computed: {
+            isCorrectEmail: function () {
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (this.email.length === 0)
+                    return true;
+                return re.test(String(this.email).toLowerCase());
+            },
+            isError: function () {
+                console.log(this.error, 'this.error');
+                return this.error;
+            },
+            isInitialFocus: function () {
+                return this.initialFocus;
+            },
+            isSuccess: function () {
+
+            }
+        },
+        methods: {
+            subscribe: function () {
+                return this.isCorrectEmail;
+            },
+            inputCheckCorrectEmail: function () {
+                if (this.isInitialFocus)
+                    this.error = !this.isCorrectEmail;
+            },
+            checkCorrectEmail: function () {
+                if (this.email.length === 0)
+                    this.initialFocus = false;
+                else
+                    this.initialFocus = true;
+                this.error = !this.isCorrectEmail;
+            },
+            alreadyExist: function () {
+
+            }
+        }
     }
 </script>
 
@@ -98,31 +164,67 @@
                 display flex
                 justify-content flex-end
 
-                button
+                .subscribe-form__wrap
+                    position relative
+
+                    .subscribe-form__email
+                        background none
+                        border-radius 3px
+                        border solid 0.5px #a3a3a9
+                        border-bottom-width 1.5px
+                        font-family MuseoSansCyrl300
+                        font-size 14px
+                        color #a3a3a9
+                        padding 7px 20px 7px 20px
+                        font-weight 700
+                        min-width 250px
+                        -webkit-transition all .3s ease-out
+                        -o-transition all .3s ease-out
+                        transition all .3s ease-out
+
+                        &:focus
+                            color #34343e
+                            border-color #34343e
+                            outline none
+
+                    .error
+                        border-color #ff4f4f !important
+                        color #ff4f4f !important
+
+                    .subscribe-form__error
+                        position absolute
+                        top -6px
+                        left 15px
+                        font-size 10px
+                        background-color #ececf0
+                        padding 0 5px
+                        color #ff4f4f
+
+                .subscribe-form__submit
+                    cursor pointer
                     background-color #ffd24f
                     font-family MuseoSansCyrl300
-                    font-size 16px
-                    font-weight 500
+                    font-size 14px
+                    font-weight 700
                     font-style normal
                     font-stretch normal
                     line-height normal
                     letter-spacing normal
                     color #34343e
-                    padding 6px 20px
+                    padding 8px 20px
                     margin-left 12px
                     border 1px solid #ffd24f
                     border-radius 3px
                     white-space nowrap
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
 
-                input
-                    background none
-                    opacity 0.4
-                    border-radius 3px
-                    border solid 0.5px rgba(13, 23, 23, 0.4)
-                    font-family MuseoSansCyrl300
-                    font-size 16px
-                    color #34343e
-                    padding 5px 14px
+                    &:active
+                        border 1px solid #d39e00
+
+                    &:focus
+                        outline none
 
             .social-networks
                 display flex
@@ -156,8 +258,6 @@
 
                         .social-icon-vk
                             background-image url(../../../static/images/vk-hovered.svg)
-
-
 
                     .social-icon
                         background-repeat no-repeat
@@ -253,9 +353,9 @@
                     text-decoration underline
                     white-space nowrap
 
-        /*.top-icon*/
-            /*width 32px*/
-            /*height 8px*/
+    /*.top-icon*/
+    /*width 32px*/
+    /*height 8px*/
 
     @media (max-width 1199px)
         .footer
