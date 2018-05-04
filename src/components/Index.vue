@@ -2,6 +2,7 @@
     <div class="index">
         <header-block :is-main-dark="isDark"/>
         <home-section/>
+        <download-application-section/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -13,21 +14,23 @@
 </template>
 
 <script>
-    import HeaderBlock from './layouts/HeaderBlock'
-    import HomeSection from './HomeSection'
-    import AdvantagesSection from './AdvantagesSection'
-    import FeaturesSection from './FeaturesSection'
-    import TeamSection from './TeamSection'
-    import IcoSection from './IcoSection'
-    import RoadmapSection from './RoadmapSection'
-    import BlogSection from './BlogSection'
-    import FooterBlock from './layouts/FooterBlock'
+    import HeaderBlock from './layouts/HeaderBlock';
+    import HomeSection from './HomeSection';
+    import DownloadApplicationSection from './DownloadApplicationSection';
+    import AdvantagesSection from './AdvantagesSection';
+    import FeaturesSection from './FeaturesSection';
+    import TeamSection from './TeamSection';
+    import IcoSection from './IcoSection';
+    import RoadmapSection from './RoadmapSection';
+    import BlogSection from './BlogSection';
+    import FooterBlock from './layouts/FooterBlock';
 
     export default {
         name: 'Index',
         components: {
             HeaderBlock,
             HomeSection,
+            DownloadApplicationSection,
             AdvantagesSection,
             FeaturesSection,
             TeamSection,

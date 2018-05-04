@@ -585,7 +585,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'Подробнее про ALE',
-                download: 'Скачать клиент'
+                download: 'Загрузить MVP-версию приложения'
             }
         },
         advantages: {
@@ -1094,7 +1094,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'More about ALE',
-                download: 'Download'
+                download: 'Download MVP-version application'
             }
         },
         advantages: {

@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import Index from '@/components/Index';
 import Blog from '@/components/Blog';
 import BlogPost from '@/components/BlogPost';
-import Categories from '@/components/NewsCategories'
+import Categories from '@/components/NewsCategories';
 
 Vue.use(Router);
 
