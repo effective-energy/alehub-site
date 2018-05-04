@@ -70,7 +70,7 @@
             </ul>
             <div class="right-menu">
                 <a class="btn btn-login"
-                   href="https://presale.alehub.io/"
+                   href="http://presale.alehub.io/"
                    target="_blank">
                     {{ $t("navbar.loginBtn") }}
                 </a>
