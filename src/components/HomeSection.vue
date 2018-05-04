@@ -204,8 +204,7 @@
                             </button>
                             <div class="main-player" v-if="mainPlayer">
                                 <iframe
-                                    width="500"
-                                    height="280"
+                                    class="iframe"
                                     src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media"
@@ -668,7 +667,76 @@
 
     .main-player
         position absolute
-        right -210px
+        right -300px
+
+        .iframe
+            width 700px
+            height 392px
+
+        @media (max-width: 1680px)
+            right -255px
+            .iframe
+                width 600px
+                height 336px
+        
+        @media (max-width: 1600px)
+            right -210px
+            .iframe
+                width 500px
+                height 280px
+
+        @media (max-width: 1530px)
+            right -100px
+            .iframe
+                width 500px
+                height 280px
+
+        @media (max-width: 1274px)
+            right 0
+            left 0
+            position relative
+            margin-top 20px
+            .iframe
+                width 800px
+                height 450px
+
+        @media (max-width: 1120px)
+            .iframe
+                width 700px
+                height 392px
+
+        @media (max-width: 850px)
+            .iframe
+                width 600px
+                height 336px
+
+        @media (max-width: 720px)
+            .iframe
+                width 500px
+                height 280px
+
+        @media (max-width: 620px)
+            .iframe
+                width 400px
+                height 225px
+
+        @media (max-width: 520px)
+            .iframe
+                width 100%
+                height 292px
+
+    @media (max-width: 520px) and (min-width: 426px)
+        .play-video
+            width 100vw
+            position relative !important
+            left -96px !important
+
+    @media (max-width: 425px)
+        .play-video
+            width 100vw
+            position relative !important
+            left -32px !important
+            
 
     .collection__dark
         color #343a49
