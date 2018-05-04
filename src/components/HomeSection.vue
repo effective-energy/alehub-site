@@ -197,11 +197,11 @@
                             <span>{{$t("greeting.countDown.notAvailable")}}</span>
                         </div>
                         <div class="play-video">
-                            <button class="play-button">
-                                <div class="wrap-ic">
+                          <b-button @click="openYoutubeMainVideo" class="play-button">
+                            <div class="wrap-ic">
                                     <img src="../../static/images/play-ic.svg">
                                 </div>
-                            </button>
+                          </b-button>
                         </div>
 
                         <div class="crypto">
@@ -389,6 +389,10 @@
             </div>
         </div>
 
+        <b-modal ref="youtubeModalRef" size="lg" hide-footer title="Alehub project: Arseny Seroka, Lead Developer">
+          <iframe width="100%" height="400" src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </b-modal>
+
         <!--<menu-modal/>-->
     </section>
 </template>
@@ -473,6 +477,9 @@
             }
         },
         methods: {
+            openYoutubeMainVideo () {
+              this.$refs.youtubeModalRef.show();
+            },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
                 window.animejsconfig = [];
