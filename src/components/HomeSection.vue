@@ -197,11 +197,21 @@
                             <span>{{$t("greeting.countDown.notAvailable")}}</span>
                         </div>
                         <div class="play-video">
-                          <button class="play-button">
-                            <div class="wrap-ic">
-                              <img src="../../static/images/play-ic.svg">
+                            <button class="play-button" @click="mainPlayer?mainPlayer=false:mainPlayer=true">
+                                <div class="wrap-ic">
+                                <img src="../../static/images/play-ic.svg">
+                                </div>
+                            </button>
+                            <div class="main-player" v-if="mainPlayer">
+                                <iframe
+                                    width="500"
+                                    height="280"
+                                    src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1"
+                                    frameborder="0"
+                                    allow="autoplay; encrypted-media"
+                                    allowfullscreen
+                                ></iframe>
                             </div>
-                          </button>
                         </div>
 
                         <div class="crypto">
@@ -454,7 +464,8 @@
                 softCap: 2000,
                 hardCap: 33000,
                 anime: '',
-                isPaused: false
+                isPaused: false,
+                mainPlayer: false
             }
         },
         computed: {
@@ -654,6 +665,10 @@
                     .crypto
                         .title
                             color #f7f7f7 !important
+
+    .main-player
+        position absolute
+        right -210px
 
     .collection__dark
         color #343a49
