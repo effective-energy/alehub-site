@@ -62,24 +62,22 @@
 
                 <router-link class="nav-item"
                              tag="li"
-                             :to="`/blog`">
+                             :to="'/blog'">
                     <a href="#" class="nav-link">
                         {{ $t("navbar.blog") }}
                     </a>
                 </router-link>
             </ul>
             <div class="right-menu">
-                <button type="button"
-                        class="btn btn-login">
+                <a class="btn btn-login"
+                   href="https://sale.alehub.io/"
+                   target="_blank">
                     {{ $t("navbar.loginBtn") }}
-                </button>
+                </a>
                 <div id="select-lang" class="select-lang" @click="toggleDropdown">
-
                     {{ currentLang }}
-
                     <div class="select-lang__dropdown"
                          v-if="dropdownOpen">
-
 
                         <!--классы поместить в массив с названиями языков в data()-->
                         <div class="select-lang__item select-lang__fr">
@@ -146,7 +144,9 @@
                 <!--</b-dropdown-item>-->
                 <!--</b-dropdown>-->
             </div>
-            <button type="button" class="btn btn-actions">ok</button>
+            <button type="button" class="btn btn-actions">
+                ok
+            </button>
         </div>
 
         <menu-modal :dark="isDark"
@@ -826,22 +826,22 @@
                         background-color #feaf1c
 
                     &:before
-                        background -moz-linear-gradient(top, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #feaf1c), color-stop(100%, rgba(0,0,0,0.2)))
-                        background -webkit-linear-gradient(top, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                        background -o-linear-gradient(top, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                        background -ms-linear-gradient(top, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                        background linear-gradient(to bottom, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                    
+                        background -moz-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+
                     &:after
                         top 0px
                         height 61px
-                        background -moz-linear-gradient(left, rgba(0,0,0,0.2) 0%, #feaf1c 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.2)), color-stop(100%, #feaf1c))
-                        background -webkit-linear-gradient(left, rgba(0,0,0,0.2) 0%, #feaf1c 100%)
-                        background -o-linear-gradient(left, rgba(0,0,0,0.2) 0%, #feaf1c 100%)
-                        background -ms-linear-gradient(left, rgba(0,0,0,0.2) 0%, #feaf1c 100%)
-                        background linear-gradient(to right, rgba(0,0,0,0.2) 0%, #feaf1c 100%)
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #feaf1c))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
 
                     &:first-child
                         &:before
@@ -850,12 +850,12 @@
 
                     &:last-child
                         &:after
-                            background -moz-linear-gradient(left, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #feaf1c), color-stop(100%, rgba(0,0,0,0.2)))
-                            background -webkit-linear-gradient(left, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                            background -o-linear-gradient(left, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                            background -ms-linear-gradient(left, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
-                            background linear-gradient(to right, #feaf1c 0%, rgba(0,0,0,0.2) 100%)
+                            background -moz-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
                         &:before
                             width 62px
 
@@ -869,22 +869,22 @@
                         background-color #fdc135
 
                     &:before
-                        background -moz-linear-gradient(top, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #fdc135), color-stop(100%, rgba(0,0,0,0.2)))
-                        background -webkit-linear-gradient(top, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                        background -o-linear-gradient(top, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                        background -ms-linear-gradient(top, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                        background linear-gradient(to bottom, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                    
+                        background -moz-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #fdc135), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+
                     &:after
                         top 0px
                         height 61px
-                        background -moz-linear-gradient(left, rgba(0,0,0,0.2) 0%, #fdc135 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.2)), color-stop(100%, #fdc135))
-                        background -webkit-linear-gradient(left, rgba(0,0,0,0.2) 0%, #fdc135 100%)
-                        background -o-linear-gradient(left, rgba(0,0,0,0.2) 0%, #fdc135 100%)
-                        background -ms-linear-gradient(left, rgba(0,0,0,0.2) 0%, #fdc135 100%)
-                        background linear-gradient(to right, rgba(0,0,0,0.2) 0%, #fdc135 100%)
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #fdc135))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
 
                     &:first-child
                         &:before
@@ -893,12 +893,12 @@
 
                     &:last-child
                         &:after
-                            background -moz-linear-gradient(left, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #fdc135), color-stop(100%, rgba(0,0,0,0.2)))
-                            background -webkit-linear-gradient(left, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                            background -o-linear-gradient(left, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                            background -ms-linear-gradient(left, #fdc135 0%, rgba(0,0,0,0.2) 100%)
-                            background linear-gradient(to right, #fdc135 0%, rgba(0,0,0,0.2) 100%)
+                            background -moz-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #fdc135), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
                         &:before
                             width 62px
 
@@ -936,22 +936,22 @@
                         background-color #343a49
 
                     &:before
-                        background -moz-linear-gradient(top, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #343a49), color-stop(100%, rgba(0,0,0,0.2)))
-                        background -webkit-linear-gradient(top, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                        background -o-linear-gradient(top, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                        background -ms-linear-gradient(top, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                        background linear-gradient(to bottom, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                    
+                        background -moz-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #343a49), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+
                     &:after
                         top 0px
                         height 61px
-                        background -moz-linear-gradient(left, rgba(0,0,0,0.2) 0%, #343a49 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.2)), color-stop(100%, #343a49))
-                        background -webkit-linear-gradient(left, rgba(0,0,0,0.2) 0%, #343a49 100%)
-                        background -o-linear-gradient(left, rgba(0,0,0,0.2) 0%, #343a49 100%)
-                        background -ms-linear-gradient(left, rgba(0,0,0,0.2) 0%, #343a49 100%)
-                        background linear-gradient(to right, rgba(0,0,0,0.2) 0%, #343a49 100%)
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #343a49))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
 
                     &:first-child
                         &:before
@@ -960,14 +960,18 @@
 
                     &:last-child
                         &:after
-                            background -moz-linear-gradient(left, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #343a49), color-stop(100%, rgba(0,0,0,0.2)))
-                            background -webkit-linear-gradient(left, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                            background -o-linear-gradient(left, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                            background -ms-linear-gradient(left, #343a49 0%, rgba(0,0,0,0.2) 100%)
-                            background linear-gradient(to right, #343a49 0%, rgba(0,0,0,0.2) 100%)
+                            background -moz-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #343a49), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
                         &:before
                             width 62px
+
+    .btn-login
+        &:hover
+            color #34343e
 
     @media (max-width: 1440px)
         .navbar-nav

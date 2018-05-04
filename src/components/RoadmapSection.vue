@@ -31,13 +31,13 @@
                         <span class="date">
                             {{ slide.date }}
                         </span>
-                        <div class="responsible">
-                            <div class="avatar"
-                                 v-for="(item, index) in slide.members"
-                                 :key="index">
-                                <img :src="item" alt="">
-                            </div>
-                        </div>
+                        <!--<div class="responsible">-->
+                            <!--<div class="avatar"-->
+                                 <!--v-for="(item, index) in slide.members"-->
+                                 <!--:key="index">-->
+                                <!--<img :src="item" alt="">-->
+                            <!--</div>-->
+                        <!--</div>-->
                         <div class="slide-progress">
                             <div class="progress-line-outer">
                                 <div class="progress-line"
@@ -376,6 +376,9 @@
                     -webkit-transition all .3s ease-in-out
                     -o-transition all .3s ease-in-out
                     transition all .3s ease-in-out
+
+                    h6
+                        margin-bottom 18px
 
                     &:hover
                         /*background-color #31394f*/

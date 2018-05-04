@@ -1,6 +1,10 @@
 <template>
     <section id="screen1">
 
+        <!--<video autoplay muted loop id="myVideo">-->
+        <!--<source src="../../static/video/fullPreview1.mp4" type="video/mp4">-->
+        <!--</video>-->
+
         <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
             <button type="button"
                     id="do-light-theme"
@@ -189,9 +193,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-buy-tokens">
-                            {{ $t("greeting.countDown.btnBuyTokens") }}
-                        </button>
+                        <a href="https://sale.alehub.io/" target="_blank" class="a-buy-tokens">
+                            <button type="button"
+                                    class="btn btn-buy-tokens">
+                                {{ $t("greeting.countDown.btnBuyTokens") }}
+                            </button>
+                        </a>
                         <div class="bonus-desc">
                             <span>{{$t("greeting.countDown.bonus")}}</span>
                             <span>{{$t("greeting.countDown.notAvailable")}}</span>
@@ -211,49 +218,59 @@
                             <div class="collection"
                                  :class="{ 'collection__dark': isDark }">
                                 <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/btc.svg" alt="Bitcoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">32,256 ALE</span>
-                                        <span class="name">BTC</span>
-                                    </div>
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img src="../../static/images/btc.svg" alt="Bitcoin">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">32,256 ALE</span>
+                                            <span class="name">BTC</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/eth.svg" alt="Etherium">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">2,606 ALE</span>
-                                        <span class="name">ETH</span>
-                                    </div>
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img src="../../static/images/eth.svg" alt="Etherium">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">2,606 ALE</span>
+                                            <span class="name">ETH</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">4,946 ALE</span>
-                                        <span class="name">BCH</span>
-                                    </div>
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">4,946 ALE</span>
+                                            <span class="name">BCH</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/ltc.svg" alt="Litecoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">530 ALE</span>
-                                        <span class="name">LTC</span>
-                                    </div>
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img src="../../static/images/ltc.svg" alt="Litecoin">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">530 ALE</span>
+                                            <span class="name">LTC</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/dash.svg" alt="Dash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">1,650 ALE</span>
-                                        <span class="name">DASH</span>
-                                    </div>
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img src="../../static/images/dash.svg" alt="Dash">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">1,650 ALE</span>
+                                            <span class="name">DASH</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -282,7 +299,7 @@
                             </div>
                             <div class="progress-bar-outer">
                                 <div class="progress-bar-inner"
-                                     :style="{width: hardCapWidth}">
+                                     :style="{ width: hardCapWidth }">
                                 </div>
                             </div>
                         </div>
@@ -362,7 +379,9 @@
                     </div>
                     <img src="../../static/images/desctop.png"
                          class="desktop-for-mobile">
-                    <a href="#" class="btn btn-black">
+                    <a class="btn btn-black"
+                       v-scroll-to="'#download-application'"
+                       style="font-weight: bold; color: #fff;">
                         <img src="../../static/images/request-ic.svg">
                         {{$t("about.btnGroup.download")}}
                     </a>
@@ -378,10 +397,10 @@
                         {{$t("about.description")}}
                     </p>
                     <div class="buttons">
-                        <a href="#" class="btn btn-yellow">
+                        <a class="btn btn-yellow">
                             {{$t("about.btnGroup.whitePaper")}}
                         </a>
-                        <a href="#" class="btn btn-yellow">
+                        <a class="btn btn-yellow" v-scroll-to="'#features'">
                             {{$t("about.btnGroup.techDetails")}}
                         </a>
                     </div>
@@ -463,16 +482,19 @@
             },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
-                    return (this.collected/this.softCap)*100+'%';
+                    return (this.collected / this.softCap) * 100 + '%';
                 else return '100%';
             },
             hardCapWidth: function () {
                 if (this.collected <= this.hardCap)
-                    return (this.collected/this.hardCap)*100+'%';
+                    return (this.collected / this.hardCap) * 100 + '%';
                 else return '100%';
             }
         },
         methods: {
+            // toInvestorAcc: function () {
+            //
+            // },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
                 window.animejsconfig = [];
@@ -627,6 +649,29 @@
 <style lang="stylus" scoped>
     /*.section__dark*/
     /*background-color #34343e*/
+
+    a
+        &:hover
+            text-decoration none !important
+
+    .description
+        .count
+            color #34343e
+        .name
+            color #34343e
+
+    .btn-buy-tokens
+        &:focus
+            box-shadow none
+
+
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
 
     #screen1
         padding-top 74px

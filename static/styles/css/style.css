@@ -302,12 +302,12 @@ body {
 .btn-buy-tokens {
   margin-right: 5px;
   margin-left: 5px;
-  background: #ffd24f;
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da);
-  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da);
-  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da);
-  -o-background-image: linear-gradient(45deg, #fda503, #fff5da);
-  background: linear-gradient(45deg, #fda503, #fff5da);
+  background: #ffd24f !important;
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -webkit-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -moz-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  -o-background-image: linear-gradient(45deg, #fda503, #fff5da) !important;
+  background: linear-gradient(45deg, #fda503, #fff5da) !important;
   background-size: 200% 200%;
   -webkit-animation-name: movingcolor;
   -moz-animation-name: movingcolor;
