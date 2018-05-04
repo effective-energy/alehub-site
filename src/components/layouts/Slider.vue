@@ -465,7 +465,8 @@
 
                         @media (max-width 320px)
                             position relative
-                            width 100%
+                            width 220px
+                            height 220px
                             margin 0
 
                         &:active
@@ -473,6 +474,9 @@
 
                         .b-carousel__img
                             display block
+
+                            @media (max-width: 320px)
+                                height 100%
 
                             &:active
                                 cursor -webkit-grab !important

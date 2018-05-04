@@ -371,6 +371,7 @@
 
                         @media (min-width 320px) and (max-width 375px)
                             font-size 16px
+                            margin-top 20px
 
             .xs-load-band
                 position absolute

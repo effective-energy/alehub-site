@@ -20,7 +20,8 @@
 				</div>
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
-						<router-link tag="a" to="/blog" class="btn btn-warning">
+						<h5 v-if="news.length === 0">{{ $t("blog.notFound") }}</h5>
+						<router-link v-else tag="a" to="/blog" class="btn btn-warning">
 							{{ $t("blog.allPostsBtn") }}
 						</router-link>
 					</div>
@@ -45,7 +46,7 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/last/'+this.$i18n.locale}/6`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'/last/6':'/last/'+this.$i18n.locale+'6'}`).then(response => {
 					this.news = response.body.reverse();
 				}, response => {
 					console.log('Error getting news', response);
@@ -106,10 +107,19 @@
 
 			.btn-warning
 				background-color #ffd24f
-				padding 10px 28px
-				font-size 18px
+				padding 8px 20px
+				font-size 14px
+				font-weight 700
 				color #34343e
 				font-family MuseoSansCyrl300
+				border 1px solid #ffd24f
+				border-radius 3px
+
+				&:active 
+					border 1px solid #d39e00
+
+				&:focus
+					box-shadow none 
 
 		.news-block
 			width 100%
@@ -118,11 +128,18 @@
 			display flex
 			justify-content flex-start
 
+			@media (max-width 320px)
+				flex-direction column
+
 			.picture
 				max-width 150px
 				width 150px
 				-o-object-fit cover
 				object-fit cover
+
+				@media (max-width 320px)
+					max-width 85%
+					width 85%
 
 			.news-info
 				margin 4px 16px
@@ -140,6 +157,9 @@
 					color #34343e
 					margin-bottom 8px
 
+					@media (max-width 320px)
+						font-size 16px !important
+
 				.news-date
 					font-family MuseoSansCyrl300
 					font-size 18px
@@ -150,4 +170,8 @@
 					letter-spacing normal
 					text-align left
 					color #34343e
+
+					@media (max-width 320px)
+						font-size 14px !important
+						color #ccc
 </style>

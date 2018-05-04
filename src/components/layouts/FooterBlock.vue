@@ -54,7 +54,7 @@
                        target="_blank">
                         <i class="social-icon social-icon-tg"></i>
                     </a>
-                    <a href="https://vk.com/alehub"
+                    <a href="https://vk.com/alehub" v-if="false"
                        class="social-item"
                        target="_blank">
                         <i class="social-icon social-icon-vk"></i>
@@ -166,6 +166,8 @@
 
                 .subscribe-form__wrap
                     position relative
+                    width 100%
+                    text-align right
 
                     @media (max-width 425px)
                         width 100% !important
@@ -185,6 +187,8 @@
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
 
+                        @media (max-width: 320px)
+                            min-width 100%
                         @media (max-width 425px)
                             font-size 16px
                             height 50px
@@ -250,7 +254,7 @@
                     margin-bottom 30px
 
                 .social-item
-                    width 36px
+                    width 46px
                     height 36px
                     margin 0 6px
                     display flex
@@ -476,6 +480,7 @@
                 .social-block
                     .social-networks
                         width 100%
+                        justify-content center
             .copyright-block
                 .copyright-text
                     white-space normal

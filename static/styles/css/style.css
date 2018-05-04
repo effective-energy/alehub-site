@@ -486,6 +486,11 @@ body {
   flex-direction: row;
   margin-top: 25px;
 }
+@media (max-width: 320px) {
+  .crypto .collection {
+    flex-wrap: wrap;
+  }
+}
 .crypto .collection .item {
   padding: 14px 5px;
   width: 72px;
@@ -496,6 +501,12 @@ body {
   align-items: center;
   background: #fff;
   margin-right: 18px;
+}
+@media (max-width: 320px) {
+  .crypto .collection .item {
+    margin-top: 10px;
+    width: 50px;
+  }
 }
 .crypto .collection .item .cur-logo {
   display: flex;
