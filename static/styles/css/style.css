@@ -278,8 +278,6 @@ body {
 #screen1 .container-fluid.what-is .btn-black img {
   width: 13px;
   height: 16px;
-  margin-top: -4px;
-  margin-right: 14px;
 }
 #screen1 .container-fluid.what-is .desktop-outer {
   display: flex;

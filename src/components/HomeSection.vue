@@ -136,7 +136,7 @@
             </svg>
         </div>
         <div class="first-screen home"
-             :class="{ 'home__dark': isDark }"
+             :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
             <div class="container-fluid">
                 <div class="row">
@@ -391,8 +391,12 @@
                     <a class="btn btn-black"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
-                        <img src="../../static/images/request-ic.svg">
-                        {{$t("about.btnGroup.download")}}
+                        <button type="button">
+                            <img src="../../static/images/request-ic.svg">
+                            <span style="white-space: initial;">
+                                {{ $t("about.btnGroup.download") }}
+                            </span>
+                        </button>
                     </a>
                 </div>
                 <div class="col-lg-6 desc" style="align-self: flex-start;">
@@ -417,7 +421,6 @@
             </div>
         </div>
 
-        <!--<menu-modal/>-->
     </section>
 </template>
 
@@ -657,11 +660,27 @@
 </script>
 
 <style lang="stylus" scoped>
-    /*.section__dark*/
-    /*background-color #34343e*/
+    .home__light
+        background-color #ececf0
 
-    //.home
-       // max-height calc(100vh - 74px) !important
+    .promo
+        a
+            button
+                background-color transparent
+                border none
+                padding 0
+                position relative
+                display flex
+                align-items center
+
+                @media (max-width 425px)
+                    img
+                        display none
+
+                span
+                    color #fff
+                    font-family MuseoSansCyrl500
+                    font-weight 500
 
     a
         &:hover
