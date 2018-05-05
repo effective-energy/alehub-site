@@ -26,12 +26,12 @@
                     64bit
                 </p>
                 <p class="release">
-                    Release notes - 05/2018
+                    Coming soon
                 </p>
 
-                <button type="button" class="button button__download">
-                    Download
-                </button>
+                <!--<button type="button" class="button button__download">-->
+                    <!--Download-->
+                <!--</button>-->
             </div>
             <div class="logo">
 
@@ -55,12 +55,12 @@
                     64bit
                 </p>
                 <p class="release">
-                    Release notes - 05/2018
+                    Coming soon
                 </p>
 
-                <button type="button" class="button button__download">
-                    Download
-                </button>
+                <!--<button type="button" class="button button__download">-->
+                    <!--Download-->
+                <!--</button>-->
             </div>
             <div class="logo">
 
@@ -84,12 +84,12 @@
                     64bit
                 </p>
                 <p class="release">
-                    Release notes - 05/2018
+                    Coming soon
                 </p>
 
-                <button type="button" class="button button__download">
-                    Download
-                </button>
+                <!--<button type="button" class="button button__download">-->
+                    <!--Download-->
+                <!--</button>-->
             </div>
             <!--Доступно для следующих дистрибутивов-->
         </div>

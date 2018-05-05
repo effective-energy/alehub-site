@@ -5,7 +5,7 @@
            @closed="closedModal('menu-modal')">
 
         <div class="body"
-        :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
+             :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
             <div class="body__menu" v-if="!isSelectingLanguage">
                 <div v-for="item in $t('navbar.menuList')">
                     <a v-scroll-to="item.path"
@@ -14,23 +14,23 @@
                     </a>
                 </div>
             </div>
-            <div class="body__languages" v-if="isSelectingLanguage">
+            <div class="body__languages"
+                 v-if="isSelectingLanguage">
                 <div v-for="(item, langIndex) in languages">
-                    <button type="button"
-                            @click="changeLanguage(langIndex)">
+                    <a @click="changeLanguage(langIndex)">
                         {{ item.name }}
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="body__bottom">
-                <button type="button" v-if="!isSelectingLanguage"
-                        @click="toSelectLanguage">
+                <a v-if="!isSelectingLanguage"
+                   @click="toSelectLanguage">
                     {{ $t('menuModal.selectLang') }}
-                </button>
-                <button type="button" v-else
-                        @click="toNavigationMenu">
+                </a>
+                <a v-else
+                   @click="toNavigationMenu">
                     {{ $t('menuModal.navigationMenu') }}
-                </button>
+                </a>
             </div>
         </div>
 
@@ -63,6 +63,9 @@
                     },
                     {
                         name: 'ru'
+                    },
+                    {
+                        name: 'zh'
                     }
                 ],
             }
@@ -149,10 +152,19 @@
                     cursor pointer
                     font-weight 700
                     text-transform uppercase
-                    font-size 20px
+                    font-size 1.2rem
                     color #343a49
                     border-bottom 2px solid #343a49
                     padding-bottom 0.2rem
+
+            @media (max-width 320px)
+                padding-bottom 60px
+
+                div
+                    padding 0.8rem 0
+
+                    a
+                        font-size 1rem
 
         .body__languages
             padding-bottom 100px
@@ -160,18 +172,26 @@
             div
                 padding 1.1rem 0
 
-                button
+                a
                     cursor pointer
                     background-color transparent
                     border none
                     font-weight 700
                     text-transform uppercase
-                    font-size 20px
+                    font-size 1.2rem
                     color #343a49
                     border-bottom 2px solid #343a49
                     padding-bottom 0.2rem
                     margin-bottom 0
 
+            @media (max-width 320px)
+                padding-bottom 60px
+
+                div
+                    padding 0.8rem 0
+
+                    a
+                        font-size 1rem
 
         .body__bottom
             display flex
@@ -183,13 +203,13 @@
             height 100px
             bottom 0
 
-            button
+            a
                 cursor pointer
                 background-color transparent
                 border none
                 font-weight 700
                 text-transform uppercase
-                font-size 20px
+                font-size 1.2rem
                 color #f7f7f7
                 border-bottom 2px solid #f7f7f7
                 padding-bottom 0.2rem
@@ -198,6 +218,11 @@
                 &:focus
                     outline none
 
+            @media (max-width 320px)
+                height 60px
+
+                a
+                    font-size 1rem
 
     .body__dark
         background-color #343a49
@@ -210,14 +235,14 @@
 
         .body__languages
             div
-                button
+                a
                     color #f7f7f7
                     border-color #f7f7f7
 
         .body__bottom
             background-color #fdd04a
 
-            button
+            a
                 color #343a49
                 border-color #343a49
 
@@ -232,14 +257,14 @@
 
         .body__languages
             div
-                button
+                a
                     color #343a49
                     border-color #343a49
 
         .body__bottom
             background-color #343a49
 
-            button
+            a
                 color #f7f7f7
                 border-color #f7f7f7
 
@@ -254,14 +279,14 @@
 
         .body__languages
             div
-                button
+                a
                     color #343a49
                     border-color #343a49
 
         .body__bottom
             background-color #343a49
 
-            button
+            a
                 color #f7f7f7
                 border-color #f7f7f7
 </style>
