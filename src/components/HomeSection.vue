@@ -660,8 +660,8 @@
     /*.section__dark*/
     /*background-color #34343e*/
 
-    .home
-        max-height calc(100vh - 74px) !important
+    //.home
+       // max-height calc(100vh - 74px) !important
 
     a
         &:hover
