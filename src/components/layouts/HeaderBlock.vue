@@ -80,12 +80,16 @@
                          v-if="dropdownOpen">
 
                         <!--классы поместить в массив с названиями языков в data()-->
-                        <div class="select-lang__item select-lang__fr">
+                        <div class="select-lang__item select-lang__fr"
+                             :class="{ 'selected': currentLang === 'fr' }"
+                             @click="changeLanguage(8)">
                             <div class="select-lang__cover">
                             </div>
                             <span>FR</span>
                         </div>
-                        <div class="select-lang__item select-lang__de">
+                        <div class="select-lang__item select-lang__de"
+                             :class="{ 'selected': currentLang === 'de' }"
+                             @click="changeLanguage(7)">
                             <div class="select-lang__cover">
                             </div>
                             <span>DE</span>
@@ -95,7 +99,9 @@
                             </div>
                             <span>ES</span>
                         </div>
-                        <div class="select-lang__item select-lang__ar">
+                        <div class="select-lang__item select-lang__ar"
+                             :class="{ 'selected': currentLang === 'ar' }"
+                             @click="changeLanguage(5)">
                             <div class="select-lang__cover">
                             </div>
                             <span>AR</span>
@@ -248,6 +254,12 @@
                     return 'ru';
                 else if (this.selectedLanguage === 'ch')
                     return 'ch';
+                else if (this.selectedLanguage === 'fr')
+                    return 'fr';
+                else if (this.selectedLanguage === 'de')
+                    return 'de';
+                else if (this.selectedLanguage === 'ar')
+                    return 'ar';
 
                 return 'en';
             },
