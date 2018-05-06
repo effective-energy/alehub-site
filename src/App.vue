@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <!--<loading-screen />-->
-        <!--<loading-screen v-if="isLoading" />-->
-        <!--<router-view v-if="true" />-->
-         <router-view />
+        <loading-screen v-if="isLoading" />
+        <router-view v-if="true" />
+         <!--<router-view />-->
     </div>
 </template>
 
