@@ -507,13 +507,30 @@
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (!this.isDark) {
                         this.isYellow = false;
                         this.isOrange = false;
                         this.isDark = true;
                     }
                     if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                    if (!this.isYellow) {
+                        this.isDark = false;
+                        this.isOrange = false;
+                        this.isYellow = true;
+                    }
+                    if (!this.isFeatures) {
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -550,7 +567,6 @@
 
     .select-lang
         cursor pointer
-        /*position relative*/
         display flex
         justify-content center
         align-items center
@@ -568,13 +584,10 @@
         .select-lang__dropdown
             right 60px
             top 75px
-            /*width 540px*/
             position absolute
             display flex
             justify-content center
-            align-items center /*-webkit-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
-            -moz-box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)
-            box-shadow 0 2px 2px 0 rgba(0, 0, 0, .2)*/
+            align-items center
 
             .selected
                 .select-lang__cover
@@ -618,12 +631,6 @@
 
                     span
                         opacity 0
-                /*color #34343e*/
-                /*text-shadow:
-                        -1px -1px 0 #fff,
-                        1px -1px 0 #fff,
-                        -1px 1px 0 #fff,
-                        1px 1px 0 #fff;*/
 
                 span
                     position absolute
@@ -796,7 +803,7 @@
         background-color #ffbc00
 
     .nav-line__yellow
-        border 1px solid #fdc135
+        border 1px solid #ffd24f
         border-width 0 24px
         background-color #343a49
 
@@ -866,31 +873,31 @@
                             width 62px
 
     .bg-yellow
-        background-color #fdc135
+        background-color #ffd24f
 
         .select-lang
             .select-lang__dropdown
                 .select-lang__item
                     .select-lang__cover
-                        background-color #fdc135
+                        background-color #ffd24f
 
                     &:before
-                        background -moz-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #fdc135), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                        background -webkit-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -o-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -ms-linear-gradient(top, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background linear-gradient(to bottom, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -moz-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #ffd24f), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
 
                     &:after
                         top 0px
                         height 61px
-                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #fdc135))
-                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
-                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
-                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
-                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #fdc135 100%)
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #ffd24f))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
 
                     &:first-child
                         &:before
@@ -899,12 +906,12 @@
 
                     &:last-child
                         &:after
-                            background -moz-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #fdc135), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                            background -webkit-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -o-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -ms-linear-gradient(left, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background linear-gradient(to right, #fdc135 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -moz-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #ffd24f), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
                         &:before
                             width 62px
 

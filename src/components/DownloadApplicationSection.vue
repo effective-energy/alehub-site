@@ -3,6 +3,7 @@
         <h3 class="title">
             {{$t('download')}}
         </h3>
+        <div class="separator"></div>
         <div class="os-avail-list">
             <div class="logo">
 
@@ -49,7 +50,7 @@
                     Windows
                 </h3>
                 <p class="version">
-                    Version 0.0.632
+                    Version 0.0.0
                 </p>
                 <p class="bit">
                     64bit
@@ -78,7 +79,7 @@
                     Linux
                 </h3>
                 <p class="version">
-                    Version 0.0.704
+                    Version 0.0.0
                 </p>
                 <p class="bit">
                     64bit
@@ -104,10 +105,14 @@
 
 <style lang="stylus" scoped>
     .download-app
-        background-color #fff
+        background-color #ffd24f
         height 100vh
         width 100%
         padding 80px 20%
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
 
         @media (max-width 1024px)
             padding 80px 10%
@@ -118,6 +123,12 @@
         .title
             text-align center
             font-size 40px
+
+        .separator
+            width 120px
+            height 2px
+            margin 25px 0
+            background-color #343a49
 
         .os-avail-list
             height 100%
@@ -255,10 +266,10 @@
 
                 .button__download
                     cursor pointer
-                    color #34343e
+                    color #ffffff
                     font-family MuseoSansCyrl500
                     font-weight 500
-                    background-color #ffd24f
+                    background-color #343a49
                     border 1px solid transparent
                     padding 8px 20px
                     border-radius 3px

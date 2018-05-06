@@ -268,7 +268,7 @@
         background-color #feaf1c
 
     .body__yellow
-        background-color #fdc135
+        background-color #ffd24f
 
     .body__yellow, .body__orange
         .body__menu, .body__languages

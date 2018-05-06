@@ -2,12 +2,12 @@
     <div class="index">
         <header-block :is-main-dark="isDark"/>
         <home-section/>
-        <download-application-section/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
         <ico-section/>
         <roadmap-section/>
+        <download-application-section/>
         <blog-section/>
         <footer-block/>
     </div>

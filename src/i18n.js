@@ -31,6 +31,10 @@ const messages = {
                     name: '路线图'
                 },
                 {
+                    path: '#download-application',
+                    name: 'ПЕРЕВОД'
+                },
+                {
                     path: '#blog',
                     name: '博客'
                 }
@@ -548,6 +552,10 @@ const messages = {
                     name: 'Карта проекта'
                 },
                 {
+                    path: '#download-application',
+                    name: 'Загрузка'
+                },
+                {
                     path: '#blog',
                     name: 'Блог'
                 }
@@ -1058,6 +1066,10 @@ const messages = {
                     name: 'Roadmap'
                 },
                 {
+                    path: '#download-application',
+                    name: 'Download'
+                },
+                {
                     path: '#blog',
                     name: 'Blog'
                 }
@@ -1566,6 +1578,10 @@ const messages = {
                 {
                     path: '#roadmap',
                     name: 'Feuille de route'
+                },
+                {
+                    path: '#download-application',
+                    name: 'ПЕРЕВОД'
                 },
                 {
                     path: '#blog',
@@ -2083,6 +2099,10 @@ const messages = {
                     name: 'Fahrplan'
                 },
                 {
+                    path: '#download-application',
+                    name: 'ПЕРЕВОД'
+                },
+                {
                     path: '#blog',
                     name: 'Blog'
                 }
@@ -2595,6 +2615,10 @@ const messages = {
                 {
                     path: '#roadmap',
                     name: 'خريطة الطريق'
+                },
+                {
+                    path: '#download-application',
+                    name: 'ПЕРЕВОД'
                 },
                 {
                     path: '#blog',
