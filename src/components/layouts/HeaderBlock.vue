@@ -182,40 +182,6 @@
                 isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
-                navbar: [
-                    {
-                        path: '#home',
-                        name: 'Home'
-                    },
-                    {
-                        path: '#description',
-                        name: 'Description'
-                    },
-                    {
-                        path: '#advantages',
-                        name: 'Advantages'
-                    },
-                    {
-                        path: '#features',
-                        name: 'Features'
-                    },
-                    {
-                        path: '#team',
-                        name: 'Team'
-                    },
-                    {
-                        path: '#ico',
-                        name: 'ICO'
-                    },
-                    {
-                        path: '#roadmap',
-                        name: 'Roadmap'
-                    },
-                    {
-                        path: '#blog',
-                        name: 'Blog'
-                    },
-                ],
                 activeItem: 0,
                 languagesList: ['en', 'ru', 'ch', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
@@ -378,11 +344,12 @@
             //     })
             // },
             checkActive: function () {
-                for (let i = 0; i < this.navbar.length; i++) {
-                    if (document.querySelector(this.navbar[i].path) === null)
+                let menu = this.$t('navbar.menuList');
+                for (let i = 0; i < menu.length; i++) {
+                    if (document.querySelector(menu[i].path) === null)
                         return false;
-                    let offset = document.querySelector(this.navbar[i].path).offsetTop - 74;
-                    let height = document.querySelector(this.navbar[i].path).offsetHeight;
+                    let offset = document.querySelector(menu[i].path).offsetTop - 74;
+                    let height = document.querySelector(menu[i].path).offsetHeight;
                     if (window.scrollY > offset && window.scrollY <= offset + height) {
                         this.activeItem = i;
                     }
