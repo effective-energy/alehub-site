@@ -18,18 +18,6 @@
             ALEHUB
         </router-link>
 
-        <!--<a href="#" class="navbar-brand">-->
-        <!--<img class="d-inline-block align-top"-->
-        <!--src="../../../static/images/ale-logo.svg"-->
-        <!--alt="ALEHUB"-->
-        <!--v-if="!isDark">-->
-        <!--<img class="d-inline-block align-top"-->
-        <!--src="../../../static/images/ale-logo-white.svg"-->
-        <!--alt="ALEHUB"-->
-        <!--v-else>-->
-        <!--ALEHUB-->
-        <!--</a>-->
-
         <div class="hamburger"
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
@@ -183,7 +171,7 @@
                 dropdownOpen: false,
                 activeHamburger: false,
                 activeItem: 0,
-                languagesList: ['en', 'ru', 'ch', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
+                languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
 
                 heightLangItem: 0
@@ -218,8 +206,8 @@
                     return 'en';
                 else if (this.selectedLanguage === 'ru')
                     return 'ru';
-                else if (this.selectedLanguage === 'ch')
-                    return 'ch';
+                else if (this.selectedLanguage === 'zh')
+                    return 'zh';
                 else if (this.selectedLanguage === 'fr')
                     return 'fr';
                 else if (this.selectedLanguage === 'de')
@@ -654,7 +642,12 @@
                 background-image url(../../../static/images/flags/ko@2x.png)
 
             .select-lang__ar
-                background-image url(../../../static/images/flags/ar@2x.png)
+                background-color #3c9279
+
+                &:hover
+                    span
+                        opacity 1
+                        color #ffffff
 
             .select-lang__es
                 background-image url(../../../static/images/flags/es@2x.png)
@@ -808,6 +801,8 @@
         .select-lang
             .select-lang__dropdown
                 .select-lang__item
+                    border-left none
+
                     .select-lang__cover
                         background-color #feaf1c
 
@@ -820,7 +815,7 @@
                         background linear-gradient(to bottom, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
 
                     &:after
-                        top 0px
+                        top 0
                         height 61px
                         background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
                         background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #feaf1c))
@@ -851,6 +846,8 @@
         .select-lang
             .select-lang__dropdown
                 .select-lang__item
+                    border-left none
+
                     .select-lang__cover
                         background-color #ffd24f
 
@@ -863,7 +860,7 @@
                         background linear-gradient(to bottom, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
 
                     &:after
-                        top 0px
+                        top 0
                         height 61px
                         background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
                         background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #ffd24f))
@@ -889,7 +886,6 @@
                             width 62px
 
     .bg-yellow, .bg-orange
-
         .btn-login
             background-color #343a49
             color white
@@ -918,6 +914,8 @@
 
             .select-lang__dropdown
                 .select-lang__item
+                    border-left none
+
                     .select-lang__cover
                         background-color #343a49
 
@@ -930,7 +928,7 @@
                         background linear-gradient(to bottom, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
 
                     &:after
-                        top 0px
+                        top 0
                         height 61px
                         background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
                         background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #343a49))

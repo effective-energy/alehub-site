@@ -27,7 +27,7 @@
                  v-if="isSelectingLanguage">
                 <div v-for="(item, langIndex) in languages">
                     <a @click="changeLanguage(langIndex)">
-                        {{ item.name }}
+                        {{ item }}
                     </a>
                 </div>
             </div>
@@ -70,17 +70,7 @@
         data() {
             return {
                 selectingLanguage: false,
-                languages: [
-                    {
-                        name: 'en'
-                    },
-                    {
-                        name: 'ru'
-                    },
-                    {
-                        name: 'zh'
-                    }
-                ],
+                languages: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
             }
         },
         computed: {
@@ -116,9 +106,9 @@
                 this.selectingLanguage = false;
             },
             changeLanguage: function (index) {
-                localStorage.setItem('systemLang', this.languages[index].name);
-                this.$i18n.locale = this.languages[index].name;
-                this.$parent.$emit('changeModalLanguage', this.languages[index].name);
+                localStorage.setItem('systemLang', this.languages[index]);
+                this.$i18n.locale = this.languages[index];
+                this.$parent.$emit('changeModalLanguage', this.languages[index]);
                 this.closeModal('menu-modal');
             },
         },

@@ -116,9 +116,10 @@
 
         @media (max-width 1024px)
             padding 80px 10%
-
-        @media (max-width 1024px)
             height auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            padding 80px 15%
 
         .title
             text-align center

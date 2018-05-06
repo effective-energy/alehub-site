@@ -1,5 +1,5 @@
 const messages = {
-    ch: {
+    zh: {
         navbar: {
             menuList: [
                 {
