@@ -1,6 +1,6 @@
 <template>
     <div class="application" id="features">
-        <vue-particles v-if="isFeatures"
+        <vue-particles v-if="isFeatures && !isLessThanTablet"
                        color="#fff"
                        :particleOpacity="0.4"
                        :particlesNumber="80"
@@ -19,10 +19,10 @@
 
         <div class="section-1">
             <h3 class="title">
-                {{$t("alePlatform.title")}}
+                {{ $t("alePlatform.title") }}
             </h3>
             <p class="description">
-                {{$t("alePlatform.subTitle")}}
+                {{ $t("alePlatform.subTitle") }}
             </p>
             <div class="watch">
                 <button class="play-button">
@@ -31,13 +31,15 @@
                     </div>
                 </button>
 
-                <p class="watch-text">{{$t("alePlatform.watchDemo")}}</p>
+                <p class="watch-text">
+                    {{ $t("alePlatform.watchDemo") }}
+                </p>
             </div>
         </div>
 
         <div class="section-2">
             <h3 class="title">
-                {{$t("alePlatform.solvingProblems.title")}}
+                {{ $t("alePlatform.solvingProblems.title") }}
             </h3>
 
             <div class="list-items">
@@ -47,10 +49,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[0].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[0].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[0].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[0].description") }}
                         </p>
                     </div>
                 </div>
@@ -60,10 +62,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[1].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[1].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[1].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[1].description") }}
                         </p>
                     </div>
                 </div>
@@ -73,10 +75,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[2].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[2].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[2].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[2].description") }}
                         </p>
                     </div>
                 </div>
@@ -86,10 +88,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[3].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[3].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[3].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[3].description") }}
                         </p>
                     </div>
                 </div>
@@ -99,10 +101,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[4].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[4].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[4].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[4].description") }}
                         </p>
                     </div>
                 </div>
@@ -112,10 +114,10 @@
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{$t("alePlatform.solvingProblems.list[5].title")}}
+                            {{ $t("alePlatform.solvingProblems.list[5].title") }}
                         </p>
                         <p>
-                            {{$t("alePlatform.solvingProblems.list[5].description")}}
+                            {{ $t("alePlatform.solvingProblems.list[5].description") }}
                         </p>
                     </div>
                 </div>
@@ -130,7 +132,7 @@
 
             <div class="info-block">
                 <h3 class="title">
-                    {{$t("features.title")}}
+                    {{ $t("features.title") }}
                 </h3>
                 <div class="list-items">
                     <div class="item">
@@ -139,10 +141,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                {{$t("features.list[0].title")}}
+                                {{ $t("features.list[0].title") }}
                             </p>
                             <p>
-                                {{$t("features.list[0].description")}}
+                                {{ $t("features.list[0].description") }}
                             </p>
                         </div>
                     </div>
@@ -152,10 +154,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                {{$t("features.list[1].title")}}
+                                {{ $t("features.list[1].title") }}
                             </p>
                             <p>
-                                {{$t("features.list[1].description")}}
+                                {{ $t("features.list[1].description") }}
                             </p>
                         </div>
                     </div>
@@ -165,10 +167,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                {{$t("features.list[2].title")}}
+                                {{ $t("features.list[2].title") }}
                             </p>
                             <p>
-                                {{$t("features.list[2].description")}}
+                                {{ $t("features.list[2].description") }}
                             </p>
                         </div>
                     </div>
@@ -178,10 +180,10 @@
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                {{$t("features.list[3].title")}}
+                                {{ $t("features.list[3].title") }}
                             </p>
                             <p>
-                                {{$t("features.list[3].description")}}
+                                {{ $t("features.list[3].description") }}
                             </p>
                         </div>
                     </div>
@@ -200,8 +202,15 @@
             }
         },
         data() {
-            return {}
+            return {
+
+            }
         },
+        computed: {
+            isLessThanTablet: function () {
+                return window.innerWidth < 768;
+            }
+        }
     }
 </script>
 

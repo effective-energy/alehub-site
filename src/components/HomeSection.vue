@@ -136,7 +136,7 @@
             </svg>
         </div>
         <div class="first-screen home"
-             :class="{ 'home__dark': isDark }"
+             :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
             <div class="container-fluid">
                 <div class="row">
@@ -163,7 +163,9 @@
                                             {{ timer.days.second }}
                                         </div>
                                     </div>
-                                    <div class="title">{{$t("greeting.countDown.time.days")}}</div>
+                                    <div class="title">
+                                        {{ $t("greeting.countDown.time.days") }}
+                                    </div>
                                 </div>
                                 <div class="hours">
                                     <div class="numbers">
@@ -200,23 +202,29 @@
                             </button>
                         </a>
                         <div class="bonus-desc">
-                            <span>{{$t("greeting.countDown.bonus")}}</span>
-                            <span>{{$t("greeting.countDown.notAvailable")}}</span>
+                            <span>{{ $t("greeting.countDown.bonus") }}</span>
+                            <span>{{ $t("greeting.countDown.notAvailable") }}</span>
                         </div>
                         <div class="play-video">
-                            <button class="play-button" @click="mainPlayer?mainPlayer=false:mainPlayer=true">
-                                <div class="wrap-ic">
-                                <img src="../../static/images/play-ic.svg">
+                            <button class="play-button" @click="playVideo" style="display: flex; justify-content: center; align-items: center;">
+                                <div class="wrap-play" :class="{ 'active': mainPlayer }">
+                                    <span class="line l-1"></span>
+                                    <span class="line l-2"></span>
+                                    <span class="line l-3"></span>
                                 </div>
                             </button>
+                            <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
+                                <div class="place-player__frame">
+                                </div>
+                            </div>
                             <div class="main-player" v-if="mainPlayer">
                                 <iframe
                                     class="iframe"
                                     src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
                                     frameborder="0"
                                     allow="autoplay; encrypted-media"
-                                    allowfullscreen
-                                ></iframe>
+                                    allowfullscreen>
+                                </iframe>
                             </div>
                         </div>
 
@@ -391,8 +399,12 @@
                     <a class="btn btn-black"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
-                        <img src="../../static/images/request-ic.svg">
-                        {{$t("about.btnGroup.download")}}
+                        <button type="button">
+                            <img src="../../static/images/request-ic.svg">
+                            <span style="white-space: initial;">
+                                {{ $t("about.btnGroup.download") }}
+                            </span>
+                        </button>
                     </a>
                 </div>
                 <div class="col-lg-6 desc" style="align-self: flex-start;">
@@ -417,7 +429,6 @@
             </div>
         </div>
 
-        <!--<menu-modal/>-->
     </section>
 </template>
 
@@ -499,12 +510,15 @@
                 if (this.collected <= this.hardCap)
                     return (this.collected / this.hardCap) * 100 + '%';
                 else return '100%';
-            }
+            },
         },
         methods: {
             // toInvestorAcc: function () {
             //
             // },
+            playVideo: function () {
+                this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
+            },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
                 window.animejsconfig = [];
@@ -657,11 +671,60 @@
 </script>
 
 <style lang="stylus" scoped>
-    /*.section__dark*/
-    /*background-color #34343e*/
 
-    //.home
-       // max-height calc(100vh - 74px) !important
+    .wrap-play
+        .line
+            display block
+            width 30px
+            height 1px
+            background-color black
+            -webkit-transition all .5s ease-in-out
+            -o-transition all .5s ease-in-out
+            transition all .5s ease-in-out
+
+        .l-1
+            transform translate(-7px) rotate(90deg)
+
+        .l-2
+            transform translate(6px, -8px) rotate(30deg)
+
+        .l-3
+            transform translate(6px, 6px) rotate(330deg)
+
+
+    .active
+        .l-1
+            opacity 0
+            transform translate(-7px) rotate(90deg)
+
+        .l-2
+            transform translate(0, 0) rotate(135deg)
+
+        .l-3
+            transform translate(0, 0) rotate(45deg)
+
+
+    .home__light
+        background-color #ececf0
+
+    .promo
+        a
+            button
+                background-color transparent
+                border none
+                padding 0
+                position relative
+                display flex
+                align-items center
+
+                @media (max-width 425px)
+                    img
+                        display none
+
+                span
+                    color #fff
+                    font-family MuseoSansCyrl500
+                    font-weight 500
 
     a
         &:hover
@@ -678,13 +741,12 @@
             box-shadow none
 
 
-    #myVideo {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-    }
+    #myVideo
+        position fixed
+        right 0
+        bottom 0
+        min-width 100%
+        min-height 100%
 
     #screen1
         padding-top 74px
@@ -713,77 +775,92 @@
                         .title
                             color #f7f7f7 !important
 
-    .main-player
+    .place-player
+        opacity 0
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+    .place-player__frame
+        background-color #000
+
+    .main-player, .place-player
         position absolute
         right -300px
 
-        .iframe
+        .iframe, .place-player__frame
             width 700px
             height 394px
 
-        @media (max-width: 1680px)
+        @media (max-width 1680px)
             right -255px
-            .iframe
+            .iframe, .place-player__frame
                 width 600px
                 height 336px
         
         @media (max-width: 1600px)
             right -210px
-            .iframe
+            .iframe, .place-player__frame
                 width 500px
                 height 280px
 
-        @media (max-width: 1530px)
+        @media (max-width 1530px)
             right -100px
-            .iframe
+            .iframe, .place-player__frame
                 width 500px
                 height 280px
 
-        @media (max-width: 1274px)
+        @media (max-width 1274px)
             right 0
             left 0
             position relative
             margin-top 20px
-            .iframe
+            .iframe, .place-player__frame
                 width 800px
                 height 450px
 
-        @media (max-width: 1120px)
-            .iframe
+        @media (max-width 1120px)
+            .iframe, .place-player__frame
                 width 700px
                 height 394px
 
-        @media (max-width: 850px)
-            .iframe
+        @media (max-width 850px)
+            .iframe, .place-player__frame
                 width 600px
                 height 336px
 
-        @media (max-width: 720px)
-            .iframe
+        @media (max-width 720px)
+            .iframe, .place-player__frame
                 width 500px
                 height 280px
 
-        @media (max-width: 620px)
-            .iframe
+        @media (max-width 620px)
+            .iframe, .place-player__frame
                 width 400px
                 height 225px
 
-        @media (max-width: 520px)
-            .iframe
+        @media (max-width 520px)
+            .iframe, .place-player__frame
                 width 100%
                 height 292px
 
-    @media (max-width: 520px) and (min-width: 426px)
+    @media (max-width 520px) and (min-width 426px)
         .play-video
             width 100vw
             position relative !important
             left -96px !important
 
-    @media (max-width: 425px)
+            .place-player
+                display none
+
+    @media (max-width 425px)
         .play-video
             width 100vw
             position relative !important
             left -32px !important
+
+            .place-player
+                display none
             
 
     .collection__dark
@@ -948,10 +1025,6 @@
             transition background color .3s ease-in-out
 
     #screen1
-        /*background-color #34343e*/
-        /*transition background-color 20s linear*/
-        /*&:hover*/
-        /*background-color #858591*/
 
         .container-fluid
             &.partners
@@ -1128,11 +1201,11 @@
                         width 35px
                         height 35px
 
-            @media (max-width: 1500px)
+            @media (max-width 1500px)
                 left 20%
-            @media (max-width: 1400px)
+            @media (max-width 1400px)
                 left 15%
-            @media (max-width: 1274px)
+            @media (max-width 1274px)
                 position unset
                 margin 48px auto 0
                 display block
@@ -1140,6 +1213,12 @@
 
                 .play-button
                     margin 0
+
+            @media (max-width 768px)
+                display flex
+                justify-content center
+                align-items center
+                flex-direction column
 
         .scroll-ic
             cursor pointer

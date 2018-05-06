@@ -260,38 +260,36 @@
             background-color #fdd04a
 
             a
-                color #343a49
-                border-color #343a49
-
-    .body__yellow
-        background-color #fdc135
-
-        .body__menu, .body__languages
-            div
-                a
+                button
                     color #343a49
                     border-color #343a49
-
-        .body__bottom
-            background-color #343a49
-
-            a
-                color #f7f7f7
-                border-color #f7f7f7
 
     .body__orange
         background-color #feaf1c
 
+    .body__yellow
+        background-color #fdc135
+
+    .body__yellow, .body__orange
         .body__menu, .body__languages
             div
                 a
                     color #343a49
                     border-color #343a49
 
+        .body__top
+            background-color #343a49
+
+            a
+                button
+                    color #f7f7f7
+                    border-color #f7f7f7
+
         .body__bottom
             background-color #343a49
 
             a
-                color #f7f7f7
-                border-color #f7f7f7
+                button
+                    color #f7f7f7
+                    border-color #f7f7f7
 </style>
