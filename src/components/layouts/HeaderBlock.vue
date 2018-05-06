@@ -582,6 +582,9 @@
                 background-repeat no-repeat
                 background-position 50% 0
                 border-left 1px solid #e0e0e0
+                -webkit-transition all .3s ease-in-out
+                -o-transition all .3s ease-in-out
+                transition all .3s ease-in-out
 
                 &:before
                     width 60px
@@ -719,14 +722,14 @@
             background-color #3e3d42
             display block
             margin 8px auto
-            -webkit-transition all 0.3s ease-in-out
-            -o-transition all 0.3s ease-in-out
-            transition all 0.3s ease-in-out
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
 
     #hamburger-6.is-active
-        -webkit-transition all 0.3s ease-in-out
-        -o-transition all 0.3s ease-in-out
-        transition all 0.3s ease-in-out
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
         -webkit-transition-delay 0.6s
         -o-transition-delay 0.6s
         transition-delay 0.6s
