@@ -1,7 +1,7 @@
 <template>
     <div class="download-app" id="download-application">
         <h3 class="title">
-            Download
+            {{$t('download')}}
         </h3>
         <div class="os-avail-list">
             <div class="logo">
