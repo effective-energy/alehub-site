@@ -721,7 +721,7 @@ const messages = {
                             src: '../static/images/avatars/grudinin@3x.png'
                         },
                         {
-                            name: 'Алексей Остапенко',
+                            name: 'Алексей Осипенко',
                             position: 'Главный операционный директор',
                             src: '../static/images/avatars/osipenko@3x.png'
                         },
@@ -736,7 +736,7 @@ const messages = {
                             src: '../static/images/avatars/loktev@3x.png'
                         },
                         {
-                            name: 'Артем Левашев',
+                            name: 'Артем Левашов',
                             position: 'Главный консультант по юридическим делам',
                             src: '../static/images/avatars/levashow@3x.png'
                         },
@@ -774,7 +774,7 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Галина Сергеевна',
+                            name: 'Галина Сергеева',
                             position: 'Frontend Разработчик',
                             src: '../static/images/avatars/sergeeva@3x.png',
                             social: [
@@ -805,7 +805,7 @@ const messages = {
                     position: 'Блокчейн эксперт',
                     src: '../static/images/avatars/grudinin@3x.png'
                 }, {
-                    name: 'Алексей Остапенко',
+                    name: 'Алексей Осипенко',
                     position: 'Главный операционный директор',
                     src: '../static/images/avatars/osipenko@3x.png'
                 }, {

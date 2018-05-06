@@ -1019,7 +1019,7 @@
 
             @media (max-width 425px)
                 padding-top 50px !important
-                margin-bottom 50px !important
+                padding-bottom 50px !important
 
             @media (max-width 320px)
                 padding-top 50px !important
