@@ -3080,6 +3080,521 @@ const messages = {
         },
         download:'تحميل'
     },
+    ko: {
+        navbar: {
+            menuList: [
+                {
+                    path: '#home',
+                    name: '홈'
+                },
+                {
+                    path: '#description',
+                    name: '설명'
+                },
+                {
+                    path: '#advantages',
+                    name: '장점'
+                },
+                {
+                    path: '#features',
+                    name: '특징'
+                },
+                {
+                    path: '#team',
+                    name: '팀'
+                },
+                {
+                    path: '#ico',
+                    name: 'ICO'
+                },
+                {
+                    path: '#roadmap',
+                    name: '로드맵'
+                },
+                {
+                    path: '#blog',
+                    name: '블로그'
+                }
+            ],
+            loginBtn: '로그인',
+            blog: '블로그'
+        },
+        menuModal: {
+            selectLang: '언어 선택',
+            navigationMenu: '메뉴로 돌아'
+        },
+        greeting: {
+            title: '프로젝트 관리의 새로운 시대가 오고 있습니다',
+            countDown: {
+                title: '1 라운드가 시작됩',
+                time: {
+                    days: '일',
+                    hours: '시간',
+                    minutes: '분'
+                },
+                btnBuyTokens: '보',
+                bonus: '보너스 25%7 월 2018',
+                notAvailable: '지금 이용할 수 없'
+            },
+            acceptedCrypto: {
+                title: '받아들을 위한 컬렉션:'
+            }
+        },
+        partners: {
+            title: '우리의 파트너',
+        },
+        about: {
+            title: 'Alehub은 무엇인',
+            subTitle: 'ALEHUB – 는 프로젝트 관리 및 계약자 검색을 위한 IT 산업을 위한 플랫폼입니다.',
+            description: 'ALEHUB은 분산 된 등록 시스템 (블록체인)과 고전적인 프로젝트 관리 서비스의 장점을 결합합니다. 계약자 (고객 및 집행자) 선정, 업무 관리, 통제 및 상호 합의는 IT 전문가 아웃소싱의 안전성, 신뢰성 및 낮은 비용을 보장하는 ALE 시스템의 다자간 스마트 계약에 의해 규제됩니다.',
+            btnGroup: {
+                whitePaper: '백서',
+                techDetails: 'ALE에 대한 추가 정보',
+                download: '다운로드'
+            }
+        },
+        advantages: {
+            title: '장점',
+            lists: [{
+                title: 'ALE vs 프로젝트 관리 시스템'
+            }, {
+                title: 'ALE vs 다른 블록체인 플랫폼'
+            }]
+        },
+        alePlatform: {
+            title: 'ALE 플랫폼',
+            subTitle: 'ALE는 실제 경제와 암호 경제의 이점을 수정하고 결합하여 근본적으로 새로운 생태계, 즉 복합 경제를 창출하는 구조입니다. ALE는 기존 금융 및 법률 구조를 법률에보다 유연하고 합법적으로 재창조하며 대부분의 국가에서 금융 대리인 파악, 개인 데이터 저장, 유동성 제공 및 디지털 지불 수단 합법성에 대한 가치를 인정합니다.',
+            watchDemo: '시계모',
+            solvingProblems: {
+                title: '해결 된 문제',
+                list: [{
+                    title: '지불의 법적 성격.',
+                    description: '상호 합의를 위해 ALE는 실제 통화가 들어있는 "컨테이너"를 사용합니다.'
+                }, {
+                    title: '전자 계약의 법적 가치.',
+                    description: 'ALE 플랫폼 내에서 체결 된 모든 계약은 문서에 대한 국가 요구 사항 준수로 인해 법적으로 유효합니다.'
+                }, {
+                    title: '매우 불안정한 지불 수단.',
+                    description: '암포화폐는 불안정해서 실제 비즈니스에게는 실행할 수 없는 지불 방법입니다. "컨테이너"를 보유한 현금 시스템은 이 문제를 해결합니다.'
+                }, {
+                    title: '국가 및 산업 표준에 모순.',
+                    description: 'ALE는 사용자가 ALE 플랫폼에서 상호 작용 규칙을 선택할 수 있도록 합니다. 그러므로 법률과 비즈니스의 요구 사항에 따라 행동해야 합니다.'
+                }, {
+                    title: '의무 이행의 필연성.',
+                    description: '재정적 의무는 신뢰할 수 있는 환경이 형성되는 스마트 계약에 의해 규제됩니다.'
+                }, {
+                    title: '문서의 진실성 및 불변성.',
+                    description: '블록체인에 저장되어 있으므로 ALE 생태계 내의 문서가 법적으로 보장됩니다.'
+                }]
+            }
+        },
+        features: {
+            title: 'ALE的主要优势特点',
+            list: [{
+                title: '사용자 욕구 개발 및 경제 상황 변화의 동력에 대한 즉각적인 합의 형성.',
+                description: ' '
+            }, {
+                title: '상호적인 인터페이스 수준에서 데이터, 기능 및 매개 변수를 처리하는 데있어 간단하고 직관적 인 제품.',
+                description: ' '
+            }, {
+                title: '플랫폼상의 관계의 완전한 정당성을 위해 세계의 기존 검증 기관의 대체를 제거.',
+                description: ' '
+            }, {
+                title: '이중성을 피하고 무책임을 장려하고 담보로 유동성을 과도하게 동결시킴으로써 다자간 약정에 대한 헌신과 재정적 보장을 보장한다.',
+                description: ' '
+            }]
+        },
+        table: {
+            first: {
+                desc: ["다자간 스마트 계약",
+                    "참가자가 규칙을 수립",
+                    "대부분의 관할 구역을 완벽하게 준수 함",
+                    "합법적 인 경제 시스템의 가능성 확대",
+                    "실제 통화 컨테이너로 지불",
+                    "공식 중재의 가능성"],
+            },
+            second: {
+                title: "다른 블록체인 플랫폼",
+                desc: ["DAO",
+                    "상호작용 규칙 미리 결청",
+                    "불확실한 합법성",
+                    "법률 경제의 대체",
+                    "매우 불안정한 암호화폐에로 지불",
+                    "-"],
+            },
+            third: {
+                desc: ["공동 프로젝트 관리, 재정 및 계약자 관리",
+                    "프로젝트 관리 방법의 보편성",
+                    "개인 데이터의 암호화 방법의 보편성",
+                    "사용자의 합의로 규제",
+                    "중개자가 없는 지불",
+                    "실행 의무의 임박"],
+            },
+            four: {
+                title: "프로젝트 관리 시스템",
+                desc: ["프로젝트 관리, 다양한 애플리케이션을 통한 금융 서비스",
+                    "하나의 방법에 묶여있음",
+                    "하나 또는 여러 방법에 묶여있음",
+                    "중앙 통제",
+                    "중개인을 통한 지불",
+                    "-"],
+            }
+        },
+        team: {
+            title: '팀',
+            serokell: [{
+                name: 'Serokell',
+                members: [{
+                    name: 'Arseniy Seroka',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/seroka@3x.png'
+                }, {
+                    name: 'John Mostovoy',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/mostovoy@3x.png'
+                }, {
+                    name: 'Alexander Rukin',
+                    position: 'UI/UX Designer',
+                    src: '../static/images/avatars/rukin@3x.png'
+                }, {
+                    name: 'Kirill Elagin',
+                    position: 'Backend Engineer',
+                    src: '../static/images/avatars/elagin@3x.png'
+                }]
+            }],
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy team',
+                    members: [
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png'
+                        },
+                        {
+                            name: 'Vladimir Grudinin',
+                            position: 'Blockchain Expert',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Alexej Osipenko',
+                            position: 'Chief Operating Officer',
+                            src: '../static/images/avatars/osipenko@3x.png'
+                        },
+                        {
+                            name: 'Elena Tsymbalyuk',
+                            position: 'Head of Marketing Operations',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Egor Loktev',
+                            position: 'Chief Marketing Officer',
+                            src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Artem Levashov',
+                            position: 'Chief Legal Officer',
+                            src: '../static/images/avatars/levashow@3x.png'
+                        },
+                        {
+                            name: 'Vadim Dudin',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Alexander Voroncov',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Denis Tikhonov',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Galina Sergeeva',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Dmitry Zhuravlev',
+                            position: 'Mobile developer',
+                            src: '../static/images/avatars/zhuravlev@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: '문',
+            members: [
+                {
+                    name: 'Mikhail Gromyko',
+                    position: 'Chief Executive Officer',
+                    src: '../static/images/avatars/gromyko@3x.png'
+                },
+                {
+                    name: 'Vladimir Grudinin',
+                    position: 'Blockchain Expert',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                },
+                {
+                    name: 'Alexej Osipenko',
+                    position: 'Chief Operating Officer',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                },
+                {
+                    name: 'Elena Tsymbalyuk',
+                    position: 'Head of Marketing Operations',
+                    src: '../static/images/avatars/elena@3x.png'
+                },
+                {
+                    name: 'Egor Loktev',
+                    position: 'Chief Marketing Officer',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }
+            ]
+        },
+        economy: {
+            title: 'ICO 경제',
+            subTitle: 'ALE는 소유자에게 ALE 시스템 이익 분배를 제공하는 보안 토큰입니다. 이 프로토콜은 이더리움 (Ethereum) 네트워크 (ERC-20 프로토콜)를 반영하여 유동성을 제공합니다.',
+            ICOinfo: {
+                emission: {
+                    title: 'Emission',
+                    amount: "110,000,000"
+                },
+                hardCap: {
+                    title: 'Hardcap',
+                    amount: "33,000"
+                },
+                softCap: {
+                    title: 'Softcap',
+                    amount: "2,000"
+                }
+            },
+            distribution: {
+                title: 'Sale during the ICO',
+                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                list: [{
+                    title: 'ICO 기간 중 판매',
+                    amount: 77
+                }, {
+                    title: '명령',
+                    amount: 11
+                }, {
+                    title: '추천 프로그램 및 고문',
+                    amount: 10
+                }, {
+                    title: '바운티 (Bounty)',
+                    amount: 2
+                }]
+            }
+        },
+        roadmap: {
+            title: '로드맵',
+            stateLabel: 'state',
+            stateStatus: {
+                deployed: 'deployed',
+                implementing: 'implementing',
+                review: 'review',
+                notNow: 'the stage did not begin'
+            },
+            stages: [
+                {
+                    title: '구상',
+                    desk: '아이디어',
+                    date: 'January 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: '배포'
+                },
+                {
+                    title: '프로젝트 관리 전문가. 요구 사항 정의',
+                    desk: '실제 경제 부문의 프로젝트 관리 전문가와의 상담. 요구 사항 수집 및 정의 문제',
+                    date: 'February - March 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: '배포'
+                },
+                {
+                    title: '수학적 모델링',
+                    desk: '금융 전문가와의 상담. ITMO 대학과 협력하여 수학적 모델링',
+                    date: 'April - May 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: '배포'
+                },
+                {
+                    title: '참조 조건의 형성',
+                    desk: '블록 체인 전문가 및 개발자와의 상담. 제품 이미지 및 참조 조건 구성',
+                    date: 'June - July 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: '배포'
+                },
+                {
+                    title: 'Serokell OU와의 파트너십, 개발 시작',
+                    date: 'August 2017',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: '구현'
+                },
+                {
+                    title: '선판매 (Pre-Sale)',
+                    desk: '1,000,000 USD 이상 판매',
+                    date: 'November - December 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: '배포'
+                },
+                {
+                    title: 'MVP 게시',
+                    date: 'May 15, 2018',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: 'Pre-ICO',
+                    date: '05/25/2018 - 06/24/2018',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: 'ICO',
+                    date: '06/25/2018 - 09/07/2018',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '황색언론 개발',
+                    desk: '황색언론– 시스탬의 기술 문서. 이 문서는 시스템 구성의 건축학적 특징, 네트워크 노드 간의 상호 작용 프로토콜 및 기타 기술적 세부 사항을 설명합니다.',
+                    date: '07/02/2018 - 01/01/2018',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: 'MVP 솔루션의 분산화',
+                    desk:'다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
+                    date: '01.12.2018 - 01/02/2019',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '개인적인 블록체인',
+                    desk:'개인 블록 체인 개발 및 기존 인프라에 대한 통합. 오라클의 중단 없는 운영 보장. 분쟁의 메커니즘 (중재)을 제외하고 전체 시스템의 완성 된 버전에 등록.',
+                    date: '01/03/2019 - 01/01/2019',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '분쟁 해결 시스템 구현',
+                    desk:'분산 된 응용 프로그램의 프레임 워크 내에서 충돌을 해결하기 위해 분쟁 시스템을 개선.',
+                    date: '05/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '변경을 위한 투표 시스템의 구현',
+                    desk:'시간이 지남에 따라 시스템의 변동성을 보장하기 위해 시스템을 수정.',
+                    date: '08/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '폐쇄 시스템 테스트',
+                    date: '10/01/2019 - 01/01/2020',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '시스템 및 문서의 소스 코드 공개',
+                    desk:'시스템 및 문서의 소스 코드를 공개 저장소에 게시',
+                    date: '01/01/2020 - 01/02/2020',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                },
+                {
+                    title: '시스템 부팅',
+                    date: '01/02/2020 – 01/03/2020',
+                    progress: 0,
+                    state: '단계를 시작하지 않았'
+                }
+            ]
+        },
+        blog: {
+            title: '블로그',
+            allPostsBtn: '모든 게시물',
+            notFound: '뉴스 발견되지 않았'
+        },
+        footer: {
+            left: {
+                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
+                designBy: 'Design by Alexander Rukin and ledesign',
+                terms: 'Terms and conditions'
+            },
+            right: {
+                input: '이메일 주소',
+                btn: '가입 뉴스',
+                error: '잘못된 주소',
+                success: '올바른 주소'
+            },
+        },
+        download:'다운로드'
+    },
 };
 
 export default messages;
