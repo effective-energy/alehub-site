@@ -458,6 +458,7 @@
                         padding 20px 20px 0 20px
                         width 304px
                         clip-path circle(50% at center)
+                        -webkit-clip-path circle(50% at center)
 
                         @media (max-width 490px)
                             position relative

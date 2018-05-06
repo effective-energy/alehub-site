@@ -20,18 +20,18 @@
                     macOS
                 </h4>
                 <p class="version">
-                    Version 0.0.977
+                    Version 0.0.1
                 </p>
                 <p class="bit">
                     64bit
                 </p>
                 <p class="release">
-                    Coming soon
+                    05.05.2018
                 </p>
 
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
+                <button type="button" class="button button__download">
+                    Download
+                </button>
             </div>
             <div class="logo">
 
