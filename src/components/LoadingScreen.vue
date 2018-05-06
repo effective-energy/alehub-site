@@ -244,8 +244,8 @@
         },
         mounted() {
 
-            if (document.querySelector('.logo-block__logo') && !this.isXSMobile)
-                document.querySelector('.logo-block__logo').style['color'] = '#dcdcdc';
+            // if (document.querySelector('.logo-block__logo') && !this.isXSMobile)
+            //     document.querySelector('.logo-block__logo').style['color'] = '#dcdcdc';
 
             if (document.querySelector('.xs-loader') && this.isXSMobile) {
                 setTimeout(() => {
@@ -272,8 +272,8 @@
         width 100%
         height 100vh
         opacity 1
-        -webkit-transition opacity 2s ease-out
-        transition opacity 2s ease-out
+        -webkit-transition opacity .85s ease-out
+        transition opacity .85s ease-out
         z-index 9999
 
         .anim
@@ -348,7 +348,8 @@
                     .logo-block__logo
                         font-family Fairview
                         font-size 60px
-                        color #343a49
+                        //color #343a49
+                        color #dcdcdc
                         text-transform uppercase
                         -webkit-transition color 4.2s cubic-bezier(1, 0, .6, .65)
                         transition color 4.2s cubic-bezier(1, 0, .6, .65)

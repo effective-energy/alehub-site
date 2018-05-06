@@ -205,8 +205,10 @@
                             <span>{{ $t("greeting.countDown.bonus") }}</span>
                             <span>{{ $t("greeting.countDown.notAvailable") }}</span>
                         </div>
+
                         <div class="play-video">
-                            <button class="play-button" @click="playVideo" style="display: flex; justify-content: center; align-items: center;">
+                            <button class="play-button" @click="playVideo"
+                                    style="display: flex; justify-content: center; align-items: center;">
                                 <div class="wrap-play" :class="{ 'active': mainPlayer }">
                                     <span class="line l-1"></span>
                                     <span class="line l-2"></span>
@@ -218,12 +220,11 @@
                                 </div>
                             </div>
                             <div class="main-player" v-if="mainPlayer">
-                                <iframe
-                                    class="iframe"
-                                    src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
-                                    frameborder="0"
-                                    allow="autoplay; encrypted-media"
-                                    allowfullscreen>
+                                <iframe class="iframe"
+                                        src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
+                                        frameborder="0"
+                                        allow="autoplay; encrypted-media"
+                                        allowfullscreen>
                                 </iframe>
                             </div>
                         </div>
@@ -513,9 +514,6 @@
             },
         },
         methods: {
-            // toInvestorAcc: function () {
-            //
-            // },
             playVideo: function () {
                 this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
             },
@@ -672,6 +670,9 @@
 
 <style lang="stylus" scoped>
 
+    .partners
+        background-color #ececf0
+
     .wrap-play
         .line
             display block
@@ -691,18 +692,15 @@
         .l-3
             transform translate(6px, 6px) rotate(330deg)
 
-
     .active
         .l-1
             opacity 0
-            transform translate(-7px) rotate(90deg)
 
         .l-2
             transform translate(0, 0) rotate(135deg)
 
         .l-3
             transform translate(0, 0) rotate(45deg)
-
 
     .home__light
         background-color #ececf0
@@ -716,6 +714,14 @@
                 position relative
                 display flex
                 align-items center
+
+                img
+                    width 16px !important
+                    height 22px !important
+                    margin-right 16px
+
+                &:focus
+                    outline none
 
                 @media (max-width 425px)
                     img
@@ -739,7 +745,6 @@
     .btn-buy-tokens
         &:focus
             box-shadow none
-
 
     #myVideo
         position fixed
@@ -793,22 +798,25 @@
             height 394px
 
         @media (max-width 1680px)
-            right -255px
-            .iframe, .place-player__frame
-                width 600px
-                height 336px
-        
-        @media (max-width: 1600px)
-            right -210px
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+            right
+        -255px
+        .iframe, .place-player__frame
+            width 600px
+            height 336px
+
+        @media (max-width 1600px)
+            right
+        -210px
+        .iframe, .place-player__frame
+            width 500px
+            height 280px
 
         @media (max-width 1530px)
-            right -100px
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+            right
+        -100px
+        .iframe, .place-player__frame
+            width 500px
+            height 280px
 
         @media (max-width 1274px)
             right 0
@@ -846,22 +854,20 @@
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
-            width 100vw
+            width 100%
             position relative !important
-            left -96px !important
 
             .place-player
                 display none
 
     @media (max-width 425px)
         .play-video
-            width 100vw
+            width 100%
             position relative !important
-            left -32px !important
+            left 0 !important
 
             .place-player
                 display none
-            
 
     .collection__dark
         color #343a49
@@ -875,13 +881,15 @@
         color #f7f7f7 !important
 
     .partners__dark
-        background-color #343a49
+        background-color #343a49 !important
+
         .title
             color #f7f7f7 !important
 
     .social-line__dark
         .line
             border-color #f7f7f7 !important
+
         .social-item.fb
             background-image url(../../static/images/fb-dark.svg) !important
 
@@ -947,6 +955,14 @@
             -o-transition all .3s ease-in-out
             transition all .3s ease-in-out
             cursor pointer
+
+            @media (max-width 425px)
+                background-color #ffd24f !important
+                border-radius 2px
+
+                a
+                    .description
+                        display none
 
     section
         position relative
@@ -1025,7 +1041,6 @@
             transition background color .3s ease-in-out
 
     #screen1
-
         .container-fluid
             &.partners
                 justify-content space-between
@@ -1075,7 +1090,7 @@
                     .desktop
                         position relative
 
-                    @media (max-width: 2600px)
+                    @media (max-width 2600px)
                         .slider-container
                             width 709px
                             height 443px
@@ -1086,14 +1101,14 @@
                             left 140px
                             width 900px
 
-                    @media (max-width: 2365px)
+                    @media (max-width 2365px)
                         .slider-container
                             left 162px
 
                         .desktop
                             left 50px
 
-                    @media (max-width: 2150px)
+                    @media (max-width 2150px)
                         .slider-container
                             width 630px
                             height 395px
@@ -1101,10 +1116,10 @@
                             top 36px
 
                         .desktop
-                            left 0px
+                            left 0
                             width 800px
 
-                    @media (max-width: 1860px)
+                    @media (max-width 1860px)
                         .slider-container
                             width 552px
                             height 345px
@@ -1112,10 +1127,10 @@
                             top 32px
 
                         .desktop
-                            left 0px
+                            left 0
                             width 700px
 
-                    @media (max-width: 1640px)
+                    @media (max-width 1640px)
                         padding-top 50px
 
                         .slider-container
@@ -1125,10 +1140,10 @@
                             top 77px
 
                         .desktop
-                            left 0px
+                            left 0
                             width 600px
 
-                    @media (max-width: 1460px)
+                    @media (max-width 1460px)
                         padding-top 100px
 
                         .slider-container
@@ -1138,10 +1153,10 @@
                             top 122px
 
                         .desktop
-                            left 0px
+                            left 0
                             width 500px
 
-                    @media (max-width: 1240px)
+                    @media (max-width 1240px)
                         padding-top 100px
 
                         .slider-container
@@ -1151,10 +1166,10 @@
                             top 118px
 
                         .desktop
-                            left 0px
+                            left 0
                             width 400px
 
-                    @media (max-width: 991px)
+                    @media (max-width 991px)
                         padding-top 0
 
                         .slider-container
@@ -1163,7 +1178,7 @@
                         .desktop
                             display none
 
-                @media (max-width: 991px)
+                @media (max-width 991px)
                     .desktop-for-mobile
                         display block
 
@@ -1263,6 +1278,13 @@
                     box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     height 100%
 
-            @media (max-width: 600px)
+            @media (max-width 600px)
                 width 100%
+
+    @media (max-width 425px)
+        .subtitle
+            margin-top 18px !important
+            font-size 18px !important
+            font-weight 700
+
 </style>

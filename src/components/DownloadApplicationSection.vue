@@ -30,9 +30,11 @@
                     05.05.2018
                 </p>
 
-                <button type="button" class="button button__download">
-                    Download
-                </button>
+                <a href="https://alehub.io/wallet/alehub-0.0.0.dmg">
+                    <button type="button" class="button button__download">
+                        Download
+                    </button>
+                </a>
             </div>
             <div class="logo">
 
@@ -105,7 +107,7 @@
 
 <style lang="stylus" scoped>
     .download-app
-        background-color #ffd24f
+        background-color #f5f5f7
         height 100vh
         width 100%
         padding 80px 20%

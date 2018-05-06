@@ -25,15 +25,38 @@
                 {{ $t("alePlatform.subTitle") }}
             </p>
             <div class="watch">
-                <button class="play-button">
-                    <div class="wrap-ic">
-                        <img src="../../static/images/play-ic.svg">
-                    </div>
-                </button>
+                <div class="play-video">
+                    <button class="play-button"
+                            @click="playVideo"
+                            style="display: flex; justify-content: center; align-items: center;">
+                        <div class="wrap-play"
+                             :class="{ 'active': mainPlayer }">
+                            <span class="line l-1"></span>
+                            <span class="line l-2"></span>
+                            <span class="line l-3"></span>
+                        </div>
+                    </button>
 
-                <p class="watch-text">
-                    {{ $t("alePlatform.watchDemo") }}
-                </p>
+                    <p class="watch-text">
+                        {{ $t("alePlatform.watchDemo") }}
+                    </p>
+
+                    <!--<div class="place-player"-->
+
+                         <!--:style="{ opacity: mainPlayer ? 1 : 0 }">-->
+                        <!--<div class="place-player__frame">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="main-player"
+                         v-if="mainPlayer">
+                        <iframe class="iframe"
+                                src="https://www.youtube.com/embed/WOqQog8BCiM?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=WOqQog8BCiM"
+                                frameborder="0"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -203,13 +226,18 @@
         },
         data() {
             return {
-
+                mainPlayer: false
             }
         },
         computed: {
             isLessThanTablet: function () {
                 return window.innerWidth < 768;
             }
+        },
+        methods: {
+            playVideo: function () {
+                this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
+            },
         }
     }
 </script>
@@ -224,6 +252,161 @@
 </style>
 
 <style lang="stylus" scoped>
+    .wrap-play
+        .line
+            display block
+            width 20px
+            height 1px
+            background-color black
+            -webkit-transition all .5s ease-in-out
+            -o-transition all .5s ease-in-out
+            transition all .5s ease-in-out
+
+        .l-1
+            transform translate(-6px) rotate(90deg)
+
+        .l-2
+            transform translate(3px, -6px) rotate(30deg)
+
+        .l-3
+            transform translate(3px, 3px) rotate(330deg)
+
+
+    .active
+        .l-1
+            opacity 0
+
+        .l-2
+            transform translate(0, 0) rotate(135deg)
+
+        .l-3
+            transform translate(0, 0) rotate(45deg)
+
+    .place-player
+        position absolute
+        bottom 7px
+        opacity 0
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+        .place-player__frame
+            background-color #000
+
+    .main-player
+        z-index 100
+
+    .main-player, .place-player
+        .iframe, .place-player__frame
+            width 700px
+            height 394px
+
+            @media (max-width 1680px)
+                width 600px
+                height 336px
+
+            @media (max-width 1600px)
+                width 500px
+                height 280px
+
+            @media (max-width 1530px)
+                width 500px
+                height 280px
+
+            @media (max-width 1274px)
+                width 800px
+                height 450px
+
+            @media (max-width 1120px)
+                width 700px
+                height 394px
+
+            @media (max-width 850px)
+                width 600px
+                height 336px
+
+            @media (max-width 720px)
+                width 500px
+                height 280px
+
+            @media (max-width 620px)
+                width 400px
+                height 225px
+
+            @media (max-width 520px)
+                width 100%
+                height 292px
+
+    @media (min-width 425px) and (max-width 520px)
+        .play-video
+            margin-top 0
+            width 90%
+            position relative !important
+
+            .place-player
+                display none
+
+    @media (max-width 425px)
+        .play-video
+            margin-top 0
+            width 90%
+            position relative !important
+
+            .place-player
+                display none
+
+    .play-video
+        position relative
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+
+
+        .play-button
+            cursor pointer
+            width 110px
+            height 110px
+            border none
+            border-radius 50%
+            background-color #ffd24f
+            margin-bottom 20px
+            z-index 100
+
+            @media (max-width 425px)
+                width 80px
+                height 80px
+
+                .wrap-ic
+                    img
+                        width 25px !important
+                        height 25px !important
+
+            &:focus
+                outline 0
+
+            .wrap-ic
+                padding-left 7px
+
+                img
+                    width 35px
+                    height 35px
+
+        @media (min-width 768px) and (max-width 1274px)
+            position unset
+            margin 48px auto 0
+            display block
+            text-align center
+
+            .play-button
+                margin 0
+
+        @media (max-width 768px)
+            display flex
+            justify-content center
+            align-items center
+            flex-direction column
+
     .application
         display flex
         flex-direction column
@@ -244,18 +427,20 @@
             flex-direction column
             justify-content center
             align-items center
-            /*margin-bottom 80px*/
 
             .title
                 font-size 40px
                 margin-bottom 40px
+                z-index 100
 
             .description
                 font-size 18px
                 text-align center
                 margin-bottom 60px
+                z-index 100
 
             .watch
+                width 100%
                 display flex
                 flex-direction column
                 align-items center
@@ -353,15 +538,15 @@
                         .left
                             margin-right 30px
 
-    @media (max-width: 1650px) and (min-width: 1250px)
+    @media (min-width 1250px) and (max-width 1650px)
         .application
             padding 80px 10%
 
-    @media (max-width: 1250px)
+    @media (max-width 1250px)
         .application
             padding 80px 5%
 
-    @media (max-width: 768px)
+    @media (max-width 768px)
         .application
             .section-2
                 .list-items
@@ -391,7 +576,7 @@
                             padding-right 0
                             margin-bottom 24px
 
-    @media (max-width: 575px)
+    @media (max-width 575px)
         .application
             .section-3
                 .figure
@@ -400,11 +585,11 @@
                 .info-block
                     width 100%
 
-    @media (max-width: 425px)
+    @media (max-width 425px)
         .application
             padding-top 60px
             padding-bottom 60px
-            
+
             .section-1
                 margin-bottom 24px
 
@@ -459,7 +644,7 @@
                                 .left
                                     margin-right 38px
 
-    @media (max-width: 320px)
+    @media (max-width 320px)
         .application
             .section-2
                 .list-items

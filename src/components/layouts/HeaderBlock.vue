@@ -484,24 +484,24 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
-                    if (!this.isYellow) {
-                        this.isDark = false;
-                        this.isOrange = false;
-                        this.isYellow = true;
-                    }
-                    if (!this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
+                // if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset &&
+                //     window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                //     if (!this.isYellow) {
+                //         this.isDark = false;
+                //         this.isOrange = false;
+                //         this.isYellow = true;
+                //     }
+                //     if (!this.isFeatures) {
+                //         this.isFeatures = false;
+                //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                //     }
+                //     if (this.isTeam) {
+                //         this.isTeam = false;
+                //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                //     }
+                // }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (this.isDark || this.isYellow || this.isOrange) {
                         this.isDark = false;
                         this.isYellow = false;

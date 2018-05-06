@@ -642,7 +642,7 @@ const messages = {
                 description: 'В вопросах обращения с данными, функциями и параметрами на уровне интерактивного интерфейса'
             }, {
                 title: 'Исключить подмену существующих верификационных уполномоченных организаций',
-                description: 'Users of services based on ALE have the opportunity to create their own methodological algorithms, in addition to the well known (DIN 69901, GOST R 54869 - 2011, PMBOK Guide, ISO 10006-97, APM Body of Knowledge, Prince 2, OPM 3)'
+                description: 'Пользователи услуг, основанных на ALE, имеют возможность создавать свои собственные методологические алгоритмы, в дополнение к хорошо известным (DIN 69901, GOST R 54869 - 2011, PMBOK Guide, ISO 10006-97, APM Body of Knowledge, Prince 2, OPM 3)'
             }, {
                 title: 'Фиксация и финансовое подкрепление договоренностей множества сторон',
                 description: 'Не допускающее двойственности, поощрения безответственности и замораживания непропорциональных объемов ликвидности в качестве залогов.'
