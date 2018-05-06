@@ -338,11 +338,6 @@
                     this.closeModal('menu-modal');
                 }
             },
-            // initScroll: function () {
-            //     window.addEventListener('scroll', () => {
-            //         this.checkActive();
-            //     })
-            // },
             checkActive: function () {
                 let menu = this.$t('navbar.menuList');
                 for (let i = 0; i < menu.length; i++) {
@@ -354,6 +349,15 @@
                         this.activeItem = i;
                     }
                 }
+            },
+            preventDefault: function (e) {
+                e.preventDefault();
+            },
+            disableScroll: function () {
+                document.body.addEventListener('touchmove', this.preventDefault, { passive: false });
+            },
+            enableScroll: function () {
+                document.body.removeEventListener('touchmove', this.preventDefault, { passive: false });
             }
         },
         mounted() {
@@ -368,10 +372,12 @@
 
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
+                this.disableScroll();
             });
 
             this.$on('closedModal', () => {
                 document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.enableScroll();
             });
 
             setTimeout(() => {
