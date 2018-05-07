@@ -12,6 +12,9 @@ import Moment from 'vue-moment';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+var SocialSharing = require('vue-social-sharing');
+Vue.use(SocialSharing);
+
 Vue.use(BootstrapVue);
 Vue.use(VueScrollTo, {
     offset: -70

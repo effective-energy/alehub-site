@@ -2,26 +2,28 @@
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
-			<div class="share-block">
-				<div class="share-item">
-					<div class="icon-twitter"></div>
+			<social-sharing url="https://alehub.io" inline-template>
+				<div class="share-block">
+					<network network="twitter">
+						<img src="../../static/images/share-ic/twitter.svg" alt="" class="share-item">
+					</network>
+					<network network="facebook">
+						<img src="../../static/images/share-ic/fb.svg" alt="" class="share-item">
+					</network>
+					<network network="googleplus">
+						<img src="../../static/images/share-ic/g-plus.svg" alt="" class="share-item">
+					</network>
+					<network network="vk">
+						<img src="../../static/images/share-ic/vk.svg" alt="" class="share-item">
+					</network>
+					<network network="telegram">
+        				<img src="../../static/images/share-ic/telegram-ic.svg" alt="" class="share-item">
+      				</network>
+					<network network="email">
+						<img src="../../static/images/share-ic/mail.svg" alt="" class="share-item">
+					</network>
 				</div>
-				<div class="share-item">
-					<div class="icon-facebook"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-googleplus"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-vkontakte"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-telegram"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-email"></div>
-				</div>
-			</div>
+			</social-sharing>
 			<div class="news-block">
 				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
@@ -107,6 +109,7 @@
 		created () {
 			this.getNews();
 			this.getLastNews();
+			this.getNewsUrl();
 		}
     }
 </script>
@@ -174,51 +177,17 @@
 
 		.share-block
 			min-width 36px
-			height 300px
-			position absolute
+			height 240px
+			position absolute 
+			display flex 
+			flex-direction column
+			align-items center
+			justify-content space-around
 			left -70px
 			top 80px
-
-			.share-item
-				width 36px
-				height 36px
-				margin-bottom 8px
-				display flex
-				justify-content center
-				align-items center
-
-				&:last-child
-					margin-bottom 0
-
-				.icon-twitter
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/twitter.svg')
-
-				.icon-facebook
-					width 7px
-					height 14px
-					background-image url('../../static/images/share-ic/fb.svg')
-
-				.icon-googleplus
-					width 14px
-					height 15px
-					background-image url('../../static/images/share-ic/g-plus.svg')
-
-				.icon-vkontakte
-					width 16px
-					height 9px
-					background-image url('../../static/images/share-ic/vk.svg')
-
-				.icon-telegram
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/telegram-ic.svg')
-
-				.icon-email
-					width 14px
-					height 11px
-					background-image url('../../static/images/share-ic/mail.svg')
+			 
+			img 
+				margin 12px
 
 
 		.news-block
