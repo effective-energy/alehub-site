@@ -44,8 +44,8 @@
 				<div class="more-news" v-if="more">
 					<h1 class="more-news-title">More news</h1>
 
-					<div class="more-news-content">
-						<div class="news-item" v-for="item in more" :key="item._id">
+					<div class="more-news-content row">
+						<div class="news-item col-lg-4 col-md-4 col-sm-6 col-12" v-for="item in more" :key="item._id">
 							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
@@ -332,9 +332,6 @@
 					.news-item
 						display flex
 						flex-direction column
-						margin 0 10px
-						width 25%
-						max-width 200px
 
 						img
 							width 100%
@@ -406,6 +403,7 @@
 
 					.more-news-content
 						flex-wrap wrap
+
 						.news-item
 							margin 0
 							width 48%
@@ -422,10 +420,15 @@
 
 			.share-block
 				display flex
-				top 48px
+				flex-direction row
+				top 50px
 				left -10px
-				padding-left 32px
-				height 50px
+				padding-left 42px
+				padding-left 42px
+				height 30px
+				width 280px
+				justify-content space-between
+
 
 			.news-block
 				margin-top 24px
@@ -468,10 +471,6 @@
 
 	@media(max-width: 375px)
 		.container-news
-			.share-block
-				width 100%
-				justify-content center
-
 			.news-block
 				.title
 					font-size 20px
@@ -507,6 +506,8 @@
 						font-size 18px
 
 					.more-news-content
+						justify-content center
+
 						.news-item
 							width 100%
 							max-width 260px
