@@ -9,6 +9,9 @@ import Categories from '@/components/NewsCategories';
 Vue.use(Router);
 
 const router = new Router({
+    scrollBehavior (to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    },
     mode: 'history',
     routes: [
         {

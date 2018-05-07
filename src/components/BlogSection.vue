@@ -7,16 +7,18 @@
 			<div class="divider"></div>
 
 			<div class="row news-section">
-				<div class="col-md-6 col-sm-12" v-for="(n, i) in news" :key="i">
-					<div class="news-block">
-						<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
+				<div class="col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
+					<router-link  tag="div" :to="`/blog/${n._id}`" class="news-block">
+						<router-link :to="`/blog/${n._id}`">
+							<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
+						</router-link>
 						<div class="news-info">
-                            <router-link tag="a" :to="`/blog/${n._id}`" class="news-title">
+                            <p class="news-title">
                                 {{ n.title }}
-                            </router-link>
+                            </p>
 							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
-					</div>
+					</router-link>
 				</div>
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
@@ -120,11 +122,25 @@
 				border 1px solid #ffd24f
 				border-radius 3px
 
-				&:active 
+				&:active
 					border 1px solid #d39e00
 
 				&:focus
-					box-shadow none 
+					box-shadow none
+
+		.animate
+				color #31302B
+				background #FFF
+				cursor pointer
+				box-shadow: inset 0 0 0 0 #fea007
+				-webkit-transition all ease 0.5s
+				-moz-transition all ease 0.5s
+				transition: all ease 0.5s
+
+				&:hover
+					box-shadow: inset 0 0 100px 0 #ffd24f;
+					color: #fff;
+
 
 		.news-block
 			width 100%
@@ -132,12 +148,15 @@
 			margin 32px 16px
 			display flex
 			justify-content flex-start
+			transition 2s
+
 
 			@media (max-width 320px)
 				flex-direction column
 
 			.picture
 				max-width 150px
+				height 100%
 				width 150px
 				-o-object-fit cover
 				object-fit cover
@@ -161,6 +180,7 @@
 					letter-spacing normal
 					color #34343e
 					margin-bottom 8px
+					text-decoration: none;
 
 					@media (max-width 320px)
 						font-size 16px !important
