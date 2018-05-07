@@ -249,11 +249,11 @@ body {
 #screen1 .first-screen.what-is {
   margin-top: 40px;
   padding: 125px 125px 0;
-  -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
-  -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
-  -moz-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
-  -o-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
-  background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
+  -webkit-background-image: linear-gradient(to bottom, #ececf0, #373c4a);
+  -webkit-background-image: linear-gradient(to bottom, #ececf0, #373c4a);
+  -moz-background-image: linear-gradient(to bottom, #ececf0, #373c4a);
+  -o-background-image: linear-gradient(to bottom, #ececf0, #373c4a);
+  background-image: linear-gradient(to bottom, #ececf0, #373c4a);
 }
 #screen1 .first-screen.what-is .desktop {
   width: 100%;

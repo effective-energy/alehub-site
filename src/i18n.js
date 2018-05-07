@@ -518,7 +518,8 @@ const messages = {
                 success: '正确的地址'
             },
         },
-        download:'下载'
+        download:'下载',
+        serverErr:'一个服务器发生了错误的同时检索的应用程序清单'
     },
     ru: {
         navbar: {
@@ -1032,7 +1033,8 @@ const messages = {
                 success: 'Валидный адрес'
             },
         },
-        download:'Скачать'
+        download:'Скачать',
+        serverErr:'Произошла ошибка сервера при получении списка приложений.'
     },
     en: {
         navbar: {
@@ -1546,7 +1548,8 @@ const messages = {
                 success: 'correct address'
             },
         },
-        download:'Download'
+        download:'Download',
+        serverErr:'A server error occurred while retrieving the application list.'
     },
     fr: {
         navbar: {
@@ -2066,6 +2069,7 @@ const messages = {
             }
         },
         download:'Télécharger',
+        serverErr:'Une erreur de serveur s\'est produite lors de la récupération de la liste des applications.'
     },
     de: {
         navbar: {
@@ -2584,6 +2588,7 @@ const messages = {
             },
         },
         download:'Herunterladen',
+        serverErr:'Serverfehler beim abrufen der Liste der Anwendungen.'
     },
     ar: {
         navbar: {
@@ -3102,7 +3107,8 @@ const messages = {
                 success: 'عنوان صحيح'
             },
         },
-        download:'تحميل'
+        download:'تحميل',
+        serverErr:'خادم حدث خطأ أثناء استرداد قائمة التطبيقات.'
     },
     ko: {
         navbar: {
@@ -3617,7 +3623,528 @@ const messages = {
                 success: '올바른 주소'
             },
         },
-        download:'다운로드'
+        download:'다운로드',
+        serverErr:'서버 오류가 발생했을 검색하는 동안 이 응용 프로그램의 목록이 있습니다.'
+    },
+    es: {
+        navbar: {
+            menuList: [
+                {
+                    path: '#home',
+                    name: 'Casa'
+                },
+                {
+                    path: '#description',
+                    name: 'Descripción'
+                },
+                {
+                    path: '#advantages',
+                    name: 'Ventajas'
+                },
+                {
+                    path: '#features',
+                    name: 'Características'
+                },
+                {
+                    path: '#team',
+                    name: 'Equipo'
+                },
+                {
+                    path: '#ico',
+                    name: 'ICO'
+                },
+                {
+                    path: '#roadmap',
+                    name: 'Hoja de ruta'
+                },
+                {
+                    path: '#download-application',
+                    name: 'Descargar'
+                },
+                {
+                    path: '#blog',
+                    name: 'Blog'
+                }
+            ],
+            loginBtn: 'Registro en',
+            blog: 'Blog'
+        },
+        menuModal: {
+            selectLang: 'Seleccionar idioma',
+            navigationMenu: 'Regresar al menú'
+        },
+        greeting: {
+            title: 'La nueva era de la gestión de proyectos está llegando',
+            countDown: {
+                title: 'Ronda 1 comenzará',
+                time: {
+                    days: 'Días',
+                    hours: 'Horas',
+                    minutes: 'Minutos'
+                },
+                btnBuyTokens: 'Comprar fichas',
+                bonus: '25% de bonificación de hasta el 7 de abril de 2018',
+                notAvailable: 'Ahora no está disponible'
+            },
+            acceptedCrypto: {
+                title: 'Aceptado para su colección:'
+            }
+        },
+        partners: {
+            title: 'Nuestros socios',
+        },
+        about: {
+            title: 'Cuál es el Eje de concentradores',
+            subTitle: 'ALEHUB – es una plataforma para la gestión de proyectos y la búsqueda de contratistas para la industria de TI.',
+            description: 'ALEHUB combina las ventajas del sistema de registros distribuidos (blockchain) y los servicios clásicos de gestión de proyectos. La selección de contratistas (clientes y ejecutores), la gestión de su trabajo, el control y los acuerdos mutuos, regulados por los contratos inteligentes multilaterales del sistema ALE, garantizan la seguridad, la fiabilidad y los bajos costos de la subcontratación de profesionales de TI.',
+            btnGroup: {
+                whitePaper: 'Libro Blanco',
+                techDetails: 'Más información sobre ALE',
+                download: 'Descargar'
+            }
+        },
+        advantages: {
+            title: 'ALE Ventajas',
+            lists: [{
+                title: 'ALE vs sistemas de gestión de proyectos'
+            }, {
+                title: 'ALE vs otras plataformas blockchain'
+            }]
+        },
+        alePlatform: {
+            title: 'Plataforma ALE ',
+            subTitle: 'ALE es un ecosistema que modifica y combina las ventajas de una economía real y criptográfica para crear un entorno fundamentalmente nuevo: la economía compuesta. ALE flexibiliza la estructura financiera y legal existente, en línea con las leyes y valores reconocidos de la mayoría de los países en la identificación de agentes financieros, el almacenamiento de datos privados, la liquidez y la legalidad de los medios de pago digitales.',
+            watchDemo: 'Ver demo',
+            solvingProblems: {
+                title: 'Problema resueltos ',
+                list: [{
+                    title: 'La naturaleza legal del pago.',
+                    description: 'Para acuerdos mutuos, ALE utiliza "contenedores" que contienen moneda real.'
+                }, {
+                    title: 'Valor legal del contrato electrónico.',
+                    description: 'Todos los contratos celebrados dentro de la plataforma ALE son legalmente significativos debido al cumplimiento de los requisitos nacionales para los documentos.'
+                }, {
+                    title: 'Alta volatilidad de los medios de pago.',
+                    description: 'Las criptomonedas son volátiles, por lo que ninguna de ellas puede ser un medio de pago para negocios reales. El sistema de "contenedores" de efectivo resuelve este problema.'
+                }, {
+                    title: 'Contradicción de estándares nacionales e industriales. ',
+                    description: 'ALE permite a los usuarios elegir las reglas de interacción dentro de la plataforma ALE. Por lo tanto, actúe de acuerdo con los requisitos de la legislación y los negocios.'
+                }, {
+                    title: 'La inevitabilidad de cumplir obligaciones.',
+                    description: 'Las obligaciones financieras están reguladas por contratos inteligentes, a través de los cuales se forma un entorno confiable.'
+                }, {
+                    title: 'Integridad e incambiabilidad de la documentación.',
+                    description: 'Confirmado por el almacenamiento en blockchain, por lo que los documentos dentro del ecosistema ALE son una garantía legal.'
+                }]
+            }
+        },
+        features: {
+            title: 'Las principales características distintivas de ALE',
+            list: [{
+                title: 'Establecimiento de consenso rápidamente. En la dinámica del desarrollo del deseo de los usuarios y las cambiantes condiciones económicas',
+                description: ' '
+            }, {
+                title: 'Productos simples e intuitivos. En materia de manejo de datos, funciones y parámetros a nivel de la interfaz interactiva',
+                description: ' '
+            }, {
+                title: 'Eliminar la sustitución de organizaciones de verificación existentes en el mundo. Por la plena legitimidad de la relación en la plataforma.',
+                description: ' '
+            }, {
+                title: 'Compromiso y refuerzo financiero de acuerdos multipartidistas. Evitar la dualidad, fomentar la irresponsabilidad y congelar cantidades desproporcionadas de liquidez como garantía.',
+                description: ' '
+            }]
+        },
+        table: {
+            first: {
+                desc: ["Contratos inteligentes multilaterals ",
+                    "Los participantes establecen las reglas ",
+                    "Cumplimiento total con la mayoría de las jurisdicciones",
+                    "Expansión de las posibilidades de un sistema económico legal",
+                    "Pago por contenedor de moneda real",
+                    "Posibilidad de arbitraje formal"],
+            },
+            second: {
+                title: "Otras plataformas blockchain",
+                desc: ["DAO",
+                    "Las reglas de interacción están predeterminadas",
+                    "Incierta legitimidad",
+                    "Sustitución de economía legal",
+                    "Pago por criptomoneda de alta volatilidad",
+                    "-"],
+            },
+            third: {
+                desc: ["Administración conjunta de proyectos, finanzas y administración de contratistas",
+                    "Universalismo de las metodologías de gestión de proyectos",
+                    "Universalidad de métodos cifrado de datos privados",
+                    "Regulado por consenso de los usuarios",
+                    "Pagos sin intermediarios",
+                    "La inminencia de las obligaciones de ejecución"],
+            },
+            four: {
+                title: "Sistemas de gestion de proyectos",
+                desc: ["Gestión de proyectos, servicios financieros a través de diferentes aplicaciones",
+                    "Unión a un método ",
+                    "Unión a uno a varios métodos",
+                    "Centralmente regulado",
+                    "Pagos a través de intermediarios",
+                    "-"],
+            }
+        },
+        team: {
+            title: 'Nuestro equipo',
+            serokell: [{
+                name: 'Serokell',
+                members: [{
+                    name: 'Arseniy Seroka',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/seroka@3x.png'
+                }, {
+                    name: 'John Mostovoy',
+                    position: 'Lead Serokell Developer',
+                    src: '../static/images/avatars/mostovoy@3x.png'
+                }, {
+                    name: 'Alexander Rukin',
+                    position: 'UI/UX Designer',
+                    src: '../static/images/avatars/rukin@3x.png'
+                }, {
+                    name: 'Kirill Elagin',
+                    position: 'Backend Engineer',
+                    src: '../static/images/avatars/elagin@3x.png'
+                }]
+            }],
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy team',
+                    members: [
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png'
+                        },
+                        {
+                            name: 'Vladimir Grudinin',
+                            position: 'Blockchain Expert',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Alexej Osipenko',
+                            position: 'Chief Operating Officer',
+                            src: '../static/images/avatars/osipenko@3x.png'
+                        },
+                        {
+                            name: 'Elena Tsymbalyuk',
+                            position: 'Head of Marketing Operations',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Egor Loktev',
+                            position: 'Chief Marketing Officer',
+                            src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Artem Levashov',
+                            position: 'Chief Legal Officer',
+                            src: '../static/images/avatars/levashow@3x.png'
+                        },
+                        {
+                            name: 'Vadim Dudin',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Alexander Voroncov',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Denis Tikhonov',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Galina Sergeeva',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Dmitry Zhuravlev',
+                            position: 'Mobile developer',
+                            src: '../static/images/avatars/zhuravlev@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: 'Advisors',
+            members: [
+                {
+                    name: 'Mikhail Gromyko',
+                    position: 'Chief Executive Officer',
+                    src: '../static/images/avatars/gromyko@3x.png'
+                },
+                {
+                    name: 'Vladimir Grudinin',
+                    position: 'Blockchain Expert',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                },
+                {
+                    name: 'Alexej Osipenko',
+                    position: 'Chief Operating Officer',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                },
+                {
+                    name: 'Elena Tsymbalyuk',
+                    position: 'Head of Marketing Operations',
+                    src: '../static/images/avatars/elena@3x.png'
+                },
+                {
+                    name: 'Egor Loktev',
+                    position: 'Chief Marketing Officer',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }
+            ]
+        },
+        economy: {
+            title: 'Economía de ICO',
+            subTitle: 'ALE es un token de seguridad, que proporciona al propietario el porcentaje de ganancia del sistema ALE. El protocolo está reflejado en la red Ethereum (protocolo ERC-20) para proporcionar liquidez.',
+            ICOinfo: {
+                emission: {
+                    title: 'Emission',
+                    amount: "110,000,000"
+                },
+                hardCap: {
+                    title: 'Hardcap',
+                    amount: "33,000"
+                },
+                softCap: {
+                    title: 'Softcap',
+                    amount: "2,000"
+                }
+            },
+            distribution: {
+                title: 'Sale during the ICO',
+                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                list: [{
+                    title: 'Venta durante el ICO',
+                    amount: 77
+                }, {
+                    title: 'Mando',
+                    amount: 11
+                }, {
+                    title: 'Programa de referencia y asesores',
+                    amount: 10
+                }, {
+                    title: 'Bounty',
+                    amount: 2
+                }]
+            }
+        },
+        roadmap: {
+            title: 'Hoja de ruta',
+            stateLabel: 'state',
+            stateStatus: {
+                deployed: 'deployed',
+                implementing: 'implementing',
+                review: 'review',
+                notNow: 'the stage did not begin'
+            },
+            stages: [
+                {
+                    title: 'Concepción',
+                    desk: 'La idea',
+                    date: 'De enero de 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'desplegado'
+                },
+                {
+                    title: 'Experiencia de especialistas en gestión de proyectos. Definición de requisitos',
+                    desk: 'Consultas con especialistas en gestión de proyectos del sector real de la economía. Recopilación de requisitos y definición de problemas',
+                    date: 'Febrero - Marzo De 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'desplegado'
+                },
+                {
+                    title: 'Modelado matemático',
+                    desk: 'Consultas con expertos financieros. Modelado matemático en cooperación con la Universidad de ITMO',
+                    date: 'Abril - Mayo De 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'desplegado'
+                },
+                {
+                    title: 'Formación de los Términos de Referencia',
+                    desk: 'Consultas con expertos y desarrolladores de blockchain. Formando una imagen de un producto y los términos de referencia',
+                    date: 'Junio - Julio De 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'desplegado'
+                },
+                {
+                    title: 'Asociación con Serokell OU, inicio del desarrollo',
+                    date: 'De agosto de 2017',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'implementar'
+                },
+                {
+                    title: 'Preventa',
+                    desk: 'Recaudación de más de 1,000,000 de USD',
+                    date: 'Noviembre - Diciembre De 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'desplegado'
+                },
+                {
+                    title: 'Publicación MVP',
+                    date: 'El 15 de mayo de 2018',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Pre-ICO',
+                    date: '05/25/2018 - 06/24/2018',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'ICO',
+                    date: '06/25/2018 - 09/07/2018',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Desarrollo de Yellow Paper',
+                    desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnicos.',
+                    date: '07/02/2018 - 01/01/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Descentralización de las soluciones MVP',
+                    desk:'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
+                    date: '01.12.2018 - 01/02/2019',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Blockchains privadas',
+                    desk:'Desarrollo de blockchains privados y su integración en la infraestructura existente. Garantizar la operación ininterrumpida de los oráculos. Registro en la versión completa de todo el sistema, a excepción del mecanismo de disputa (arbitraje).',
+                    date: '01/03/2019 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementación del sistema de disputas',
+                    desk:'Mejora del sistema de disputas para resolver conflictos en el marco de una aplicación descentralizada.',
+                    date: '05/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Implementación del sistema de votación para cambios',
+                    desk:'Modificar el sistema para garantizar su variabilidad a lo largo del tiempo.',
+                    date: '08/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Sistema cerrado de pruebas',
+                    date: '10/01/2019 - 01/01/2020',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Publicación del código fuente del sistema y documentación',
+                    desk:'Publicación del código fuente del sistema y la documentación en repositorios abiertos',
+                    date: '01/01/2020 - 01/02/2020',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                },
+                {
+                    title: 'Iniciando el sistema',
+                    date: '01/02/2020 – 01/03/2020',
+                    progress: 0,
+                    state: 'el escenario no pudo comenzar'
+                }
+            ]
+        },
+        blog: {
+            title: 'Blog',
+            allPostsBtn: 'Todos los puestos',
+            notFound: 'Las noticias no se encuentra'
+        },
+        footer: {
+            left: {
+                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
+                designBy: 'Design by Alexander Rukin and ledesign',
+                terms: 'Terms and conditions'
+            },
+            right: {
+                input: 'Su dirección de correo electrónico',
+                btn: 'Suscribirse a noticias',
+                error: 'la dirección incorrecta',
+                success: 'dirección correcta'
+            },
+        },
+        download:'Descargar',
+        serverErr:'Un servidor de error al recuperar la lista de aplicaciones.'
     },
 };
 

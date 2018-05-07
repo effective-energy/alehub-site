@@ -8,7 +8,7 @@
             <Spinner />
         </div>
         <div class="error-block" v-if="!isLoader && isError">
-            <p>A server error occurred while retrieving the application list.</p>
+            <p>{{$t('serverErr')}}</p>
         </div>
         <div class="os-avail-list" v-if="!isLoader && !isError">
             <div class="logo" v-for="app in downloadsList">

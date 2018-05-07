@@ -82,7 +82,9 @@
                             </div>
                             <span>DE</span>
                         </div>
-                        <div class="select-lang__item select-lang__es">
+                        <div class="select-lang__item select-lang__es"
+                             :class="{ 'selected': currentLang === 'es' }"
+                             @click="changeLanguage(6)">
                             <div class="select-lang__cover">
                             </div>
                             <span>ES</span>
@@ -218,6 +220,8 @@
                     return 'ar';
                 else if (this.selectedLanguage === 'ko')
                     return 'ko';
+                else if (this.selectedLanguage === 'es')
+                    return 'es';
 
                 return 'en';
             },

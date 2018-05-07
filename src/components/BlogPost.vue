@@ -2,7 +2,7 @@
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
-			<social-sharing url="https://alehub.io" inline-template>
+			<social-sharing :url="newsUrl" inline-template>
 				<div class="share-block">
 					<network network="twitter">
 						<img src="../../static/images/share-ic/twitter.svg" alt="" class="share-item">
@@ -44,8 +44,8 @@
 				<div class="more-news" v-if="more">
 					<h1 class="more-news-title">More news</h1>
 
-					<div class="more-news-content">
-						<div class="news-item" v-for="item in more" :key="item._id">
+					<div class="more-news-content row">
+						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item._id">
 							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
@@ -56,8 +56,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="spinner" v-else>
+		<div class="spinner" v-if="!content && !isError">
 			<spinner />
+		</div>
+		<div class="not-found" v-if="isError">
+			<p>News not found</p>
 		</div>
 		<footer-block />
 	</div>
@@ -78,7 +81,9 @@
 		data () {
 			return {
 				content: '',
-				more: ''
+				more: '',
+				isError: false,
+				newsUrl: ''
 			}
 		},
 		watch: {
@@ -96,12 +101,17 @@
                     }
                 }).then(response => {
 					this.content = response.body;
+					document.title = this.content.title;
 				}, response => {
 					console.log('Error getting news', response);
+					this.isError = true;
+					document.title = 'News Not Found';
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`, {
+				this.$http.post(`https://alehub.eu-4.evennode.com/ale-news/last/4/`, {
+					"withoutNewsId": this.$route.params.id
+				}, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -109,16 +119,20 @@
                 }).then(response => {
 					this.more = response.body;
 				}, response => {
-					console.log('Error getting news', response);
+					this.isError = true;
 				});
 			},
 			goToNews: function (id) {
 				this.$router.push(`/blog/${id}`)
+			},
+			getNewsUrl: function () {
+				this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
 			}
 		},
 		created () {
 			this.getNews();
 			this.getLastNews();
+			this.getNewsUrl();
 		}
     }
 </script>
@@ -160,6 +174,19 @@
 	.news-content
 		p
 			margin 0
+
+	.not-found
+		display flex
+		justify-content center 
+		align-items center 
+		height calc(100vh - 165px - 74px)
+
+		p
+			font-family MuseoSansCyrl300
+			font-size 30px
+
+			@media(max-width: 425px)
+				font-size 26px
 </style>
 
 
@@ -332,9 +359,6 @@
 					.news-item
 						display flex
 						flex-direction column
-						margin 0 10px
-						width 25%
-						max-width 200px
 
 						img
 							width 100%
@@ -406,6 +430,7 @@
 
 					.more-news-content
 						flex-wrap wrap
+
 						.news-item
 							margin 0
 							width 48%
@@ -422,10 +447,15 @@
 
 			.share-block
 				display flex
-				top 48px
+				flex-direction row
+				top 50px
 				left -10px
-				padding-left 32px
-				height 50px
+				padding-left 42px
+				padding-left 42px
+				height 30px
+				width 280px
+				justify-content space-between
+
 
 			.news-block
 				margin-top 24px
@@ -468,10 +498,6 @@
 
 	@media(max-width: 375px)
 		.container-news
-			.share-block
-				width 100%
-				justify-content center
-
 			.news-block
 				.title
 					font-size 20px
@@ -507,6 +533,8 @@
 						font-size 18px
 
 					.more-news-content
+						justify-content center
+
 						.news-item
 							width 100%
 							max-width 260px
