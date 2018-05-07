@@ -89,14 +89,24 @@
 		methods: {
 			getNews: function () {
 				this.content = '';
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.content = response.body;
 				}, response => {
 					console.log('Error getting news', response);
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.more = response.body;
 				}, response => {
 					console.log('Error getting news', response);
@@ -109,7 +119,6 @@
 		created () {
 			this.getNews();
 			this.getLastNews();
-			this.getNewsUrl();
 		}
     }
 </script>
