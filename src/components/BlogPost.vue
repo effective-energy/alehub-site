@@ -56,8 +56,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="spinner" v-else>
+		<div class="spinner" v-if="!content && !isError">
 			<spinner />
+		</div>
+		<div class="not-found" v-if="isError">
+			<p>News not found</p>
 		</div>
 		<footer-block />
 	</div>
@@ -78,7 +81,8 @@
 		data () {
 			return {
 				content: '',
-				more: ''
+				more: '',
+				isError: false
 			}
 		},
 		watch: {
@@ -96,8 +100,11 @@
                     }
                 }).then(response => {
 					this.content = response.body;
+					document.title = this.content.title;
 				}, response => {
 					console.log('Error getting news', response);
+					this.isError = true;
+					document.title = 'News Not Found';
 				});
 			},
 			getLastNews: function () {
@@ -110,6 +117,7 @@
 					this.more = response.body;
 				}, response => {
 					console.log('Error getting news', response);
+					this.isError = true;
 				});
 			},
 			goToNews: function (id) {
@@ -160,6 +168,19 @@
 	.news-content
 		p
 			margin 0
+
+	.not-found
+		display flex
+		justify-content center 
+		align-items center 
+		height calc(100vh - 165px - 74px)
+
+		p
+			font-family MuseoSansCyrl300
+			font-size 30px
+
+			@media(max-width: 425px)
+				font-size 26px
 </style>
 
 
