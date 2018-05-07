@@ -360,16 +360,12 @@
             this.$on('closeModal', () => {
                 this.activeHamburger = false;
                 document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.enableScroll();
             });
 
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
                 this.disableScroll();
-            });
-
-            this.$on('closedModal', () => {
-                document.getElementById('navbar').classList.remove('no-boxshadow');
-                this.enableScroll();
             });
 
             setTimeout(() => {
