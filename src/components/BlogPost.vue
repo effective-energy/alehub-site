@@ -2,26 +2,28 @@
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
-			<div class="share-block">
-				<div class="share-item">
-					<div class="icon-twitter"></div>
+			<social-sharing url="https://alehub.io" inline-template>
+				<div class="share-block">
+					<network network="twitter">
+						<img src="../../static/images/share-ic/twitter.svg" alt="" class="share-item">
+					</network>
+					<network network="facebook">
+						<img src="../../static/images/share-ic/fb.svg" alt="" class="share-item">
+					</network>
+					<network network="googleplus">
+						<img src="../../static/images/share-ic/g-plus.svg" alt="" class="share-item">
+					</network>
+					<network network="vk">
+						<img src="../../static/images/share-ic/vk.svg" alt="" class="share-item">
+					</network>
+					<network network="telegram">
+        				<img src="../../static/images/share-ic/telegram-ic.svg" alt="" class="share-item">
+      				</network>
+					<network network="email">
+						<img src="../../static/images/share-ic/mail.svg" alt="" class="share-item">
+					</network>
 				</div>
-				<div class="share-item">
-					<div class="icon-facebook"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-googleplus"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-vkontakte"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-telegram"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-email"></div>
-				</div>
-			</div>
+			</social-sharing>
 			<div class="news-block">
 				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
@@ -42,8 +44,8 @@
 				<div class="more-news" v-if="more">
 					<h1 class="more-news-title">More news</h1>
 
-					<div class="more-news-content">
-						<div class="news-item" v-for="item in more" :key="item._id">
+					<div class="more-news-content row">
+						<div class="news-item col-lg-4 col-md-4 col-sm-6 col-12" v-for="item in more" :key="item._id">
 							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
@@ -87,14 +89,24 @@
 		methods: {
 			getNews: function () {
 				this.content = '';
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.content = response.body;
 				}, response => {
 					console.log('Error getting news', response);
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.more = response.body;
 				}, response => {
 					console.log('Error getting news', response);
@@ -174,51 +186,17 @@
 
 		.share-block
 			min-width 36px
-			height 300px
-			position absolute
+			height 240px
+			position absolute 
+			display flex 
+			flex-direction column
+			align-items center
+			justify-content space-around
 			left -70px
 			top 80px
-
-			.share-item
-				width 36px
-				height 36px
-				margin-bottom 8px
-				display flex
-				justify-content center
-				align-items center
-
-				&:last-child
-					margin-bottom 0
-
-				.icon-twitter
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/twitter.svg')
-
-				.icon-facebook
-					width 7px
-					height 14px
-					background-image url('../../static/images/share-ic/fb.svg')
-
-				.icon-googleplus
-					width 14px
-					height 15px
-					background-image url('../../static/images/share-ic/g-plus.svg')
-
-				.icon-vkontakte
-					width 16px
-					height 9px
-					background-image url('../../static/images/share-ic/vk.svg')
-
-				.icon-telegram
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/telegram-ic.svg')
-
-				.icon-email
-					width 14px
-					height 11px
-					background-image url('../../static/images/share-ic/mail.svg')
+			 
+			img 
+				margin 12px
 
 
 		.news-block
@@ -354,9 +332,6 @@
 					.news-item
 						display flex
 						flex-direction column
-						margin 0 10px
-						width 25%
-						max-width 200px
 
 						img
 							width 100%
@@ -428,6 +403,7 @@
 
 					.more-news-content
 						flex-wrap wrap
+
 						.news-item
 							margin 0
 							width 48%
@@ -444,10 +420,15 @@
 
 			.share-block
 				display flex
-				top 48px
+				flex-direction row
+				top 50px
 				left -10px
-				padding-left 32px
-				height 50px
+				padding-left 42px
+				padding-left 42px
+				height 30px
+				width 280px
+				justify-content space-between
+
 
 			.news-block
 				margin-top 24px
@@ -490,10 +471,6 @@
 
 	@media(max-width: 375px)
 		.container-news
-			.share-block
-				width 100%
-				justify-content center
-
 			.news-block
 				.title
 					font-size 20px
@@ -529,6 +506,8 @@
 						font-size 18px
 
 					.more-news-content
+						justify-content center
+
 						.news-item
 							width 100%
 							max-width 260px

@@ -13,15 +13,31 @@
         <div class="os-avail-list" v-if="!isLoader && !isError">
             <div class="logo" v-for="app in downloadsList">
                 <div class="logo__wrap">
-                    <img class="logo__apple" :src="getPlatformLogo(app.platformName)" alt="Apple logo">
+                    <img class="logo__apple"
+                         alt="logo"
+                         :src="getPlatformLogo(app.platformName)">
                 </div>
-                <h4 class="logo__title">{{ app.platformName }}</h4>
-                <p class="version">Version {{ app.version }}</p>
-                <p class="bit">{{ app.capacity }}-bit</p>
-                <p class="release" v-if="!app.isPublish">Coming soon</p>
-                <p class="release" v-if="app.isPublish">{{ parseDate(app.releaseDate) }}</p>
-                <a :href="'https://alehub.io/wallet/'+app.downloadLink" v-if="app.isPublish">
-                    <button type="button" class="button button__download">Download</button>
+                <h4 class="logo__title">
+                    {{ app.platformName }}
+                </h4>
+                <p class="version">
+                    Version {{ app.version }}
+                </p>
+                <p class="bit">
+                    {{ app.capacity }}-bit
+                </p>
+                <p class="release" v-if="!app.isPublish">
+                    Coming soon
+                </p>
+                <p class="release" v-if="app.isPublish">
+                    {{ parseDate(app.releaseDate) }}
+                </p>
+                <a :href="'https://alehub.io/wallet/'+app.downloadLink"
+                   v-if="app.isPublish">
+                    <button type="button"
+                            class="button button__download">
+                        Download
+                    </button>
                 </a>
             </div>
         </div>
@@ -52,9 +68,9 @@
                 if(platform === 'macOS') {
                     return require('../../static/images/logo/macOS.svg');
                 } else if(platform === 'Windows') {
-                    return require('../../static/images/logo/Windows.svg');
+                    return require('../../static/images/logo/windows.svg');
                 } else {
-                    return require('../../static/images/logo/Linux.svg');
+                    return require('../../static/images/logo/linux.svg');
                 }
             },
             getDownloadsList() {
