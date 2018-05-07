@@ -2,7 +2,7 @@
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
-			<social-sharing url="https://alehub.io" inline-template>
+			<social-sharing :url="newsUrl" inline-template>
 				<div class="share-block">
 					<network network="twitter">
 						<img src="../../static/images/share-ic/twitter.svg" alt="" class="share-item">
@@ -82,7 +82,8 @@
 			return {
 				content: '',
 				more: '',
-				isError: false
+				isError: false,
+				newsUrl: ''
 			}
 		},
 		watch: {
@@ -122,11 +123,15 @@
 			},
 			goToNews: function (id) {
 				this.$router.push(`/blog/${id}`)
+			},
+			getNewsUrl: function () {
+				this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
 			}
 		},
 		created () {
 			this.getNews();
 			this.getLastNews();
+			this.getNewsUrl();
 		}
     }
 </script>
