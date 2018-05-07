@@ -4,108 +4,90 @@
             {{$t('download')}}
         </h3>
         <div class="separator"></div>
-        <div class="os-avail-list">
-            <div class="logo">
-
-                <!--<div class="logo__fade">-->
-                <!--</div>-->
-
-                <!--<button type="button" class="button button__fade">-->
-                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
-                <!--</button>-->
-
+        <div class="loading-block" v-if="isLoader">
+            <Spinner />
+        </div>
+        <div class="error-block" v-if="!isLoader && isError">
+            <p>A server error occurred while retrieving the application list.</p>
+        </div>
+        <div class="os-avail-list" v-if="!isLoader && !isError">
+            <div class="logo" v-for="app in downloadsList">
                 <div class="logo__wrap">
-                    <img class="logo__apple" src="../../static/images/logo/apple-logo.svg" alt="Apple logo">
+                    <img class="logo__apple" :src="getPlatformLogo(app.platformName)" alt="Apple logo">
                 </div>
-                <h4 class="logo__title">
-                    macOS
-                </h4>
-                <p class="version">
-                    Version 0.0.1
-                </p>
-                <p class="bit">
-                    64bit
-                </p>
-                <p class="release">
-                    05.05.2018
-                </p>
-
-                <a href="https://alehub.io/wallet/alehub-0.0.0.dmg">
-                    <button type="button" class="button button__download">
-                        Download
-                    </button>
+                <h4 class="logo__title">{{ app.platformName }}</h4>
+                <p class="version">Version {{ app.version }}</p>
+                <p class="bit">{{ app.capacity }}-bit</p>
+                <p class="release" v-if="!app.isPublish">Coming soon</p>
+                <p class="release" v-if="app.isPublish">{{ parseDate(app.releaseDate) }}</p>
+                <a :href="'https://alehub.io/wallet/'+app.downloadLink" v-if="app.isPublish">
+                    <button type="button" class="button button__download">Download</button>
                 </a>
             </div>
-            <div class="logo">
-
-                <!--<div class="logo__fade">-->
-                <!--</div>-->
-
-                <!--<button type="button" class="button button__fade">-->
-                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
-                <!--</button>-->
-
-                <div class="logo__wrap">
-                    <img class="logo__windows" src="../../static/images/logo/windows-logo.svg" alt="Windows logo">
-                </div>
-                <h3 class="logo__title">
-                    Windows
-                </h3>
-                <p class="version">
-                    Version 0.0.0
-                </p>
-                <p class="bit">
-                    64bit
-                </p>
-                <p class="release">
-                    Coming soon
-                </p>
-
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
-            </div>
-            <div class="logo">
-
-                <!--<div class="logo__fade">-->
-                <!--</div>-->
-
-                <!--<button type="button" class="button button__fade">-->
-                    <!--<img class="download-ic" src="../../static/images/request-ic.svg" alt="Download">-->
-                <!--</button>-->
-
-                <div class="logo__wrap">
-                    <img class="logo__linux" src="../../static/images/logo/linux-logo.svg" alt="Linux logo">
-                </div>
-                <h3 class="logo__title">
-                    Linux
-                </h3>
-                <p class="version">
-                    Version 0.0.0
-                </p>
-                <p class="bit">
-                    64bit
-                </p>
-                <p class="release">
-                    Coming soon
-                </p>
-
-                <!--<button type="button" class="button button__download">-->
-                    <!--Download-->
-                <!--</button>-->
-            </div>
-            <!--Доступно для следующих дистрибутивов-->
         </div>
     </div>
 </template>
 
 <script>
+    import Moment from 'moment';
+    import Spinner from './layouts/Spinner';
+
     export default {
-        name: 'DownloadApplicationClient'
+        name: 'DownloadApplicationClient',
+        components: {
+            Spinner
+        },
+        data () {
+            return {
+                downloadsList: [],
+                isLoader: false,
+                isError: false
+            }
+        },
+        methods: {
+            parseDate (date) {
+                return Moment(date).format('DD.MM.YYYY')
+            },
+            getPlatformLogo (platform) {
+                if(platform === 'macOS') {
+                    return require('../../static/images/logo/macOS.svg');
+                } else if(platform === 'Windows') {
+                    return require('../../static/images/logo/Windows.svg');
+                } else {
+                    return require('../../static/images/logo/Linux.svg');
+                }
+            },
+            getDownloadsList() {
+                this.isLoader = true;
+                this.isError = false;
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-version`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
+                    this.isLoader = false;
+                    this.downloadsList = response.body;
+                }, response => {
+                    this.isLoader = false;
+                    this.isError = true;
+                });
+            }
+        },
+        created () {
+            this.getDownloadsList();
+        }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .loading-block
+        margin-top 50px
+
+        img
+            width 70px
+            height 70px
+
     .download-app
         background-color #f5f5f7
         height 100vh
