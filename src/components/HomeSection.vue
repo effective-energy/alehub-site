@@ -271,7 +271,8 @@
                                 Soft cap
                             </div>
                             <div class="count">
-                                {{ isCollected }} / {{ isSoftCap }} <span class="currency">{{ isCurrentCurrency }}</span>
+                                {{ isCollected }} / {{ isSoftCap }} <span
+                                    class="currency">{{ isCurrentCurrency }}</span>
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -284,7 +285,8 @@
                                 Hard cap
                             </div>
                             <div class="count">
-                                {{ isCollected }} / {{ isHardCap }} <span class="currency">{{ isCurrentCurrency }}</span>
+                                {{ isCollected }} / {{ isHardCap }} <span
+                                    class="currency">{{ isCurrentCurrency }}</span>
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -325,37 +327,35 @@
                    target="_blank"></a>
             </div>
         </div>
-        <div class="container-fluid partners"
+        <div class="partners"
              :class="{ 'partners__dark': isDark }">
             <div class="title">
-                {{ $t("partners.title") }}
+                {{ $t("partners.title") }}:
             </div>
-            <div class="row partners-icons">
-                <a href="http://ifmo.ru/ru/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
-                         height="60px"
-                         width="114px"
-                         alt="ITMO">
-                </a>
-                <a href="https://cryptob2b.io/ru/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
-                         height="46px"
-                         width="158px"
-                         alt="CryptoB2B">
-                </a>
-                <a href="https://www.blockchain-spb.org/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
-                         height="59px"
-                         width="57px"
-                         alt="BEAR">
-                </a>
-                <a href="https://serokell.io/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
-                         height="43px"
-                         width="87px"
-                         alt="Serokell">
-                </a>
-            </div>
+            <a href="http://ifmo.ru/ru/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
+                     height="60px"
+                     width="114px"
+                     alt="ITMO">
+            </a>
+            <a href="https://cryptob2b.io/ru/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
+                     height="46px"
+                     width="158px"
+                     alt="CryptoB2B">
+            </a>
+            <a href="https://www.blockchain-spb.org/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
+                     height="59px"
+                     width="57px"
+                     alt="BEAR">
+            </a>
+            <a href="https://serokell.io/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
+                     height="43px"
+                     width="87px"
+                     alt="Serokell">
+            </a>
         </div>
         <div id="description"
              class="container-fluid what-is"
@@ -1144,8 +1144,17 @@
             margin-top 0 !important
             padding-top 150px !important
 
+            @media (min-width 1440px) and (max-width 2560px)
+                padding 150px 200px 0 200px
+
+            @media (min-width 1024px) and (max-width 1440px)
+                padding 100px 100px 0 100px
+
             @media (min-width 768px) and (max-width 1024px)
-                padding-top 50px !important
+                padding 75px 75px 0 75px
+
+            @media (min-width 425px) and (max-width 768px)
+                padding 50px 50px 0 50px
 
             @media (min-width 320px) and (max-width 425px)
                 padding-top 50px !important
@@ -1175,18 +1184,19 @@
 
     #screen1
         .partners
+            display flex
             justify-content space-between
+            align-items center
+            flex-wrap nowrap
+            width 100%
 
             .title
+                font-size 22px
+                font-weight 700
                 white-space nowrap
 
                 @media (max-width 425px)
                     margin-bottom 40px
-
-            .partners-icons
-                justify-content space-around
-                width 100%
-                flex-wrap nowrap
 
                 @media (max-width 425px)
                     display flex
