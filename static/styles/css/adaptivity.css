@@ -95,9 +95,6 @@
   .countdown {
     padding-top: 26px;
   }
-  .crypto {
-    margin-top: 60px;
-  }
   .btn-black {
     font-size: 14px;
     padding-left: 15px;
@@ -143,14 +140,10 @@
     margin-top: 24px;
     margin-left: 5px;
   }
-  .social-line {
-    margin-top: 60px;
-  }
 }
 @media (max-width: 576px) {
   .btn-buy-tokens {
     width: 100%;
-    margin-top: 24px;
     margin-left: 0;
   }
 }
@@ -227,9 +220,6 @@
   .bonus-desc {
     width: 100%;
     text-align: center;
-  }
-  .crypto {
-    margin-top: 48px;
   }
   .crypto .title {
     text-align: center;

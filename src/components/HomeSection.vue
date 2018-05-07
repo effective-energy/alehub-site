@@ -138,194 +138,222 @@
         <div class="first-screen home"
              :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="screen1 title">
-                            {{ $t("greeting.title") }}
-                        </h1>
+            <div class="row">
+                <div class="col-xl-8 col-lg-12 col-md-12">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9">
+                            <h1 class="screen1 title">
+                                {{ $t("greeting.title") }}
+                            </h1>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-11">
-                        <div class="countdown">
-                            <h2 class="title">
-                                {{ $t("greeting.countDown.title") }}
-                            </h2>
-                            <div class="timer"
-                                 :class="{ 'timer__dark': isDark }">
-                                <div class="days">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.days.first }}
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-12 col-md-12">
+                            <div class="countdown">
+                                <h2 class="title">
+                                    {{ $t("greeting.countDown.title") }}
+                                </h2>
+                                <div class="timer"
+                                     :class="{ 'timer__dark': isDark }">
+                                    <div class="days">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.days.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.days.second }}
+                                            </div>
                                         </div>
-                                        <div class="second">
-                                            {{ timer.days.second }}
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.days") }}
                                         </div>
                                     </div>
-                                    <div class="title">
-                                        {{ $t("greeting.countDown.time.days") }}
+                                    <div class="hours">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.hours.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.hours.second }}
+                                            </div>
+                                        </div>
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.hours") }}
+                                        </div>
+                                    </div>
+                                    <div class="minutes">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.minutes.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.minutes.second }}
+                                            </div>
+                                        </div>
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.minutes") }}
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="hours">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.hours.first }}
-                                        </div>
-                                        <div class="second">
-                                            {{ timer.hours.second }}
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        {{ $t("greeting.countDown.time.hours") }}
-                                    </div>
-                                </div>
-                                <div class="minutes">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.minutes.first }}
-                                        </div>
-                                        <div class="second">
-                                            {{ timer.minutes.second }}
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        {{ $t("greeting.countDown.time.minutes") }}
-                                    </div>
-                                </div>
+                            </div>
+                            <a href="https://sale.alehub.io/"
+                               target="_blank"
+                               class="a-buy-tokens">
+                                <button type="button"
+                                        class="btn btn-buy-tokens">
+                                    {{ $t("greeting.countDown.btnBuyTokens") }}
+                                </button>
+                            </a>
+                            <div class="bonus-desc">
+                                <span>{{ $t("greeting.countDown.bonus") }}</span>
+                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
                             </div>
                         </div>
-                        <a href="https://sale.alehub.io/" target="_blank" class="a-buy-tokens">
-                            <button type="button"
-                                    class="btn btn-buy-tokens">
-                                {{ $t("greeting.countDown.btnBuyTokens") }}
-                            </button>
-                        </a>
-                        <div class="bonus-desc">
-                            <span>{{ $t("greeting.countDown.bonus") }}</span>
-                            <span>{{ $t("greeting.countDown.notAvailable") }}</span>
-                        </div>
-
-                        <div class="play-video">
-                            <button class="play-button" @click="playVideo"
-                                    style="display: flex; justify-content: center; align-items: center;">
-                                <div class="wrap-play" :class="{ 'active': mainPlayer }">
-                                    <span class="line l-1"></span>
-                                    <span class="line l-2"></span>
-                                    <span class="line l-3"></span>
+                        <div class="col-xl-4 col-lg-12 col-md-12">
+                            <div class="play-video">
+                                <button class="play-button" @click="playVideo">
+                                    <div class="wrap-play" :class="{ 'active': mainPlayer }">
+                                        <span class="line l-1"></span>
+                                        <span class="line l-2"></span>
+                                        <span class="line l-3"></span>
+                                    </div>
+                                </button>
+                                <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
+                                    <div class="place-player__frame">
+                                    </div>
                                 </div>
-                            </button>
-                            <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
-                                <div class="place-player__frame">
-                                </div>
-                            </div>
-                            <div class="main-player" v-if="mainPlayer">
-                                <iframe class="iframe"
-                                        src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
-                                        frameborder="0"
-                                        allow="autoplay; encrypted-media"
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                        </div>
-
-                        <div class="crypto">
-                            <div class="title">
-                                {{ $t("greeting.acceptedCrypto.title") }}
-                            </div>
-                            <div class="collection"
-                                 :class="{ 'collection__dark': isDark }">
-                                <div class="item">
-                                    <a href="https://sale.alehub.io/" target="_blank">
-                                        <div class="cur-logo">
-                                            <img src="../../static/images/btc.svg" alt="Bitcoin">
-                                        </div>
-                                        <div class="description">
-                                            <span class="count">32,256 ALE</span>
-                                            <span class="name">BTC</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="https://sale.alehub.io/" target="_blank">
-                                        <div class="cur-logo">
-                                            <img src="../../static/images/eth.svg" alt="Etherium">
-                                        </div>
-                                        <div class="description">
-                                            <span class="count">2,606 ALE</span>
-                                            <span class="name">ETH</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="https://sale.alehub.io/" target="_blank">
-                                        <div class="cur-logo">
-                                            <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
-                                        </div>
-                                        <div class="description">
-                                            <span class="count">4,946 ALE</span>
-                                            <span class="name">BCH</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="https://sale.alehub.io/" target="_blank">
-                                        <div class="cur-logo">
-                                            <img src="../../static/images/ltc.svg" alt="Litecoin">
-                                        </div>
-                                        <div class="description">
-                                            <span class="count">530 ALE</span>
-                                            <span class="name">LTC</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item">
-                                    <a href="https://sale.alehub.io/" target="_blank">
-                                        <div class="cur-logo">
-                                            <img src="../../static/images/dash.svg" alt="Dash">
-                                        </div>
-                                        <div class="description">
-                                            <span class="count">1,650 ALE</span>
-                                            <span class="name">DASH</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ico-progress"
-                             :class="{ 'ico-progress__dark': isDark }">
-                            <div class="state">
-                                <div class="title">
-                                    Soft cap
-                                </div>
-                                <div class="count">
-                                    {{ collected }} / {{ softCap }} ETH
-                                </div>
-                            </div>
-                            <div class="progress-bar-outer">
-                                <div class="progress-bar-inner"
-                                     :style="{width: softCapWidth}">
-                                </div>
-                            </div>
-                            <div class="state hard-cap">
-                                <div class="title">
-                                    Hard cap
-                                </div>
-                                <div class="count">
-                                    {{ collected }} / {{ hardCap }} ETH
-                                </div>
-                            </div>
-                            <div class="progress-bar-outer">
-                                <div class="progress-bar-inner"
-                                     :style="{ width: hardCapWidth }">
+                                <div class="main-player" v-if="mainPlayer">
+                                    <iframe class="iframe"
+                                            src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
+                                            frameborder="0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen>
+                                    </iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-11">
+                    <div class="crypto">
+                        <div class="title">
+                            {{ $t("greeting.acceptedCrypto.title") }}
+                        </div>
+                        <div class="collection"
+                             :class="{ 'collection__dark': isDark }">
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="../../static/images/btc.svg" alt="Bitcoin">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">32,256 ALE</span>
+                                        <span class="name">BTC</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="../../static/images/eth.svg" alt="Etherium">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">2,606 ALE</span>
+                                        <span class="name">ETH</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">4,946 ALE</span>
+                                        <span class="name">BCH</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="../../static/images/ltc.svg" alt="Litecoin">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">530 ALE</span>
+                                        <span class="name">LTC</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="../../static/images/dash.svg" alt="Dash">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">1,650 ALE</span>
+                                        <span class="name">DASH</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="https://sale.alehub.io/" target="_blank">
+                                    <div class="cur-logo">
+                                        <img src="" alt="фиат">
+                                    </div>
+                                    <div class="description">
+                                        <span class="count">$</span>
+                                        <span class="name">$</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="position: relative;">
+                <div class="col-xl-12 col-lg-11">
+                    <div class="ico-progress"
+                         :class="{ 'ico-progress__dark': isDark }">
+                        <div class="state">
+                            <div class="title">
+                                Soft cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ softCap }} ETH
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{width: softCapWidth}">
+                            </div>
+                        </div>
+                        <div class="state hard-cap">
+                            <div class="title">
+                                Hard cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ hardCap }} ETH
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: hardCapWidth }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-next">
+                    <a class="scroll-ic"
+                       v-scroll-to="'#description'">
+                        <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
+                    </a>
+                </div>
+            </div>
             <div id="social-line"
-                 class="container-fluid social-line"
+                 class="social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
                 <a href="https://www.facebook.com/alehub.io/"
@@ -346,10 +374,6 @@
                 <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
-                <a class="scroll-ic"
-                   v-scroll-to="'#description'">
-                    <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
-                </a>
             </div>
         </div>
         <div class="container-fluid partners"
@@ -670,8 +694,39 @@
 
 <style lang="stylus" scoped>
 
+    .home
+        position relative
+
     .partners
         background-color #ececf0
+
+    .play-video
+        @media (min-width 1024px) and (max-width 1440px)
+            display flex !important
+            justify-content center
+            align-items center
+            width 100%
+            margin-top 0 !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            width 100%
+            padding-top 30px
+            //padding-bottom 30px
+            margin-top 0 !important
+
+        .play-button
+            display flex
+            justify-content center
+            align-items center
+
+
+        .main-player
+            @media (min-width 768px) and (max-width 1024px)
+                padding-top 50px
 
     .wrap-play
         .line
@@ -786,6 +841,9 @@
         -o-transition all .5s ease-in-out
         transition all .5s ease-in-out
 
+        @media (min-width 768px) and (max-width 1024px)
+            display none
+
     .place-player__frame
         background-color #000
 
@@ -822,7 +880,6 @@
             right 0
             left 0
             position relative
-            margin-top 20px
             .iframe, .place-player__frame
                 width 800px
                 height 450px
@@ -1013,11 +1070,14 @@
                 outline none
 
     #screen1
-        .container-fluid.partners
+        .partners
             margin-top 0 !important
             padding-top 150px !important
 
-            @media (max-width 425px)
+            @media (min-width 768px) and (max-width 1024px)
+                padding-top 50px !important
+
+            @media (min-width 320px) and (max-width 425px)
                 padding-top 50px !important
                 padding-bottom 50px !important
 
@@ -1025,7 +1085,7 @@
                 padding-top 50px !important
 
     #screen1
-        .container-fluid.what-is
+        .what-is
             margin-top 0
             padding 165px 125px 0
 
@@ -1035,152 +1095,157 @@
                 padding-top 20px
 
     .social-line
+        /*@media (min-width 1024px) and (max-width 1440px)*/
+        /*margin-top 60px*/
+
         .social-item
             -webkit-transition background .3s ease-in-out
             -o-transition background color .3s ease-in-out
             transition background color .3s ease-in-out
 
     #screen1
-        .container-fluid
-            &.partners
-                justify-content space-between
+        .partners
+            justify-content space-between
 
-                .title
-                    white-space nowrap
+            .title
+                white-space nowrap
 
-                    @media (max-width 425px)
-                        margin-bottom 40px
+                @media (max-width 425px)
+                    margin-bottom 40px
 
-                .partners-icons
-                    justify-content space-around
+            .partners-icons
+                justify-content space-around
+                width 100%
+                flex-wrap nowrap
+
+                @media (max-width 425px)
+                    display flex
+                    flex-direction column
+                    justify-content center
+                    align-items center
+
+                    a
+                        margin-bottom 20px
+
+                @media (max-width 960px)
+                    flex-wrap wrap
+
+        .crypto
+            @media (min-width 1024px) and (max-width 1440px)
+                margin-top 20px
+
+            @media (max-width 320px)
+                .collection
+                    .item
+                        margin-right 10px
+                        width 50px
+
+                        &:last-child
+                            margin-right 0
+
+        &.what-is
+            .desktop-outer
+                margin 0 auto
+
+                .slider-container
                     width 100%
-                    flex-wrap nowrap
+                    position absolute
+                    height auto
 
-                    @media (max-width 425px)
-                        display flex
-                        flex-direction column
-                        justify-content center
-                        align-items center
+                .desktop
+                    position relative
 
-                        a
-                            margin-bottom 20px
-
-                    @media (max-width 960px)
-                        flex-wrap wrap
-
-            .crypto
-                @media (max-width 320px)
-                    .collection
-                        .item
-                            margin-right 10px
-                            width 50px
-
-                            &:last-child
-                                margin-right 0
-
-            &.what-is
-                .desktop-outer
-                    margin 0 auto
-
+                @media (max-width 2600px)
                     .slider-container
-                        width 100%
-                        position absolute
-                        height auto
+                        width 709px
+                        height 443px
+                        left 252px
+                        top 40px
 
                     .desktop
-                        position relative
+                        left 140px
+                        width 900px
 
-                    @media (max-width 2600px)
-                        .slider-container
-                            width 709px
-                            height 443px
-                            left 252px
-                            top 40px
+                @media (max-width 2365px)
+                    .slider-container
+                        left 162px
 
-                        .desktop
-                            left 140px
-                            width 900px
+                    .desktop
+                        left 50px
 
-                    @media (max-width 2365px)
-                        .slider-container
-                            left 162px
+                @media (max-width 2150px)
+                    .slider-container
+                        width 630px
+                        height 395px
+                        left 102px
+                        top 36px
 
-                        .desktop
-                            left 50px
+                    .desktop
+                        left 0
+                        width 800px
 
-                    @media (max-width 2150px)
-                        .slider-container
-                            width 630px
-                            height 395px
-                            left 102px
-                            top 36px
+                @media (max-width 1860px)
+                    .slider-container
+                        width 552px
+                        height 345px
+                        left 91px
+                        top 32px
 
-                        .desktop
-                            left 0
-                            width 800px
+                    .desktop
+                        left 0
+                        width 700px
 
-                    @media (max-width 1860px)
-                        .slider-container
-                            width 552px
-                            height 345px
-                            left 91px
-                            top 32px
+                @media (max-width 1640px)
+                    padding-top 50px
 
-                        .desktop
-                            left 0
-                            width 700px
+                    .slider-container
+                        width 473px
+                        height 296px
+                        left 80px
+                        top 77px
 
-                    @media (max-width 1640px)
-                        padding-top 50px
+                    .desktop
+                        left 0
+                        width 600px
 
-                        .slider-container
-                            width 473px
-                            height 296px
-                            left 80px
-                            top 77px
+                @media (max-width 1460px)
+                    padding-top 100px
 
-                        .desktop
-                            left 0
-                            width 600px
+                    .slider-container
+                        width 393px
+                        height 247px
+                        left 70px
+                        top 122px
 
-                    @media (max-width 1460px)
-                        padding-top 100px
+                    .desktop
+                        left 0
+                        width 500px
 
-                        .slider-container
-                            width 393px
-                            height 247px
-                            left 70px
-                            top 122px
+                @media (max-width 1240px)
+                    padding-top 100px
 
-                        .desktop
-                            left 0
-                            width 500px
+                    .slider-container
+                        width 315px
+                        height 197px
+                        left 59px
+                        top 118px
 
-                    @media (max-width 1240px)
-                        padding-top 100px
-
-                        .slider-container
-                            width 315px
-                            height 197px
-                            left 59px
-                            top 118px
-
-                        .desktop
-                            left 0
-                            width 400px
-
-                    @media (max-width 991px)
-                        padding-top 0
-
-                        .slider-container
-                            display none
-
-                        .desktop
-                            display none
+                    .desktop
+                        left 0
+                        width 400px
 
                 @media (max-width 991px)
-                    .desktop-for-mobile
-                        display block
+                    padding-top 0
+
+                    .slider-container
+                        display none
+
+                    .desktop
+                        display none
+
+            @media (max-width 991px)
+                .desktop-for-mobile
+                    display block
 
         .play-video
             display inline-block
@@ -1222,8 +1287,6 @@
                 left 15%
             @media (max-width 1274px)
                 position unset
-                margin 48px auto 0
-                display block
                 text-align center
 
                 .play-button
@@ -1235,10 +1298,15 @@
                 align-items center
                 flex-direction column
 
+        .scroll-next
+            position absolute
+            bottom -70px
+            width 100%
+            display flex
+            justify-content center
+
         .scroll-ic
             cursor pointer
-            margin-right auto
-            margin-left calc(50% - 396px)
             background-color transparent
             border none
             transition transform .5s ease
@@ -1254,9 +1322,11 @@
             font-family MuseoSansCyrl500
             font-size 20px
             color #34343e
-            margin-top 60px
 
-            @media (max-width: 320px)
+            /*@media (min-width 1024px) and (max-width 1440px)*/
+            /*margin-top 30px*/
+
+            @media (max-width 320px)
                 font-size 14px
 
             .state

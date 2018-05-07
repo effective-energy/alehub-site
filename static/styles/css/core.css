@@ -41,35 +41,35 @@ body {
 .navbar-nav .nav-item {
   font-family: MuseoSansCyrl500;
 }
-.navbar-nav .nav-item:nth-child(1).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(1).active ~ .nav-line {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(2).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(2).active ~ .nav-line {
   -webkit-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(3).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(3).active ~ .nav-line {
   -webkit-transform: translate3d(200%, 0, 0);
   transform: translate3d(200%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(4).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(4).active ~ .nav-line {
   -webkit-transform: translate3d(300%, 0, 0);
   transform: translate3d(300%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(5).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(5).active ~ .nav-line {
   -webkit-transform: translate3d(400%, 0, 0);
   transform: translate3d(400%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(6).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(6).active ~ .nav-line {
   -webkit-transform: translate3d(500%, 0, 0);
   transform: translate3d(500%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(7).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(7).active ~ .nav-line {
   -webkit-transform: translate3d(600%, 0, 0);
   transform: translate3d(600%, 0, 0);
 }
-.navbar-nav .nav-item:nth-child(8).active ~.nav-line {
+.navbar-nav .nav-item:nth-child(8).active ~ .nav-line {
   -webkit-transform: translate3d(700%, 0, 0);
   transform: translate3d(700%, 0, 0);
 }
@@ -118,89 +118,112 @@ body {
   color: #ccc;
 }
 #screen1 .first-screen {
-  min-height: 100vh;
+  padding: 50px 200px 0 200px;
+  min-height: calc(100vh - 124px);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
-#screen1 .container-fluid {
-  padding-left: 230px;
-  padding-right: 230px;
+@media (min-width: 1440px) and (max-width: 2560px) {
+  #screen1 .first-screen {
+    padding: 50px 200px 0 200px;
+  }
 }
-#screen1 .container-fluid.social-line {
-  padding-left: 150px;
-  padding-right: 150px;
+@media (min-width: 1024px) and (max-width: 1440px) {
+  #screen1 .first-screen {
+    padding: 50px 100px 0 100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #screen1 .first-screen {
+    min-height: calc(120vh + 170px - 124px);
+    max-height: calc(120vh + 170px + 450px - 124px);
+    padding: 50px 75px 0 75px;
+  }
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  #screen1 .first-screen {
+    padding: 50px 200px 0 200px;
+  }
+}
+#screen1 .first-screen .social-line {
+  margin-left: -50px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-#screen1 .container-fluid.social-line .line {
+@media (min-width: 768px) and (max-width: 1024px) {
+  #screen1 .first-screen .social-line {
+    margin-left: 0;
+  }
+}
+#screen1 .first-screen .social-line .line {
   width: 48px;
-  height: 0px;
+  height: 0;
   border: 1px solid #000;
   margin-right: 24px;
 }
-#screen1 .container-fluid.social-line .social-item {
+#screen1 .first-screen .social-line .social-item {
   height: 54px;
   width: 54px;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
-#screen1 .container-fluid.social-line .social-item.fb {
+#screen1 .first-screen .social-line .social-item.fb {
   background-image: url("../../images/fb-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.fb:hover {
+#screen1 .first-screen .social-line .social-item.fb:hover {
   background-image: url("../../images/fb-hovered.svg");
 }
-#screen1 .container-fluid.social-line .social-item.ins {
+#screen1 .first-screen .social-line .social-item.ins {
   background-image: url("../../images/instagram-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.ins:hover {
+#screen1 .first-screen .social-line .social-item.ins:hover {
   background-image: url("../../images/instagram-hovered.svg");
 }
-#screen1 .container-fluid.social-line .social-item.yt {
+#screen1 .first-screen .social-line .social-item.yt {
   background-image: url("../../images/yt-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.yt:hover {
+#screen1 .first-screen .social-line .social-item.yt:hover {
   background-image: url("../../images/yt-hovered.svg");
 }
-#screen1 .container-fluid.social-line .social-item.tw {
+#screen1 .first-screen .social-line .social-item.tw {
   background-image: url("../../images/twitter-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.tw:hover {
+#screen1 .first-screen .social-line .social-item.tw:hover {
   background-image: url("../../images/twitter-hovered.svg");
 }
-#screen1 .container-fluid.social-line .social-item.tg {
+#screen1 .first-screen .social-line .social-item.tg {
   background-image: url("../../images/telegram-ic-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.tg:hover {
+#screen1 .first-screen .social-line .social-item.tg:hover {
   background-image: url("../../images/telegram-ic-hovered.svg");
 }
-#screen1 .container-fluid.social-line .social-item.vk {
+#screen1 .first-screen .social-line .social-item.vk {
   background-image: url("../../images/vk-default.svg");
 }
-#screen1 .container-fluid.social-line .social-item.vk:hover {
+#screen1 .first-screen .social-line .social-item.vk:hover {
   background-image: url("../../images/vk-hovered.svg");
 }
-#screen1 .container-fluid.partners {
+#screen1 .first-screen.partners {
   margin-top: 150px;
   padding: 0 225px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-#screen1 .container-fluid.partners .title {
+#screen1 .first-screen.partners .title {
   margin-right: 96px;
   font-family: MuseoSansCyrl700;
   font-size: 30px;
   color: #34343e;
   z-index: 10;
 }
-#screen1 .container-fluid.partners img {
+#screen1 .first-screen.partners img {
   margin: 16px 64px 0;
 }
-#screen1 .container-fluid.what-is {
+#screen1 .first-screen.what-is {
   margin-top: 40px;
   padding: 125px 125px 0;
   -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
@@ -209,32 +232,32 @@ body {
   -o-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
   background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
 }
-#screen1 .container-fluid.what-is .desktop {
+#screen1 .first-screen.what-is .desktop {
   width: 100%;
   z-index: 15;
 }
-#screen1 .container-fluid.what-is .slider-container {
+#screen1 .first-screen.what-is .slider-container {
   z-index: 14;
 }
-#screen1 .container-fluid.what-is .slider-container .slider-pagination-bullets {
+#screen1 .first-screen.what-is .slider-container .slider-pagination-bullets {
   display: none;
 }
-#screen1 .container-fluid.what-is .screenshot {
+#screen1 .first-screen.what-is .screenshot {
   width: 100%;
 }
-#screen1 .container-fluid.what-is .title {
+#screen1 .first-screen.what-is .title {
   margin-top: 15px;
   font-family: MuseoSansCyrl300;
   font-size: 60px;
   color: #34343e;
 }
-#screen1 .container-fluid.what-is .subtitle {
+#screen1 .first-screen.what-is .subtitle {
   margin-top: 5px;
   font-family: MuseoSansCyrl100;
   font-size: 18px;
   color: #34343e;
 }
-#screen1 .container-fluid.what-is .description {
+#screen1 .first-screen.what-is .description {
   margin-top: 24px;
   font-family: MuseoSansCyrl100;
   font-size: 18px;
@@ -242,29 +265,28 @@ body {
   color: #34343e;
   max-width: 630px;
 }
-#screen1 .container-fluid.what-is .buttons {
+#screen1 .first-screen.what-is .buttons {
   margin-top: 48px;
 }
-#screen1 .container-fluid.what-is .btn-black {
+#screen1 .first-screen.what-is .btn-black {
   margin-top: 25px;
   margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
 }
-#screen1 .container-fluid.what-is .btn-black img {
+#screen1 .first-screen.what-is .btn-black img {
   width: 13px;
   height: 16px;
 }
-#screen1 .container-fluid.what-is .desktop-outer {
+#screen1 .first-screen.what-is .desktop-outer {
   display: flex;
   flex-direction: column;
 }
-#screen1 .container-fluid.what-is .desc {
+#screen1 .first-screen.what-is .desc {
   padding-left: 50px;
 }
 .social-line {
   height: 54px;
-  margin-top: 80px;
 }
 .desktop-for-mobile {
   display: none;
@@ -294,68 +316,68 @@ body {
 }
 @-webkit-keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 @-moz-keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 @-moz-keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 @-webkit-keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 @-o-keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 @keyframes movecolors {
   0% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
   50% {
     background-position: 100% 22%;
   }
   100% {
-    background-position: 0% 79%;
+    background-position: 0 79%;
   }
 }
 .dropdown-toggle {
@@ -386,11 +408,10 @@ body {
 }
 .screen1.title {
   font-size: 60px;
-  margin-top: 50px;
   font-family: MuseoSansCyrl300;
+  margin-bottom: 0;
 }
 .countdown {
-  padding-top: 40px;
   display: inline-block;
 }
 .countdown .title {
@@ -446,7 +467,6 @@ body {
   line-height: 1.3;
 }
 .crypto {
-  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }

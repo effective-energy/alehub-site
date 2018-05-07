@@ -568,7 +568,7 @@ const messages = {
             navigationMenu: 'Вернуться к меню'
         },
         greeting: {
-            title: 'Наступает новая эра ведения проектов',
+            title: 'The new era of project management is coming',
             countDown: {
                 title: 'pre-ICO начинается через',
                 time: {
