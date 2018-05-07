@@ -45,7 +45,7 @@
 					<h1 class="more-news-title">More news</h1>
 
 					<div class="more-news-content row">
-						<div class="news-item col-lg-4 col-md-4 col-sm-6 col-12" v-for="item in more" :key="item._id">
+						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item._id">
 							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
@@ -109,7 +109,9 @@
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`, {
+				this.$http.post(`https://alehub.eu-4.evennode.com/ale-news/last/4/`, {
+					"withoutNewsId": this.$route.params.id
+				}, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -117,7 +119,6 @@
                 }).then(response => {
 					this.more = response.body;
 				}, response => {
-					console.log('Error getting news', response);
 					this.isError = true;
 				});
 			},
