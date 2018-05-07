@@ -304,7 +304,6 @@ body
     margin-left 5px
     background linear-gradient(45deg, #fda503, #fff5da)
     background-size 200% 200%
-
     -webkit-animation movecolors 10s ease infinite
     -moz-animation movecolors 10s ease infinite
     animation movecolors 10s ease infinite
@@ -458,48 +457,64 @@ body
         flex-direction row
         margin-top 25px
 
-        @media (max-width: 320px)
+        @media (max-width 320px)
             flex-wrap wrap
 
         .item
-            padding 14px 5px
-            width 72px
+            width 90px
             height 104px
             display flex
             flex-direction column
             justify-content space-between
             align-items center
-            background #FFFFFF
-            margin-right 18px
+            background transparent
 
-            @media (max-width: 320px)
+            @media (max-width 320px)
                 margin-top 10px
-                width 50px
+                width 68px
 
-            .cur-logo
-                display flex
-                justify-content center
-                height 46px
+            .inner
+                height 100%
+                width 72px
+                padding 14px 5px
+                background #ffffff
+                -webkit-transition all .3s ease-in-out
+                -o-transition all .3s ease-in-out
+                transition all .3s ease-in-out
 
-            .description
-                font-family MuseoSansCyrl700
-                line-height 1
+                @media (max-width 320px)
+                    margin-top 10px
+                    width 50px
 
-                .count
-                    display none
+                .cur-logo
+                    display flex
+                    justify-content center
+                    height 46px
 
-                @media (max-width: 320px)
-                    font-size 10px
-
-            &:hover
-                padding-bottom 7px
-                background #ffd24f
                 .description
+                    font-family MuseoSansCyrl700
+                    line-height 1
+
                     .count
-                        display block
-                        text-align center
-                    .name
                         display none
+
+                    .name
+                        text-transform uppercase
+
+                    @media (max-width 320px)
+                        font-size 10px
+
+                &:hover
+                    padding-bottom 7px
+                    background #ffd24f
+
+                    .description
+                        .count
+                            display block
+                            text-align center
+
+                        .name
+                            display none
 
 .anim
     width 100%

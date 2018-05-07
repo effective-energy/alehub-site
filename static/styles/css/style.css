@@ -510,48 +510,64 @@ body {
   }
 }
 .crypto .collection .item {
-  padding: 14px 5px;
-  width: 72px;
+  width: 90px;
   height: 104px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  margin-right: 18px;
+  background: transparent;
 }
 @media (max-width: 320px) {
   .crypto .collection .item {
     margin-top: 10px;
+    width: 68px;
+  }
+}
+.crypto .collection .item .inner {
+  height: 100%;
+  width: 72px;
+  padding: 14px 5px;
+  background: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 320px) {
+  .crypto .collection .item .inner {
+    margin-top: 10px;
     width: 50px;
   }
 }
-.crypto .collection .item .cur-logo {
+.crypto .collection .item .inner .cur-logo {
   display: flex;
   justify-content: center;
   height: 46px;
 }
-.crypto .collection .item .description {
+.crypto .collection .item .inner .description {
   font-family: MuseoSansCyrl700;
   line-height: 1;
 }
-.crypto .collection .item .description .count {
+.crypto .collection .item .inner .description .count {
   display: none;
 }
+.crypto .collection .item .inner .description .name {
+  text-transform: uppercase;
+}
 @media (max-width: 320px) {
-  .crypto .collection .item .description {
+  .crypto .collection .item .inner .description {
     font-size: 10px;
   }
 }
-.crypto .collection .item:hover {
+.crypto .collection .item .inner:hover {
   padding-bottom: 7px;
   background: #ffd24f;
 }
-.crypto .collection .item:hover .description .count {
+.crypto .collection .item .inner:hover .description .count {
   display: block;
   text-align: center;
 }
-.crypto .collection .item:hover .description .name {
+.crypto .collection .item .inner:hover .description .name {
   display: none;
 }
 .anim {

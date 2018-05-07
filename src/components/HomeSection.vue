@@ -139,7 +139,7 @@
              :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
             <div class="row">
-                <div class="col-xl-8 col-lg-12 col-md-12">
+                <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="row">
                         <div class="col-xl-9 col-lg-9">
                             <h1 class="screen1 title">
@@ -243,71 +243,20 @@
                         </div>
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/btc.svg" alt="Bitcoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">32,256 ALE</span>
-                                        <span class="name">BTC</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/eth.svg" alt="Etherium">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">2,606 ALE</span>
-                                        <span class="name">ETH</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">4,946 ALE</span>
-                                        <span class="name">BCH</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/ltc.svg" alt="Litecoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">530 ALE</span>
-                                        <span class="name">LTC</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/dash.svg" alt="Dash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">1,650 ALE</span>
-                                        <span class="name">DASH</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://sale.alehub.io/" target="_blank">
-                                    <div class="cur-logo">
-                                        <img src="" alt="фиат">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">$</span>
-                                        <span class="name">$</span>
-                                    </div>
-                                </a>
+                            <div class="item" v-for="item in currencies"
+                                 @mouseover="changeCurrentCurrency(item.name)"
+                                 @mouseout="resetCurrentCurrency">
+                                <div class="inner">
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img :src="item.src" :alt="item.alt">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">{{ item.count }}</span>
+                                            <span class="name">{{ item.name }}</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -322,12 +271,12 @@
                                 Soft cap
                             </div>
                             <div class="count">
-                                {{ collected }} / {{ softCap }} ETH
+                                {{ isCollected }} / {{ isSoftCap }} <span class="currency">{{ isCurrentCurrency }}</span>
                             </div>
                         </div>
                         <div class="progress-bar-outer">
                             <div class="progress-bar-inner"
-                                 :style="{width: softCapWidth}">
+                                 :style="{ width: softCapWidth }">
                             </div>
                         </div>
                         <div class="state hard-cap">
@@ -335,7 +284,7 @@
                                 Hard cap
                             </div>
                             <div class="count">
-                                {{ collected }} / {{ hardCap }} ETH
+                                {{ isCollected }} / {{ isHardCap }} <span class="currency">{{ isCurrentCurrency }}</span>
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -378,7 +327,9 @@
         </div>
         <div class="container-fluid partners"
              :class="{ 'partners__dark': isDark }">
-            <div class="title">{{$t("partners.title")}}</div>
+            <div class="title">
+                {{ $t("partners.title") }}
+            </div>
             <div class="row partners-icons">
                 <a href="http://ifmo.ru/ru/" target="_blank">
                     <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
@@ -484,6 +435,63 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
+                alePrice: 0.3,
+                currencies: {
+                    btc: {
+                        src: '../../static/images/btc.svg',
+                        alt: 'bitcoin',
+                        count: 32256,
+                        name: 'btc',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 3521.5
+                    },
+                    eth: {
+                        src: '../../static/images/eth.svg',
+                        alt: 'etherium',
+                        count: 2606,
+                        name: 'eth',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 45144
+                    },
+                    bch: {
+                        src: '../../static/images/bch.svg',
+                        alt: 'bitcoin cash',
+                        count: 4946,
+                        name: 'bch',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 20246
+                    },
+                    ltc: {
+                        src: '../../static/images/ltc.svg',
+                        alt: 'litecoin',
+                        count: 503,
+                        name: 'ltc',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 202454
+                    },
+                    dash: {
+                        src: '../../static/images/dash.svg',
+                        alt: 'dash',
+                        count: 1605,
+                        name: 'dash',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 72746.5
+                    },
+                    usd: {
+                        src: '../../static/images/usd.svg',
+                        alt: 'usd',
+                        count: 207,
+                        name: 'usd',
+                        collected: 2000000,
+                        softCap: 2000000,
+                        hardCap: 33000000
+                    }
+                },
                 reBuild: true,
                 sliderInit: {
                     currentPage: 0,
@@ -514,15 +522,28 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 2000,
-                softCap: 2000,
-                hardCap: 33000,
+                collected: 2000000,
+                softCap: 2000000,
+                hardCap: 33000000,
+                currentCurrency: 'usd',
                 anime: '',
                 isPaused: false,
                 mainPlayer: false
             }
         },
         computed: {
+            isCollected: function () {
+                return this.collected;
+            },
+            isSoftCap: function () {
+                return this.softCap;
+            },
+            isHardCap: function () {
+                return this.hardCap;
+            },
+            isCurrentCurrency: function () {
+                return this.currentCurrency;
+            },
             checkWindowWidth: function () {
                 return window.innerWidth > 420;
             },
@@ -538,6 +559,18 @@
             },
         },
         methods: {
+            changeCurrentCurrency: function (name) {
+                this.collected = this.currencies[name].collected;
+                this.softCap = this.currencies[name].softCap;
+                this.hardCap = this.currencies[name].hardCap;
+                this.currentCurrency = name;
+            },
+            resetCurrentCurrency: function () {
+                this.collected = this.currencies.usd.collected;
+                this.softCap = this.currencies.usd.softCap;
+                this.hardCap = this.currencies.usd.hardCap;
+                this.currentCurrency = this.currencies.usd.name;
+            },
             playVideo: function () {
                 this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
             },
@@ -658,12 +691,40 @@
                 setTimeout(() => {
                     this.reBuild = true;
                 }, 100);
+            },
+            getCurrentExchangeRates: function () {
+                this.$http.get('https://alehub.eu-4.evennode.com/ale-system/crypto-price', {
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    this.currencies.btc.hardCap = Math.round(this.hardCap / 800 / (response.body[0].price / 800));
+                    this.currencies.eth.hardCap = Math.round(this.hardCap / 800);
+                    this.currencies.bch.hardCap = Math.round(this.hardCap / 800 / (response.body[2].price / 800));
+                    this.currencies.ltc.hardCap = Math.round(this.hardCap / 800 / (response.body[3].price / 800));
+                    this.currencies.dash.hardCap = Math.round(this.hardCap / 800 / (response.body[4].price / 800));
+
+                    this.currencies.btc.softCap = Math.round(this.softCap / 800 / (response.body[0].price / 800));
+                    this.currencies.eth.softCap = Math.round(this.softCap / 800);
+                    this.currencies.bch.softCap = Math.round(this.softCap / 800 / (response.body[2].price / 800));
+                    this.currencies.ltc.softCap = Math.round(this.softCap / 800 / (response.body[3].price / 800));
+                    this.currencies.dash.softCap = Math.round(this.softCap / 800 / (response.body[4].price / 800));
+
+                    this.currencies.btc.collected = Math.round(this.collected / 800 / (response.body[0].price / 800));
+                    this.currencies.eth.collected = Math.round(this.collected / 800);
+                    this.currencies.bch.collected = Math.round(this.collected / 800 / (response.body[2].price / 800));
+                    this.currencies.ltc.collected = Math.round(this.collected / 800 / (response.body[3].price / 800));
+                    this.currencies.dash.collected = Math.round(this.collected / 800 / (response.body[4].price / 800));
+                }, response => {
+                    console.log('Error getting news', response);
+                });
             }
         },
-        created() {
-
-        },
         mounted() {
+
+            this.getCurrentExchangeRates();
+
             setTimeout(() => {
                 if (localStorage.getItem('color-theme') === 'dark') {
                     this.isDark = true;
@@ -722,7 +783,6 @@
             display flex
             justify-content center
             align-items center
-
 
         .main-player
             @media (min-width 768px) and (max-width 1024px)
@@ -1008,10 +1068,20 @@
 
     .collection
         .item
-            -webkit-transition all .3s ease-in-out
-            -o-transition all .3s ease-in-out
-            transition all .3s ease-in-out
             cursor pointer
+
+            &:last-child
+                .inner
+                    background-color #ffd24f
+
+            a
+                .cur-logo
+                    img
+                        max-width 40px !important
+
+                .description
+                    padding-top 10px
+                    text-align center
 
             @media (max-width 425px)
                 background-color #ffd24f !important
@@ -1336,6 +1406,10 @@
 
                 &.hard-cap
                     margin-top 24px
+
+                .count
+                    .currency
+                        text-transform uppercase
 
             .progress-bar-outer
                 height 4px
