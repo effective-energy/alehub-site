@@ -406,6 +406,12 @@
             </div>
         </div>
 
+        <div class="telegram-alert">
+            <a href="https://t.me/alehub" target="_blank">
+                <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
+            </a>
+        </div>
+
     </section>
 </template>
 
@@ -768,6 +774,27 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .telegram-alert
+        cursor pointer
+        position fixed
+        right 150px
+        bottom 150px
+        border-radius 50%
+        background-color #343a49
+        width 70px
+        height 70px
+        z-index 1000
+
+        a
+            width 100%
+            height 100%
+            display flex
+            align-items center
+            justify-content center
+
+            img
+                width 45%
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
