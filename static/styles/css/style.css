@@ -203,7 +203,13 @@ body {
     margin-left: 0;
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
+  #screen1 .home .social-line {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 425px) {
   #screen1 .home .social-line {
     margin-left: 0;
     justify-content: space-between;

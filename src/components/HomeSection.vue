@@ -358,51 +358,51 @@
             </a>
         </div>
         <div id="description"
-             class="container-fluid what-is"
+             class="what-is"
              :class="{ 'description__dark': isDark }">
-            <!--<div class="row">-->
-                <!--<div class="col-lg-6 promo">-->
-                    <!--<div class="desktop-outer">-->
-                        <!--<img src="../../static/images/desctop-transparent.png"-->
-                             <!--class="desktop">-->
-                        <!--<slider v-if="reBuild" ref="slider"-->
-                                <!--:pages="pages"-->
-                                <!--:sliderinit="sliderInit">-->
-                        <!--</slider>-->
-                    <!--</div>-->
-                    <!--<img src="../../static/images/desctop.png"-->
-                         <!--class="desktop-for-mobile">-->
-                    <!--<a class="btn btn-black"-->
-                       <!--v-scroll-to="'#download-application'"-->
-                       <!--style="font-weight: bold; color: #fff;">-->
-                        <!--<button type="button">-->
-                            <!--<img src="../../static/images/request-ic.svg">-->
-                            <!--<span style="white-space: initial;">-->
-                                <!--{{ $t("about.btnGroup.download") }}-->
-                            <!--</span>-->
-                        <!--</button>-->
-                    <!--</a>-->
-                <!--</div>-->
-                <!--<div class="col-lg-6 desc" style="align-self: flex-start;">-->
-                    <!--<h1 class="title">-->
-                        <!--{{$t("about.title")}}-->
-                    <!--</h1>-->
-                    <!--<h3 class="subtitle">-->
-                        <!--{{$t("about.subTitle")}}-->
-                    <!--</h3>-->
-                    <!--<p class="description">-->
-                        <!--{{$t("about.description")}}-->
-                    <!--</p>-->
-                    <!--<div class="buttons">-->
-                        <!--<a class="btn btn-yellow">-->
-                            <!--{{$t("about.btnGroup.whitePaper")}}-->
-                        <!--</a>-->
-                        <!--<a class="btn btn-yellow" v-scroll-to="'#features'">-->
-                            <!--{{$t("about.btnGroup.techDetails")}}-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="row">
+                <div class="col-lg-6 promo">
+                    <div class="desktop-outer">
+                        <img src="../../static/images/desctop-transparent.png"
+                             class="desktop">
+                        <slider v-if="reBuild" ref="slider"
+                                :pages="pages"
+                                :sliderinit="sliderInit">
+                        </slider>
+                    </div>
+                    <img src="../../static/images/desctop.png"
+                         class="desktop-for-mobile">
+                    <a class="btn btn-black to-download"
+                       v-scroll-to="'#download-application'"
+                       style="font-weight: bold; color: #fff;">
+                        <button type="button">
+                            <img src="../../static/images/request-ic.svg">
+                            <span style="white-space: initial;">
+                                {{ $t("about.btnGroup.download") }}
+                            </span>
+                        </button>
+                    </a>
+                </div>
+                <div class="col-lg-6 desc" style="align-self: flex-start;">
+                    <h1 class="title">
+                        {{$t("about.title")}}
+                    </h1>
+                    <h3 class="subtitle">
+                        {{$t("about.subTitle")}}
+                    </h3>
+                    <p class="description">
+                        {{$t("about.description")}}
+                    </p>
+                    <div class="buttons">
+                        <a class="btn btn-yellow">
+                            {{$t("about.btnGroup.whitePaper")}}
+                        </a>
+                        <a class="btn btn-yellow" v-scroll-to="'#features'">
+                            {{$t("about.btnGroup.techDetails")}}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -545,7 +545,7 @@
                 return this.currentCurrency;
             },
             checkWindowWidth: function () {
-                return window.innerWidth > 420;
+                return window.innerWidth >= 1024;
             },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
@@ -744,7 +744,7 @@
 
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
-            if (window.innerWidth > 420 && this.$route.path === '/')
+            if (window.innerWidth >= 1024 && this.$route.path === '/')
                 window.addEventListener('scroll', this.handlerScroll, false);
         },
         beforeDestroy() {
@@ -1043,15 +1043,6 @@
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
 
-    #screen1
-        .what-is
-            @media (max-width 425px)
-                padding-top 50px !important
-                background #ececf0
-
-                p.description
-                    color #142538
-
     .description__dark
         background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
         background -webkit-gradient(bottom top, bottom top, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(60%, rgba(83, 92, 112, 1)), color-stop(100%, rgba(247, 247, 247, 1))) !important
@@ -1144,8 +1135,8 @@
             align-items center
             flex-wrap nowrap
             width 100%
-            margin-top 0 !important
-            padding-top 150px !important
+            margin-top 0
+            padding-top 150px
 
             .title
                 font-size 22px
@@ -1159,10 +1150,13 @@
                 padding 100px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
-                padding 75px 75px 0 75px
+                padding 100px
 
             @media (min-width 425px) and (max-width 768px)
-                padding 50px 50px 0 50px
+                padding 75px 50px
+
+                .title
+                    display none
 
             @media (min-width 320px) and (max-width 425px)
                 height 100vh
@@ -1170,8 +1164,11 @@
                 flex-direction column
                 justify-content space-around
                 align-items center
-                padding-top 50px !important
-                padding-bottom 50px !important
+                padding-top 50px
+                padding-bottom 50px
+
+                .title
+                    display none
 
                 a
                     margin-bottom 20px
@@ -1183,18 +1180,11 @@
                 align-items center
                 padding-top 50px !important
 
+                .title
+                    display none
+
                 a
                     margin-bottom 20px
-
-    #screen1
-        .what-is
-            margin-top 0
-            padding 165px 125px 0
-
-            @media (max-width 425px)
-                padding-left 32px
-                padding-right 32px
-                padding-top 20px
 
     .social-line
         /*@media (min-width 1024px) and (max-width 1440px)*/
@@ -1219,109 +1209,208 @@
                         &:last-child
                             margin-right 0
 
-        &.what-is
-            .desktop-outer
-                margin 0 auto
+        .what-is
+            padding 60px 200px 0 200px
+            margin-top 0
 
-                .slider-container
-                    width 100%
-                    position absolute
-                    height auto
+            @media (min-width 1440px) and (max-width 2560px)
+                padding 60px 200px 0 200px
 
-                .desktop
-                    position relative
+            @media (min-width 1024px) and (max-width 1440px)
+                padding 60px 100px 0 100px
 
-                @media (max-width 2600px)
-                    .slider-container
-                        width 709px
-                        height 443px
-                        left 252px
-                        top 40px
+            @media (min-width 768px) and (max-width 1024px)
+                padding 50px 75px 0 75px
 
-                    .desktop
-                        left 140px
-                        width 900px
+            @media (min-width 425px) and (max-width 768px)
+                padding 50px 50px 0 50px
 
-                @media (max-width 2365px)
-                    .slider-container
-                        left 162px
+            @media (max-width 425px)
+                padding 60px 25px
+                background #ececf0
 
-                    .desktop
-                        left 50px
+                .description
+                    color #142538
 
-                @media (max-width 2150px)
-                    .slider-container
-                        width 630px
-                        height 395px
-                        left 102px
-                        top 36px
+            .row
+                .promo
+                    .to-download
+                        @media (min-width 1024px) and (max-width 1440px)
+                            padding 8px 18px
 
-                    .desktop
-                        left 0
-                        width 800px
+                        @media (min-width 768px) and (max-width 1024px)
+                            width 100%
+                            margin-top 30px
+                            margin-bottom 40px
+                            padding 15px 30px
+                            font-size 18px
+                            display flex
+                            justify-content center
 
-                @media (max-width 1860px)
-                    .slider-container
-                        width 552px
-                        height 345px
-                        left 91px
-                        top 32px
+                        @media (min-width 425px) and (max-width 768px)
+                            margin-top 30px
+                            margin-bottom 40px
 
-                    .desktop
-                        left 0
-                        width 700px
+                    .desktop-outer
+                        margin 0 auto
 
-                @media (max-width 1640px)
-                    padding-top 50px
+                        .slider-container
+                            width 100%
+                            position absolute
+                            height auto
 
-                    .slider-container
-                        width 473px
-                        height 296px
-                        left 80px
-                        top 77px
+                        .desktop
+                            width 100% !important
+                            position relative
 
-                    .desktop
-                        left 0
-                        width 600px
+                        @media (max-width 2600px)
+                            .slider-container
+                                width 709px
+                                height 443px
+                                left 252px
+                                top 40px
 
-                @media (max-width 1460px)
-                    padding-top 100px
+                            .desktop
+                                left 140px
+                                width 900px
 
-                    .slider-container
-                        width 393px
-                        height 247px
-                        left 70px
-                        top 122px
+                        @media (max-width 2365px)
+                            .slider-container
+                                left 162px
 
-                    .desktop
-                        left 0
-                        width 500px
+                            .desktop
+                                left 50px
 
-                @media (max-width 1240px)
-                    padding-top 100px
+                        @media (max-width 2150px)
+                            .slider-container
+                                width 630px
+                                height 395px
+                                left 102px
+                                top 36px
 
-                    .slider-container
-                        width 315px
-                        height 197px
-                        left 59px
-                        top 118px
+                            .desktop
+                                left 0
+                                width 800px
 
-                    .desktop
-                        left 0
-                        width 400px
+                        @media (max-width 1860px)
+                            .slider-container
+                                width 552px
+                                height 345px
+                                left 91px
+                                top 32px
 
-                @media (max-width 991px)
-                    padding-top 0
+                            .desktop
+                                left 0
+                                width 700px
 
-                    .slider-container
-                        display none
+                        @media (max-width 1640px)
+                            padding-top 50px
 
-                    .desktop
-                        display none
+                            .slider-container
+                                width 473px
+                                height 296px
+                                left 80px
+                                top 77px
 
-            @media (max-width 991px)
-                .desktop-for-mobile
-                    display block
+                            .desktop
+                                left 0
+                                width 600px
+
+                        @media (max-width 1460px)
+                            padding-top 100px
+
+                            .slider-container
+                                width 393px
+                                height 247px
+                                left 70px
+                                top 122px
+
+                            .desktop
+                                left 0
+                                width 500px
+
+                        @media (max-width 1240px)
+                            padding-top 100px
+
+                            .slider-container
+                                width 315px
+                                height 197px
+                                left 59px
+                                top 118px
+
+                            .desktop
+                                left 0
+                                width 400px
+
+                        @media (max-width 991px)
+                            padding-top 0
+
+                            .slider-container
+                                display none
+
+                            .desktop
+                                display none
+
+                    @media (max-width 991px)
+                        .desktop-for-mobile
+                            display block
+
+                .desc
+                    @media (min-width 768px) and (max-width 1024px)
+                        .buttons
+                            display flex
+                            justify-content center
+
+                            .btn
+                                width 50%
+                                flex-grow 1
+                                padding 10px 30px
+                                font-size 18px
+                                margin 10px 0
+
+                                &:first-child
+                                    margin-right 10px
+
+                                &:last-child
+                                    margin-left 10px
+
+                    @media (min-width 425px) and (max-width 768px)
+                        .description
+                            font-size 18px
+
+                        .buttons
+                            display flex
+                            justify-content center
+
+                            .btn
+                                width 50%
+                                flex-grow 1
+                                padding 10px 30px
+                                font-size 24px
+                                margin 10px 0
+
+                                &:first-child
+                                    margin-right 10px
+
+                                &:last-child
+                                    margin-left 10px
+
+                    @media (max-width 425px)
+                        padding-top 25px
+
+                        .title
+                            text-align center
+
+
+                        .buttons
+                            display flex
+                            flex-direction column
+                            justify-content center
+
+                            .btn
+                                padding 20px 30px
+                                font-size 24px
+                                margin 10px 0
 
         .play-video
             display inline-block
