@@ -178,7 +178,9 @@
                 languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
 
-                heightLangItem: 0
+                heightLangItem: 0,
+
+                rtl: false
             }
         },
         watch: {
@@ -231,16 +233,28 @@
             isModalIsOpen: function () {
                 return this.modalIsOpen;
             },
-
             isHeightLangItem: function () {
                 return this.heightLangItem;
             },
         },
         methods: {
+            makeRTL: function () {
+                document.querySelector('body').style['direction'] = 'rtl';
+                this.rtl = true;
+            },
+            resetRTL: function () {
+                document.querySelector('body').style['direction'] = 'ltr';
+                this.rtl = false;
+            },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
                 localStorage.setItem('systemLang', this.selectedLanguage);
-                this.$i18n.locale = this.selectedLanguage
+                this.$i18n.locale = this.selectedLanguage;
+
+                if (this.selectedLanguage === 'ar')
+                    this.makeRTL();
+                else if (this.rtl)
+                    this.resetRTL();
             },
             openModal: function (name) {
                 this.$modal.show(name);
@@ -646,12 +660,12 @@
                 background-image url(../../../static/images/flags/ko@2x.png)
 
             .select-lang__ar
-                background-color #3c9279
+                background-image url(../../../static/images/flags/ar@2x.png)
 
-                &:hover
-                    span
-                        opacity 1
-                        color #ffffff
+                /*&:hover*/
+                    /*span*/
+                        /*opacity 1*/
+                        /*color #ffffff*/
 
             .select-lang__es
                 background-image url(../../../static/images/flags/es@2x.png)
