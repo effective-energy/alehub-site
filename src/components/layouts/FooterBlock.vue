@@ -61,7 +61,7 @@
                     </a>
                 </div>
                 <div class="subscribe-form">
-                    <div class="subscribe-form__wrap">
+                    <div class="subscribe-form__wrap" v-if="!isSuccess">
                         <input class="subscribe-form__email"
                                :class="{ 'error': isError || alreadyExist }"
                                type="text"
@@ -69,8 +69,7 @@
                                v-model="email"
                                @blur="checkCorrectEmail"
                                @input="inputCheckCorrectEmail"
-                               :disabled="isLoader"
-                               v-if="!isSuccess"/>
+                               :disabled="isLoader"/>
                         <label class="subscribe-form__error" v-if="isError">
                             {{ $t('footer.right.error') }}
                         </label>
@@ -212,14 +211,16 @@
                 justify-content flex-end
 
                 .subscribe-form__wrap
-                    width 100%
+                    position relative
                     text-align right
-                    display flex
-                    justify-content flex-end
-                    align-items center
+                    width 100%
+
+                    @media (max-width 1023px)
+                        margin-bottom 24px
 
                     @media (max-width 425px)
                         width 100% !important
+                        margin-bottom 30px
 
                     .subscribe-form__email
                         order 2
@@ -236,14 +237,17 @@
                         -webkit-transition all .3s ease-out
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
+                            
+                        @media (max-width 1023px)
+                            margin-bottom 0
 
-                        @media (max-width: 320px)
-                            min-width 100%
                         @media (max-width 425px)
                             font-size 16px
                             height 50px
                             text-align center
-                            margin-bottom 15px
+
+                        @media (max-width 320px)
+                            min-width 100%
 
                         &:focus
                             color #34343e
@@ -258,9 +262,20 @@
                         order 1
                         font-size 10px
                         background-color #ececf0
-                        padding 0 10px
+                        padding 0
                         color #ff4f4f
                         margin-bottom 0
+                        position absolute 
+                        top 40px
+                        right 170px
+
+                        @media( max-width 1023px)
+                            margin-bottom 10px
+                            left 0
+                            right unset
+
+                        @media( max-width 425px)
+                            top 54px
 
                 .subscribe-form__submit
                     cursor pointer
@@ -282,6 +297,7 @@
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
                     min-width 157px
+                    max-height 37px
 
                     @media (max-width 425px)
                         font-size 16px
