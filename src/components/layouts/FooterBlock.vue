@@ -63,28 +63,33 @@
                 <div class="subscribe-form">
                     <div class="subscribe-form__wrap">
                         <input class="subscribe-form__email"
-                               :class="{ 'error': isError }"
+                               :class="{ 'error': isError || alreadyExist }"
                                type="text"
                                :placeholder="$t('footer.right.input')"
                                v-model="email"
                                @blur="checkCorrectEmail"
                                @input="inputCheckCorrectEmail"
-                               :disabled="isLoader"/>
+                               :disabled="isLoader"
+                               v-if="!isSuccess"/>
                         <label class="subscribe-form__error" v-if="isError">
                             {{ $t('footer.right.error') }}
                         </label>
                         <label class="subscribe-form__error" v-if="alreadyExist">
                             Email already exist
                         </label>
-                        <label class="subscribe-form__success" v-if="isSuccess">
+                        <!-- <label class="subscribe-form__success" v-if="isSuccess">
                             {{ $t('footer.right.success') }}
-                        </label>
+                        </label> -->
                     </div>
                     <button class="subscribe-form__submit"
-                            @click="subscribe" :class="{'btn-loading': true}" :disabled="isLoader">
+                            @click="subscribe" 
+                            :class="{'btn-loading': isLoader}" 
+                            :disabled="isLoader"
+                            v-if="!isSuccess">
                                 <Spinner v-if="isLoader"/>
                                 <span v-else>{{ $t('footer.right.btn') }}</span>
                     </button>
+                    <p v-else class="subscribe-form__success">You have successfully subscribed to the newsletter. Check your email to confirm your subscription.</p>
                 </div>
             </div>
         </div>
@@ -120,7 +125,6 @@
                 if (this.email.length === 0) {
                     return true;
                 }
-                console.log(re.test(String(this.email).toLowerCase()));
                 return re.test(String(this.email).toLowerCase());
             },
             isError: function () {
@@ -163,6 +167,7 @@
             inputCheckCorrectEmail: function () {
                 if (this.isInitialFocus)
                     this.error = !this.isCorrectEmail;
+                    this.exist = false;
             },
             checkCorrectEmail: function () {
                 if (this.email.length === 0)
@@ -207,14 +212,17 @@
                 justify-content flex-end
 
                 .subscribe-form__wrap
-                    position relative
                     width 100%
                     text-align right
+                    display flex
+                    justify-content flex-end
+                    align-items center
 
                     @media (max-width 425px)
                         width 100% !important
 
                     .subscribe-form__email
+                        order 2
                         background none
                         border-radius 3px
                         border solid 0.5px #a3a3a9
@@ -247,13 +255,12 @@
                         color #ff4f4f !important
 
                     .subscribe-form__error
-                        position absolute
-                        top -6px
-                        left 15px
+                        order 1
                         font-size 10px
                         background-color #ececf0
-                        padding 0 5px
+                        padding 0 10px
                         color #ff4f4f
+                        margin-bottom 0
 
                 .subscribe-form__submit
                     cursor pointer
@@ -286,6 +293,11 @@
 
                     &:focus
                         outline none
+
+                .subscribe-form__success
+                    font-size 14px
+                    text-align right 
+                    padding-right 20px
 
             .social-networks
                 display flex
