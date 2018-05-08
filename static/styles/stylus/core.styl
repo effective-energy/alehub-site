@@ -177,11 +177,11 @@ body
             padding 50px 75px 0 75px
 
         @media (min-width 425px) and (max-width 768px)
-            min-height calc(120vh + 170px - 124px)
+            min-height calc(120vh + 300px - 124px)
             padding 50px 50px 0 50px
 
         @media (max-width 425px)
-            min-height calc(200vh - 124px)
+            min-height calc(200vh + 25px - 124px)
             padding 25px 25px 0 25px
 
         .social-line
@@ -425,6 +425,14 @@ body
 .countdown
     display inline-block
 
+    @media (min-width 425px) and (max-width 768px)
+        width 100%
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        padding-bottom 26px
+
     .title
         font-size 20px
         font-family MuseoSansCyrl500
@@ -485,13 +493,19 @@ body
         font-size 20px
         color #34343e
 
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
     .collection
         display flex
         flex-direction row
+        flex-wrap wrap
         margin-top 25px
 
-        @media (max-width 320px)
-            flex-wrap wrap
+        @media (min-width 425px) and (max-width 768px)
+            margin-top 5px
+            justify-content center
+
 
         .item
             width 90px
@@ -502,7 +516,10 @@ body
             align-items center
             background transparent
 
-            @media (max-width 425px)
+            @media (min-width 425px) and (max-width 768px)
+                margin-top 20px
+
+            @media (min-width 320px) and (max-width 425px)
                 height 120px
 
             @media (max-width 320px)

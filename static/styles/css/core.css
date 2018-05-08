@@ -183,13 +183,13 @@ body {
 }
 @media (min-width: 425px) and (max-width: 768px) {
   #screen1 .home {
-    min-height: calc(120vh + 170px - 124px);
+    min-height: calc(120vh + 300px - 124px);
     padding: 50px 50px 0 50px;
   }
 }
 @media (max-width: 425px) {
   #screen1 .home {
-    min-height: calc(200vh - 124px);
+    min-height: calc(200vh + 25px - 124px);
     padding: 25px 25px 0 25px;
   }
 }
@@ -465,6 +465,16 @@ body {
 .countdown {
   display: inline-block;
 }
+@media (min-width: 425px) and (max-width: 768px) {
+  .countdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 26px;
+  }
+}
 .countdown .title {
   font-size: 20px;
   font-family: MuseoSansCyrl500;
@@ -526,14 +536,21 @@ body {
   font-size: 20px;
   color: #34343e;
 }
+@media (min-width: 425px) and (max-width: 768px) {
+  .crypto .title {
+    text-align: center;
+  }
+}
 .crypto .collection {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 25px;
 }
-@media (max-width: 320px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .crypto .collection {
-    flex-wrap: wrap;
+    margin-top: 5px;
+    justify-content: center;
   }
 }
 .crypto .collection .item {
@@ -545,7 +562,12 @@ body {
   align-items: center;
   background: transparent;
 }
-@media (max-width: 425px) {
+@media (min-width: 425px) and (max-width: 768px) {
+  .crypto .collection .item {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 320px) and (max-width: 425px) {
   .crypto .collection .item {
     height: 120px;
   }

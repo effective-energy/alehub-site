@@ -769,6 +769,10 @@
 
 <style lang="stylus" scoped>
 
+    .screen1.title
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
     .home
         position relative
 
@@ -1108,6 +1112,7 @@
             .title, .subtitle, .description
                 color #f7f7f7 !important
 
+
     .collection
         .item
             cursor pointer
@@ -1242,6 +1247,7 @@
                     margin-bottom 20px
 
     .social-line
+        padding 15px 0
         /*@media (min-width 1024px) and (max-width 1440px)*/
         /*margin-top 60px*/
 
@@ -1303,8 +1309,17 @@
                             justify-content center
 
                         @media (min-width 425px) and (max-width 768px)
+                            width 100%
                             margin-top 30px
                             margin-bottom 40px
+                            padding 10px 25px
+                            font-size 18px
+
+                        @media (max-width 425px)
+                            font-size 16px
+                            padding 15px 25px
+                            margin-top 25px
+
 
                     .desktop-outer
                         margin 0 auto
@@ -1440,8 +1455,8 @@
                             .btn
                                 width 50%
                                 flex-grow 1
-                                padding 10px 30px
-                                font-size 24px
+                                padding 10px 25px
+                                font-size 20px
                                 margin 10px 0
 
                                 &:first-child
@@ -1456,6 +1471,11 @@
                         .title
                             text-align center
 
+                        .subtitle
+                            text-indent 30px
+
+                        .description
+                            text-indent 30px
 
                         .buttons
                             display flex
@@ -1463,8 +1483,8 @@
                             justify-content center
 
                             .btn
-                                padding 20px 30px
-                                font-size 24px
+                                padding 10px 25px
+                                font-size 22px
                                 margin 10px 0
 
         .play-video
@@ -1546,6 +1566,7 @@
             font-family MuseoSansCyrl500
             font-size 20px
             color #34343e
+            padding 15px 0
 
             /*@media (min-width 1024px) and (max-width 1440px)*/
             /*margin-top 30px*/
