@@ -315,6 +315,10 @@
                     text-align right 
                     padding-right 20px
 
+                    @media (max-width 767px)
+                        text-align center
+                        padding-right 0
+
             .social-networks
                 display flex
                 margin-bottom 10px
