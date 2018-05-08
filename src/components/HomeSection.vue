@@ -394,7 +394,7 @@
                         {{$t("about.description")}}
                     </p>
                     <div class="buttons">
-                        <a class="btn btn-yellow">
+                        <a :href="currentWhitePaper" class="btn btn-yellow">
                             {{$t("about.btnGroup.whitePaper")}}
                         </a>
                         <a class="btn btn-yellow" v-scroll-to="'#features'">
@@ -557,6 +557,13 @@
                     return (this.collected / this.hardCap) * 100 + '%';
                 else return '100%';
             },
+            currentWhitePaper: function () {
+                if (localStorage.getItem('systemLang') === 'en') {
+                    return 'https://alehub.io/ALEHUB_WP_eng.pdf';
+                } else if (localStorage.getItem('systemLang') === 'ru') {
+                    return 'https://alehub.io/ALEHUB_WP_rus.pdf';
+                }
+            }
         },
         methods: {
             changeCurrentCurrency: function (name) {
@@ -572,7 +579,13 @@
                 this.currentCurrency = this.currencies.usd.name;
             },
             playVideo: function () {
-                this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
+                if (this.mainPlayer) {
+                    this.mainPlayer = false;
+                    document.querySelector('.home').classList.remove('home__open-video');
+                } else {
+                    this.mainPlayer = true;
+                    document.querySelector('.home').classList.add('home__open-video');
+                }
             },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
@@ -762,11 +775,24 @@
         background-color #ececf0
 
     .play-video
-        @media (min-width 1024px) and (max-width 1440px)
+        width 100%
+        @media (min-width 1440px)
             display flex !important
             justify-content center
             align-items center
-            width 100%
+
+        @media (min-width 1200px) and (max-width 1440px)
+            display flex !important
+            justify-content center
+            align-items center
+            margin-top 0 !important
+
+        @media (min-width 1024px) and (max-width 1200px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 60px
             margin-top 0 !important
 
         @media (min-width 768px) and (max-width 1024px)
@@ -774,10 +800,23 @@
             flex-direction column
             justify-content center
             align-items center
-            width 100%
-            padding-top 30px
-            //padding-bottom 30px
+            padding-top 40px
             margin-top 0 !important
+
+        @media (min-width 425px) and (max-width 768px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 40px
+
+        @media (max-width 425px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 30px
+
 
         .play-button
             display flex
@@ -785,6 +824,16 @@
             align-items center
 
         .main-player
+            z-index 100
+            width 100%
+
+            .iframe
+                width 100%
+                height 100%
+
+            @media (max-width 1200px)
+                position initial
+
             @media (min-width 768px) and (max-width 1024px)
                 padding-top 50px
 
@@ -873,7 +922,7 @@
 
     #description
         @media (min-width 425px)
-            height 100vh
+            min-height 100vh
 
         .row
             align-items center
@@ -897,77 +946,77 @@
 
     .place-player
         opacity 0
+        width 100%
         -webkit-transition all .5s ease-in-out
         -o-transition all .5s ease-in-out
         transition all .5s ease-in-out
 
-        @media (min-width 768px) and (max-width 1024px)
+        @media (max-width 1200px)
             display none
 
     .place-player__frame
         background-color #000
+        height 100%
 
     .main-player, .place-player
+        height 300px
         position absolute
-        right -300px
+        top 130px
 
-        .iframe, .place-player__frame
-            width 700px
-            height 394px
+        @media (min-width 1440px) and (max-width 2560px)
+            height 300px
 
-        @media (max-width 1680px)
-            right
-        -255px
-        .iframe, .place-player__frame
-            width 600px
-            height 336px
+        @media (min-width 1200px) and (max-width 1440px)
+            height 250px
 
-        @media (max-width 1600px)
-            right
-        -210px
-        .iframe, .place-player__frame
-            width 500px
-            height 280px
+        @media (min-width 1024px) and (max-width 1200px)
+            height 500px
 
-        @media (max-width 1530px)
-            right
-        -100px
-        .iframe, .place-player__frame
-            width 500px
-            height 280px
+        @media (min-width 768px) and (max-width 1024px)
+            height 400px
 
-        @media (max-width 1274px)
-            right 0
-            left 0
-            position relative
-            .iframe, .place-player__frame
-                width 800px
-                height 450px
 
-        @media (max-width 1120px)
-            .iframe, .place-player__frame
-                width 700px
-                height 394px
 
-        @media (max-width 850px)
-            .iframe, .place-player__frame
-                width 600px
-                height 336px
+        /*@media (max-width 1600px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 720px)
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+        /*@media (max-width 1530px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 620px)
-            .iframe, .place-player__frame
-                width 400px
-                height 225px
+        /*@media (max-width 1274px)*/
+            /*position relative*/
+            /*.iframe, .place-player__frame*/
+                /*width 800px*/
+                /*height 450px*/
 
-        @media (max-width 520px)
-            .iframe, .place-player__frame
-                width 100%
-                height 292px
+        /*@media (max-width 1120px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 700px*/
+                /*height 394px*/
+
+        /*@media (max-width 850px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 600px*/
+                /*height 336px*/
+
+        /*@media (max-width 720px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
+
+        /*@media (max-width 620px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 400px*/
+                /*height 225px*/
+
+        /*@media (max-width 520px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 100%*/
+                /*height 292px*/
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
@@ -1144,7 +1193,7 @@
                 white-space nowrap
 
             @media (min-width 1440px) and (max-width 2560px)
-                padding 150px 200px 0 200px
+                padding 150px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
                 padding 100px 100px 0 100px
@@ -1154,6 +1203,11 @@
 
             @media (min-width 425px) and (max-width 768px)
                 padding 75px 50px
+                height 75vh
+                display flex
+                flex-direction column
+                justify-content space-around
+                align-items center
 
                 .title
                     display none
@@ -1214,7 +1268,7 @@
             margin-top 0
 
             @media (min-width 1440px) and (max-width 2560px)
-                padding 60px 200px 0 200px
+                padding 60px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
                 padding 60px 100px 0 100px
@@ -1223,7 +1277,7 @@
                 padding 50px 75px 0 75px
 
             @media (min-width 425px) and (max-width 768px)
-                padding 50px 50px 0 50px
+                padding 50px 50px 25px 50px
 
             @media (max-width 425px)
                 padding 60px 25px
@@ -1414,9 +1468,7 @@
 
         .play-video
             display inline-block
-            position relative
-            top -15px
-            left 25%
+            /*position relative*/
 
             .play-button
                 cursor pointer
@@ -1446,11 +1498,11 @@
                         width 35px
                         height 35px
 
-            @media (max-width 1500px)
-                left 20%
+            /*@media (max-width 1500px)*/
+                /*left 20%*/
 
-            @media (max-width 1400px)
-                left 15%
+            /*@media (max-width 1400px)*/
+                /*left 15%*/
 
             @media (max-width 1274px)
                 position unset

@@ -117,6 +117,26 @@ body {
 .btn-black:hover {
   color: #ccc;
 }
+@media (min-width: 1024px) and (max-width: 1200px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 500px - 124px) !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 400px - 124px) !important;
+  }
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 400px - 124px) !important;
+  }
+}
+@media (max-width: 425px) {
+  #screen1 .home__open-video {
+    min-height: calc(200vh + 300px - 124px) !important;
+  }
+}
 #screen1 .home {
   padding: 50px 200px 0 200px;
   min-height: calc(100vh - 124px);
@@ -142,7 +162,12 @@ body {
 }
 @media (min-width: 1440px) and (max-width: 2560px) {
   #screen1 .home {
-    padding: 50px 200px 0 200px;
+    padding: 50px 150px 0 150px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  #screen1 .home {
+    min-height: calc(120vh + 170px - 124px);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -153,12 +178,12 @@ body {
 @media (min-width: 768px) and (max-width: 1024px) {
   #screen1 .home {
     min-height: calc(120vh + 170px - 124px);
-    max-height: calc(120vh + 170px + 450px - 124px);
     padding: 50px 75px 0 75px;
   }
 }
 @media (min-width: 425px) and (max-width: 768px) {
   #screen1 .home {
+    min-height: calc(120vh + 170px - 124px);
     padding: 50px 50px 0 50px;
   }
 }
