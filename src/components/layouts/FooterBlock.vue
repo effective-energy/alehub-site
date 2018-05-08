@@ -68,17 +68,22 @@
                                :placeholder="$t('footer.right.input')"
                                v-model="email"
                                @blur="checkCorrectEmail"
-                               @input="inputCheckCorrectEmail"/>
+                               @input="inputCheckCorrectEmail"
+                               :disabled="isLoader"/>
                         <label class="subscribe-form__error" v-if="isError">
                             {{ $t('footer.right.error') }}
+                        </label>
+                        <label class="subscribe-form__error" v-if="alreadyExist">
+                            Email already exist
                         </label>
                         <label class="subscribe-form__success" v-if="isSuccess">
                             {{ $t('footer.right.success') }}
                         </label>
                     </div>
                     <button class="subscribe-form__submit"
-                            @click="subscribe">
-                        {{ $t('footer.right.btn') }}
+                            @click="subscribe" :class="{'btn-loading': true}" :disabled="isLoader">
+                                <Spinner v-if="isLoader"/>
+                                <span v-else>{{ $t('footer.right.btn') }}</span>
                     </button>
                 </div>
             </div>
@@ -87,13 +92,21 @@
 </template>
 
 <script>
+    import Spinner from './Spinner';
+
     export default {
         name: 'FooterSection',
+        components: {
+            Spinner
+        },
         data() {
             return {
                 email: '',
                 error: false,
-                initialFocus: false
+                initialFocus: false,
+                success: false,
+                exist: false,
+                isLoader: false
             }
         },
         watch: {
@@ -104,8 +117,10 @@
         computed: {
             isCorrectEmail: function () {
                 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (this.email.length === 0)
+                if (this.email.length === 0) {
                     return true;
+                }
+                console.log(re.test(String(this.email).toLowerCase()));
                 return re.test(String(this.email).toLowerCase());
             },
             isError: function () {
@@ -116,12 +131,34 @@
                 return this.initialFocus;
             },
             isSuccess: function () {
-
+                return this.success;
+            },
+            alreadyExist: function () {
+                return this.exist;
             }
         },
         methods: {
             subscribe: function () {
-                return this.isCorrectEmail;
+                if (this.isCorrectEmail) {
+                    this.isLoader = true;
+                    this.$http.post(`https://alehub.eu-4.evennode.com/subscribe/new`, {
+                        "email": this.email
+                    }, {
+                        headers : {
+                            'Content-Type' : 'application/json; charset=UTF-8',
+                            'Accept' : 'application/json'
+                        }
+                    }).then(response => {
+                        this.isLoader = false;
+                        console.log(response.body);
+                        if(response.body.message === 'Email already exist')
+                            return this.exist = true;
+                        this.success = true;
+                    }, response => {
+                        this.isLoader = false;
+                        this.error = true;
+                    })
+                }
             },
             inputCheckCorrectEmail: function () {
                 if (this.isInitialFocus)
@@ -133,15 +170,19 @@
                 else
                     this.initialFocus = true;
                 this.error = !this.isCorrectEmail;
-            },
-            alreadyExist: function () {
-
             }
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .spinner 
+        height 19px !important
+        width 19px !important
+
+    .btn-loading
+        background-color #fff !important
+
     .footer
         background-color #ececf0
         padding 32px 0
@@ -233,6 +274,7 @@
                     -webkit-transition all .3s ease-out
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
+                    min-width 157px
 
                     @media (max-width 425px)
                         font-size 16px
