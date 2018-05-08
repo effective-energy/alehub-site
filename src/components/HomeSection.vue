@@ -892,7 +892,7 @@
                 &:focus
                     outline none
 
-                @media (max-width 425px)
+                @media (max-width 768px)
                     img
                         display none
 
@@ -1454,16 +1454,15 @@
 
                             .btn
                                 width 50%
-                                flex-grow 1
-                                padding 10px 25px
-                                font-size 20px
+                                padding 10px 15px
+                                font-size 18px
                                 margin 10px 0
 
                                 &:first-child
-                                    margin-right 10px
+                                    margin-right 7.5px
 
                                 &:last-child
-                                    margin-left 10px
+                                    margin-left 7.5px
 
                     @media (max-width 425px)
                         padding-top 25px
