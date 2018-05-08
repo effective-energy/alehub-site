@@ -135,20 +135,20 @@
                 </g>
             </svg>
         </div>
-        <div class="first-screen home"
+        <div class="home"
              :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
-                        <div class="col-xl-9 col-lg-9">
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                             <h1 class="screen1 title">
                                 {{ $t("greeting.title") }}
                             </h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-8 col-lg-12 col-md-12">
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="countdown">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
@@ -360,49 +360,49 @@
         <div id="description"
              class="container-fluid what-is"
              :class="{ 'description__dark': isDark }">
-            <div class="row">
-                <div class="col-lg-6 promo">
-                    <div class="desktop-outer">
-                        <img src="../../static/images/desctop-transparent.png"
-                             class="desktop">
-                        <slider v-if="reBuild" ref="slider"
-                                :pages="pages"
-                                :sliderinit="sliderInit">
-                        </slider>
-                    </div>
-                    <img src="../../static/images/desctop.png"
-                         class="desktop-for-mobile">
-                    <a class="btn btn-black"
-                       v-scroll-to="'#download-application'"
-                       style="font-weight: bold; color: #fff;">
-                        <button type="button">
-                            <img src="../../static/images/request-ic.svg">
-                            <span style="white-space: initial;">
-                                {{ $t("about.btnGroup.download") }}
-                            </span>
-                        </button>
-                    </a>
-                </div>
-                <div class="col-lg-6 desc" style="align-self: flex-start;">
-                    <h1 class="title">
-                        {{$t("about.title")}}
-                    </h1>
-                    <h3 class="subtitle">
-                        {{$t("about.subTitle")}}
-                    </h3>
-                    <p class="description">
-                        {{$t("about.description")}}
-                    </p>
-                    <div class="buttons">
-                        <a class="btn btn-yellow">
-                            {{$t("about.btnGroup.whitePaper")}}
-                        </a>
-                        <a class="btn btn-yellow" v-scroll-to="'#features'">
-                            {{$t("about.btnGroup.techDetails")}}
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-lg-6 promo">-->
+                    <!--<div class="desktop-outer">-->
+                        <!--<img src="../../static/images/desctop-transparent.png"-->
+                             <!--class="desktop">-->
+                        <!--<slider v-if="reBuild" ref="slider"-->
+                                <!--:pages="pages"-->
+                                <!--:sliderinit="sliderInit">-->
+                        <!--</slider>-->
+                    <!--</div>-->
+                    <!--<img src="../../static/images/desctop.png"-->
+                         <!--class="desktop-for-mobile">-->
+                    <!--<a class="btn btn-black"-->
+                       <!--v-scroll-to="'#download-application'"-->
+                       <!--style="font-weight: bold; color: #fff;">-->
+                        <!--<button type="button">-->
+                            <!--<img src="../../static/images/request-ic.svg">-->
+                            <!--<span style="white-space: initial;">-->
+                                <!--{{ $t("about.btnGroup.download") }}-->
+                            <!--</span>-->
+                        <!--</button>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col-lg-6 desc" style="align-self: flex-start;">-->
+                    <!--<h1 class="title">-->
+                        <!--{{$t("about.title")}}-->
+                    <!--</h1>-->
+                    <!--<h3 class="subtitle">-->
+                        <!--{{$t("about.subTitle")}}-->
+                    <!--</h3>-->
+                    <!--<p class="description">-->
+                        <!--{{$t("about.description")}}-->
+                    <!--</p>-->
+                    <!--<div class="buttons">-->
+                        <!--<a class="btn btn-yellow">-->
+                            <!--{{$t("about.btnGroup.whitePaper")}}-->
+                        <!--</a>-->
+                        <!--<a class="btn btn-yellow" v-scroll-to="'#features'">-->
+                            <!--{{$t("about.btnGroup.techDetails")}}-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
 
     </section>
@@ -1043,13 +1043,14 @@
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
 
-    #screen1 .container-fluid.what-is
-        @media (max-width 425px)
-            padding-top 50px !important
-            background #ececf0
+    #screen1
+        .what-is
+            @media (max-width 425px)
+                padding-top 50px !important
+                background #ececf0
 
-            p.description
-                color #142538
+                p.description
+                    color #142538
 
     .description__dark
         background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
@@ -1084,12 +1085,9 @@
                     text-align center
 
             @media (max-width 425px)
-                background-color #ffd24f !important
                 border-radius 2px
-
-                a
-                    .description
-                        display none
+                padding-top 7.5px
+                padding-bottom 7.5px
 
     section
         position relative
@@ -1141,8 +1139,18 @@
 
     #screen1
         .partners
+            display flex
+            justify-content space-between
+            align-items center
+            flex-wrap nowrap
+            width 100%
             margin-top 0 !important
             padding-top 150px !important
+
+            .title
+                font-size 22px
+                font-weight 700
+                white-space nowrap
 
             @media (min-width 1440px) and (max-width 2560px)
                 padding 150px 200px 0 200px
@@ -1157,11 +1165,26 @@
                 padding 50px 50px 0 50px
 
             @media (min-width 320px) and (max-width 425px)
+                height 100vh
+                display flex
+                flex-direction column
+                justify-content space-around
+                align-items center
                 padding-top 50px !important
                 padding-bottom 50px !important
 
+                a
+                    margin-bottom 20px
+
             @media (max-width 320px)
+                display flex
+                flex-direction column
+                justify-content center
+                align-items center
                 padding-top 50px !important
+
+                a
+                    margin-bottom 20px
 
     #screen1
         .what-is
@@ -1183,33 +1206,6 @@
             transition background color .3s ease-in-out
 
     #screen1
-        .partners
-            display flex
-            justify-content space-between
-            align-items center
-            flex-wrap nowrap
-            width 100%
-
-            .title
-                font-size 22px
-                font-weight 700
-                white-space nowrap
-
-                @media (max-width 425px)
-                    margin-bottom 40px
-
-                @media (max-width 425px)
-                    display flex
-                    flex-direction column
-                    justify-content center
-                    align-items center
-
-                    a
-                        margin-bottom 20px
-
-                @media (max-width 960px)
-                    flex-wrap wrap
-
         .crypto
             @media (min-width 1024px) and (max-width 1440px)
                 margin-top 20px
@@ -1363,8 +1359,10 @@
 
             @media (max-width 1500px)
                 left 20%
+
             @media (max-width 1400px)
                 left 15%
+
             @media (max-width 1274px)
                 position unset
                 text-align center
@@ -1377,6 +1375,10 @@
                 justify-content center
                 align-items center
                 flex-direction column
+
+            @media (max-width 425px)
+                top 0
+                padding-top 15px
 
         .scroll-next
             position absolute
@@ -1405,6 +1407,9 @@
 
             /*@media (min-width 1024px) and (max-width 1440px)*/
             /*margin-top 30px*/
+
+            @media (max-width 425px)
+                font-size 16px
 
             @media (max-width 320px)
                 font-size 14px

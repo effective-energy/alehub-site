@@ -117,7 +117,7 @@ body {
 .btn-black:hover {
   color: #ccc;
 }
-#screen1 .first-screen {
+#screen1 .home {
   padding: 50px 200px 0 200px;
   min-height: calc(100vh - 124px);
   display: flex;
@@ -141,88 +141,105 @@ body {
                 margin 16px 64px 0*/
 }
 @media (min-width: 1440px) and (max-width: 2560px) {
-  #screen1 .first-screen {
+  #screen1 .home {
     padding: 50px 200px 0 200px;
   }
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
-  #screen1 .first-screen {
+  #screen1 .home {
     padding: 50px 100px 0 100px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  #screen1 .first-screen {
+  #screen1 .home {
     min-height: calc(120vh + 170px - 124px);
     max-height: calc(120vh + 170px + 450px - 124px);
     padding: 50px 75px 0 75px;
   }
 }
 @media (min-width: 425px) and (max-width: 768px) {
-  #screen1 .first-screen {
+  #screen1 .home {
     padding: 50px 50px 0 50px;
   }
 }
-#screen1 .first-screen .social-line {
+@media (max-width: 425px) {
+  #screen1 .home {
+    min-height: calc(200vh - 124px);
+    padding: 25px 25px 0 25px;
+  }
+}
+#screen1 .home .social-line {
   margin-left: -50px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  #screen1 .first-screen .social-line {
+  #screen1 .home .social-line {
     margin-left: 0;
   }
 }
-#screen1 .first-screen .social-line .line {
+@media (max-width: 768px) {
+  #screen1 .home .social-line {
+    margin-left: 0;
+    justify-content: space-between;
+  }
+}
+#screen1 .home .social-line .line {
   width: 48px;
   height: 0;
   border: 1px solid #000;
   margin-right: 24px;
 }
-#screen1 .first-screen .social-line .social-item {
+@media (max-width: 768px) {
+  #screen1 .home .social-line .line {
+    display: none;
+  }
+}
+#screen1 .home .social-line .social-item {
   height: 54px;
   width: 54px;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
-#screen1 .first-screen .social-line .social-item.fb {
+#screen1 .home .social-line .social-item.fb {
   background-image: url("../../images/fb-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.fb:hover {
+#screen1 .home .social-line .social-item.fb:hover {
   background-image: url("../../images/fb-hovered.svg");
 }
-#screen1 .first-screen .social-line .social-item.ins {
+#screen1 .home .social-line .social-item.ins {
   background-image: url("../../images/instagram-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.ins:hover {
+#screen1 .home .social-line .social-item.ins:hover {
   background-image: url("../../images/instagram-hovered.svg");
 }
-#screen1 .first-screen .social-line .social-item.yt {
+#screen1 .home .social-line .social-item.yt {
   background-image: url("../../images/yt-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.yt:hover {
+#screen1 .home .social-line .social-item.yt:hover {
   background-image: url("../../images/yt-hovered.svg");
 }
-#screen1 .first-screen .social-line .social-item.tw {
+#screen1 .home .social-line .social-item.tw {
   background-image: url("../../images/twitter-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.tw:hover {
+#screen1 .home .social-line .social-item.tw:hover {
   background-image: url("../../images/twitter-hovered.svg");
 }
-#screen1 .first-screen .social-line .social-item.tg {
+#screen1 .home .social-line .social-item.tg {
   background-image: url("../../images/telegram-ic-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.tg:hover {
+#screen1 .home .social-line .social-item.tg:hover {
   background-image: url("../../images/telegram-ic-hovered.svg");
 }
-#screen1 .first-screen .social-line .social-item.vk {
+#screen1 .home .social-line .social-item.vk {
   background-image: url("../../images/vk-default.svg");
 }
-#screen1 .first-screen .social-line .social-item.vk:hover {
+#screen1 .home .social-line .social-item.vk:hover {
   background-image: url("../../images/vk-hovered.svg");
 }
-#screen1 .first-screen.what-is {
+#screen1 .home.what-is {
   margin-top: 40px;
   padding: 125px 125px 0;
   -webkit-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
@@ -231,32 +248,32 @@ body {
   -o-background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
   background-image: linear-gradient(to bottom, rgba(236,236,240,0), #373c4a);
 }
-#screen1 .first-screen.what-is .desktop {
+#screen1 .home.what-is .desktop {
   width: 100%;
   z-index: 15;
 }
-#screen1 .first-screen.what-is .slider-container {
+#screen1 .home.what-is .slider-container {
   z-index: 14;
 }
-#screen1 .first-screen.what-is .slider-container .slider-pagination-bullets {
+#screen1 .home.what-is .slider-container .slider-pagination-bullets {
   display: none;
 }
-#screen1 .first-screen.what-is .screenshot {
+#screen1 .home.what-is .screenshot {
   width: 100%;
 }
-#screen1 .first-screen.what-is .title {
+#screen1 .home.what-is .title {
   margin-top: 15px;
   font-family: MuseoSansCyrl300;
   font-size: 60px;
   color: #34343e;
 }
-#screen1 .first-screen.what-is .subtitle {
+#screen1 .home.what-is .subtitle {
   margin-top: 5px;
   font-family: MuseoSansCyrl100;
   font-size: 18px;
   color: #34343e;
 }
-#screen1 .first-screen.what-is .description {
+#screen1 .home.what-is .description {
   margin-top: 24px;
   font-family: MuseoSansCyrl100;
   font-size: 18px;
@@ -264,24 +281,24 @@ body {
   color: #34343e;
   max-width: 630px;
 }
-#screen1 .first-screen.what-is .buttons {
+#screen1 .home.what-is .buttons {
   margin-top: 48px;
 }
-#screen1 .first-screen.what-is .btn-black {
+#screen1 .home.what-is .btn-black {
   margin-top: 25px;
   margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
 }
-#screen1 .first-screen.what-is .btn-black img {
+#screen1 .home.what-is .btn-black img {
   width: 13px;
   height: 16px;
 }
-#screen1 .first-screen.what-is .desktop-outer {
+#screen1 .home.what-is .desktop-outer {
   display: flex;
   flex-direction: column;
 }
-#screen1 .first-screen.what-is .desc {
+#screen1 .home.what-is .desc {
   padding-left: 50px;
 }
 .social-line {
@@ -309,7 +326,6 @@ body {
   font-size: 18px;
   font-family: MuseoSansCyrl500;
   color: #34343e;
-  position: relative;
   top: -15px;
   border: none;
 }
@@ -333,6 +349,11 @@ body {
   }
   100% {
     background-position: 0 79%;
+  }
+}
+@media (max-width: 425px) {
+  .btn-buy-tokens {
+    margin-right: 0;
   }
 }
 @-moz-keyframes movecolors {
@@ -492,6 +513,11 @@ body {
   justify-content: space-between;
   align-items: center;
   background: transparent;
+}
+@media (max-width: 425px) {
+  .crypto .collection .item {
+    height: 120px;
+  }
 }
 @media (max-width: 320px) {
   .crypto .collection .item {
