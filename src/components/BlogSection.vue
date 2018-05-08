@@ -7,8 +7,10 @@
 			<div class="divider"></div>
 
 			<div class="row news-section">
-				<div class="col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
+				<div class="animate col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
+					<span>
 					<router-link  tag="div" :to="`/blog/${n._id}`" class="news-block">
+
 						<router-link :to="`/blog/${n._id}`">
 							<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
 						</router-link>
@@ -18,7 +20,9 @@
                             </p>
 							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
+
 					</router-link>
+					</span>
 				</div>
 				<div class="col-12 news-button">
 					<div class="form-group is-center">
@@ -127,19 +131,74 @@
 
 				&:focus
 					box-shadow none
+		//z
+	.animate::after{
+		left: 0;
+		bottom: 0;
+		transition-delay: 0.4s;
+	}
+	.animate span::after{
+		transition-delay: 0.2s;
+		right: 0;
+		bottom: 0
+	}
+	.animate::before{
+		right: 0;
+		top: 0;
+		transition-delay: 0.2s;
+	}
+	.animate span::before{
+		transition-delay: 0s;
+		left: 0;
+		top: 0;
+	}
 
-		.animate
-				color #31302B
-				background #FFF
-				cursor pointer
-				box-shadow: inset 0 0 0 0 #fea007
-				-webkit-transition all ease 0.5s
-				-moz-transition all ease 0.5s
-				transition: all ease 0.5s
+	.animate:hover::after{
+		transition-delay: 0s;
+	}
+	.animate:hover span::after{
+		transition-delay: 0.2s;
+	}
+	.animate:hover::before{
+		transition-delay: 0.4s;
+	}
+	.animate:hover span::before{
+		transition-delay: 0.6s;
+	}
+	.animate{
+		background: none;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+	}
+	.animate span{
+		padding: 25px 80px;
+	}
+	.animate::before, .animate::after{
+		content:"";
+		width: 0;
+		height: 2px;
+		position: absolute;
+		transition: all 0.2s linear;
+		background: #ffd24f;
+	}
 
-				&:hover
-					box-shadow: inset 0 0 100px 0 #ffd24f;
-					color: #fff;
+	.animate span::before, .animate span::after{
+		content:"";
+		width:2px;
+		height:0;
+		position: absolute;
+		transition: all 0.2s linear;
+		background: #ffd24f;
+	}
+	.animate:hover::before, .animate:hover::after{
+		width: 100%;
+	}
+	.animate:hover span::before, .animate:hover span::after{
+		height: 100%;
+	}
+		/*z*/
+
 
 
 		.news-block

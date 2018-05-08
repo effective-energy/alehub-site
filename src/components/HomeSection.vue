@@ -238,7 +238,8 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-11">
                     <div class="crypto">
-                        <div class="title">
+                        <div class="title"
+                             :class="{ 'ico-progress__dark': isDark }">
                             {{ $t("greeting.acceptedCrypto.title") }}
                         </div>
                         <div class="collection"

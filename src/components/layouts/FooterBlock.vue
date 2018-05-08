@@ -61,25 +61,34 @@
                     </a>
                 </div>
                 <div class="subscribe-form">
-                    <div class="subscribe-form__wrap">
+                    <div class="subscribe-form__wrap" v-if="!isSuccess">
                         <input class="subscribe-form__email"
-                               :class="{ 'error': isError }"
+                               :class="{ 'error': isError || alreadyExist }"
                                type="text"
                                :placeholder="$t('footer.right.input')"
                                v-model="email"
                                @blur="checkCorrectEmail"
-                               @input="inputCheckCorrectEmail"/>
+                               @input="inputCheckCorrectEmail"
+                               :disabled="isLoader"/>
                         <label class="subscribe-form__error" v-if="isError">
                             {{ $t('footer.right.error') }}
                         </label>
-                        <label class="subscribe-form__success" v-if="isSuccess">
-                            {{ $t('footer.right.success') }}
+                        <label class="subscribe-form__error" v-if="alreadyExist">
+                            Email already exist
                         </label>
+                        <!-- <label class="subscribe-form__success" v-if="isSuccess">
+                            {{ $t('footer.right.success') }}
+                        </label> -->
                     </div>
                     <button class="subscribe-form__submit"
-                            @click="subscribe">
-                        {{ $t('footer.right.btn') }}
+                            @click="subscribe" 
+                            :class="{'btn-loading': isLoader}" 
+                            :disabled="isLoader"
+                            v-if="!isSuccess">
+                                <Spinner v-if="isLoader"/>
+                                <span v-else>{{ $t('footer.right.btn') }}</span>
                     </button>
+                    <p v-else class="subscribe-form__success">You have successfully subscribed to the newsletter. Check your email to confirm your subscription.</p>
                 </div>
             </div>
         </div>
@@ -87,13 +96,21 @@
 </template>
 
 <script>
+    import Spinner from './Spinner';
+
     export default {
         name: 'FooterSection',
+        components: {
+            Spinner
+        },
         data() {
             return {
                 email: '',
                 error: false,
-                initialFocus: false
+                initialFocus: false,
+                success: false,
+                exist: false,
+                isLoader: false
             }
         },
         watch: {
@@ -104,8 +121,9 @@
         computed: {
             isCorrectEmail: function () {
                 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (this.email.length === 0)
+                if (this.email.length === 0) {
                     return true;
+                }
                 return re.test(String(this.email).toLowerCase());
             },
             isError: function () {
@@ -116,16 +134,39 @@
                 return this.initialFocus;
             },
             isSuccess: function () {
-
+                return this.success;
+            },
+            alreadyExist: function () {
+                return this.exist;
             }
         },
         methods: {
             subscribe: function () {
-                return this.isCorrectEmail;
+                if (this.isCorrectEmail) {
+                    this.isLoader = true;
+                    this.$http.post(`https://alehub.eu-4.evennode.com/subscribe/new`, {
+                        "email": this.email
+                    }, {
+                        headers : {
+                            'Content-Type' : 'application/json; charset=UTF-8',
+                            'Accept' : 'application/json'
+                        }
+                    }).then(response => {
+                        this.isLoader = false;
+                        console.log(response.body);
+                        if(response.body.message === 'Email already exist')
+                            return this.exist = true;
+                        this.success = true;
+                    }, response => {
+                        this.isLoader = false;
+                        this.error = true;
+                    })
+                }
             },
             inputCheckCorrectEmail: function () {
                 if (this.isInitialFocus)
                     this.error = !this.isCorrectEmail;
+                    this.exist = false;
             },
             checkCorrectEmail: function () {
                 if (this.email.length === 0)
@@ -133,15 +174,19 @@
                 else
                     this.initialFocus = true;
                 this.error = !this.isCorrectEmail;
-            },
-            alreadyExist: function () {
-
             }
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .spinner 
+        height 19px !important
+        width 19px !important
+
+    .btn-loading
+        background-color #fff !important
+
     .footer
         background-color #ececf0
         padding 32px 0
@@ -167,13 +212,18 @@
 
                 .subscribe-form__wrap
                     position relative
-                    width 100%
                     text-align right
+                    width 100%
+
+                    @media (max-width 1023px)
+                        margin-bottom 24px
 
                     @media (max-width 425px)
                         width 100% !important
+                        margin-bottom 30px
 
                     .subscribe-form__email
+                        order 2
                         background none
                         border-radius 3px
                         border solid 0.5px #a3a3a9
@@ -187,14 +237,17 @@
                         -webkit-transition all .3s ease-out
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
+                            
+                        @media (max-width 1023px)
+                            margin-bottom 0
 
-                        @media (max-width: 320px)
-                            min-width 100%
                         @media (max-width 425px)
                             font-size 16px
                             height 50px
                             text-align center
-                            margin-bottom 15px
+
+                        @media (max-width 320px)
+                            min-width 100%
 
                         &:focus
                             color #34343e
@@ -206,13 +259,23 @@
                         color #ff4f4f !important
 
                     .subscribe-form__error
-                        position absolute
-                        top -6px
-                        left 15px
+                        order 1
                         font-size 10px
                         background-color #ececf0
-                        padding 0 5px
+                        padding 0
                         color #ff4f4f
+                        margin-bottom 0
+                        position absolute 
+                        top 40px
+                        right 170px
+
+                        @media( max-width 1023px)
+                            margin-bottom 10px
+                            left 0
+                            right unset
+
+                        @media( max-width 425px)
+                            top 54px
 
                 .subscribe-form__submit
                     cursor pointer
@@ -233,6 +296,8 @@
                     -webkit-transition all .3s ease-out
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
+                    min-width 157px
+                    max-height 37px
 
                     @media (max-width 425px)
                         font-size 16px
@@ -244,6 +309,15 @@
 
                     &:focus
                         outline none
+
+                .subscribe-form__success
+                    font-size 14px
+                    text-align right 
+                    padding-right 20px
+
+                    @media (max-width 767px)
+                        text-align center
+                        padding-right 0
 
             .social-networks
                 display flex
