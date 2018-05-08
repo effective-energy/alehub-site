@@ -32,7 +32,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'ПЕРЕВОД'
+                    name: '下载'
                 },
                 {
                     path: '#blog',
@@ -1584,7 +1584,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'ПЕРЕВОД'
+                    name: 'Télécharger'
                 },
                 {
                     path: '#blog',
@@ -2104,7 +2104,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'ПЕРЕВОД'
+                    name: 'Herunterladen'
                 },
                 {
                     path: '#blog',
@@ -2236,7 +2236,7 @@ const messages = {
             }
         },
         team: {
-            title: 'Notre équipe',
+            title: 'Unser Team',
             serokell: [{
                 name: 'Serokell',
                 members: [{
@@ -2623,7 +2623,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'ПЕРЕВОД'
+                    name: 'تحميل'
                 },
                 {
                     path: '#blog',
@@ -3140,6 +3140,10 @@ const messages = {
                 {
                     path: '#roadmap',
                     name: '로드맵'
+                },
+                {
+                    path: '#download-application',
+                    name: '다운로드'
                 },
                 {
                     path: '#blog',

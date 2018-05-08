@@ -132,71 +132,71 @@
 				&:focus
 					box-shadow none
 		//z
-	.animate::after
-		left 0
-		bottom 0
-		transition-delay 0.4s
+	.animate::after{
+		left: 0;
+		bottom: 0;
+		transition-delay: 0.4s;
+	}
+	.animate span::after{
+		transition-delay: 0.2s;
+		right: 0;
+		bottom: 0
+	}
+	.animate::before{
+		right: 0;
+		top: 0;
+		transition-delay: 0.2s;
+	}
+	.animate span::before{
+		transition-delay: 0s;
+		left: 0;
+		top: 0;
+	}
 
-	.animate span::after
-		transition-delay 0.2s
-		right 0
-		bottom 0
+	.animate:hover::after{
+		transition-delay: 0s;
+	}
+	.animate:hover span::after{
+		transition-delay: 0.2s;
+	}
+	.animate:hover::before{
+		transition-delay: 0.4s;
+	}
+	.animate:hover span::before{
+		transition-delay: 0.6s;
+	}
+	.animate{
+		background: none;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+	}
+	.animate span{
+		padding: 25px 80px;
+	}
+	.animate::before, .animate::after{
+		content:"";
+		width: 0;
+		height: 2px;
+		position: absolute;
+		transition: all 0.2s linear;
+		background: #ffd24f;
+	}
 
-	.animate::before
-		right 0
-		top 0
-		transition-delay 0.2s
-
-	.animate span::before
-		transition-delay 0s
-		left 0
-		top 0
-
-
-	.animate:hover::after
-		transition-delay 0s
-
-	.animate:hover span::after
-		transition-delay 0.2s
-
-	.animate:hover::before
-		transition-delay 0.4s
-
-	.animate:hover span::before
-		transition-delay 0.6s
-
-	.animate
-		background none
-		border none
-		color #fff
-		cursor pointer
-
-	.animate span
-		padding 25px 80px
-
-	.animate::before, .animate::after
-		content ""
-		width 0
-		height 2px
-		position absolute
-		transition all 0.2s linear
-		background #ffd24f
-
-
-	.animate span::before, .animate span::after
-		content ""
-		width 2px
-		height 0
-		position: absolute
-		transition all 0.2s linear
-		background #ffd24f
-
-	.animate:hover::before, .animate:hover::after
-		width 100%
-
-	.animate:hover span::before, .animate:hover span::after
-		height: 100%
-
+	.animate span::before, .animate span::after{
+		content:"";
+		width:2px;
+		height:0;
+		position: absolute;
+		transition: all 0.2s linear;
+		background: #ffd24f;
+	}
+	.animate:hover::before, .animate:hover::after{
+		width: 100%;
+	}
+	.animate:hover span::before, .animate:hover span::after{
+		height: 100%;
+	}
 		/*z*/
 
 
