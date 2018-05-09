@@ -8,6 +8,7 @@ import VueI18n from 'vue-i18n';
 import VueCircleSlider from 'vue-circle-slider';
 import VueResource from 'vue-resource';
 import Moment from 'vue-moment';
+import VueYandexMetrika from 'vue-yandex-metrika';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -26,12 +27,19 @@ Vue.use(VueCircleSlider);
 Vue.use(VueResource);
 Vue.use(Moment);
 
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueAwesomeSwiper from 'vue-awesome-swiper';
 
 // require styles
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper);
+
+// Vue.use(VueYandexMetrika, {
+//     id: 48802643,
+//     router: router,
+//     env: process.env.NODE_ENV
+//     // other options
+// });
 
 Vue.config.productionTip = false;
 
