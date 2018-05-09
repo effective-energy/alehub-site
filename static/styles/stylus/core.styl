@@ -143,29 +143,45 @@ body
         color #ccc
 
 #screen1
+    .home__open-video
+        @media (min-width 1024px) and (max-width 1200px)
+            min-height calc(120vh + 170px + 500px - 124px) !important
+
+        @media (min-width 768px) and (max-width 1024px)
+                min-height calc(120vh + 170px + 400px - 124px) !important
+
+        @media (min-width 425px) and (max-width 768px)
+            min-height calc(120vh + 170px + 400px - 124px) !important
+
+        @media (max-width 425px)
+            min-height calc(200vh + 300px - 124px) !important
+
     .home
         padding 50px 200px 0 200px
-        min-height calc(100vh - 124px)
+        min-height calc(100vh - 74px)
         display flex
         flex-direction column
         justify-content space-around
 
         @media (min-width 1440px) and (max-width 2560px)
-            padding 50px 200px 0 200px
+            padding 50px 150px 0 150px
+
+        @media (min-width 1024px) and (max-width 1200px)
+            min-height calc(120vh + 170px - 124px)
 
         @media (min-width 1024px) and (max-width 1440px)
             padding 50px 100px 0 100px
 
         @media (min-width 768px) and (max-width 1024px)
             min-height calc(120vh + 170px - 124px)
-            max-height calc(120vh + 170px + 450px - 124px)
             padding 50px 75px 0 75px
 
         @media (min-width 425px) and (max-width 768px)
+            min-height calc(120vh + 300px - 124px)
             padding 50px 50px 0 50px
 
         @media (max-width 425px)
-            min-height calc(200vh - 124px)
+            min-height calc(200vh + 25px - 124px)
             padding 25px 25px 0 25px
 
         .social-line
@@ -225,6 +241,15 @@ body
                     background-image url('../../images/vk-default.svg')
                     &:hover
                         background-image url('../../images/vk-hovered.svg')
+                &.btc-talk
+                    background-image url('../../images/btc-default.svg')
+                    &:hover
+                        background-image url('../../images/btc-hovered.svg')
+                &.github
+                    background-image url('../../images/github-default.svg')
+                    &:hover
+                        background-image url('../../images/github-hovered.svg')
+
         /*&.partners
             margin-top 150px
             padding 0 225px
@@ -409,6 +434,14 @@ body
 .countdown
     display inline-block
 
+    @media (min-width 425px) and (max-width 768px)
+        width 100%
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        padding-bottom 26px
+
     .title
         font-size 20px
         font-family MuseoSansCyrl500
@@ -453,8 +486,8 @@ body
     display inline-block
     position relative
     font-size 16px
-    margin-left 12px
-    top -4px
+    //margin-left 12px
+    //top -4px
 
     span
         display block
@@ -469,13 +502,19 @@ body
         font-size 20px
         color #34343e
 
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
     .collection
         display flex
         flex-direction row
+        flex-wrap wrap
         margin-top 25px
 
-        @media (max-width 320px)
-            flex-wrap wrap
+        @media (min-width 425px) and (max-width 768px)
+            margin-top 5px
+            justify-content center
+
 
         .item
             width 90px
@@ -486,7 +525,10 @@ body
             align-items center
             background transparent
 
-            @media (max-width 425px)
+            @media (min-width 425px) and (max-width 768px)
+                margin-top 20px
+
+            @media (min-width 320px) and (max-width 425px)
                 height 120px
 
             @media (max-width 320px)

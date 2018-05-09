@@ -1,28 +1,31 @@
 <template>
     <section id="screen1">
 
-        <!--<video autoplay muted loop id="myVideo">-->
-        <!--<source src="../../static/video/fullPreview1.mp4" type="video/mp4">-->
-        <!--</video>-->
-
         <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
+            <button type="button"
+                    id="do-video-theme"
+                    class="button-choose_video"
+                    :class="{ 'button-choose__active-video': isVideo }"
+                    @click="doVideoTheme">
+                <img src="../../static/images/play.svg" alt="video">
+            </button>
             <button type="button"
                     id="do-light-theme"
                     class="button-choose_light"
-                    :class="{ 'button-choose__active': !isDark }"
+                    :class="{ 'button-choose__active': !isDark && !isVideo }"
                     @click="doLightTheme">
             </button>
             <button type="button"
                     id="do-dark-theme"
                     class="button-choose_dark"
-                    :class="{ 'button-choose__active': isDark }"
+                    :class="{ 'button-choose__active': isDark && !isVideo }"
                     @click="doDarkTheme">
             </button>
         </div>
 
         <div id="svg-anim"
              class="anim"
-             v-if="checkWindowWidth"
+             v-if="checkWindowWidth && !isVideo"
              :class="{ 'anim__dark': isDark }">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
@@ -135,9 +138,15 @@
                 </g>
             </svg>
         </div>
+
         <div class="home"
              :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
+
+            <video autoplay muted loop id="myVideo" v-if="isVideo">
+                <source src="../../static/video/preview.mp4" type="video/mp4">
+            </video>
+
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
@@ -148,7 +157,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
@@ -323,6 +332,12 @@
                 <a href="https://t.me/alehub"
                    class="social-item tg"
                    target="_blank"></a>
+                <a href="https://bitcointalk.org/index.php?topic=3676768.new"
+                   class="social-item btc-talk"
+                   target="_blank"></a>
+                <a href="https://github.com/effective-energy"
+                   class="social-item github"
+                   target="_blank"></a>
                 <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
@@ -364,15 +379,15 @@
             <div class="row">
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
-                        <img src="../../static/images/desctop-transparent.png"
+                        <img src="../../static/images/desctop.png"
                              class="desktop">
-                        <slider v-if="reBuild" ref="slider"
-                                :pages="pages"
-                                :sliderinit="sliderInit">
-                        </slider>
+                        <!--<slider v-if="reBuild" ref="slider"-->
+                                <!--:pages="pages"-->
+                                <!--:sliderinit="sliderInit">-->
+                        <!--</slider>-->
                     </div>
-                    <img src="../../static/images/desctop.png"
-                         class="desktop-for-mobile">
+                    <!--<img src="../../static/images/desctop.png"-->
+                         <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
@@ -386,24 +401,32 @@
                 </div>
                 <div class="col-lg-6 desc" style="align-self: flex-start;">
                     <h1 class="title">
-                        {{$t("about.title")}}
+                        {{ $t("about.title") }}
                     </h1>
                     <h3 class="subtitle">
-                        {{$t("about.subTitle")}}
+                        {{ $t("about.subTitle") }}
                     </h3>
                     <p class="description">
-                        {{$t("about.description")}}
+                        {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a class="btn btn-yellow">
-                            {{$t("about.btnGroup.whitePaper")}}
+                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank" @click="yaMetrica">
+                            {{ $t("about.btnGroup.whitePaper") }}
                         </a>
-                        <a class="btn btn-yellow" v-scroll-to="'#features'">
-                            {{$t("about.btnGroup.techDetails")}}
+                        <a class="btn btn-yellow" v-scroll-to="'#features'" target="_blank">
+                            {{ $t("about.btnGroup.techDetails") }}
                         </a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="telegram-alert"
+             v-if="checkWindowWidth"
+            :class="{ 'asd': 'true' }">
+            <a href="https://t.me/alehub" target="_blank">
+                <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
+            </a>
         </div>
 
     </section>
@@ -422,8 +445,27 @@
             slider,
             MenuModal
         },
+        props: {
+            isIco: {
+                type: Boolean,
+                required: true
+            }
+        },
+        watch: {
+            isIco: function (val) {
+                console.log(val, 'isIco');
+            },
+            isVideo: function (val) {
+                if (val) {
+                    setTimeout(() => {
+                        document.querySelector('video').playbackRate = 0.75;
+                    }, 40);
+                }
+            }
+        },
         data() {
             return {
+                isVideo: false,
                 isDark: false,
                 pages: [
                     {
@@ -558,8 +600,19 @@
                     return (this.collected / this.hardCap) * 100 + '%';
                 else return '100%';
             },
+            currentWhitePaper: function () {
+                if (localStorage.getItem('systemLang') === 'en') {
+                    return 'https://alehub.io/ALEHUB_WP_eng.pdf';
+                } else if (localStorage.getItem('systemLang') === 'ru') {
+                    return 'https://alehub.io/ALEHUB_WP_rus.pdf';
+                }
+            }
         },
         methods: {
+            yaMetrica: function () {
+                // yaCounter48802643.reachGoal('DownloadWP');
+                return true;
+            },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
                 this.softCap = this.currencies[name].softCap;
@@ -573,7 +626,13 @@
                 this.currentCurrency = this.currencies.usd.name;
             },
             playVideo: function () {
-                this.mainPlayer ? this.mainPlayer = false : this.mainPlayer = true
+                if (this.mainPlayer) {
+                    this.mainPlayer = false;
+                    document.querySelector('.home').classList.remove('home__open-video');
+                } else {
+                    this.mainPlayer = true;
+                    document.querySelector('.home').classList.add('home__open-video');
+                }
             },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
@@ -586,7 +645,7 @@
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         duration: anime.random(6500, 9000),
-                        delay: anime.random(500, 2500),
+                        delay: anime.random(0, 2500),
                         loop: true,
                         direction: 'alternate',
                         easing: 'easeInOutSine',
@@ -663,8 +722,25 @@
                     window.animejsconfig[i].pause();
                 }
             },
+            doVideoTheme: function () {
+                this.isDark = true;
+                this.isVideo = true;
+                this.$parent.$emit('isDarkTheme', true);
+                localStorage.setItem('color-theme', 'video');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
+            },
             doLightTheme: function () {
                 this.isDark = false;
+                this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
                 this.pages[0] = {
@@ -680,6 +756,7 @@
             },
             doDarkTheme: function () {
                 this.isDark = true;
+                this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
                 this.pages[0] = {
@@ -720,28 +797,65 @@
                 }, response => {
                     console.log('Error getting news', response);
                 });
-            }
+            },
+            getCoords: function (elem) {
+                if (!elem)
+                    return false;
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+            },
         },
         mounted() {
 
+            if (this.isVideo) {
+                document.querySelector('video').playbackRate = 0.75;
+            }
+
             this.getCurrentExchangeRates();
 
+            // window.addEventListener('scroll', () => {
+            //     if (window.scrollY > this.getCoords(document.getElementById('description')).top) {
+            //         if (document.getElementById('myVideo').style['position'] !== 'absolute') {
+            //             document.getElementById('myVideo').style['position'] = 'absolute';
+            //             document.getElementById('myVideo').style['min-height'] = window.innerHeight - navbarYOffset + 'px';
+            //             document.getElementById('myVideo').style['height'] = window.innerHeight - navbarYOffset + 'px';
+            //             document.getElementById('myVideo').style['bottom'] = 0;
+            //         }
+            //     } else {
+            //         if (document.getElementById('myVideo').style['position'] !== 'fixed') {
+            //             document.getElementById('myVideo').style['position'] = 'fixed';
+            //             document.getElementById('myVideo').style['min-height'] = '100%';
+            //             document.getElementById('myVideo').style['height'] = '';
+            //         }
+            //     }
+            // });
+
             setTimeout(() => {
-                if (localStorage.getItem('color-theme') === 'dark') {
+                if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
                     this.isDark = true;
+                    this.isVideo = false;
                     this.$parent.$emit('isDarkTheme', true);
-                } else if (localStorage.getItem('color-theme') === 'light') {
+                } else if (localStorage.getItem('color-theme') === 'light' && this.checkWindowWidth) {
                     this.isDark = false;
+                    this.isVideo = false;
                     this.$parent.$emit('isDarkTheme', false);
+                } else if (localStorage.getItem('color-theme') === 'video' && this.checkWindowWidth) {
+                    this.isDark = true;
+                    this.isVideo = true;
+                    this.$parent.$emit('isDarkTheme', true);
                 } else {
-                    localStorage.setItem('color-theme', 'light');
-                    this.$parent.$emit('isDarkTheme', false);
+                    localStorage.setItem('color-theme', 'video');
+                    this.$parent.$emit('isDarkTheme', true);
                 }
             }, 40);
 
             setTimeout(() => {
                 this.startAnime();
-            }, 2500);
+            }, 2000);
 
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
@@ -756,18 +870,73 @@
 
 <style lang="stylus" scoped>
 
+    .row
+        z-index 2
+
+    .what-is
+        background-color #ececf0
+
+    .countdown-block
+        @media (min-width 848px)
+            display flex
+            align-items center
+
+    .telegram-alert
+        cursor pointer
+        position fixed
+        right 150px
+        bottom 150px
+        border-radius 50%
+        background-color #343a49
+        width 70px
+        height 70px
+        z-index 1000
+
+        a
+            width 100%
+            height 100%
+            display flex
+            align-items center
+            justify-content center
+
+            img
+                width 45%
+
+    .screen1.title
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
     .home
         position relative
+        background-attachment fixed
+        background-position center
+        background-repeat no-repeat
+        background-size cover
 
     .partners
         background-color #ececf0
 
     .play-video
-        @media (min-width 1024px) and (max-width 1440px)
+        z-index 2
+        width 100%
+
+        @media (min-width 1440px)
             display flex !important
             justify-content center
             align-items center
-            width 100%
+
+        @media (min-width 1200px) and (max-width 1440px)
+            display flex !important
+            justify-content center
+            align-items center
+            margin-top 0 !important
+
+        @media (min-width 1024px) and (max-width 1200px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 60px
             margin-top 0 !important
 
         @media (min-width 768px) and (max-width 1024px)
@@ -775,10 +944,23 @@
             flex-direction column
             justify-content center
             align-items center
-            width 100%
-            padding-top 30px
-            //padding-bottom 30px
+            padding-top 40px
             margin-top 0 !important
+
+        @media (min-width 425px) and (max-width 768px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 40px
+
+        @media (max-width 425px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 30px
+
 
         .play-button
             display flex
@@ -786,6 +968,16 @@
             align-items center
 
         .main-player
+            z-index 100
+            width 100%
+
+            .iframe
+                width 100%
+                height 100%
+
+            @media (max-width 1200px)
+                position initial
+
             @media (min-width 768px) and (max-width 1024px)
                 padding-top 50px
 
@@ -839,7 +1031,7 @@
                 &:focus
                     outline none
 
-                @media (max-width 425px)
+                @media (max-width 768px)
                     img
                         display none
 
@@ -863,7 +1055,7 @@
             box-shadow none
 
     #myVideo
-        position fixed
+        position absolute
         right 0
         bottom 0
         min-width 100%
@@ -874,13 +1066,11 @@
 
     #description
         @media (min-width 425px)
-            height 100vh
-
-        .row
-            align-items center
+            min-height 100vh
 
     .anim
         opacity 0.7
+        z-index 1
 
     .anim__dark
         opacity 0.25
@@ -898,77 +1088,77 @@
 
     .place-player
         opacity 0
+        width 100%
         -webkit-transition all .5s ease-in-out
         -o-transition all .5s ease-in-out
         transition all .5s ease-in-out
 
-        @media (min-width 768px) and (max-width 1024px)
+        @media (max-width 1200px)
             display none
 
     .place-player__frame
         background-color #000
+        height 100%
 
     .main-player, .place-player
+        height 300px
         position absolute
-        right -300px
+        top 130px
 
-        .iframe, .place-player__frame
-            width 700px
-            height 394px
+        @media (min-width 1440px) and (max-width 2560px)
+            height 300px
 
-        @media (max-width 1680px)
-            right
-        -255px
-        .iframe, .place-player__frame
-            width 600px
-            height 336px
+        @media (min-width 1200px) and (max-width 1440px)
+            height 250px
 
-        @media (max-width 1600px)
-            right
-        -210px
-        .iframe, .place-player__frame
-            width 500px
-            height 280px
+        @media (min-width 1024px) and (max-width 1200px)
+            height 500px
 
-        @media (max-width 1530px)
-            right
-        -100px
-        .iframe, .place-player__frame
-            width 500px
-            height 280px
+        @media (min-width 768px) and (max-width 1024px)
+            height 400px
 
-        @media (max-width 1274px)
-            right 0
-            left 0
-            position relative
-            .iframe, .place-player__frame
-                width 800px
-                height 450px
 
-        @media (max-width 1120px)
-            .iframe, .place-player__frame
-                width 700px
-                height 394px
 
-        @media (max-width 850px)
-            .iframe, .place-player__frame
-                width 600px
-                height 336px
+        /*@media (max-width 1600px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 720px)
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+        /*@media (max-width 1530px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 620px)
-            .iframe, .place-player__frame
-                width 400px
-                height 225px
+        /*@media (max-width 1274px)*/
+            /*position relative*/
+            /*.iframe, .place-player__frame*/
+                /*width 800px*/
+                /*height 450px*/
 
-        @media (max-width 520px)
-            .iframe, .place-player__frame
-                width 100%
-                height 292px
+        /*@media (max-width 1120px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 700px*/
+                /*height 394px*/
+
+        /*@media (max-width 850px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 600px*/
+                /*height 336px*/
+
+        /*@media (max-width 720px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
+
+        /*@media (max-width 620px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 400px*/
+                /*height 225px*/
+
+        /*@media (max-width 520px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 100%*/
+                /*height 292px*/
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
@@ -1044,13 +1234,20 @@
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
 
+        .social-item.btc-talk
+            background-image url(../../static/images/btc-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/btc-hovered.svg) !important
+
+        .social-item.github
+            background-image url(../../static/images/github-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/github-hovered.svg) !important
+
     .description__dark
-        background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -webkit-gradient(bottom top, bottom top, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(60%, rgba(83, 92, 112, 1)), color-stop(100%, rgba(247, 247, 247, 1))) !important
-        background -webkit-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -o-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background-color #343a49
 
         @media (max-width 425px)
             background #343a49 !important
@@ -1058,6 +1255,7 @@
         .desc
             .title, .subtitle, .description
                 color #f7f7f7 !important
+
 
     .collection
         .item
@@ -1097,6 +1295,32 @@
         .button-choose__active
             opacity 1 !important
             border 2px solid #ffd24f !important
+
+        .button-choose__active-video
+            opacity 1 !important
+            border 2px solid #343a49 !important
+
+        .button-choose_video
+            padding 0
+            padding-left 5px
+            position relative
+            opacity 0.8
+            cursor pointer
+            width 40px
+            height 40px
+            margin-bottom 15px
+            background-color #ffd24f
+            border-radius 50%
+            border 1px solid #f7f7f7
+            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+
+            &:focus
+                outline none
+
+            img
+                width 70%
 
         .button-choose_light
             opacity 0.8
@@ -1140,12 +1364,13 @@
             padding-top 150px
 
             .title
+                z-index 2
                 font-size 22px
                 font-weight 700
                 white-space nowrap
 
             @media (min-width 1440px) and (max-width 2560px)
-                padding 150px 200px 0 200px
+                padding 150px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
                 padding 100px 100px 0 100px
@@ -1155,6 +1380,11 @@
 
             @media (min-width 425px) and (max-width 768px)
                 padding 75px 50px
+                height 75vh
+                display flex
+                flex-direction column
+                justify-content space-around
+                align-items center
 
                 .title
                     display none
@@ -1188,6 +1418,7 @@
                     margin-bottom 20px
 
     .social-line
+        padding 15px 0
         /*@media (min-width 1024px) and (max-width 1440px)*/
         /*margin-top 60px*/
 
@@ -1211,11 +1442,13 @@
                             margin-right 0
 
         .what-is
-            padding 60px 200px 0 200px
+            display flex
+            align-items center
+            padding 50px 200px 0 200px
             margin-top 0
 
             @media (min-width 1440px) and (max-width 2560px)
-                padding 60px 200px 0 200px
+                padding 60px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
                 padding 60px 100px 0 100px
@@ -1224,7 +1457,7 @@
                 padding 50px 75px 0 75px
 
             @media (min-width 425px) and (max-width 768px)
-                padding 50px 50px 0 50px
+                padding 50px 50px 25px 50px
 
             @media (max-width 425px)
                 padding 60px 25px
@@ -1249,8 +1482,17 @@
                             justify-content center
 
                         @media (min-width 425px) and (max-width 768px)
+                            width 100%
                             margin-top 30px
                             margin-bottom 40px
+                            padding 10px 25px
+                            font-size 18px
+
+                        @media (max-width 425px)
+                            font-size 16px
+                            padding 15px 25px
+                            margin-top 25px
+
 
                     .desktop-outer
                         margin 0 auto
@@ -1264,93 +1506,93 @@
                             width 100% !important
                             position relative
 
-                        @media (max-width 2600px)
-                            .slider-container
-                                width 709px
-                                height 443px
-                                left 252px
-                                top 40px
+                        /*@media (max-width 2600px)*/
+                            /*.slider-container*/
+                                /*width 709px*/
+                                /*height 443px*/
+                                /*left 252px*/
+                                /*top 40px*/
 
-                            .desktop
-                                left 140px
-                                width 900px
+                            /*.desktop*/
+                                /*left 140px*/
+                                /*width 900px*/
 
-                        @media (max-width 2365px)
-                            .slider-container
-                                left 162px
+                        /*@media (max-width 2365px)*/
+                            /*.slider-container*/
+                                /*left 162px*/
 
-                            .desktop
-                                left 50px
+                            /*.desktop*/
+                                /*left 50px*/
 
-                        @media (max-width 2150px)
-                            .slider-container
-                                width 630px
-                                height 395px
-                                left 102px
-                                top 36px
+                        /*@media (max-width 2150px)*/
+                            /*.slider-container*/
+                                /*width 630px*/
+                                /*height 395px*/
+                                /*left 102px*/
+                                /*top 36px*/
 
-                            .desktop
-                                left 0
-                                width 800px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 800px*/
 
-                        @media (max-width 1860px)
-                            .slider-container
-                                width 552px
-                                height 345px
-                                left 91px
-                                top 32px
+                        /*@media (max-width 1860px)*/
+                            /*.slider-container*/
+                                /*width 552px*/
+                                /*height 345px*/
+                                /*left 91px*/
+                                /*top 32px*/
 
-                            .desktop
-                                left 0
-                                width 700px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 700px*/
 
-                        @media (max-width 1640px)
-                            padding-top 50px
+                        /*@media (max-width 1640px)*/
+                            /*padding-top 50px*/
 
-                            .slider-container
-                                width 473px
-                                height 296px
-                                left 80px
-                                top 77px
+                            /*.slider-container*/
+                                /*width 473px*/
+                                /*height 296px*/
+                                /*left 80px*/
+                                /*top 77px*/
 
-                            .desktop
-                                left 0
-                                width 600px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 600px*/
 
-                        @media (max-width 1460px)
-                            padding-top 100px
+                        /*@media (max-width 1460px)*/
+                            /*padding-top 100px*/
 
-                            .slider-container
-                                width 393px
-                                height 247px
-                                left 70px
-                                top 122px
+                            /*.slider-container*/
+                                /*width 393px*/
+                                /*height 247px*/
+                                /*left 70px*/
+                                /*top 122px*/
 
-                            .desktop
-                                left 0
-                                width 500px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 500px*/
 
-                        @media (max-width 1240px)
-                            padding-top 100px
+                        /*@media (max-width 1240px)*/
+                            /*padding-top 100px*/
 
-                            .slider-container
-                                width 315px
-                                height 197px
-                                left 59px
-                                top 118px
+                            /*.slider-container*/
+                                /*width 315px*/
+                                /*height 197px*/
+                                /*left 59px*/
+                                /*top 118px*/
 
-                            .desktop
-                                left 0
-                                width 400px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 400px*/
 
-                        @media (max-width 991px)
-                            padding-top 0
+                        /*@media (max-width 991px)*/
+                            /*padding-top 0*/
 
-                            .slider-container
-                                display none
+                            /*.slider-container*/
+                                /*display none*/
 
-                            .desktop
-                                display none
+                            /*.desktop*/
+                                /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile
@@ -1385,16 +1627,15 @@
 
                             .btn
                                 width 50%
-                                flex-grow 1
-                                padding 10px 30px
-                                font-size 24px
+                                padding 10px 15px
+                                font-size 18px
                                 margin 10px 0
 
                                 &:first-child
-                                    margin-right 10px
+                                    margin-right 7.5px
 
                                 &:last-child
-                                    margin-left 10px
+                                    margin-left 7.5px
 
                     @media (max-width 425px)
                         padding-top 25px
@@ -1402,6 +1643,11 @@
                         .title
                             text-align center
 
+                        .subtitle
+                            text-indent 30px
+
+                        .description
+                            text-indent 30px
 
                         .buttons
                             display flex
@@ -1409,15 +1655,13 @@
                             justify-content center
 
                             .btn
-                                padding 20px 30px
-                                font-size 24px
+                                padding 10px 25px
+                                font-size 22px
                                 margin 10px 0
 
         .play-video
             display inline-block
-            position relative
-            top -15px
-            left 25%
+            /*position relative*/
 
             .play-button
                 cursor pointer
@@ -1447,11 +1691,11 @@
                         width 35px
                         height 35px
 
-            @media (max-width 1500px)
-                left 20%
+            /*@media (max-width 1500px)*/
+                /*left 20%*/
 
-            @media (max-width 1400px)
-                left 15%
+            /*@media (max-width 1400px)*/
+                /*left 15%*/
 
             @media (max-width 1274px)
                 position unset
@@ -1494,6 +1738,7 @@
             font-family MuseoSansCyrl500
             font-size 20px
             color #34343e
+            padding 15px 0
 
             /*@media (min-width 1024px) and (max-width 1440px)*/
             /*margin-top 30px*/

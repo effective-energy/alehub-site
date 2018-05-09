@@ -118,6 +118,10 @@
 </script>
 
 <style lang="stylus" scoped>
+    .left-block, .right-block
+        @media (min-width 425px) and (max-width 768px)
+            padding 0 !important
+
     .item-text
         width 100%
 
@@ -133,19 +137,19 @@
         padding adv_padding-t-b 15%
         background-color #f5f5f7
 
-        @media (max-width 2560px)
+        @media (min-width 1440px) and (max-width 2560px)
             padding 60px 10%
             height "calc(784px + 2 * %s)" % adv_padding-t-b
 
-        @media (max-width 1440px)
+        @media (min-width 1024px) and (max-width 1440px)
             padding 60px 10%
             height "calc(784px + 2 * %s)" % adv_padding-t-b
 
-        @media (max-width 1024px)
+        @media (min-width 768px) and (max-width 1024px)
             padding 60px 7.5%
             height "calc(904px + 2 * %s)" % adv_padding-t-b
 
-        @media (max-width 768px)
+        @media (min-width 425px) and (max-width 768px)
             padding 60px 5%
             height "calc(1070px + 2 * %s)" % adv_padding-t-b
 
@@ -445,7 +449,6 @@
         transform translateX(100%)
 
     @media (max-width 1440px)
-
             .left-block, .right-block
                 .item-table
                     height 90px
@@ -525,7 +528,7 @@
 
                     .left-block, .right-block
                         .item-table
-                            height 180px
+                            height 120px
                             padding 0 20px
                             justify-content center
 

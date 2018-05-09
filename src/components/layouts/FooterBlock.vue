@@ -54,6 +54,16 @@
                        target="_blank">
                         <i class="social-icon social-icon-tg"></i>
                     </a>
+                    <a href="https://bitcointalk.org/index.php?topic=3676768.new"
+                       class="social-item"
+                       target="_blank">
+                        <i class="social-icon social-icon-btc-talk"></i>
+                    </a>
+                    <a href="https://github.com/effective-energy"
+                       class="social-item"
+                       target="_blank">
+                        <i class="social-icon social-icon-github"></i>
+                    </a>
                     <a href="https://vk.com/alehub" v-if="false"
                        class="social-item"
                        target="_blank">
@@ -61,9 +71,9 @@
                     </a>
                 </div>
                 <div class="subscribe-form">
-                    <div class="subscribe-form__wrap">
+                    <div class="subscribe-form__wrap" v-if="!isSuccess">
                         <input class="subscribe-form__email"
-                               :class="{ 'error': isError }"
+                               :class="{ 'error': isError || alreadyExist }"
                                type="text"
                                :placeholder="$t('footer.right.input')"
                                v-model="email"
@@ -76,15 +86,19 @@
                         <label class="subscribe-form__error" v-if="alreadyExist">
                             Email already exist
                         </label>
-                        <label class="subscribe-form__success" v-if="isSuccess">
+                        <!-- <label class="subscribe-form__success" v-if="isSuccess">
                             {{ $t('footer.right.success') }}
-                        </label>
+                        </label> -->
                     </div>
                     <button class="subscribe-form__submit"
-                            @click="subscribe" :class="{'btn-loading': true}" :disabled="isLoader">
+                            @click="subscribe" 
+                            :class="{'btn-loading': isLoader}" 
+                            :disabled="isLoader"
+                            v-if="!isSuccess">
                                 <Spinner v-if="isLoader"/>
                                 <span v-else>{{ $t('footer.right.btn') }}</span>
                     </button>
+                    <p v-else class="subscribe-form__success">You have successfully subscribed to the newsletter. Check your email to confirm your subscription.</p>
                 </div>
             </div>
         </div>
@@ -120,7 +134,6 @@
                 if (this.email.length === 0) {
                     return true;
                 }
-                console.log(re.test(String(this.email).toLowerCase()));
                 return re.test(String(this.email).toLowerCase());
             },
             isError: function () {
@@ -163,6 +176,7 @@
             inputCheckCorrectEmail: function () {
                 if (this.isInitialFocus)
                     this.error = !this.isCorrectEmail;
+                    this.exist = false;
             },
             checkCorrectEmail: function () {
                 if (this.email.length === 0)
@@ -208,13 +222,18 @@
 
                 .subscribe-form__wrap
                     position relative
-                    width 100%
                     text-align right
+                    width 100%
+
+                    @media (max-width 1023px)
+                        margin-bottom 24px
 
                     @media (max-width 425px)
                         width 100% !important
+                        margin-bottom 30px
 
                     .subscribe-form__email
+                        order 2
                         background none
                         border-radius 3px
                         border solid 0.5px #a3a3a9
@@ -228,14 +247,17 @@
                         -webkit-transition all .3s ease-out
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
+                            
+                        @media (max-width 1023px)
+                            margin-bottom 0
 
-                        @media (max-width: 320px)
-                            min-width 100%
                         @media (max-width 425px)
                             font-size 16px
                             height 50px
                             text-align center
-                            margin-bottom 15px
+
+                        @media (max-width 320px)
+                            min-width 100%
 
                         &:focus
                             color #34343e
@@ -247,13 +269,23 @@
                         color #ff4f4f !important
 
                     .subscribe-form__error
-                        position absolute
-                        top -6px
-                        left 15px
+                        order 1
                         font-size 10px
                         background-color #ececf0
-                        padding 0 5px
+                        padding 0
                         color #ff4f4f
+                        margin-bottom 0
+                        position absolute 
+                        top 40px
+                        right 170px
+
+                        @media( max-width 1023px)
+                            margin-bottom 10px
+                            left 0
+                            right unset
+
+                        @media( max-width 425px)
+                            top 54px
 
                 .subscribe-form__submit
                     cursor pointer
@@ -275,6 +307,7 @@
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
                     min-width 157px
+                    max-height 37px
 
                     @media (max-width 425px)
                         font-size 16px
@@ -286,6 +319,15 @@
 
                     &:focus
                         outline none
+
+                .subscribe-form__success
+                    font-size 14px
+                    text-align right 
+                    padding-right 20px
+
+                    @media (max-width 767px)
+                        text-align center
+                        padding-right 0
 
             .social-networks
                 display flex
@@ -324,6 +366,12 @@
                         .social-icon-vk
                             background-image url(../../../static/images/vk-hovered.svg)
 
+                        .social-icon-btc-talk
+                            background-image url(../../../static/images/social/btc-talk-hovered.svg)
+
+                        .social-icon-github
+                            background-image url(../../../static/images/social/github-ic-hovered.svg)
+
                     .social-icon
                         background-repeat no-repeat
                         background-size contain
@@ -355,6 +403,16 @@
                         width 16.8px
                         height 14.4px
                         background-image url(../../../static/images/social/tg.svg)
+
+                    .social-icon-btc-talk
+                        width 23px
+                        height 21px
+                        background-image url(../../../static/images/social/btc-talk.svg)
+
+                    .social-icon-github
+                        width 24px
+                        height 22px
+                        background-image url(../../../static/images/social/github-ic.svg)
 
                     .social-icon-vk
                         width 19.2px

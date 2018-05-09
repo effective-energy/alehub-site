@@ -141,6 +141,15 @@
     margin-left: 5px;
   }
 }
+@media (min-width: 576px) and (max-width: 768px) {
+  .btn-buy-tokens {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .bonus-desc {
+    margin-left: 15%;
+  }
+}
 @media (max-width: 576px) {
   .btn-buy-tokens {
     width: 100%;

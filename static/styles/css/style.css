@@ -141,9 +141,29 @@ body {
 .btn-black:hover {
   color: #ccc;
 }
+@media (min-width: 1024px) and (max-width: 1200px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 500px - 124px) !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 400px - 124px) !important;
+  }
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  #screen1 .home__open-video {
+    min-height: calc(120vh + 170px + 400px - 124px) !important;
+  }
+}
+@media (max-width: 425px) {
+  #screen1 .home__open-video {
+    min-height: calc(200vh + 300px - 124px) !important;
+  }
+}
 #screen1 .home {
   padding: 50px 200px 0 200px;
-  min-height: calc(100vh - 124px);
+  min-height: calc(100vh - 74px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -166,7 +186,12 @@ body {
 }
 @media (min-width: 1440px) and (max-width: 2560px) {
   #screen1 .home {
-    padding: 50px 200px 0 200px;
+    padding: 50px 150px 0 150px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  #screen1 .home {
+    min-height: calc(120vh + 170px - 124px);
   }
 }
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -177,18 +202,18 @@ body {
 @media (min-width: 768px) and (max-width: 1024px) {
   #screen1 .home {
     min-height: calc(120vh + 170px - 124px);
-    max-height: calc(120vh + 170px + 450px - 124px);
     padding: 50px 75px 0 75px;
   }
 }
 @media (min-width: 425px) and (max-width: 768px) {
   #screen1 .home {
+    min-height: calc(120vh + 300px - 124px);
     padding: 50px 50px 0 50px;
   }
 }
 @media (max-width: 425px) {
   #screen1 .home {
-    min-height: calc(200vh - 124px);
+    min-height: calc(200vh + 25px - 124px);
     padding: 25px 25px 0 25px;
   }
 }
@@ -268,6 +293,18 @@ body {
 }
 #screen1 .home .social-line .social-item.vk:hover {
   background-image: url("../../images/vk-hovered.svg");
+}
+#screen1 .home .social-line .social-item.btc-talk {
+  background-image: url("../../images/btc-default.svg");
+}
+#screen1 .home .social-line .social-item.btc-talk:hover {
+  background-image: url("../../images/btc-hovered.svg");
+}
+#screen1 .home .social-line .social-item.github {
+  background-image: url("../../images/github-default.svg");
+}
+#screen1 .home .social-line .social-item.github:hover {
+  background-image: url("../../images/github-hovered.svg");
 }
 #screen1 .home.what-is {
   margin-top: 40px;
@@ -464,6 +501,16 @@ body {
 .countdown {
   display: inline-block;
 }
+@media (min-width: 425px) and (max-width: 768px) {
+  .countdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 26px;
+  }
+}
 .countdown .title {
   font-size: 20px;
   font-family: MuseoSansCyrl500;
@@ -509,8 +556,6 @@ body {
   display: inline-block;
   position: relative;
   font-size: 16px;
-  margin-left: 12px;
-  top: -4px;
 }
 .bonus-desc span {
   display: block;
@@ -525,14 +570,21 @@ body {
   font-size: 20px;
   color: #34343e;
 }
+@media (min-width: 425px) and (max-width: 768px) {
+  .crypto .title {
+    text-align: center;
+  }
+}
 .crypto .collection {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 25px;
 }
-@media (max-width: 320px) {
+@media (min-width: 425px) and (max-width: 768px) {
   .crypto .collection {
-    flex-wrap: wrap;
+    margin-top: 5px;
+    justify-content: center;
   }
 }
 .crypto .collection .item {
@@ -544,7 +596,12 @@ body {
   align-items: center;
   background: transparent;
 }
-@media (max-width: 425px) {
+@media (min-width: 425px) and (max-width: 768px) {
+  .crypto .collection .item {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 320px) and (max-width: 425px) {
   .crypto .collection .item {
     height: 120px;
   }
@@ -819,6 +876,15 @@ a {
   .bonus-desc {
     margin-top: 24px;
     margin-left: 5px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .btn-buy-tokens {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .bonus-desc {
+    margin-left: 15%;
   }
 }
 @media (max-width: 576px) {

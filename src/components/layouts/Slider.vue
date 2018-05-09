@@ -49,7 +49,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -233,28 +232,11 @@
 
                 --this.opt.position;
 
-                // console.log(this.opt.position, 'prev this.opt.position');
-
-                // sel.wrap.addEventListener('transitionend', () => {
                 if (this.opt.position < 0) {
-                    // sel.wrap.classList.add('s-notransaction');
                     sel.wrap.style['transition'] = '0s';
-                    // setTimeout(() => {
                     sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.multiplierPosition}%)`;
                     this.opt.position = this.opt.maxPosition - 1;
-                    // }, 40);
                 }
-
-                // private.isAnimationEnd = true;
-                // });
-
-                // if (this.opt.position < 0) {
-                //     sel.wrap.classList.add('s-notransaction');
-                //     setTimeout(() => {
-                //         sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.multiplierPosition}%)`;
-                //         this.opt.position = this.opt.maxPosition - 1;
-                //     }, 40);
-                // }
 
                 if (this.opt.position === 0) {
                     sel.wrap.style['transform'] = 'translateX(0)';
@@ -262,27 +244,11 @@
                 }
 
                 setTimeout(() => {
-                    // sel.wrap.classList.remove('s-notransaction');
-
                     sel.wrap.style['transition'] = '';
-
                     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
                 }, 40);
-
-                // sel.wrap.addEventListener('transitionend', () => {
-                //     privates.isAnimationEnd = true;
-                // });
-
-                // if (privates.settings.autoplay === true) {
-                //     privates.timer.become();
-                // }
             },
             nextSlide: function () {
-
-                // console.log(this.privates);
-
-                // console.log('check autoplay');
-
                 let sel = {
                     wrap: document.querySelector('.' + this.privates.wrap),
                     children: document.querySelector('.' + this.privates.wrap).children,
@@ -303,12 +269,9 @@
                         sel.wrap.style['transition'] = '0s';
                         this.opt.position = 0;
                     }
-
-                    // private.isAnimationEnd = true;
                 });
             },
             startAutoplay: function (val) {
-                // console.log(val, 'startAutoplay');
                 if (this.inBlockTeam && this.isOptAutoplay)
                     this.isAutoplay = val;
 
@@ -322,7 +285,6 @@
                 }
             },
             stopAutoplay: function () {
-                // console.log('stopAutoplay');
                 this.isAutoplay = false;
                 clearInterval(this.autoplay);
             },
@@ -330,19 +292,9 @@
         created() {
             //в инит функцию
             this.privates = this.privates1;
-
-            // this.privates.main = '.' + this.privates.main;
-            // this.privates.wrap = '.' + this.privates.wrap;
-            // this.privates.prev = '.' + this.privates.prev;
-            // this.privates.next = '.' + this.privates.next;
         },
         mounted() {
-
-            // console.log(this.items, 'items');
-
             this.startAutoplay(true);
-
-            // this.initAutoplay(3000);
 
             this.opt.maxPosition = document.querySelector('.' + this.privates.wrap).children.length;
 
