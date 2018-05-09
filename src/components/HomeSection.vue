@@ -372,15 +372,15 @@
             <div class="row">
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
-                        <img src="../../static/images/desctop-transparent.png"
+                        <img src="../../static/images/desctop.png"
                              class="desktop">
-                        <slider v-if="reBuild" ref="slider"
-                                :pages="pages"
-                                :sliderinit="sliderInit">
-                        </slider>
+                        <!--<slider v-if="reBuild" ref="slider"-->
+                                <!--:pages="pages"-->
+                                <!--:sliderinit="sliderInit">-->
+                        <!--</slider>-->
                     </div>
-                    <img src="../../static/images/desctop.png"
-                         class="desktop-for-mobile">
+                    <!--<img src="../../static/images/desctop.png"-->
+                         <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
@@ -414,7 +414,7 @@
             </div>
         </div>
 
-        <div class="telegram-alert">
+        <div class="telegram-alert" v-if="checkWindowWidth">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
             </a>
@@ -839,6 +839,9 @@
 
 <style lang="stylus" scoped>
 
+    .what-is
+        background-color #ececf0
+
     .countdown-block
         @media (min-width 848px)
             display flex
@@ -1030,9 +1033,6 @@
         @media (min-width 425px)
             min-height 100vh
 
-        .row
-            align-items center
-
     .anim
         opacity 0.7
 
@@ -1083,46 +1083,46 @@
 
 
 
-        @media (max-width 1600px)
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+        /*@media (max-width 1600px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 1530px)
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+        /*@media (max-width 1530px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 1274px)
-            position relative
-            .iframe, .place-player__frame
-                width 800px
-                height 450px
+        /*@media (max-width 1274px)*/
+            /*position relative*/
+            /*.iframe, .place-player__frame*/
+                /*width 800px*/
+                /*height 450px*/
 
-        @media (max-width 1120px)
-            .iframe, .place-player__frame
-                width 700px
-                height 394px
+        /*@media (max-width 1120px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 700px*/
+                /*height 394px*/
 
-        @media (max-width 850px)
-            .iframe, .place-player__frame
-                width 600px
-                height 336px
+        /*@media (max-width 850px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 600px*/
+                /*height 336px*/
 
-        @media (max-width 720px)
-            .iframe, .place-player__frame
-                width 500px
-                height 280px
+        /*@media (max-width 720px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 500px*/
+                /*height 280px*/
 
-        @media (max-width 620px)
-            .iframe, .place-player__frame
-                width 400px
-                height 225px
+        /*@media (max-width 620px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 400px*/
+                /*height 225px*/
 
-        @media (max-width 520px)
-            .iframe, .place-player__frame
-                width 100%
-                height 292px
+        /*@media (max-width 520px)*/
+            /*.iframe, .place-player__frame*/
+                /*width 100%*/
+                /*height 292px*/
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
@@ -1200,12 +1200,6 @@
 
     .description__dark
         background-color #343a49
-       /* background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -webkit-gradient(bottom top, bottom top, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(60%, rgba(83, 92, 112, 1)), color-stop(100%, rgba(247, 247, 247, 1))) !important
-        background -webkit-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -o-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important*/
 
         @media (max-width 425px)
             background #343a49 !important
@@ -1399,7 +1393,9 @@
                             margin-right 0
 
         .what-is
-            padding 60px 200px 0 200px
+            display flex
+            align-items center
+            padding 50px 200px 0 200px
             margin-top 0
 
             @media (min-width 1440px) and (max-width 2560px)
@@ -1461,93 +1457,93 @@
                             width 100% !important
                             position relative
 
-                        @media (max-width 2600px)
-                            .slider-container
-                                width 709px
-                                height 443px
-                                left 252px
-                                top 40px
+                        /*@media (max-width 2600px)*/
+                            /*.slider-container*/
+                                /*width 709px*/
+                                /*height 443px*/
+                                /*left 252px*/
+                                /*top 40px*/
 
-                            .desktop
-                                left 140px
-                                width 900px
+                            /*.desktop*/
+                                /*left 140px*/
+                                /*width 900px*/
 
-                        @media (max-width 2365px)
-                            .slider-container
-                                left 162px
+                        /*@media (max-width 2365px)*/
+                            /*.slider-container*/
+                                /*left 162px*/
 
-                            .desktop
-                                left 50px
+                            /*.desktop*/
+                                /*left 50px*/
 
-                        @media (max-width 2150px)
-                            .slider-container
-                                width 630px
-                                height 395px
-                                left 102px
-                                top 36px
+                        /*@media (max-width 2150px)*/
+                            /*.slider-container*/
+                                /*width 630px*/
+                                /*height 395px*/
+                                /*left 102px*/
+                                /*top 36px*/
 
-                            .desktop
-                                left 0
-                                width 800px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 800px*/
 
-                        @media (max-width 1860px)
-                            .slider-container
-                                width 552px
-                                height 345px
-                                left 91px
-                                top 32px
+                        /*@media (max-width 1860px)*/
+                            /*.slider-container*/
+                                /*width 552px*/
+                                /*height 345px*/
+                                /*left 91px*/
+                                /*top 32px*/
 
-                            .desktop
-                                left 0
-                                width 700px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 700px*/
 
-                        @media (max-width 1640px)
-                            padding-top 50px
+                        /*@media (max-width 1640px)*/
+                            /*padding-top 50px*/
 
-                            .slider-container
-                                width 473px
-                                height 296px
-                                left 80px
-                                top 77px
+                            /*.slider-container*/
+                                /*width 473px*/
+                                /*height 296px*/
+                                /*left 80px*/
+                                /*top 77px*/
 
-                            .desktop
-                                left 0
-                                width 600px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 600px*/
 
-                        @media (max-width 1460px)
-                            padding-top 100px
+                        /*@media (max-width 1460px)*/
+                            /*padding-top 100px*/
 
-                            .slider-container
-                                width 393px
-                                height 247px
-                                left 70px
-                                top 122px
+                            /*.slider-container*/
+                                /*width 393px*/
+                                /*height 247px*/
+                                /*left 70px*/
+                                /*top 122px*/
 
-                            .desktop
-                                left 0
-                                width 500px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 500px*/
 
-                        @media (max-width 1240px)
-                            padding-top 100px
+                        /*@media (max-width 1240px)*/
+                            /*padding-top 100px*/
 
-                            .slider-container
-                                width 315px
-                                height 197px
-                                left 59px
-                                top 118px
+                            /*.slider-container*/
+                                /*width 315px*/
+                                /*height 197px*/
+                                /*left 59px*/
+                                /*top 118px*/
 
-                            .desktop
-                                left 0
-                                width 400px
+                            /*.desktop*/
+                                /*left 0*/
+                                /*width 400px*/
 
-                        @media (max-width 991px)
-                            padding-top 0
+                        /*@media (max-width 991px)*/
+                            /*padding-top 0*/
 
-                            .slider-container
-                                display none
+                            /*.slider-container*/
+                                /*display none*/
 
-                            .desktop
-                                display none
+                            /*.desktop*/
+                                /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile

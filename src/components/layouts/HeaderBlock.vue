@@ -1081,7 +1081,7 @@
         /*.btn-actions*/
             /*display unset*/
 
-    @media (max-width 768px)
+    @media (max-width 1024px)
         .navbar
             padding-left 32px
             padding-right 32px
