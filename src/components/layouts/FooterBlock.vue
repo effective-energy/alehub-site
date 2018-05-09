@@ -54,6 +54,16 @@
                        target="_blank">
                         <i class="social-icon social-icon-tg"></i>
                     </a>
+                    <a href="https://bitcointalk.org/index.php?topic=3676768.new"
+                       class="social-item"
+                       target="_blank">
+                        <i class="social-icon social-icon-btc-talk"></i>
+                    </a>
+                    <a href="https://github.com/effective-energy"
+                       class="social-item"
+                       target="_blank">
+                        <i class="social-icon social-icon-github"></i>
+                    </a>
                     <a href="https://vk.com/alehub" v-if="false"
                        class="social-item"
                        target="_blank">
@@ -356,6 +366,12 @@
                         .social-icon-vk
                             background-image url(../../../static/images/vk-hovered.svg)
 
+                        .social-icon-btc-talk
+                            background-image url(../../../static/images/social/btc-talk-hovered.svg)
+
+                        .social-icon-github
+                            background-image url(../../../static/images/social/github-ic-hovered.svg)
+
                     .social-icon
                         background-repeat no-repeat
                         background-size contain
@@ -387,6 +403,16 @@
                         width 16.8px
                         height 14.4px
                         background-image url(../../../static/images/social/tg.svg)
+
+                    .social-icon-btc-talk
+                        width 22px
+                        height 20px
+                        background-image url(../../../static/images/social/btc-talk.svg)
+
+                    .social-icon-github
+                        width 22px
+                        height 20px
+                        background-image url(../../../static/images/social/github-ic.svg)
 
                     .social-icon-vk
                         width 19.2px

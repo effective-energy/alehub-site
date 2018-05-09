@@ -138,6 +138,7 @@
                 </g>
             </svg>
         </div>
+
         <div class="home"
              :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
@@ -331,6 +332,12 @@
                 <a href="https://t.me/alehub"
                    class="social-item tg"
                    target="_blank"></a>
+                <a href="https://bitcointalk.org/index.php?topic=3676768.new"
+                   class="social-item btc-talk"
+                   target="_blank"></a>
+                <a href="https://github.com/effective-energy"
+                   class="social-item github"
+                   target="_blank"></a>
                 <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
@@ -414,7 +421,9 @@
             </div>
         </div>
 
-        <div class="telegram-alert" v-if="checkWindowWidth">
+        <div class="telegram-alert"
+             v-if="checkWindowWidth"
+            :class="{ 'asd': 'true' }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
             </a>
@@ -436,7 +445,16 @@
             slider,
             MenuModal
         },
+        props: {
+            isIco: {
+                type: Boolean,
+                required: true
+            }
+        },
         watch: {
+            isIco: function (val) {
+                console.log(val, 'isIco');
+            },
             isVideo: function (val) {
                 if (val) {
                     setTimeout(() => {
@@ -1211,6 +1229,18 @@
 
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
+
+        .social-item.btc-talk
+            background-image url(../../static/images/btc-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/btc-hovered.svg) !important
+
+        .social-item.github
+            background-image url(../../static/images/github-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/github-hovered.svg) !important
 
     .description__dark
         background-color #343a49

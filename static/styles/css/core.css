@@ -270,6 +270,18 @@ body {
 #screen1 .home .social-line .social-item.vk:hover {
   background-image: url("../../images/vk-hovered.svg");
 }
+#screen1 .home .social-line .social-item.btc-talk {
+  background-image: url("../../images/btc-default.svg");
+}
+#screen1 .home .social-line .social-item.btc-talk:hover {
+  background-image: url("../../images/btc-hovered.svg");
+}
+#screen1 .home .social-line .social-item.github {
+  background-image: url("../../images/github-default.svg");
+}
+#screen1 .home .social-line .social-item.github:hover {
+  background-image: url("../../images/github-hovered.svg");
+}
 #screen1 .home.what-is {
   margin-top: 40px;
   padding: 125px 125px 0;
