@@ -401,20 +401,20 @@
                 </div>
                 <div class="col-lg-6 desc" style="align-self: flex-start;">
                     <h1 class="title">
-                        {{$t("about.title")}}
+                        {{ $t("about.title") }}
                     </h1>
                     <h3 class="subtitle">
-                        {{$t("about.subTitle")}}
+                        {{ $t("about.subTitle") }}
                     </h3>
                     <p class="description">
-                        {{$t("about.description")}}
+                        {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a :href="currentWhitePaper" class="btn btn-yellow">
-                            {{$t("about.btnGroup.whitePaper")}}
+                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank" @click="yaMetrica">
+                            {{ $t("about.btnGroup.whitePaper") }}
                         </a>
-                        <a class="btn btn-yellow" v-scroll-to="'#features'">
-                            {{$t("about.btnGroup.techDetails")}}
+                        <a class="btn btn-yellow" v-scroll-to="'#features'" target="_blank">
+                            {{ $t("about.btnGroup.techDetails") }}
                         </a>
                     </div>
                 </div>
@@ -609,6 +609,10 @@
             }
         },
         methods: {
+            yaMetrica: function () {
+                // yaCounter48802643.reachGoal('DownloadWP');
+                return true;
+            },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
                 this.softCap = this.currencies[name].softCap;

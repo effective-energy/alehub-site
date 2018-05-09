@@ -405,13 +405,13 @@
                         background-image url(../../../static/images/social/tg.svg)
 
                     .social-icon-btc-talk
-                        width 22px
-                        height 20px
+                        width 23px
+                        height 21px
                         background-image url(../../../static/images/social/btc-talk.svg)
 
                     .social-icon-github
-                        width 22px
-                        height 20px
+                        width 24px
+                        height 22px
                         background-image url(../../../static/images/social/github-ic.svg)
 
                     .social-icon-vk
