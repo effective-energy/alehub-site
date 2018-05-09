@@ -36,7 +36,7 @@
                    v-if="app.isPublish">
                     <button type="button"
                             class="button button__download">
-                        Download
+                        {{$t('download')}}
                     </button>
                 </a>
             </div>
