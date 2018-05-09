@@ -777,23 +777,23 @@
                         'Accept': 'application/json'
                     }
                 }).then(response => {
-                    this.currencies.btc.hardCap = Math.round(this.hardCap / 800 / (response.body[0].price / 800));
-                    this.currencies.eth.hardCap = Math.round(this.hardCap / 800);
-                    this.currencies.bch.hardCap = Math.round(this.hardCap / 800 / (response.body[2].price / 800));
-                    this.currencies.ltc.hardCap = Math.round(this.hardCap / 800 / (response.body[3].price / 800));
-                    this.currencies.dash.hardCap = Math.round(this.hardCap / 800 / (response.body[4].price / 800));
+                    this.currencies.btc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.hardCap = Math.round(this.hardCap / response.body[1].price);
+                    this.currencies.bch.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[4].price / response.body[1].price));
 
-                    this.currencies.btc.softCap = Math.round(this.softCap / 800 / (response.body[0].price / 800));
-                    this.currencies.eth.softCap = Math.round(this.softCap / 800);
-                    this.currencies.bch.softCap = Math.round(this.softCap / 800 / (response.body[2].price / 800));
-                    this.currencies.ltc.softCap = Math.round(this.softCap / 800 / (response.body[3].price / 800));
-                    this.currencies.dash.softCap = Math.round(this.softCap / 800 / (response.body[4].price / 800));
+                    this.currencies.btc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.softCap = Math.round(this.softCap / response.body[1].price);
+                    this.currencies.bch.softCap = Math.round(this.softCap / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.softCap = Math.round(this.softCap / response.body[1].price / (response.body[4].price / response.body[1].price));
 
-                    this.currencies.btc.collected = Math.round(this.collected / 800 / (response.body[0].price / 800));
-                    this.currencies.eth.collected = Math.round(this.collected / 800);
-                    this.currencies.bch.collected = Math.round(this.collected / 800 / (response.body[2].price / 800));
-                    this.currencies.ltc.collected = Math.round(this.collected / 800 / (response.body[3].price / 800));
-                    this.currencies.dash.collected = Math.round(this.collected / 800 / (response.body[4].price / 800));
+                    this.currencies.btc.collected = Math.round(this.collected / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.collected = Math.round(this.collected / response.body[1].price);
+                    this.currencies.bch.collected = Math.round(this.collected / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.collected = Math.round(this.collected / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.collected = Math.round(this.collected / response.body[1].price / (response.body[4].price / response.body[1].price));
                 }, response => {
                     console.log('Error getting news', response);
                 });
