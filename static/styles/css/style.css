@@ -163,7 +163,7 @@ body {
 }
 #screen1 .home {
   padding: 50px 200px 0 200px;
-  min-height: calc(100vh - 124px);
+  min-height: calc(100vh - 74px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -544,8 +544,6 @@ body {
   display: inline-block;
   position: relative;
   font-size: 16px;
-  margin-left: 12px;
-  top: -4px;
 }
 .bonus-desc span {
   display: block;
@@ -866,6 +864,15 @@ a {
   .bonus-desc {
     margin-top: 24px;
     margin-left: 5px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .btn-buy-tokens {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .bonus-desc {
+    margin-left: 15%;
   }
 }
 @media (max-width: 576px) {
