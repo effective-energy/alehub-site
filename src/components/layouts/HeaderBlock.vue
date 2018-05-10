@@ -409,8 +409,20 @@
             }, 500);
 
             let navbarYOffset = document.getElementById('navbar').offsetHeight,
-                tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
-                tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+                tgButtonYOffset = null,
+                tgButtonHeight = null;
+
+            if (document.getElementById('telegram-alert')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
+                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+            } else if (document.getElementById('telegram-alert-mobile')) {
+                console.log(document.getElementById('telegram-alert-mobile'), 'document.getElementById(\'telegram-alert-mobile\')');
+                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top,
+                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+            }
+
+            console.log(tgButtonYOffset, 'tgButtonYOffset');
+            console.log(tgButtonHeight, 'tgButtonHeight');
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
