@@ -1,44 +1,20 @@
 <template>
-    <div>
+    <div class="wrap" style="user-select: none;"
+         @mouseover="(options.autoplay) ? stopAutoplay : 'false'"
+         @mouseout="(options.autoplay) ? startAutoplay : 'false'">
 
+        <div class="b-carousel js-carousel"
+             @mousedown="dragStart($event)"
+             @mouseup="dragEnd()"
+             @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
 
-        <button type="button" id="prev"
-                @click="prevSlide">
-            prev
-        </button>
+            <div class="b-carousel__wrap js-carousel__wrap">
+                <div class="image b-carousel__item"
+                     v-for="(member, i) in items"
+                     :key="i">
 
-
-        <button type="button" id="next"
-                @click="nextSlide">
-            next
-        </button>
-
-
-        <div class="wrap" style="user-select: none;"
-            @mouseover="stopAutoplay"
-             @mouseout="startAutoplay">
-
-            <!--@mousedown="dragStart($event)"-->
-            <!--@mouseup="dragEnd()"-->
-            <!--@mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'"-->
-
-            <div class="b-carousel js-carousel">
-
-                <!--@touchstart="(options.touch) ? touchStart($event) : 'false'"-->
-                <!--@touchmove="(options.touch) ? touchMove($event) : 'false'"-->
-
-                <div class="b-carousel__wrap js-carousel__wrap">
-
-                    <!--@mouseover="stopAutoplay"-->
-                    <!--@mouseleave="startAutoplay('true')"-->
-
-                    <div class="image b-carousel__item"
-                         v-for="(member, i) in items"
-                         :key="i">
-
-                        <img class="layer__bottom b-carousel__img"
-                             :src="member">
-                    </div>
+                    <img class="layer__bottom b-carousel__img"
+                         :src="member">
                 </div>
             </div>
         </div>
@@ -58,9 +34,17 @@
                 required: true
             }
         },
+        watch: {
+            autoplayAccess: function (val) {
+                // console.log(val, 'autoplayAccess');
+            },
+            autoplay: function (val) {
+                // console.log(val, 'autoplay');
+            }
+        },
         data() {
             return {
-                autoplayAccess: false,
+                autoplay: null,
                 opt: {
                     position: 0,
                     maxPosition: 3
@@ -78,49 +62,48 @@
         },
         methods: {
             dragStart: function (e) {
-                // this.xDrag = e.pageX;
-                // this.yDrag = e.pageY;
+                this.xDrag = e.pageX;
+                this.yDrag = e.pageY;
             },
             dragEnd: function (e) {
-                // this.xDrag = 0;
-                // this.yDrag = 0;
+                this.xDrag = 0;
+                this.yDrag = 0;
             },
             dragMove: function (e) {
                 // console.log(e.pageX, 'mouse move X');
 
-                // let xMove = e.pageX;
-                // let yMove = e.pageY;
-                //
-                // let xDiff = this.xDrag - xMove;
-                // let yDiff = this.yDrag - yMove;
-                //
-                // // console.log(xDiff, 'xDiff');
-                // // console.log(yDiff, 'yDiff');
-                //
-                // if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                //     //ширина фотки получать из DOM
-                //
-                //     if (xDiff > 0) {
-                //
-                //         if (Math.abs(xDiff) > 152) {
-                //             this.nextSlide();
-                //             this.xDrag = 0;
-                //             this.yDrag = 0;
-                //         }
-                //
-                //     }
-                //
-                //     if (xDiff < 0) {
-                //
-                //         if (Math.abs(xDiff) > 152) {
-                //             this.prevSlide();
-                //             this.xDrag = 0;
-                //             this.yDrag = 0;
-                //         }
-                //
-                //     }
-                // }
+                let xMove = e.pageX;
+                let yMove = e.pageY;
 
+                let xDiff = this.xDrag - xMove;
+                let yDiff = this.yDrag - yMove;
+
+                // console.log(xDiff, 'xDiff');
+                // console.log(yDiff, 'yDiff');
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    //ширина фотки получать из DOM
+
+                    if (xDiff > 0) {
+
+                        if (Math.abs(xDiff) > 100) {
+                            this.nextSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+
+                    if (xDiff < 0) {
+
+                        if (Math.abs(xDiff) > 100) {
+                            this.prevSlide();
+                            this.xDrag = 0;
+                            this.yDrag = 0;
+                        }
+
+                    }
+                }
             },
             touchStart: function (e) {
                 // console.log(e, 'event touch start');
@@ -195,19 +178,16 @@
                 });
             },
             initAutoplay: function (delay) {
-                clearInterval(this.autoplay);
-                if (this.isAutoplayAccess)
+                if (this.options.autoplay)
                     this.autoplay = setInterval(() => {
                         this.nextSlide();
                     }, delay);
             },
             stopAutoplay: function () {
-                if (this.autoplayAccess)
-                    this.autoplayAccess = false;
+                clearInterval(this.autoplay);
             },
             startAutoplay: function () {
-                if (!this.autoplayAccess)
-                    this.autoplayAccess = true;
+                this.initAutoplay(5000);
             },
         },
         mounted() {
@@ -215,7 +195,7 @@
 
             if (this.options.autoplay) {
                 this.autoplayAccess = this.options.autoplay;
-                this.initAutoplay(3000);
+                this.initAutoplay(5000);
             }
 
             console.log(this.options, 'this.options');
@@ -267,7 +247,10 @@
                     display flex
                     align-items center
                     justify-content center
-                    width 304px
+                    width 100%
+
+                    img
+                        width 100%
 
 
 </style>

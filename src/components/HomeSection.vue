@@ -383,12 +383,12 @@
              class="what-is"
              :class="{ 'description__dark': isDark }">
             <div class="row">
-
-                <!--<slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>-->
-
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer">
-                        <img src="../../static/images/desctop.png"
+                    <div class="desktop-outer" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                        <div style="position: absolute; width: 80%; top: 7%;">
+                            <slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>
+                        </div>
+                        <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
                         <!--<slider v-if="reBuild" ref="slider"-->
                         <!--:pages="pages"-->
@@ -952,6 +952,13 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .desc
+        .buttons
+            .btn
+                &:focus
+                    box-shadow none !important
+                    outline none !important
 
     .row
         z-index 2
