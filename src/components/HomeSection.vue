@@ -422,6 +422,8 @@
                     </p>
                     <div class="buttons">
                         <a :href="currentWhitePaper"
+                           @click="yaCounter48802643.reachGoal('whitePaper');
+                                   return true;"
                            class="btn btn-yellow"
                            target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
