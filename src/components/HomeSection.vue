@@ -689,6 +689,10 @@
                 console.log("usd");
                 return true;
             },
+            doCloseTelegramAlertMobile: function () {
+                this.closedTelegramAlertMobile = true;
+                // localStorage.setItem('closedTelegramAlertMobile', 'true');
+            },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
                 this.softCap = this.currencies[name].softCap;
@@ -894,7 +898,6 @@
         mounted() {
             let a = document.querySelector('.collection').getElementsByClassName('item');
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
-
 
 
             if (this.isVideo) {
