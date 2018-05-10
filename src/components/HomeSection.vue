@@ -228,7 +228,7 @@
                                     </div>
                                 </button>
                                 <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
-                                    <div onclick="yaCounter48802643.reachGoal('FirstVideo'); return true;"
+                                    <div @click="yaCounter48802643.reachGoal('FirstVideo'); return true;"
                                          class="place-player__frame">
                                     </div>
                                 </div>
@@ -255,7 +255,6 @@
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
                             <div class="item" v-for="item in currencies"
-                                 @click="yaMetricaCollectionItem(currencies)"
                                  @mouseover="changeCurrentCurrency(item.name)"
                                  @mouseout="resetCurrentCurrency">
                                 <div class="inner">
@@ -320,23 +319,23 @@
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
                 <a href="https://www.facebook.com/alehub.io/"
-                   onclick="yaCounter48802643.reachGoal('Facebook'); return true;"
+                   @click="yaCounter48802643.reachGoal('Facebook'); return true;"
                    class="social-item fb"
                    target="_blank"></a>
                 <a href="https://www.instagram.com/alehub.io/"
-                   onclick="yaCounter48802643.reachGoal('Instagram'); return true;"
+                   @click="yaCounter48802643.reachGoal('Instagram'); return true;"
                    class="social-item ins"
                    target="_blank"></a>
                 <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
-                   onclick="yaCounter48802643.reachGoal('Youtube'); return true;"
+                   @click="yaCounter48802643.reachGoal('Youtube'); return true;"
                    class="social-item yt"
                    target="_blank"></a>
                 <a href="https://twitter.com/alehub_io"
-                   onclick="yaCounter48802643.reachGoal('Twitter'); return true;"
+                   @click="yaCounter48802643.reachGoal('Twitter'); return true;"
                    class="social-item tw"
                    target="_blank"></a>
                 <a href="https://t.me/alehub"
-                   onclick="yaCounter48802643.reachGoal('Telegram'); return true;"
+                   @click="yaCounter48802643.reachGoal('Telegram'); return true;"
                    class="social-item tg"
                    target="_blank"></a>
                 <a href="https://bitcointalk.org/index.php?topic=3676768.new"
@@ -384,19 +383,23 @@
              class="what-is"
              :class="{ 'description__dark': isDark }">
             <div class="row">
+
+                <!--<slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>-->
+
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
                         <img src="../../static/images/desctop.png"
                              class="desktop">
                         <!--<slider v-if="reBuild" ref="slider"-->
-                                <!--:pages="pages"-->
-                                <!--:sliderinit="sliderInit">-->
+                        <!--:pages="pages"-->
+                        <!--:sliderinit="sliderInit">-->
                         <!--</slider>-->
                     </div>
+
                     <!--<img src="../../static/images/desctop.png"-->
-                         <!--class="desktop-for-mobile">-->
+                    <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
-                       onclick="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
+                       @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
                         <button type="button">
@@ -418,10 +421,14 @@
                         {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank">
+                        <a :href="currentWhitePaper"
+                           class="btn btn-yellow"
+                           target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
-                        <a class="btn btn-yellow" v-scroll-to="'#features'" target="_blank">
+                        <a class="btn btn-yellow"
+                           v-scroll-to="'#features'"
+                           target="_blank">
                             {{ $t("about.btnGroup.techDetails") }}
                         </a>
                     </div>
@@ -429,11 +436,45 @@
             </div>
         </div>
 
-        <div class="telegram-alert"
-             v-if="checkWindowWidth"
-            :class="{ 'asd': 'true' }">
+        <a id="telegram-alert-mobile"
+           class="telegram-alert-mobile"
+           href="https://t.me/alehub"
+           target="_blank"
+           v-if="!checkMobileWidth && !closedTelegramAlertMobile"
+           :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
+
+            <div class="telegram-alert-mobile__wrap">
+                <img src="../../static/images/telegram-ic-dark.svg"
+                     v-if="!isDarkSection"
+                     alt="telegram">
+                <img src="../../static/images/telegram-ic-default.svg"
+                     v-if="isDarkSection"
+                     alt="telegram">
+                <span>{{ 'Join us in telegram' }}</span>
+            </div>
+
+
+            <img src="../../static/images/cancel-light.svg"
+                 v-if="!isDarkSection"
+                 @click.prevent="doCloseTelegramAlertMobile">
+
+            <img src="../../static/images/cancel-dark.svg"
+                 v-if="isDarkSection"
+                 @click.prevent="doCloseTelegramAlertMobile">
+
+        </a>
+
+        <div id="telegram-alert"
+             class="telegram-alert"
+             v-if="checkMobileWidth"
+             :class="{ 'telegram-alert__yellow': isDarkSection }">
             <a href="https://t.me/alehub" target="_blank">
-                <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
+                <img src="../../static/images/telegram-ic-dark.svg"
+                     alt="telegram"
+                     v-if="!isDarkSection">
+                <img src="../../static/images/telegram-ic-default.svg"
+                     alt="telegram"
+                     v-if="isDarkSection">
             </a>
         </div>
 
@@ -442,6 +483,7 @@
 
 <script>
     import MenuModal from './modals/MenuModal';
+    import SliderScreen from './layouts/SliderScreen';
 
     //заменить на свой слайдер
     import slider from 'vue-concise-slider';
@@ -451,17 +493,18 @@
         name: 'Screen1',
         components: {
             slider,
-            MenuModal
+            MenuModal,
+            SliderScreen
         },
         props: {
-            isIco: {
+            isDarkSection: {
                 type: Boolean,
                 required: true
-            }
+            },
         },
         watch: {
-            isIco: function (val) {
-                console.log(val, 'isIco');
+            isDarkSection: function (val) {
+                // console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
@@ -473,8 +516,24 @@
         },
         data() {
             return {
+                closedTelegramAlertMobile: false,
                 isVideo: false,
                 isDark: false,
+
+                itemsToSliderScreen: [
+                    '../../../static/images/screen1.png',
+                    '../../../static/images/screen2.png',
+                    '../../../static/images/screen3.png'
+                ],
+                optionsToSliderScreen: {
+                    touch: true,
+                    autoplay: true,
+                    inBlockTeam: false,
+                    autoplayDelay: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true
+                },
+
                 pages: [
                     {
                         html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
@@ -598,6 +657,9 @@
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
             },
+            checkMobileWidth: function () {
+                return window.innerWidth > 425;
+            },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
                     return (this.collected / this.softCap) * 100 + '%';
@@ -626,6 +688,10 @@
                 yaCounter48802643.reachGoal('BuyUSD');
                 console.log("usd");
                 return true;
+            },
+            doCloseTelegramAlertMobile: function () {
+                this.closedTelegramAlertMobile = true;
+                // localStorage.setItem('closedTelegramAlertMobile', 'true');
             },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
@@ -667,6 +733,24 @@
                     }));
                 }
             },
+            play: function () {
+                if (!this.isPaused)
+                    return false;
+
+                this.isPaused = false;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].play();
+                }
+            },
+            pause: function () {
+                if (this.isPaused)
+                    return false;
+
+                this.isPaused = true;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].pause();
+                }
+            },
             format: function (count, isSecond) {
                 let result = 0;
                 if (isSecond) {
@@ -699,16 +783,6 @@
                 this.timer.seconds.first = this.format(seconds);
                 this.timer.seconds.second = this.format(seconds, true);
             },
-            getCoords: function (elem) {
-                if (!elem)
-                    return false;
-                let box = elem.getBoundingClientRect();
-
-                return {
-                    top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
-                };
-            },
             handlerScroll: function () {
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
 
@@ -720,20 +794,6 @@
                     this.play();
                     document.getElementById('button-choose').style['top'] = '40%';
                     document.getElementById('button-choose').classList.remove('button-choose__stop');
-                }
-            },
-            play: function () {
-                if (!this.isPaused) return false;
-                this.isPaused = false;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].play();
-                }
-            },
-            pause: function () {
-                if (this.isPaused) return false;
-                this.isPaused = true;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].pause();
                 }
             },
             doVideoTheme: function () {
@@ -753,6 +813,10 @@
                 }, 100);
             },
             doLightTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
                 this.isDark = false;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
@@ -766,9 +830,15 @@
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
                 }, 100);
             },
             doDarkTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
                 this.isDark = true;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
@@ -782,6 +852,8 @@
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
                 }, 100);
             },
             getCurrentExchangeRates: function () {
@@ -828,31 +900,14 @@
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
 
 
-
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
             }
 
             this.getCurrentExchangeRates();
 
-            // window.addEventListener('scroll', () => {
-            //     if (window.scrollY > this.getCoords(document.getElementById('description')).top) {
-            //         if (document.getElementById('myVideo').style['position'] !== 'absolute') {
-            //             document.getElementById('myVideo').style['position'] = 'absolute';
-            //             document.getElementById('myVideo').style['min-height'] = window.innerHeight - navbarYOffset + 'px';
-            //             document.getElementById('myVideo').style['height'] = window.innerHeight - navbarYOffset + 'px';
-            //             document.getElementById('myVideo').style['bottom'] = 0;
-            //         }
-            //     } else {
-            //         if (document.getElementById('myVideo').style['position'] !== 'fixed') {
-            //             document.getElementById('myVideo').style['position'] = 'fixed';
-            //             document.getElementById('myVideo').style['min-height'] = '100%';
-            //             document.getElementById('myVideo').style['height'] = '';
-            //         }
-            //     }
-            // });
-
             setTimeout(() => {
+                console.log(localStorage.getItem('color-theme'), 'localStorage.getItem(\'color-theme\')')
                 if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
                     this.isDark = true;
                     this.isVideo = false;
@@ -865,9 +920,15 @@
                     this.isDark = true;
                     this.isVideo = true;
                     this.$parent.$emit('isDarkTheme', true);
-                } else {
+                } else if (this.checkWindowWidth) {
+                    this.isDark = true;
+                    this.isVideo = true;
                     localStorage.setItem('color-theme', 'video');
                     this.$parent.$emit('isDarkTheme', true);
+                } else {
+                    this.isDark = false;
+                    this.isVideo = false;
+                    this.$parent.$emit('isDarkTheme', false);
                 }
             }, 40);
 
@@ -899,16 +960,77 @@
             display flex
             align-items center
 
+    .telegram-alert-mobile
+        z-index 1100
+        cursor pointer
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+        display flex
+        align-items center
+        justify-content space-between
+        background-color #343a49
+        position fixed
+        top 74px
+        width 100%
+        height 40px
+        padding 0 40px
+
+        .telegram-alert-mobile__wrap
+            display flex
+            align-items center
+
+            img
+                margin-right 10px
+                margin-bottom 2px
+
+            span
+                font-family MuseoSansCyrl500
+                font-weight 500
+                color #f7f7f7
+
+        img
+            height 15px
+            width 15px
+
+    .telegram-alert-mobile__yellow
+        background-color #ffd24f
+
+        .telegram-alert-mobile__wrap
+            span
+                color #343a49
+
     .telegram-alert
         cursor pointer
         position fixed
-        right 150px
-        bottom 150px
+        right 100px
+        bottom 75px
         border-radius 50%
         background-color #343a49
         width 70px
         height 70px
         z-index 1000
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 30px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1440px) and (max-width 2560px)
+            right 100px
+            bottom 75px
+            width 70px
+            height 70px
 
         a
             width 100%
@@ -919,6 +1041,9 @@
 
             img
                 width 45%
+
+    .telegram-alert__yellow
+        background-color #ffd24f
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
@@ -978,7 +1103,6 @@
             justify-content center
             align-items center
             padding-top 30px
-
 
         .play-button
             display flex
@@ -1135,48 +1259,46 @@
         @media (min-width 768px) and (max-width 1024px)
             height 400px
 
+    /*@media (max-width 1600px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
+    /*@media (max-width 1530px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
-        /*@media (max-width 1600px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
+    /*@media (max-width 1274px)*/
+    /*position relative*/
+    /*.iframe, .place-player__frame*/
+    /*width 800px*/
+    /*height 450px*/
 
-        /*@media (max-width 1530px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
+    /*@media (max-width 1120px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 700px*/
+    /*height 394px*/
 
-        /*@media (max-width 1274px)*/
-            /*position relative*/
-            /*.iframe, .place-player__frame*/
-                /*width 800px*/
-                /*height 450px*/
+    /*@media (max-width 850px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 600px*/
+    /*height 336px*/
 
-        /*@media (max-width 1120px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 700px*/
-                /*height 394px*/
+    /*@media (max-width 720px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
-        /*@media (max-width 850px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 600px*/
-                /*height 336px*/
+    /*@media (max-width 620px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 400px*/
+    /*height 225px*/
 
-        /*@media (max-width 720px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
-
-        /*@media (max-width 620px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 400px*/
-                /*height 225px*/
-
-        /*@media (max-width 520px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 100%*/
-                /*height 292px*/
+    /*@media (max-width 520px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 100%*/
+    /*height 292px*/
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
@@ -1273,7 +1395,6 @@
         .desc
             .title, .subtitle, .description
                 color #f7f7f7 !important
-
 
     .collection
         .item
@@ -1511,7 +1632,6 @@
                             padding 15px 25px
                             margin-top 25px
 
-
                     .desktop-outer
                         margin 0 auto
 
@@ -1524,93 +1644,93 @@
                             width 100% !important
                             position relative
 
-                        /*@media (max-width 2600px)*/
-                            /*.slider-container*/
-                                /*width 709px*/
-                                /*height 443px*/
-                                /*left 252px*/
-                                /*top 40px*/
+                    /*@media (max-width 2600px)*/
+                    /*.slider-container*/
+                    /*width 709px*/
+                    /*height 443px*/
+                    /*left 252px*/
+                    /*top 40px*/
 
-                            /*.desktop*/
-                                /*left 140px*/
-                                /*width 900px*/
+                    /*.desktop*/
+                    /*left 140px*/
+                    /*width 900px*/
 
-                        /*@media (max-width 2365px)*/
-                            /*.slider-container*/
-                                /*left 162px*/
+                    /*@media (max-width 2365px)*/
+                    /*.slider-container*/
+                    /*left 162px*/
 
-                            /*.desktop*/
-                                /*left 50px*/
+                    /*.desktop*/
+                    /*left 50px*/
 
-                        /*@media (max-width 2150px)*/
-                            /*.slider-container*/
-                                /*width 630px*/
-                                /*height 395px*/
-                                /*left 102px*/
-                                /*top 36px*/
+                    /*@media (max-width 2150px)*/
+                    /*.slider-container*/
+                    /*width 630px*/
+                    /*height 395px*/
+                    /*left 102px*/
+                    /*top 36px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 800px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 800px*/
 
-                        /*@media (max-width 1860px)*/
-                            /*.slider-container*/
-                                /*width 552px*/
-                                /*height 345px*/
-                                /*left 91px*/
-                                /*top 32px*/
+                    /*@media (max-width 1860px)*/
+                    /*.slider-container*/
+                    /*width 552px*/
+                    /*height 345px*/
+                    /*left 91px*/
+                    /*top 32px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 700px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 700px*/
 
-                        /*@media (max-width 1640px)*/
-                            /*padding-top 50px*/
+                    /*@media (max-width 1640px)*/
+                    /*padding-top 50px*/
 
-                            /*.slider-container*/
-                                /*width 473px*/
-                                /*height 296px*/
-                                /*left 80px*/
-                                /*top 77px*/
+                    /*.slider-container*/
+                    /*width 473px*/
+                    /*height 296px*/
+                    /*left 80px*/
+                    /*top 77px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 600px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 600px*/
 
-                        /*@media (max-width 1460px)*/
-                            /*padding-top 100px*/
+                    /*@media (max-width 1460px)*/
+                    /*padding-top 100px*/
 
-                            /*.slider-container*/
-                                /*width 393px*/
-                                /*height 247px*/
-                                /*left 70px*/
-                                /*top 122px*/
+                    /*.slider-container*/
+                    /*width 393px*/
+                    /*height 247px*/
+                    /*left 70px*/
+                    /*top 122px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 500px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 500px*/
 
-                        /*@media (max-width 1240px)*/
-                            /*padding-top 100px*/
+                    /*@media (max-width 1240px)*/
+                    /*padding-top 100px*/
 
-                            /*.slider-container*/
-                                /*width 315px*/
-                                /*height 197px*/
-                                /*left 59px*/
-                                /*top 118px*/
+                    /*.slider-container*/
+                    /*width 315px*/
+                    /*height 197px*/
+                    /*left 59px*/
+                    /*top 118px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 400px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 400px*/
 
-                        /*@media (max-width 991px)*/
-                            /*padding-top 0*/
+                    /*@media (max-width 991px)*/
+                    /*padding-top 0*/
 
-                            /*.slider-container*/
-                                /*display none*/
+                    /*.slider-container*/
+                    /*display none*/
 
-                            /*.desktop*/
-                                /*display none*/
+                    /*.desktop*/
+                    /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile
@@ -1710,10 +1830,10 @@
                         height 35px
 
             /*@media (max-width 1500px)*/
-                /*left 20%*/
+            /*left 20%*/
 
             /*@media (max-width 1400px)*/
-                /*left 15%*/
+            /*left 15%*/
 
             @media (max-width 1274px)
                 position unset

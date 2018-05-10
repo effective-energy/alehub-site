@@ -43,8 +43,8 @@
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                         <a :href="social.link" v-for="social in member.social" target="_blank">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
-                                             src="../../../static/images/in.svg"
-                                             alt="in" />
+                                                 src="../../../static/images/in.svg"
+                                                 alt="in" />
                                         </a>
                                     </div>
                                 </div>
@@ -106,7 +106,6 @@
                 },
                 xDown: 0,
                 yDown: 0,
-
                 xDrag: 0,
                 yDrag: 0,
             }
@@ -114,14 +113,11 @@
         watch: {
             'options.inBlockTeam': function (inBlockTeam) {
                 // this.startAutoplay(3000, val);
-
                 // console.log(inBlockTeam, 'inBlockTeam');
-
                 // if (this.options.autoplay && inBlockTeam)
                 //     this.startAutoplay(3000, this.options.autoplay);  //true
                 // else
                 //     this.startAutoplay(3000, this.options.autoplay);  //false
-
                 this.startAutoplay(true);
             },
             isAutoplay: function () {
@@ -162,40 +158,29 @@
             },
             dragMove: function (e) {
                 // console.log(e.pageX, 'mouse move X');
-
                 let xMove = e.pageX;
                 let yMove = e.pageY;
-
                 let xDiff = this.xDrag - xMove;
                 let yDiff = this.yDrag - yMove;
-
                 // console.log(xDiff, 'xDiff');
                 // console.log(yDiff, 'yDiff');
-
                 if (Math.abs(xDiff) > Math.abs(yDiff)) {
                     //ширина фотки получать из DOM
-
                     if (xDiff > 0) {
-
                         if (Math.abs(xDiff) > 152) {
                             this.nextSlide();
                             this.xDrag = 0;
                             this.yDrag = 0;
                         }
-
                     }
-
                     if (xDiff < 0) {
-
                         if (Math.abs(xDiff) > 152) {
                             this.prevSlide();
                             this.xDrag = 0;
                             this.yDrag = 0;
                         }
-
                     }
                 }
-
             },
             touchStart: function (e) {
                 // console.log(e, 'event touch start');
@@ -207,42 +192,32 @@
                 // console.log(e, 'event touch move');
                 if (!this.xDown || !this.yDown)
                     return;
-
                 let xUp = e.touches[0].clientX;
                 let yUp = e.touches[0].clientY;
-
                 let xDiff = this.xDown - xUp;
                 let yDiff = this.yDown - yUp;
-
                 if (Math.abs(xDiff) > Math.abs(yDiff))
                     (xDiff > 0) ? this.nextSlide() : this.prevSlide();
-
                 this.xDown = 0;
                 this.yDown = 0;
-
             },
             prevSlide: function () {
-
                 let sel = {
                     wrap: document.querySelector('.' + this.privates.wrap),
                     children: document.querySelector('.' + this.privates.wrap).children,
                     prev: document.querySelector('.' + this.privates.prev),
                     next: document.querySelector('.' + this.privates.next)
                 };
-
                 --this.opt.position;
-
                 if (this.opt.position < 0) {
                     sel.wrap.style['transition'] = '0s';
                     sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.multiplierPosition}%)`;
                     this.opt.position = this.opt.maxPosition - 1;
                 }
-
                 if (this.opt.position === 0) {
                     sel.wrap.style['transform'] = 'translateX(0)';
                     this.opt.position = 0;
                 }
-
                 setTimeout(() => {
                     sel.wrap.style['transition'] = '';
                     sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
@@ -255,14 +230,11 @@
                     prev: document.querySelector('.' + this.privates.prev),
                     next: document.querySelector('.' + this.privates.next)
                 };
-
                 if (this.opt.position < this.opt.maxPosition) {
                     ++this.opt.position;
                 }
-
                 sel.wrap.style['transition'] = '';
                 sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
-
                 sel.wrap.addEventListener('transitionend', () => {
                     if (this.opt.position >= this.opt.maxPosition) {
                         sel.wrap.style['transform'] = 'translateX(0)';
@@ -274,7 +246,6 @@
             startAutoplay: function (val) {
                 if (this.inBlockTeam && this.isOptAutoplay)
                     this.isAutoplay = val;
-
             },
             initAutoplay: function (delay) {
                 clearInterval(this.autoplay);
@@ -295,42 +266,30 @@
         },
         mounted() {
             this.startAutoplay(true);
-
             this.opt.maxPosition = document.querySelector('.' + this.privates.wrap).children.length;
-
             document.querySelector('.' + this.privates.wrap).style['transform'] = 'translateX(0)';
-
-
             // в зависимости от количества на стартовом врэппе
             for (let i = 0; i < this.numItemsInWrap; i++) {
                 document.querySelector('.' + this.privates.wrap).appendChild(document.querySelector('.' + this.privates.wrap).children[i].cloneNode(true));
             }
-
             let carouselInner = document.getElementsByClassName('b-carousel__inner');
-
             for (let i = 0; i < carouselInner.length; i++) {
                 carouselInner[i].addEventListener('touchend', () => {
                     if (!carouselInner[i].querySelector('.layer__top').classList.contains('layer__top-visible'))
                         carouselInner[i].querySelector('.layer__top').classList.add('layer__top-visible');
                 }, false)
             }
-
             document.querySelector('body').addEventListener('touchstart', () => {
                 if (document.querySelector('body').querySelector('.layer__top-visible'))
                     document.querySelector('body').querySelector('.layer__top-visible').classList.remove('layer__top-visible');
             }, false);
-
-
             // if (this.privates.touch === true) {
             //     document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
             //     document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
             // }
-
             //if (this.privates.drag === true) {
-
             // document.querySelector('.js-carousel').addEventListener('mousedown', this.dragStart, false);
             // document.querySelector('.js-carousel').addEventListener('mousemove', this.dragMove, false);
-
         }
     }
 </script>
@@ -340,10 +299,10 @@
         &:nth-child(even)
             .b-carousel__inner
                 background-color #e8ebef
+
         &:nth-child(odd)
             .b-carousel__inner
                 background-color #abb8c6
-
 
     .a-js-carousel__wrap
         .b-carousel__item
@@ -356,7 +315,6 @@
             width 80%
             @media (max-width 320px)
                 width 100%
-
     .wrap
         width 100%
         display flex
@@ -428,25 +386,22 @@
                         .b-carousel__img
                             display block
 
-                            @media (max-width: 320px)
+                            @media (max-width 320px)
                                 height 100%
 
                             &:active
                                 cursor -webkit-grab !important
 
-    /*.b-carousel__inner*/
-    /*padding 40px 20px 0 20px*/
-
-    /*.b-carousel__img*/
-    /*display block*/
 
     .b-carousel__prev
         margin-right 20px
+
         &:active
             transform translateX(-20px)
 
     .b-carousel__next
         margin-left 20px
+
         &:active
             transform translateX(20px)
 
@@ -470,6 +425,7 @@
         .b-carousel__inner
             .layer__top-visible
                 opacity 1 !important
+
             @media (min-width 420px)
                 &:hover
                     .layer__top
@@ -550,6 +506,7 @@
                     .in
                         width 17px
                         height 17px
+
                     img
                         margin auto 15px
 
@@ -564,7 +521,4 @@
 
         .b-carousel__item
             flex 0 0 100% !important
-
-    /*.layer__top*/
-    /*left 40px !important*/
 </style>

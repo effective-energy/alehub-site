@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <header-block :is-main-dark="isDark"/>
-        <home-section :is-ico="isIco"/>
+        <home-section :is-dark-section="isDarkSection"/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -44,7 +44,7 @@
                 isFeatures: false,
                 isTeam: false,
                 isDark: false,
-                isIco: false
+                isDarkSection: false
                 // isLoading: true
             }
         },
@@ -57,8 +57,8 @@
                 this.isTeam = isTeam;
             });
 
-            this.$on('checkIsIco', (isIco) => {
-                this.isIco = isIco;
+            this.$on('checkIsDarkSection', (isDarkSection) => {
+                this.isDarkSection = isDarkSection;
             });
 
             this.$on('isDarkTheme', (val) => {

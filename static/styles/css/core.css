@@ -190,7 +190,7 @@ body {
 @media (max-width: 425px) {
   #screen1 .home {
     min-height: calc(200vh + 25px - 124px);
-    padding: 25px 25px 0 25px;
+    padding: 35px 25px 0 25px;
   }
 }
 #screen1 .home .social-line {
@@ -393,6 +393,9 @@ body {
   100% {
     background-position: 0 79%;
   }
+}
+.btn-buy-tokens:active {
+  background: linear-gradient(45deg, #fda503, #fff5da) !important;
 }
 @media (max-width: 425px) {
   .btn-buy-tokens {
