@@ -25,7 +25,8 @@
                 {{ $t("alePlatform.subTitle") }}
             </p>
             <div class="watch">
-                <div class="play-video">
+                <div onclick="yaCounter48802643.reachGoal('SecVideo'); return true;"
+                     class="play-video">
                     <button class="play-button"
                             @click="playVideo"
                             style="display: flex; justify-content: center; align-items: center;">

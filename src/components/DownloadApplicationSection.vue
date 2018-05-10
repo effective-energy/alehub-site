@@ -34,7 +34,8 @@
                 </p>
                 <a :href="'https://alehub.io/wallet/'+app.downloadLink"
                    v-if="app.isPublish">
-                    <button type="button"
+                    <button onclick="yaCounter48802643.reachGoal('DownloadWallet'); return true;"
+                            type="button"
                             class="button button__download">
                         {{$t('download')}}
                     </button>
