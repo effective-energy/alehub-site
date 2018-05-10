@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row distribution">
-                <Circle1 :index="this.selectedDistributionIndex"></Circle1>
+                <Circle1 style="direction:ltr;" :index="this.selectedDistributionIndex"></Circle1>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list">
                         <div class="item-list"

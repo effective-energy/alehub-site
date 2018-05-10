@@ -1,6 +1,5 @@
 <template>
     <section id="screen1">
-
         <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
             <button type="button"
                     id="do-video-theme"
@@ -208,7 +207,8 @@
                             <a href="https://sale.alehub.io/"
                                target="_blank"
                                class="a-buy-tokens">
-                                <button type="button"
+                                <button onclick="yaCounter48805535.reachGoal('kupit'); return true;"
+                                        type="button"
                                         class="btn btn-buy-tokens">
                                     {{ $t("greeting.countDown.btnBuyTokens") }}
                                 </button>
