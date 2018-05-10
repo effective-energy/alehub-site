@@ -382,12 +382,12 @@
                         <img src="../../static/images/desctop.png"
                              class="desktop">
                         <!--<slider v-if="reBuild" ref="slider"-->
-                                <!--:pages="pages"-->
-                                <!--:sliderinit="sliderInit">-->
+                        <!--:pages="pages"-->
+                        <!--:sliderinit="sliderInit">-->
                         <!--</slider>-->
                     </div>
                     <!--<img src="../../static/images/desctop.png"-->
-                         <!--class="desktop-for-mobile">-->
+                    <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
@@ -410,10 +410,15 @@
                         {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank" @click="yaMetrica">
+                        <a :href="currentWhitePaper"
+                           class="btn btn-yellow"
+                           target="_blank"
+                           @click="yaMetrica">
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
-                        <a class="btn btn-yellow" v-scroll-to="'#features'" target="_blank">
+                        <a class="btn btn-yellow"
+                           v-scroll-to="'#features'"
+                           target="_blank">
                             {{ $t("about.btnGroup.techDetails") }}
                         </a>
                     </div>
@@ -421,11 +426,17 @@
             </div>
         </div>
 
-        <div class="telegram-alert"
+        <div id="telegram-alert"
+             class="telegram-alert"
              v-if="checkWindowWidth"
-            :class="{ 'asd': 'true' }">
+             :class="{ 'telegram-alert__yellow': isDarkSection }">
             <a href="https://t.me/alehub" target="_blank">
-                <img src="../../static/images/telegram-ic-dark.svg" alt="telegram">
+                <img src="../../static/images/telegram-ic-dark.svg"
+                     alt="telegram"
+                     v-if="!isDarkSection">
+                <img src="../../static/images/telegram-ic-default.svg"
+                     alt="telegram"
+                     v-if="isDarkSection">
             </a>
         </div>
 
@@ -446,14 +457,14 @@
             MenuModal
         },
         props: {
-            isIco: {
+            isDarkSection: {
                 type: Boolean,
                 required: true
-            }
+            },
         },
         watch: {
-            isIco: function (val) {
-                console.log(val, 'isIco');
+            isDarkSection: function (val) {
+                console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
@@ -891,6 +902,9 @@
         width 70px
         height 70px
         z-index 1000
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
 
         a
             width 100%
@@ -901,6 +915,9 @@
 
             img
                 width 45%
+
+    .telegram-alert__yellow
+        background-color #ffd24f
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
@@ -960,7 +977,6 @@
             justify-content center
             align-items center
             padding-top 30px
-
 
         .play-button
             display flex
@@ -1117,48 +1133,46 @@
         @media (min-width 768px) and (max-width 1024px)
             height 400px
 
+    /*@media (max-width 1600px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
+    /*@media (max-width 1530px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
-        /*@media (max-width 1600px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
+    /*@media (max-width 1274px)*/
+    /*position relative*/
+    /*.iframe, .place-player__frame*/
+    /*width 800px*/
+    /*height 450px*/
 
-        /*@media (max-width 1530px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
+    /*@media (max-width 1120px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 700px*/
+    /*height 394px*/
 
-        /*@media (max-width 1274px)*/
-            /*position relative*/
-            /*.iframe, .place-player__frame*/
-                /*width 800px*/
-                /*height 450px*/
+    /*@media (max-width 850px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 600px*/
+    /*height 336px*/
 
-        /*@media (max-width 1120px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 700px*/
-                /*height 394px*/
+    /*@media (max-width 720px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
 
-        /*@media (max-width 850px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 600px*/
-                /*height 336px*/
+    /*@media (max-width 620px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 400px*/
+    /*height 225px*/
 
-        /*@media (max-width 720px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 500px*/
-                /*height 280px*/
-
-        /*@media (max-width 620px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 400px*/
-                /*height 225px*/
-
-        /*@media (max-width 520px)*/
-            /*.iframe, .place-player__frame*/
-                /*width 100%*/
-                /*height 292px*/
+    /*@media (max-width 520px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 100%*/
+    /*height 292px*/
 
     @media (max-width 520px) and (min-width 426px)
         .play-video
@@ -1255,7 +1269,6 @@
         .desc
             .title, .subtitle, .description
                 color #f7f7f7 !important
-
 
     .collection
         .item
@@ -1493,7 +1506,6 @@
                             padding 15px 25px
                             margin-top 25px
 
-
                     .desktop-outer
                         margin 0 auto
 
@@ -1506,93 +1518,93 @@
                             width 100% !important
                             position relative
 
-                        /*@media (max-width 2600px)*/
-                            /*.slider-container*/
-                                /*width 709px*/
-                                /*height 443px*/
-                                /*left 252px*/
-                                /*top 40px*/
+                    /*@media (max-width 2600px)*/
+                    /*.slider-container*/
+                    /*width 709px*/
+                    /*height 443px*/
+                    /*left 252px*/
+                    /*top 40px*/
 
-                            /*.desktop*/
-                                /*left 140px*/
-                                /*width 900px*/
+                    /*.desktop*/
+                    /*left 140px*/
+                    /*width 900px*/
 
-                        /*@media (max-width 2365px)*/
-                            /*.slider-container*/
-                                /*left 162px*/
+                    /*@media (max-width 2365px)*/
+                    /*.slider-container*/
+                    /*left 162px*/
 
-                            /*.desktop*/
-                                /*left 50px*/
+                    /*.desktop*/
+                    /*left 50px*/
 
-                        /*@media (max-width 2150px)*/
-                            /*.slider-container*/
-                                /*width 630px*/
-                                /*height 395px*/
-                                /*left 102px*/
-                                /*top 36px*/
+                    /*@media (max-width 2150px)*/
+                    /*.slider-container*/
+                    /*width 630px*/
+                    /*height 395px*/
+                    /*left 102px*/
+                    /*top 36px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 800px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 800px*/
 
-                        /*@media (max-width 1860px)*/
-                            /*.slider-container*/
-                                /*width 552px*/
-                                /*height 345px*/
-                                /*left 91px*/
-                                /*top 32px*/
+                    /*@media (max-width 1860px)*/
+                    /*.slider-container*/
+                    /*width 552px*/
+                    /*height 345px*/
+                    /*left 91px*/
+                    /*top 32px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 700px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 700px*/
 
-                        /*@media (max-width 1640px)*/
-                            /*padding-top 50px*/
+                    /*@media (max-width 1640px)*/
+                    /*padding-top 50px*/
 
-                            /*.slider-container*/
-                                /*width 473px*/
-                                /*height 296px*/
-                                /*left 80px*/
-                                /*top 77px*/
+                    /*.slider-container*/
+                    /*width 473px*/
+                    /*height 296px*/
+                    /*left 80px*/
+                    /*top 77px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 600px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 600px*/
 
-                        /*@media (max-width 1460px)*/
-                            /*padding-top 100px*/
+                    /*@media (max-width 1460px)*/
+                    /*padding-top 100px*/
 
-                            /*.slider-container*/
-                                /*width 393px*/
-                                /*height 247px*/
-                                /*left 70px*/
-                                /*top 122px*/
+                    /*.slider-container*/
+                    /*width 393px*/
+                    /*height 247px*/
+                    /*left 70px*/
+                    /*top 122px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 500px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 500px*/
 
-                        /*@media (max-width 1240px)*/
-                            /*padding-top 100px*/
+                    /*@media (max-width 1240px)*/
+                    /*padding-top 100px*/
 
-                            /*.slider-container*/
-                                /*width 315px*/
-                                /*height 197px*/
-                                /*left 59px*/
-                                /*top 118px*/
+                    /*.slider-container*/
+                    /*width 315px*/
+                    /*height 197px*/
+                    /*left 59px*/
+                    /*top 118px*/
 
-                            /*.desktop*/
-                                /*left 0*/
-                                /*width 400px*/
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 400px*/
 
-                        /*@media (max-width 991px)*/
-                            /*padding-top 0*/
+                    /*@media (max-width 991px)*/
+                    /*padding-top 0*/
 
-                            /*.slider-container*/
-                                /*display none*/
+                    /*.slider-container*/
+                    /*display none*/
 
-                            /*.desktop*/
-                                /*display none*/
+                    /*.desktop*/
+                    /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile
@@ -1692,10 +1704,10 @@
                         height 35px
 
             /*@media (max-width 1500px)*/
-                /*left 20%*/
+            /*left 20%*/
 
             /*@media (max-width 1400px)*/
-                /*left 15%*/
+            /*left 15%*/
 
             @media (max-width 1274px)
                 position unset
