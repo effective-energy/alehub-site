@@ -599,7 +599,7 @@
                     usd: {
                         src: '../../static/images/usd.svg',
                         alt: 'usd',
-                        count: 207,
+                        count: 3.3,
                         name: 'usd',
                         collected: 2000000,
                         softCap: 2000000,
