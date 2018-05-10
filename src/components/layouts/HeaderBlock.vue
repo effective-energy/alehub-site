@@ -412,11 +412,13 @@
             this.$on('closeModal', () => {
                 this.activeHamburger = false;
                 document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.$parent.$emit('isOpenedModalMenu', false);
                 this.enableScroll();
             });
 
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
+                this.$parent.$emit('isOpenedModalMenu', true);
                 this.disableScroll();
             });
 
@@ -429,16 +431,12 @@
                 tgButtonHeight = null;
 
             if (document.getElementById('telegram-alert')) {
-                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
                     tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
             } else if (document.getElementById('telegram-alert-mobile')) {
-                console.log(document.getElementById('telegram-alert-mobile'), 'document.getElementById(\'telegram-alert-mobile\')');
-                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top,
+                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
                     tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
             }
-
-            console.log(tgButtonYOffset, 'tgButtonYOffset');
-            console.log(tgButtonHeight, 'tgButtonHeight');
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
@@ -1067,7 +1065,7 @@
         &:hover
             color #34343e
 
-    @media (max-width: 1440px)
+    @media (max-width 1440px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1085,14 +1083,14 @@
         .dropdown-toggle
             font-size 16px
 
-    @media (max-width: 1300px)
+    @media (max-width 1300px)
         .navbar-nav
             .nav-item
                 .nav-link
                     padding-left 10px
                     padding-right 10px
 
-    @media (max-width: 1200px)
+    @media (max-width 1200px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1120,7 +1118,7 @@
         .btn-actions
             display unset
 
-    @media (max-width: 1440px)
+    @media (max-width 1440px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1138,14 +1136,14 @@
         .dropdown-toggle
             font-size 16px
 
-    @media (max-width: 1300px)
+    @media (max-width 1300px)
         .navbar-nav
             .nav-item
                 .nav-link
                     padding-left 10px
                     padding-right 10px
 
-    @media (max-width: 1200px)
+    @media (max-width 1200px)
         .navbar-nav
             .nav-item
                 .nav-link

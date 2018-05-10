@@ -440,7 +440,7 @@
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
            target="_blank"
-           v-if="!checkMobileWidth && !closedTelegramAlertMobile"
+           v-if="!checkMobileWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
            :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
 
             <div class="telegram-alert-mobile__wrap">
@@ -501,6 +501,10 @@
                 type: Boolean,
                 required: true
             },
+            isOpenedModalMenu: {
+                type: Boolean,
+                required: true
+            }
         },
         watch: {
             isDarkSection: function (val) {
@@ -595,7 +599,7 @@
                     usd: {
                         src: '../../static/images/usd.svg',
                         alt: 'usd',
-                        count: 207,
+                        count: 3.3,
                         name: 'usd',
                         collected: 2000000,
                         softCap: 2000000,
@@ -681,12 +685,12 @@
         methods: {
             yaMetricaCollectionItem: function () {
                 yaCounter48802643.reachGoal('BuyCrypto');
-                console.log("cript");
+                console.log('cript');
                 return true;
             },
             yaMetricaCollectionLastItem: function () {
                 yaCounter48802643.reachGoal('BuyUSD');
-                console.log("usd");
+                console.log('usd');
                 return true;
             },
             doCloseTelegramAlertMobile: function () {
