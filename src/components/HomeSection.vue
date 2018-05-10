@@ -377,6 +377,9 @@
              class="what-is"
              :class="{ 'description__dark': isDark }">
             <div class="row">
+
+                <!--<slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>-->
+
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
                         <img src="../../static/images/desctop.png"
@@ -386,6 +389,7 @@
                         <!--:sliderinit="sliderInit">-->
                         <!--</slider>-->
                     </div>
+
                     <!--<img src="../../static/images/desctop.png"-->
                     <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
@@ -473,6 +477,7 @@
 
 <script>
     import MenuModal from './modals/MenuModal';
+    import SliderScreen from './layouts/SliderScreen';
 
     //заменить на свой слайдер
     import slider from 'vue-concise-slider';
@@ -482,7 +487,8 @@
         name: 'Screen1',
         components: {
             slider,
-            MenuModal
+            MenuModal,
+            SliderScreen
         },
         props: {
             isDarkSection: {
@@ -492,7 +498,7 @@
         },
         watch: {
             isDarkSection: function (val) {
-                console.log(val, 'isDarkSection');
+                // console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
@@ -507,6 +513,21 @@
                 closedTelegramAlertMobile: false,
                 isVideo: false,
                 isDark: false,
+
+                itemsToSliderScreen: [
+                    '../../../static/images/screen1.png',
+                    '../../../static/images/screen2.png',
+                    '../../../static/images/screen3.png'
+                ],
+                optionsToSliderScreen: {
+                    touch: true,
+                    autoplay: true,
+                    inBlockTeam: false,
+                    autoplayDelay: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true
+                },
+
                 pages: [
                     {
                         html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
@@ -700,6 +721,24 @@
                     }));
                 }
             },
+            play: function () {
+                if (!this.isPaused)
+                    return false;
+
+                this.isPaused = false;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].play();
+                }
+            },
+            pause: function () {
+                if (this.isPaused)
+                    return false;
+
+                this.isPaused = true;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].pause();
+                }
+            },
             format: function (count, isSecond) {
                 let result = 0;
                 if (isSecond) {
@@ -745,20 +784,6 @@
                     document.getElementById('button-choose').classList.remove('button-choose__stop');
                 }
             },
-            play: function () {
-                if (!this.isPaused) return false;
-                this.isPaused = false;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].play();
-                }
-            },
-            pause: function () {
-                if (this.isPaused) return false;
-                this.isPaused = true;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].pause();
-                }
-            },
             doVideoTheme: function () {
                 this.isDark = true;
                 this.isVideo = true;
@@ -776,6 +801,10 @@
                 }, 100);
             },
             doLightTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
                 this.isDark = false;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
@@ -789,9 +818,15 @@
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
                 }, 100);
             },
             doDarkTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
                 this.isDark = true;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
@@ -805,6 +840,8 @@
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
                 }, 100);
             },
             getCurrentExchangeRates: function () {
@@ -853,23 +890,6 @@
             }
 
             this.getCurrentExchangeRates();
-
-            // window.addEventListener('scroll', () => {
-            //     if (window.scrollY > this.getCoords(document.getElementById('description')).top) {
-            //         if (document.getElementById('myVideo').style['position'] !== 'absolute') {
-            //             document.getElementById('myVideo').style['position'] = 'absolute';
-            //             document.getElementById('myVideo').style['min-height'] = window.innerHeight - navbarYOffset + 'px';
-            //             document.getElementById('myVideo').style['height'] = window.innerHeight - navbarYOffset + 'px';
-            //             document.getElementById('myVideo').style['bottom'] = 0;
-            //         }
-            //     } else {
-            //         if (document.getElementById('myVideo').style['position'] !== 'fixed') {
-            //             document.getElementById('myVideo').style['position'] = 'fixed';
-            //             document.getElementById('myVideo').style['min-height'] = '100%';
-            //             document.getElementById('myVideo').style['height'] = '';
-            //         }
-            //     }
-            // });
 
             setTimeout(() => {
                 console.log(localStorage.getItem('color-theme'), 'localStorage.getItem(\'color-theme\')')
