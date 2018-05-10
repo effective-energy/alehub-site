@@ -192,7 +192,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -202,7 +208,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -213,6 +236,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -267,6 +301,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -714,7 +753,13 @@ const messages = {
                         {
                             name: 'Михаил Громыко',
                             position: 'Генеральный директор',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Владимир Грудинин',
@@ -724,7 +769,24 @@ const messages = {
                         {
                             name: 'Алексей Осипенко',
                             position: 'Главный операционный директор',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Илья Шилов',
+                            position: 'Технический директор',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Елена Цимбалюк',
@@ -735,6 +797,17 @@ const messages = {
                             name: 'Егор Локтев',
                             position: 'Директор по маркетингу',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Арсений Войтенко',
+                            position: 'Глава отдела по коммуникациям',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Артем Левашов',
@@ -789,6 +862,11 @@ const messages = {
                             name: 'Дмитрий Журавлев',
                             position: 'Разработчик мобильных приложений',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Евгений Коробицин',
+                            position: 'Графический Дизайнер',
+                            src: '../../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -1229,7 +1307,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -1239,7 +1323,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -1250,6 +1351,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -1304,6 +1416,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -1744,7 +1861,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -1754,7 +1877,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -1765,6 +1905,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -1819,6 +1970,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -2264,7 +2420,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -2274,7 +2436,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -2285,6 +2464,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -2339,6 +2529,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -2783,7 +2978,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -2793,7 +2994,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -2804,6 +3022,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -2858,6 +3087,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -3303,7 +3537,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -3313,7 +3553,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -3324,6 +3581,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -3378,6 +3646,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -3823,7 +4096,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -3833,7 +4112,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -3844,6 +4140,17 @@ const messages = {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
                             src: '../static/images/avatars/loktev@3x.png'
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
@@ -3898,6 +4205,11 @@ const messages = {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
                             src: '../static/images/avatars/zhuravlev@3x.png'
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }

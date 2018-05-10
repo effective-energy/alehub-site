@@ -742,8 +742,10 @@
                     return false;
 
                 this.isPaused = false;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].play();
+                if (window.animejsconfig) {
+                    for (let i = 0; i < window.animejsconfig.length; i++) {
+                        window.animejsconfig[i].play();
+                    }
                 }
             },
             pause: function () {
@@ -751,8 +753,10 @@
                     return false;
 
                 this.isPaused = true;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].pause();
+                if (window.animejsconfig) {
+                    for (let i = 0; i < window.animejsconfig.length; i++) {
+                        window.animejsconfig[i].pause();
+                    }
                 }
             },
             format: function (count, isSecond) {

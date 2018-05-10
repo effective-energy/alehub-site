@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light"
+    <nav class="navbar fixed-top navbar-light"
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
          id="navbar">
 
@@ -26,36 +26,56 @@
             <span class="line" :class="{ 'line__white': isDark }"></span>
             <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto ml-auto" v-if="!show">
-                <li v-for="(item, index) in $t('navbar.menuList')"
-                    :key="index"
-                    class="nav-item"
-                    :class="{ active: index === activeItem }">
+        <div class="navbar-folding" id="navbarText">
 
-                    <a @click="activeItem = index"
-                       class="nav-link"
-                       v-scroll-to="item.path">
-                        {{ item.name }}
-                    </a>
-                </li>
-                <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
-                <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
-                <li class="nav-line nav-line__black" v-else-if="isDark"></li>
-                <li class="nav-line nav-line__white" v-else></li>
-            </ul>
+            <slider-navbar :items="$t('navbar.menuList')" :options="optionsToSliderNavbar"/>
 
-            <ul class="navbar-nav mr-auto ml-auto"
-                v-else-if="show === 'blog'">
+            <!--<div class="wrap-navbar">-->
+                <!--<div class="inner-navbar">-->
 
-                <router-link class="nav-item"
-                             tag="li"
-                             :to="'/blog'">
-                    <a href="#" class="nav-link">
-                        {{ $t("navbar.blog") }}
-                    </a>
-                </router-link>
-            </ul>
+                    <!--<div class="nav-item-1" v-for="(item, index) in $t('navbar.menuList')">-->
+                        <!--{{ item.name }}-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto" v-if="!show">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li v-for="(item, index) in $t('navbar.menuList')"&ndash;&gt;-->
+                    <!--&lt;!&ndash;:key="index"&ndash;&gt;-->
+                    <!--&lt;!&ndash;class="nav-item"&ndash;&gt;-->
+                    <!--&lt;!&ndash;:class="{ active: index === activeItem }">&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<a @click="activeItem = index"&ndash;&gt;-->
+                    <!--&lt;!&ndash;class="nav-link"&ndash;&gt;-->
+                    <!--&lt;!&ndash;v-scroll-to="item.path">&ndash;&gt;-->
+                    <!--&lt;!&ndash;{{ item.name }}&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="nav-line nav-line__yellow" v-if="isYellow"></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="nav-line nav-line__black" v-else-if="isDark"></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li class="nav-line nav-line__white" v-else></li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto"&ndash;&gt;-->
+                    <!--&lt;!&ndash;v-else-if="show === 'blog'">&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<router-link class="nav-item"&ndash;&gt;-->
+                    <!--&lt;!&ndash;tag="li"&ndash;&gt;-->
+                    <!--&lt;!&ndash;:to="'/blog'">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a href="#" class="nav-link">&ndash;&gt;-->
+                    <!--&lt;!&ndash;{{ $t("navbar.blog") }}&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</router-link>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--</div>-->
+
+                <!--<div class="more-navbar-items">-->
+                    <!--<img src="../../../static/images/arrow-right-dark.svg" alt="more navbar items">-->
+                <!--</div>-->
+
+            <!--</div>-->
+
+
             <div class="right-menu">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
@@ -147,11 +167,13 @@
 
 <script>
     import MenuModal from '../modals/MenuModal';
+    import SliderNavbar from '../layouts/SliderNavbar';
 
     export default {
         name: 'HeaderSection', //rename
         components: {
             MenuModal,
+            SliderNavbar
         },
         props: {
             isMainDark: {
@@ -181,7 +203,17 @@
 
                 heightLangItem: 0,
 
-                rtl: false
+                rtl: false,
+
+
+                optionsToSliderNavbar: {
+                    touch: false,
+                    autoplay: false,
+                    inBlockTeam: false,
+                    autoplayDelay: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true
+                },
             }
         },
         watch: {
@@ -382,10 +414,10 @@
                 e.preventDefault();
             },
             disableScroll: function () {
-                document.body.addEventListener('touchmove', this.preventDefault, { passive: false });
+                document.body.addEventListener('touchmove', this.preventDefault, {passive: false});
             },
             enableScroll: function () {
-                document.body.removeEventListener('touchmove', this.preventDefault, { passive: false });
+                document.body.removeEventListener('touchmove', this.preventDefault, {passive: false});
             }
         },
         mounted() {
@@ -415,11 +447,11 @@
                 tgButtonHeight = null;
 
             if (document.getElementById('telegram-alert')) {
-                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
-                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+                tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
+                tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
             } else if (document.getElementById('telegram-alert-mobile')) {
-                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
-                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+                tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
+                tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
             }
 
             window.addEventListener('scroll', () => {
@@ -478,12 +510,12 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isOrange) {
+                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
+                    if (!this.isYellow) {
                         this.isDark = false;
-                        this.isYellow = false;
-                        this.isOrange = true;
+                        this.isOrange = false;
+                        this.isYellow = true;
                     }
                     if (!this.isFeatures) {
                         this.isFeatures = true;
@@ -617,6 +649,52 @@
 </script>
 
 <style lang="stylus" scoped>
+    .navbar
+        flex-wrap nowrap
+
+    .navbar-folding
+        display flex
+        position relative
+        height 100%
+
+        @media (max-width 1024px)
+            display none
+
+        .wrap-navbar
+            max-width 100%
+            width 100%
+            height 100%
+            display flex
+            align-items center
+            overflow-x hidden
+            position relative
+
+            @media (max-width 1350px)
+                max-width 80%
+                width 80%
+
+            .more-navbar-items
+                display none
+
+                @media (max-width 1350px)
+                    display block
+                    position absolute
+                    right 0
+
+            .inner-navbar
+                min-width 100%
+                position relative
+                display flex
+                flex-direction row
+                justify-content space-around
+
+                @media (max-width 1350px)
+                    min-width 120%
+
+                .nav-item-1
+                    font-size 18px
+                    font-family MuseoSansCyrl500
+                    font-weight 500
 
     .select-lang
         cursor pointer
@@ -736,10 +814,10 @@
             .select-lang__ar
                 background-image url(../../../static/images/flags/ar@2x.png)
 
-                /*&:hover*/
-                    /*span*/
-                        /*opacity 1*/
-                        /*color #ffffff*/
+            /*&:hover*/
+            /*span*/
+            /*opacity 1*/
+            /*color #ffffff*/
 
             .select-lang__es
                 background-image url(../../../static/images/flags/es@2x.png)
@@ -1094,8 +1172,7 @@
 
     @media (max-width 1100px)
         /*.btn-login*/
-            /*display none*/
-
+        /*display none*/
         .dropdown
             display none
 
@@ -1146,14 +1223,14 @@
             margin-right 8px
 
     /*@media (max-width 1100px)*/
-        /*!*.btn-login*!*/
-            /*!*display none*!*/
+    /*!*.btn-login*!*/
+    /*!*display none*!*/
 
-        /*.dropdown*/
-            /*display none*/
+    /*.dropdown*/
+    /*display none*/
 
-        /*.btn-actions*/
-            /*display unset*/
+    /*.btn-actions*/
+    /*display unset*/
 
     @media (max-width 1024px)
         .navbar

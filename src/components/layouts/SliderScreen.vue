@@ -1,5 +1,5 @@
 <template>
-    <div class="wrap" style="user-select: none;"
+    <div class="wrap"
          @mouseover="(options.autoplay) ? stopAutoplay : 'false'"
          @mouseout="(options.autoplay) ? startAutoplay : 'false'">
 
@@ -105,29 +105,6 @@
                     }
                 }
             },
-            touchStart: function (e) {
-                // console.log(e, 'event touch start');
-                // console.log('touchStart');
-                // this.xDown = e.touches[0].clientX;
-                // this.yDown = e.touches[0].clientY;
-            },
-            touchMove: function (e) {
-                // console.log(e, 'event touch move');
-                // if (!this.xDown || !this.yDown)
-                //     return;
-                //
-                // let xUp = e.touches[0].clientX;
-                // let yUp = e.touches[0].clientY;
-                //
-                // let xDiff = this.xDown - xUp;
-                // let yDiff = this.yDown - yUp;
-                //
-                // if (Math.abs(xDiff) > Math.abs(yDiff))
-                //     (xDiff > 0) ? this.nextSlide() : this.prevSlide();
-                //
-                // this.xDown = 0;
-                // this.yDown = 0;
-            },
             prevSlide: function () {
                 let sel = {
                     wrap: document.querySelector('.js-carousel__wrap'),
@@ -211,6 +188,7 @@
         width 100%
         display flex
         justify-content center
+        user-select none
 
         &:active
             cursor -webkit-grab !important

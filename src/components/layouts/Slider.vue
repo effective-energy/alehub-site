@@ -265,6 +265,9 @@
             this.privates = this.privates1;
         },
         mounted() {
+
+            console.log(this.items, 'this.items');
+
             this.startAutoplay(true);
             this.opt.maxPosition = document.querySelector('.' + this.privates.wrap).children.length;
             document.querySelector('.' + this.privates.wrap).style['transform'] = 'translateX(0)';
