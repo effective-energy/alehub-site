@@ -10,6 +10,15 @@ import VueResource from 'vue-resource';
 import Moment from 'vue-moment';
 import VueYandexMetrika from 'vue-yandex-metrika';
 
+
+
+
+Vue.use(VueYandexMetrika, {
+    id: 48805535,
+    env: process.env.NODE_ENV
+    // other options
+});
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
