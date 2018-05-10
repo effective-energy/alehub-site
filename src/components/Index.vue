@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <header-block :is-main-dark="isDark"/>
-        <home-section :is-dark-section="isDarkSection"/>
+        <home-section :is-dark-section="isDarkSection" :is-opened-modal-menu="openedModalMenu"/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -44,7 +44,8 @@
                 isFeatures: false,
                 isTeam: false,
                 isDark: false,
-                isDarkSection: false
+                isDarkSection: false,
+                openedModalMenu: false
                 // isLoading: true
             }
         },
@@ -63,6 +64,10 @@
 
             this.$on('isDarkTheme', (val) => {
                 this.isDark = val;
+            });
+
+            this.$on('isOpenedModalMenu', (val) => {
+                this.openedModalMenu = val;
             });
         }
     }
