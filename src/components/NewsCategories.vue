@@ -21,8 +21,8 @@
 
                 <div class="posts">
 
-                    <div class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="'https://alehub.eu-4.evennode.com/'+item.preview_image" alt="" class="image-preview">
+                    <div class="blog-post" v-for="item in content" :key="item._id" @click="goToNews(item._id)">
+                        <img :src="item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
                                 {{ item.title }}
@@ -82,7 +82,12 @@
 		},
         methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
                     this.allNews = response.body.reverse();
                     this.content = response.body.filter(item => {
                         return item.categories.indexOf(this.$route.params.id) !== -1;
@@ -103,6 +108,9 @@
                         }
                     }
                 }
+            },
+            goToNews: function (id) {
+                this.$router.push(`/blog/${id}`)
             }
 		},
 		created () {
@@ -120,6 +128,10 @@
     .footer {
         background-color: #e8ebef;
     }
+
+    .blog-entries {
+        min-height: 100vh;
+    } 
 </style>
 
 <style lang="stylus" scoped>
@@ -194,6 +206,7 @@
         width 100%
         margin 49px 0 49px 0
         display flex
+        cursor pointer
 
         .image-preview
             -o-object-fit cover

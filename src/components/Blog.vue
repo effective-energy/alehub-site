@@ -22,7 +22,7 @@
 
                 <div class="posts">
 
-                    <div class="blog-post" v-for="item in content" :key="item._id">
+                    <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
                         <img :src="'https://alehub.eu-4.evennode.com/'+item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
@@ -79,7 +79,12 @@
 		},
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'eng'?'':'/'+this.$i18n.locale}`).then(response => {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
                     this.content = response.body.reverse();
                     this.filtersConfigure();
                 }, response => {
@@ -97,7 +102,10 @@
                         }
                     }
                 }
-            }
+            },
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
+			}
         },
         created () {
             this.getNews();
@@ -113,7 +121,15 @@
 
     .footer {
         background-color: #e8ebef;
-    }
+	}
+	
+	.blog-entries {
+		min-height: 100vh;
+	}
+
+	.blog-post {
+		cursor: pointer;
+	}
 </style>
 
 <style lang="stylus" scoped>
@@ -308,7 +324,7 @@
 
     @media (max-width: 320px)
         .section
-            padding-top 40px
+            padding-top 100px
             padding-bottom 40px
 
         .blog-post

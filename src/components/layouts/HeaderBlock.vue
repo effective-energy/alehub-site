@@ -18,18 +18,6 @@
             ALEHUB
         </router-link>
 
-        <!--<a href="#" class="navbar-brand">-->
-        <!--<img class="d-inline-block align-top"-->
-        <!--src="../../../static/images/ale-logo.svg"-->
-        <!--alt="ALEHUB"-->
-        <!--v-if="!isDark">-->
-        <!--<img class="d-inline-block align-top"-->
-        <!--src="../../../static/images/ale-logo-white.svg"-->
-        <!--alt="ALEHUB"-->
-        <!--v-else>-->
-        <!--ALEHUB-->
-        <!--</a>-->
-
         <div class="hamburger"
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
@@ -62,27 +50,93 @@
 
                 <router-link class="nav-item"
                              tag="li"
-                             :to="`/blog`">
+                             :to="'/blog'">
                     <a href="#" class="nav-link">
                         {{ $t("navbar.blog") }}
                     </a>
                 </router-link>
             </ul>
             <div class="right-menu">
-                <button type="button"
-                        class="btn btn-login">
+                <a class="btn btn-login"
+                   href="http://presale.alehub.io/"
+                   target="_blank">
                     {{ $t("navbar.loginBtn") }}
-                </button>
-                <b-dropdown :text="currentLang">
-                    <b-dropdown-item :active="lang === currentLang"
-                                     v-for="(lang, langIndex) in languagesList"
-                                     @click="changeLanguage(langIndex)"
-                                     :key="langIndex">
-                        {{ lang }}
-                    </b-dropdown-item>
-                </b-dropdown>
+                </a>
+                <div id="select-lang" class="select-lang" @click="toggleDropdown">
+                    {{ currentLang }}
+                    <div class="select-lang__dropdown"
+                         v-if="dropdownOpen">
+
+                        <!--классы поместить в массив с названиями языков в data()-->
+                        <div class="select-lang__item select-lang__fr"
+                             :class="{ 'selected': currentLang === 'fr' }"
+                             @click="changeLanguage(8)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>FR</span>
+                        </div>
+                        <div class="select-lang__item select-lang__de"
+                             :class="{ 'selected': currentLang === 'de' }"
+                             @click="changeLanguage(7)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>DE</span>
+                        </div>
+                        <div class="select-lang__item select-lang__es"
+                             :class="{ 'selected': currentLang === 'es' }"
+                             @click="changeLanguage(6)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>ES</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ar"
+                             :class="{ 'selected': currentLang === 'ar' }"
+                             @click="changeLanguage(5)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>AR</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ko"
+                             :class="{ 'selected': currentLang === 'ko' }"
+                             @click="changeLanguage(4)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>KO</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ja">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>JA</span>
+                        </div>
+                        <div class="select-lang__item select-lang__zh"
+                             :class="{ 'selected': currentLang === 'ch' }"
+                             @click="changeLanguage(2)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>ZH</span>
+                        </div>
+                        <div class="select-lang__item select-lang__ru"
+                             :class="{ 'selected': currentLang === 'ru' }"
+                             @click="changeLanguage(1)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>RU</span>
+                        </div>
+                        <div class="select-lang__item select-lang__en"
+                             :class="{ 'selected': currentLang === 'en' }"
+                             @click="changeLanguage(0)">
+                            <div class="select-lang__cover">
+                            </div>
+                            <span>EN</span>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            <button type="button" class="btn btn-actions">ok</button>
+            <button type="button" class="btn btn-actions" v-if="false">
+                ok
+            </button>
         </div>
 
         <menu-modal :dark="isDark"
@@ -114,49 +168,20 @@
                 isLanguagesModal: false,
                 isFeatures: false,
                 mainIsDark: false,
+                isDarkSection: false,
                 isTeam: false,
                 isDark: false,
                 isYellow: false,
                 isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
-                navbar: [
-                    {
-                        path: '#home',
-                        name: 'Home'
-                    },
-                    {
-                        path: '#description',
-                        name: 'Description'
-                    },
-                    {
-                        path: '#advantages',
-                        name: 'Advantages'
-                    },
-                    {
-                        path: '#features',
-                        name: 'Features'
-                    },
-                    {
-                        path: '#team',
-                        name: 'Team'
-                    },
-                    {
-                        path: '#ico',
-                        name: 'ICO'
-                    },
-                    {
-                        path: '#roadmap',
-                        name: 'Roadmap'
-                    },
-                    {
-                        path: '#blog',
-                        name: 'Blog'
-                    },
-                ],
                 activeItem: 0,
-                languagesList: ['eng', 'rus'],
-                selectedLanguage: localStorage.getItem('systemLang')
+                languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
+                selectedLanguage: localStorage.getItem('systemLang'),
+
+                heightLangItem: 0,
+
+                rtl: false
             }
         },
         watch: {
@@ -164,7 +189,13 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
+
                 console.log(dark, 'dark');
+
+                let navbarYOffset = document.getElementById('navbar').offsetHeight,
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
+                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+
                 if (dark) {
                     this.mainIsDark = true;
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
@@ -172,6 +203,12 @@
                         this.isYellow = false;
                         this.isOrange = false;
                     }
+
+                    if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        this.isDarkSection = true;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
+
                 } else {
                     this.mainIsDark = false;
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
@@ -179,31 +216,63 @@
                         this.isYellow = false;
                         this.isOrange = false;
                     }
+
+                    if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        this.isDarkSection = false;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
                 }
             }
         },
         computed: {
             currentLang: function () {
-                if (this.selectedLanguage === 'eng') {
-                    return 'eng';
-                } else if (this.selectedLanguage === 'rus') {
-                    return 'rus';
-                } else {
-                    return 'eng';
-                }
+                if (this.selectedLanguage === 'en')
+                    return 'en';
+                else if (this.selectedLanguage === 'ru')
+                    return 'ru';
+                else if (this.selectedLanguage === 'zh')
+                    return 'zh';
+                else if (this.selectedLanguage === 'fr')
+                    return 'fr';
+                else if (this.selectedLanguage === 'de')
+                    return 'de';
+                else if (this.selectedLanguage === 'ar')
+                    return 'ar';
+                else if (this.selectedLanguage === 'ko')
+                    return 'ko';
+                else if (this.selectedLanguage === 'es')
+                    return 'es';
+
+                return 'en';
             },
             isNavLinks: function () {
                 return this.navLinks;
             },
             isModalIsOpen: function () {
                 return this.modalIsOpen;
-            }
+            },
+            isHeightLangItem: function () {
+                return this.heightLangItem;
+            },
         },
         methods: {
+            makeRTL: function () {
+                document.querySelector('body').style['direction'] = 'rtl';
+                this.rtl = true;
+            },
+            resetRTL: function () {
+                document.querySelector('body').style['direction'] = 'ltr';
+                this.rtl = false;
+            },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
                 localStorage.setItem('systemLang', this.selectedLanguage);
-                this.$i18n.locale = this.selectedLanguage
+                this.$i18n.locale = this.selectedLanguage;
+
+                if (this.selectedLanguage === 'ar')
+                    this.makeRTL();
+                else if (this.rtl)
+                    this.resetRTL();
             },
             openModal: function (name) {
                 this.$modal.show(name);
@@ -212,16 +281,19 @@
                 this.$modal.hide(name);
             },
             changeLineWidth: function (index) {
-                if (!document.querySelector('.nav-line')) return false
+                if (!document.querySelector('.nav-line'))
+                    return false;
+
                 let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 
                 let scope = 0;
                 for (let i = 0; i <= index; i++) {
-                    if (index === 0 || index === i) continue;
+                    if (index === 0 || index === i)
+                        continue;
                     scope += document.querySelectorAll('.nav-item')[i].offsetWidth;
                 }
-                document.querySelector('.nav-line').style.transform = `translate3D(${scope}px,0,0)`;
+                document.querySelector('.nav-line').style.transform = `translate3D(${ scope }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -234,7 +306,52 @@
                 };
             },
             toggleDropdown: function () {
-                this.dropdownOpen = !this.dropdownOpen;
+                let tmpDropdownOpen = !this.dropdownOpen;
+
+                if (tmpDropdownOpen) {
+
+                    this.dropdownOpen = tmpDropdownOpen;
+
+                    setTimeout(() => {
+                        let duration = 900,
+                            currentTime = 0,
+                            increment = 100,
+                            i = document.getElementsByClassName('select-lang__item').length - 1;
+
+                        let animateScroll = () => {
+                            currentTime += increment;
+                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 1;
+                            i--;
+                            if (currentTime < duration) {
+                                setTimeout(animateScroll, increment);
+                            }
+                        };
+
+                        animateScroll();
+                    }, 40);
+                } else {
+                    setTimeout(() => {
+                        let duration = 900,
+                            currentTime = 0,
+                            increment = 100,
+                            i = 0;
+
+                        let animateScroll = () => {
+                            currentTime += increment;
+                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 0;
+                            i++;
+                            if (currentTime < duration) {
+                                setTimeout(animateScroll, increment);
+                            } else {
+                                setTimeout(() => {
+                                    this.dropdownOpen = tmpDropdownOpen;
+                                }, increment);
+                            }
+                        };
+
+                        animateScroll();
+                    }, 40);
+                }
             },
             toggleMenuModal: function () {
                 if (this.activeHamburger)
@@ -249,21 +366,26 @@
                     this.closeModal('menu-modal');
                 }
             },
-            // initScroll: function () {
-            //     window.addEventListener('scroll', () => {
-            //         this.checkActive();
-            //     })
-            // },
             checkActive: function () {
-                for (let i = 0; i < this.navbar.length; i++) {
-                    if (document.querySelector(this.navbar[i].path) === null)
+                let menu = this.$t('navbar.menuList');
+                for (let i = 0; i < menu.length; i++) {
+                    if (document.querySelector(menu[i].path) === null)
                         return false;
-                    let offset = document.querySelector(this.navbar[i].path).offsetTop - 74;
-                    let height = document.querySelector(this.navbar[i].path).offsetHeight;
+                    let offset = document.querySelector(menu[i].path).offsetTop - 74;
+                    let height = document.querySelector(menu[i].path).offsetHeight;
                     if (window.scrollY > offset && window.scrollY <= offset + height) {
                         this.activeItem = i;
                     }
                 }
+            },
+            preventDefault: function (e) {
+                e.preventDefault();
+            },
+            disableScroll: function () {
+                document.body.addEventListener('touchmove', this.preventDefault, { passive: false });
+            },
+            enableScroll: function () {
+                document.body.removeEventListener('touchmove', this.preventDefault, { passive: false });
             }
         },
         mounted() {
@@ -274,25 +396,51 @@
             this.$on('closeModal', () => {
                 this.activeHamburger = false;
                 document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.enableScroll();
             });
 
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
-            });
-
-            this.$on('closedModal', () => {
-                document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.disableScroll();
             });
 
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
             }, 500);
 
-            let navbarYOffset = document.getElementById('navbar').offsetHeight;
+            let navbarYOffset = document.getElementById('navbar').offsetHeight,
+                tgButtonYOffset = null,
+                tgButtonHeight = null;
 
+            if (document.getElementById('telegram-alert')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
+                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+            } else if (document.getElementById('telegram-alert-mobile')) {
+                console.log(document.getElementById('telegram-alert-mobile'), 'document.getElementById(\'telegram-alert-mobile\')');
+                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top,
+                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+            }
+
+            console.log(tgButtonYOffset, 'tgButtonYOffset');
+            console.log(tgButtonHeight, 'tgButtonHeight');
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
+
+                if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (!this.isDarkSection) {
+                        this.isDarkSection = true;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
 
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
                     if (!this.mainIsDark && (this.isDark || this.isYellow || this.isOrange)) {
@@ -332,12 +480,12 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
-                    if (!this.isYellow) {
+                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    if (!this.isOrange) {
                         this.isDark = false;
-                        this.isOrange = false;
-                        this.isYellow = true;
+                        this.isYellow = false;
+                        this.isOrange = true;
                     }
                     if (!this.isFeatures) {
                         this.isFeatures = true;
@@ -383,8 +531,55 @@
                     }
                 }
 
+                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
+                    if (this.isDarkSection) {
+                        this.isDarkSection = false;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
+                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (!this.isDarkSection) {
+                        this.isDarkSection = true;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (this.isDarkSection) {
+                        this.isDarkSection = false;
+                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    }
+                    if (this.isFeatures) {
+                        this.isFeatures = false;
+                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    }
+                    if (this.isTeam) {
+                        this.isTeam = false;
+                        this.$parent.$emit('checkIsTeam', this.isTeam);
+                    }
+                }
+
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (!this.isDark) {
                         this.isYellow = false;
                         this.isOrange = false;
@@ -400,7 +595,7 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('blog')).top - navbarYOffset) {
+                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (this.isDark || this.isYellow || this.isOrange) {
                         this.isDark = false;
                         this.isYellow = false;
@@ -415,12 +610,162 @@
                         this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
-            })
+            });
+
+            if (document.getElementById('select-lang'))
+                this.heightLangItem = document.getElementById('select-lang').offsetHeight;
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+
+    .select-lang
+        cursor pointer
+        display flex
+        justify-content center
+        align-items center
+        padding 0 20px
+        margin-left 20px
+        font-weight 700
+        text-transform uppercase
+
+        @media (max-width 1024px)
+            margin-left 10px
+
+        @media (max-width 420px)
+            display none
+
+        .select-lang__dropdown
+            right 60px
+            top 75px
+            position absolute
+            display flex
+            justify-content center
+            align-items center
+
+            .selected
+                .select-lang__cover
+                    background-color #fff !important
+                    opacity 0.2 !important
+
+                span
+                    opacity 0 !important
+
+            .select-lang__item
+                opacity 0
+                position relative
+                background-color #fff
+                width 60px
+                height 60px
+                background-size cover
+                background-repeat no-repeat
+                background-position 50% 0
+                border-left 1px solid #e0e0e0
+                -webkit-transition all .3s ease-in-out
+                -o-transition all .3s ease-in-out
+                transition all .3s ease-in-out
+
+                &:before
+                    width 60px
+                    height 3px
+                    content ""
+                    position absolute
+                    bottom -3px
+                    background -moz-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
+                    background -webkit-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -o-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -ms-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                    background linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+
+                &:hover
+                    .select-lang__cover
+                        background-color #fff
+                        opacity 0.2
+
+                    span
+                        opacity 0
+
+                span
+                    position absolute
+                    top calc(50% - 12px)
+                    left calc(50% - 10.5px)
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
+
+                .select-lang__cover
+                    opacity 1
+                    background-color #fff
+                    width 100%
+                    height 100%
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
+
+            .select-lang__en
+                background-image url(../../../static/images/flags/en@2x.png)
+
+                &:after
+                    height 60px
+                    width 3px
+                    content ""
+                    position absolute
+                    right -3px
+                    top 2px
+                    background -moz-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(204, 204, 204, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
+                    background -webkit-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -o-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background -ms-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+                    background linear-gradient(to right, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
+
+            .select-lang__ru
+                position relative
+                background-image url(../../../static/images/flags/ru@2x.png)
+
+            .select-lang__zh
+                background-position 0 0
+                background-image url(../../../static/images/flags/zh@2x.png)
+
+            .select-lang__ja
+                background-image url(../../../static/images/flags/ja@2x.png)
+
+            .select-lang__ko
+                background-image url(../../../static/images/flags/ko@2x.png)
+
+            .select-lang__ar
+                background-image url(../../../static/images/flags/ar@2x.png)
+
+                /*&:hover*/
+                    /*span*/
+                        /*opacity 1*/
+                        /*color #ffffff*/
+
+            .select-lang__es
+                background-image url(../../../static/images/flags/es@2x.png)
+
+            .select-lang__de
+                background-image url(../../../static/images/flags/de@2x.png)
+
+            .select-lang__fr
+                background-image url(../../../static/images/flags/fr@2x.png)
+                border-left none
+
+                &:after
+                    height 60px
+                    width 3px
+                    content ""
+                    position absolute
+                    left -3px
+                    top 2px
+                    background -moz-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(236, 236, 240, 1)), color-stop(100%, rgba(204, 204, 204, 1)))
+                    background -webkit-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -o-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background -ms-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+                    background linear-gradient(to right, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
 
     .choose-languages
         display none
@@ -456,14 +801,14 @@
             background-color #3e3d42
             display block
             margin 8px auto
-            -webkit-transition all 0.3s ease-in-out
-            -o-transition all 0.3s ease-in-out
-            transition all 0.3s ease-in-out
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
 
     #hamburger-6.is-active
-        -webkit-transition all 0.3s ease-in-out
-        -o-transition all 0.3s ease-in-out
-        transition all 0.3s ease-in-out
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
         -webkit-transition-delay 0.6s
         -o-transition-delay 0.6s
         transition-delay 0.6s
@@ -518,7 +863,7 @@
         background-color #ffbc00
 
     .nav-line__yellow
-        border 1px solid #fdc135
+        border 1px solid #ffd24f
         border-width 0 24px
         background-color #343a49
 
@@ -547,11 +892,94 @@
     .bg-orange
         background-color #feaf1c
 
+        .select-lang
+            .select-lang__dropdown
+                .select-lang__item
+                    border-left none
+
+                    .select-lang__cover
+                        background-color #feaf1c
+
+                    &:before
+                        background -moz-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+
+                    &:after
+                        top 0
+                        height 61px
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #feaf1c))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
+
+                    &:first-child
+                        &:before
+                            width 62px
+                            left -2px
+
+                    &:last-child
+                        &:after
+                            background -moz-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
+                        &:before
+                            width 62px
+
     .bg-yellow
-        background-color #fdc135
+        background-color #ffd24f
+
+        .select-lang
+            .select-lang__dropdown
+                .select-lang__item
+                    border-left none
+
+                    .select-lang__cover
+                        background-color #ffd24f
+
+                    &:before
+                        background -moz-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #ffd24f), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+
+                    &:after
+                        top 0
+                        height 61px
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #ffd24f))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #ffd24f 100%)
+
+                    &:first-child
+                        &:before
+                            width 62px
+                            left -2px
+
+                    &:last-child
+                        &:after
+                            background -moz-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #ffd24f), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #ffd24f 0%, rgba(0, 0, 0, 0.2) 100%)
+                        &:before
+                            width 62px
 
     .bg-yellow, .bg-orange
-
         .btn-login
             background-color #343a49
             color white
@@ -575,6 +1003,54 @@
             transition all 0.4s ease
             color #fff !important
 
+        .select-lang
+            color #fff
+
+            .select-lang__dropdown
+                .select-lang__item
+                    border-left none
+
+                    .select-lang__cover
+                        background-color #343a49
+
+                    &:before
+                        background -moz-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, #343a49), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                        background -webkit-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -o-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background -ms-linear-gradient(top, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        background linear-gradient(to bottom, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+
+                    &:after
+                        top 0
+                        height 61px
+                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #343a49))
+                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #343a49 100%)
+
+                    &:first-child
+                        &:before
+                            width 62px
+                            left -2px
+
+                    &:last-child
+                        &:after
+                            background -moz-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -webkit-gradient(left top, right top, color-stop(0%, #343a49), color-stop(100%, rgba(0, 0, 0, 0.2)))
+                            background -webkit-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -o-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background -ms-linear-gradient(left, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background linear-gradient(to right, #343a49 0%, rgba(0, 0, 0, 0.2) 100%)
+                        &:before
+                            width 62px
+
+    .btn-login
+        &:hover
+            color #34343e
+
     @media (max-width: 1440px)
         .navbar-nav
             .nav-item
@@ -619,8 +1095,8 @@
             margin-right 8px
 
     @media (max-width 1100px)
-        .btn-login
-            display none
+        /*.btn-login*/
+            /*display none*/
 
         .dropdown
             display none
@@ -671,17 +1147,17 @@
         .navbar-brand
             margin-right 8px
 
-    @media (max-width 1100px)
-        .btn-login
-            display none
+    /*@media (max-width 1100px)*/
+        /*!*.btn-login*!*/
+            /*!*display none*!*/
 
-        .dropdown
-            display none
+        /*.dropdown*/
+            /*display none*/
 
-        .btn-actions
-            display unset
+        /*.btn-actions*/
+            /*display unset*/
 
-    @media (max-width 768px)
+    @media (max-width 1024px)
         .navbar
             padding-left 32px
             padding-right 32px

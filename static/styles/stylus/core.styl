@@ -4,10 +4,10 @@ body
     overflow-x hidden
 
 @keyframes movingcolor
-	0%
-		background-position 0% 0%
-	100%
-		background-position 100% 100%
+    0%
+        background-position 0% 0%
+    100%
+        background-position 100% 100%
 
 .navbar
     height 74px
@@ -20,13 +20,15 @@ body
     &.bg-white
         background #FFF
 
-.navbar-light 
+.navbar-light
     .navbar-brand
         color #34343e
+
     .navbar-nav
         .show, .active
             > .nav-link
                 color #34343e
+
         .nav-link
             &.show, &.active
                 color #34343e
@@ -35,6 +37,7 @@ body
     font-size 40px
     font-family Fairview
     display flex
+
     img
         margin-right 8px
 
@@ -46,44 +49,52 @@ body
 .navbar-nav
     .nav-item
         font-family MuseoSansCyrl500
+
         &:nth-child(1)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(0, 0, 0)
                     transform translate3d(0, 0, 0)
+
         &:nth-child(2)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(100%, 0, 0)
                     transform translate3d(100%, 0, 0)
+
         &:nth-child(3)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(200%, 0, 0)
                     transform translate3d(200%, 0, 0)
+
         &:nth-child(4)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(300%, 0, 0)
                     transform translate3d(300%, 0, 0)
+
         &:nth-child(5)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(400%, 0, 0)
                     transform translate3d(400%, 0, 0)
+
         &:nth-child(6)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(500%, 0, 0)
                     transform translate3d(500%, 0, 0)
+
         &:nth-child(7)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(600%, 0, 0)
                     transform translate3d(600%, 0, 0)
+
         &:nth-child(8)
             &.active
-                ~.nav-line
+                ~ .nav-line
                     -webkit-transform translate3d(700%, 0, 0)
                     transform translate3d(700%, 0, 0)
 
@@ -116,6 +127,7 @@ body
     font-size 18px
     font-family MuseoSansCyrl500
     color #34343e
+
     &:hover
         color #000
 
@@ -126,35 +138,85 @@ body
     font-size 18px
     font-family MuseoSansCyrl100
     color #ffffff
+
     &:hover
         color #ccc
 
 #screen1
-    .first-screen
-        min-height 100vh
+    .home__open-video
+        @media (min-width 1024px) and (max-width 1200px)
+            min-height calc(120vh + 170px + 500px - 124px) !important
+
+        @media (min-width 768px) and (max-width 1024px)
+                min-height calc(120vh + 170px + 400px - 124px) !important
+
+        @media (min-width 425px) and (max-width 768px)
+            min-height calc(120vh + 170px + 400px - 124px) !important
+
+        @media (max-width 425px)
+            min-height calc(200vh + 300px - 124px) !important
+
+    .home
+        padding 50px 200px 0 200px
+        min-height calc(100vh - 74px)
         display flex
         flex-direction column
-        justify-content space-evenly
-    .container-fluid
-        padding-left 230px
-        padding-right 230px
-        &.social-line
-            padding-left 150px
-            padding-right 150px
+        justify-content space-around
+
+        @media (min-width 1440px) and (max-width 2560px)
+            padding 50px 150px 0 150px
+
+        @media (min-width 1024px) and (max-width 1200px)
+            min-height calc(120vh + 170px - 124px)
+
+        @media (min-width 1024px) and (max-width 1440px)
+            padding 50px 100px 0 100px
+
+        @media (min-width 768px) and (max-width 1024px)
+            min-height calc(120vh + 170px - 124px)
+            padding 50px 75px 0 75px
+
+        @media (min-width 425px) and (max-width 768px)
+            min-height calc(120vh + 300px - 124px)
+            padding 50px 50px 0 50px
+
+        @media (max-width 425px)
+            min-height calc(200vh + 25px - 124px)
+            padding 35px 25px 0 25px
+
+        .social-line
+            margin-left -50px
             display flex
             flex-direction row
             align-items center
+
+            @media (min-width 768px) and (max-width 1024px)
+                margin-left 0
+
+            @media (min-width 425px) and (max-width 768px)
+                margin-left 0
+                justify-content space-between
+
+            @media (max-width 425px)
+                margin-left 0
+                justify-content space-between
+
             .line
                 width 48px
-                height 0px
+                height 0
                 border 1px solid black
                 margin-right 24px
+
+                @media (max-width 768px)
+                    display none
+
             .social-item
                 height 54px
                 width 54px
                 background-repeat no-repeat
                 background-position center
                 cursor pointer
+
                 &.fb
                     background-image url('../../images/fb-default.svg')
                     &:hover
@@ -179,20 +241,32 @@ body
                     background-image url('../../images/vk-default.svg')
                     &:hover
                         background-image url('../../images/vk-hovered.svg')
-        &.partners
+                &.btc-talk
+                    background-image url('../../images/btc-default.svg')
+                    &:hover
+                        background-image url('../../images/btc-hovered.svg')
+                &.github
+                    background-image url('../../images/github-default.svg')
+                    &:hover
+                        background-image url('../../images/github-hovered.svg')
+
+        /*&.partners
             margin-top 150px
             padding 0 225px
             display flex
             align-items center
             justify-content center
+
             .title
                 margin-right 96px
                 font-family MuseoSansCyrl700
                 font-size 30px
                 color #34343e
                 z-index 10
+
             img
-                margin 16px 64px 0
+                margin 16px 64px 0*/
+
         &.what-is
             margin-top 40px
             padding 125px 125px 0
@@ -201,25 +275,32 @@ body
             -moz-background-image linear-gradient(to bottom, rgba(236, 236, 240, 0), #373c4a)
             -o-background-image linear-gradient(to bottom, rgba(236, 236, 240, 0), #373c4a)
             background-image linear-gradient(to bottom, rgba(236, 236, 240, 0), #373c4a)
+
             .desktop
                 width 100%
                 z-index 15
+
             .slider-container
                 z-index 14
+
                 .slider-pagination-bullets
                     display none
+
             .screenshot
                 width 100%
+
             .title
                 margin-top 15px
                 font-family MuseoSansCyrl300
                 font-size 60px
                 color #34343e
+
             .subtitle
                 margin-top 5px
                 font-family MuseoSansCyrl100
                 font-size 18px
                 color #34343e
+
             .description
                 margin-top 24px
                 font-family MuseoSansCyrl100
@@ -227,68 +308,82 @@ body
                 line-height 1.67
                 color #34343e
                 max-width 630px
+
             .buttons
                 margin-top 48px
+
             .btn-black
                 margin-top 25px
                 margin-bottom 150px
                 margin-left auto
                 margin-right auto
+
                 img
                     width 13px
                     height 16px
-                    margin-top -4px
-                    margin-right 14px
+
             .desktop-outer
                 display flex
                 flex-direction column
+
             .desc
                 padding-left 50px
 
 .social-line
     height 54px
-    margin-top 80px
 
 .desktop-for-mobile
     display none
     width 100%
-.promo 
+
+.promo
     text-align center
 
 .btn-buy-tokens
     margin-right 5px
     margin-left 5px
-    background #ffd24f
-    -webkit-background-image linear-gradient(45deg, #fda503, #fff5da)
-    -webkit-background-image linear-gradient(45deg, #fda503, #fff5da)
-    -moz-background-image linear-gradient(45deg, #fda503, #fff5da)
-    -o-background-image linear-gradient(45deg, #fda503, #fff5da)
     background linear-gradient(45deg, #fda503, #fff5da)
     background-size 200% 200%
-    -webkit-animation-name movingcolor
-    -moz-animation-name movingcolor
-    -o-animation-name movingcolor
-    animation-name movingcolor
-    -webkit-animation-duration 2s
-    -moz-animation-duration 2s
-    -o-animation-duration 2s
-    animation-duration 2s
-    -webkit-animation-timing-function ease
-    -moz-animation-timing-function ease
-    -o-animation-timing-function ease
-    animation-timing-function ease
-    -webkit-animation-delay 0s
-    -moz-animation-delay 0s
-    -o-animation-delay 0s
-    animation-delay 0s
-    -webkit-animation-iteration-count infinite
-    -moz-animation-iteration-count infinite
-    -o-animation-iteration-count infinite
-    animation-iteration-count infinite
-    -webkit-animation-direction alternate
-    -moz-animation-direction alternate
-    -o-animation-direction alternate
-    animation-direction alternate
+    -webkit-animation movecolors 10s ease infinite
+    -moz-animation movecolors 10s ease infinite
+    animation movecolors 10s ease infinite
+    @-webkit-keyframes movecolors {
+        0% {
+            background-position: 0 79%
+        }
+        50% {
+            background-position: 100% 22%
+        }
+        100% {
+            background-position: 0 79%
+        }
+    }
+    @-moz-keyframes movecolors {
+        0% {
+            background-position: 0 79%
+        }
+
+        50% {
+            background-position: 100% 22%
+        }
+
+        100% {
+            background-position: 0 79%
+        }
+    }
+    @keyframes movecolors {
+        0% {
+            background-position: 0 79%
+        }
+
+        50% {
+            background-position: 100% 22%
+        }
+
+        100% {
+            background-position: 0 79%
+        }
+    }
     padding-left 25px
     padding-right 25px
     padding-top 0.475rem
@@ -296,14 +391,20 @@ body
     font-size 18px
     font-family MuseoSansCyrl500
     color #34343e
-    position relative
     top -15px
     border none
+
+    &:active
+        background linear-gradient(45deg, #fda503, #fff5da) !important
+
+    @media (max-width 425px)
+        margin-right 0
 
 .dropdown-toggle
     font-size 18px
     font-family MuseoSansCyrl500
     text-transform uppercase
+
     &::after
         width 12px
         height 10px
@@ -329,12 +430,20 @@ body
 .screen1
     &.title
         font-size 60px
-        margin-top 100px
         font-family MuseoSansCyrl300
+        margin-bottom 0
 
 .countdown
-    padding-top 40px
     display inline-block
+
+    @media (min-width 425px) and (max-width 768px)
+        width 100%
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        padding-bottom 26px
+
     .title
         font-size 20px
         font-family MuseoSansCyrl500
@@ -343,27 +452,33 @@ body
 .timer
     width 310px
     display flex
+
     .hours
         margin 0 20px
+
     .first
         margin-right 5px
-    .first, .second 
+
+    .first, .second
         font-size 57.08px
         background #3e3d42
         color #ececf0
         height 70px
         width 40px
         font-family MuseoSansCyrl300
-        border-radius: 3px
+        border-radius 3px
         padding 0 3px
+
     & div
         display flex
         align-items center
         justify-content center
         flex-direction column
+
     .numbers
         display flex
         flex-direction row
+
     .title
         padding 0
         margin-top 5px
@@ -373,52 +488,98 @@ body
     display inline-block
     position relative
     font-size 16px
-    margin-left 12px
-    top -4px
+    //margin-left 12px
+    //top -4px
+
     span
         display block
         line-height 1.3
 
 .crypto
-    margin-top 80px
     display flex
     flex-direction column
+
     .title
         font-family MuseoSansCyrl500
         font-size 20px
         color #34343e
+
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
     .collection
         display flex
         flex-direction row
+        flex-wrap wrap
         margin-top 25px
+
+        @media (min-width 425px) and (max-width 768px)
+            margin-top 5px
+            justify-content center
+
+
         .item
-            padding 14px 5px
-            width 72px
+            width 90px
             height 104px
             display flex
             flex-direction column
             justify-content space-between
             align-items center
-            background #FFFFFF
-            margin-right 18px
-            .cur-logo
-                display flex
-                justify-content center
-                height 46px
-            .description
-                font-family MuseoSansCyrl700
-                line-height 1
-                .count
-                    display none
-            &:hover
-                padding-bottom 7px
-                background #ffd24f
+            background transparent
+
+            @media (min-width 425px) and (max-width 768px)
+                margin-top 20px
+
+            @media (min-width 320px) and (max-width 425px)
+                height 120px
+
+            @media (max-width 320px)
+                margin-top 10px
+                width 68px
+
+            .inner
+                height 100%
+                width 72px
+                padding 14px 5px
+                background #ffffff
+                -webkit-transition all .3s ease-in-out
+                -o-transition all .3s ease-in-out
+                transition all .3s ease-in-out
+
+                @media (max-width 320px)
+                    margin-top 10px
+                    width 50px
+
+                .cur-logo
+                    display flex
+                    justify-content center
+                    height 46px
+
                 .description
+                    font-family MuseoSansCyrl700
+                    line-height 1
+
                     .count
-                        display block
-                        text-align center
-                    .name
                         display none
+
+                    .name
+                        text-transform uppercase
+
+                    @media (max-width 320px)
+                        font-size 10px
+
+                &:hover
+                    padding-bottom 7px
+                    background #ffd24f
+
+                    .description
+                        .count
+                            display block
+                            text-align center
+
+                        .name
+                            display none
+
 .anim
     width 100%
     height 200vh
@@ -426,6 +587,7 @@ body
 
     .path
         stroke-width 0.5
+
 img, a
     z-index 10
 

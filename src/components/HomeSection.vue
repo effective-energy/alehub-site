@@ -1,24 +1,30 @@
 <template>
     <section id="screen1">
-
         <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
+            <button type="button"
+                    id="do-video-theme"
+                    class="button-choose_video"
+                    :class="{ 'button-choose__active-video': isVideo }"
+                    @click="doVideoTheme">
+                <img src="../../static/images/play.svg" alt="video">
+            </button>
             <button type="button"
                     id="do-light-theme"
                     class="button-choose_light"
-                    :class="{ 'button-choose__active': !isDark }"
+                    :class="{ 'button-choose__active': !isDark && !isVideo }"
                     @click="doLightTheme">
             </button>
             <button type="button"
                     id="do-dark-theme"
                     class="button-choose_dark"
-                    :class="{ 'button-choose__active': isDark }"
+                    :class="{ 'button-choose__active': isDark && !isVideo }"
                     @click="doDarkTheme">
             </button>
         </div>
 
         <div id="svg-anim"
              class="anim"
-             v-if="checkWindowWidth"
+             v-if="checkWindowWidth && !isVideo"
              :class="{ 'anim__dark': isDark }">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
                 <g fill="none" fill-rule="evenodd">
@@ -131,270 +137,353 @@
                 </g>
             </svg>
         </div>
-        <div class="first-screen"
-             :class="{ 'home__dark': isDark }"
+
+        <div class="home"
+             :class="{ 'home__dark': isDark, 'home__light': !isDark }"
              id="home">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="screen1 title">
-                            {{ $t("greeting.title") }}
-                        </h1>
+
+            <video autoplay muted loop id="myVideo" v-if="isVideo">
+                <source src="../../static/video/preview.mp4" type="video/mp4">
+            </video>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                            <h1 class="screen1 title">
+                                {{ $t("greeting.title") }}
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
+                            <div class="countdown">
+                                <h2 class="title">
+                                    {{ $t("greeting.countDown.title") }}
+                                </h2>
+                                <div class="timer"
+                                     :class="{ 'timer__dark': isDark }">
+                                    <div class="days">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.days.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.days.second }}
+                                            </div>
+                                        </div>
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.days") }}
+                                        </div>
+                                    </div>
+                                    <div class="hours">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.hours.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.hours.second }}
+                                            </div>
+                                        </div>
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.hours") }}
+                                        </div>
+                                    </div>
+                                    <div class="minutes">
+                                        <div class="numbers">
+                                            <div class="first">
+                                                {{ timer.minutes.first }}
+                                            </div>
+                                            <div class="second">
+                                                {{ timer.minutes.second }}
+                                            </div>
+                                        </div>
+                                        <div class="title">
+                                            {{ $t("greeting.countDown.time.minutes") }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://sale.alehub.io/"
+                               target="_blank"
+                               class="a-buy-tokens">
+                                <button onclick="yaCounter48805535.reachGoal('kupit'); return true;"
+                                        type="button"
+                                        class="btn btn-buy-tokens">
+                                    {{ $t("greeting.countDown.btnBuyTokens") }}
+                                </button>
+                            </a>
+                            <div class="bonus-desc">
+                                <span>{{ $t("greeting.countDown.bonus") }}</span>
+                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-12 col-md-12">
+                            <div class="play-video">
+                                <button class="play-button" @click="playVideo">
+                                    <div class="wrap-play" :class="{ 'active': mainPlayer }">
+                                        <span class="line l-1"></span>
+                                        <span class="line l-2"></span>
+                                        <span class="line l-3"></span>
+                                    </div>
+                                </button>
+                                <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
+                                    <div @click="yaCounter48802643.reachGoal('FirstVideo'); return true;"
+                                         class="place-player__frame">
+                                    </div>
+                                </div>
+                                <div class="main-player" v-if="mainPlayer">
+                                    <iframe class="iframe"
+                                            src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
+                                            frameborder="0"
+                                            allow="autoplay; encrypted-media"
+                                            allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-12 col-lg-11">
-                        <div class="countdown">
-                            <h2 class="title">
-                                {{ $t("greeting.countDown.title") }}
-                            </h2>
-                            <div class="timer"
-                                 :class="{ 'timer__dark': isDark }">
-                                <div class="days">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.days.first }}
-                                        </div>
-                                        <div class="second">
-                                            {{ timer.days.second }}
-                                        </div>
-                                    </div>
-                                    <div class="title">{{$t("greeting.countDown.time.days")}}</div>
-                                </div>
-                                <div class="hours">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.hours.first }}
-                                        </div>
-                                        <div class="second">
-                                            {{ timer.hours.second }}
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        {{ $t("greeting.countDown.time.hours") }}
-                                    </div>
-                                </div>
-                                <div class="minutes">
-                                    <div class="numbers">
-                                        <div class="first">
-                                            {{ timer.minutes.first }}
-                                        </div>
-                                        <div class="second">
-                                            {{ timer.minutes.second }}
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        {{ $t("greeting.countDown.time.minutes") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-buy-tokens">
-                            {{ $t("greeting.countDown.btnBuyTokens") }}
-                        </button>
-                        <div class="bonus-desc">
-                            <span>{{$t("greeting.countDown.bonus")}}</span>
-                            <span>{{$t("greeting.countDown.notAvailable")}}</span>
-                        </div>
-                        <div class="play-video">
-                            <button class="play-button">
-                                <div class="wrap-ic">
-                                    <img src="../../static/images/play-ic.svg">
-                                </div>
-                            </button>
-                        </div>
-
-                        <div class="crypto">
-                            <div class="title">
-                                {{ $t("greeting.acceptedCrypto.title") }}
-                            </div>
-                            <div class="collection"
-                                 :class="{ 'collection__dark': isDark }">
-                                <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/btc.svg" alt="Bitcoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">2,389 ALE</span>
-                                        <span class="name">BTC</span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/eth.svg" alt="Etherium">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">1,337 ALE</span>
-                                        <span class="name">ETH</span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/bch.svg" alt="Bitcoin Cash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">2,228 ALE</span>
-                                        <span class="name">BCH</span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/ltc.svg" alt="Litecoin">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">1,488 ALE</span>
-                                        <span class="name">LTC</span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="cur-logo">
-                                        <img src="../../static/images/dash.svg" alt="Dash">
-                                    </div>
-                                    <div class="description">
-                                        <span class="count">2,228 ALE</span>
-                                        <span class="name">DASH</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ico-progress"
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-11">
+                    <div class="crypto">
+                        <div class="title"
                              :class="{ 'ico-progress__dark': isDark }">
-                            <div class="state">
-                                <div class="title">
-                                    Soft cap
-                                </div>
-                                <div class="count">
-                                    {{ collected }} / {{ softCap }} ETH
-                                </div>
-                            </div>
-                            <div class="progress-bar-outer">
-                                <div class="progress-bar-inner"
-                                     :style="{width: (collected/softCap)*100+'%'}">
-                                </div>
-                            </div>
-                            <div class="state hard-cap">
-                                <div class="title">
-                                    Hard cap
-                                </div>
-                                <div class="count">
-                                    {{ collected }} / {{ hardCap }} ETH
-                                </div>
-                            </div>
-                            <div class="progress-bar-outer">
-                                <div class="progress-bar-inner"
-                                     :style="{width: (collected/hardCap)*100+'%'}">
+                            {{ $t("greeting.acceptedCrypto.title") }}
+                        </div>
+                        <div class="collection"
+                             :class="{ 'collection__dark': isDark }">
+                            <div class="item" v-for="item in currencies"
+                                 @mouseover="changeCurrentCurrency(item.name)"
+                                 @mouseout="resetCurrentCurrency">
+                                <div class="inner">
+                                    <a href="https://sale.alehub.io/" target="_blank">
+                                        <div class="cur-logo">
+                                            <img :src="item.src" :alt="item.alt">
+                                        </div>
+                                        <div class="description">
+                                            <span class="count">{{ item.count }}</span>
+                                            <span class="name">{{ item.name }}</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row" style="position: relative;">
+                <div class="col-xl-12 col-lg-11">
+                    <div class="ico-progress"
+                         :class="{ 'ico-progress__dark': isDark }">
+                        <div class="state">
+                            <div class="title">
+                                Soft cap
+                            </div>
+                            <div class="count">
+                                {{ isCollected }} / {{ isSoftCap }} <span
+                                    class="currency">{{ isCurrentCurrency }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: softCapWidth }">
+                            </div>
+                        </div>
+                        <div class="state hard-cap">
+                            <div class="title">
+                                Hard cap
+                            </div>
+                            <div class="count">
+                                {{ isCollected }} / {{ isHardCap }} <span
+                                    class="currency">{{ isCurrentCurrency }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: hardCapWidth }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-next">
+                    <a class="scroll-ic"
+                       v-scroll-to="'#description'">
+                        <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
+                    </a>
                 </div>
             </div>
             <div id="social-line"
-                 class="container-fluid social-line"
+                 class="social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
                 <a href="https://www.facebook.com/alehub.io/"
+                   @click="yaCounter48802643.reachGoal('Facebook'); return true;"
                    class="social-item fb"
                    target="_blank"></a>
                 <a href="https://www.instagram.com/alehub.io/"
+                   @click="yaCounter48802643.reachGoal('Instagram'); return true;"
                    class="social-item ins"
                    target="_blank"></a>
                 <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
+                   @click="yaCounter48802643.reachGoal('Youtube'); return true;"
                    class="social-item yt"
                    target="_blank"></a>
                 <a href="https://twitter.com/alehub_io"
+                   @click="yaCounter48802643.reachGoal('Twitter'); return true;"
                    class="social-item tw"
                    target="_blank"></a>
                 <a href="https://t.me/alehub"
+                   @click="yaCounter48802643.reachGoal('Telegram'); return true;"
                    class="social-item tg"
                    target="_blank"></a>
-                <a href="https://vk.com/alehub"
+                <a href="https://bitcointalk.org/index.php?topic=3676768.new"
+                   class="social-item btc-talk"
+                   target="_blank"></a>
+                <a href="https://github.com/effective-energy"
+                   class="social-item github"
+                   target="_blank"></a>
+                <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
-                <a class="scroll-ic"
-                   v-scroll-to="'#description'">
-                    <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
-                </a>
             </div>
         </div>
-        <div class="container-fluid partners"
+        <div class="partners"
              :class="{ 'partners__dark': isDark }">
-            <div class="title">{{$t("partners.title")}}</div>
-            <div class="row partners-icons">
-                <a href="http://ifmo.ru/ru/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
-                         height="60px"
-                         width="114px"
-                         alt="ITMO">
-                </a>
-                <a href="https://cryptob2b.io/ru/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
-                         height="46px"
-                         width="158px"
-                         alt="CryptoB2B">
-                </a>
-                <a href="https://www.blockchain-spb.org/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
-                         height="59px"
-                         width="57px"
-                         alt="BEAR">
-                </a>
-                <a href="https://serokell.io/" target="_blank">
-                    <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
-                         height="43px"
-                         width="87px"
-                         alt="Serokell">
-                </a>
+            <div class="title">
+                {{ $t("partners.title") }}:
             </div>
+            <a href="http://ifmo.ru/ru/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
+                     height="60px"
+                     width="114px"
+                     alt="ITMO">
+            </a>
+            <a href="https://cryptob2b.io/ru/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
+                     height="46px"
+                     width="158px"
+                     alt="CryptoB2B">
+            </a>
+            <a href="https://www.blockchain-spb.org/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
+                     height="59px"
+                     width="57px"
+                     alt="BEAR">
+            </a>
+            <a href="https://serokell.io/" target="_blank">
+                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
+                     height="43px"
+                     width="87px"
+                     alt="Serokell">
+            </a>
         </div>
         <div id="description"
-             class="container-fluid what-is"
+             class="what-is"
              :class="{ 'description__dark': isDark }">
             <div class="row">
+
+                <!--<slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>-->
+
                 <div class="col-lg-6 promo">
                     <div class="desktop-outer">
-                        <img src="../../static/images/desctop-transparent.png"
+                        <img src="../../static/images/desctop.png"
                              class="desktop">
-                        <slider ref="slider"
-                                :pages="pages"
-                                :sliderinit="sliderInit">
-                        </slider>
+                        <!--<slider v-if="reBuild" ref="slider"-->
+                        <!--:pages="pages"-->
+                        <!--:sliderinit="sliderInit">-->
+                        <!--</slider>-->
                     </div>
-                    <img src="../../static/images/desctop.png"
-                         class="desktop-for-mobile">
-                    <a href="#" class="btn btn-black">
-                        <img src="../../static/images/request-ic.svg">
-                        {{$t("about.btnGroup.download")}}
+
+                    <!--<img src="../../static/images/desctop.png"-->
+                    <!--class="desktop-for-mobile">-->
+                    <a class="btn btn-black to-download"
+                       @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
+                       v-scroll-to="'#download-application'"
+                       style="font-weight: bold; color: #fff;">
+                        <button type="button">
+                            <img src="../../static/images/request-ic.svg">
+                            <span style="white-space: initial;">
+                                {{ $t("about.btnGroup.download") }}
+                            </span>
+                        </button>
                     </a>
                 </div>
                 <div class="col-lg-6 desc" style="align-self: flex-start;">
                     <h1 class="title">
-                        {{$t("about.title")}}
+                        {{ $t("about.title") }}
                     </h1>
                     <h3 class="subtitle">
-                        {{$t("about.subTitle")}}
+                        {{ $t("about.subTitle") }}
                     </h3>
                     <p class="description">
-                        {{$t("about.description")}}
+                        {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a href="#" class="btn btn-yellow">
-                            {{$t("about.btnGroup.whitePaper")}}
+                        <a :href="currentWhitePaper"
+                           class="btn btn-yellow"
+                           target="_blank">
+                            {{ $t("about.btnGroup.whitePaper") }}
                         </a>
-                        <a href="#" class="btn btn-yellow">
-                            {{$t("about.btnGroup.techDetails")}}
+                        <a class="btn btn-yellow"
+                           v-scroll-to="'#features'"
+                           target="_blank">
+                            {{ $t("about.btnGroup.techDetails") }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--<menu-modal/>-->
+        <a id="telegram-alert-mobile"
+           class="telegram-alert-mobile"
+           href="https://t.me/alehub"
+           target="_blank"
+           v-if="!checkMobileWidth && !closedTelegramAlertMobile"
+           :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
+
+            <div class="telegram-alert-mobile__wrap">
+                <img src="../../static/images/telegram-ic-dark.svg"
+                     v-if="!isDarkSection"
+                     alt="telegram">
+                <img src="../../static/images/telegram-ic-default.svg"
+                     v-if="isDarkSection"
+                     alt="telegram">
+                <span>{{ 'Join us in telegram' }}</span>
+            </div>
+
+
+            <img src="../../static/images/cancel-light.svg"
+                 v-if="!isDarkSection"
+                 @click.prevent="doCloseTelegramAlertMobile">
+
+            <img src="../../static/images/cancel-dark.svg"
+                 v-if="isDarkSection"
+                 @click.prevent="doCloseTelegramAlertMobile">
+
+        </a>
+
+        <div id="telegram-alert"
+             class="telegram-alert"
+             v-if="checkMobileWidth"
+             :class="{ 'telegram-alert__yellow': isDarkSection }">
+            <a href="https://t.me/alehub" target="_blank">
+                <img src="../../static/images/telegram-ic-dark.svg"
+                     alt="telegram"
+                     v-if="!isDarkSection">
+                <img src="../../static/images/telegram-ic-default.svg"
+                     alt="telegram"
+                     v-if="isDarkSection">
+            </a>
+        </div>
+
     </section>
 </template>
 
 <script>
     import MenuModal from './modals/MenuModal';
+    import SliderScreen from './layouts/SliderScreen';
 
     //заменить на свой слайдер
     import slider from 'vue-concise-slider';
@@ -404,11 +493,47 @@
         name: 'Screen1',
         components: {
             slider,
-            MenuModal
+            MenuModal,
+            SliderScreen
+        },
+        props: {
+            isDarkSection: {
+                type: Boolean,
+                required: true
+            },
+        },
+        watch: {
+            isDarkSection: function (val) {
+                // console.log(val, 'isDarkSection');
+            },
+            isVideo: function (val) {
+                if (val) {
+                    setTimeout(() => {
+                        document.querySelector('video').playbackRate = 0.75;
+                    }, 40);
+                }
+            }
         },
         data() {
             return {
+                closedTelegramAlertMobile: false,
+                isVideo: false,
                 isDark: false,
+
+                itemsToSliderScreen: [
+                    '../../../static/images/screen1.png',
+                    '../../../static/images/screen2.png',
+                    '../../../static/images/screen3.png'
+                ],
+                optionsToSliderScreen: {
+                    touch: true,
+                    autoplay: true,
+                    inBlockTeam: false,
+                    autoplayDelay: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true
+                },
+
                 pages: [
                     {
                         html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
@@ -420,6 +545,64 @@
                         html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
                     }
                 ],
+                alePrice: 0.3,
+                currencies: {
+                    btc: {
+                        src: '../../static/images/btc.svg',
+                        alt: 'bitcoin',
+                        count: 32256,
+                        name: 'btc',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 3521.5
+                    },
+                    eth: {
+                        src: '../../static/images/eth.svg',
+                        alt: 'etherium',
+                        count: 2606,
+                        name: 'eth',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 45144
+                    },
+                    bch: {
+                        src: '../../static/images/bch.svg',
+                        alt: 'bitcoin cash',
+                        count: 4946,
+                        name: 'bch',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 20246
+                    },
+                    ltc: {
+                        src: '../../static/images/ltc.svg',
+                        alt: 'litecoin',
+                        count: 503,
+                        name: 'ltc',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 202454
+                    },
+                    dash: {
+                        src: '../../static/images/dash.svg',
+                        alt: 'dash',
+                        count: 1605,
+                        name: 'dash',
+                        collected: 0,
+                        softCap: 0,
+                        hardCap: 72746.5
+                    },
+                    usd: {
+                        src: '../../static/images/usd.svg',
+                        alt: 'usd',
+                        count: 207,
+                        name: 'usd',
+                        collected: 2000000,
+                        softCap: 2000000,
+                        hardCap: 33000000
+                    }
+                },
+                reBuild: true,
                 sliderInit: {
                     currentPage: 0,
                     thresholdDistance: 100,
@@ -449,19 +632,84 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 1440,
-                softCap: 2000,
-                hardCap: 33000,
+                collected: 2000000,
+                softCap: 2000000,
+                hardCap: 33000000,
+                currentCurrency: 'usd',
                 anime: '',
-                isPaused: false
+                isPaused: false,
+                mainPlayer: false
             }
         },
         computed: {
+            isCollected: function () {
+                return this.collected;
+            },
+            isSoftCap: function () {
+                return this.softCap;
+            },
+            isHardCap: function () {
+                return this.hardCap;
+            },
+            isCurrentCurrency: function () {
+                return this.currentCurrency;
+            },
             checkWindowWidth: function () {
-                return window.innerWidth > 420;
+                return window.innerWidth >= 1024;
+            },
+            checkMobileWidth: function () {
+                return window.innerWidth > 425;
+            },
+            softCapWidth: function () {
+                if (this.collected <= this.softCap)
+                    return (this.collected / this.softCap) * 100 + '%';
+                else return '100%';
+            },
+            hardCapWidth: function () {
+                if (this.collected <= this.hardCap)
+                    return (this.collected / this.hardCap) * 100 + '%';
+                else return '100%';
+            },
+            currentWhitePaper: function () {
+                if (localStorage.getItem('systemLang') === 'en') {
+                    return 'https://alehub.io/ALEHUB_WP_eng.pdf';
+                } else if (localStorage.getItem('systemLang') === 'ru') {
+                    return 'https://alehub.io/ALEHUB_WP_rus.pdf';
+                }
             }
         },
         methods: {
+            yaMetricaCollectionItem: function () {
+                yaCounter48802643.reachGoal('BuyCrypto');
+                console.log("cript");
+                return true;
+            },
+            yaMetricaCollectionLastItem: function () {
+                yaCounter48802643.reachGoal('BuyUSD');
+                console.log("usd");
+                return true;
+            },
+            changeCurrentCurrency: function (name) {
+                this.collected = this.currencies[name].collected;
+                this.softCap = this.currencies[name].softCap;
+                this.hardCap = this.currencies[name].hardCap;
+                this.currentCurrency = name;
+            },
+            resetCurrentCurrency: function () {
+                this.collected = this.currencies.usd.collected;
+                this.softCap = this.currencies.usd.softCap;
+                this.hardCap = this.currencies.usd.hardCap;
+                this.currentCurrency = this.currencies.usd.name;
+            },
+            playVideo: function () {
+                if (this.mainPlayer) {
+                    this.mainPlayer = false;
+                    document.querySelector('.home').classList.remove('home__open-video');
+                } else {
+                    this.mainPlayer = true;
+                    document.querySelector('.home').classList.add('home__open-video');
+                }
+            },
             startAnime: function () {
                 let pathEls = document.querySelectorAll('path');
                 window.animejsconfig = [];
@@ -473,12 +721,30 @@
                         targets: pathEl,
                         strokeDashoffset: [offset, 0],
                         duration: anime.random(6500, 9000),
-                        delay: anime.random(500, 2500),
+                        delay: anime.random(0, 2500),
                         loop: true,
                         direction: 'alternate',
                         easing: 'easeInOutSine',
                         autoplay: true
                     }));
+                }
+            },
+            play: function () {
+                if (!this.isPaused)
+                    return false;
+
+                this.isPaused = false;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].play();
+                }
+            },
+            pause: function () {
+                if (this.isPaused)
+                    return false;
+
+                this.isPaused = true;
+                for (let i = 0; i < window.animejsconfig.length; i++) {
+                    window.animejsconfig[i].pause();
                 }
             },
             format: function (count, isSecond) {
@@ -513,6 +779,107 @@
                 this.timer.seconds.first = this.format(seconds);
                 this.timer.seconds.second = this.format(seconds, true);
             },
+            handlerScroll: function () {
+                let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
+
+                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                    this.pause();
+                    document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
+                    document.getElementById('button-choose').classList.add('button-choose__stop');
+                } else {
+                    this.play();
+                    document.getElementById('button-choose').style['top'] = '40%';
+                    document.getElementById('button-choose').classList.remove('button-choose__stop');
+                }
+            },
+            doVideoTheme: function () {
+                this.isDark = true;
+                this.isVideo = true;
+                this.$parent.$emit('isDarkTheme', true);
+                localStorage.setItem('color-theme', 'video');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
+            },
+            doLightTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
+                this.isDark = false;
+                this.isVideo = false;
+                this.$parent.$emit('isDarkTheme', false);
+                localStorage.setItem('color-theme', 'light');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
+                }, 100);
+            },
+            doDarkTheme: function () {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
+                this.isDark = true;
+                this.isVideo = false;
+                this.$parent.$emit('isDarkTheme', true);
+                localStorage.setItem('color-theme', 'dark');
+                this.pages[0] = {
+                    html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
+                };
+                this.pages[2] = {
+                    html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
+                };
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
+                }, 100);
+            },
+            getCurrentExchangeRates: function () {
+                this.$http.get('https://alehub.eu-4.evennode.com/ale-system/crypto-price', {
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    this.currencies.btc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.hardCap = Math.round(this.hardCap / response.body[1].price);
+                    this.currencies.bch.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[4].price / response.body[1].price));
+
+                    this.currencies.btc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.softCap = Math.round(this.softCap / response.body[1].price);
+                    this.currencies.bch.softCap = Math.round(this.softCap / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.softCap = Math.round(this.softCap / response.body[1].price / (response.body[4].price / response.body[1].price));
+
+                    this.currencies.btc.collected = Math.round(this.collected / response.body[1].price / (response.body[0].price / response.body[1].price));
+                    this.currencies.eth.collected = Math.round(this.collected / response.body[1].price);
+                    this.currencies.bch.collected = Math.round(this.collected / response.body[1].price / (response.body[2].price / response.body[1].price));
+                    this.currencies.ltc.collected = Math.round(this.collected / response.body[1].price / (response.body[3].price / response.body[1].price));
+                    this.currencies.dash.collected = Math.round(this.collected / response.body[1].price / (response.body[4].price / response.body[1].price));
+                }, response => {
+                    console.log('Error getting news', response);
+                });
+            },
             getCoords: function (elem) {
                 if (!elem)
                     return false;
@@ -523,66 +890,52 @@
                     left: box.left + pageXOffset
                 };
             },
-            handlerScroll: function () {
-                let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
-
-                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
-                    document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
-                    document.getElementById('button-choose').classList.add('button-choose__stop');
-                } else {
-                    document.getElementById('button-choose').style['top'] = '40%';
-                    document.getElementById('button-choose').classList.remove('button-choose__stop');
-                }
-            },
-            play: function () {
-                if (!this.isPaused) return false;
-                this.isPaused = false;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].play();
-                }
-            },
-            pause: function () {
-                if (this.isPaused) return false;
-                this.isPaused = true;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].pause();
-                }
-            },
-            doLightTheme: function () {
-                this.isDark = false;
-                this.$parent.$emit('isDarkTheme', false);
-                localStorage.setItem('color-theme', 'light');
-            },
-            doDarkTheme: function () {
-                this.isDark = true;
-                this.$parent.$emit('isDarkTheme', true);
-                localStorage.setItem('color-theme', 'dark');
-            }
-        },
-        created() {
-
         },
         mounted() {
+            let a = document.querySelector('.collection').getElementsByClassName('item');
+            a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
+
+
+
+            if (this.isVideo) {
+                document.querySelector('video').playbackRate = 0.75;
+            }
+
+            this.getCurrentExchangeRates();
+
             setTimeout(() => {
-                if (localStorage.getItem('color-theme') === 'dark') {
-                    console.log(1);
+                console.log(localStorage.getItem('color-theme'), 'localStorage.getItem(\'color-theme\')')
+                if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
                     this.isDark = true;
+                    this.isVideo = false;
                     this.$parent.$emit('isDarkTheme', true);
-                } else if (localStorage.getItem('color-theme') === 'light') {
-                    console.log(2);
+                } else if (localStorage.getItem('color-theme') === 'light' && this.checkWindowWidth) {
                     this.isDark = false;
+                    this.isVideo = false;
                     this.$parent.$emit('isDarkTheme', false);
+                } else if (localStorage.getItem('color-theme') === 'video' && this.checkWindowWidth) {
+                    this.isDark = true;
+                    this.isVideo = true;
+                    this.$parent.$emit('isDarkTheme', true);
+                } else if (this.checkWindowWidth) {
+                    this.isDark = true;
+                    this.isVideo = true;
+                    localStorage.setItem('color-theme', 'video');
+                    this.$parent.$emit('isDarkTheme', true);
                 } else {
-                    console.log(3);
-                    localStorage.setItem('color-theme', 'light');
+                    this.isDark = false;
+                    this.isVideo = false;
                     this.$parent.$emit('isDarkTheme', false);
                 }
             }, 40);
 
-            this.startAnime();
+            setTimeout(() => {
+                this.startAnime();
+            }, 2000);
+
             this.timeInterval = setInterval(this.getTimeRemaining, 1000);
 
-            if (window.innerWidth > 420 && this.$route.path === '/')
+            if (window.innerWidth >= 1024 && this.$route.path === '/')
                 window.addEventListener('scroll', this.handlerScroll, false);
         },
         beforeDestroy() {
@@ -592,18 +945,271 @@
 </script>
 
 <style lang="stylus" scoped>
-    /*.section__dark*/
-    /*background-color #34343e*/
+
+    .row
+        z-index 2
+
+    .what-is
+        background-color #ececf0
+
+    .countdown-block
+        @media (min-width 848px)
+            display flex
+            align-items center
+
+    .telegram-alert-mobile
+        z-index 1100
+        cursor pointer
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+        display flex
+        align-items center
+        justify-content space-between
+        background-color #343a49
+        position fixed
+        top 74px
+        width 100%
+        height 40px
+        padding 0 40px
+
+        .telegram-alert-mobile__wrap
+            display flex
+            align-items center
+
+            img
+                margin-right 10px
+                margin-bottom 2px
+
+            span
+                font-family MuseoSansCyrl500
+                font-weight 500
+                color #f7f7f7
+
+        img
+            height 15px
+            width 15px
+
+    .telegram-alert-mobile__yellow
+        background-color #ffd24f
+
+        .telegram-alert-mobile__wrap
+            span
+                color #343a49
+
+    .telegram-alert
+        cursor pointer
+        position fixed
+        right 100px
+        bottom 75px
+        border-radius 50%
+        background-color #343a49
+        width 70px
+        height 70px
+        z-index 1000
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 30px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1440px) and (max-width 2560px)
+            right 100px
+            bottom 75px
+            width 70px
+            height 70px
+
+        a
+            width 100%
+            height 100%
+            display flex
+            align-items center
+            justify-content center
+
+            img
+                width 45%
+
+    .telegram-alert__yellow
+        background-color #ffd24f
+
+    .screen1.title
+        @media (min-width 425px) and (max-width 768px)
+            text-align center
+
+    .home
+        position relative
+        background-attachment fixed
+        background-position center
+        background-repeat no-repeat
+        background-size cover
+
+    .partners
+        background-color #ececf0
+
+    .play-video
+        z-index 2
+        width 100%
+
+        @media (min-width 1440px)
+            display flex !important
+            justify-content center
+            align-items center
+
+        @media (min-width 1200px) and (max-width 1440px)
+            display flex !important
+            justify-content center
+            align-items center
+            margin-top 0 !important
+
+        @media (min-width 1024px) and (max-width 1200px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 60px
+            margin-top 0 !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 40px
+            margin-top 0 !important
+
+        @media (min-width 425px) and (max-width 768px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 40px
+
+        @media (max-width 425px)
+            display flex !important
+            flex-direction column
+            justify-content center
+            align-items center
+            padding-top 30px
+
+        .play-button
+            display flex
+            justify-content center
+            align-items center
+
+        .main-player
+            z-index 100
+            width 100%
+
+            .iframe
+                width 100%
+                height 100%
+
+            @media (max-width 1200px)
+                position initial
+
+            @media (min-width 768px) and (max-width 1024px)
+                padding-top 50px
+
+    .wrap-play
+        .line
+            display block
+            width 30px
+            height 1px
+            background-color black
+            -webkit-transition all .5s ease-in-out
+            -o-transition all .5s ease-in-out
+            transition all .5s ease-in-out
+
+        .l-1
+            transform translate(-7px) rotate(90deg)
+
+        .l-2
+            transform translate(6px, -8px) rotate(30deg)
+
+        .l-3
+            transform translate(6px, 6px) rotate(330deg)
+
+    .active
+        .l-1
+            opacity 0
+
+        .l-2
+            transform translate(0, 0) rotate(135deg)
+
+        .l-3
+            transform translate(0, 0) rotate(45deg)
+
+    .home__light
+        background-color #ececf0
+
+    .promo
+        a
+            button
+                background-color transparent
+                border none
+                padding 0
+                position relative
+                display flex
+                align-items center
+
+                img
+                    width 16px !important
+                    height 22px !important
+                    margin-right 16px
+
+                &:focus
+                    outline none
+
+                @media (max-width 768px)
+                    img
+                        display none
+
+                span
+                    color #fff
+                    font-family MuseoSansCyrl500
+                    font-weight 500
+
+    a
+        &:hover
+            text-decoration none !important
+
+    .description
+        .count
+            color #34343e
+        .name
+            color #34343e
+
+    .btn-buy-tokens
+        &:focus
+            box-shadow none
+
+    #myVideo
+        position absolute
+        right 0
+        bottom 0
+        min-width 100%
+        min-height 100%
+
+    #screen1
+        padding-top 74px
 
     #description
-        @media (min-width 420px)
-            height 100vh
-
-        .row
-            align-items center
+        @media (min-width 425px)
+            min-height 100vh
 
     .anim
         opacity 0.7
+        z-index 1
 
     .anim__dark
         opacity 0.25
@@ -619,6 +1225,95 @@
                         .title
                             color #f7f7f7 !important
 
+    .place-player
+        opacity 0
+        width 100%
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+        @media (max-width 1200px)
+            display none
+
+    .place-player__frame
+        background-color #000
+        height 100%
+
+    .main-player, .place-player
+        height 300px
+        position absolute
+        top 130px
+
+        @media (min-width 1440px) and (max-width 2560px)
+            height 300px
+
+        @media (min-width 1200px) and (max-width 1440px)
+            height 250px
+
+        @media (min-width 1024px) and (max-width 1200px)
+            height 500px
+
+        @media (min-width 768px) and (max-width 1024px)
+            height 400px
+
+    /*@media (max-width 1600px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
+
+    /*@media (max-width 1530px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
+
+    /*@media (max-width 1274px)*/
+    /*position relative*/
+    /*.iframe, .place-player__frame*/
+    /*width 800px*/
+    /*height 450px*/
+
+    /*@media (max-width 1120px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 700px*/
+    /*height 394px*/
+
+    /*@media (max-width 850px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 600px*/
+    /*height 336px*/
+
+    /*@media (max-width 720px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 500px*/
+    /*height 280px*/
+
+    /*@media (max-width 620px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 400px*/
+    /*height 225px*/
+
+    /*@media (max-width 520px)*/
+    /*.iframe, .place-player__frame*/
+    /*width 100%*/
+    /*height 292px*/
+
+    @media (max-width 520px) and (min-width 426px)
+        .play-video
+            width 100%
+            position relative !important
+
+            .place-player
+                display none
+
+    @media (max-width 425px)
+        .play-video
+            width 100%
+            position relative !important
+            left 0 !important
+
+            .place-player
+                display none
+
     .collection__dark
         color #343a49
 
@@ -631,13 +1326,15 @@
         color #f7f7f7 !important
 
     .partners__dark
-        background-color #343a49
+        background-color #343a49 !important
+
         .title
             color #f7f7f7 !important
 
     .social-line__dark
         .line
             border-color #f7f7f7 !important
+
         .social-item.fb
             background-image url(../../static/images/fb-dark.svg) !important
 
@@ -674,22 +1371,22 @@
             &:hover
                 background-image url(../../static/images/vk-hovered.svg) !important
 
-    #screen1 .container-fluid.what-is
-        @media (max-width 420px)
-            background #ececf0
+        .social-item.btc-talk
+            background-image url(../../static/images/btc-dark.svg) !important
 
-            p.description
-                color #142038
+            &:hover
+                background-image url(../../static/images/btc-hovered.svg) !important
+
+        .social-item.github
+            background-image url(../../static/images/github-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/github-hovered.svg) !important
 
     .description__dark
-        background -moz-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -webkit-gradient(bottom top, bottom top, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(60%, rgba(83, 92, 112, 1)), color-stop(100%, rgba(247, 247, 247, 1))) !important
-        background -webkit-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -o-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background -ms-linear-gradient(bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
-        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(83, 92, 112, 1) 60%, rgba(247, 247, 247, 1) 100%) !important
+        background-color #343a49
 
-        @media (max-width 420px)
+        @media (max-width 425px)
             background #343a49 !important
 
         .desc
@@ -698,10 +1395,25 @@
 
     .collection
         .item
-            -webkit-transition all .3s ease-in-out
-            -o-transition all .3s ease-in-out
-            transition all .3s ease-in-out
             cursor pointer
+
+            &:last-child
+                .inner
+                    background-color #ffd24f
+
+            a
+                .cur-logo
+                    img
+                        max-width 40px !important
+
+                .description
+                    padding-top 10px
+                    text-align center
+
+            @media (max-width 425px)
+                border-radius 2px
+                padding-top 7.5px
+                padding-bottom 7.5px
 
     section
         position relative
@@ -719,6 +1431,32 @@
         .button-choose__active
             opacity 1 !important
             border 2px solid #ffd24f !important
+
+        .button-choose__active-video
+            opacity 1 !important
+            border 2px solid #343a49 !important
+
+        .button-choose_video
+            padding 0
+            padding-left 5px
+            position relative
+            opacity 0.8
+            cursor pointer
+            width 40px
+            height 40px
+            margin-bottom 15px
+            background-color #ffd24f
+            border-radius 50%
+            border 1px solid #f7f7f7
+            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
+
+            &:focus
+                outline none
+
+            img
+                width 70%
 
         .button-choose_light
             opacity 0.8
@@ -752,166 +1490,313 @@
                 outline none
 
     #screen1
-        .container-fluid.partners
-            margin-top 0 !important
-            padding-top 150px !important
-
-    #screen1
-        .container-fluid.what-is
+        .partners
+            display flex
+            justify-content space-between
+            align-items center
+            flex-wrap nowrap
+            width 100%
             margin-top 0
-            padding 165px 125px 0
+            padding-top 150px
 
-            @media (max-width 420px)
-                padding-left 32px
-                padding-right 32px
-                padding-top 20px
+            .title
+                z-index 2
+                font-size 22px
+                font-weight 700
+                white-space nowrap
+
+            @media (min-width 1440px) and (max-width 2560px)
+                padding 150px 150px 0 150px
+
+            @media (min-width 1024px) and (max-width 1440px)
+                padding 100px 100px 0 100px
+
+            @media (min-width 768px) and (max-width 1024px)
+                padding 100px
+
+            @media (min-width 425px) and (max-width 768px)
+                padding 75px 50px
+                height 75vh
+                display flex
+                flex-direction column
+                justify-content space-around
+                align-items center
+
+                .title
+                    display none
+
+            @media (min-width 320px) and (max-width 425px)
+                height 100vh
+                display flex
+                flex-direction column
+                justify-content space-around
+                align-items center
+                padding-top 50px
+                padding-bottom 50px
+
+                .title
+                    display none
+
+                a
+                    margin-bottom 20px
+
+            @media (max-width 320px)
+                display flex
+                flex-direction column
+                justify-content center
+                align-items center
+                padding-top 50px !important
+
+                .title
+                    display none
+
+                a
+                    margin-bottom 20px
 
     .social-line
+        padding 15px 0
+        /*@media (min-width 1024px) and (max-width 1440px)*/
+        /*margin-top 60px*/
+
         .social-item
             -webkit-transition background .3s ease-in-out
             -o-transition background color .3s ease-in-out
             transition background color .3s ease-in-out
 
     #screen1
-        /*background-color #34343e*/
-        /*transition background-color 20s linear*/
-        /*&:hover*/
-        /*background-color #858591*/
+        .crypto
+            @media (min-width 1024px) and (max-width 1440px)
+                margin-top 20px
 
-        .container-fluid
-            &.partners
-                justify-content space-between
+            @media (max-width 320px)
+                .collection
+                    .item
+                        margin-right 10px
+                        width 50px
 
-                .title
-                    white-space nowrap
+                        &:last-child
+                            margin-right 0
 
-                .partners-icons
-                    justify-content space-around
-                    width 100%
-                    flex-wrap nowrap
+        .what-is
+            display flex
+            align-items center
+            padding 50px 200px 0 200px
+            margin-top 0
 
-                    @media (max-width 960px)
-                        flex-wrap wrap
+            @media (min-width 1440px) and (max-width 2560px)
+                padding 60px 150px 0 150px
 
-            .crypto
-                @media (max-width: 320px)
-                    .collection
-                        .item
-                            margin-right 10px
-                            width 40px
+            @media (min-width 1024px) and (max-width 1440px)
+                padding 60px 100px 0 100px
 
-                            &:last-child
-                                margin-right 0
+            @media (min-width 768px) and (max-width 1024px)
+                padding 50px 75px 0 75px
 
-            &.what-is
-                .desktop-outer
-                    margin 0 auto
+            @media (min-width 425px) and (max-width 768px)
+                padding 50px 50px 25px 50px
 
-                    .slider-container
-                        width 100%
-                        position absolute
-                        height auto
+            @media (max-width 425px)
+                padding 60px 25px
+                background #ececf0
 
-                    .desktop
-                        position relative
+                .description
+                    color #142538
 
-                    @media (max-width: 2600px)
-                        .slider-container
-                            width 709px
-                            height 443px
-                            left 252px
-                            top 40px
+            .row
+                .promo
+                    .to-download
+                        @media (min-width 1024px) and (max-width 1440px)
+                            padding 8px 18px
 
-                        .desktop
-                            left 140px
-                            width 900px
+                        @media (min-width 768px) and (max-width 1024px)
+                            width 100%
+                            margin-top 30px
+                            margin-bottom 40px
+                            padding 15px 30px
+                            font-size 18px
+                            display flex
+                            justify-content center
 
-                    @media (max-width: 2365px)
-                        .slider-container
-                            left 162px
+                        @media (min-width 425px) and (max-width 768px)
+                            width 100%
+                            margin-top 30px
+                            margin-bottom 40px
+                            padding 10px 25px
+                            font-size 18px
 
-                        .desktop
-                            left 50px
+                        @media (max-width 425px)
+                            font-size 16px
+                            padding 15px 25px
+                            margin-top 25px
 
-                    @media (max-width: 2150px)
-                        .slider-container
-                            width 630px
-                            height 395px
-                            left 102px
-                            top 36px
-
-                        .desktop
-                            left 0px
-                            width 800px
-
-                    @media (max-width: 1860px)
-                        .slider-container
-                            width 552px
-                            height 345px
-                            left 91px
-                            top 32px
-
-                        .desktop
-                            left 0px
-                            width 700px
-
-                    @media (max-width: 1640px)
-                        padding-top 50px
+                    .desktop-outer
+                        margin 0 auto
 
                         .slider-container
-                            width 473px
-                            height 296px
-                            left 80px
-                            top 77px
+                            width 100%
+                            position absolute
+                            height auto
 
                         .desktop
-                            left 0px
-                            width 600px
+                            width 100% !important
+                            position relative
 
-                    @media (max-width: 1460px)
-                        padding-top 100px
+                    /*@media (max-width 2600px)*/
+                    /*.slider-container*/
+                    /*width 709px*/
+                    /*height 443px*/
+                    /*left 252px*/
+                    /*top 40px*/
 
-                        .slider-container
-                            width 393px
-                            height 247px
-                            left 70px
-                            top 122px
+                    /*.desktop*/
+                    /*left 140px*/
+                    /*width 900px*/
 
-                        .desktop
-                            left 0px
-                            width 500px
+                    /*@media (max-width 2365px)*/
+                    /*.slider-container*/
+                    /*left 162px*/
 
-                    @media (max-width: 1240px)
-                        padding-top 100px
+                    /*.desktop*/
+                    /*left 50px*/
 
-                        .slider-container
-                            width 315px
-                            height 197px
-                            left 59px
-                            top 118px
+                    /*@media (max-width 2150px)*/
+                    /*.slider-container*/
+                    /*width 630px*/
+                    /*height 395px*/
+                    /*left 102px*/
+                    /*top 36px*/
 
-                        .desktop
-                            left 0px
-                            width 400px
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 800px*/
 
-                    @media (max-width: 991px)
-                        padding-top 0
+                    /*@media (max-width 1860px)*/
+                    /*.slider-container*/
+                    /*width 552px*/
+                    /*height 345px*/
+                    /*left 91px*/
+                    /*top 32px*/
 
-                        .slider-container
-                            display none
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 700px*/
 
-                        .desktop
-                            display none
+                    /*@media (max-width 1640px)*/
+                    /*padding-top 50px*/
 
-                @media (max-width: 991px)
-                    .desktop-for-mobile
-                        display block
+                    /*.slider-container*/
+                    /*width 473px*/
+                    /*height 296px*/
+                    /*left 80px*/
+                    /*top 77px*/
+
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 600px*/
+
+                    /*@media (max-width 1460px)*/
+                    /*padding-top 100px*/
+
+                    /*.slider-container*/
+                    /*width 393px*/
+                    /*height 247px*/
+                    /*left 70px*/
+                    /*top 122px*/
+
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 500px*/
+
+                    /*@media (max-width 1240px)*/
+                    /*padding-top 100px*/
+
+                    /*.slider-container*/
+                    /*width 315px*/
+                    /*height 197px*/
+                    /*left 59px*/
+                    /*top 118px*/
+
+                    /*.desktop*/
+                    /*left 0*/
+                    /*width 400px*/
+
+                    /*@media (max-width 991px)*/
+                    /*padding-top 0*/
+
+                    /*.slider-container*/
+                    /*display none*/
+
+                    /*.desktop*/
+                    /*display none*/
+
+                    @media (max-width 991px)
+                        .desktop-for-mobile
+                            display block
+
+                .desc
+                    @media (min-width 768px) and (max-width 1024px)
+                        .buttons
+                            display flex
+                            justify-content center
+
+                            .btn
+                                width 50%
+                                flex-grow 1
+                                padding 10px 30px
+                                font-size 18px
+                                margin 10px 0
+
+                                &:first-child
+                                    margin-right 10px
+
+                                &:last-child
+                                    margin-left 10px
+
+                    @media (min-width 425px) and (max-width 768px)
+                        .description
+                            font-size 18px
+
+                        .buttons
+                            display flex
+                            justify-content center
+
+                            .btn
+                                width 50%
+                                padding 10px 15px
+                                font-size 18px
+                                margin 10px 0
+
+                                &:first-child
+                                    margin-right 7.5px
+
+                                &:last-child
+                                    margin-left 7.5px
+
+                    @media (max-width 425px)
+                        padding-top 25px
+
+                        .title
+                            text-align center
+
+                        .subtitle
+                            text-indent 30px
+
+                        .description
+                            text-indent 30px
+
+                        .buttons
+                            display flex
+                            flex-direction column
+                            justify-content center
+
+                            .btn
+                                padding 10px 25px
+                                font-size 22px
+                                margin 10px 0
 
         .play-video
             display inline-block
-            position relative
-            top -15px
-            left 25%
+            /*position relative*/
 
             .play-button
                 cursor pointer
@@ -941,23 +1826,38 @@
                         width 35px
                         height 35px
 
-            @media (max-width: 1500px)
-                left 20%
-            @media (max-width: 1400px)
-                left 15%
-            @media (max-width: 1274px)
+            /*@media (max-width 1500px)*/
+            /*left 20%*/
+
+            /*@media (max-width 1400px)*/
+            /*left 15%*/
+
+            @media (max-width 1274px)
                 position unset
-                margin 48px auto 0
-                display block
                 text-align center
 
                 .play-button
                     margin 0
 
+            @media (max-width 768px)
+                display flex
+                justify-content center
+                align-items center
+                flex-direction column
+
+            @media (max-width 425px)
+                top 0
+                padding-top 15px
+
+        .scroll-next
+            position absolute
+            bottom -70px
+            width 100%
+            display flex
+            justify-content center
+
         .scroll-ic
             cursor pointer
-            margin-right auto
-            margin-left calc(50% - 396px)
             background-color transparent
             border none
             transition transform .5s ease
@@ -973,7 +1873,16 @@
             font-family MuseoSansCyrl500
             font-size 20px
             color #34343e
-            margin-top 60px
+            padding 15px 0
+
+            /*@media (min-width 1024px) and (max-width 1440px)*/
+            /*margin-top 30px*/
+
+            @media (max-width 425px)
+                font-size 16px
+
+            @media (max-width 320px)
+                font-size 14px
 
             .state
                 display flex
@@ -982,6 +1891,10 @@
 
                 &.hard-cap
                     margin-top 24px
+
+                .count
+                    .currency
+                        text-transform uppercase
 
             .progress-bar-outer
                 height 4px
@@ -994,6 +1907,13 @@
                     box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
                     height 100%
 
-            @media (max-width: 600px)
+            @media (max-width 600px)
                 width 100%
+
+    @media (max-width 425px)
+        .subtitle
+            margin-top 18px !important
+            font-size 18px !important
+            font-weight 700
+
 </style>

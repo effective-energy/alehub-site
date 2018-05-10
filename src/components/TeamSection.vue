@@ -20,7 +20,7 @@
                      id="serokell-gallery"
                      v-if="isWideScreen">
                     <div class="image"
-                         v-for="(member, i) in team.serokell"
+                         v-for="(member, i) in $t('team.serokell[0].members')"
                          :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
                         <img class="layer__bottom"
@@ -67,7 +67,7 @@
                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
-        <div class="advisors" id="advisors">
+        <div class="advisors" id="advisors" v-if="false">
             <h3 class="title">
                 {{$t('advisors.title')}}
             </h3>

@@ -1,33 +1,36 @@
 <template>
     <div class="index">
         <header-block :is-main-dark="isDark"/>
-        <home-section/>
+        <home-section :is-dark-section="isDarkSection"/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
         <ico-section/>
         <roadmap-section/>
+        <download-application-section/>
         <blog-section/>
         <footer-block/>
     </div>
 </template>
 
 <script>
-    import HeaderBlock from './layouts/HeaderBlock'
-    import HomeSection from './HomeSection'
-    import AdvantagesSection from './AdvantagesSection'
-    import FeaturesSection from './FeaturesSection'
-    import TeamSection from './TeamSection'
-    import IcoSection from './IcoSection'
-    import RoadmapSection from './RoadmapSection'
-    import BlogSection from './BlogSection'
-    import FooterBlock from './layouts/FooterBlock'
+    import HeaderBlock from './layouts/HeaderBlock';
+    import HomeSection from './HomeSection';
+    import DownloadApplicationSection from './DownloadApplicationSection';
+    import AdvantagesSection from './AdvantagesSection';
+    import FeaturesSection from './FeaturesSection';
+    import TeamSection from './TeamSection';
+    import IcoSection from './IcoSection';
+    import RoadmapSection from './RoadmapSection';
+    import BlogSection from './BlogSection';
+    import FooterBlock from './layouts/FooterBlock';
 
     export default {
         name: 'Index',
         components: {
             HeaderBlock,
             HomeSection,
+            DownloadApplicationSection,
             AdvantagesSection,
             FeaturesSection,
             TeamSection,
@@ -41,6 +44,7 @@
                 isFeatures: false,
                 isTeam: false,
                 isDark: false,
+                isDarkSection: false
                 // isLoading: true
             }
         },
@@ -51,6 +55,10 @@
 
             this.$on('checkIsTeam', (isTeam) => {
                 this.isTeam = isTeam;
+            });
+
+            this.$on('checkIsDarkSection', (isDarkSection) => {
+                this.isDarkSection = isDarkSection;
             });
 
             this.$on('isDarkTheme', (val) => {

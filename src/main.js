@@ -8,9 +8,22 @@ import VueI18n from 'vue-i18n';
 import VueCircleSlider from 'vue-circle-slider';
 import VueResource from 'vue-resource';
 import Moment from 'vue-moment';
+import VueYandexMetrika from 'vue-yandex-metrika';
+
+
+
+
+Vue.use(VueYandexMetrika, {
+    id: 48805535,
+    env: process.env.NODE_ENV
+    // other options
+});
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+var SocialSharing = require('vue-social-sharing');
+Vue.use(SocialSharing);
 
 Vue.use(BootstrapVue);
 Vue.use(VueScrollTo, {
@@ -23,23 +36,30 @@ Vue.use(VueCircleSlider);
 Vue.use(VueResource);
 Vue.use(Moment);
 
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueAwesomeSwiper from 'vue-awesome-swiper';
 
 // require styles
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper);
 
+// Vue.use(VueYandexMetrika, {
+//     id: 48802643,
+//     router: router,
+//     env: process.env.NODE_ENV
+//     // other options
+// });
+
 Vue.config.productionTip = false;
 
 let systemLang = '';
-if(localStorage.getItem('systemLang') !== 'eng' && localStorage.getItem('systemLang') !== 'rus') {
-	localStorage.setItem('systemLang', 'eng');
-	systemLang = 'eng';
-} else if(localStorage.getItem('systemLang') === 'eng') {
-	systemLang = 'eng';
-} else if(localStorage.getItem('systemLang') === 'rus') {
-	systemLang = 'rus';
+if(localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
+	localStorage.setItem('systemLang', 'en');
+	systemLang = 'en';
+} else if(localStorage.getItem('systemLang') === 'en') {
+	systemLang = 'en';
+} else if(localStorage.getItem('systemLang') === 'ru') {
+	systemLang = 'ru';
 }
 
 import messages from './i18n.js';

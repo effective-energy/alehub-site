@@ -5,7 +5,16 @@
            @closed="closedModal('menu-modal')">
 
         <div class="body"
-        :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
+             :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
+
+            <div class="body__top">
+                <a href="http://presale.alehub.io/">
+                    <button type="button">
+                        Log in
+                    </button>
+                </a>
+            </div>
+
             <div class="body__menu" v-if="!isSelectingLanguage">
                 <div v-for="item in $t('navbar.menuList')">
                     <a v-scroll-to="item.path"
@@ -14,23 +23,27 @@
                     </a>
                 </div>
             </div>
-            <div class="body__languages" v-if="isSelectingLanguage">
+            <div class="body__languages"
+                 v-if="isSelectingLanguage">
                 <div v-for="(item, langIndex) in languages">
-                    <button type="button"
-                            @click="changeLanguage(langIndex)">
-                        {{ item.name }}
-                    </button>
+                    <a @click="changeLanguage(langIndex)">
+                        {{ item }}
+                    </a>
                 </div>
             </div>
             <div class="body__bottom">
-                <button type="button" v-if="!isSelectingLanguage"
-                        @click="toSelectLanguage">
-                    {{ $t('menuModal.selectLang') }}
-                </button>
-                <button type="button" v-else
-                        @click="toNavigationMenu">
-                    {{ $t('menuModal.navigationMenu') }}
-                </button>
+                <a v-if="!isSelectingLanguage"
+                   @click="toSelectLanguage">
+                    <button type="button">
+                        {{ $t('menuModal.selectLang') }}
+                    </button>
+                </a>
+                <a v-else
+                   @click="toNavigationMenu">
+                    <button type="button">
+                        {{ $t('menuModal.navigationMenu') }}
+                    </button>
+                </a>
             </div>
         </div>
 
@@ -57,14 +70,7 @@
         data() {
             return {
                 selectingLanguage: false,
-                languages: [
-                    {
-                        name: 'eng'
-                    },
-                    {
-                        name: 'rus'
-                    }
-                ],
+                languages: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
             }
         },
         computed: {
@@ -99,11 +105,10 @@
             toNavigationMenu: function () {
                 this.selectingLanguage = false;
             },
-
             changeLanguage: function (index) {
-                localStorage.setItem('systemLang', this.languages[index].name);
-                this.$i18n.locale = this.languages[index].name;
-                this.$parent.$emit('changeModalLanguage', this.languages[index].name);
+                localStorage.setItem('systemLang', this.languages[index]);
+                this.$i18n.locale = this.languages[index];
+                this.$parent.$emit('changeModalLanguage', this.languages[index]);
                 this.closeModal('menu-modal');
             },
         },
@@ -129,139 +134,152 @@
 </style>
 
 <style lang="stylus" scoped>
+    h_ext = 80px
+    h_ext_320 = 50px
+    h_ext_360 = 60px
+
+    f_s = 1.2rem
+    f_s_320 = 1rem
+    f_s_360 = 1.1rem
+
     .body
         height 100%
         display flex
         flex-direction column
-        justify-content center
+        justify-content space-between
         align-items center
 
-        .body__menu
+        .body__menu, .body__languages
+            height 100%
             display flex
             flex-direction column
             align-items center
-            padding-bottom 100px
+            justify-content space-around
+            padding 1rem 0
 
             div
-                padding 1.1rem 0
-
                 a
                     cursor pointer
                     font-weight 700
                     text-transform uppercase
-                    font-size 20px
+                    font-size f_s
                     color #343a49
                     border-bottom 2px solid #343a49
                     padding-bottom 0.2rem
 
-        .body__languages
-            padding-bottom 100px
+                    @media (max-width 320px)
+                        padding-bottom 0.1rem
+                        font-size f_s_320
 
-            div
-                padding 1.1rem 0
+                    @media (max-width 360px)
+                        padding-bottom 0.1rem
+                        font-size f_s_360
 
+        .body__top
+            background-color #ffd24f
+            top 0
+
+            a
                 button
-                    cursor pointer
-                    background-color transparent
-                    border none
-                    font-weight 700
-                    text-transform uppercase
-                    font-size 20px
                     color #343a49
                     border-bottom 2px solid #343a49
-                    padding-bottom 0.2rem
-                    margin-bottom 0
-
 
         .body__bottom
-            display flex
-            justify-content center
-            align-items center
             background-color #343a49
-            width 100%
-            position absolute
-            height 100px
             bottom 0
 
-            button
-                cursor pointer
-                background-color transparent
-                border none
-                font-weight 700
-                text-transform uppercase
-                font-size 20px
-                color #f7f7f7
-                border-bottom 2px solid #f7f7f7
-                padding-bottom 0.2rem
-                margin-bottom 0
+            a
+                button
+                    color #fff
+                    border-bottom 2px solid #fff
 
-                &:focus
-                    outline none
+        .body__bottom, .body__top
+            position relative
+            display flex
+            justify-content center
+            flex-direction column
+            align-items center
+            height h_ext
+            width 100%
 
+            a
+                width 100%
+
+                button
+                    background-color transparent
+                    border none
+                    cursor pointer
+                    width 100%
+                    height h_ext
+                    font-weight 700
+                    text-transform uppercase
+                    font-size f_s
+                    margin-bottom 0
+
+                    &:focus
+                        outline none
+
+            @media (max-width 320px)
+                height h_ext_320
+
+                a
+                    button
+                        height h_ext_320
+                        font-size f_s_320
+                        padding-bottom 0.1rem
+
+            @media (max-width 360px)
+                height h_ext_360
+
+                a
+                    button
+                        height h_ext_360
+                        font-size f_s_360
+                        padding-bottom 0.1rem
 
     .body__dark
         background-color #343a49
 
-        .body__menu
+        .body__menu, .body__languages
             div
                 a
-                    color #f7f7f7
-                    border-color #f7f7f7
-
-        .body__languages
-            div
-                button
                     color #f7f7f7
                     border-color #f7f7f7
 
         .body__bottom
             background-color #fdd04a
 
-            button
-                color #343a49
-                border-color #343a49
-
-    .body__yellow
-        background-color #fdc135
-
-        .body__menu
-            div
-                a
-                    color #343a49
-                    border-color #343a49
-
-        .body__languages
-            div
+            a
                 button
                     color #343a49
                     border-color #343a49
-
-        .body__bottom
-            background-color #343a49
-
-            button
-                color #f7f7f7
-                border-color #f7f7f7
 
     .body__orange
         background-color #feaf1c
 
-        .body__menu
+    .body__yellow
+        background-color #ffd24f
+
+    .body__yellow, .body__orange
+        .body__menu, .body__languages
             div
                 a
                     color #343a49
                     border-color #343a49
 
-        .body__languages
-            div
+        .body__top
+            background-color #343a49
+
+            a
                 button
-                    color #343a49
-                    border-color #343a49
+                    color #f7f7f7
+                    border-color #f7f7f7
 
         .body__bottom
             background-color #343a49
 
-            button
-                color #f7f7f7
-                border-color #f7f7f7
+            a
+                button
+                    color #f7f7f7
+                    border-color #f7f7f7
 </style>

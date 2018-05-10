@@ -2,37 +2,39 @@
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
 		<div class="container container-news" v-if="content">
-			<div class="share-block">
-				<div class="share-item">
-					<div class="icon-twitter"></div>
+			<social-sharing :url="newsUrl" inline-template>
+				<div class="share-block">
+					<network network="twitter">
+						<img src="../../static/images/share-ic/twitter.svg" alt="" class="share-item">
+					</network>
+					<network network="facebook">
+						<img src="../../static/images/share-ic/fb.svg" alt="" class="share-item">
+					</network>
+					<network network="googleplus">
+						<img src="../../static/images/share-ic/g-plus.svg" alt="" class="share-item">
+					</network>
+					<network network="vk">
+						<img src="../../static/images/share-ic/vk.svg" alt="" class="share-item">
+					</network>
+					<network network="telegram">
+        				<img src="../../static/images/share-ic/telegram-ic.svg" alt="" class="share-item">
+      				</network>
+					<network network="email">
+						<img src="../../static/images/share-ic/mail.svg" alt="" class="share-item">
+					</network>
 				</div>
-				<div class="share-item">
-					<div class="icon-facebook"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-googleplus"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-vkontakte"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-telegram"></div>
-				</div>
-				<div class="share-item">
-					<div class="icon-email"></div>
-				</div>
-			</div>
+			</social-sharing>
 			<div class="news-block">
 				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
-					<img :src="`https://alehub.eu-4.evennode.com/${content.author_image}`" alt="" class="news-author-image" />
+					<img :src="content.author_image" alt="" class="news-author-image" />
 					<div class="info">
 						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
 						<span class="author-name">{{ content.author_name }}</span>
 					</div>
 				</div>
 				<div class="picture-block">
-					<img :src="`https://alehub.eu-4.evennode.com/${content.preview_image}`" alt="" class="image" />
+					<img :src="content.preview_image" alt="" class="image" />
 					<p class="resource-image" v-if="false">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
 				</div>
 				<div class="news-content" v-html="content.content">
@@ -42,9 +44,9 @@
 				<div class="more-news" v-if="more">
 					<h1 class="more-news-title">More news</h1>
 
-					<div class="more-news-content">
-						<div class="news-item" v-for="item in more" :key="item._id">
-							<img :src="`https://alehub.eu-4.evennode.com/${item.preview_image}`" alt="" />
+					<div class="more-news-content row">
+						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item._id">
+							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
 							<router-link tag="a" :to="`./${item._id}`" class="news-link">
                                 {{ item.title }}
                             </router-link>
@@ -54,24 +56,34 @@
 				</div>
 			</div>
 		</div>
+		<div class="spinner" v-if="!content && !isError">
+			<spinner />
+		</div>
+		<div class="not-found" v-if="isError">
+			<p>News not found</p>
+		</div>
 		<footer-block />
 	</div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
-    import FooterBlock from './layouts/FooterBlock';
+	import FooterBlock from './layouts/FooterBlock';
+	import Spinner from './layouts/Spinner.vue';
 
     export default {
         name: 'BlogPost',
         components: {
             HeaderBlock,
-            FooterBlock
+			FooterBlock,
+			Spinner
 		},
 		data () {
 			return {
 				content: '',
-				more: ''
+				more: '',
+				isError: false,
+				newsUrl: ''
 			}
 		},
 		watch: {
@@ -81,23 +93,46 @@
 		},
 		methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`).then(response => {
+				this.content = '';
+				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.content = response.body;
+					document.title = this.content.title;
 				}, response => {
 					console.log('Error getting news', response);
+					this.isError = true;
+					document.title = 'News Not Found';
 				});
 			},
 			getLastNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/4`).then(response => {
+				this.$http.post(`https://alehub.eu-4.evennode.com/ale-news/last/4/`, {
+					"withoutNewsId": this.$route.params.id
+				}, {
+                    headers : {
+                        'Content-Type' : 'application/json; charset=UTF-8',
+                        'Accept' : 'application/json'
+                    }
+                }).then(response => {
 					this.more = response.body;
 				}, response => {
-					console.log('Error getting news', response);
+					this.isError = true;
 				});
+			},
+			goToNews: function (id) {
+				this.$router.push(`/blog/${id}`)
+			},
+			getNewsUrl: function () {
+				this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
 			}
 		},
 		created () {
 			this.getNews();
 			this.getLastNews();
+			this.getNewsUrl();
 		}
     }
 </script>
@@ -139,6 +174,19 @@
 	.news-content
 		p
 			margin 0
+
+	.not-found
+		display flex
+		justify-content center 
+		align-items center 
+		height calc(100vh - 165px - 74px)
+
+		p
+			font-family MuseoSansCyrl300
+			font-size 30px
+
+			@media(max-width: 425px)
+				font-size 26px
 </style>
 
 
@@ -146,6 +194,11 @@
 	body
 		/*padding-top 74px*/
 		/*background-color #ffffff !important*/
+
+	.spinner
+		min-height calc(100vh - 165px)
+		display flex
+		justify-content center
 
 	.footer
 		background-color #e8ebef
@@ -160,51 +213,17 @@
 
 		.share-block
 			min-width 36px
-			height 300px
-			position absolute
+			height 240px
+			position absolute 
+			display flex 
+			flex-direction column
+			align-items center
+			justify-content space-around
 			left -70px
 			top 80px
-
-			.share-item
-				width 36px
-				height 36px
-				margin-bottom 8px
-				display flex
-				justify-content center
-				align-items center
-
-				&:last-child
-					margin-bottom 0
-
-				.icon-twitter
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/twitter.svg')
-
-				.icon-facebook
-					width 7px
-					height 14px
-					background-image url('../../static/images/share-ic/fb.svg')
-
-				.icon-googleplus
-					width 14px
-					height 15px
-					background-image url('../../static/images/share-ic/g-plus.svg')
-
-				.icon-vkontakte
-					width 16px
-					height 9px
-					background-image url('../../static/images/share-ic/vk.svg')
-
-				.icon-telegram
-					width 14px
-					height 12px
-					background-image url('../../static/images/share-ic/telegram-ic.svg')
-
-				.icon-email
-					width 14px
-					height 11px
-					background-image url('../../static/images/share-ic/mail.svg')
+			 
+			img 
+				margin 12px
 
 
 		.news-block
@@ -340,15 +359,13 @@
 					.news-item
 						display flex
 						flex-direction column
-						margin 0 10px
-						width 25%
-						max-width 200px
 
 						img
 							width 100%
 							height 130px
 							-o-object-fit cover
 							object-fit cover
+							cursor pointer
 
 						.news-link
 							font-family MuseoSansCyrl500
@@ -413,6 +430,7 @@
 
 					.more-news-content
 						flex-wrap wrap
+
 						.news-item
 							margin 0
 							width 48%
@@ -429,10 +447,15 @@
 
 			.share-block
 				display flex
-				top 48px
+				flex-direction row
+				top 50px
 				left -10px
-				padding-left 32px
-				height 50px
+				padding-left 42px
+				padding-left 42px
+				height 30px
+				width 280px
+				justify-content space-between
+
 
 			.news-block
 				margin-top 24px
@@ -475,10 +498,6 @@
 
 	@media(max-width: 375px)
 		.container-news
-			.share-block
-				width 100%
-				justify-content center
-
 			.news-block
 				.title
 					font-size 20px
@@ -514,6 +533,8 @@
 						font-size 18px
 
 					.more-news-content
+						justify-content center
+
 						.news-item
 							width 100%
 							max-width 260px

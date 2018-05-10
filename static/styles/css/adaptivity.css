@@ -95,9 +95,6 @@
   .countdown {
     padding-top: 26px;
   }
-  .crypto {
-    margin-top: 60px;
-  }
   .btn-black {
     font-size: 14px;
     padding-left: 15px;
@@ -143,14 +140,19 @@
     margin-top: 24px;
     margin-left: 5px;
   }
-  .social-line {
-    margin-top: 60px;
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .btn-buy-tokens {
+    width: 70%;
+    margin-left: 15%;
+  }
+  .bonus-desc {
+    margin-left: 15%;
   }
 }
 @media (max-width: 576px) {
   .btn-buy-tokens {
     width: 100%;
-    margin-top: 24px;
     margin-left: 0;
   }
 }
@@ -228,27 +230,18 @@
     width: 100%;
     text-align: center;
   }
-  .crypto {
-    margin-top: 48px;
-  }
   .crypto .title {
     text-align: center;
   }
   .crypto .collection {
     justify-content: center;
+    flex-wrap: wrap;
   }
-  .crypto .collection .item {
-    width: 50px;
-    height: 72px;
-  }
-  .crypto .collection .item:last-child {
-    margin-right: 0;
-  }
-  .crypto .collection .item .cur-logo {
-    margin-bottom: 8px;
-  }
-  .crypto .collection .item .description .name {
-    font-size: 12px;
+}
+@media (max-width: 425px) and (max-width: 425px) {
+  .countdown {
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 }
 @media (max-width: 325px) {

@@ -10,30 +10,50 @@
 
             <div class="row figures-panel">
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">{{ $t('economy.ICOinfo.emission.title') }}</h1>
-                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.emission.amount') }} ALE</h3>
+                    <h1 class="figures-title">
+                        {{ $t('economy.ICOinfo.emission.title') }}
+                    </h1>
+                    <h3 class="figures-subtitle">
+                        {{ $t('economy.ICOinfo.emission.amount') }} ALE
+                    </h3>
                 </div>
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">{{ $t('economy.ICOinfo.hardCap.title') }}</h1>
-                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.hardCap.amount') }} ETH</h3>
+                    <h1 class="figures-title">
+                        {{ $t('economy.ICOinfo.hardCap.title') }}
+                    </h1>
+                    <h3 class="figures-subtitle">
+                        {{ $t('economy.ICOinfo.hardCap.amount') }} ETH
+                    </h3>
                 </div>
                 <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">{{ $t('economy.ICOinfo.softCap.title') }}</h1>
-                    <h3 class="figures-subtitle">{{ $t('economy.ICOinfo.softCap.amount') }} ETH</h3>
+                    <h1 class="figures-title">
+                        {{ $t('economy.ICOinfo.softCap.title') }}
+                    </h1>
+                    <h3 class="figures-subtitle">
+                        {{ $t('economy.ICOinfo.softCap.amount') }} ETH
+                    </h3>
                 </div>
             </div>
             <div class="row distribution">
-                <Circle1 :index="this.selectedDistributionIndex"></Circle1>
+                <Circle1 style="direction:ltr;" :index="this.selectedDistributionIndex"></Circle1>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list">
-                        <div class="item-list" v-for="(dist, distIndex) in distributionList" @mouseover="showDist(distIndex)">
-                            <div class="color-steep steep-sale" :class="['steep-'+dist.type]"></div>
-                            <span>{{ dist.title }}</span>
+                        <div class="item-list"
+                             v-for="(dist, distIndex) in distributionList"
+                             @mouseover="showDist(distIndex)">
+                            <div class="color-steep steep-sale"
+                                 :class="['steep-'+dist.type]">
+                            </div>
+                            <span>
+                                {{$t('economy.distribution.list['+distIndex+'].title')}}
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-12">
-                    <h1 class="section-title is-white is-right mt0">{{ $t('economy.distribution.title') }}</h1>
+                    <h1 class="section-title is-white is-right mt0">
+                        {{ $t('economy.distribution.title') }}
+                    </h1>
                     <div class="divider"></div>
                     <p class="small">
                         {{ $t('economy.distribution.description') }}
@@ -46,31 +66,28 @@
 
 <script>
     import Circle1 from "./layouts/Circle";
+
     export default {
         name: 'Economy',
-        components:{
-          Circle1
+        components: {
+            Circle1
         },
-        data () {
+        data() {
             return {
                 selectedDistributionIndex: -1,
                 distributionList: [{
-                    title: 'Sale for ICO',
                     type: 'sale',
                     count: 77,
                     color: '#139ac9'
                 }, {
-                    title: 'Team',
                     type: 'team',
                     count: 11,
                     color: '#6289fd'
                 }, {
-                    title: 'Referral program, advisors',
                     type: 'referral',
                     count: 10,
                     color: '#80ff89'
                 }, {
-                    title: 'Bounty',
                     type: 'bounty',
                     count: 2,
                     color: '#fab604'
@@ -78,13 +95,13 @@
             }
         },
         computed: {
-            activeDistribution () {
-                if(this.selectedDistributionIndex === -1) return '100%';
+            activeDistribution() {
+                if (this.selectedDistributionIndex === -1) return '100%';
                 else return this.distributionList[this.selectedDistributionIndex];
             }
         },
         methods: {
-            showDist (index) {
+            showDist(index) {
                 this.selectedDistributionIndex = index;
             }
         }
@@ -248,11 +265,28 @@
                 display flex
                 align-items center
 
+                &:hover
+
+                    .steep-sale
+                        background-color #139ac9
+
+                    .steep-team
+                        background-color #6289fd
+
+                    .steep-referral
+                        background-color #80ff89
+
+                    .steep-bounty
+                        background-color #fab604
+
                 .color-steep
                     width 20px
                     height 20px
                     border-radius 50%
                     margin-right 15px
+                    -webkit-transition all .3s ease-in-out
+                    -o-transition all .3s ease-in-out
+                    transition all .3s ease-in-out
 
                     &.steep-sale
                         border solid 2px #139ac9
@@ -267,7 +301,6 @@
                         border solid 2px #fab604
 
                 span
-                    color red
                     font-family MuseoSansCyrl300
                     font-size 16px
                     font-weight 300
@@ -277,7 +310,7 @@
                     letter-spacing normal
                     color #ffffff
 
-    @media(max-width: 1199px)
+    @media (max-width: 1199px)
         .figures-panel
             .figures-subtitle
                 font-size 26px
@@ -305,7 +338,7 @@
             .section-title
                 font-size 2.5em
 
-    @media(max-width: 991px)
+    @media (max-width: 991px)
         .figures-panel
             .figures-subtitle
                 font-size 20px
@@ -357,7 +390,7 @@
         .col-lg-3
             padding-right 0
 
-    @media(max-width: 767px)
+    @media (max-width: 767px)
         .figures-panel
             .figures-title
                 font-size 20px
@@ -414,7 +447,7 @@
             .small
                 text-align justify
 
-    @media(max-width: 575px)
+    @media (max-width: 575px)
         .distribution
             .steep-list
                 .item-list
@@ -446,9 +479,10 @@
                                 .steep-count
                                     font-size 18px
 
-    @media(max-width: 425px)
+    @media (max-width: 425px)
         .section-title
             font-size 1.9em
+
         .section-subtitle
             font-size 1em
             margin-bottom 0

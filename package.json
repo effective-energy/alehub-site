@@ -16,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-notify": "^3.2.0",
     "gulp-stylus": "^2.7.0",
+    "moment": "^2.22.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.16",
@@ -30,7 +31,9 @@
     "vue-resource": "^1.5.0",
     "vue-router": "^3.0.1",
     "vue-scrollto": "^2.11.0",
-    "vue-tiny-slider": "^0.1.17"
+    "vue-social-sharing": "^2.3.3",
+    "vue-tiny-slider": "^0.1.17",
+    "vue-yandex-metrika": "^1.6.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

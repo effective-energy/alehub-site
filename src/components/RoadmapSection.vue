@@ -25,16 +25,19 @@
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
+                        <h6>
+                            {{ slide.desk }}
+                        </h6>
                         <span class="date">
                             {{ slide.date }}
                         </span>
-                        <div class="responsible">
-                            <div class="avatar"
-                                 v-for="(item, index) in slide.members"
-                                 :key="index">
-                                <img :src="item" alt="">
-                            </div>
-                        </div>
+                        <!--<div class="responsible">-->
+                            <!--<div class="avatar"-->
+                                 <!--v-for="(item, index) in slide.members"-->
+                                 <!--:key="index">-->
+                                <!--<img :src="item" alt="">-->
+                            <!--</div>-->
+                        <!--</div>-->
                         <div class="slide-progress">
                             <div class="progress-line-outer">
                                 <div class="progress-line"
@@ -250,6 +253,10 @@
 </script>
 
 <style lang="stylus" scoped>
+    h6
+        border-top #343a49 1px solid
+        margin-bottom 12px
+        padding-top 12px
 
     .section
         padding 74px 0
@@ -370,6 +377,9 @@
                     -o-transition all .3s ease-in-out
                     transition all .3s ease-in-out
 
+                    h6
+                        margin-bottom 18px
+
                     &:hover
                         /*background-color #31394f*/
                         -webkit-box-shadow 0 0 1px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(255, 188, 0, 0.3)
@@ -418,6 +428,10 @@
                 text-align center
                 background-color #6f757f
                 clip-path circle(50% at center)
+
+                @media (max-width: 320px)
+                    width 45px
+                    height 45px
 
                 img
                     height 48px
