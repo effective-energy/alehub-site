@@ -428,7 +428,7 @@
 
         <div id="telegram-alert"
              class="telegram-alert"
-             v-if="checkWindowWidth"
+             v-if="checkMobileWidth"
              :class="{ 'telegram-alert__yellow': isDarkSection }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
@@ -601,6 +601,9 @@
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
             },
+            checkMobileWidth: function () {
+                return window.innerWidth > 425;
+            },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
                     return (this.collected / this.softCap) * 100 + '%';
@@ -695,16 +698,6 @@
                 this.timer.minutes.second = this.format(minutes, true);
                 this.timer.seconds.first = this.format(seconds);
                 this.timer.seconds.second = this.format(seconds, true);
-            },
-            getCoords: function (elem) {
-                if (!elem)
-                    return false;
-                let box = elem.getBoundingClientRect();
-
-                return {
-                    top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
-                };
             },
             handlerScroll: function () {
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
@@ -846,6 +839,7 @@
             // });
 
             setTimeout(() => {
+                console.log(localStorage.getItem('color-theme'), 'localStorage.getItem(\'color-theme\')')
                 if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
                     this.isDark = true;
                     this.isVideo = false;
@@ -858,9 +852,15 @@
                     this.isDark = true;
                     this.isVideo = true;
                     this.$parent.$emit('isDarkTheme', true);
-                } else {
+                } else if (this.checkWindowWidth) {
+                    this.isDark = true;
+                    this.isVideo = true;
                     localStorage.setItem('color-theme', 'video');
                     this.$parent.$emit('isDarkTheme', true);
+                } else {
+                    this.isDark = false;
+                    this.isVideo = false;
+                    this.$parent.$emit('isDarkTheme', false);
                 }
             }, 40);
 
@@ -895,8 +895,8 @@
     .telegram-alert
         cursor pointer
         position fixed
-        right 150px
-        bottom 150px
+        right 100px
+        bottom 75px
         border-radius 50%
         background-color #343a49
         width 70px
@@ -905,6 +905,24 @@
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 30px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1440px) and (max-width 2560px)
+            right 100px
+            bottom 75px
+            width 70px
+            height 70px
 
         a
             width 100%

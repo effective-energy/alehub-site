@@ -189,6 +189,9 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
+
+                console.log(dark, 'dark');
+
                 let navbarYOffset = document.getElementById('navbar').offsetHeight,
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
                     tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;

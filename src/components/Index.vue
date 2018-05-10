@@ -58,7 +58,6 @@
             });
 
             this.$on('checkIsDarkSection', (isDarkSection) => {
-                console.log(isDarkSection, 'index isDarkSection');
                 this.isDarkSection = isDarkSection;
             });
 
