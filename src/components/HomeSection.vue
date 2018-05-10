@@ -228,7 +228,8 @@
                                     </div>
                                 </button>
                                 <div class="place-player" :style="{ opacity: mainPlayer ? 1 : 0 }">
-                                    <div class="place-player__frame">
+                                    <div @click="yaCounter48802643.reachGoal('FirstVideo'); return true;"
+                                         class="place-player__frame">
                                     </div>
                                 </div>
                                 <div class="main-player" v-if="mainPlayer">
@@ -318,18 +319,23 @@
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
                 <a href="https://www.facebook.com/alehub.io/"
+                   @click="yaCounter48802643.reachGoal('Facebook'); return true;"
                    class="social-item fb"
                    target="_blank"></a>
                 <a href="https://www.instagram.com/alehub.io/"
+                   @click="yaCounter48802643.reachGoal('Instagram'); return true;"
                    class="social-item ins"
                    target="_blank"></a>
                 <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
+                   @click="yaCounter48802643.reachGoal('Youtube'); return true;"
                    class="social-item yt"
                    target="_blank"></a>
                 <a href="https://twitter.com/alehub_io"
+                   @click="yaCounter48802643.reachGoal('Twitter'); return true;"
                    class="social-item tw"
                    target="_blank"></a>
                 <a href="https://t.me/alehub"
+                   @click="yaCounter48802643.reachGoal('Telegram'); return true;"
                    class="social-item tg"
                    target="_blank"></a>
                 <a href="https://bitcointalk.org/index.php?topic=3676768.new"
@@ -393,6 +399,7 @@
                     <!--<img src="../../static/images/desctop.png"-->
                     <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
+                       @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
                        v-scroll-to="'#download-application'"
                        style="font-weight: bold; color: #fff;">
                         <button type="button">
@@ -416,8 +423,7 @@
                     <div class="buttons">
                         <a :href="currentWhitePaper"
                            class="btn btn-yellow"
-                           target="_blank"
-                           @click="yaMetrica">
+                           target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
                         <a class="btn btn-yellow"
@@ -673,12 +679,14 @@
             }
         },
         methods: {
-            doCloseTelegramAlertMobile: function () {
-                this.closedTelegramAlertMobile = true;
-                // localStorage.setItem('closedTelegramAlertMobile', 'true');
+            yaMetricaCollectionItem: function () {
+                yaCounter48802643.reachGoal('BuyCrypto');
+                console.log("cript");
+                return true;
             },
-            yaMetrica: function () {
-                // yaCounter48802643.reachGoal('DownloadWP');
+            yaMetricaCollectionLastItem: function () {
+                yaCounter48802643.reachGoal('BuyUSD');
+                console.log("usd");
                 return true;
             },
             changeCurrentCurrency: function (name) {
@@ -884,6 +892,10 @@
             },
         },
         mounted() {
+            let a = document.querySelector('.collection').getElementsByClassName('item');
+            a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
+
+
 
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
