@@ -255,10 +255,11 @@
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
                             <div class="item" v-for="item in currencies"
+                                 @click="yaMetricaCollectionItem(currencies)"
                                  @mouseover="changeCurrentCurrency(item.name)"
                                  @mouseout="resetCurrentCurrency">
                                 <div class="inner">
-                                    <a onclick="yaCounter48802643.reachGoal('BuyCrypto'); return true;" href="https://sale.alehub.io/" target="_blank">
+                                    <a href="https://sale.alehub.io/" target="_blank">
                                         <div class="cur-logo">
                                             <img :src="item.src" :alt="item.alt">
                                         </div>
@@ -417,7 +418,7 @@
                         {{ $t("about.description") }}
                     </p>
                     <div class="buttons">
-                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank" @click="yaMetrica">
+                        <a :href="currentWhitePaper" class="btn btn-yellow" target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
                         <a class="btn btn-yellow" v-scroll-to="'#features'" target="_blank">
@@ -616,8 +617,14 @@
             }
         },
         methods: {
-            yaMetrica: function () {
-                // yaCounter48802643.reachGoal('DownloadWP');
+            yaMetricaCollectionItem: function () {
+                yaCounter48802643.reachGoal('BuyCrypto');
+                console.log("cript");
+                return true;
+            },
+            yaMetricaCollectionLastItem: function () {
+                yaCounter48802643.reachGoal('BuyUSD');
+                console.log("usd");
                 return true;
             },
             changeCurrentCurrency: function (name) {
@@ -817,6 +824,10 @@
             },
         },
         mounted() {
+            let a = document.querySelector('.collection').getElementsByClassName('item');
+            a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
+
+
 
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
