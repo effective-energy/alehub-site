@@ -32,6 +32,13 @@
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
+
+            <div class="navbar-folding__inner">
+                <div class="navbar-item" v-for="(item, index) in $t('navbar.menuList')">
+                    {{ item.name }}
+                </div>
+            </div>
+
             <!--<div class="wrap-navbar">-->
             <!--<div class="inner-navbar">-->
 
@@ -223,8 +230,6 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
-
-                console.log(dark, 'dark');
 
                 let navbarYOffset = document.getElementById('navbar').offsetHeight,
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
@@ -423,7 +428,7 @@
             }
         },
         created() {
-            console.log(localStorage.getItem('systemLang'), 'localStorage.getItem(\'systemLang\')');
+
         },
         mounted() {
             this.$on('changeModalLanguage', (val) => {
@@ -656,23 +661,44 @@
 
 <style lang="stylus" scoped>
 
-    #slider-navbar
-        display none !important
-
-        @media (min-width 1024px) and (max-width 1350px)
-            display flex !important
-
     .navbar
         flex-wrap nowrap
 
-    .navbar-folding
-        display flex
-        position relative
-        height 100%
-        width 100%
+        .navbar-folding
+            display flex
+            position relative
+            height 100%
+            width 100%
 
-        @media (max-width 1024px)
-            display none
+            @media (max-width 1024px)
+                display none
+
+            #slider-navbar
+                display none !important
+
+                @media (min-width 1024px) and (max-width 1350px)
+                    display flex !important
+
+            .navbar-folding__inner
+                width 100%
+                display flex
+                justify-content space-around
+                align-items center
+
+                @media (min-width 1024px) and (max-width 1350px)
+                    display none !important
+
+                .navbar-item
+                    font-size 18px
+                    font-weight 600
+
+            .right-menu
+                position block
+
+                /*@media (min-width 1024px) and (max-width 1350px)*/
+                    /*position absolute*/
+                    /*right 0*/
+
 
     /*.wrap-navbar*/
     /*max-width 100%*/

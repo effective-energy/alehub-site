@@ -149,10 +149,15 @@
         </div>
 
         <div class="section-3" id="main-features">
+            <!--v-if="isVideo"-->
 
-            <div class="figure">
-                <img src="../../static/images/layer.png" alt="" style="width: 100%;">
-            </div>
+            <video autoplay muted loop id="myVideoScale">
+                <source src="../../static/video/libra2.mp4" type="video/mp4; codecs='avc1.4D401E, mp4a.40.2'">
+            </video>
+
+            <!--<div class="figure">-->
+                <!--<img src="../../static/images/layer.png" alt="" style="width: 100%;">-->
+            <!--</div>-->
 
             <div class="info-block">
                 <h3 class="title">
@@ -394,10 +399,8 @@
                     height 35px
 
         @media (min-width 768px) and (max-width 1274px)
-            position unset
-            margin 48px auto 0
-            display block
             text-align center
+            margin 48px auto 0
 
             .play-button
                 margin 0
@@ -511,11 +514,14 @@
             padding-top 105px
             width 100%
             display flex
+
             .figure
                 width 30%
+
             .info-block
                 width 70%
                 padding-left 5%
+
                 .title
                     font-size 40px
                     margin-bottom 60px

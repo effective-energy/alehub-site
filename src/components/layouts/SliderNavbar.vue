@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 100%; display: flex; justify-content: center;">
+    <div class="slider-navbar">
 
         <!--v-if="isControlButton"-->
         <!--@click="clickPrev"-->
@@ -8,10 +8,13 @@
                 :class="{ 'transparent': !isLeft }"
                 :disabled="!isLeft"
                 @click="prevSlide">
-            <img class="arrow-prev" src="../../../static/images/arrow-left-black.svg" alt="more navbar items">
+            <img class="arrow-prev"
+                 src="../../../static/images/arrow-left-black.svg"
+                 alt="more navbar items">
         </button>
 
-        <div class="wrap" style="user-select: none;">
+        <div class="wrap"
+             :class="{ 'width-85': isDeutsch && isUpTo1300 ||  isFrench && isUpTo1200 }">
 
             <!--@mousedown="dragStart($event)"-->
             <!--@mouseup="dragEnd()"-->
@@ -28,10 +31,16 @@
                     <!--@mouseleave="startAutoplay('true')"-->
 
                     <div class="b-carousel__item"
+                         :class="{
+                            'flex-basis-20': isFrench && isUpTo1350 || isDeutsch && isUpTo1350,
+                            'flex-basis-25': isFrench && isUpTo1200 }"
                          v-for="(item, i) in items"
                          :key="i">
 
-                        {{ item.name }}
+                        <a :href="item.path"
+                           v-scroll-to="item.path">
+                            {{ item.name }}
+                        </a>
 
                     </div>
                 </div>
@@ -65,8 +74,16 @@
             },
         },
         watch: {
-            right: function (val) {
-                console.log(val, 'right');
+            '$i18n.locale'() {
+                if (this.isFrench && this.isUpTo1350 || this.isDeutsch && this.isUpTo1350) {
+                    this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+                    this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
+                }
+                if (this.isFrench && this.isUpTo1200) {
+                    this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+                    this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
+                }
+
             }
         },
         data() {
@@ -76,7 +93,8 @@
                     maxPosition: 4
                 },
                 right: true,
-                left: false
+                left: false,
+                multiplier: 0
             }
         },
         computed: {
@@ -85,6 +103,27 @@
             },
             isLeft: function () {
                 return this.left;
+            },
+            isDeutsch: function () {
+                return this.$i18n.locale === 'de';
+            },
+            isFrench: function () {
+                return this.$i18n.locale === 'fr';
+            },
+            isUpTo1350: function () {
+                return window.innerWidth > 1250 && window.innerWidth <= 1350;
+            },
+            isUpTo1300: function () {
+                return window.innerWidth > 1250 && window.innerWidth <= 1300;
+            },
+            isUpTo1250: function () {
+                return window.innerWidth > 1150 && window.innerWidth <= 1250;
+            },
+            isUpTo1200: function () {
+                return window.innerWidth > 1150 && window.innerWidth <= 1200;
+            },
+            isUpTo1150: function () {
+                return window.innerWidth > 1024 && window.innerWidth <= 1150;
             }
         },
         methods: {
@@ -96,12 +135,10 @@
                     next: document.querySelector('.n-js-carousel__next')
                 };
 
-                let multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
-
                 --this.opt.position;
 
                 if (this.opt.position < this.opt.maxPosition)
-                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * multiplier }%)`;
+                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
 
                 if (this.opt.position < this.opt.maxPosition)
                     this.right = true;
@@ -121,8 +158,6 @@
                     next: document.querySelector('.n-js-carousel__next')
                 };
 
-                let multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
-
                 if (this.opt.position < this.opt.maxPosition) {
                     ++this.opt.position;
                 }
@@ -132,26 +167,30 @@
                 }
 
                 sel.wrap.style['transition'] = '';
-                sel.wrap.style['transform'] = `translateX(-${ this.opt.position * multiplier }%)`;
+                sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
 
                 (this.opt.position === this.opt.maxPosition) ? this.right = false : this.right = true;
             },
         },
         mounted() {
             let items = document.querySelector('.n-js-carousel__wrap').children;
+
+            this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
             this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .slider-navbar
+        width 80%
+        display flex
+        justify-content flex-end
+
     .wrap
         width 100%
         display flex
         justify-content center
-
-        @media (min-width 1024px) and (max-width 1150px)
-            width 90%
 
         .b-carousel
             width 100%
@@ -182,6 +221,18 @@
                     align-items center
                     justify-content center
 
+                    &:focus
+                        outline none
+
+                    a
+                        color black
+
+                        &:hover
+                            text-decoration none
+
+                        &:focus
+                            outline none
+
                     @media (min-width 1250px) and (max-width 1350px)
                         flex-grow 0
                         flex-shrink 0
@@ -196,7 +247,6 @@
                         flex-grow 0
                         flex-shrink 0
                         flex-basis 25%
-
 
     .b-carousel__prev
         @media (min-width 1250px) and (max-width 1350px)
@@ -250,5 +300,17 @@
 
     .transparent
         opacity 0
+
+    .flex-basis-20
+        flex-basis 20% !important
+
+    .flex-basis-25
+        flex-basis 25% !important
+
+    .width-85
+        width 85% !important
+
+    .width-90
+        width 90% !important
 
 </style>
