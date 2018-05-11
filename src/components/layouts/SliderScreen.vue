@@ -55,11 +55,6 @@
                 yDrag: 0,
             }
         },
-        computed: {
-            isAutoplayAccess: function () {
-                return this.autoplayAccess;
-            }
-        },
         methods: {
             dragStart: function (e) {
                 this.xDrag = e.pageX;
@@ -174,10 +169,6 @@
                 this.autoplayAccess = this.options.autoplay;
                 this.initAutoplay(5000);
             }
-
-            console.log(this.options, 'this.options');
-
-            console.log(this.items, 'this.items');
         }
     }
 </script>

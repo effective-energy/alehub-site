@@ -28,50 +28,52 @@
         </div>
         <div class="navbar-folding" id="navbarText">
 
-            <slider-navbar :items="$t('navbar.menuList')" :options="optionsToSliderNavbar"/>
+            <slider-navbar id="slider-navbar"
+                           :items="$t('navbar.menuList')"
+                           :options="optionsToSliderNavbar"/>
 
             <!--<div class="wrap-navbar">-->
-                <!--<div class="inner-navbar">-->
+            <!--<div class="inner-navbar">-->
 
-                    <!--<div class="nav-item-1" v-for="(item, index) in $t('navbar.menuList')">-->
-                        <!--{{ item.name }}-->
-                    <!--</div>-->
+            <!--<div class="nav-item-1" v-for="(item, index) in $t('navbar.menuList')">-->
+            <!--{{ item.name }}-->
+            <!--</div>-->
 
-                    <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto" v-if="!show">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li v-for="(item, index) in $t('navbar.menuList')"&ndash;&gt;-->
-                    <!--&lt;!&ndash;:key="index"&ndash;&gt;-->
-                    <!--&lt;!&ndash;class="nav-item"&ndash;&gt;-->
-                    <!--&lt;!&ndash;:class="{ active: index === activeItem }">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto" v-if="!show">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li v-for="(item, index) in $t('navbar.menuList')"&ndash;&gt;-->
+            <!--&lt;!&ndash;:key="index"&ndash;&gt;-->
+            <!--&lt;!&ndash;class="nav-item"&ndash;&gt;-->
+            <!--&lt;!&ndash;:class="{ active: index === activeItem }">&ndash;&gt;-->
 
-                    <!--&lt;!&ndash;<a @click="activeItem = index"&ndash;&gt;-->
-                    <!--&lt;!&ndash;class="nav-link"&ndash;&gt;-->
-                    <!--&lt;!&ndash;v-scroll-to="item.path">&ndash;&gt;-->
-                    <!--&lt;!&ndash;{{ item.name }}&ndash;&gt;-->
-                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li class="nav-line nav-line__yellow" v-if="isYellow"></li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li class="nav-line nav-line__black" v-else-if="isDark"></li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li class="nav-line nav-line__white" v-else></li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a @click="activeItem = index"&ndash;&gt;-->
+            <!--&lt;!&ndash;class="nav-link"&ndash;&gt;-->
+            <!--&lt;!&ndash;v-scroll-to="item.path">&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ item.name }}&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="nav-line nav-line__yellow" v-if="isYellow"></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="nav-line nav-line__black" v-else-if="isDark"></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li class="nav-line nav-line__white" v-else></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
 
-                    <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto"&ndash;&gt;-->
-                    <!--&lt;!&ndash;v-else-if="show === 'blog'">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto"&ndash;&gt;-->
+            <!--&lt;!&ndash;v-else-if="show === 'blog'">&ndash;&gt;-->
 
-                    <!--&lt;!&ndash;<router-link class="nav-item"&ndash;&gt;-->
-                    <!--&lt;!&ndash;tag="li"&ndash;&gt;-->
-                    <!--&lt;!&ndash;:to="'/blog'">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<a href="#" class="nav-link">&ndash;&gt;-->
-                    <!--&lt;!&ndash;{{ $t("navbar.blog") }}&ndash;&gt;-->
-                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</router-link>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-                <!--</div>-->
+            <!--&lt;!&ndash;<router-link class="nav-item"&ndash;&gt;-->
+            <!--&lt;!&ndash;tag="li"&ndash;&gt;-->
+            <!--&lt;!&ndash;:to="'/blog'">&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="#" class="nav-link">&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ $t("navbar.blog") }}&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</router-link>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--</div>-->
 
-                <!--<div class="more-navbar-items">-->
-                    <!--<img src="../../../static/images/arrow-right-dark.svg" alt="more navbar items">-->
-                <!--</div>-->
+            <!--<div class="more-navbar-items">-->
+            <!--<img src="../../../static/images/arrow-right-dark.svg" alt="more navbar items">-->
+            <!--</div>-->
 
             <!--</div>-->
 
@@ -420,6 +422,9 @@
                 document.body.removeEventListener('touchmove', this.preventDefault, {passive: false});
             }
         },
+        created() {
+            console.log(localStorage.getItem('systemLang'), 'localStorage.getItem(\'systemLang\')');
+        },
         mounted() {
             this.$on('changeModalLanguage', (val) => {
                 this.selectedLanguage = val;
@@ -644,11 +649,19 @@
 
             if (document.getElementById('select-lang'))
                 this.heightLangItem = document.getElementById('select-lang').offsetHeight;
+
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+
+    #slider-navbar
+        display none !important
+
+        @media (min-width 1024px) and (max-width 1350px)
+            display flex !important
+
     .navbar
         flex-wrap nowrap
 
@@ -656,45 +669,46 @@
         display flex
         position relative
         height 100%
+        width 100%
 
         @media (max-width 1024px)
             display none
 
-        .wrap-navbar
-            max-width 100%
-            width 100%
-            height 100%
-            display flex
-            align-items center
-            overflow-x hidden
-            position relative
+    /*.wrap-navbar*/
+    /*max-width 100%*/
+    /*width 100%*/
+    /*height 100%*/
+    /*display flex*/
+    /*align-items center*/
+    /*overflow-x hidden*/
+    /*position relative*/
 
-            @media (max-width 1350px)
-                max-width 80%
-                width 80%
+    /*@media (max-width 1350px)*/
+    /*max-width 80%*/
+    /*width 80%*/
 
-            .more-navbar-items
-                display none
+    /*.more-navbar-items*/
+    /*display none*/
 
-                @media (max-width 1350px)
-                    display block
-                    position absolute
-                    right 0
+    /*@media (max-width 1350px)*/
+    /*display block*/
+    /*position absolute*/
+    /*right 0*/
 
-            .inner-navbar
-                min-width 100%
-                position relative
-                display flex
-                flex-direction row
-                justify-content space-around
+    /*.inner-navbar*/
+    /*min-width 100%*/
+    /*position relative*/
+    /*display flex*/
+    /*flex-direction row*/
+    /*justify-content space-around*/
 
-                @media (max-width 1350px)
-                    min-width 120%
+    /*@media (max-width 1350px)*/
+    /*min-width 120%*/
 
-                .nav-item-1
-                    font-size 18px
-                    font-family MuseoSansCyrl500
-                    font-weight 500
+    /*.nav-item-1*/
+    /*font-size 18px*/
+    /*font-family MuseoSansCyrl500*/
+    /*font-weight 500*/
 
     .select-lang
         cursor pointer

@@ -4,8 +4,11 @@
         <!--v-if="isControlButton"-->
         <!--@click="clickPrev"-->
 
-        <button class="b-carousel__prev n-js-carousel__prev">
-            <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
+        <button class="b-carousel__prev n-js-carousel__prev"
+                :class="{ 'transparent': !isLeft }"
+                :disabled="!isLeft"
+                @click="prevSlide">
+            <img class="arrow-prev" src="../../../static/images/arrow-left-black.svg" alt="more navbar items">
         </button>
 
         <div class="wrap" style="user-select: none;">
@@ -26,8 +29,7 @@
 
                     <div class="b-carousel__item"
                          v-for="(item, i) in items"
-                         :key="i"
-                         :style="`flex: 0 0 20%`">
+                         :key="i">
 
                         {{ item.name }}
 
@@ -39,8 +41,11 @@
         <!--v-if="isControlButton"-->
         <!--@click="clickNext"-->
 
-        <button class="b-carousel__next n-js-carousel__next">
-            <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
+        <button class="b-carousel__next n-js-carousel__next"
+                :class="{ 'transparent': !isRight }"
+                :disabled="!isRight"
+                @click="nextSlide">
+            <img class="arrow-next" src="../../../static/images/arrow-right-black.svg" alt="more navbar items">
         </button>
 
     </div>
@@ -59,15 +64,82 @@
                 required: true
             },
         },
+        watch: {
+            right: function (val) {
+                console.log(val, 'right');
+            }
+        },
+        data() {
+            return {
+                opt: {
+                    position: 0,
+                    maxPosition: 4
+                },
+                right: true,
+                left: false
+            }
+        },
         computed: {
-
+            isRight: function () {
+                return this.right;
+            },
+            isLeft: function () {
+                return this.left;
+            }
         },
         methods: {
+            prevSlide: function () {
+                let sel = {
+                    wrap: document.querySelector('.n-js-carousel__wrap'),
+                    children: document.querySelector('.n-js-carousel__wrap').children,
+                    prev: document.querySelector('.n-js-carousel__prev'),
+                    next: document.querySelector('.n-js-carousel__next')
+                };
 
+                let multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+
+                --this.opt.position;
+
+                if (this.opt.position < this.opt.maxPosition)
+                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * multiplier }%)`;
+
+                if (this.opt.position < this.opt.maxPosition)
+                    this.right = true;
+
+                if (this.opt.position === 0) {
+                    sel.wrap.style['transform'] = 'translateX(0)';
+                    this.left = false
+                } else {
+                    this.left = true
+                }
+            },
+            nextSlide: function () {
+                let sel = {
+                    wrap: document.querySelector('.n-js-carousel__wrap'),
+                    children: document.querySelector('.n-js-carousel__wrap').children,
+                    prev: document.querySelector('.n-js-carousel__prev'),
+                    next: document.querySelector('.n-js-carousel__next')
+                };
+
+                let multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+
+                if (this.opt.position < this.opt.maxPosition) {
+                    ++this.opt.position;
+                }
+
+                if (this.opt.position > 0) {
+                    this.left = true;
+                }
+
+                sel.wrap.style['transition'] = '';
+                sel.wrap.style['transform'] = `translateX(-${ this.opt.position * multiplier }%)`;
+
+                (this.opt.position === this.opt.maxPosition) ? this.right = false : this.right = true;
+            },
         },
         mounted() {
-            console.log(this.items, 'this.items');
-            console.log(this.options, 'this.options');
+            let items = document.querySelector('.n-js-carousel__wrap').children;
+            this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
         }
     }
 </script>
@@ -77,6 +149,9 @@
         width 100%
         display flex
         justify-content center
+
+        @media (min-width 1024px) and (max-width 1150px)
+            width 90%
 
         .b-carousel
             width 100%
@@ -99,13 +174,81 @@
                 height 100%
 
                 .b-carousel__item
-                    /*flex 0 0 25%*/
+                    font-size 18px
+                    font-family MuseoSansCyrl500
+                    font-weight 500
                     overflow hidden
                     display flex
                     align-items center
                     justify-content center
 
-                    @media (max-width 320px)
-                        width 270px
+                    @media (min-width 1250px) and (max-width 1350px)
+                        flex-grow 0
+                        flex-shrink 0
+                        flex-basis 16.666666%
+
+                    @media (min-width 1150px) and (max-width 1250px)
+                        flex-grow 0
+                        flex-shrink 0
+                        flex-basis 20%
+
+                    @media (min-width 1024px) and (max-width 1150px)
+                        flex-grow 0
+                        flex-shrink 0
+                        flex-basis 25%
+
+
+    .b-carousel__prev
+        @media (min-width 1250px) and (max-width 1350px)
+            margin-left 25px
+
+        @media (min-width 1150px) and (max-width 1250px)
+            margin-left 20px
+
+        @media (min-width 1024px) and (max-width 1150px)
+            margin-left 15px
+
+    .b-carousel__next
+        @media (min-width 1250px) and (max-width 1350px)
+            margin-right 25px
+
+        @media (min-width 1150px) and (max-width 1250px)
+            margin-right 20px
+
+        @media (min-width 1024px) and (max-width 1150px)
+            margin-right 15px
+
+    .b-carousel__prev, .b-carousel__next
+        padding 0
+        opacity 1
+        cursor pointer
+        position relative
+        background-color transparent
+        border none
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+
+        .arrow-prev, .arrow-next
+            width 50%
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
+
+        &:focus
+            outline none
+
+    .b-carousel__prev
+        &:active
+            .arrow-prev
+                transform translateX(-10px)
+
+    .b-carousel__next
+        &:active
+            .arrow-next
+                transform translateX(10px)
+
+    .transparent
+        opacity 0
 
 </style>
