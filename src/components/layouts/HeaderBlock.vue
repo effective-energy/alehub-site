@@ -66,35 +66,45 @@
                         <!--классы поместить в массив с названиями языков в data()-->
                         <div class="select-lang__item select-lang__fr"
                              :class="{ 'selected': currentLang === 'fr' }"
-                             @click="changeLanguage(8)">
+                             @click="changeLanguage(8);
+                                     yaCounter48802643.reachGoal('FR');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>FR</span>
                         </div>
                         <div class="select-lang__item select-lang__de"
                              :class="{ 'selected': currentLang === 'de' }"
-                             @click="changeLanguage(7)">
+                             @click="changeLanguage(7);
+                                     yaCounter48802643.reachGoal('DE');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>DE</span>
                         </div>
                         <div class="select-lang__item select-lang__es"
                              :class="{ 'selected': currentLang === 'es' }"
-                             @click="changeLanguage(6)">
+                             @click="changeLanguage(6);
+                                     yaCounter48802643.reachGoal('ES');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>ES</span>
                         </div>
                         <div class="select-lang__item select-lang__ar"
                              :class="{ 'selected': currentLang === 'ar' }"
-                             @click="changeLanguage(5)">
+                             @click="changeLanguage(5);
+                                     yaCounter48802643.reachGoal('AR');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>AR</span>
                         </div>
                         <div class="select-lang__item select-lang__ko"
                              :class="{ 'selected': currentLang === 'ko' }"
-                             @click="changeLanguage(4)">
+                             @click="changeLanguage(4);
+                                     yaCounter48802643.reachGoal('KO');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>KO</span>
@@ -106,21 +116,27 @@
                         </div>
                         <div class="select-lang__item select-lang__zh"
                              :class="{ 'selected': currentLang === 'ch' }"
-                             @click="changeLanguage(2)">
+                             @click="changeLanguage(2);
+                                     yaCounter48802643.reachGoal('CH');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>ZH</span>
                         </div>
                         <div class="select-lang__item select-lang__ru"
                              :class="{ 'selected': currentLang === 'ru' }"
-                             @click="changeLanguage(1)">
+                             @click="changeLanguage(1);
+                                     yaCounter48802643.reachGoal('RU');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>RU</span>
                         </div>
                         <div class="select-lang__item select-lang__en"
                              :class="{ 'selected': currentLang === 'en' }"
-                             @click="changeLanguage(0)">
+                             @click="changeLanguage(0);
+                                     yaCounter48802643.reachGoal('EN');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>EN</span>
