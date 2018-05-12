@@ -5,7 +5,6 @@
                    'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300,
                    'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250,
                    'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100}">
-
         <button class="b-carousel__prev n-js-carousel__prev"
                 :class="{ 'transparent': !isLeft }"
                 :disabled="!isLeft"
@@ -14,27 +13,13 @@
                  src="../../../static/images/arrow-left-black.svg"
                  alt="more navbar items">
         </button>
-
         <div class="wrap"
              :class="{ 'width-95': isFrench && isUpTo1150,
                        'width-85': isDeutsch && (isUpTo1300 || isUpTo1250 || isUpTo1200 || isUpTo1150 || isUpTo1100) ||  isFrench &&
                        (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && isUpTo1150 || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
                        'width-80': isRussian && isUpTo1100 || isFrench && isUpTo1100 }">
-
-            <!--@mousedown="dragStart($event)"-->
-            <!--@mouseup="dragEnd()"-->
-            <!--@mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'"-->
-
             <div class="b-carousel n-js-carousel">
-
-                <!--@touchstart="(privates1.touch) ? touchStart($event) : 'false'"-->
-                <!--@touchmove="(privates1.touch) ? touchMove($event) : 'false'"-->
-
                 <div class="b-carousel__wrap n-js-carousel__wrap">
-
-                    <!--@mouseover="stopAutoplay"-->
-                    <!--@mouseleave="startAutoplay('true')"-->
-
                     <div class="b-carousel__item"
                          :class="{
                             'flex-basis-20': isFrench && (isUpTo1350 || isUpTo1300) || isDeutsch && (isUpTo1350 || isUpTo1300) ||
@@ -54,17 +39,12 @@
                 </div>
             </div>
         </div>
-
-        <!--v-if="isControlButton"-->
-        <!--@click="clickNext"-->
-
         <button class="b-carousel__next n-js-carousel__next"
                 :class="{ 'transparent': !isRight }"
                 :disabled="!isRight"
                 @click="nextSlide">
             <img class="arrow-next" src="../../../static/images/arrow-right-black.svg" alt="more navbar items">
         </button>
-
     </div>
 </template>
 

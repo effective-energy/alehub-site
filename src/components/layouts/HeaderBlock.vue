@@ -35,55 +35,22 @@
 
             <div class="navbar-folding__inner">
                 <div class="navbar-item" v-for="(item, index) in $t('navbar.menuList')">
-                    {{ item.name }}
+                    <a :href="item.path"
+                       v-scroll-to="item.path">
+                        {{ item.name }}
+                    </a>
+                    <div class="nav-line"
+                         :class="{ 'nav-line__yellow': isYellow, 'nav-line__orange': isOrange,
+                         'nav-line__black': isDark, 'nav-line__white': !isYellow && !isOrange && !isDark }"
+                         v-if="index === 0">
+                    </div>
                 </div>
             </div>
 
-            <!--<div class="wrap-navbar">-->
-            <!--<div class="inner-navbar">-->
-
-            <!--<div class="nav-item-1" v-for="(item, index) in $t('navbar.menuList')">-->
-            <!--{{ item.name }}-->
-            <!--</div>-->
-
-            <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto" v-if="!show">&ndash;&gt;-->
-            <!--&lt;!&ndash;<li v-for="(item, index) in $t('navbar.menuList')"&ndash;&gt;-->
-            <!--&lt;!&ndash;:key="index"&ndash;&gt;-->
-            <!--&lt;!&ndash;class="nav-item"&ndash;&gt;-->
-            <!--&lt;!&ndash;:class="{ active: index === activeItem }">&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<a @click="activeItem = index"&ndash;&gt;-->
-            <!--&lt;!&ndash;class="nav-link"&ndash;&gt;-->
-            <!--&lt;!&ndash;v-scroll-to="item.path">&ndash;&gt;-->
-            <!--&lt;!&ndash;{{ item.name }}&ndash;&gt;-->
-            <!--&lt;!&ndash;</a>&ndash;&gt;-->
-            <!--&lt;!&ndash;</li>&ndash;&gt;-->
-            <!--&lt;!&ndash;&ndash;&gt;-->
-            <!--&lt;!&ndash;<li class="nav-line nav-line__yellow" v-if="isYellow"></li>&ndash;&gt;-->
-            <!--&lt;!&ndash;<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>&ndash;&gt;-->
-            <!--&lt;!&ndash;<li class="nav-line nav-line__black" v-else-if="isDark"></li>&ndash;&gt;-->
-            <!--&lt;!&ndash;<li class="nav-line nav-line__white" v-else></li>&ndash;&gt;-->
-            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<ul class="navbar-nav mr-auto ml-auto"&ndash;&gt;-->
-            <!--&lt;!&ndash;v-else-if="show === 'blog'">&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<router-link class="nav-item"&ndash;&gt;-->
-            <!--&lt;!&ndash;tag="li"&ndash;&gt;-->
-            <!--&lt;!&ndash;:to="'/blog'">&ndash;&gt;-->
-            <!--&lt;!&ndash;<a href="#" class="nav-link">&ndash;&gt;-->
-            <!--&lt;!&ndash;{{ $t("navbar.blog") }}&ndash;&gt;-->
-            <!--&lt;!&ndash;</a>&ndash;&gt;-->
-            <!--&lt;!&ndash;</router-link>&ndash;&gt;-->
-            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-            <!--</div>-->
-
-            <!--<div class="more-navbar-items">-->
-            <!--<img src="../../../static/images/arrow-right-dark.svg" alt="more navbar items">-->
-            <!--</div>-->
-
-            <!--</div>-->
-
+            <!--<li class="nav-line nav-line__yellow" v-if="isYellow"></li>-->
+            <!--<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>-->
+            <!--<li class="nav-line nav-line__black" v-else-if="isDark"></li>-->
+            <!--<li class="nav-line nav-line__white" v-else></li>-->
 
             <div class="right-menu">
                 <a class="btn btn-login"
@@ -323,16 +290,22 @@
                 if (!document.querySelector('.nav-line'))
                     return false;
 
-                let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
+                let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 
-                let scope = 0;
-                for (let i = 0; i <= index; i++) {
-                    if (index === 0 || index === i)
-                        continue;
-                    scope += document.querySelectorAll('.nav-item')[i].offsetWidth;
-                }
-                document.querySelector('.nav-line').style.transform = `translate3D(${ scope }px,0,0)`;
+                // let scope = 0;
+                // for (let i = 0; i <= index; i++) {
+                //     if (index === 0 || index === i)
+                //         continue;
+                //     scope += document.querySelectorAll('.navbar-item')[i].offsetWidth;
+                // }
+
+                let currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left,
+                    firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left;
+
+                let delta = currentNavbarItem - firstNavbarItem;
+
+                document.querySelector('.nav-line').style.transform = `translate3D(${ delta }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -680,11 +653,14 @@
                     display flex !important
 
             .navbar-folding__inner
+                width 100%
+                position relative
                 display flex
                 flex-direction row
                 align-items center
-                margin-right auto !important
-                margin-left auto !important
+                justify-content space-around
+                /*margin-right auto !important*/
+                /*margin-left auto !important*/
 
                 @media (min-width 1024px) and (max-width 1350px)
                     display none !important
@@ -692,7 +668,22 @@
                 .navbar-item
                     font-size 18px
                     font-weight 600
-                    padding 8px 24px
+
+                    a
+                        color #0f1118
+
+                        &:hover
+                            text-decoration none
+                            color #0f1118
+
+                .nav-line
+                    position absolute
+                    height 2px
+                    background-color #34343e
+                    bottom 10px
+                    -webkit-transition all .5s ease
+                    -o-transition all .5s ease
+                    transition all .5s ease
 
             .right-menu
                 position block
@@ -700,7 +691,6 @@
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
                     right 0
-
 
     /*.wrap-navbar*/
     /*max-width 100%*/
@@ -976,24 +966,16 @@
             box-shadow none
 
     .nav-line__white
-        border 1px solid #fff
-        border-width 0 24px
-        background-color #ffbc00
+        background-color #ffbc00 !important
 
     .nav-line__yellow
-        border 1px solid #ffd24f
-        border-width 0 24px
-        background-color #343a49
+        background-color #343a49 !important
 
     .nav-line__orange
-        border 1px solid #feaf1c
-        border-width 0 24px
-        background-color #343a49
+        background-color #343a49 !important
 
     .nav-line__black
-        border 1px solid #343a49
-        border-width 0 24px
-        background-color #ffbc00
+        background-color #ffbc00 !important
 
     .nav-item
         cursor pointer
@@ -1115,11 +1097,12 @@
         .navbar-brand
             color #fff
 
-        .nav-link
-            -webkit-transition all 0.4s ease
-            -o-transition all 0.4s ease
-            transition all 0.4s ease
-            color #fff !important
+        .navbar-item
+            a
+                -webkit-transition all 0.4s ease
+                -o-transition all 0.4s ease
+                transition all 0.4s ease
+                color #fff !important
 
         .navbar-folding
             color white
