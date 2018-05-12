@@ -1,8 +1,10 @@
 <template>
-    <div class="slider-navbar">
-
-        <!--v-if="isControlButton"-->
-        <!--@click="clickPrev"-->
+    <div class="slider-navbar"
+         :class="{ 'width-79': isDeutsch && isUpTo1200 || isFrench && isUpTo1200,
+                   'width-78': isSpanish && isUpTo1200 || isDeutsch && isUpTo1150 || isFrench && isUpTo1350,
+                   'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300,
+                   'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250,
+                   'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100}">
 
         <button class="b-carousel__prev n-js-carousel__prev"
                 :class="{ 'transparent': !isLeft }"
@@ -14,7 +16,10 @@
         </button>
 
         <div class="wrap"
-             :class="{ 'width-85': isDeutsch && isUpTo1300 ||  isFrench && isUpTo1200 }">
+             :class="{ 'width-95': isFrench && isUpTo1150,
+                       'width-85': isDeutsch && (isUpTo1300 || isUpTo1250 || isUpTo1200 || isUpTo1150 || isUpTo1100) ||  isFrench &&
+                       (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && isUpTo1150 || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
+                       'width-80': isRussian && isUpTo1100 || isFrench && isUpTo1100 }">
 
             <!--@mousedown="dragStart($event)"-->
             <!--@mouseup="dragEnd()"-->
@@ -32,8 +37,11 @@
 
                     <div class="b-carousel__item"
                          :class="{
-                            'flex-basis-20': isFrench && isUpTo1350 || isDeutsch && isUpTo1350,
-                            'flex-basis-25': isFrench && isUpTo1200 }"
+                            'flex-basis-20': isFrench && (isUpTo1350 || isUpTo1300) || isDeutsch && (isUpTo1350 || isUpTo1300) ||
+                            isRussian && (isUpTo1350 || isUpTo1300) ||
+                            isEnglish && isUpTo1150 || isSpanish && (isUpTo1300 || isUpTo1350),
+                            'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250),
+                             'flex-basis-33': isUpTo1100 && (isRussian || isFrench) }"
                          v-for="(item, i) in items"
                          :key="i">
 
@@ -75,15 +83,10 @@
         },
         watch: {
             '$i18n.locale'() {
-                if (this.isFrench && this.isUpTo1350 || this.isDeutsch && this.isUpTo1350) {
-                    this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
-                    this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
-                }
-                if (this.isFrench && this.isUpTo1200) {
-                    this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
-                    this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
-                }
-
+                // if (this.isFrench && (this.isUpTo1350 || this.isUpTo1200) || this.isDeutsch && this.isUpTo1350) {
+                this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+                this.opt.maxPosition = this.items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
+                // }
             }
         },
         data() {
@@ -110,20 +113,32 @@
             isFrench: function () {
                 return this.$i18n.locale === 'fr';
             },
+            isRussian: function () {
+                return this.$i18n.locale === 'ru';
+            },
+            isEnglish: function () {
+                return this.$i18n.locale === 'en';
+            },
+            isSpanish: function () {
+                return this.$i18n.locale === 'es';
+            },
             isUpTo1350: function () {
-                return window.innerWidth > 1250 && window.innerWidth <= 1350;
+                return window.innerWidth > 1300 && window.innerWidth <= 1350;
             },
             isUpTo1300: function () {
                 return window.innerWidth > 1250 && window.innerWidth <= 1300;
             },
             isUpTo1250: function () {
-                return window.innerWidth > 1150 && window.innerWidth <= 1250;
+                return window.innerWidth > 1200 && window.innerWidth <= 1250;
             },
             isUpTo1200: function () {
                 return window.innerWidth > 1150 && window.innerWidth <= 1200;
             },
             isUpTo1150: function () {
-                return window.innerWidth > 1024 && window.innerWidth <= 1150;
+                return window.innerWidth > 1100 && window.innerWidth <= 1150;
+            },
+            isUpTo1100: function () {
+                return window.innerWidth > 1024 && window.innerWidth <= 1100;
             }
         },
         methods: {
@@ -185,7 +200,7 @@
     .slider-navbar
         width 80%
         display flex
-        justify-content flex-end
+        justify-content center
 
     .wrap
         width 100%
@@ -214,8 +229,8 @@
 
                 .b-carousel__item
                     font-size 18px
-                    font-family MuseoSansCyrl500
-                    font-weight 500
+                    font-family MuseoSansCyrl300
+                    font-weight 600
                     overflow hidden
                     display flex
                     align-items center
@@ -225,7 +240,7 @@
                         outline none
 
                     a
-                        color black
+                        color #0f1118
 
                         &:hover
                             text-decoration none
@@ -306,6 +321,27 @@
 
     .flex-basis-25
         flex-basis 25% !important
+
+    .flex-basis-33
+        flex-basis 33.333333% !important
+
+    .width-75
+        width 75% !important
+
+    .width-76
+        width 76% !important
+
+    .width-77
+        width 77% !important
+
+    .width-78
+        width 78% !important
+
+    .width-79
+        width 79% !important
+
+    .width-80
+        width 80% !important
 
     .width-85
         width 85% !important

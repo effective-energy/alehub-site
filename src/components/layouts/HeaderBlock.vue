@@ -695,9 +695,9 @@
             .right-menu
                 position block
 
-                /*@media (min-width 1024px) and (max-width 1350px)*/
-                    /*position absolute*/
-                    /*right 0*/
+                @media (min-width 1024px) and (max-width 1350px)
+                    position absolute
+                    right 0
 
 
     /*.wrap-navbar*/

@@ -2439,7 +2439,7 @@ const messages = {
                     name: 'Blog'
                 }
             ],
-            loginBtn: 'Log in',
+            loginBtn: 'Einloggen',
             blog: 'Blog'
         },
         menuModal: {
