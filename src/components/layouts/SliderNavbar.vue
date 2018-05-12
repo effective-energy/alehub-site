@@ -83,10 +83,21 @@
         },
         watch: {
             '$i18n.locale'() {
-                // if (this.isFrench && (this.isUpTo1350 || this.isUpTo1200) || this.isDeutsch && this.isUpTo1350) {
-                this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
-                this.opt.maxPosition = this.items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
-                // }
+                console.log('$i18n.locale');
+                setTimeout(() => {
+                    let tmp = this.multiplier;
+                    this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
+                    this.opt.maxPosition = this.items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
+                    if (tmp !== this.multiplier && this.opt.position !== 0) {
+                        this.prevSlide();
+                    }
+                }, 0);
+            },
+            multiplier: function (val) {
+                console.log(val, 'multiplier');
+            },
+            'opt.maxPosition': function (val) {
+                console.log(val, 'opt.maxPosition');
             }
         },
         data() {

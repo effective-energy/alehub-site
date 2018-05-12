@@ -680,10 +680,11 @@
                     display flex !important
 
             .navbar-folding__inner
-                width 100%
                 display flex
-                justify-content space-around
+                flex-direction row
                 align-items center
+                margin-right auto !important
+                margin-left auto !important
 
                 @media (min-width 1024px) and (max-width 1350px)
                     display none !important
@@ -691,6 +692,7 @@
                 .navbar-item
                     font-size 18px
                     font-weight 600
+                    padding 8px 24px
 
             .right-menu
                 position block
@@ -1118,6 +1120,9 @@
             -o-transition all 0.4s ease
             transition all 0.4s ease
             color #fff !important
+
+        .navbar-folding
+            color white
 
         .select-lang
             color #fff
