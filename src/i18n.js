@@ -1208,7 +1208,7 @@ const messages = {
                 terms: 'Terms and conditions'
             },
             right: {
-                input: 'Your e-mail address',
+                input: 'メールアドレス',
                 btn: 'ニュースに応募します',
                 error: 'アドレスが正しくありません',
                 success: '正しい住所'

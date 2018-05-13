@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="row footer-row">
             <div class="col-5 copyright-block">
                 <router-link tag="a" to="/">

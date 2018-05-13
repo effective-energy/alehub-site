@@ -470,7 +470,7 @@
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkMobileWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection }">
+             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
@@ -505,6 +505,10 @@
                 required: true
             },
             isOpenedModalMenu: {
+                type: Boolean,
+                required: true
+            },
+            isScrollInFooter: {
                 type: Boolean,
                 required: true
             }
@@ -1062,6 +1066,16 @@
 
     .telegram-alert__yellow
         background-color #ffd24f
+
+
+    .telegram-alert__stop
+        bottom 185px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 226px
+
+        @media (min-width 425px) and (max-width 768px)
+            bottom 433px
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)

@@ -44,9 +44,9 @@
 
                     <!--<div class="place-player"-->
 
-                         <!--:style="{ opacity: mainPlayer ? 1 : 0 }">-->
-                        <!--<div class="place-player__frame">-->
-                        <!--</div>-->
+                    <!--:style="{ opacity: mainPlayer ? 1 : 0 }">-->
+                    <!--<div class="place-player__frame">-->
+                    <!--</div>-->
                     <!--</div>-->
                     <div class="main-player"
                          v-if="mainPlayer">
@@ -151,9 +151,12 @@
         <div class="section-3" id="main-features">
             <!--v-if="isVideo"-->
 
-            <video autoplay muted loop id="myVideoScale">
-                <source src="../../static/video/libra2.mp4" type="video/mp4">
-            </video>
+            <div class="video__wrap">
+                <video autoplay muted loop id="myVideoScale">
+                    <source src="../../static/video/libra2.mp4" type="video/mp4">
+                </video>
+            </div>
+
 
             <!--<div class="figure">-->
                 <!--<img src="../../static/images/layer.png" alt="" style="width: 100%;">-->
@@ -277,7 +280,6 @@
         .l-3
             transform translate(3px, 3px) rotate(330deg)
 
-
     .active
         .l-1
             opacity 0
@@ -367,7 +369,6 @@
         flex-direction column
         justify-content center
         align-items center
-
 
         .play-button
             cursor pointer
@@ -514,6 +515,16 @@
             padding-top 105px
             width 100%
             display flex
+
+            .video__wrap
+                width 30%
+                display flex
+                justify-content center
+                align-items center
+
+                video
+                    width 100%
+
 
             .figure
                 width 30%

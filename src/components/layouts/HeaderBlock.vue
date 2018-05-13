@@ -645,6 +645,15 @@
                         this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight) {
+                    this.$parent.$emit('scrollInFooter', true);
+                } else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight) {
+                    console.log(window.scrollY, 'window.scrollY');
+                    console.log(this.getCoords(document.getElementById('footer')).top, 'this.getCoords(document.getElementById(\'footer\')).top');
+                    this.$parent.$emit('scrollInFooter', false);
+                }
+
             });
 
             if (document.getElementById('select-lang'))

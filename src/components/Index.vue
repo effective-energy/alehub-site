@@ -1,7 +1,9 @@
 <template>
     <div class="index">
         <header-block :is-main-dark="isDark"/>
-        <home-section :is-dark-section="isDarkSection" :is-opened-modal-menu="openedModalMenu"/>
+        <home-section :is-dark-section="isDarkSection"
+                      :is-opened-modal-menu="openedModalMenu"
+                      :is-scroll-in-footer="isScrollInFooter"/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -45,6 +47,7 @@
                 isTeam: false,
                 isDark: false,
                 isDarkSection: false,
+                isScrollInFooter: false,
                 openedModalMenu: false
                 // isLoading: true
             }
@@ -68,6 +71,11 @@
 
             this.$on('isOpenedModalMenu', (val) => {
                 this.openedModalMenu = val;
+            });
+
+            this.$on('scrollInFooter', (val) => {
+                console.log(val, 'scrollInFooter');
+                this.isScrollInFooter = val;
             });
         }
     }
