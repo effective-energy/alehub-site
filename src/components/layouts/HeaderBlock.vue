@@ -29,6 +29,7 @@
         <div class="navbar-folding" id="navbarText">
 
             <slider-navbar id="slider-navbar"
+                           :is-dark="isDark"
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
@@ -203,7 +204,7 @@
 
 
                 optionsToSliderNavbar: {
-                    touch: false,
+                    touch: true,
                     autoplay: false,
                     inBlockTeam: false,
                     autoplayDelay: 3000,

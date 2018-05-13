@@ -4,14 +4,20 @@
                    'width-78': isSpanish && isUpTo1200 || isDeutsch && isUpTo1150 || isFrench && isUpTo1350,
                    'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300,
                    'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250,
-                   'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100}">
+                   'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100,
+                   'slider-navbar__dark': isDark }">
         <button class="b-carousel__prev n-js-carousel__prev"
                 :class="{ 'transparent': !isLeft }"
                 :disabled="!isLeft"
                 @click="prevSlide">
             <img class="arrow-prev"
                  src="../../../static/images/arrow-left-black.svg"
-                 alt="more navbar items">
+                 alt="more navbar items"
+                 v-if="!isDark">
+            <img class="arrow-prev"
+                 src="../../../static/images/arrow-left-white.svg"
+                 alt="more navbar items"
+                 v-else>
         </button>
         <div class="wrap"
              :class="{ 'width-95': isFrench && isUpTo1150,
@@ -43,7 +49,14 @@
                 :class="{ 'transparent': !isRight }"
                 :disabled="!isRight"
                 @click="nextSlide">
-            <img class="arrow-next" src="../../../static/images/arrow-right-black.svg" alt="more navbar items">
+            <img class="arrow-next"
+                 src="../../../static/images/arrow-right-black.svg"
+                 alt="more navbar items"
+                 v-if="!isDark">
+            <img class="arrow-next"
+                 src="../../../static/images/arrow-right-white.svg"
+                 alt="more navbar items"
+                 v-else>
         </button>
     </div>
 </template>
@@ -52,6 +65,10 @@
     export default {
         name: 'SliderNavbar',
         props: {
+            isDark: {
+                type: Boolean,
+                required: true
+            },
             items: {
                 type: Array,
                 required: true
@@ -63,7 +80,6 @@
         },
         watch: {
             '$i18n.locale'() {
-                console.log('$i18n.locale');
                 setTimeout(() => {
                     let tmp = this.multiplier;
                     this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
@@ -133,6 +149,25 @@
             }
         },
         methods: {
+            touchStart: function (e) {
+                // console.log(e, 'event touch start');
+                // console.log('touchStart');
+                this.xDown = e.touches[0].clientX;
+                this.yDown = e.touches[0].clientY;
+            },
+            touchMove: function (e) {
+                // console.log(e, 'event touch move');
+                if (!this.xDown || !this.yDown)
+                    return;
+                let xUp = e.touches[0].clientX;
+                let yUp = e.touches[0].clientY;
+                let xDiff = this.xDown - xUp;
+                let yDiff = this.yDown - yUp;
+                if (Math.abs(xDiff) > Math.abs(yDiff))
+                    (xDiff > 0) ? this.nextSlide() : this.prevSlide();
+                this.xDown = 0;
+                this.yDown = 0;
+            },
             prevSlide: function () {
                 let sel = {
                     wrap: document.querySelector('.n-js-carousel__wrap'),
@@ -253,6 +288,14 @@
                         flex-grow 0
                         flex-shrink 0
                         flex-basis 25%
+
+    .slider-navbar__dark
+        .wrap
+            .b-carousel
+                .b-carousel__wrap
+                    .b-carousel__item
+                        a
+                            color #ffffff
 
     .b-carousel__prev
         @media (min-width 1250px) and (max-width 1350px)

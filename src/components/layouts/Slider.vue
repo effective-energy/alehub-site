@@ -26,11 +26,9 @@
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
 
                         <div class="b-carousel__inner">
-
                             <img class="layer__bottom b-carousel__img"
                                  :src="member.src"
                                  :alt="member.name">
-
                             <div class="layer__top">
                                 <div class="layer__text">
                                     <h3>
@@ -183,15 +181,13 @@
                 }
             },
             touchStart: function (e) {
-                // console.log(e, 'event touch start');
-                // console.log('touchStart');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
-                // console.log(e, 'event touch move');
                 if (!this.xDown || !this.yDown)
                     return;
+
                 let xUp = e.touches[0].clientX;
                 let yUp = e.touches[0].clientY;
                 let xDiff = this.xDown - xUp;
