@@ -152,7 +152,7 @@
             <!--v-if="isVideo"-->
 
             <video autoplay muted loop id="myVideoScale">
-                <source src="../../static/video/libra2.mp4" type="video/mp4; codecs='avc1.4D401E, mp4a.40.2'">
+                <source src="../../static/video/libra2.mp4" type="video/mp4">
             </video>
 
             <!--<div class="figure">-->

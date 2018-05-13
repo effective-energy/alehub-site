@@ -109,15 +109,19 @@
                             </div>
                             <span>KO</span>
                         </div>
-                        <div class="select-lang__item select-lang__ja">
+                        <div class="select-lang__item select-lang__ja"
+                             :class="{ 'selected': currentLang === 'ja' }"
+                             @click="changeLanguage(3);
+                                     yaCounter48802643.reachGoal('JA');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>JA</span>
                         </div>
                         <div class="select-lang__item select-lang__zh"
-                             :class="{ 'selected': currentLang === 'ch' }"
+                             :class="{ 'selected': currentLang === 'zh' }"
                              @click="changeLanguage(2);
-                                     yaCounter48802643.reachGoal('CH');
+                                     yaCounter48802643.reachGoal('ZH');
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -254,6 +258,8 @@
                     return 'ru';
                 else if (this.selectedLanguage === 'zh')
                     return 'zh';
+                else if (this.selectedLanguage === 'ja')
+                    return 'ja';
                 else if (this.selectedLanguage === 'fr')
                     return 'fr';
                 else if (this.selectedLanguage === 'de')

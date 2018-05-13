@@ -26,7 +26,7 @@
              class="anim"
              v-if="checkWindowWidth && !isVideo"
              :class="{ 'anim__dark': isDark }">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1600">
                 <g fill="none" fill-rule="evenodd">
                     <path stroke="#ffd24f"
                           d="M781.02 488.77v69.78c0 1.08-.88 1.96-1.97 1.96l-135.12-.04c-1.09 0-2.6.62-3.38 1.39l-39.23 38.96a5.52 5.52 0 0 1-3.37 1.4h-75.38a1.97 1.97 0 0 1-1.97-1.97v-33.5"/>
@@ -143,7 +143,7 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview.mp4" type="video/mp4; codecs='avc1.4D401E, mp4a.40.2'">
+                <source src="../../static/video/preview.mp4" type="video/mp4">
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
