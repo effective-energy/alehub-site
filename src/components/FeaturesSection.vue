@@ -522,6 +522,9 @@
                 justify-content center
                 align-items center
 
+                @media (max-width 768px)
+                    display none
+
                 video
                     width 100%
 
