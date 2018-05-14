@@ -312,6 +312,7 @@
                     <a class="scroll-ic"
                        v-scroll-to="'#description'">
                         <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
+                        <div class="wheel"></div>
                     </a>
                 </div>
             </div>
@@ -1891,17 +1892,55 @@
             display flex
             justify-content center
 
-        .scroll-ic
-            cursor pointer
-            background-color transparent
-            border none
-            transition transform .5s ease
+            .scroll-ic
+                position relative
+                cursor pointer
+                background-color transparent
+                border none
+                transition transform .5s ease
+                display flex
+                justify-content center
+                align-items center
 
-            &:active
-                transform translateY(20px)
+                &:active
+                    transform translateY(20px)
 
-            @media (max-width: 1124px)
-                display none
+                .wheel
+                    top 17px
+                    position absolute
+                    background-color #b1bdc9
+                    width 2px
+                    height 10px
+                    -webkit-animation wheel-to-bottom 2s infinite
+                    -moz-animation wheel-to-bottom 2s infinite
+                    -o-animation wheel-to-bottom 2s infinite
+                    animation wheel-to-bottom 2s infinite
+                    -webkit-transition all .3s ease
+                    -o-transition all .3s ease
+                    transition all .3s ease
+                    @-webkit-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @-moz-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @-o-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+
+                @media (max-width 1124px)
+                    display none
 
         .ico-progress
             width 448px
