@@ -59,6 +59,20 @@
                     }
                 }).then(response => {
                     this.news = response.body.reverse();
+                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
+                        this.getEngNews();
+                }, response => {
+                    console.log('Error getting news', response);
+                });
+            },
+            getEngNews: function () {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/6`, {
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    this.news = response.body.reverse();
                 }, response => {
                     console.log('Error getting news', response);
                 });
