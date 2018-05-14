@@ -60,7 +60,7 @@ const messages = {
                 notAvailable: '现在不可用'
             },
             acceptedCrypto: {
-                title: '接受收藏：'
+                title: '接受收藏'
             }
         },
         partners: {
@@ -682,7 +682,7 @@ const messages = {
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
-                title: 'Accepted for collection:'
+                title: 'Accepted for collection'
             }
         },
         partners: {
@@ -1302,7 +1302,7 @@ const messages = {
                 notAvailable: 'В данный момент недоступно'
             },
             acceptedCrypto: {
-                title: 'Принимаем к сборам:'
+                title: 'Принимаем к сборам'
             }
         },
         partners: {
@@ -1920,7 +1920,7 @@ const messages = {
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
-                title: 'Accepted for collection:'
+                title: 'Accepted for collection'
             }
         },
         partners: {
@@ -2530,7 +2530,7 @@ const messages = {
                 notAvailable: 'Maintenant non disponible'
             },
             acceptedCrypto: {
-                title: 'Accepté pour la collecte:'
+                title: 'Accepté pour la collecte'
             }
         },
         partners: {
@@ -3125,7 +3125,7 @@ const messages = {
                 notAvailable: 'Jetzt nicht verfügbar'
             },
             acceptedCrypto: {
-                title: 'Akzeptiert für die Sammlung:'
+                title: 'Akzeptiert für die Sammlung'
             }
         },
         partners: {
@@ -3719,7 +3719,7 @@ const messages = {
                 notAvailable: 'الآن غير متوفر'
             },
             acceptedCrypto: {
-                title: 'مقبول للتحصيل:'
+                title: 'مقبول للتحصيل'
             }
         },
         partners: {
@@ -4314,7 +4314,7 @@ const messages = {
                 notAvailable: '지금 이용할 수 없'
             },
             acceptedCrypto: {
-                title: '받아들을 위한 컬렉션:'
+                title: '받아들을 위한 컬렉션'
             }
         },
         partners: {
@@ -4909,7 +4909,7 @@ const messages = {
                 notAvailable: 'Ahora no está disponible'
             },
             acceptedCrypto: {
-                title: 'Aceptado para su colección:'
+                title: 'Aceptado para su colección'
             }
         },
         partners: {

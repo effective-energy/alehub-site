@@ -66,7 +66,10 @@
                    target="_blank">
                     {{ $t("navbar.loginBtn") }}
                 </a>
-                <div id="select-lang" class="select-lang" @click="toggleDropdown">
+                <div id="select-lang"
+                     class="select-lang"
+                     :class="{ 'select-lang__rtl': rtl }"
+                     @click="toggleDropdown">
                     {{ currentLang }}
                     <div class="select-lang__dropdown"
                          v-if="dropdownOpen">
@@ -153,9 +156,7 @@
                             </div>
                             <span>EN</span>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <button type="button" class="btn btn-actions" v-if="false">
@@ -190,6 +191,7 @@
         },
         data() {
             return {
+                langDropdownInProcess: false,
                 isLanguagesModal: false,
                 isFeatures: false,
                 mainIsDark: false,
@@ -219,6 +221,9 @@
             }
         },
         watch: {
+            rtl: function (val) {
+                  console.log(val, 'rtl');
+            },
             activeItem: function (index) {
                 this.changeLineWidth(index);
             },
@@ -285,10 +290,15 @@
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
                 this.rtl = true;
+                console.log('im in rtl');
+                setTimeout(() => {
+                    this.$parent.$emit('isRtl', this.rtl);
+                }, 0);
             },
             resetRTL: function () {
                 document.querySelector('body').style['direction'] = 'ltr';
                 this.rtl = false;
+                this.$parent.$emit('isRtl',this.rtl);
             },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
@@ -328,51 +338,55 @@
                 };
             },
             toggleDropdown: function () {
-                let tmpDropdownOpen = !this.dropdownOpen;
+                if (!this.langDropdownInProcess) {
+                    let tmpDropdownOpen = !this.dropdownOpen;
+                    this.langDropdownInProcess = true;
 
-                if (tmpDropdownOpen) {
+                    if (tmpDropdownOpen) {
+                        this.dropdownOpen = tmpDropdownOpen;
+                        setTimeout(() => {
+                            let duration = 900,
+                                currentTime = 0,
+                                increment = 100,
+                                i = document.getElementsByClassName('select-lang__item').length - 1;
 
-                    this.dropdownOpen = tmpDropdownOpen;
+                            let animateScroll = () => {
+                                currentTime += increment;
+                                document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 1;
+                                i--;
+                                if (currentTime < duration) {
+                                    setTimeout(animateScroll, increment);
+                                } else {
+                                    this.langDropdownInProcess = false;
+                                }
+                            };
 
-                    setTimeout(() => {
-                        let duration = 900,
-                            currentTime = 0,
-                            increment = 100,
-                            i = document.getElementsByClassName('select-lang__item').length - 1;
+                            animateScroll();
+                        }, 40);
+                    } else {
+                        setTimeout(() => {
+                            let duration = 900,
+                                currentTime = 0,
+                                increment = 100,
+                                i = 0;
 
-                        let animateScroll = () => {
-                            currentTime += increment;
-                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 1;
-                            i--;
-                            if (currentTime < duration) {
-                                setTimeout(animateScroll, increment);
-                            }
-                        };
+                            let animateScroll = () => {
+                                currentTime += increment;
+                                document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 0;
+                                i++;
+                                if (currentTime < duration) {
+                                    setTimeout(animateScroll, increment);
+                                } else {
+                                    setTimeout(() => {
+                                        this.dropdownOpen = tmpDropdownOpen;
+                                        this.langDropdownInProcess = false;
+                                    }, increment);
+                                }
+                            };
 
-                        animateScroll();
-                    }, 40);
-                } else {
-                    setTimeout(() => {
-                        let duration = 900,
-                            currentTime = 0,
-                            increment = 100,
-                            i = 0;
-
-                        let animateScroll = () => {
-                            currentTime += increment;
-                            document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 0;
-                            i++;
-                            if (currentTime < duration) {
-                                setTimeout(animateScroll, increment);
-                            } else {
-                                setTimeout(() => {
-                                    this.dropdownOpen = tmpDropdownOpen;
-                                }, increment);
-                            }
-                        };
-
-                        animateScroll();
-                    }, 40);
+                            animateScroll();
+                        }, 40);
+                    }
                 }
             },
             toggleMenuModal: function () {
@@ -414,6 +428,10 @@
 
         },
         mounted() {
+            if (this.selectedLanguage === 'ar') {
+                this.makeRTL();
+            }
+
             this.$on('changeModalLanguage', (val) => {
                 this.selectedLanguage = val;
             });
@@ -695,7 +713,7 @@
         justify-content center
         align-items center
         padding 0 20px
-        margin-left 20px
+        margin 0 0 0 20px
         font-weight 700
         text-transform uppercase
 
@@ -706,14 +724,18 @@
             display none
 
         .select-lang__dropdown
-            right 60px
-            top 75px
+            right 0
+            top 72px
             position absolute
             display flex
             justify-content center
             align-items center
 
             .selected
+                -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+                -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+                box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+
                 .select-lang__cover
                     background-color #fff !important
                     opacity 0.2 !important
@@ -725,30 +747,24 @@
                 opacity 0
                 position relative
                 background-color #fff
+                margin 0 3px
                 width 60px
                 height 60px
                 background-size cover
                 background-repeat no-repeat
                 background-position 50% 0
-                border-left 1px solid #e0e0e0
                 -webkit-transition all .3s ease-in-out
                 -o-transition all .3s ease-in-out
                 transition all .3s ease-in-out
-
-                &:before
-                    width 60px
-                    height 3px
-                    content ""
-                    position absolute
-                    bottom -3px
-                    background -moz-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
-                    background -webkit-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -o-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -ms-linear-gradient(top, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
-                    background linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(236, 236, 240, 1) 100%)
+                -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
+                -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
+                box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
 
                 &:hover
+                    -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+                    -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+                    box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
+
                     .select-lang__cover
                         background-color #fff
                         opacity 0.2
@@ -774,21 +790,8 @@
                     transition all .3s ease-out
 
             .select-lang__en
+                margin 0 0 0 3px
                 background-image url(../../../static/images/flags/en@2x.png)
-
-                &:after
-                    height 60px
-                    width 3px
-                    content ""
-                    position absolute
-                    right -3px
-                    top 2px
-                    background -moz-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(204, 204, 204, 1)), color-stop(100%, rgba(236, 236, 240, 1)))
-                    background -webkit-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -o-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
-                    background -ms-linear-gradient(left, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
-                    background linear-gradient(to right, rgba(204, 204, 204, 1) 0%, rgba(236, 236, 240, 1) 100%)
 
             .select-lang__ru
                 position relative
@@ -807,11 +810,6 @@
             .select-lang__ar
                 background-image url(../../../static/images/flags/ar@2x.png)
 
-            /*&:hover*/
-            /*span*/
-            /*opacity 1*/
-            /*color #ffffff*/
-
             .select-lang__es
                 background-image url(../../../static/images/flags/es@2x.png)
 
@@ -819,22 +817,23 @@
                 background-image url(../../../static/images/flags/de@2x.png)
 
             .select-lang__fr
+                margin 0 3px 0 0
                 background-image url(../../../static/images/flags/fr@2x.png)
-                border-left none
 
-                &:after
-                    height 60px
-                    width 3px
-                    content ""
-                    position absolute
-                    left -3px
-                    top 2px
-                    background -moz-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
-                    background -webkit-gradient(left top, right top, color-stop(0%, rgba(236, 236, 240, 1)), color-stop(100%, rgba(204, 204, 204, 1)))
-                    background -webkit-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
-                    background -o-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
-                    background -ms-linear-gradient(left, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
-                    background linear-gradient(to right, rgba(236, 236, 240, 1) 0%, rgba(204, 204, 204, 1) 100%)
+    .select-lang__rtl
+        margin 0 20px 0 0
+
+        .select-lang__dropdown
+            left 0
+            right auto
+
+            .select-lang__en
+                margin 0 3px 0 0
+
+            .select-lang__fr
+                margin 0 0 0 3px
+
+
 
     .choose-languages
         display none

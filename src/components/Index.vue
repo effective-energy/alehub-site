@@ -3,7 +3,8 @@
         <header-block :is-main-dark="isDark"/>
         <home-section :is-dark-section="isDarkSection"
                       :is-opened-modal-menu="openedModalMenu"
-                      :is-scroll-in-footer="isScrollInFooter"/>
+                      :is-scroll-in-footer="isScrollInFooter"
+                      :is-rtl="isRtl"/>
         <advantages-section/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
@@ -48,6 +49,7 @@
                 isDark: false,
                 isDarkSection: false,
                 isScrollInFooter: false,
+                isRtl: false,
                 openedModalMenu: false
                 // isLoading: true
             }
@@ -75,6 +77,11 @@
 
             this.$on('scrollInFooter', (val) => {
                 this.isScrollInFooter = val;
+            });
+
+            this.$on('isRtl', (isRtl) => {
+                console.log(isRtl, 'isRtl');
+                this.isRtl = isRtl;
             });
         }
     }

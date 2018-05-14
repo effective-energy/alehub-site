@@ -1,12 +1,16 @@
 <template>
     <section id="screen1">
-        <div class="button-choose" id="button-choose" v-if="checkWindowWidth">
+        <div class="button-choose"
+             :class="{ 'button-choose__rtl': isRtl }"
+             id="button-choose"
+             v-if="checkWindowWidth">
             <button type="button"
                     id="do-video-theme"
                     class="button-choose_video"
                     :class="{ 'button-choose__active-video': isVideo }"
                     @click="doVideoTheme">
-                <img src="../../static/images/play.svg" alt="video">
+                <img src="../../static/images/play.svg"
+                     alt="video">
             </button>
             <button type="button"
                     id="do-light-theme"
@@ -151,14 +155,16 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                            <h1 class="screen1 title">
+                            <h1 class="screen1 title"
+                            :class="{ 'text-align-right-rtl': isRtl }">
                                 {{ $t("greeting.title") }}
                             </h1>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
-                            <div class="countdown">
+                            <div class="countdown"
+                            :class="{ 'direction-ltr': isRtl }">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -214,7 +220,8 @@
                                     {{ $t("greeting.countDown.btnBuyTokens") }}
                                 </button>
                             </a>
-                            <div class="bonus-desc">
+                            <div class="bonus-desc"
+                                 :class="{ 'padding-right-rtl': isRtl }">
                                 <span>{{ $t("greeting.countDown.bonus") }}</span>
                                 <span>{{ $t("greeting.countDown.notAvailable") }}</span>
                             </div>
@@ -250,8 +257,8 @@
                 <div class="col-xl-12 col-lg-11">
                     <div class="crypto">
                         <div class="title"
-                             :class="{ 'ico-progress__dark': isDark }">
-                            {{ $t("greeting.acceptedCrypto.title") }}
+                             :class="{ 'ico-progress__dark': isDark, 'text-align-right-rtl': isRtl }">
+                            {{ $t("greeting.acceptedCrypto.title") }}<span v-if="!isRtl">:</span>
                         </div>
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
@@ -312,6 +319,7 @@
                     <a class="scroll-ic"
                        v-scroll-to="'#description'">
                         <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
+                        <div class="wheel"></div>
                     </a>
                 </div>
             </div>
@@ -470,7 +478,7 @@
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkMobileWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter }">
+             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
@@ -509,6 +517,10 @@
                 required: true
             },
             isScrollInFooter: {
+                type: Boolean,
+                required: true
+            },
+            isRtl: {
                 type: Boolean,
                 required: true
             }
@@ -922,7 +934,6 @@
             this.getCurrentExchangeRates();
 
             setTimeout(() => {
-                console.log(localStorage.getItem('color-theme'), 'localStorage.getItem(\'color-theme\')')
                 if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
                     this.isDark = true;
                     this.isVideo = false;
@@ -978,9 +989,26 @@
         background-color #ececf0
 
     .countdown-block
+        .bonus-desc
+            padding-left 10px
+
+        .countdown.direction-ltr
+            .title
+                text-align right
+
+            .timer
+                justify-content flex-end
+
+        .padding-right-rtl
+            padding-left 0
+            padding-right 10px
+
+
         @media (min-width 848px)
             display flex
             align-items center
+
+
 
     .telegram-alert-mobile
         z-index 1100
@@ -1077,6 +1105,23 @@
         @media (min-width 425px) and (max-width 768px)
             bottom 433px
 
+    .telegram-alert__rtl
+        left 100px
+        right auto
+
+        @media (min-width 768px) and (max-width 1024px)
+            left 30px
+            right auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            left 75px
+            right auto
+
+        @media (min-width 1440px) and (max-width 2560px)
+            left 100px
+            right auto
+
+
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
             text-align center
@@ -1092,7 +1137,7 @@
         background-color #ececf0
 
     .play-video
-        z-index 2
+        z-index 10000
         width 100%
 
         @media (min-width 1440px)
@@ -1291,47 +1336,6 @@
         @media (min-width 768px) and (max-width 1024px)
             height 400px
 
-    /*@media (max-width 1600px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 500px*/
-    /*height 280px*/
-
-    /*@media (max-width 1530px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 500px*/
-    /*height 280px*/
-
-    /*@media (max-width 1274px)*/
-    /*position relative*/
-    /*.iframe, .place-player__frame*/
-    /*width 800px*/
-    /*height 450px*/
-
-    /*@media (max-width 1120px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 700px*/
-    /*height 394px*/
-
-    /*@media (max-width 850px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 600px*/
-    /*height 336px*/
-
-    /*@media (max-width 720px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 500px*/
-    /*height 280px*/
-
-    /*@media (max-width 620px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 400px*/
-    /*height 225px*/
-
-    /*@media (max-width 520px)*/
-    /*.iframe, .place-player__frame*/
-    /*width 100%*/
-    /*height 292px*/
-
     @media (max-width 520px) and (min-width 426px)
         .play-video
             width 100%
@@ -1524,6 +1528,17 @@
             &:focus
                 outline none
 
+
+    .button-choose__rtl
+        right 20px
+
+        .button-choose_video
+            padding-left 0
+            padding-right 5px
+
+            img
+                transform rotateY(180deg)
+
     #screen1
         .partners
             display flex
@@ -1676,93 +1691,6 @@
                             width 100% !important
                             position relative
 
-                    /*@media (max-width 2600px)*/
-                    /*.slider-container*/
-                    /*width 709px*/
-                    /*height 443px*/
-                    /*left 252px*/
-                    /*top 40px*/
-
-                    /*.desktop*/
-                    /*left 140px*/
-                    /*width 900px*/
-
-                    /*@media (max-width 2365px)*/
-                    /*.slider-container*/
-                    /*left 162px*/
-
-                    /*.desktop*/
-                    /*left 50px*/
-
-                    /*@media (max-width 2150px)*/
-                    /*.slider-container*/
-                    /*width 630px*/
-                    /*height 395px*/
-                    /*left 102px*/
-                    /*top 36px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 800px*/
-
-                    /*@media (max-width 1860px)*/
-                    /*.slider-container*/
-                    /*width 552px*/
-                    /*height 345px*/
-                    /*left 91px*/
-                    /*top 32px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 700px*/
-
-                    /*@media (max-width 1640px)*/
-                    /*padding-top 50px*/
-
-                    /*.slider-container*/
-                    /*width 473px*/
-                    /*height 296px*/
-                    /*left 80px*/
-                    /*top 77px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 600px*/
-
-                    /*@media (max-width 1460px)*/
-                    /*padding-top 100px*/
-
-                    /*.slider-container*/
-                    /*width 393px*/
-                    /*height 247px*/
-                    /*left 70px*/
-                    /*top 122px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 500px*/
-
-                    /*@media (max-width 1240px)*/
-                    /*padding-top 100px*/
-
-                    /*.slider-container*/
-                    /*width 315px*/
-                    /*height 197px*/
-                    /*left 59px*/
-                    /*top 118px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 400px*/
-
-                    /*@media (max-width 991px)*/
-                    /*padding-top 0*/
-
-                    /*.slider-container*/
-                    /*display none*/
-
-                    /*.desktop*/
-                    /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile
@@ -1891,17 +1819,55 @@
             display flex
             justify-content center
 
-        .scroll-ic
-            cursor pointer
-            background-color transparent
-            border none
-            transition transform .5s ease
+            .scroll-ic
+                position relative
+                cursor pointer
+                background-color transparent
+                border none
+                transition transform .5s ease
+                display flex
+                justify-content center
+                align-items center
 
-            &:active
-                transform translateY(20px)
+                &:active
+                    transform translateY(20px)
 
-            @media (max-width: 1124px)
-                display none
+                .wheel
+                    top 17px
+                    position absolute
+                    background-color #b1bdc9
+                    width 2px
+                    height 10px
+                    -webkit-animation wheel-to-bottom 2s infinite
+                    -moz-animation wheel-to-bottom 2s infinite
+                    -o-animation wheel-to-bottom 2s infinite
+                    animation wheel-to-bottom 2s infinite
+                    -webkit-transition all .3s ease
+                    -o-transition all .3s ease
+                    transition all .3s ease
+                    @-webkit-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @-moz-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @-o-keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+                    @keyframes wheel-to-bottom {
+                        0%   { transform: translateY(0); }
+                        25% { transform: translateY(5px); }
+                        100% { transform: translateY(0); }
+                    }
+
+                @media (max-width 1124px)
+                    display none
 
         .ico-progress
             width 448px
