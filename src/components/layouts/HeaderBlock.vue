@@ -6,6 +6,7 @@
         <router-link tag="a"
                      to="/"
                      class="navbar-brand"
+                     :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
@@ -1179,5 +1180,9 @@
 
         .hamburger
             display block
+
+    .navbar-brand__rtl
+        img
+            margin 0 0 0 8px
 
 </style>

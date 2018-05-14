@@ -13,7 +13,7 @@
         <roadmap-section :is-rtl="isRtl"/>
         <download-application-section/>
         <blog-section/>
-        <footer-block/>
+        <footer-block :is-rtl="isRtl"/>
     </div>
 </template>
 
