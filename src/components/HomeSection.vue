@@ -156,7 +156,7 @@
                     <div class="row">
                         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                             <h1 class="screen1 title"
-                            :class="{ 'text-align-right-rtl': isRtl }">
+                                :class="{ 'text-align-right-rtl': isRtl }">
                                 {{ $t("greeting.title") }}
                             </h1>
                         </div>
@@ -164,7 +164,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                            :class="{ 'direction-ltr': isRtl }">
+                                 :class="{ 'direction-ltr': isRtl }">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -393,20 +393,17 @@
              :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                    <div class="desktop-outer"
+                         style="position: relative; display: flex; justify-content: center; align-items: center;">
                         <div style="position: absolute; width: 80%; top: 7%;">
-                            <slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>
+                            <slider-screen :items="itemsToSliderScreen"
+                                           :options="optionsToSliderScreen"
+                                           :is-rtl="isRtl"/>
                         </div>
                         <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
-                        <!--<slider v-if="reBuild" ref="slider"-->
-                        <!--:pages="pages"-->
-                        <!--:sliderinit="sliderInit">-->
-                        <!--</slider>-->
                     </div>
 
-                    <!--<img src="../../static/images/desctop.png"-->
-                    <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
                        @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
                        v-scroll-to="'#download-application'"
@@ -419,7 +416,8 @@
                         </button>
                     </a>
                 </div>
-                <div class="col-lg-6 desc" style="align-self: flex-start;">
+                <div class="col-lg-6 desc"
+                     :class="{ 'text-align-right-rtl': isRtl }">
                     <h1 class="title">
                         {{ $t("about.title") }}
                     </h1>
@@ -976,6 +974,8 @@
 <style lang="stylus" scoped>
 
     .desc
+        align-self flex-start
+
         .buttons
             .btn
                 &:focus
@@ -1003,12 +1003,9 @@
             padding-left 0
             padding-right 10px
 
-
         @media (min-width 848px)
             display flex
             align-items center
-
-
 
     .telegram-alert-mobile
         z-index 1100
@@ -1095,7 +1092,6 @@
     .telegram-alert__yellow
         background-color #ffd24f
 
-
     .telegram-alert__stop
         bottom 185px
 
@@ -1120,7 +1116,6 @@
         @media (min-width 1440px) and (max-width 2560px)
             left 100px
             right auto
-
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
@@ -1528,7 +1523,6 @@
             &:focus
                 outline none
 
-
     .button-choose__rtl
         right 20px
 
@@ -1691,7 +1685,6 @@
                             width 100% !important
                             position relative
 
-
                     @media (max-width 991px)
                         .desktop-for-mobile
                             display block
@@ -1844,27 +1837,49 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease
+                    transition all .3s ease;
+
                     @-webkit-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @-moz-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @-o-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-moz-keyframes wheel-to-bottom {
+                          0% {
+                              transform: translateY(0);
+                          }
+                          25% {
+                              transform: translateY(5px);
+                          }
+                          100% {
+                              transform: translateY(0);
+                          }
+                      } @-o-keyframes wheel-to-bottom {
+                            0% {
+                                transform: translateY(0);
+                            }
+                            25% {
+                                transform: translateY(5px);
+                            }
+                            100% {
+                                transform: translateY(0);
+                            }
+                        } @keyframes wheel-to-bottom {
+                              0% {
+                                  transform: translateY(0);
+                              }
+                              25% {
+                                  transform: translateY(5px);
+                              }
+                              100% {
+                                  transform: translateY(0);
+                              }
+                          }
 
                 @media (max-width 1124px)
                     display none
