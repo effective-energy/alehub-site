@@ -110,12 +110,6 @@
         },
         watch: {
             'options.inBlockTeam': function (inBlockTeam) {
-                // this.startAutoplay(3000, val);
-                // console.log(inBlockTeam, 'inBlockTeam');
-                // if (this.options.autoplay && inBlockTeam)
-                //     this.startAutoplay(3000, this.options.autoplay);  //true
-                // else
-                //     this.startAutoplay(3000, this.options.autoplay);  //false
                 this.startAutoplay(true);
             },
             isAutoplay: function () {

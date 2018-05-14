@@ -25,7 +25,9 @@
                        (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && isUpTo1150 || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
                        'width-80': isRussian && isUpTo1100 || isFrench && isUpTo1100 }">
             <div class="b-carousel n-js-carousel">
-                <div class="b-carousel__wrap n-js-carousel__wrap">
+                <div class="b-carousel__wrap n-js-carousel__wrap"
+                     @touchstart="(options.touch) ? touchStart($event) : 'false'"
+                     @touchmove="(options.touch) ? touchMove($event) : 'false'">
                     <div class="b-carousel__item"
                          :class="{
                             'flex-basis-20': isFrench && (isUpTo1350 || isUpTo1300) || isDeutsch && (isUpTo1350 || isUpTo1300) ||
@@ -104,7 +106,9 @@
                 },
                 right: true,
                 left: false,
-                multiplier: 0
+                multiplier: 0,
+                xDown: 0,
+                yDown: 0
             }
         },
         computed: {
@@ -150,13 +154,10 @@
         },
         methods: {
             touchStart: function (e) {
-                // console.log(e, 'event touch start');
-                // console.log('touchStart');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
-                // console.log(e, 'event touch move');
                 if (!this.xDown || !this.yDown)
                     return;
                 let xUp = e.touches[0].clientX;
