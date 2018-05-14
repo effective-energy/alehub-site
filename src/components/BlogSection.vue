@@ -73,11 +73,12 @@
     }
 </script>
 
-<style>
+<style lang="stylus">
+    .blog-section
+        background-color #ffffff
+        min-height calc(100vh - 165px)
 
-	.blog-section {
-		background-color: #ffffff;
-	}
+
 </style>
 
 <style lang="stylus" scoped>

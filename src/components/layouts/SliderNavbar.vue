@@ -35,13 +35,20 @@
                             isEnglish && isUpTo1150 || isSpanish && (isUpTo1300 || isUpTo1350),
                             'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250),
                              'flex-basis-33': isUpTo1100 && (isRussian || isFrench) }"
-                         v-for="(item, i) in items"
-                         :key="i">
+                         v-for="(item, index) in items"
+                         :key="index">
 
-                        <a :href="item.path"
+                        <a class="b-carousel__link"
+                           :href="item.path"
                            v-scroll-to="item.path">
                             {{ item.name }}
                         </a>
+
+                        <div class="nav-line1"
+                             :class="{ 'nav-line1__yellow': isYellow, 'nav-line1__black': isDark,
+                                   'nav-line1__white': !isYellow && !isDark }"
+                             v-if="index === 0">
+                        </div>
 
                     </div>
                 </div>
@@ -71,6 +78,10 @@
                 type: Boolean,
                 required: true
             },
+            isYellow: {
+                type: Boolean,
+                required: true
+            },
             items: {
                 type: Array,
                 required: true
@@ -91,15 +102,19 @@
                     }
                 }, 0);
             },
-            multiplier: function (val) {
-                console.log(val, 'multiplier');
+            activeItem: function (index) {
+                this.changeLineWidth(index);
+
+                if (index > this.activeItems[this.activeItems.length - 1])
+                    this.nextSlide();
+                else if (index < this.activeItems[0])
+                    this.prevSlide();
             },
-            'opt.maxPosition': function (val) {
-                console.log(val, 'opt.maxPosition');
-            }
         },
         data() {
             return {
+                activeItems: [],
+                activeItem: 0,
                 opt: {
                     position: 0,
                     maxPosition: 4
@@ -182,6 +197,9 @@
                 if (this.opt.position < this.opt.maxPosition)
                     sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
 
+                this.activeItems.pop();
+                this.activeItems.unshift(this.activeItems[0] - 1);
+
                 if (this.opt.position < this.opt.maxPosition)
                     this.right = true;
 
@@ -211,7 +229,45 @@
                 sel.wrap.style['transition'] = '';
                 sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
 
+                this.activeItems.shift();
+                this.activeItems.push(this.activeItems[this.activeItems.length - 1] + 1);
+
                 (this.opt.position === this.opt.maxPosition) ? this.right = false : this.right = true;
+            },
+            getCoords: function (elem) {
+                if (!elem)
+                    return false;
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset
+                };
+            },
+            changeLineWidth: function (index) {
+                if (!document.querySelector('.nav-line1'))
+                    return false;
+
+                let elWidth = document.querySelectorAll('.b-carousel__link')[index].offsetWidth,
+                    currentNavbarItem = this.getCoords(document.querySelectorAll('.b-carousel__item')[index]).left,
+                    firstNavbarItem = this.getCoords(document.querySelector('.b-carousel__item')).left;
+
+                document.querySelector('.nav-line1').style.width = elWidth + 'px';
+                document.querySelector('.nav-line1').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+            },
+            checkActive: function () {
+                let menu = this.$t('navbar.menuList');
+                for (let i = 0; i < menu.length; i++) {
+                    if (document.querySelector(menu[i].path) === null)
+                        return false;
+
+                    let offset = document.querySelector(menu[i].path).offsetTop - 74,
+                        height = document.querySelector(menu[i].path).offsetHeight;
+
+                    if (window.scrollY > offset && window.scrollY <= offset + height)
+                        this.activeItem = i;
+
+                }
             },
         },
         mounted() {
@@ -219,6 +275,29 @@
 
             this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
             this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
+
+            let numInViewedCarousel = parseInt(100 / this.multiplier);
+            for (let i = 0; i < numInViewedCarousel; i++) {
+                this.activeItems.push(i);
+            }
+
+            setTimeout(() => {
+                this.changeLineWidth(this.activeItem);
+
+                if (this.activeItem > this.activeItems[this.activeItems.length - 1]) {
+                    for (let i = this.activeItems.length - 1, j = 0; i >= 0; i--, j++) {
+                        this.activeItems[i] = this.activeItem - j;
+                    }
+                }
+
+                this.opt.position = this.activeItems[0];
+                document.querySelector('.n-js-carousel__wrap').style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+            }, 500);
+
+
+            window.addEventListener('scroll', () => {
+                this.checkActive();
+            });
         }
     }
 </script>
@@ -347,6 +426,24 @@
         &:active
             .arrow-next
                 transform translateX(10px)
+
+    .nav-line1
+        position absolute
+        height 2px
+        background-color #34343e
+        bottom 10px
+        -webkit-transition all .5s ease
+        -o-transition all .5s ease
+        transition all .5s ease
+
+    .nav-line1__white
+        background-color #ffbc00 !important
+
+    .nav-line1__yellow
+        background-color #343a49 !important
+
+    .nav-line1__black
+        background-color #ffbc00 !important
 
     .transparent
         opacity 0

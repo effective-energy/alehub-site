@@ -30,6 +30,7 @@
 
             <slider-navbar id="slider-navbar"
                            :is-dark="isDark"
+                           :is-yellow="isYellow"
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
@@ -298,16 +299,12 @@
                 if (!document.querySelector('.nav-line'))
                     return false;
 
-                let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth;
+                let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth,
+                    firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left,
+                    currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left;
+
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
-
-
-                let currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left,
-                    firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left;
-
-                let delta = currentNavbarItem - firstNavbarItem;
-
-                document.querySelector('.nav-line').style.transform = `translate3D(${ delta }px,0,0)`;
+                document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -448,7 +445,6 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
-                        console.log(1);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -468,7 +464,6 @@
                         this.isYellow = false;
                     }
                     if (this.isFeatures) {
-                        console.log(2);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -485,7 +480,6 @@
                         this.isYellow = false;
                     }
                     if (!this.isFeatures) {
-                        console.log(3);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -502,7 +496,6 @@
                         this.isYellow = true;
                     }
                     if (!this.isFeatures) {
-                        console.log(4);
                         this.isFeatures = true;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -519,7 +512,6 @@
                         this.isYellow = false;
                     }
                     if (this.isFeatures) {
-                        console.log(6);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -544,7 +536,6 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
-                        console.log(8);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -560,7 +551,6 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
-                        console.log(9);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -577,7 +567,6 @@
                         this.isDark = true;
                     }
                     if (this.isFeatures) {
-                        console.log(10);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -593,7 +582,6 @@
                         this.isYellow = false;
                     }
                     if (this.isFeatures) {
-                        console.log(11);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -916,9 +904,6 @@
         background-color #ffbc00 !important
 
     .nav-line__yellow
-        background-color #343a49 !important
-
-    .nav-line__orange
         background-color #343a49 !important
 
     .nav-line__black
