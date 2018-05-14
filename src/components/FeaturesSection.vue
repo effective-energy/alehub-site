@@ -1,12 +1,13 @@
 <template>
     <div class="application" id="features">
         <vue-particles v-if="isFeatures && !isLessThanTablet"
-                       color="#fff"
+                       id="particles-js"
+                       color="#ffffff"
                        :particleOpacity="0.4"
                        :particlesNumber="80"
                        shapeType="circle"
                        :particleSize="4"
-                       linesColor="#fff"
+                       linesColor="#ffffff"
                        :linesWidth="1"
                        :lineLinked="true"
                        :lineOpacity="0.4"
@@ -42,12 +43,6 @@
                         {{ $t("alePlatform.watchDemo") }}
                     </p>
 
-                    <!--<div class="place-player"-->
-
-                    <!--:style="{ opacity: mainPlayer ? 1 : 0 }">-->
-                    <!--<div class="place-player__frame">-->
-                    <!--</div>-->
-                    <!--</div>-->
                     <div class="main-player"
                          v-if="mainPlayer">
                         <iframe class="iframe"
@@ -153,7 +148,7 @@
 
             <div class="video__wrap">
                 <video autoplay muted loop id="myVideoScale">
-                    <source src="../../static/video/libra2.mp4" type="video/mp4">
+                    <source src="../../static/video/libra4.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -418,13 +413,7 @@
         justify-content center
         align-items center
         padding 80px 10%
-        background rgba(253, 208, 74, 1)
-        background -moz-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253, 208, 74, 1)), color-stop(100%, rgba(255, 160, 7, 1)))
-        background -webkit-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -o-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -ms-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background linear-gradient(to bottom, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background-color #ffce4a
 
         .section-1
             z-index 100

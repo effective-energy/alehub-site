@@ -74,7 +74,6 @@
             });
 
             this.$on('scrollInFooter', (val) => {
-                console.log(val, 'scrollInFooter');
                 this.isScrollInFooter = val;
             });
         }

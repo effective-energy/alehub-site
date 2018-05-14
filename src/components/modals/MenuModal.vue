@@ -5,7 +5,7 @@
            @closed="closedModal('menu-modal')">
 
         <div class="body"
-             :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
+             :class="{ 'body__dark': isDark, 'body__yellow': isYellow }">
 
             <div class="body__top">
                 <a href="http://presale.alehub.io/">
@@ -61,10 +61,6 @@
             yellow: {
                 type: Boolean,
                 required: true
-            },
-            orange: {
-                type: Boolean,
-                required: true
             }
         },
         data() {
@@ -82,9 +78,6 @@
             },
             isYellow: function () {
                 return this.yellow;
-            },
-            isOrange: function () {
-                return this.orange;
             }
         },
         methods: {
@@ -286,13 +279,10 @@
                     color #343a49
                     border-color #343a49
 
-    .body__orange
-        background-color #feaf1c
-
     .body__yellow
         background-color #ffd24f
 
-    .body__yellow, .body__orange
+    .body__yellow
         .body__menu, .body__languages
             div
                 a

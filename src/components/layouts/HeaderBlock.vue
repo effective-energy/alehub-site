@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar fixed-top navbar-light"
-         :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
+         :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow, 'bg-yellow': isYellow }"
          id="navbar">
 
         <router-link tag="a"
@@ -41,17 +41,12 @@
                         {{ item.name }}
                     </a>
                     <div class="nav-line"
-                         :class="{ 'nav-line__yellow': isYellow, 'nav-line__orange': isOrange,
-                         'nav-line__black': isDark, 'nav-line__white': !isYellow && !isOrange && !isDark }"
+                         :class="{ 'nav-line__yellow': isYellow, 'nav-line__black': isDark,
+                                   'nav-line__white': !isYellow && !isDark }"
                          v-if="index === 0">
                     </div>
                 </div>
             </div>
-
-            <!--<li class="nav-line nav-line__yellow" v-if="isYellow"></li>-->
-            <!--<li class="nav-line nav-line__orange" v-else-if="isOrange"></li>-->
-            <!--<li class="nav-line nav-line__black" v-else-if="isDark"></li>-->
-            <!--<li class="nav-line nav-line__white" v-else></li>-->
 
             <div class="right-menu">
                 <a class="btn btn-login"
@@ -157,8 +152,7 @@
         </div>
 
         <menu-modal :dark="isDark"
-                    :yellow="isYellow"
-                    :orange="isOrange"/>
+                    :yellow="isYellow"/>
     </nav>
 </template>
 
@@ -191,7 +185,6 @@
                 isTeam: false,
                 isDark: false,
                 isYellow: false,
-                isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
                 activeItem: 0,
@@ -228,7 +221,6 @@
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = true;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
 
                     if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
@@ -241,7 +233,6 @@
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
 
                     if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
@@ -273,12 +264,6 @@
                     return 'es';
 
                 return 'en';
-            },
-            isNavLinks: function () {
-                return this.navLinks;
-            },
-            isModalIsOpen: function () {
-                return this.modalIsOpen;
             },
             isHeightLangItem: function () {
                 return this.heightLangItem;
@@ -316,12 +301,6 @@
                 let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth;
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
 
-                // let scope = 0;
-                // for (let i = 0; i <= index; i++) {
-                //     if (index === 0 || index === i)
-                //         continue;
-                //     scope += document.querySelectorAll('.navbar-item')[i].offsetWidth;
-                // }
 
                 let currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left,
                     firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left;
@@ -469,6 +448,7 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
+                        console.log(1);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -479,17 +459,16 @@
                 }
 
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (!this.mainIsDark && (this.isDark || this.isYellow || this.isOrange)) {
+                    if (!this.mainIsDark && (this.isDark || this.isYellow)) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
-                    if (this.mainIsDark && (!this.isDark || this.isYellow || this.isOrange)) {
+                    if (this.mainIsDark && (!this.isDark || this.isYellow)) {
                         this.isDark = true;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
+                        console.log(2);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -501,12 +480,12 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
-                        this.isOrange = false;
                         this.isYellow = false;
                     }
                     if (!this.isFeatures) {
+                        console.log(3);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -517,30 +496,13 @@
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('main-features')).top - navbarYOffset) {
+                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
                     if (!this.isYellow) {
                         this.isDark = false;
-                        this.isOrange = false;
                         this.isYellow = true;
                     }
                     if (!this.isFeatures) {
-                        this.isFeatures = true;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isOrange) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                        this.isOrange = true;
-                    }
-                    if (!this.isFeatures) {
+                        console.log(4);
                         this.isFeatures = true;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -552,12 +514,12 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
+                        console.log(6);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -573,14 +535,6 @@
                         this.isDarkSection = false;
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
@@ -590,6 +544,7 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
+                        console.log(8);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -605,6 +560,7 @@
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
                     if (this.isFeatures) {
+                        console.log(9);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -618,10 +574,10 @@
                     window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (!this.isDark) {
                         this.isYellow = false;
-                        this.isOrange = false;
                         this.isDark = true;
                     }
                     if (this.isFeatures) {
+                        console.log(10);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -632,12 +588,12 @@
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
+                        console.log(11);
                         this.isFeatures = false;
                         this.$parent.$emit('checkIsFeatures', this.isFeatures);
                     }
@@ -647,13 +603,10 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight) {
+                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                     this.$parent.$emit('scrollInFooter', true);
-                } else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight) {
-                    console.log(window.scrollY, 'window.scrollY');
-                    console.log(this.getCoords(document.getElementById('footer')).top, 'this.getCoords(document.getElementById(\'footer\')).top');
+                else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                     this.$parent.$emit('scrollInFooter', false);
-                }
 
             });
 
@@ -691,8 +644,6 @@
                 flex-direction row
                 align-items center
                 justify-content space-around
-                /*margin-right auto !important*/
-                /*margin-left auto !important*/
 
                 @media (min-width 1024px) and (max-width 1350px)
                     display none !important
@@ -723,42 +674,6 @@
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
                     right 0
-
-    /*.wrap-navbar*/
-    /*max-width 100%*/
-    /*width 100%*/
-    /*height 100%*/
-    /*display flex*/
-    /*align-items center*/
-    /*overflow-x hidden*/
-    /*position relative*/
-
-    /*@media (max-width 1350px)*/
-    /*max-width 80%*/
-    /*width 80%*/
-
-    /*.more-navbar-items*/
-    /*display none*/
-
-    /*@media (max-width 1350px)*/
-    /*display block*/
-    /*position absolute*/
-    /*right 0*/
-
-    /*.inner-navbar*/
-    /*min-width 100%*/
-    /*position relative*/
-    /*display flex*/
-    /*flex-direction row*/
-    /*justify-content space-around*/
-
-    /*@media (max-width 1350px)*/
-    /*min-width 120%*/
-
-    /*.nav-item-1*/
-    /*font-size 18px*/
-    /*font-family MuseoSansCyrl500*/
-    /*font-weight 500*/
 
     .select-lang
         cursor pointer
@@ -1020,51 +935,6 @@
         -o-transition all 0.4s ease
         transition all 0.4s ease
         max-width 100vw
-
-    .bg-orange
-        background-color #feaf1c
-
-        .select-lang
-            .select-lang__dropdown
-                .select-lang__item
-                    border-left none
-
-                    .select-lang__cover
-                        background-color #feaf1c
-
-                    &:before
-                        background -moz-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                        background -webkit-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -o-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -ms-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background linear-gradient(to bottom, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-
-                    &:after
-                        top 0
-                        height 61px
-                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #feaf1c))
-                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-
-                    &:first-child
-                        &:before
-                            width 62px
-                            left -2px
-
-                    &:last-child
-                        &:after
-                            background -moz-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                            background -webkit-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -o-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -ms-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background linear-gradient(to right, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        &:before
-                            width 62px
 
     .bg-yellow
         background-color #ffd24f
