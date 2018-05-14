@@ -155,7 +155,8 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                            <h1 class="screen1 title">
+                            <h1 class="screen1 title"
+                            :class="{ 'text-align-right-rtl': isRtl }">
                                 {{ $t("greeting.title") }}
                             </h1>
                         </div>
@@ -1690,93 +1691,6 @@
                             width 100% !important
                             position relative
 
-                    /*@media (max-width 2600px)*/
-                    /*.slider-container*/
-                    /*width 709px*/
-                    /*height 443px*/
-                    /*left 252px*/
-                    /*top 40px*/
-
-                    /*.desktop*/
-                    /*left 140px*/
-                    /*width 900px*/
-
-                    /*@media (max-width 2365px)*/
-                    /*.slider-container*/
-                    /*left 162px*/
-
-                    /*.desktop*/
-                    /*left 50px*/
-
-                    /*@media (max-width 2150px)*/
-                    /*.slider-container*/
-                    /*width 630px*/
-                    /*height 395px*/
-                    /*left 102px*/
-                    /*top 36px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 800px*/
-
-                    /*@media (max-width 1860px)*/
-                    /*.slider-container*/
-                    /*width 552px*/
-                    /*height 345px*/
-                    /*left 91px*/
-                    /*top 32px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 700px*/
-
-                    /*@media (max-width 1640px)*/
-                    /*padding-top 50px*/
-
-                    /*.slider-container*/
-                    /*width 473px*/
-                    /*height 296px*/
-                    /*left 80px*/
-                    /*top 77px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 600px*/
-
-                    /*@media (max-width 1460px)*/
-                    /*padding-top 100px*/
-
-                    /*.slider-container*/
-                    /*width 393px*/
-                    /*height 247px*/
-                    /*left 70px*/
-                    /*top 122px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 500px*/
-
-                    /*@media (max-width 1240px)*/
-                    /*padding-top 100px*/
-
-                    /*.slider-container*/
-                    /*width 315px*/
-                    /*height 197px*/
-                    /*left 59px*/
-                    /*top 118px*/
-
-                    /*.desktop*/
-                    /*left 0*/
-                    /*width 400px*/
-
-                    /*@media (max-width 991px)*/
-                    /*padding-top 0*/
-
-                    /*.slider-container*/
-                    /*display none*/
-
-                    /*.desktop*/
-                    /*display none*/
 
                     @media (max-width 991px)
                         .desktop-for-mobile
