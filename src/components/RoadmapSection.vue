@@ -21,7 +21,7 @@
                      :key="slideIndex">
                     <div class="line"></div>
                     <div class="slide-content"
-                         :class="{ 'deployed': slide.progress === 100 }">
+                         :class="{ 'deployed': slide.progress === 100, 'text-align-right-rtl': isRtl }">
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
@@ -31,13 +31,7 @@
                         <span class="date">
                             {{ slide.date }}
                         </span>
-                        <!--<div class="responsible">-->
-                            <!--<div class="avatar"-->
-                                 <!--v-for="(item, index) in slide.members"-->
-                                 <!--:key="index">-->
-                                <!--<img :src="item" alt="">-->
-                            <!--</div>-->
-                        <!--</div>-->
+
                         <div class="slide-progress">
                             <div class="progress-line-outer">
                                 <div class="progress-line"
@@ -63,8 +57,16 @@
             <div class="scroll-block">
                 <button type="button"
                         class="arrow-prev"
+                        v-if="!isRtl"
                         :disabled="disableControls"
                         @click="prevSlide">
+                </button>
+                <button type="button"
+                        class="arrow-prev"
+                        :class="{ 'arrow-prev__rtl': isRtl }"
+                        v-else
+                        :disabled="disableControls"
+                        @click="nextSlide">
                 </button>
 
                 <div id="scroll-element"
@@ -75,13 +77,20 @@
                          class="scroll-content"
                          :style="'width: ' + roadmapPanelWidth + 'px'">
                     </div>
-
                 </div>
 
                 <button type="button"
                         class="arrow-next"
+                        v-if="!isRtl"
                         :disabled="disableControls"
                         @click="nextSlide">
+                </button>
+                <button type="button"
+                        class="arrow-next"
+                        :class="{ 'arrow-next__rtl': isRtl }"
+                        v-else
+                        :disabled="disableControls"
+                        @click="prevSlide">
                 </button>
             </div>
         </div>
@@ -91,6 +100,12 @@
 <script>
     export default {
         name: 'Roadmap',
+        props: {
+            isRtl: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
                 xDrag: 0,
@@ -308,6 +323,120 @@
             background-image url('../../static/images/roadmap/arrow-right.svg')
             background-size cover
 
+        .arrow-prev__rtl
+            background-image url('../../static/images/roadmap/arrow-right.svg')
+
+        .arrow-next__rtl
+            background-image url('../../static/images/roadmap/arrow-left.svg')
+
+        .arrow-prev, .arrow-prev__rtl
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+
+            &:focus
+                -webkit-animation arrow-prev .75s infinite
+                -moz-animation arrow-prev .75s infinite
+                -o-animation arrow-prev .75s infinite;
+                @-webkit-keyframes arrow-prev {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @-moz-keyframes arrow-prev {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @-o-keyframes arrow-prev {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @keyframes arrow-prev {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+
+        .arrow-next, .arrow-next__rtl
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+
+            &:focus
+                -webkit-animation arrow-next .75s infinite
+                -moz-animation arrow-next .75s infinite
+                -o-animation arrow-next .75s infinite;
+                @-webkit-keyframes arrow-next {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(-5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @-moz-keyframes arrow-next {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(-5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @-o-keyframes arrow-next {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(-5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+                @keyframes arrow-next {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    25% {
+                        transform: translateX(-5px);
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+
         .scroll-element
             cursor pointer
             height 6px
@@ -322,7 +451,6 @@
 
             @media (max-width 420px)
                 width 75%
-
 
     .roadmap-slides
         user-select none

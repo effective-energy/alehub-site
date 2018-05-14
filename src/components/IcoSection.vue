@@ -35,9 +35,11 @@
                 </div>
             </div>
             <div class="row distribution">
-                <Circle1 style="direction:ltr;" :index="this.selectedDistributionIndex"></Circle1>
+                <circle1 class="direction-ltr"
+                         :index="this.selectedDistributionIndex"/>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                    <div class="steep-list">
+                    <div class="steep-list"
+                         :class="{ 'steep-list__rtl': isRtl }">
                         <div class="item-list"
                              v-for="(dist, distIndex) in distributionList"
                              @mouseover="showDist(distIndex)"
@@ -52,11 +54,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5 col-sm-12">
-                    <h1 class="section-title is-white is-right mt0">
+                    <h1 class="section-title is-white is-right mt0"
+                        :class="{ 'text-align-right-rtl': isRtl }">
                         {{ $t('economy.distribution.title') }}
                     </h1>
                     <div class="divider"></div>
-                    <p class="small">
+                    <p class="small"
+                       :class="{ 'text-align-right-rtl': isRtl }">
                         {{ $t('economy.distribution.description') }}
                     </p>
                 </div>
@@ -72,6 +76,12 @@
         name: 'Economy',
         components: {
             Circle1
+        },
+        props: {
+            isRtl: {
+                type: Boolean,
+                required: true
+            }
         },
         data() {
             return {
@@ -284,7 +294,7 @@
                     width 20px
                     height 20px
                     border-radius 50%
-                    margin-right 15px
+                    margin 0 15px 0 0
                     -webkit-transition all .3s ease-in-out
                     -o-transition all .3s ease-in-out
                     transition all .3s ease-in-out
@@ -310,6 +320,11 @@
                     line-height 1.25
                     letter-spacing normal
                     color #ffffff
+
+        .steep-list__rtl
+            .item-list
+                .color-steep
+                    margin 0 0 0 15px
 
     @media (max-width: 1199px)
         .figures-panel

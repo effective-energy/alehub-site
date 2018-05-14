@@ -677,7 +677,7 @@ body {
   direction: rtl;
 }
 .text-align-right-rtl {
-  text-align: right;
+  text-align: right !important;
 }
 img,
 a {

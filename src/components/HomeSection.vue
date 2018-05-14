@@ -1850,36 +1850,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                          0% {
-                              transform: translateY(0);
-                          }
-                          25% {
-                              transform: translateY(5px);
-                          }
-                          100% {
-                              transform: translateY(0);
-                          }
-                      } @-o-keyframes wheel-to-bottom {
-                            0% {
-                                transform: translateY(0);
-                            }
-                            25% {
-                                transform: translateY(5px);
-                            }
-                            100% {
-                                transform: translateY(0);
-                            }
-                        } @keyframes wheel-to-bottom {
-                              0% {
-                                  transform: translateY(0);
-                              }
-                              25% {
-                                  transform: translateY(5px);
-                              }
-                              100% {
-                                  transform: translateY(0);
-                              }
-                          }
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-o-keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
 
                 @media (max-width 1124px)
                     display none

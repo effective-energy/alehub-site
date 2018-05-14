@@ -1,5 +1,7 @@
 <template>
-    <div class="team" id="team">
+    <div class="team"
+         id="team"
+         :class="{ 'direction-ltr': isRtl }">
 
         <div class="our-team">
 
@@ -11,7 +13,6 @@
             </div>
 
             <div class="serokell">
-
                 <p>
                     Serokell
                 </p>
@@ -39,7 +40,7 @@
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
                                         <img :class="{ 'in': social.type === 'linkedin' }"
                                              src="../../static/images/in.svg"
-                                             alt="in" />
+                                             alt="in"/>
                                     </a>
                                 </div>
                             </div>
@@ -98,7 +99,7 @@
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
                                         <img :class="{ 'in': social.type === 'linkedin' }"
                                              src="../../static/images/in.svg"
-                                             alt="in" />
+                                             alt="in"/>
                                     </a>
                                 </div>
                             </div>
@@ -131,7 +132,11 @@
         },
         props: {
             isTeam: {
-                type: [Boolean],
+                type: Boolean,
+                required: true
+            },
+            isRtl: {
+                type: Boolean,
                 required: true
             }
         },
@@ -355,7 +360,6 @@
                     -webkit-transition all 0.4s ease-in-out 0s
                     -ms-transition all 0.4s ease-in-out 0s
                     transition all 0.4s ease-in-out 0s
-
 
                 .layer__text
                     color #34343e
