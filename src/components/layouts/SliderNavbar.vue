@@ -44,9 +44,9 @@
                             {{ item.name }}
                         </a>
 
-                        <div class="nav-line1"
-                             :class="{ 'nav-line1__yellow': isYellow, 'nav-line1__black': isDark,
-                                   'nav-line1__white': !isYellow && !isDark }"
+                        <div class="nav-line-slider"
+                             :class="{ 'nav-line-slider__yellow': isYellow, 'nav-line-slider__black': isDark,
+                                   'nav-line-slider__white': !isYellow && !isDark }"
                              v-if="index === 0">
                         </div>
 
@@ -94,12 +94,27 @@
         watch: {
             '$i18n.locale'() {
                 setTimeout(() => {
-                    let tmp = this.multiplier;
                     this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
                     this.opt.maxPosition = this.items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
-                    if (tmp !== this.multiplier && this.opt.position !== 0) {
-                        this.prevSlide();
-                    }
+
+
+                    this.activeItems = [];
+                    let numInViewedCarousel = Math.round(100 / this.multiplier);
+                    if (this.activeItem <= this.opt.maxPosition)
+                        for (let i = 0, j = 0; i < numInViewedCarousel; i++, j++)
+                            this.activeItems[i] = this.activeItem + i;
+                    else
+                        for (let i = numInViewedCarousel - 1, j = 0; i >= 0; i--, j++)
+                            this.activeItems[i] = this.activeItem - j;
+
+                    this.opt.position = this.activeItems[0];
+
+                    document.querySelector('.n-js-carousel__wrap').style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+
+                    this.changeLineWidth(this.activeItem);
+
+                    (this.opt.position === 0) ? this.left = false : this.left = true;
+                    (this.opt.position === this.opt.maxPosition) ? this.right = false : this.right = true;
                 }, 0);
             },
             activeItem: function (index) {
@@ -245,15 +260,15 @@
                 };
             },
             changeLineWidth: function (index) {
-                if (!document.querySelector('.nav-line1'))
+                if (!document.querySelector('.nav-line-slider'))
                     return false;
 
                 let elWidth = document.querySelectorAll('.b-carousel__link')[index].offsetWidth,
                     currentNavbarItem = this.getCoords(document.querySelectorAll('.b-carousel__item')[index]).left,
                     firstNavbarItem = this.getCoords(document.querySelector('.b-carousel__item')).left;
 
-                document.querySelector('.nav-line1').style.width = elWidth + 'px';
-                document.querySelector('.nav-line1').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+                document.querySelector('.nav-line-slider').style.width = elWidth + 'px';
+                document.querySelector('.nav-line-slider').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
             },
             checkActive: function () {
                 let menu = this.$t('navbar.menuList');
@@ -276,7 +291,8 @@
             this.multiplier = parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis);
             this.opt.maxPosition = items.length - Math.round(100 / parseFloat(getComputedStyle(document.querySelector('.b-carousel__item')).flexBasis));
 
-            let numInViewedCarousel = parseInt(100 / this.multiplier);
+            let numInViewedCarousel = Math.round(100 / this.multiplier);
+
             for (let i = 0; i < numInViewedCarousel; i++) {
                 this.activeItems.push(i);
             }
@@ -284,15 +300,17 @@
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
 
-                if (this.activeItem > this.activeItems[this.activeItems.length - 1]) {
-                    for (let i = this.activeItems.length - 1, j = 0; i >= 0; i--, j++) {
+                if (this.activeItem > this.activeItems[this.activeItems.length - 1])
+                    for (let i = this.activeItems.length - 1, j = 0; i >= 0; i--, j++)
                         this.activeItems[i] = this.activeItem - j;
-                    }
-                }
 
                 this.opt.position = this.activeItems[0];
                 document.querySelector('.n-js-carousel__wrap').style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
-            }, 500);
+
+                if (this.activeItems[0] === this.opt.maxPosition)
+                    this.right = false;
+
+            }, 1000);
 
 
             window.addEventListener('scroll', () => {
@@ -427,7 +445,7 @@
             .arrow-next
                 transform translateX(10px)
 
-    .nav-line1
+    .nav-line-slider
         position absolute
         height 2px
         background-color #34343e
@@ -436,13 +454,13 @@
         -o-transition all .5s ease
         transition all .5s ease
 
-    .nav-line1__white
+    .nav-line-slider__white
         background-color #ffbc00 !important
 
-    .nav-line1__yellow
+    .nav-line-slider__yellow
         background-color #343a49 !important
 
-    .nav-line1__black
+    .nav-line-slider__black
         background-color #ffbc00 !important
 
     .transparent
