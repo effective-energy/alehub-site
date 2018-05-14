@@ -26,11 +26,9 @@
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
 
                         <div class="b-carousel__inner">
-
                             <img class="layer__bottom b-carousel__img"
                                  :src="member.src"
                                  :alt="member.name">
-
                             <div class="layer__top">
                                 <div class="layer__text">
                                     <h3>
@@ -44,7 +42,7 @@
                                         <a :href="social.link" v-for="social in member.social" target="_blank">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
                                                  src="../../../static/images/in.svg"
-                                                 alt="in" />
+                                                 alt="in"/>
                                         </a>
                                     </div>
                                 </div>
@@ -112,12 +110,6 @@
         },
         watch: {
             'options.inBlockTeam': function (inBlockTeam) {
-                // this.startAutoplay(3000, val);
-                // console.log(inBlockTeam, 'inBlockTeam');
-                // if (this.options.autoplay && inBlockTeam)
-                //     this.startAutoplay(3000, this.options.autoplay);  //true
-                // else
-                //     this.startAutoplay(3000, this.options.autoplay);  //false
                 this.startAutoplay(true);
             },
             isAutoplay: function () {
@@ -137,13 +129,11 @@
         },
         methods: {
             clickNext: function () {
-                console.log('next');
                 this.stopAutoplay();
                 this.nextSlide();
                 this.startAutoplay(true);
             },
             clickPrev: function () {
-                console.log('prev');
                 this.stopAutoplay();
                 this.prevSlide();
                 this.startAutoplay(true);
@@ -183,15 +173,13 @@
                 }
             },
             touchStart: function (e) {
-                // console.log(e, 'event touch start');
-                // console.log('touchStart');
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
             },
             touchMove: function (e) {
-                // console.log(e, 'event touch move');
                 if (!this.xDown || !this.yDown)
                     return;
+
                 let xUp = e.touches[0].clientX;
                 let yUp = e.touches[0].clientY;
                 let xDiff = this.xDown - xUp;
@@ -315,6 +303,7 @@
             width 80%
             @media (max-width 320px)
                 width 100%
+
     .wrap
         width 100%
         display flex
@@ -391,7 +380,6 @@
 
                             &:active
                                 cursor -webkit-grab !important
-
 
     .b-carousel__prev
         margin-right 20px

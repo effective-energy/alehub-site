@@ -78,11 +78,14 @@ const messages = {
         },
         advantages: {
             title: '优势',
-            lists: [{
-                title: 'ALE与项目管理系统相比'
-            }, {
-                title: 'ALE与其他区块链平台相比'
-            }]
+            lists: [
+                {
+                    title: 'ALE与项目管理系统相比'
+                },
+                {
+                    title: 'ALE与其他区块链平台相比'
+                }
+            ]
         },
         alePlatform: {
             title: 'ALE 平台',
@@ -90,101 +93,128 @@ const messages = {
             watchDemo: '观看演示',
             solvingProblems: {
                 title: '所解决的问题',
-                list: [{
-                    title: '支付的法律性质。',
-                    description: '对于相互结算，ALE使用包含真是货币的“扩容器”。'
-                }, {
-                    title: '电子合约的法律价值、',
-                    description: '在ALE平台内完成的所有合约都具有法律意义，因为其内容符合国家对文件的要求。'
-                }, {
-                    title: '高度不稳定的支付方式。',
-                    description: '加密货币的不稳定性使他们成为一种不可行的实际业务支付方式。 持有“扩容器”的现金系统解决了这一问题。'
-                }, {
-                    title: '与国家和行业标准的矛盾。 ',
-                    description: 'ALE允许用户在ALE平台内选择交互的规则。因此，一个人应该按照立法和商业的要求行事。'
-                }, {
-                    title: '履行义务的必然性。',
-                    description: '金融义务受智能合约的约束，所以形成了一个可信的环境。'
-                }, {
-                    title: '文档的完整性和不可更改性。',
-                    description: '被区块链中的存储库确认，所以ALE生态系统中的文档是有法律保障的。'
-                }]
+                list: [
+                    {
+                        title: '支付的法律性质。',
+                        description: '对于相互结算，ALE使用包含真是货币的“扩容器”。'
+                    },
+                    {
+                        title: '电子合约的法律价值、',
+                        description: '在ALE平台内完成的所有合约都具有法律意义，因为其内容符合国家对文件的要求。'
+                    },
+                    {
+                        title: '高度不稳定的支付方式。',
+                        description: '加密货币的不稳定性使他们成为一种不可行的实际业务支付方式。 持有“扩容器”的现金系统解决了这一问题。'
+                    },
+                    {
+                        title: '与国家和行业标准的矛盾。 ',
+                        description: 'ALE允许用户在ALE平台内选择交互的规则。因此，一个人应该按照立法和商业的要求行事。'
+                    },
+                    {
+                        title: '履行义务的必然性。',
+                        description: '金融义务受智能合约的约束，所以形成了一个可信的环境。'
+                    },
+                    {
+                        title: '文档的完整性和不可更改性。',
+                        description: '被区块链中的存储库确认，所以ALE生态系统中的文档是有法律保障的。'
+                    }
+                ]
             }
         },
         features: {
             title: 'ALE的主要优势特点',
-            list: [{
-                title: '根据用户需求发展的变动以及经济条件的改变迅速建立共识。',
-                description: ' '
-            }, {
-                title: '在处理数据、功能和参数方面（在交互界面的层次上）简单且直观的产品。',
-                description: ' '
-            }, {
-                title: '消除世界现有核查机构的替代，以充分证明该关系在平台上的合法性',
-                description: ' '
-            }, {
-                title: '通过避免二元性、鼓励不负责任并冻结不成比例的流动性金额作为抵押品，以此来确保多方安排的承诺和财务支持。',
-                description: ' '
-            }]
+            list: [
+                {
+                    title: '根据用户需求发展的变动以及经济条件的改变迅速建立共识。',
+                    description: ' '
+                },
+                {
+                    title: '在处理数据、功能和参数方面（在交互界面的层次上）简单且直观的产品。',
+                    description: ' '
+                },
+                {
+                    title: '消除世界现有核查机构的替代，以充分证明该关系在平台上的合法性',
+                    description: ' '
+                },
+                {
+                    title: '通过避免二元性、鼓励不负责任并冻结不成比例的流动性金额作为抵押品，以此来确保多方安排的承诺和财务支持。',
+                    description: ' '
+                }
+            ]
         },
         table: {
             first: {
-                desc: ["多边智能合约",
+                desc: [
+                    "多边智能合约",
                     "参与者制定规则",
                     "完全符合大多数司法管辖区的规定",
                     "法律经济制度可扩展",
                     "真是货币进行支付",
-                    "可进行正式仲裁"],
+                    "可进行正式仲裁"
+                ],
             },
             second: {
                 title: "其他区块链平台",
-                desc: ["DAO",
+                desc: [
+                    "DAO",
                     "交互规则是预先确定的",
                     "合法性不确定",
                     "法制经济的替代",
                     "使用高波动性的加密货币支付",
-                    "-"],
+                    "-"
+                ],
             },
             third: {
-                desc: ["联合了项目管理、金融管理以及承包商管理",
+                desc: [
+                    "联合了项目管理、金融管理以及承包商管理",
                     "通用性的项目管理方法",
                     "通用性的私人数据加密方法",
                     "根据用户的一致意见进行管理",
                     "无中介支付",
-                    "执行义务的紧迫性"],
+                    "执行义务的紧迫性"
+                ],
             },
             four: {
                 title: "项目管理系统",
-                desc: ["-",
+                desc: [
+                    "-",
                     "通过不同的应用程序进行项目管理和金融服务",
                     "使用一种方法",
                     "使用一个或多个方法",
                     "集中管理",
-                    "通过中介支付"],
+                    "通过中介支付"
+                ],
             }
         },
         team: {
             title: '团队',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
                     name: 'Effective Energy team',
@@ -192,7 +222,13 @@ const messages = {
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -202,7 +238,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -212,12 +265,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -259,14 +335,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -430,19 +528,19 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: '舞台没有开始'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: 'the stage did not begin'
+                    title: 'Bounty',
+                    date: '05/25/2018 - 05/25/2018',
+                    progress: 20,
+                    state: '舞台已经开始'
                 },
                 {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: '舞台没有开始'
                 },
                 {
                     title: '黄皮书开发',
@@ -518,525 +616,12 @@ const messages = {
                 success: '正确的地址'
             },
         },
-        download:'下载',
-        serverErr:'一个服务器发生了错误的同时检索的应用程序清单'
+        download: '下载',
+        serverErr: '一个服务器发生了错误的同时检索的应用程序清单'
     },
-    ru: {
-        navbar: {
-            menuList: [
-                {
-                    path: '#home',
-                    name: 'Домой'
-                },
-                {
-                    path: '#description',
-                    name: 'О проекте'
-                },
-                {
-                    path: '#advantages',
-                    name: 'Преимущества'
-                },
-                {
-                    path: '#features',
-                    name: 'Платформа'
-                },
-                {
-                    path: '#team',
-                    name: 'Команда'
-                },
-                {
-                    path: '#ico',
-                    name: 'ICO'
-                },
-                {
-                    path: '#roadmap',
-                    name: 'Карта проекта'
-                },
-                {
-                    path: '#download-application',
-                    name: 'Загрузка'
-                },
-                {
-                    path: '#blog',
-                    name: 'Блог'
-                }
-            ],
-            loginBtn: 'Войти',
-            blog: 'Блог'
-        },
-        menuModal: {
-            selectLang: 'Выберите язык',
-            navigationMenu: 'Вернуться к меню'
-        },
-        greeting: {
-            title: 'The new era of project management is coming',
-            countDown: {
-                title: 'pre-ICO начинается через',
-                time: {
-                    days: 'Дней',
-                    hours: 'Часов',
-                    minutes: 'Минут'
-                },
-                btnBuyTokens: 'Купить токены',
-                bonus: 'Бонус 20% до 25 Июня 2018',
-                notAvailable: 'В данный момент недоступно'
-            },
-            acceptedCrypto: {
-                title: 'Принимаем к сборам:'
-            }
-        },
-        partners: {
-            'title': 'Наши партнеры'
-        },
-        about: {
-            title: 'Что такое Alehub',
-            subTitle: 'ALEHUB - платформа для управления проектами и поиска подрядчиков в IT сфере и Hi Tech.',
-            description: 'ALEHUB объединяет преимущества распределённых реестров и классических сервисов управления проектами. Подбор контрагентов (заказчики и исполнители), управление их работой, контроль и взаиморасчеты, регулируемые смарт-контрактами системы ALE, обеспечивают безопасность, надежность и дешевизну аутсорсинга IT специалистов.',
-            btnGroup: {
-                whitePaper: 'White paper',
-                techDetails: 'Подробнее про ALE',
-                download: 'Загрузить MVP-версию приложения'
-            }
-        },
-        advantages: {
-            title: 'Преимущества ALE',
-            lists: [{
-                title: 'ALE vs централизованные приложения'
-            }, {
-                title: 'ALE vs блокчейн платформы'
-            }]
-        },
-        alePlatform: {
-            title: 'Платформа ALE',
-            subTitle: 'ALE объединяет преимущества реальной и крипто экономики для создания принципиально новой среды - композитной экономики. ALE делает существующую финансовую и юридическую структуру более гибкой, соответствуя законодательству и признанным ценностям большинства стран в вопросах идентификации финансовых агентов, хранения приватных данных, ликвидности и легальности цифровых платежных средств.',
-            watchDemo: 'Узнать больше',
-            solvingProblems: {
-                title: 'Решаемые проблемы',
-                list: [{
-                    title: 'Легальность средства платежа',
-                    description: ' Для взаиморасчетов ALE использует «контейнеры», содержащие реальную валюту'
-                }, {
-                    title: 'Значимость электронных договоров',
-                    description: 'Все договора заключённых в рамках платформы ALE являются юридически значимыми за счёт соблюдения национальных требований к документам'
-                }, {
-                    title: 'Волатильность средства взаиморасчетов',
-                    description: 'Криптовалюты волатильны, поэтому не могут являться средством платежа реального бизнеса. Система «контейнеров» стоимости решает эту проблему.'
-                }, {
-                    title: 'Противоречие национальных и отраслевых стандартов',
-                    description: 'ALE позволяет пользователям самостоятельно выбирать правила, для взаимодействия между собой. Таким образом действовать в соответствии с требованиями законодательства и бизнеса.'
-                }, {
-                    title: 'Неизбежность исполнения обязательств',
-                    description: 'Финансовые обязательства регулируются смарт-контрактами, за счёт чего формируется доверенная среда.'
-                }, {
-                    title: 'Целостность и неизменяемость документации',
-                    description: 'Подтверждается хранением в блокчейне, поэтому документы в рамках экосистемы ALE являются настоящей юридической гарантией.'
-                }]
-            }
-        },
-        features: {
-            title: 'Основные цели ALE',
-            list: [{
-                title: 'Оперативное нахождение консенсуса',
-                description: 'В динамике развития желания пользователей и изменяющихся экономических условий'
-            }, {
-                title: ' Простые и интуитивные продукты',
-                description: 'В вопросах обращения с данными, функциями и параметрами на уровне интерактивного интерфейса'
-            }, {
-                title: 'Исключить подмену существующих верификационных уполномоченных организаций',
-                description: 'Пользователи услуг, основанных на ALE, имеют возможность создавать свои собственные методологические алгоритмы, в дополнение к хорошо известным (DIN 69901, GOST R 54869 - 2011, PMBOK Guide, ISO 10006-97, APM Body of Knowledge, Prince 2, OPM 3)'
-            }, {
-                title: 'Фиксация и финансовое подкрепление договоренностей множества сторон',
-                description: 'Не допускающее двойственности, поощрения безответственности и замораживания непропорциональных объемов ликвидности в качестве залогов.'
-            }]
-        },
-        table: {
-            first: {
-                desc: ["Многосторонние смарт-контракты",
-                    "Участники устанавливают правила взаимодействия",
-                    "Полное соответствие юрисдикциям большинства стран для участников",
-                    "Расширение возможностей легальной экономики",
-                    "Платеж контейнером реальной валюты",
-                    "Возможность официального арбитража"],
-            },
-            second: {
-                title: "Системы project-менеджмента",
-                desc: ["Только посредством DAO",
-                    "Правила взаимодействия участников определны заранее",
-                    "Неясная легитимность",
-                    "Замещение легальной экономики",
-                    "Платеж волатильной криптовалютой",
-                    "-"],
-            },
-            third: {
-                desc: ["Неизбежность исполнения обязательств",
-                    "Объединение управление проектом, финансами и поиском подрядчиков",
-                    "Универсальность методологий управления проектами",
-                    "Универсальность методов шифрования приватных данных",
-                    "Регулируется консенсусом пользователей",
-                    "Платежи без посредников"],
-            },
-            four: {
-                title: "Системы project-менеджмента",
-                desc: ["-",
-                    "Управление проектами, управление финансами и поиск подрядчиков через различные приложения",
-                    "Привязка к одной методолгии",
-                    "Привязка к одному/нескольким методам",
-                    "Регулируется централизовано",
-                    "Платежи через посредников\n"],
-            }
-        },
-        team: {
-            title: 'Команда',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Арсений Серока',
-                    position: 'Ведущий разработчик Serokell',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'Йон Мостовой',
-                    position: 'Ведущий разработчик Serokell',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Александр Рукин',
-                    position: 'UI/UX Дизайнер',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Кирилл Елагин',
-                    position: 'Backend Разработчик',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
-            effectiveEnergy: [
-                {
-                    name: 'Effective Energy',
-                    members: [
-                        {
-                            name: 'Михаил Громыко',
-                            position: 'Генеральный директор',
-                            src: '../static/images/avatars/gromyko@3x.png'
-                        },
-                        {
-                            name: 'Владимир Грудинин',
-                            position: 'Блокчейн эксперт',
-                            src: '../static/images/avatars/grudinin@3x.png'
-                        },
-                        {
-                            name: 'Алексей Осипенко',
-                            position: 'Главный операционный директор',
-                            src: '../static/images/avatars/osipenko@3x.png'
-                        },
-                        {
-                            name: 'Елена Цимбалюк',
-                            position: 'Начальник отдела маркетинговых операций',
-                            src: '../static/images/avatars/elena@3x.png'
-                        },
-                        {
-                            name: 'Егор Локтев',
-                            position: 'Директор по маркетингу',
-                            src: '../static/images/avatars/loktev@3x.png'
-                        },
-                        {
-                            name: 'Артем Левашов',
-                            position: 'Главный консультант по юридическим делам',
-                            src: '../static/images/avatars/levashow@3x.png'
-                        },
-                        {
-                            name: 'Вадим Дудин',
-                            position: 'Fullstack Разработчик',
-                            src: '../static/images/avatars/dudin@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Александр Воронцов',
-                            position: 'Fullstack Разработчик',
-                            src: '../static/images/avatars/voroncov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Денис Тихонов',
-                            position: 'Frontend Разработчик',
-                            src: '../static/images/avatars/tikhonov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Галина Сергеева',
-                            position: 'Frontend Разработчик',
-                            src: '../static/images/avatars/sergeeva@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Дмитрий Журавлев',
-                            position: 'Разработчик мобильных приложений',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
-                        }
-                    ]
-                }
-            ]
-        },
-        advisors: {
-            title: 'Советники',
-            members: [
-                {
-                    name: 'Михаил Громыко',
-                    position: 'Генеральный директор',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                }, {
-                    name: 'Владимир Грудинин',
-                    position: 'Блокчейн эксперт',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                }, {
-                    name: 'Алексей Осипенко',
-                    position: 'Главный операционный директор',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                }, {
-                    name: 'Елена Цимбалюк',
-                    position: 'Начальник отдела маркетинговых операций',
-                    src: '../static/images/avatars/elena@3x.png'
-                }, {
-                    name: 'Егор Локтев',
-                    position: 'Директор по маркетингу',
-                    src: '../static/images/avatars/loktev@3x.png'
-                }]
-        },
-        economy: {
-            title: 'Экономика ICO',
-            subTitle: 'ALE - security токен, обеспечивающий владельцем получение доли прибыли системы ALE. Протокол зазеркален на сеть Ethereum (протокол ERC-20) для обеспечения ликвидности.',
-            ICOinfo: {
-                emission: {
-                    title: 'Объем эмиссии',
-                    amount: "110,000,000"
-                },
-                hardCap: {
-                    title: 'Hardcap',
-                    amount: "33,000"
-                },
-                softCap: {
-                    title: 'Softcap',
-                    amount: "2,000"
-                }
-            },
-            distribution: {
-                title: 'Условия ICO',
-                description: 'Смарт-контракт обеспечивает безопасность средств инвесторов: полный возврат средств в случае недостижения softcap, замораживает средства команды на 1 год. Токены, не распределенные в ходе ICO, будут уничтожены. Токен будет размещен на биржах.',
-                list: [{
-                    title: 'Продажа на ICO',
-                    amount: 77
-                }, {
-                    title: 'Команда',
-                    amount: 11
-                }, {
-                    title: 'Рефералы и эдвайзоры',
-                    amount: 10
-                }, {
-                    title: 'Баунти',
-                    amount: 2
-                }]
-            }
-        },
-        roadmap: {
-            title: 'Дорожная карта проекта',
-            stateLabel: 'статус',
-            stateStatus: {
-                deployed: 'готово',
-                implementing: 'разработка',
-                review: 'проверка',
-                notNow: 'этап ещё не начался'
-            },
-            stages: [
-                {
-                    title: 'Появление идеи',
-                    date: 'Январь 2017-го',
-                    members: [
-                        '../static/images/avatars/gromyko@3x.png',
-                        '../static/images/avatars/osipenko@3x.png'
-                    ],
-                    progress: 100,
-                    state: 'готово'
-                },
-                {
-                    title: 'Экспертиза от специалистов по управлению проектами. Определение требований.',
-                    desk:'Консультации со специалистами по менеджменту проектов из реального сектора экономики, Сбор требований и определение проблематики',
-                    date: 'Февраль - Март 2017-го',
-                    members: [
-                        '../static/images/avatars/grudinin@3x.png'
-                    ],
-                    progress: 100,
-                    state: 'готово'
-                },
-                {
-                    title: 'Построение математической модели',
-                    desk:'Консультации с финансистами. Математическое моделирование, совместно с Университетом ИТМО',
-                    date: 'Апрель - Май 2017-го',
-                    members: [
-                        '../static/images/avatars/grudinin@3x.png'
-                    ],
-                    progress: 100,
-                    state: 'готово'
-                },
-                {
-                    title: 'Формирование Технического задания',
-                    desk:'Консультации с блокчейн -экспертами и разработчиками. Формирование образа продукта и технического задания',
-                    date: 'Июнь - Июль 2017-го',
-                    members: [
-                        '../static/images/avatars/gromyko@3x.png',
-                        '../static/images/avatars/osipenko@3x.png',
-                        '../static/images/avatars/loktev@3x.png'
-                    ],
-                    progress: 100,
-                    state: 'готово'
-                },
-                {
-                    title: 'Партнерство с Serokell OU. Начало разработки.',
-                    date: 'Август 2017-го',
-                    members: [
-                        '../static/images/avatars/seroka@3x.png',
-                        '../static/images/avatars/mostovoy@3x.png',
-                        '../static/images/avatars/elagin@3x.png',
-                        '../static/images/avatars/rukin@3x.png',
-                        '../static/images/avatars/dudin@3x.png',
-                        '../static/images/avatars/voroncov@3x.png',
-                        '../static/images/avatars/tikhonov@3x.png',
-                        '../static/images/avatars/sergeeva@3x.png',
-                        '../static/images/avatars/zhuravlev@3x.png'
-                    ],
-                    progress: 25,
-                    state: 'разработка'
-                },
-                {
-                    title: 'PreSale',
-                    desk:'Собрано более 1,000,000$',
-                    date: 'Ноябрь - Декабрь 2017-го',
-                    members: [
-                        '../static/images/avatars/gromyko@3x.png',
-                        '../static/images/avatars/osipenko@3x.png',
-                        '../static/images/avatars/loktev@3x.png',
-                        '../static/images/avatars/levashow@3x.png'
-                    ],
-                    progress: 100,
-                    state: 'готово'
-                },
-                {
-                    title: 'Публикация MVP',
-                    date: '15 Мая 2018-го',
-                    members: [
-                        '../static/images/avatars/osipenko@3x.png',
-                        '../static/images/avatars/loktev@3x.png'
-                    ],
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Pre-ICO',
-                    date: '25.05.2018 – 24.06.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'ICO',
-                    date: '25.06.2018 – 09.07.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Разработка Yellow Paper',
-                    desk:'Yellow Paper – техническое описание работы системы. В документе рассматриваются архитектурные особенности построения системы, протоколы взаимодействия между узлами сети и иные технические детали.',
-                    date: '02.07.2018 - 01.09.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Децентрализация MVP решения',
-                    desk:'Построение версии системы, в которой реализованы следующие компоненты: Пиринговая сеть; Пользовательские транзакции с использованием встроенного токена и раскрашенных монет; Регистрация контрактов на разработку программного обеспечения; Обеспечение возможности изменения контрактов.',
-                    date: '01.12.2018 - 01.02.2019',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Реализация приватных блокчейнов',
-                    desk:'Разработка приватных блокчейнов и их встраивание в существующую инфраструктуру. Обеспечение бесперебойной работы оракулов. Оформление в законченном варианте всей системы – за исключением механизма диспута (арбитража).',
-                    date: '01.03.2019 – 01.05.2019',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Реализация системы диспута',
-                    desk:'Доработка системы диспутов для решения конфликтов в рамках децентрализованного приложения. ',
-                    date: '01.05.2019 – 01.08.2019',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Реализация системы голосования за изменения',
-                    desk:'Доработка системы для обеспечения ее изменяемости с течением времени.',
-                    date: '01.08.2019 - 01.10.2019',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Закрытое тестирование работы системы',
-                    desk:'Интеграционное тестирование системы в закрытом режиме.',
-                    date: '01.10.2019 - 01.01.2020',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Публикация исходного кода системы и документации',
-                    desk:'Публикация исходного кода системы и документации в открытых репозиториях',
-                    date: '01.01.2020 – 01.02.2020',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                },
-                {
-                    title: 'Запуск эксплуатации системы',
-                    date: '01.02.2020 – 01.03.2020',
-                    progress: 0,
-                    state: 'этап ещё не начался'
-                }
-            ]
-        },
-        blog: {
-            title: 'Блог',
-            allPostsBtn: 'Все записи',
-            notFound: 'Новости не найдены'
-        },
-        footer: {
-            left: {
-                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
-                designBy: 'Design by Alexander Rukin and ledesign',
-                terms: 'Terms and conditions'
-            },
-            right: {
-                input: 'Ваш e-mail',
-                btn: 'Подписаться',
-                error: 'Невалидный адрес',
-                success: 'Валидный адрес'
-            },
-        },
-        download:'Скачать',
-        serverErr:'Произошла ошибка сервера при получении списка приложений.'
-    },
-    en: {
+
+
+    ja: {
         navbar: {
             menuList: [
                 {
@@ -1073,11 +658,11 @@ const messages = {
                 },
                 {
                     path: '#blog',
-                    name: 'Blog'
+                    name: 'ブログ'
                 }
             ],
-            loginBtn: 'Log in',
-            blog: 'Blog'
+            loginBtn: 'ログイン',
+            blog: 'ブログ'
         },
         menuModal: {
             selectLang: 'Select language',
@@ -1101,135 +686,171 @@ const messages = {
             }
         },
         partners: {
-            title: 'Our partners',
+            'title': '相手'
         },
         about: {
-            title: 'What is Alehub',
-            subTitle: 'ALEHUB – is a platform for the IT industry for project management and contractors search.',
-            description: 'ALEHUB combines the advantages of distributed registry systems (blockchain) and classic project management services. The selection of contractors (customers and executors), their work management, control and mutual settlements are regulated by multilateral smart contracts of the ALE system, which ensure the safety, reliability and low costs of outsourcing IT professionals.',
+            title: 'Alehubは',
+            subTitle: 'ALE システムの第一目のプロジェクトと言うものです。',
+            description: '分散レジストリの優位と基本的なプロジェクトの監視のサービスを兼ね備えます。ALE システムのスマートコントラクトで相手の選択(顧客, 事業者);相手の活動の管理; 相互い会計を調整できるので、IT-スペシャリストの安いアウトソーシングと安全を保証します。',
             btnGroup: {
-                whitePaper: 'White paper',
-                techDetails: 'More about ALE',
-                download: 'Download MVP-version application'
+                whitePaper: 'リンク',
+                techDetails: 'Ale について詳しく見る',
+                download: 'ダウンロード'
             }
         },
         advantages: {
-            title: 'ALE advantages',
-            lists: [{
-                title: 'ALE vs Project Management Systems'
-            }, {
-                title: 'ALE vs Other Blockchain Platforms'
-            }]
+            title: 'ALEの優位',
+            lists: [
+                {
+                    title: 'ALEサービス vs 中央のアプリケーション'
+                },
+                {
+                    title: 'ALEサービス VS 他のブロックチェーンサービス'
+                }
+            ]
         },
         alePlatform: {
-            title: 'ALE platform',
-            subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
-            watchDemo: 'Watch demo',
+            title: 'ALE サービス',
+            subTitle: 'Ale は複合経済という新しい経済の分野を作るように、実際経済と暗号経済の優位を兼ね備えるエコシステムです。Ale は財務体質と法律体質の可能を広げます。プライベートデーターをキープする方法とディジタルの財源の合法は多数の国の法律に相当しています。',
+            watchDemo: '動画',
             solvingProblems: {
-                title: 'Solved problems',
-                list: [{
-                    title: 'The legal nature of payment.',
-                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
-                }, {
-                    title: 'Legal value of the electronic contract.',
-                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
-                }, {
-                    title: 'Highly volatile means of payment.',
-                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
-                }, {
-                    title: 'Contradiction to national and industrial standards. ',
-                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
-                }, {
-                    title: 'The inevitability of fulfilling obligations.',
-                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
-                }, {
-                    title: 'Integrity and unchangeability of documentation.',
-                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
-                }]
+                title: '解決できた問題',
+                list: [
+                    {
+                        title: '財源の合法.',
+                        description: '相互い会払いの時、Aleは「コンテナ」を使用しています。実際貨に付き合ったコンテナ。'
+                    },
+                    {
+                        title: 'ディジタル契約の重量。',
+                        description: 'ALEサービスでは結んでたディジタル契約が多数国の法律に当たります。'
+                    },
+                    {
+                        title: 'ボラティリティ。',
+                        description: '暗号通貨はボラティリティだから実際のビジネスでは使用できませんけど、値段の「コンテナシステム」はこの問題を解決 します。'
+                    },
+                    {
+                        title: '分野の標準と国立の標準の相違。',
+                        description: 'Aleシステムですはユーザは自分で相互作用するようにルールを制定します。つまり、法律の条件と国立の条件に当たって活動できます。'
+                    },
+                    {
+                        title: '義務の実行が必然。',
+                        description: '財政の義務はスマートコントラクトで調整のおかげで信頼域を形成できます。'
+                    },
+                    {
+                        title: '文書の完全と文書の不変。',
+                        description: 'ブロックチェーンにあるので、Ale システム内は合法的な文書であります。法律の保険であります。'
+                    }
+                ]
             }
         },
         features: {
-            title: 'The main distinguishing features of ALE',
-            list: [{
-                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
-                description: ' '
-            }, {
-                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
-                description: ' '
-            }, {
-                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
-                description: ' '
-            }, {
-                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
-                description: ' '
-            }]
+            title: 'ALE サービスの目標は',
+            list: [
+                {
+                    title: 'ユーザ希望の成長する中にとか、不安定な経済の条件がある時にとか、速いコンセンサスを見つけるようになります',
+                    description: ''
+                },
+                {
+                    title: 'インタラクティブインターフェースがあるので、データー使用は簡単になります。',
+                    description: ''
+                },
+                {
+                    title: '世界検査機関の置換を除外します。',
+                    description: ''
+                },
+                {
+                    title: '多数契約の財政バックは二元の払いを除外します。無責任を除外します。不均衡な財政の流動性も除外します。',
+                    description: ''
+                }
+            ]
         },
         table: {
             first: {
-                desc: ["Multilateral smart contracts",
-                    "Participants establish rules",
-                    "Full compliance with the majority of jurisdictions",
-                    "Expansion of the possibilities of a legal economic system",
-                    "Payment by real currency containers",
-                    "Possibility of formal arbitration"],
+                desc: [
+                    "多数スマートコントラクト",
+                    "参加者は自分で相互作用のルールを制定します",
+                    "多数の国の裁判管轄に相当します",
+                    "合法的な経済の可能を広げます",
+                    "実際貨で支払「コンテナ」",
+                    "オフィシャル仲裁が可能です"
+                ],
             },
             second: {
-                title: "Other blockchain platforms",
-                desc: ["DAO",
-                    "Interaction rules are predetermined",
-                    "Uncertain legitimacy",
-                    "Substitution of legal economy",
-                    "Payment by high-volatile cryptocurrency",
-                    "-"],
+                title: "その他",
+                desc: [
+                    "DAOによるしかできません",
+                    "参加者の相互のルールは既定しました",
+                    "正統性ははっきりではありません",
+                    "合法的な経済の代わり",
+                    "ボラティリティの暗号通貨で支払(不安定な値段)",
+                    "-"
+                ],
             },
             third: {
-                desc: ["Joint project management, finance and contractor administration",
-                    "Universality of project management methods",
-                    "Universality of encryption methods of private data",
-                    "Regulated by consensus of users",
-                    "Payments without intermediaries",
-                    "The imminence of execution obligations"],
+                desc: [
+                    "義務の実行が必然",
+                    "プロジェクトと財政の監視と事業者を検索を兼ね備えます",
+                    "普遍の方法でプロジェクトの監視を行います",
+                    "普遍の方法プライベートデーターの暗号を行います",
+                    "ユーザコンセンサスで調整です",
+                    "直接の支払"
+                ],
             },
             four: {
-                title: "Project management systems",
-                desc: ["Project management, financial services through different applications",
-                    "Bound to one method",
-                    "Bound to one or several methods",
-                    "Centrally regulated",
-                    "Payments through intermediaries",
-                    "-"],
+                title: "中央のアプリケーション",
+                desc: [
+                    "-",
+                    "別々のアプリケーションでプロジェクトと財政の監視と事業者を検索を行います。",
+                    "つの方法だけに結んでいます",
+                    "つか二三の方法に結んでいます",
+                    "中央の方法で調整です",
+                    "仲介の支払"
+                ],
             }
         },
         team: {
-            title: 'Our team',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            title: 'チーム',
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -1239,7 +860,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -1249,12 +887,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -1296,14 +957,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -1340,11 +1023,11 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO Economy',
-            subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
+            title: 'ICO の経済',
+            subTitle: 'Ale セキュリティトケンはトケンを持っているユーザにALE システムの営業の部分を儲けします。Ethereum ネットに結んでたプロトコルは流動性を保険します。(プロトコル ERC-20)',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
+                    title: 'Объем эмиссии',
                     amount: "110,000,000"
                 },
                 hardCap: {
@@ -1357,21 +1040,26 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Sale during the ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
-                list: [{
-                    title: 'Sale during the ICO',
-                    amount: 77
-                }, {
-                    title: 'Team',
-                    amount: 11
-                }, {
-                    title: 'Referral program, advisors',
-                    amount: 10
-                }, {
-                    title: 'Bounty',
-                    amount: 2
-                }]
+                title: 'ICO 条件',
+                description: 'スマートコントラクトは投資家の財政の安全を保障します:チームの資本を寝かせる(一年間) softcap が成功にならない場合には財政を返金します。',
+                list: [
+                    {
+                        title: 'Sale during the ICO',
+                        amount: 77
+                    },
+                    {
+                        title: 'Team',
+                        amount: 11
+                    },
+                    {
+                        title: 'Referral program, advisors',
+                        amount: 10
+                    },
+                    {
+                        title: 'Bounty',
+                        amount: 2
+                    }
+                ]
             }
         },
         roadmap: {
@@ -1468,14 +1156,1244 @@ const messages = {
                     state: 'the stage did not begin'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
+                    title: 'Bounty',
+                    date: '05/09/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'stage in the process'
+                },
+                {
+                    title: 'ICO',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
+                    title: 'Yellow Paper development',
+                    desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
+                    date: '07/02/2018 - 01/01/2018',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Decentralization of MVP solutions',
+                    date: '01.12.2018 - 01/02/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Private blockchains',
+                    date: '01/03/2019 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the dispute system',
+                    date: '05/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Implementation of the voting system for changes',
+                    date: '08/01/2018 - 01/01/2019',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Closed system testing',
+                    date: '10/01/2019 - 01/01/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Publication of the source code of the system and documentation',
+                    date: '01/01/2020 - 01/02/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Booting the system ',
+                    date: '01/02/2020 – 01/03/2020',
+                    progress: 0,
+                    state: 'the stage did not begin'
+                }
+            ]
+        },
+        blog: {
+            title: 'ブログ',
+            allPostsBtn: '全てメール',
+            notFound: 'ニュースは発見されなかった'
+        },
+        footer: {
+            left: {
+                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
+                designBy: 'Design by Alexander Rukin and ledesign',
+                terms: 'Terms and conditions'
+            },
+            right: {
+                input: 'メールアドレス',
+                btn: 'ニュースに応募します',
+                error: 'アドレスが正しくありません',
+                success: '正しい住所'
+            },
+        },
+        download: 'Download',
+        serverErr: 'A server error occurred while retrieving the application list.'
+    },
+
+
+    ru: {
+        navbar: {
+            menuList: [
+                {
+                    path: '#home',
+                    name: 'Домой'
+                },
+                {
+                    path: '#description',
+                    name: 'О проекте'
+                },
+                {
+                    path: '#advantages',
+                    name: 'Преимущества'
+                },
+                {
+                    path: '#features',
+                    name: 'Платформа'
+                },
+                {
+                    path: '#team',
+                    name: 'Команда'
+                },
+                {
+                    path: '#ico',
+                    name: 'ICO'
+                },
+                {
+                    path: '#roadmap',
+                    name: 'Карта проекта'
+                },
+                {
+                    path: '#download-application',
+                    name: 'Загрузка'
+                },
+                {
+                    path: '#blog',
+                    name: 'Блог'
+                }
+            ],
+            loginBtn: 'Войти',
+            blog: 'Блог'
+        },
+        menuModal: {
+            selectLang: 'Выберите язык',
+            navigationMenu: 'Вернуться к меню'
+        },
+        greeting: {
+            title: 'The new era of project management is coming',
+            countDown: {
+                title: 'ICO начинается через',
+                time: {
+                    days: 'Дней',
+                    hours: 'Часов',
+                    minutes: 'Минут'
+                },
+                btnBuyTokens: 'Купить токены',
+                bonus: 'Бонус 20% до 25 Июня 2018',
+                notAvailable: 'В данный момент недоступно'
+            },
+            acceptedCrypto: {
+                title: 'Принимаем к сборам:'
+            }
+        },
+        partners: {
+            'title': 'Наши партнеры'
+        },
+        about: {
+            title: 'Что такое Alehub',
+            subTitle: 'ALEHUB - платформа для управления проектами и поиска подрядчиков в IT сфере и Hi Tech.',
+            description: 'ALEHUB объединяет преимущества распределённых реестров и классических сервисов управления проектами. Подбор контрагентов (заказчики и исполнители), управление их работой, контроль и взаиморасчеты, регулируемые смарт-контрактами системы ALE, обеспечивают безопасность, надежность и дешевизну аутсорсинга IT специалистов.',
+            btnGroup: {
+                whitePaper: 'White paper',
+                techDetails: 'Подробнее про ALE',
+                download: 'Загрузить MVP-версию приложения'
+            }
+        },
+        advantages: {
+            title: 'Преимущества ALE',
+            lists: [
+                {
+                    title: 'ALE vs централизованные приложения'
+                },
+                {
+                    title: 'ALE vs блокчейн платформы'
+                }
+            ]
+        },
+        alePlatform: {
+            title: 'Платформа ALE',
+            subTitle: 'ALE объединяет преимущества реальной и крипто экономики для создания принципиально новой среды - композитной экономики. ALE делает существующую финансовую и юридическую структуру более гибкой, соответствуя законодательству и признанным ценностям большинства стран в вопросах идентификации финансовых агентов, хранения приватных данных, ликвидности и легальности цифровых платежных средств.',
+            watchDemo: 'Узнать больше',
+            solvingProblems: {
+                title: 'Решаемые проблемы',
+                list: [
+                    {
+                        title: 'Легальность средства платежа',
+                        description: ' Для взаиморасчетов ALE использует «контейнеры», содержащие реальную валюту'
+                    },
+                    {
+                        title: 'Значимость электронных договоров',
+                        description: 'Все договора заключённых в рамках платформы ALE являются юридически значимыми за счёт соблюдения национальных требований к документам'
+                    },
+                    {
+                        title: 'Волатильность средства взаиморасчетов',
+                        description: 'Криптовалюты волатильны, поэтому не могут являться средством платежа реального бизнеса. Система «контейнеров» стоимости решает эту проблему.'
+                    },
+                    {
+                        title: 'Противоречие национальных и отраслевых стандартов',
+                        description: 'ALE позволяет пользователям самостоятельно выбирать правила, для взаимодействия между собой. Таким образом действовать в соответствии с требованиями законодательства и бизнеса.'
+                    },
+                    {
+                        title: 'Неизбежность исполнения обязательств',
+                        description: 'Финансовые обязательства регулируются смарт-контрактами, за счёт чего формируется доверенная среда.'
+                    },
+                    {
+                        title: 'Целостность и неизменяемость документации',
+                        description: 'Подтверждается хранением в блокчейне, поэтому документы в рамках экосистемы ALE являются настоящей юридической гарантией.'
+                    }
+                ]
+            }
+        },
+        features: {
+            title: 'Основные цели ALE',
+            list: [
+                {
+                    title: 'Оперативное нахождение консенсуса',
+                    description: ''
+                },
+                {
+                    title: ' Простые и интуитивные продукты',
+                    description: ''
+                },
+                {
+                    title: 'Исключить подмену существующих верификационных уполномоченных организаций',
+                    description: ''
+                },
+                {
+                    title: 'Фиксация и финансовое подкрепление договоренностей множества сторон',
+                    description: ''
+                }
+            ]
+        },
+        table: {
+            first: {
+                desc: [
+                    "Многосторонние смарт-контракты",
+                    "Участники устанавливают правила взаимодействия",
+                    "Полное соответствие юрисдикциям большинства стран для участников",
+                    "Расширение возможностей легальной экономики",
+                    "Платеж контейнером реальной валюты",
+                    "Возможность официального арбитража"
+                ],
+            },
+            second: {
+                title: "Системы project-менеджмента",
+                desc: [
+                    "Только посредством DAO",
+                    "Правила взаимодействия участников определны заранее",
+                    "Неясная легитимность",
+                    "Замещение легальной экономики",
+                    "Платеж волатильной криптовалютой",
+                    "-"
+                ],
+            },
+            third: {
+                desc: [
+                    "Неизбежность исполнения обязательств",
+                    "Объединение управление проектом, финансами и поиском подрядчиков",
+                    "Универсальность методологий управления проектами",
+                    "Универсальность методов шифрования приватных данных",
+                    "Регулируется консенсусом пользователей",
+                    "Платежи без посредников"
+                ],
+            },
+            four: {
+                title: "Системы project-менеджмента",
+                desc: [
+                    "-",
+                    "Управление проектами, управление финансами и поиск подрядчиков через различные приложения",
+                    "Привязка к одной методолгии",
+                    "Привязка к одному/нескольким методам",
+                    "Регулируется централизовано",
+                    "Платежи через посредников"
+                ],
+            }
+        },
+        team: {
+            title: 'Команда',
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Арсений Серока',
+                            position: 'Ведущий разработчик Serokell',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'Йон Мостовой',
+                            position: 'Ведущий разработчик Serokell',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Александр Рукин',
+                            position: 'UI/UX Дизайнер',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Кирилл Елагин',
+                            position: 'Backend Разработчик',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy',
+                    members: [
+                        {
+                            name: 'Михаил Громыко',
+                            position: 'Генеральный директор',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Владимир Грудинин',
+                            position: 'Блокчейн эксперт',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Алексей Осипенко',
+                            position: 'Главный операционный директор',
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Илья Шилов',
+                            position: 'Технический директор',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Елена Цимбалюк',
+                            position: 'Начальник отдела маркетинговых операций',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Егор Локтев',
+                            position: 'Директор по маркетингу',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Арсений Войтенко',
+                            position: 'Глава отдела по коммуникациям',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Артем Левашов',
+                            position: 'Главный консультант по юридическим делам',
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Вадим Дудин',
+                            position: 'Fullstack Разработчик',
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Александр Воронцов',
+                            position: 'Fullstack Разработчик',
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Денис Тихонов',
+                            position: 'Frontend Разработчик',
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Галина Сергеева',
+                            position: 'Frontend Разработчик',
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Дмитрий Журавлев',
+                            position: 'Разработчик мобильных приложений',
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Евгений Житков',
+                            position: 'Инженер по тестированию',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Евгений Коробицин',
+                            position: 'Графический Дизайнер',
+                            src: '../../static/images/avatars/korobitsyn@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: 'Советники',
+            members: [
+                {
+                    name: 'Михаил Громыко',
+                    position: 'Генеральный директор',
+                    src: '../static/images/avatars/gromyko@3x.png'
+                }, {
+                    name: 'Владимир Грудинин',
+                    position: 'Блокчейн эксперт',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                }, {
+                    name: 'Алексей Осипенко',
+                    position: 'Главный операционный директор',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                }, {
+                    name: 'Елена Цимбалюк',
+                    position: 'Начальник отдела маркетинговых операций',
+                    src: '../static/images/avatars/elena@3x.png'
+                }, {
+                    name: 'Егор Локтев',
+                    position: 'Директор по маркетингу',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }]
+        },
+        economy: {
+            title: 'Экономика ICO',
+            subTitle: 'ALE - security токен, обеспечивающий владельцем получение доли прибыли системы ALE. Протокол зазеркален на сеть Ethereum (протокол ERC-20) для обеспечения ликвидности.',
+            ICOinfo: {
+                emission: {
+                    title: 'Объем эмиссии',
+                    amount: "110,000,000"
+                },
+                hardCap: {
+                    title: 'Hardcap',
+                    amount: "33,000"
+                },
+                softCap: {
+                    title: 'Softcap',
+                    amount: "2,000"
+                }
+            },
+            distribution: {
+                title: 'Условия ICO',
+                description: 'Смарт-контракт обеспечивает безопасность средств инвесторов: полный возврат средств в случае недостижения softcap, замораживает средства команды на 1 год. Токены, не распределенные в ходе ICO, будут уничтожены. Токен будет размещен на биржах.',
+                list: [
+                    {
+                        title: 'Продажа на ICO',
+                        amount: 77
+                    },
+                    {
+                        title: 'Команда',
+                        amount: 11
+                    },
+                    {
+                        title: 'Рефералы и эдвайзоры',
+                        amount: 10
+                    },
+                    {
+                        title: 'Баунти',
+                        amount: 2
+                    }
+                ]
+            }
+        },
+        roadmap: {
+            title: 'Дорожная карта проекта',
+            stateLabel: 'статус',
+            stateStatus: {
+                deployed: 'готово',
+                implementing: 'разработка',
+                review: 'проверка',
+                notNow: 'этап ещё не начался'
+            },
+            stages: [
+                {
+                    title: 'Появление идеи',
+                    date: 'Январь 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Экспертиза от специалистов по управлению проектами. Определение требований.',
+                    desk: 'Консультации со специалистами по менеджменту проектов из реального сектора экономики, Сбор требований и определение проблематики',
+                    date: 'Февраль - Март 2017-го',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Построение математической модели',
+                    desk: 'Консультации с финансистами. Математическое моделирование, совместно с Университетом ИТМО',
+                    date: 'Апрель - Май 2017-го',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Формирование Технического задания',
+                    desk: 'Консультации с блокчейн -экспертами и разработчиками. Формирование образа продукта и технического задания',
+                    date: 'Июнь - Июль 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Партнерство с Serokell OU. Начало разработки.',
+                    date: 'Август 2017-го',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'разработка'
+                },
+                {
+                    title: 'PreSale',
+                    desk: 'Собрано более 1,000,000$',
+                    date: 'Ноябрь - Декабрь 2017-го',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'готово'
+                },
+                {
+                    title: 'Публикация MVP',
+                    date: '15 Мая 2018-го',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Bounty',
+                    date: '09.05.2018 – 25.05.2018',
+                    progress: 20,
+                    state: 'этап идёт'
+                },
+                {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '25.05.2018 – 24.07.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Yellow Paper – техническое описание работы системы. В документе рассматриваются архитектурные особенности построения системы, протоколы взаимодействия между узлами сети и иные технические детали.',
+                    date: '02.07.2018 - 01.09.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Децентрализация MVP решения',
+                    desk: 'Построение версии системы, в которой реализованы следующие компоненты: Пиринговая сеть; Пользовательские транзакции с использованием встроенного токена и раскрашенных монет; Регистрация контрактов на разработку программного обеспечения; Обеспечение возможности изменения контрактов.',
+                    date: '01.12.2018 - 01.02.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация приватных блокчейнов',
+                    desk: 'Разработка приватных блокчейнов и их встраивание в существующую инфраструктуру. Обеспечение бесперебойной работы оракулов. Оформление в законченном варианте всей системы – за исключением механизма диспута (арбитража).',
+                    date: '01.03.2019 – 01.05.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация системы диспута',
+                    desk: 'Доработка системы диспутов для решения конфликтов в рамках децентрализованного приложения. ',
+                    date: '01.05.2019 – 01.08.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Реализация системы голосования за изменения',
+                    desk: 'Доработка системы для обеспечения ее изменяемости с течением времени.',
+                    date: '01.08.2019 - 01.10.2019',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Закрытое тестирование работы системы',
+                    desk: 'Интеграционное тестирование системы в закрытом режиме.',
+                    date: '01.10.2019 - 01.01.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Публикация исходного кода системы и документации',
+                    desk: 'Публикация исходного кода системы и документации в открытых репозиториях',
+                    date: '01.01.2020 – 01.02.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                },
+                {
+                    title: 'Запуск эксплуатации системы',
+                    date: '01.02.2020 – 01.03.2020',
+                    progress: 0,
+                    state: 'этап ещё не начался'
+                }
+            ]
+        },
+        blog: {
+            title: 'Блог',
+            allPostsBtn: 'Все записи',
+            notFound: 'Новости не найдены'
+        },
+        footer: {
+            left: {
+                copyright: 'Effective Energy LLC © 2018 All rights reserved.',
+                designBy: 'Design by Alexander Rukin and ledesign',
+                terms: 'Terms and conditions'
+            },
+            right: {
+                input: 'Ваш e-mail',
+                btn: 'Подписаться',
+                error: 'Невалидный адрес',
+                success: 'Валидный адрес'
+            },
+        },
+        download: 'Скачать',
+        serverErr: 'Произошла ошибка сервера при получении списка приложений.'
+    },
+    en: {
+        navbar: {
+            menuList: [
+                {
+                    path: '#home',
+                    name: 'Home'
+                },
+                {
+                    path: '#description',
+                    name: 'Description'
+                },
+                {
+                    path: '#advantages',
+                    name: 'Advantages'
+                },
+                {
+                    path: '#features',
+                    name: 'Features'
+                },
+                {
+                    path: '#team',
+                    name: 'Team'
+                },
+                {
+                    path: '#ico',
+                    name: 'ICO'
+                },
+                {
+                    path: '#roadmap',
+                    name: 'Roadmap'
+                },
+                {
+                    path: '#download-application',
+                    name: 'Download'
+                },
+                {
+                    path: '#blog',
+                    name: 'Blog'
+                }
+            ],
+            loginBtn: 'Login',
+            blog: 'Blog'
+        },
+        menuModal: {
+            selectLang: 'Select language',
+            navigationMenu: 'Back to menu'
+        },
+        greeting: {
+            title: 'The new era of project management is coming',
+            countDown: {
+                title: 'Round 1 will begin',
+                time: {
+                    days: 'Days',
+                    hours: 'Hours',
+                    minutes: 'Minutes'
+                },
+                btnBuyTokens: 'Buy tokens',
+                bonus: 'Bonus 20% up to 25 June 2018',
+                notAvailable: 'Now not available'
+            },
+            acceptedCrypto: {
+                title: 'Accepted for collection:'
+            }
+        },
+        partners: {
+            title: 'Our partners',
+        },
+        about: {
+            title: 'What is Alehub',
+            subTitle: 'ALEHUB – is a platform for the IT industry for project management and contractors search.',
+            description: 'ALEHUB combines the advantages of distributed registry systems (blockchain) and classic project management services. The selection of contractors (customers and executors), their work management, control and mutual settlements are regulated by multilateral smart contracts of the ALE system, which ensure the safety, reliability and low costs of outsourcing IT professionals.',
+            btnGroup: {
+                whitePaper: 'White paper',
+                techDetails: 'More about ALE',
+                download: 'Download MVP-version application'
+            }
+        },
+        advantages: {
+            title: 'ALE advantages',
+            lists: [
+                {
+                    title: 'ALE vs Project Management Systems'
+                },
+                {
+                    title: 'ALE vs Other Blockchain Platforms'
+                }
+            ]
+        },
+        alePlatform: {
+            title: 'ALE platform',
+            subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
+            watchDemo: 'Watch demo',
+            solvingProblems: {
+                title: 'Solved problems',
+                list: [
+                    {
+                    title: 'The legal nature of payment.',
+                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
+                },
+                    {
+                    title: 'Legal value of the electronic contract.',
+                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
+                },
+                    {
+                    title: 'Highly volatile means of payment.',
+                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
+                },
+                    {
+                    title: 'Contradiction to national and industrial standards. ',
+                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
+                },
+                    {
+                    title: 'The inevitability of fulfilling obligations.',
+                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
+                },
+                    {
+                    title: 'Integrity and unchangeability of documentation.',
+                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
+                }
+                ]
+            }
+        },
+        features: {
+            title: 'The main distinguishing features of ALE',
+            list: [
+                {
+                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
+                description: ' '
+            },
+                {
+                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
+                description: ' '
+            },
+                {
+                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
+                description: ' '
+            },
+                {
+                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
+                description: ' '
+            }
+            ]
+        },
+        table: {
+            first: {
+                desc: ["Multilateral smart contracts",
+                    "Participants establish rules",
+                    "Full compliance with the majority of jurisdictions",
+                    "Expansion of the possibilities of a legal economic system",
+                    "Payment by real currency containers",
+                    "Possibility of formal arbitration"],
+            },
+            second: {
+                title: "Other blockchain platforms",
+                desc: ["DAO",
+                    "Interaction rules are predetermined",
+                    "Uncertain legitimacy",
+                    "Substitution of legal economy",
+                    "Payment by high-volatile cryptocurrency",
+                    "-"],
+            },
+            third: {
+                desc: ["Joint project management, finance and contractor administration",
+                    "Universality of project management methods",
+                    "Universality of encryption methods of private data",
+                    "Regulated by consensus of users",
+                    "Payments without intermediaries",
+                    "The imminence of execution obligations"],
+            },
+            four: {
+                title: "Project management systems",
+                desc: ["Project management, financial services through different applications",
+                    "Bound to one method",
+                    "Bound to one or several methods",
+                    "Centrally regulated",
+                    "Payments through intermediaries",
+                    "-"],
+            }
+        },
+        team: {
+            title: 'Our team',
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
+            effectiveEnergy: [
+                {
+                    name: 'Effective Energy',
+                    members: [
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Vladimir Grudinin',
+                            position: 'Blockchain Expert',
+                            src: '../static/images/avatars/grudinin@3x.png'
+                        },
+                        {
+                            name: 'Alexej Osipenko',
+                            position: 'Chief Operating Officer',
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Elena Tsymbalyuk',
+                            position: 'Head of Marketing Operations',
+                            src: '../static/images/avatars/elena@3x.png'
+                        },
+                        {
+                            name: 'Egor Loktev',
+                            position: 'Chief Marketing Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Artem Levashov',
+                            position: 'Chief Legal Officer',
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Vadim Dudin',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/dudin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Alexander Voroncov',
+                            position: 'Fullstack Developer',
+                            src: '../static/images/avatars/voroncov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Denis Tikhonov',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/tikhonov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Galina Sergeeva',
+                            position: 'Frontend Developer',
+                            src: '../static/images/avatars/sergeeva@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Dmitry Zhuravlev',
+                            position: 'Mobile developer',
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
+                        }
+                    ]
+                }
+            ]
+        },
+        advisors: {
+            title: 'Advisors',
+            members: [
+                {
+                    name: 'Mikhail Gromyko',
+                    position: 'Chief Executive Officer',
+                    src: '../static/images/avatars/gromyko@3x.png'
+                },
+                {
+                    name: 'Vladimir Grudinin',
+                    position: 'Blockchain Expert',
+                    src: '../static/images/avatars/grudinin@3x.png'
+                },
+                {
+                    name: 'Alexej Osipenko',
+                    position: 'Chief Operating Officer',
+                    src: '../static/images/avatars/osipenko@3x.png'
+                },
+                {
+                    name: 'Elena Tsymbalyuk',
+                    position: 'Head of Marketing Operations',
+                    src: '../static/images/avatars/elena@3x.png'
+                },
+                {
+                    name: 'Egor Loktev',
+                    position: 'Chief Marketing Officer',
+                    src: '../static/images/avatars/loktev@3x.png'
+                }
+            ]
+        },
+        economy: {
+            title: 'ICO Economy',
+            subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
+            ICOinfo: {
+                emission: {
+                    title: 'Emission',
+                    amount: "110,000,000"
+                },
+                hardCap: {
+                    title: 'Hardcap',
+                    amount: "33,000"
+                },
+                softCap: {
+                    title: 'Softcap',
+                    amount: "2,000"
+                }
+            },
+            distribution: {
+                title: 'Sale during the ICO',
+                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                list: [
+                    {
+                        title: 'Sale during the ICO',
+                        amount: 77
+                    },
+                    {
+                        title: 'Team',
+                        amount: 11
+                    },
+                    {
+                        title: 'Referral program, advisors',
+                        amount: 10
+                    },
+                    {
+                        title: 'Bounty',
+                        amount: 2
+                    }
+                ]
+            }
+        },
+        roadmap: {
+            title: 'Roadmap',
+            stateLabel: 'state',
+            stateStatus: {
+                deployed: 'deployed',
+                implementing: 'implementing',
+                review: 'review',
+                notNow: 'the stage did not begin'
+            },
+            stages: [
+                {
+                    title: 'Conception',
+                    desk: 'The idea',
+                    date: 'January 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Expertise from specialists in project management. Definition of requirements',
+                    desk: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
+                    date: 'February - March 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Mathematical modeling',
+                    desk: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
+                    date: 'April - May 2017',
+                    members: [
+                        '../static/images/avatars/grudinin@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Formation of the Terms of Reference',
+                    desk: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
+                    date: 'June - July 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Partnership with Serokell OU. The beginning of development.',
+                    date: 'August 2017',
+                    members: [
+                        '../static/images/avatars/seroka@3x.png',
+                        '../static/images/avatars/mostovoy@3x.png',
+                        '../static/images/avatars/elagin@3x.png',
+                        '../static/images/avatars/rukin@3x.png',
+                        '../static/images/avatars/dudin@3x.png',
+                        '../static/images/avatars/voroncov@3x.png',
+                        '../static/images/avatars/tikhonov@3x.png',
+                        '../static/images/avatars/sergeeva@3x.png',
+                        '../static/images/avatars/zhuravlev@3x.png'
+                    ],
+                    progress: 25,
+                    state: 'implementing'
+                },
+                {
+                    title: 'PreSale',
+                    desk: 'Raised more than 1,000,000 USD',
+                    date: 'November - December 2017',
+                    members: [
+                        '../static/images/avatars/gromyko@3x.png',
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png',
+                        '../static/images/avatars/levashow@3x.png'
+                    ],
+                    progress: 100,
+                    state: 'deployed'
+                },
+                {
+                    title: 'Publishing MVP',
+                    date: 'May 15, 2018',
+                    members: [
+                        '../static/images/avatars/osipenko@3x.png',
+                        '../static/images/avatars/loktev@3x.png'
+                    ],
+                    progress: 0,
+                    state: 'the stage did not begin'
+                },
+                {
+                    title: 'Bounty',
+                    date: '05/09/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'stage in the process'
+                },
+                {
+                    title: 'ICO',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
@@ -1548,8 +2466,8 @@ const messages = {
                 success: 'correct address'
             },
         },
-        download:'Download',
-        serverErr:'A server error occurred while retrieving the application list.'
+        download: 'Download',
+        serverErr: 'A server error occurred while retrieving the application list.'
     },
     fr: {
         navbar: {
@@ -1599,7 +2517,7 @@ const messages = {
             navigationMenu: 'Retour au menu'
         },
         greeting: {
-            title: 'Die neue Ära des Projektmanagements kommt',
+            title: 'La nouvelle ère de la gestion de projet',
             countDown: {
                 title: 'La ronde 1 va commencer',
                 time: {
@@ -1717,34 +2635,47 @@ const messages = {
         },
         team: {
             title: 'Équipe',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -1754,7 +2685,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -1764,12 +2712,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -1811,14 +2782,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -1983,14 +2976,14 @@ const messages = {
                     state: 'la scène n\'a pas commencé'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    title: 'Bounty',
+                    date: '05/09/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'la scène dans le processus'
                 },
                 {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
                 },
@@ -2003,28 +2996,28 @@ const messages = {
                 },
                 {
                     title: 'Décentralisation des solutions MVP',
-                    desk:'Construire une version du système dans laquelle les composants suivants sont implémentés : Réseau Peering; Transactions personnalisées à l\'aide du jeton intégré et des jetons colorés;',
+                    desk: 'Construire une version du système dans laquelle les composants suivants sont implémentés : Réseau Peering; Transactions personnalisées à l\'aide du jeton intégré et des jetons colorés;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
                 },
                 {
                     title: 'Blockchain privée',
-                    desk:'Développement de filières privées et leur intégration dans l\'infrastructure existante. Assurer le fonctionnement ininterrompu des oracles. Enregistrement dans la version complète de l\'ensemble du système - à l\'exception du mécanisme de litige (arbitrage).',
+                    desk: 'Développement de filières privées et leur intégration dans l\'infrastructure existante. Assurer le fonctionnement ininterrompu des oracles. Enregistrement dans la version complète de l\'ensemble du système - à l\'exception du mécanisme de litige (arbitrage).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
                 },
                 {
                     title: 'Mise en œuvre du système de règlement des différends',
-                    desk:'Améliorer le système de résolution des conflits dans le cadre d\'une application décentralisée.',
+                    desk: 'Améliorer le système de résolution des conflits dans le cadre d\'une application décentralisée.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
                 },
                 {
                     title: 'Mise en œuvre du système de vote pour les changements',
-                    desk:'Modifier le système pour assurer sa variabilité dans le temps.',
+                    desk: 'Modifier le système pour assurer sa variabilité dans le temps.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
@@ -2037,7 +3030,7 @@ const messages = {
                 },
                 {
                     title: 'Publication du code source du système et de la documentation.',
-                    desk:'Publication du code source du système et de la documentation dans des référentiels ouverts.',
+                    desk: 'Publication du code source du système et de la documentation dans des référentiels ouverts.',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'la scène n\'a pas commencé'
@@ -2068,8 +3061,8 @@ const messages = {
                 success: 'adresse correcte'
             }
         },
-        download:'Télécharger',
-        serverErr:'Une erreur de serveur s\'est produite lors de la récupération de la liste des applications.'
+        download: 'Télécharger',
+        serverErr: 'Une erreur de serveur s\'est produite lors de la récupération de la liste des applications.'
     },
     de: {
         navbar: {
@@ -2111,7 +3104,7 @@ const messages = {
                     name: 'Blog'
                 }
             ],
-            loginBtn: 'Log in',
+            loginBtn: 'Einloggen',
             blog: 'Blog'
         },
         menuModal: {
@@ -2237,34 +3230,47 @@ const messages = {
         },
         team: {
             title: 'Unser Team',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -2274,7 +3280,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -2284,12 +3307,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -2331,14 +3377,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -2503,14 +3571,14 @@ const messages = {
                     state: 'die Bühne hat nicht begonnen'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    title: 'Bounty',
+                    date: '05/25/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'Stufe im Prozess'
                 },
                 {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen'
                 },
@@ -2523,28 +3591,28 @@ const messages = {
                 },
                 {
                     title: 'Dezentralisierung der MVP-Lösungen',
-                    desk:'Aufbau einer Version des Systems, in der die folgenden Komponenten implementiert sind: Peering Netzwerk; Benutzerdefinierte Transaktionen mit dem eingebauten Token und farbigen Token;',
+                    desk: 'Aufbau einer Version des Systems, in der die folgenden Komponenten implementiert sind: Peering Netzwerk; Benutzerdefinierte Transaktionen mit dem eingebauten Token und farbigen Token;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen'
                 },
                 {
                     title: 'Private Blockchains',
-                    desk:'Entwicklung von privaten Blockchains und deren Integration in die bestehende Infrastruktur. Sicherstellung des ununterbrochenen Betriebs von Orakeln. Registrierung in der fertigen Version des gesamten Systems - mit Ausnahme des Streitmechanismus (Schiedsverfahren).',
+                    desk: 'Entwicklung von privaten Blockchains und deren Integration in die bestehende Infrastruktur. Sicherstellung des ununterbrochenen Betriebs von Orakeln. Registrierung in der fertigen Version des gesamten Systems - mit Ausnahme des Streitmechanismus (Schiedsverfahren).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen'
                 },
                 {
                     title: 'Einführung des Streitbeilegungssystems',
-                    desk:'Verbesserung des Streitbeilegungssystems zur Lösung von Konflikten im Rahmen einer dezentralen Anwendung.',
+                    desk: 'Verbesserung des Streitbeilegungssystems zur Lösung von Konflikten im Rahmen einer dezentralen Anwendung.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen'
                 },
                 {
                     title: 'Implementierung des Abstimmungssystems für Änderungen',
-                    desk:'Modifizierung des Systems, um seine Variabilität im Laufe der Zeit zu gewährleisten.',
+                    desk: 'Modifizierung des Systems, um seine Variabilität im Laufe der Zeit zu gewährleisten.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen'
@@ -2587,8 +3655,8 @@ const messages = {
                 success: 'Korrekte Adresse'
             },
         },
-        download:'Herunterladen',
-        serverErr:'Serverfehler beim abrufen der Liste der Anwendungen.'
+        download: 'Herunterladen',
+        serverErr: 'Serverfehler beim abrufen der Liste der Anwendungen.'
     },
     ar: {
         navbar: {
@@ -2756,34 +3824,47 @@ const messages = {
         },
         team: {
             title: 'فريقنا',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -2793,7 +3874,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -2803,12 +3901,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -2850,14 +3971,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -3022,14 +4165,14 @@ const messages = {
                     state: 'المرحلة لم تبدأ'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    title: 'Bounty',
+                    date: '05/25/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'بدأ المشهد'
                 },
                 {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
                 },
@@ -3042,28 +4185,28 @@ const messages = {
                 },
                 {
                     title: 'اللامركزية لحلول MVP',
-                    desk:'إنشاء إصدار من النظام يتم فيه تنفيذ المكونات التالية: شبكة التناظر. معاملات مخصصة باستخدام الرموز المميزة المدمجه (built-in token)  والرموز الملونة (colored tokens)(الرموز الملونه هو تطبيق متقدم للبلوك شين بت كوين)',
+                    desk: 'إنشاء إصدار من النظام يتم فيه تنفيذ المكونات التالية: شبكة التناظر. معاملات مخصصة باستخدام الرموز المميزة المدمجه (built-in token)  والرموز الملونة (colored tokens)(الرموز الملونه هو تطبيق متقدم للبلوك شين بت كوين)',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
                 },
                 {
                     title: 'البلوك شين الخاص',
-                    desk:'تطوير بلوك شين خاصة وادماجها في البنية التحتية الموجوده. ضمان عملية دون انقطاع من الوسيط. التسجيل في النسخة المكتملة من النظام بأكمله - باستثناء آلية النزاع (التحكيم).',
+                    desk: 'تطوير بلوك شين خاصة وادماجها في البنية التحتية الموجوده. ضمان عملية دون انقطاع من الوسيط. التسجيل في النسخة المكتملة من النظام بأكمله - باستثناء آلية النزاع (التحكيم).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
                 },
                 {
                     title: 'تنفيذ نظام التحكيم',
-                    desk:'تحسين نظام التحكيم لحل النزاعات في إطار تطبيق لامركزي',
+                    desk: 'تحسين نظام التحكيم لحل النزاعات في إطار تطبيق لامركزي',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
                 },
                 {
                     title: 'تنفيذ نظام التصويت من أجل التغييرات',
-                    desk:'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
+                    desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
@@ -3076,7 +4219,7 @@ const messages = {
                 },
                 {
                     title: 'نشر مصدر الكود  للنظام والمستندات',
-                    desk:'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
+                    desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'المرحلة لم تبدأ'
@@ -3107,8 +4250,8 @@ const messages = {
                 success: 'عنوان صحيح'
             },
         },
-        download:'تحميل',
-        serverErr:'خادم حدث خطأ أثناء استرداد قائمة التطبيقات.'
+        download: 'تحميل',
+        serverErr: 'خادم حدث خطأ أثناء استرداد قائمة التطبيقات.'
     },
     ko: {
         navbar: {
@@ -3276,34 +4419,47 @@ const messages = {
         },
         team: {
             title: '팀',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -3313,7 +4469,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -3323,12 +4496,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -3370,14 +4566,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -3542,14 +4760,14 @@ const messages = {
                     state: '단계를 시작하지 않았'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: '단계를 시작하지 않았'
+                    title: 'Bounty',
+                    date: '05/25/2018 - 05/25/2018',
+                    progress: 20,
+                    state: '무대가 시작되었습니다'
                 },
                 {
                     title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    date: '05/25/2018 - 07/24/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았'
                 },
@@ -3562,28 +4780,28 @@ const messages = {
                 },
                 {
                     title: 'MVP 솔루션의 분산화',
-                    desk:'다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
+                    desk: '다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았'
                 },
                 {
                     title: '개인적인 블록체인',
-                    desk:'개인 블록 체인 개발 및 기존 인프라에 대한 통합. 오라클의 중단 없는 운영 보장. 분쟁의 메커니즘 (중재)을 제외하고 전체 시스템의 완성 된 버전에 등록.',
+                    desk: '개인 블록 체인 개발 및 기존 인프라에 대한 통합. 오라클의 중단 없는 운영 보장. 분쟁의 메커니즘 (중재)을 제외하고 전체 시스템의 완성 된 버전에 등록.',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았'
                 },
                 {
                     title: '분쟁 해결 시스템 구현',
-                    desk:'분산 된 응용 프로그램의 프레임 워크 내에서 충돌을 해결하기 위해 분쟁 시스템을 개선.',
+                    desk: '분산 된 응용 프로그램의 프레임 워크 내에서 충돌을 해결하기 위해 분쟁 시스템을 개선.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았'
                 },
                 {
                     title: '변경을 위한 투표 시스템의 구현',
-                    desk:'시간이 지남에 따라 시스템의 변동성을 보장하기 위해 시스템을 수정.',
+                    desk: '시간이 지남에 따라 시스템의 변동성을 보장하기 위해 시스템을 수정.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았'
@@ -3596,7 +4814,7 @@ const messages = {
                 },
                 {
                     title: '시스템 및 문서의 소스 코드 공개',
-                    desk:'시스템 및 문서의 소스 코드를 공개 저장소에 게시',
+                    desk: '시스템 및 문서의 소스 코드를 공개 저장소에 게시',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: '단계를 시작하지 않았'
@@ -3627,8 +4845,8 @@ const messages = {
                 success: '올바른 주소'
             },
         },
-        download:'다운로드',
-        serverErr:'서버 오류가 발생했을 검색하는 동안 이 응용 프로그램의 목록이 있습니다.'
+        download: '다운로드',
+        serverErr: '서버 오류가 발생했을 검색하는 동안 이 응용 프로그램의 목록이 있습니다.'
     },
     es: {
         navbar: {
@@ -3796,34 +5014,47 @@ const messages = {
         },
         team: {
             title: 'Nuestro equipo',
-            serokell: [{
-                name: 'Serokell',
-                members: [{
-                    name: 'Arseniy Seroka',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/seroka@3x.png'
-                }, {
-                    name: 'John Mostovoy',
-                    position: 'Lead Serokell Developer',
-                    src: '../static/images/avatars/mostovoy@3x.png'
-                }, {
-                    name: 'Alexander Rukin',
-                    position: 'UI/UX Designer',
-                    src: '../static/images/avatars/rukin@3x.png'
-                }, {
-                    name: 'Kirill Elagin',
-                    position: 'Backend Engineer',
-                    src: '../static/images/avatars/elagin@3x.png'
-                }]
-            }],
+            serokell: [
+                {
+                    name: 'Serokell',
+                    members: [
+                        {
+                            name: 'Arseniy Seroka',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/seroka@3x.png'
+                        },
+                        {
+                            name: 'John Mostovoy',
+                            position: 'Lead Serokell Developer',
+                            src: '../static/images/avatars/mostovoy@3x.png'
+                        },
+                        {
+                            name: 'Alexander Rukin',
+                            position: 'UI/UX Designer',
+                            src: '../static/images/avatars/rukin@3x.png'
+                        },
+                        {
+                            name: 'Kirill Elagin',
+                            position: 'Backend Engineer',
+                            src: '../static/images/avatars/elagin@3x.png'
+                        }
+                    ]
+                }
+            ],
             effectiveEnergy: [
                 {
-                    name: 'Effective Energy team',
+                    name: 'Effective Energy',
                     members: [
                         {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png'
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vladimir Grudinin',
@@ -3833,7 +5064,24 @@ const messages = {
                         {
                             name: 'Alexej Osipenko',
                             position: 'Chief Operating Officer',
-                            src: '../static/images/avatars/osipenko@3x.png'
+                            src: '../static/images/avatars/osipenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                }
+                            ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -3843,12 +5091,35 @@ const messages = {
                         {
                             name: 'Egor Loktev',
                             position: 'Chief Marketing Officer',
-                            src: '../static/images/avatars/loktev@3x.png'
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Arseniy Voytenko',
+                            position: 'Head of Communications',
+                            src: '../static/images/avatars/voytenko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                }
+                            ]
                         },
                         {
                             name: 'Artem Levashov',
                             position: 'Chief Legal Officer',
-                            src: '../static/images/avatars/levashow@3x.png'
+                            src: '../static/images/avatars/levashow@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                }
+                            ]
                         },
                         {
                             name: 'Vadim Dudin',
@@ -3890,14 +5161,36 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B3%D0%B0%D0%BB%D0%B8%D0%BD%D0%B0-%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B0-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
                                 }
                             ]
                         },
                         {
                             name: 'Dmitry Zhuravlev',
                             position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png'
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Korobitcyn',
+                            position: 'Graphic Designer',
+                            src: '../static/images/avatars/korobitsyn@3x.png'
                         }
                     ]
                 }
@@ -4062,10 +5355,10 @@ const messages = {
                     state: 'el escenario no pudo comenzar'
                 },
                 {
-                    title: 'Pre-ICO',
-                    date: '05/25/2018 - 06/24/2018',
-                    progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    title: 'Bounty',
+                    date: '05/25/2018 - 05/25/2018',
+                    progress: 20,
+                    state: 'el escenario comenzó'
                 },
                 {
                     title: 'ICO',
@@ -4082,28 +5375,28 @@ const messages = {
                 },
                 {
                     title: 'Descentralización de las soluciones MVP',
-                    desk:'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
+                    desk: 'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
                     state: 'el escenario no pudo comenzar'
                 },
                 {
                     title: 'Blockchains privadas',
-                    desk:'Desarrollo de blockchains privados y su integración en la infraestructura existente. Garantizar la operación ininterrumpida de los oráculos. Registro en la versión completa de todo el sistema, a excepción del mecanismo de disputa (arbitraje).',
+                    desk: 'Desarrollo de blockchains privados y su integración en la infraestructura existente. Garantizar la operación ininterrumpida de los oráculos. Registro en la versión completa de todo el sistema, a excepción del mecanismo de disputa (arbitraje).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin'
                 },
                 {
                     title: 'Implementación del sistema de disputas',
-                    desk:'Mejora del sistema de disputas para resolver conflictos en el marco de una aplicación descentralizada.',
+                    desk: 'Mejora del sistema de disputas para resolver conflictos en el marco de una aplicación descentralizada.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'el escenario no pudo comenzar'
                 },
                 {
                     title: 'Implementación del sistema de votación para cambios',
-                    desk:'Modificar el sistema para garantizar su variabilidad a lo largo del tiempo.',
+                    desk: 'Modificar el sistema para garantizar su variabilidad a lo largo del tiempo.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
                     state: 'el escenario no pudo comenzar'
@@ -4116,7 +5409,7 @@ const messages = {
                 },
                 {
                     title: 'Publicación del código fuente del sistema y documentación',
-                    desk:'Publicación del código fuente del sistema y la documentación en repositorios abiertos',
+                    desk: 'Publicación del código fuente del sistema y la documentación en repositorios abiertos',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'el escenario no pudo comenzar'
@@ -4147,8 +5440,8 @@ const messages = {
                 success: 'dirección correcta'
             },
         },
-        download:'Descargar',
-        serverErr:'Un servidor de error al recuperar la lista de aplicaciones.'
+        download: 'Descargar',
+        serverErr: 'Un servidor de error al recuperar la lista de aplicaciones.'
     },
 };
 

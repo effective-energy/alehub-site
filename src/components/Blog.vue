@@ -23,7 +23,7 @@
                 <div class="posts">
 
                     <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="'https://alehub.eu-4.evennode.com/'+item.preview_image" alt="" class="image-preview">
+                        <img :src="item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
                                 {{ item.title }}
@@ -79,7 +79,7 @@
 		},
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$i18n.locale === 'en'?'':this.$i18n.locale}`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -87,6 +87,8 @@
                 }).then(response => {
                     this.content = response.body.reverse();
                     this.filtersConfigure();
+                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
+                        this.getEngNews();
                 }, response => {
                     console.log('Error getting news', response);
                 });
@@ -102,6 +104,18 @@
                         }
                     }
                 }
+            },
+            getEngNews: function () {
+                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/`, {
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8',
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    this.content = response.body.reverse();
+                }, response => {
+                    console.log('Error getting news', response);
+                });
             },
 			goToNews: function (id) {
 				this.$router.push(`/blog/${id}`)

@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="row footer-row">
             <div class="col-5 copyright-block">
                 <router-link tag="a" to="/">
@@ -96,9 +96,13 @@
                             :disabled="isLoader"
                             v-if="!isSuccess">
                                 <Spinner v-if="isLoader"/>
-                                <span v-else>{{ $t('footer.right.btn') }}</span>
+                                <span v-else>
+                                    {{ $t('footer.right.btn') }}
+                                </span>
                     </button>
-                    <p v-else class="subscribe-form__success">You have successfully subscribed to the newsletter. Check your email to confirm your subscription.</p>
+                    <p v-else class="subscribe-form__success">
+                        You have successfully subscribed to the newsletter. Check your email to confirm your subscription.
+                    </p>
                 </div>
             </div>
         </div>
@@ -306,7 +310,6 @@
                     -webkit-transition all .3s ease-out
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
-                    min-width 157px
                     max-height 37px
 
                     @media (max-width 425px)

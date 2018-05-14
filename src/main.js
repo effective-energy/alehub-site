@@ -11,8 +11,6 @@ import Moment from 'vue-moment';
 import VueYandexMetrika from 'vue-yandex-metrika';
 
 
-
-
 Vue.use(VueYandexMetrika, {
     id: 48805535,
     env: process.env.NODE_ENV
@@ -53,19 +51,65 @@ Vue.use(VueAwesomeSwiper);
 Vue.config.productionTip = false;
 
 let systemLang = '';
-if(localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
-	localStorage.setItem('systemLang', 'en');
-	systemLang = 'en';
-} else if(localStorage.getItem('systemLang') === 'en') {
-	systemLang = 'en';
-} else if(localStorage.getItem('systemLang') === 'ru') {
-	systemLang = 'ru';
+
+switch (localStorage.getItem('systemLang')) {
+    case 'en': {
+        systemLang = 'en';
+        break;
+    }
+    case 'ru': {
+        systemLang = 'ru';
+        break;
+    }
+    case 'zh': {
+        systemLang = 'zh';
+        break;
+    }
+    case 'ja': {
+        systemLang = 'ja';
+        break;
+    }
+    case 'ko': {
+        systemLang = 'ko';
+        break;
+    }
+    case 'ar': {
+        systemLang = 'ar';
+        break;
+    }
+    case 'es': {
+        systemLang = 'es';
+        break;
+    }
+    case 'de': {
+        systemLang = 'de';
+        break;
+    }
+    case 'fr': {
+        systemLang = 'fr';
+        break;
+    }
+    default: {
+        localStorage.setItem('systemLang', 'en');
+        systemLang = 'en';
+        break;
+    }
 }
 
+// if (localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
+//     localStorage.setItem('systemLang', 'en');
+//     systemLang = 'en';
+// } else if (localStorage.getItem('systemLang') === 'en') {
+//     systemLang = 'en';
+// } else if (localStorage.getItem('systemLang') === 'ru') {
+//     systemLang = 'ru';
+// }
+
 import messages from './i18n.js';
+
 const i18n = new VueI18n({
-  locale: systemLang,
-  messages,
+    locale: systemLang,
+    messages,
 });
 
 import BootstrapVue from 'bootstrap-vue';
@@ -78,9 +122,9 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
 new Vue({
-  el: '#app',
-  i18n,
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    i18n,
+    router,
+    components: {App},
+    template: '<App/>'
 });

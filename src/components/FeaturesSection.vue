@@ -1,12 +1,13 @@
 <template>
     <div class="application" id="features">
         <vue-particles v-if="isFeatures && !isLessThanTablet"
-                       color="#fff"
+                       id="particles-js"
+                       color="#ffffff"
                        :particleOpacity="0.4"
                        :particlesNumber="80"
                        shapeType="circle"
                        :particleSize="4"
-                       linesColor="#fff"
+                       linesColor="#ffffff"
                        :linesWidth="1"
                        :lineLinked="true"
                        :lineOpacity="0.4"
@@ -42,12 +43,6 @@
                         {{ $t("alePlatform.watchDemo") }}
                     </p>
 
-                    <!--<div class="place-player"-->
-
-                         <!--:style="{ opacity: mainPlayer ? 1 : 0 }">-->
-                        <!--<div class="place-player__frame">-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <div class="main-player"
                          v-if="mainPlayer">
                         <iframe class="iframe"
@@ -149,10 +144,18 @@
         </div>
 
         <div class="section-3" id="main-features">
+            <!--v-if="isVideo"-->
 
-            <div class="figure">
-                <img src="../../static/images/layer.png" alt="" style="width: 100%;">
+            <div class="video__wrap">
+                <video autoplay muted loop id="myVideoScale">
+                    <source src="../../static/video/libra.mp4" type="video/mp4">
+                </video>
             </div>
+
+
+            <!--<div class="figure">-->
+                <!--<img src="../../static/images/layer.png" alt="" style="width: 100%;">-->
+            <!--</div>-->
 
             <div class="info-block">
                 <h3 class="title">
@@ -272,7 +275,6 @@
         .l-3
             transform translate(3px, 3px) rotate(330deg)
 
-
     .active
         .l-1
             opacity 0
@@ -363,7 +365,6 @@
         justify-content center
         align-items center
 
-
         .play-button
             cursor pointer
             width 110px
@@ -394,10 +395,8 @@
                     height 35px
 
         @media (min-width 768px) and (max-width 1274px)
-            position unset
-            margin 48px auto 0
-            display block
             text-align center
+            margin 48px auto 0
 
             .play-button
                 margin 0
@@ -414,13 +413,7 @@
         justify-content center
         align-items center
         padding 80px 10%
-        background rgba(253, 208, 74, 1)
-        background -moz-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(253, 208, 74, 1)), color-stop(100%, rgba(255, 160, 7, 1)))
-        background -webkit-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -o-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background -ms-linear-gradient(top, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
-        background linear-gradient(to bottom, rgba(253, 208, 74, 1) 0%, rgba(255, 160, 7, 1) 100%)
+        background-color #ffce4a
 
         .section-1
             z-index 100
@@ -511,11 +504,28 @@
             padding-top 105px
             width 100%
             display flex
+            align-items center
+
+            .video__wrap
+                width 30%
+                display flex
+                justify-content center
+                align-items center
+
+                @media (max-width 768px)
+                    display none
+
+                video
+                    width 100%
+
+
             .figure
                 width 30%
+
             .info-block
                 width 70%
                 padding-left 5%
+
                 .title
                     font-size 40px
                     margin-bottom 60px

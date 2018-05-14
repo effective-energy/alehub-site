@@ -26,7 +26,7 @@
              class="anim"
              v-if="checkWindowWidth && !isVideo"
              :class="{ 'anim__dark': isDark }">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1600">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1600">
                 <g fill="none" fill-rule="evenodd">
                     <path stroke="#ffd24f"
                           d="M781.02 488.77v69.78c0 1.08-.88 1.96-1.97 1.96l-135.12-.04c-1.09 0-2.6.62-3.38 1.39l-39.23 38.96a5.52 5.52 0 0 1-3.37 1.4h-75.38a1.97 1.97 0 0 1-1.97-1.97v-33.5"/>
@@ -144,6 +144,7 @@
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
                 <source src="../../static/video/preview.mp4" type="video/mp4">
+                <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
             <div class="row">
@@ -383,12 +384,12 @@
              class="what-is"
              :class="{ 'description__dark': isDark }">
             <div class="row">
-
-                <!--<slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>-->
-
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer">
-                        <img src="../../static/images/desctop.png"
+                    <div class="desktop-outer" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                        <div style="position: absolute; width: 80%; top: 7%;">
+                            <slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>
+                        </div>
+                        <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
                         <!--<slider v-if="reBuild" ref="slider"-->
                         <!--:pages="pages"-->
@@ -422,6 +423,8 @@
                     </p>
                     <div class="buttons">
                         <a :href="currentWhitePaper"
+                           @click="yaCounter48802643.reachGoal('whitePaper');
+                                   return true;"
                            class="btn btn-yellow"
                            target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
@@ -440,7 +443,7 @@
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
            target="_blank"
-           v-if="!checkMobileWidth && !closedTelegramAlertMobile"
+           v-if="!checkMobileWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
            :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
 
             <div class="telegram-alert-mobile__wrap">
@@ -467,7 +470,7 @@
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkMobileWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection }">
+             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
@@ -501,6 +504,14 @@
                 type: Boolean,
                 required: true
             },
+            isOpenedModalMenu: {
+                type: Boolean,
+                required: true
+            },
+            isScrollInFooter: {
+                type: Boolean,
+                required: true
+            }
         },
         watch: {
             isDarkSection: function (val) {
@@ -595,7 +606,7 @@
                     usd: {
                         src: '../../static/images/usd.svg',
                         alt: 'usd',
-                        count: 207,
+                        count: 3.3,
                         name: 'usd',
                         collected: 2000000,
                         softCap: 2000000,
@@ -681,13 +692,17 @@
         methods: {
             yaMetricaCollectionItem: function () {
                 yaCounter48802643.reachGoal('BuyCrypto');
-                console.log("cript");
+                console.log('cript');
                 return true;
             },
             yaMetricaCollectionLastItem: function () {
                 yaCounter48802643.reachGoal('BuyUSD');
-                console.log("usd");
+                console.log('usd');
                 return true;
+            },
+            doCloseTelegramAlertMobile: function () {
+                this.closedTelegramAlertMobile = true;
+                // localStorage.setItem('closedTelegramAlertMobile', 'true');
             },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
@@ -734,8 +749,10 @@
                     return false;
 
                 this.isPaused = false;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].play();
+                if (window.animejsconfig) {
+                    for (let i = 0; i < window.animejsconfig.length; i++) {
+                        window.animejsconfig[i].play();
+                    }
                 }
             },
             pause: function () {
@@ -743,8 +760,10 @@
                     return false;
 
                 this.isPaused = true;
-                for (let i = 0; i < window.animejsconfig.length; i++) {
-                    window.animejsconfig[i].pause();
+                if (window.animejsconfig) {
+                    for (let i = 0; i < window.animejsconfig.length; i++) {
+                        window.animejsconfig[i].pause();
+                    }
                 }
             },
             format: function (count, isSecond) {
@@ -896,7 +915,6 @@
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
 
 
-
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
             }
@@ -945,6 +963,13 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .desc
+        .buttons
+            .btn
+                &:focus
+                    box-shadow none !important
+                    outline none !important
 
     .row
         z-index 2
@@ -1041,6 +1066,16 @@
 
     .telegram-alert__yellow
         background-color #ffd24f
+
+
+    .telegram-alert__stop
+        bottom 185px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 226px
+
+        @media (min-width 425px) and (max-width 768px)
+            bottom 433px
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)

@@ -5,7 +5,7 @@
            @closed="closedModal('menu-modal')">
 
         <div class="body"
-             :class="{ 'body__dark': isDark, 'body__yellow': isYellow, 'body__orange': isOrange }">
+             :class="{ 'body__dark': isDark, 'body__yellow': isYellow }">
 
             <div class="body__top">
                 <a href="http://presale.alehub.io/">
@@ -61,10 +61,6 @@
             yellow: {
                 type: Boolean,
                 required: true
-            },
-            orange: {
-                type: Boolean,
-                required: true
             }
         },
         data() {
@@ -82,9 +78,6 @@
             },
             isYellow: function () {
                 return this.yellow;
-            },
-            isOrange: function () {
-                return this.orange;
             }
         },
         methods: {
@@ -175,31 +168,12 @@
                         padding-bottom 0.1rem
                         font-size f_s_360
 
-        .body__top
-            background-color #ffd24f
-            top 0
-
-            a
-                button
-                    color #343a49
-                    border-bottom 2px solid #343a49
-
-        .body__bottom
-            background-color #343a49
-            bottom 0
-
-            a
-                button
-                    color #fff
-                    border-bottom 2px solid #fff
-
         .body__bottom, .body__top
             position relative
             display flex
             justify-content center
             flex-direction column
             align-items center
-            height h_ext
             width 100%
 
             a
@@ -210,7 +184,6 @@
                     border none
                     cursor pointer
                     width 100%
-                    height h_ext
                     font-weight 700
                     text-transform uppercase
                     font-size f_s
@@ -219,12 +192,27 @@
                     &:focus
                         outline none
 
+        .body__top
+            height h_ext
+            background-color #ffd24f
+            top 0
+
+            a
+                height 100%
+
+                button
+                    color #343a49
+                    height 100%
+                    /*border-bottom 2px solid #343a49*/
+
             @media (max-width 320px)
                 height h_ext_320
 
                 a
+                    height 100%
+
                     button
-                        height h_ext_320
+                        height 100%
                         font-size f_s_320
                         padding-bottom 0.1rem
 
@@ -232,8 +220,45 @@
                 height h_ext_360
 
                 a
+                    height 100%
+
                     button
-                        height h_ext_360
+                        height 100%
+                        font-size f_s_360
+                        padding-bottom 0.1rem
+
+        .body__bottom
+            height "calc(2 * %s)" % h_ext
+            background-color #343a49
+            bottom 0
+
+            a
+                height 100%
+
+                button
+                    color #fff
+                    height 100%
+                    /*border-bottom 2px solid #fff*/
+
+            @media (max-width 320px)
+                height "calc(2 * %s)" % h_ext_320
+
+                a
+                    height 100%
+
+                    button
+                        height 100%
+                        font-size f_s_320
+                        padding-bottom 0.1rem
+
+            @media (max-width 360px)
+                height "calc(2 * %s)" % h_ext_360
+
+                a
+                    height 100%
+
+                    button
+                        height 100%
                         font-size f_s_360
                         padding-bottom 0.1rem
 
@@ -254,13 +279,10 @@
                     color #343a49
                     border-color #343a49
 
-    .body__orange
-        background-color #feaf1c
-
     .body__yellow
         background-color #ffd24f
 
-    .body__yellow, .body__orange
+    .body__yellow
         .body__menu, .body__languages
             div
                 a

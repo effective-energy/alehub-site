@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light"
-         :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow && !isOrange, 'bg-yellow': isYellow, 'bg-orange': isOrange }"
+    <nav class="navbar fixed-top navbar-light"
+         :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow, 'bg-yellow': isYellow }"
          id="navbar">
 
         <router-link tag="a"
@@ -26,36 +26,40 @@
             <span class="line" :class="{ 'line__white': isDark }"></span>
             <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto ml-auto" v-if="!show">
-                <li v-for="(item, index) in $t('navbar.menuList')"
-                    :key="index"
-                    class="nav-item"
-                    :class="{ active: index === activeItem }">
+        <div class="navbar-folding" id="navbarText">
 
-                    <a @click="activeItem = index"
-                       class="nav-link"
+            <slider-navbar id="slider-navbar"
+                           v-if="!show"
+                           :is-dark="isDark"
+                           :is-yellow="isYellow"
+                           :items="$t('navbar.menuList')"
+                           :options="optionsToSliderNavbar"/>
+
+
+            <div class="navbar-folding__inner"
+                 v-if="!show">
+                <div class="navbar-item" v-for="(item, index) in $t('navbar.menuList')">
+                    <a :href="item.path"
                        v-scroll-to="item.path">
                         {{ item.name }}
                     </a>
-                </li>
-                <li class="nav-line nav-line__yellow" v-if="isYellow"></li>
-                <li class="nav-line nav-line__orange" v-else-if="isOrange"></li>
-                <li class="nav-line nav-line__black" v-else-if="isDark"></li>
-                <li class="nav-line nav-line__white" v-else></li>
-            </ul>
+                    <div class="nav-line"
+                         :class="{ 'nav-line__yellow': isYellow, 'nav-line__black': isDark,
+                                   'nav-line__white': !isYellow && !isDark }"
+                         v-if="index === 0">
+                    </div>
+                </div>
+            </div>
 
-            <ul class="navbar-nav mr-auto ml-auto"
-                v-else-if="show === 'blog'">
-
-                <router-link class="nav-item"
-                             tag="li"
+            <div class="navbar__blog"
+                 v-if="show === 'blog'">
+                <router-link class="navbar-item"
+                             tag="a"
                              :to="'/blog'">
-                    <a href="#" class="nav-link">
-                        {{ $t("navbar.blog") }}
-                    </a>
+                    {{ $t("navbar.blog") }}
                 </router-link>
-            </ul>
+            </div>
+
             <div class="right-menu">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
@@ -70,61 +74,81 @@
                         <!--классы поместить в массив с названиями языков в data()-->
                         <div class="select-lang__item select-lang__fr"
                              :class="{ 'selected': currentLang === 'fr' }"
-                             @click="changeLanguage(8)">
+                             @click="changeLanguage(8);
+                                     yaCounter48802643.reachGoal('FR');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>FR</span>
                         </div>
                         <div class="select-lang__item select-lang__de"
                              :class="{ 'selected': currentLang === 'de' }"
-                             @click="changeLanguage(7)">
+                             @click="changeLanguage(7);
+                                     yaCounter48802643.reachGoal('DE');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>DE</span>
                         </div>
                         <div class="select-lang__item select-lang__es"
                              :class="{ 'selected': currentLang === 'es' }"
-                             @click="changeLanguage(6)">
+                             @click="changeLanguage(6);
+                                     yaCounter48802643.reachGoal('ES');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>ES</span>
                         </div>
                         <div class="select-lang__item select-lang__ar"
                              :class="{ 'selected': currentLang === 'ar' }"
-                             @click="changeLanguage(5)">
+                             @click="changeLanguage(5);
+                                     yaCounter48802643.reachGoal('AR');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>AR</span>
                         </div>
                         <div class="select-lang__item select-lang__ko"
                              :class="{ 'selected': currentLang === 'ko' }"
-                             @click="changeLanguage(4)">
+                             @click="changeLanguage(4);
+                                     yaCounter48802643.reachGoal('KO');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>KO</span>
                         </div>
-                        <div class="select-lang__item select-lang__ja">
+                        <div class="select-lang__item select-lang__ja"
+                             :class="{ 'selected': currentLang === 'ja' }"
+                             @click="changeLanguage(3);
+                                     yaCounter48802643.reachGoal('JA');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>JA</span>
                         </div>
                         <div class="select-lang__item select-lang__zh"
-                             :class="{ 'selected': currentLang === 'ch' }"
-                             @click="changeLanguage(2)">
+                             :class="{ 'selected': currentLang === 'zh' }"
+                             @click="changeLanguage(2);
+                                     yaCounter48802643.reachGoal('ZH');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>ZH</span>
                         </div>
                         <div class="select-lang__item select-lang__ru"
                              :class="{ 'selected': currentLang === 'ru' }"
-                             @click="changeLanguage(1)">
+                             @click="changeLanguage(1);
+                                     yaCounter48802643.reachGoal('RU');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>RU</span>
                         </div>
                         <div class="select-lang__item select-lang__en"
                              :class="{ 'selected': currentLang === 'en' }"
-                             @click="changeLanguage(0)">
+                             @click="changeLanguage(0);
+                                     yaCounter48802643.reachGoal('EN');
+                                     return true;">
                             <div class="select-lang__cover">
                             </div>
                             <span>EN</span>
@@ -140,18 +164,19 @@
         </div>
 
         <menu-modal :dark="isDark"
-                    :yellow="isYellow"
-                    :orange="isOrange"/>
+                    :yellow="isYellow"/>
     </nav>
 </template>
 
 <script>
     import MenuModal from '../modals/MenuModal';
+    import SliderNavbar from '../layouts/SliderNavbar';
 
     export default {
         name: 'HeaderSection', //rename
         components: {
             MenuModal,
+            SliderNavbar
         },
         props: {
             isMainDark: {
@@ -172,7 +197,6 @@
                 isTeam: false,
                 isDark: false,
                 isYellow: false,
-                isOrange: false,
                 dropdownOpen: false,
                 activeHamburger: false,
                 activeItem: 0,
@@ -181,7 +205,17 @@
 
                 heightLangItem: 0,
 
-                rtl: false
+                rtl: false,
+
+
+                optionsToSliderNavbar: {
+                    touch: true,
+                    autoplay: false,
+                    inBlockTeam: false,
+                    autoplayDelay: 3000,
+                    pauseOnFocus: true,
+                    pauseOnHover: true
+                },
             }
         },
         watch: {
@@ -189,8 +223,6 @@
                 this.changeLineWidth(index);
             },
             isMainDark: function (dark) {
-
-                console.log(dark, 'dark');
 
                 let navbarYOffset = document.getElementById('navbar').offsetHeight,
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
@@ -201,7 +233,6 @@
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = true;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
 
                     if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
@@ -214,7 +245,6 @@
                     if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
 
                     if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
@@ -232,6 +262,8 @@
                     return 'ru';
                 else if (this.selectedLanguage === 'zh')
                     return 'zh';
+                else if (this.selectedLanguage === 'ja')
+                    return 'ja';
                 else if (this.selectedLanguage === 'fr')
                     return 'fr';
                 else if (this.selectedLanguage === 'de')
@@ -244,12 +276,6 @@
                     return 'es';
 
                 return 'en';
-            },
-            isNavLinks: function () {
-                return this.navLinks;
-            },
-            isModalIsOpen: function () {
-                return this.modalIsOpen;
             },
             isHeightLangItem: function () {
                 return this.heightLangItem;
@@ -284,16 +310,12 @@
                 if (!document.querySelector('.nav-line'))
                     return false;
 
-                let elWidth = document.querySelectorAll('.nav-item')[index].offsetWidth;
-                document.querySelector('.nav-line').style.width = elWidth + 'px';
+                let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth,
+                    firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left,
+                    currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left;
 
-                let scope = 0;
-                for (let i = 0; i <= index; i++) {
-                    if (index === 0 || index === i)
-                        continue;
-                    scope += document.querySelectorAll('.nav-item')[i].offsetWidth;
-                }
-                document.querySelector('.nav-line').style.transform = `translate3D(${ scope }px,0,0)`;
+                document.querySelector('.nav-line').style.width = elWidth + 'px';
+                document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -382,11 +404,14 @@
                 e.preventDefault();
             },
             disableScroll: function () {
-                document.body.addEventListener('touchmove', this.preventDefault, { passive: false });
+                document.body.addEventListener('touchmove', this.preventDefault, {passive: false});
             },
             enableScroll: function () {
-                document.body.removeEventListener('touchmove', this.preventDefault, { passive: false });
+                document.body.removeEventListener('touchmove', this.preventDefault, {passive: false});
             }
+        },
+        created() {
+
         },
         mounted() {
             this.$on('changeModalLanguage', (val) => {
@@ -396,11 +421,13 @@
             this.$on('closeModal', () => {
                 this.activeHamburger = false;
                 document.getElementById('navbar').classList.remove('no-boxshadow');
+                this.$parent.$emit('isOpenedModalMenu', false);
                 this.enableScroll();
             });
 
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
+                this.$parent.$emit('isOpenedModalMenu', true);
                 this.disableScroll();
             });
 
@@ -413,16 +440,12 @@
                 tgButtonHeight = null;
 
             if (document.getElementById('telegram-alert')) {
-                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top,
-                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+                tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
+                tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
             } else if (document.getElementById('telegram-alert-mobile')) {
-                console.log(document.getElementById('telegram-alert-mobile'), 'document.getElementById(\'telegram-alert-mobile\')');
-                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top,
-                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+                tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
+                tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
             }
-
-            console.log(tgButtonYOffset, 'tgButtonYOffset');
-            console.log(tgButtonHeight, 'tgButtonHeight');
 
             window.addEventListener('scroll', () => {
                 this.checkActive();
@@ -443,15 +466,13 @@
                 }
 
                 if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (!this.mainIsDark && (this.isDark || this.isYellow || this.isOrange)) {
+                    if (!this.mainIsDark && (this.isDark || this.isYellow)) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
-                    if (this.mainIsDark && (!this.isDark || this.isYellow || this.isOrange)) {
+                    if (this.mainIsDark && (!this.isDark || this.isYellow)) {
                         this.isDark = true;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
                         this.isFeatures = false;
@@ -465,9 +486,8 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
-                        this.isOrange = false;
                         this.isYellow = false;
                     }
                     if (!this.isFeatures) {
@@ -480,29 +500,11 @@
                     }
                 }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
+                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isOrange) {
+                    if (!this.isYellow) {
                         this.isDark = false;
-                        this.isYellow = false;
-                        this.isOrange = true;
-                    }
-                    if (!this.isFeatures) {
-                        this.isFeatures = true;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('main-features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isOrange) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                        this.isOrange = true;
+                        this.isYellow = true;
                     }
                     if (!this.isFeatures) {
                         this.isFeatures = true;
@@ -516,10 +518,9 @@
 
                 if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
                         this.isFeatures = false;
@@ -536,14 +537,6 @@
                     if (this.isDarkSection) {
                         this.isDarkSection = false;
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
 
@@ -582,7 +575,6 @@
                     window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     if (!this.isDark) {
                         this.isYellow = false;
-                        this.isOrange = false;
                         this.isDark = true;
                     }
                     if (this.isFeatures) {
@@ -596,10 +588,9 @@
                 }
 
                 if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow || this.isOrange) {
+                    if (this.isDark || this.isYellow) {
                         this.isDark = false;
                         this.isYellow = false;
-                        this.isOrange = false;
                     }
                     if (this.isFeatures) {
                         this.isFeatures = false;
@@ -610,15 +601,93 @@
                         this.$parent.$emit('checkIsTeam', this.isTeam);
                     }
                 }
+
+                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                    this.$parent.$emit('scrollInFooter', true);
+                else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                    this.$parent.$emit('scrollInFooter', false);
+
             });
 
             if (document.getElementById('select-lang'))
                 this.heightLangItem = document.getElementById('select-lang').offsetHeight;
+
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+
+    .navbar
+        flex-wrap nowrap
+
+        .navbar-folding
+            display flex
+            position relative
+            height 100%
+            width 100%
+
+            @media (max-width 1024px)
+                display none
+
+            #slider-navbar
+                display none !important
+
+                @media (min-width 1024px) and (max-width 1350px)
+                    display flex !important
+
+            .navbar-folding__inner
+                width 100%
+                position relative
+                display flex
+                flex-direction row
+                align-items center
+                justify-content space-around
+
+                @media (min-width 1024px) and (max-width 1350px)
+                    display none !important
+
+                .navbar-item
+                    font-size 18px
+                    font-weight 600
+
+                    a
+                        color #0f1118
+
+                        &:hover
+                            text-decoration none
+                            color #0f1118
+
+                .nav-line
+                    position absolute
+                    height 2px
+                    background-color #34343e
+                    bottom 10px
+                    -webkit-transition all .5s ease
+                    -o-transition all .5s ease
+                    transition all .5s ease
+
+            .navbar__blog
+                width 100%
+                display flex
+                justify-content center
+                align-items center
+
+                .navbar-item
+                    font-size 18px
+                    font-weight 600
+                    color #0f1118
+
+                    &:hover
+                        text-decoration none
+
+
+            .right-menu
+                position block
+
+                @media (min-width 1024px) and (max-width 1350px)
+                    position absolute
+                    right 0
 
     .select-lang
         cursor pointer
@@ -738,10 +807,10 @@
             .select-lang__ar
                 background-image url(../../../static/images/flags/ar@2x.png)
 
-                /*&:hover*/
-                    /*span*/
-                        /*opacity 1*/
-                        /*color #ffffff*/
+            /*&:hover*/
+            /*span*/
+            /*opacity 1*/
+            /*color #ffffff*/
 
             .select-lang__es
                 background-image url(../../../static/images/flags/es@2x.png)
@@ -858,24 +927,13 @@
             box-shadow none
 
     .nav-line__white
-        border 1px solid #fff
-        border-width 0 24px
-        background-color #ffbc00
+        background-color #ffbc00 !important
 
     .nav-line__yellow
-        border 1px solid #ffd24f
-        border-width 0 24px
-        background-color #343a49
-
-    .nav-line__orange
-        border 1px solid #feaf1c
-        border-width 0 24px
-        background-color #343a49
+        background-color #343a49 !important
 
     .nav-line__black
-        border 1px solid #343a49
-        border-width 0 24px
-        background-color #ffbc00
+        background-color #ffbc00 !important
 
     .nav-item
         cursor pointer
@@ -888,51 +946,6 @@
         -o-transition all 0.4s ease
         transition all 0.4s ease
         max-width 100vw
-
-    .bg-orange
-        background-color #feaf1c
-
-        .select-lang
-            .select-lang__dropdown
-                .select-lang__item
-                    border-left none
-
-                    .select-lang__cover
-                        background-color #feaf1c
-
-                    &:before
-                        background -moz-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                        background -webkit-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -o-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background -ms-linear-gradient(top, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        background linear-gradient(to bottom, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-
-                    &:after
-                        top 0
-                        height 61px
-                        background -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, #feaf1c))
-                        background -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-                        background linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, #feaf1c 100%)
-
-                    &:first-child
-                        &:before
-                            width 62px
-                            left -2px
-
-                    &:last-child
-                        &:after
-                            background -moz-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -webkit-gradient(left top, right top, color-stop(0%, #feaf1c), color-stop(100%, rgba(0, 0, 0, 0.2)))
-                            background -webkit-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -o-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background -ms-linear-gradient(left, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                            background linear-gradient(to right, #feaf1c 0%, rgba(0, 0, 0, 0.2) 100%)
-                        &:before
-                            width 62px
 
     .bg-yellow
         background-color #ffd24f
@@ -997,11 +1010,15 @@
         .navbar-brand
             color #fff
 
-        .nav-link
-            -webkit-transition all 0.4s ease
-            -o-transition all 0.4s ease
-            transition all 0.4s ease
-            color #fff !important
+        .navbar-item
+            a
+                -webkit-transition all 0.4s ease
+                -o-transition all 0.4s ease
+                transition all 0.4s ease
+                color #fff !important
+
+        .navbar-folding
+            color white
 
         .select-lang
             color #fff
@@ -1051,7 +1068,7 @@
         &:hover
             color #34343e
 
-    @media (max-width: 1440px)
+    @media (max-width 1440px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1069,14 +1086,14 @@
         .dropdown-toggle
             font-size 16px
 
-    @media (max-width: 1300px)
+    @media (max-width 1300px)
         .navbar-nav
             .nav-item
                 .nav-link
                     padding-left 10px
                     padding-right 10px
 
-    @media (max-width: 1200px)
+    @media (max-width 1200px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1096,15 +1113,14 @@
 
     @media (max-width 1100px)
         /*.btn-login*/
-            /*display none*/
-
+        /*display none*/
         .dropdown
             display none
 
         .btn-actions
             display unset
 
-    @media (max-width: 1440px)
+    @media (max-width 1440px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1122,14 +1138,14 @@
         .dropdown-toggle
             font-size 16px
 
-    @media (max-width: 1300px)
+    @media (max-width 1300px)
         .navbar-nav
             .nav-item
                 .nav-link
                     padding-left 10px
                     padding-right 10px
 
-    @media (max-width: 1200px)
+    @media (max-width 1200px)
         .navbar-nav
             .nav-item
                 .nav-link
@@ -1148,14 +1164,14 @@
             margin-right 8px
 
     /*@media (max-width 1100px)*/
-        /*!*.btn-login*!*/
-            /*!*display none*!*/
+    /*!*.btn-login*!*/
+    /*!*display none*!*/
 
-        /*.dropdown*/
-            /*display none*/
+    /*.dropdown*/
+    /*display none*/
 
-        /*.btn-actions*/
-            /*display unset*/
+    /*.btn-actions*/
+    /*display unset*/
 
     @media (max-width 1024px)
         .navbar
