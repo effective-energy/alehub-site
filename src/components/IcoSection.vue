@@ -40,7 +40,8 @@
                     <div class="steep-list">
                         <div class="item-list"
                              v-for="(dist, distIndex) in distributionList"
-                             @mouseover="showDist(distIndex)">
+                             @mouseover="showDist(distIndex)"
+                             @touchend="showDist(distIndex)">
                             <div class="color-steep steep-sale"
                                  :class="['steep-'+dist.type]">
                             </div>
