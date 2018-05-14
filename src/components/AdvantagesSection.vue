@@ -5,18 +5,23 @@
         </h3>
         <div class="separator"></div>
         <div class="advantages-body">
-            <div class="select-point">
-                <div class="point" :class="{
-                    'point-left-active': selectedType === 0,
-                    'point-left-inactive': selectedType === 1 }"
+            <div class="select-point"
+                 :class="{ 'direction-ltr': isRtl }">
+                <div class="point"
+                     :class="{'point-left-active': selectedType === 0 && !isRtl,
+                     'point-left-inactive': selectedType === 1 && !isRtl,
+                     'point-right-active__rtl': selectedType === 0 && isRtl,
+                     'point-right-inactive__rtl': selectedType === 1 && isRtl,}"
                      @click="selectedType = 0">
                     <div class="point__inner">
                         {{ $t("advantages.lists[0].title") }}
                     </div>
                 </div>
                 <div class="point" :class="{
-                    'point-right-active': selectedType === 1,
-                    'point-right-inactive': selectedType === 0 }"
+                     'point-right-active': selectedType === 1 && !isRtl ,
+                     'point-right-inactive': selectedType === 0 && !isRtl,
+                     'point-left-active__rtl': selectedType === 1 && isRtl,
+                     'point-left-inactive__rtl': selectedType === 0 && isRtl }"
                      @click="selectedType = 1">
                     <div class="point__inner">
                         {{ $t("advantages.lists[1].title") }}
@@ -26,6 +31,7 @@
 
             <transition name="fade">
                 <div class="project-management"
+                     :class="{ 'project-management__rtl': isRtl }"
                      key="one"
                      v-if="selectedType === 1">
                     <div class="left-block">
@@ -62,6 +68,7 @@
                 </div>
 
                 <div class="other-blockchain"
+                     :class="{ 'other-blockchain__rtl': isRtl }"
                      key="two"
                      v-if="selectedType === 0">
                     <div class="left-block">
@@ -108,6 +115,12 @@
 <script>
     export default {
         name: 'AdvantagesSection',
+        props: {
+            isRtl: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
                 advantagesFlag: 'first',
@@ -208,7 +221,7 @@
                     -webkit-transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
                     transition-timing-function cubic-bezier(0.46, 0.05, 0.46, 0.79)
 
-                .point-right-active, .point-left-active
+                .point-right-active, .point-left-active, .point-left-active__rtl, .point-right-active__rtl
                     cursor default
                     opacity 1
 
@@ -228,11 +241,23 @@
                     -o-transform translateX(0)
                     transform translateX(0)
 
+                .point-right-active__rtl
+                    -webkit-transform translateX(100%)
+                    -ms-transform translateX(100%)
+                    -o-transform translateX(100%)
+                    transform translateX(100%)
+
                 .point-left-active
                     -webkit-transform translateX(100%)
                     -ms-transform translateX(100%)
                     -o-transform translateX(100%)
                     transform translateX(100%)
+
+                .point-left-active__rtl
+                    -webkit-transform translateX(0)
+                    -ms-transform translateX(0)
+                    -o-transform translateX(0)
+                    transform translateX(0)
 
                 .point-right-inactive
                     cursor pointer
@@ -252,6 +277,28 @@
                     -ms-transform translateX(0)
                     -o-transform translateX(0)
                     transform translateX(0)
+
+                    .point__inner
+                        border-bottom 2px solid transparent
+
+                .point-right-inactive__rtl
+                    cursor pointer
+                    opacity .3
+                    -webkit-transform translateX(200%)
+                    -ms-transform translateX(200%)
+                    -o-transform translateX(200%)
+                    transform translateX(200%)
+
+                    .point__inner
+                        border-bottom 2px solid transparent
+
+                .point-left-inactive__rtl
+                    cursor pointer
+                    opacity .3
+                    -webkit-transform translateX(-100%)
+                    -ms-transform translateX(-100%)
+                    -o-transform translateX(-100%)
+                    transform translateX(-100%)
 
                     .point__inner
                         border-bottom 2px solid transparent
@@ -427,37 +474,77 @@
     .fade-leave-active
         opacity 0
 
+    .other-blockchain__rtl, .project-management__rtl
+        .left-block
+            .item-table
+                .band
+                    right 0
+                    left auto
+
+        .left-block, .right-block
+            .item-table
+                .item-text
+                    text-align right
+
+
     .other-blockchain.fade-enter
         -webkit-transform translateX(-100%)
         -ms-transform translateX(-100%)
         -o-transform translateX(-100%)
         transform translateX(-100%)
+
     .project-management.fade-enter
         -webkit-transform translateX(-100%)
         -ms-transform translateX(-100%)
         -o-transform translateX(-100%)
         transform translateX(100%)
+
     .other-blockchain.fade-leave-active
         -webkit-transform translateX(-100%)
         -ms-transform translateX(-100%)
         -o-transform translateX(-100%)
         transform translateX(-100%)
+
     .project-management.fade-leave-active
         -webkit-transform translateX(-100%)
         -ms-transform translateX(-100%)
         -o-transform translateX(-100%)
         transform translateX(100%)
 
+    .other-blockchain__rtl.fade-enter
+        -webkit-transform translateX(100%)
+        -ms-transform translateX(100%)
+        -o-transform translateX(100%)
+        transform translateX(100%)
+
+    .project-management__rtl.fade-enter
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
+        transform translateX(-100%)
+
+    .other-blockchain__rtl.fade-leave-active
+        -webkit-transform translateX(100%)
+        -ms-transform translateX(100%)
+        -o-transform translateX(100%)
+        transform translateX(100%)
+
+    .project-management__rtl.fade-leave-active
+        -webkit-transform translateX(-100%)
+        -ms-transform translateX(-100%)
+        -o-transform translateX(-100%)
+        transform translateX(-100%)
+
     @media (max-width 1440px)
-            .left-block, .right-block
-                .item-table
-                    height 90px
+        .left-block, .right-block
+            .item-table
+                height 90px
 
-                    .item-text
-                        text-align left
+                .item-text
+                    text-align left
 
-                .title
-                    height 60px
+            .title
+                height 60px
 
     @media (max-width 1024px)
         .advantages
@@ -492,7 +579,6 @@
                         -ms-transform translateX(-100%)
                         -o-transform translateX(-100%)
                         transform: translateX(0%)
-
 
                 .project-management, .other-blockchain
                     .left-block, .right-block
@@ -609,7 +695,6 @@
                         .title
                             height 100px
 
-
     @media screen and (max-width 748px)
         .item
             height 100px !important
@@ -618,7 +703,7 @@
             background-color #ffc107aa !important
 
         .right-title
-            background-color #6c757dfa !important
+            background-color #6c757d fa !important
 
         .left
             margin-right 5px

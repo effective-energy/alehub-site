@@ -5,7 +5,7 @@
                       :is-opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"/>
-        <advantages-section/>
+        <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"/>
         <ico-section/>
