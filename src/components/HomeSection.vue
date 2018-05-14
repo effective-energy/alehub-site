@@ -143,7 +143,7 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview3.mp4" type="video/mp4">
+                <source src="../../static/video/preview.mp4" type="video/mp4">
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
