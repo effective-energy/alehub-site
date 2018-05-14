@@ -29,13 +29,15 @@
         <div class="navbar-folding" id="navbarText">
 
             <slider-navbar id="slider-navbar"
+                           v-if="!show"
                            :is-dark="isDark"
                            :is-yellow="isYellow"
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
 
-            <div class="navbar-folding__inner">
+            <div class="navbar-folding__inner"
+                 v-if="!show">
                 <div class="navbar-item" v-for="(item, index) in $t('navbar.menuList')">
                     <a :href="item.path"
                        v-scroll-to="item.path">
@@ -47,6 +49,15 @@
                          v-if="index === 0">
                     </div>
                 </div>
+            </div>
+
+            <div class="navbar__blog"
+                 v-if="show === 'blog'">
+                <router-link class="navbar-item"
+                             tag="a"
+                             :to="'/blog'">
+                    {{ $t("navbar.blog") }}
+                </router-link>
             </div>
 
             <div class="right-menu">
@@ -655,6 +666,21 @@
                     -webkit-transition all .5s ease
                     -o-transition all .5s ease
                     transition all .5s ease
+
+            .navbar__blog
+                width 100%
+                display flex
+                justify-content center
+                align-items center
+
+                .navbar-item
+                    font-size 18px
+                    font-weight 600
+                    color #0f1118
+
+                    &:hover
+                        text-decoration none
+
 
             .right-menu
                 position block
