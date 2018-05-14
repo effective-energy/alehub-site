@@ -285,10 +285,15 @@
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
                 this.rtl = true;
+                console.log('im in rtl');
+                setTimeout(() => {
+                    this.$parent.$emit('isRtl', this.rtl);
+                }, 0);
             },
             resetRTL: function () {
                 document.querySelector('body').style['direction'] = 'ltr';
                 this.rtl = false;
+                this.$parent.$emit('isRtl',this.rtl);
             },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
@@ -414,6 +419,10 @@
 
         },
         mounted() {
+            if (this.selectedLanguage === 'ar') {
+                this.makeRTL();
+            }
+
             this.$on('changeModalLanguage', (val) => {
                 this.selectedLanguage = val;
             });

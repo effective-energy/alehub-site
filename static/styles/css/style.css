@@ -583,6 +583,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 25px;
+  z-index: 100;
 }
 @media (min-width: 425px) and (max-width: 768px) {
   .crypto .collection {
@@ -668,6 +669,15 @@ body {
 }
 .anim .path {
   stroke-width: 0.5;
+}
+.direction-ltr {
+  direction: ltr;
+}
+.direction-rtl {
+  direction: rtl;
+}
+.text-align-right-rtl {
+  text-align: right;
 }
 img,
 a {
@@ -768,9 +778,6 @@ a {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 14px;
-  }
-  .bonus-desc {
-    margin-top: 16px;
   }
   .partners-icons {
     align-items: center;
