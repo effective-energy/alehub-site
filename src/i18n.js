@@ -351,6 +351,17 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Evgeniy Korobitcyn',
                             position: 'Graphic Designer',
                             src: '../static/images/avatars/korobitsyn@3x.png'
@@ -958,6 +969,17 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
                                 }
                             ]
                         },
@@ -1571,6 +1593,17 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Евгений Житков',
+                            position: 'Инженер по тестированию',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Евгений Коробицин',
                             position: 'Графический Дизайнер',
                             src: '../../static/images/avatars/korobitsyn@3x.png'
@@ -1920,42 +1953,54 @@ const messages = {
             watchDemo: 'Watch demo',
             solvingProblems: {
                 title: 'Solved problems',
-                list: [{
+                list: [
+                    {
                     title: 'The legal nature of payment.',
                     description: 'For mutual settlements ALE uses “containers” containing real currency.'
-                }, {
+                },
+                    {
                     title: 'Legal value of the electronic contract.',
                     description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
-                }, {
+                },
+                    {
                     title: 'Highly volatile means of payment.',
                     description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
-                }, {
+                },
+                    {
                     title: 'Contradiction to national and industrial standards. ',
                     description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
-                }, {
+                },
+                    {
                     title: 'The inevitability of fulfilling obligations.',
                     description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
-                }, {
+                },
+                    {
                     title: 'Integrity and unchangeability of documentation.',
                     description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
-                }]
+                }
+                ]
             }
         },
         features: {
             title: 'The main distinguishing features of ALE',
-            list: [{
+            list: [
+                {
                 title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
                 description: ' '
-            }, {
+            },
+                {
                 title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
                 description: ' '
-            }, {
+            },
+                {
                 title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
                 description: ' '
-            }, {
+            },
+                {
                 title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
                 description: ' '
-            }]
+            }
+            ]
         },
         table: {
             first: {
@@ -2154,6 +2199,17 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
                                 }
                             ]
                         },
@@ -2742,6 +2798,17 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Evgeniy Korobitcyn',
                             position: 'Graphic Designer',
                             src: '../static/images/avatars/korobitsyn@3x.png'
@@ -3326,6 +3393,17 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Evgeniy Korobitcyn',
                             position: 'Graphic Designer',
                             src: '../static/images/avatars/korobitsyn@3x.png'
@@ -3905,6 +3983,17 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
                                 }
                             ]
                         },
@@ -4493,6 +4582,17 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Evgeniy Korobitcyn',
                             position: 'Graphic Designer',
                             src: '../static/images/avatars/korobitsyn@3x.png'
@@ -5073,6 +5173,17 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Evgeniy Zhitkov',
+                            position: 'Testing Engineer',
+                            src: '../static/images/avatars/zhitkov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
                                 }
                             ]
                         },

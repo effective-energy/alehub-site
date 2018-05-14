@@ -42,7 +42,7 @@
                                         <a :href="social.link" v-for="social in member.social" target="_blank">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
                                                  src="../../../static/images/in.svg"
-                                                 alt="in" />
+                                                 alt="in"/>
                                         </a>
                                     </div>
                                 </div>
@@ -129,13 +129,11 @@
         },
         methods: {
             clickNext: function () {
-                console.log('next');
                 this.stopAutoplay();
                 this.nextSlide();
                 this.startAutoplay(true);
             },
             clickPrev: function () {
-                console.log('prev');
                 this.stopAutoplay();
                 this.prevSlide();
                 this.startAutoplay(true);
@@ -201,7 +199,7 @@
                 --this.opt.position;
                 if (this.opt.position < 0) {
                     sel.wrap.style['transition'] = '0s';
-                    sel.wrap.style['transform'] = `translateX(-${ this.opt.maxPosition * this.privates.multiplierPosition } %)`;
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.maxPosition * this.privates.multiplierPosition}%)`;
                     this.opt.position = this.opt.maxPosition - 1;
                 }
                 if (this.opt.position === 0) {
@@ -210,7 +208,7 @@
                 }
                 setTimeout(() => {
                     sel.wrap.style['transition'] = '';
-                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.privates.multiplierPosition }%)`;
+                    sel.wrap.style['transform'] = `translateX(-${this.opt.position * this.privates.multiplierPosition}%)`;
                 }, 40);
             },
             nextSlide: function () {
@@ -305,6 +303,7 @@
             width 80%
             @media (max-width 320px)
                 width 100%
+
     .wrap
         width 100%
         display flex
@@ -381,7 +380,6 @@
 
                             &:active
                                 cursor -webkit-grab !important
-
 
     .b-carousel__prev
         margin-right 20px

@@ -148,7 +148,7 @@
 
             <div class="video__wrap">
                 <video autoplay muted loop id="myVideoScale">
-                    <source src="../../static/video/libra4.mp4" type="video/mp4">
+                    <source src="../../static/video/libra.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -504,6 +504,7 @@
             padding-top 105px
             width 100%
             display flex
+            align-items center
 
             .video__wrap
                 width 30%
