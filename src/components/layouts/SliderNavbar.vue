@@ -2,22 +2,31 @@
     <div class="slider-navbar"
          :class="{ 'width-79': isDeutsch && isUpTo1200 || isFrench && isUpTo1200,
                    'width-78': isSpanish && isUpTo1200 || isDeutsch && isUpTo1150 || isFrench && isUpTo1350,
-                   'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300,
-                   'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250,
-                   'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100,
+                   'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300 || isArabic && (isUpTo1350 || isUpTo1200),
+                   'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250 || isArabic && isUpTo1300,
+                   'width-75': isSpanish && (isUpTo1100 || isUpTo1250) || isFrench && isUpTo1100 || isArabic && isUpTo1150,
+                   'width-74': isArabic && (isUpTo1250 || isUpTo1100),
                    'slider-navbar__dark': isDark }">
         <button class="b-carousel__prev n-js-carousel__prev"
-                :class="{ 'transparent': !isLeft }"
+                :class="{ 'transparent': !isLeft, 'b-carousel__prev-rtl': isRtl }"
                 :disabled="!isLeft"
                 @click="prevSlide">
             <img class="arrow-prev"
                  src="../../../static/images/arrow-left-black.svg"
                  alt="more navbar items"
-                 v-if="!isDark">
+                 v-if="!isDark && !isRtl">
             <img class="arrow-prev"
                  src="../../../static/images/arrow-left-white.svg"
                  alt="more navbar items"
-                 v-else>
+                 v-if="isDark && !isRtl">
+            <img class="arrow-prev"
+                 src="../../../static/images/arrow-right-black.svg"
+                 alt="more navbar items"
+                 v-if="!isDark && isRtl">
+            <img class="arrow-prev"
+                 src="../../../static/images/arrow-right-white.svg"
+                 alt="more navbar items"
+                 v-if="isDark && isRtl">
         </button>
         <div class="wrap"
              :class="{ 'width-95': isFrench && isUpTo1150,
@@ -31,9 +40,9 @@
                     <div class="b-carousel__item"
                          :class="{
                             'flex-basis-20': isFrench && (isUpTo1350 || isUpTo1300) || isDeutsch && (isUpTo1350 || isUpTo1300) ||
-                            isRussian && (isUpTo1350 || isUpTo1300) ||
+                            isRussian && (isUpTo1350 || isUpTo1300) || isArabic && (isUpTo1350 || isUpTo1300) ||
                             isEnglish && isUpTo1150 || isSpanish && (isUpTo1300 || isUpTo1350),
-                            'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250),
+                            'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250) || isArabic && (isUpTo1250 || isUpTo1200),
                              'flex-basis-33': isUpTo1100 && (isRussian || isFrench) }"
                          v-for="(item, index) in items"
                          :key="index">
@@ -55,17 +64,25 @@
             </div>
         </div>
         <button class="b-carousel__next n-js-carousel__next"
-                :class="{ 'transparent': !isRight }"
+                :class="{ 'transparent': !isRight, 'b-carousel__next-rtl': isRtl }"
                 :disabled="!isRight"
                 @click="nextSlide">
             <img class="arrow-next"
                  src="../../../static/images/arrow-right-black.svg"
                  alt="more navbar items"
-                 v-if="!isDark">
+                 v-if="!isDark && !isRtl">
             <img class="arrow-next"
                  src="../../../static/images/arrow-right-white.svg"
                  alt="more navbar items"
-                 v-else>
+                 v-if="isDark && !isRtl">
+            <img class="arrow-next"
+                 src="../../../static/images/arrow-left-black.svg"
+                 alt="more navbar items"
+                 v-if="!isDark && isRtl">
+            <img class="arrow-next"
+                 src="../../../static/images/arrow-left-white.svg"
+                 alt="more navbar items"
+                 v-if="isDark && isRtl">
         </button>
     </div>
 </template>
@@ -79,6 +96,10 @@
                 required: true
             },
             isYellow: {
+                type: Boolean,
+                required: true
+            },
+            isRtl: {
                 type: Boolean,
                 required: true
             },
@@ -157,6 +178,9 @@
             isRussian: function () {
                 return this.$i18n.locale === 'ru';
             },
+            isArabic: function () {
+                return this.$i18n.locale === 'ar';
+            },
             isEnglish: function () {
                 return this.$i18n.locale === 'en';
             },
@@ -209,8 +233,12 @@
 
                 --this.opt.position;
 
-                if (this.opt.position < this.opt.maxPosition)
-                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+                if (this.opt.position < this.opt.maxPosition) {
+                    if (!this.isRtl)
+                        sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+                    else
+                        sel.wrap.style['transform'] = `translateX(${ this.opt.position * this.multiplier }%)`;
+                }
 
                 this.activeItems.pop();
                 this.activeItems.unshift(this.activeItems[0] - 1);
@@ -242,7 +270,10 @@
                 }
 
                 sel.wrap.style['transition'] = '';
-                sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+                if (!this.isRtl)
+                    sel.wrap.style['transform'] = `translateX(-${ this.opt.position * this.multiplier }%)`;
+                else
+                    sel.wrap.style['transform'] = `translateX(${ this.opt.position * this.multiplier }%)`;
 
                 this.activeItems.shift();
                 this.activeItems.push(this.activeItems[this.activeItems.length - 1] + 1);
@@ -397,23 +428,43 @@
 
     .b-carousel__prev
         @media (min-width 1250px) and (max-width 1350px)
-            margin-left 25px
+            margin 0 0 0 25px
 
         @media (min-width 1150px) and (max-width 1250px)
-            margin-left 20px
+            margin 0 0 0 20px
 
         @media (min-width 1024px) and (max-width 1150px)
-            margin-left 15px
+            margin 0 0 0 15px
 
     .b-carousel__next
         @media (min-width 1250px) and (max-width 1350px)
-            margin-right 25px
+            margin 0 25px 0 0
 
         @media (min-width 1150px) and (max-width 1250px)
-            margin-right 20px
+            margin 0 20px 0 0
 
         @media (min-width 1024px) and (max-width 1150px)
-            margin-right 15px
+            margin 0 15px 0 0
+
+    .b-carousel__prev-rtl
+        @media (min-width 1250px) and (max-width 1350px)
+            margin 0 25px 0 0
+
+        @media (min-width 1150px) and (max-width 1250px)
+            margin 0 20px 0 0
+
+        @media (min-width 1024px) and (max-width 1150px)
+            margin 0 15px 0 0
+
+    .b-carousel__next-rtl
+        @media (min-width 1250px) and (max-width 1350px)
+            margin 0 0 0 25px
+
+        @media (min-width 1150px) and (max-width 1250px)
+            margin 0 0 0 20px
+
+        @media (min-width 1024px) and (max-width 1150px)
+            margin 0 0 0 15px
 
     .b-carousel__prev, .b-carousel__next
         padding 0
@@ -474,6 +525,9 @@
 
     .flex-basis-33
         flex-basis 33.333333% !important
+
+    .width-74
+        width 74% !important
 
     .width-75
         width 75% !important

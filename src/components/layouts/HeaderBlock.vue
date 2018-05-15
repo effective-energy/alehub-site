@@ -33,6 +33,7 @@
                            v-if="!show"
                            :is-dark="isDark"
                            :is-yellow="isYellow"
+                           :is-rtl="rtl"
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
@@ -61,7 +62,8 @@
                 </router-link>
             </div>
 
-            <div class="right-menu">
+            <div class="right-menu"
+            :class="{ 'right-menu__rtl': rtl }">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
                    target="_blank">
@@ -325,8 +327,17 @@
                     firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left,
                     currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left;
 
+
+                let firstNavbarItemRtl = this.getCoords(document.querySelector('.navbar-item')).right,
+                    currentNavbarItemRtl = this.getCoords(document.querySelectorAll('.navbar-item')[index]).right;
+
+
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
-                document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+
+                if (!this.rtl)
+                    document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+                else
+                    document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItemRtl - firstNavbarItemRtl }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -335,7 +346,8 @@
 
                 return {
                     top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
+                    left: box.left + pageXOffset,
+                    right: box.right + pageXOffset
                 };
             },
             toggleDropdown: function () {
@@ -707,6 +719,12 @@
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
                     right 0
+
+            .right-menu__rtl
+                @media (min-width 1024px) and (max-width 1350px)
+                    position absolute
+                    left 0
+                    right auto
 
     .select-lang
         cursor pointer

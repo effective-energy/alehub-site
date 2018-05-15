@@ -478,9 +478,7 @@ const messages = {
                 },
                 {
                     title: '职权范围的形成',
-                    desk: '与区块链专家和开发者磋商\n' +
-                    '\n' +
-                    '形成产品形象和职权范围',
+                    desk: '与区块链专家和开发者磋商 形成产品形象和职权范围',
                     date: '六月 - 七月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -626,23 +624,23 @@ const messages = {
             menuList: [
                 {
                     path: '#home',
-                    name: 'Home'
+                    name: 'ホームページ'
                 },
                 {
                     path: '#description',
-                    name: 'Description'
+                    name: '説明'
                 },
                 {
                     path: '#advantages',
-                    name: 'Advantages'
+                    name: '優位'
                 },
                 {
                     path: '#features',
-                    name: 'Features'
+                    name: 'サービス'
                 },
                 {
                     path: '#team',
-                    name: 'Team'
+                    name: 'チーム'
                 },
                 {
                     path: '#ico',
@@ -650,11 +648,11 @@ const messages = {
                 },
                 {
                     path: '#roadmap',
-                    name: 'Roadmap'
+                    name: 'プロジェクトマップ'
                 },
                 {
                     path: '#download-application',
-                    name: 'Download'
+                    name: 'アップロード'
                 },
                 {
                     path: '#blog',
@@ -1237,18 +1235,18 @@ const messages = {
             },
         },
         download: 'Download',
-        serverErr: 'A server error occurred while retrieving the application list.'
+        serverErr: 'アプリケーションリストをアップロード中にサーバーエラー起こりました'
     },
 
 
     ru: {
         navbar: {
             menuList: [
-                {
+                {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
                     path: '#home',
                     name: 'Домой'
                 },
-                {
+                {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                     path: '#description',
                     name: 'О проекте'
                 },
