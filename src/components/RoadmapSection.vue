@@ -23,13 +23,13 @@
                 </div>
             </div>
 
-            <div class="slide-to-left">
+            <div class="slide-to-left" v-if="isLeft">
                 <button type="button" :disabled="disableControls" @click="prevSlide">
                     <img src="../../static/images/arrow-left-roadmap.svg" alt="slide-to-left">
                 </button>
             </div>
 
-            <div class="slide-to-right">
+            <div class="slide-to-right" v-if="isRight">
                 <button type="button" :disabled="disableControls" @click="nextSlide">
                     <img src="../../static/images/arrow-right-roadmap.svg" alt="slide-to-right">
                 </button>
@@ -134,6 +134,8 @@
         },
         data() {
             return {
+                isRight: true,
+                isLeft: false,
                 xDrag: 0,
                 yDrag: 0,
                 xDown: 0,
@@ -293,6 +295,17 @@
                 this.getCoords(document.getElementById('scroll-element')).left * 2;
 
             this.slideWidth = document.querySelector('.slide').offsetWidth;
+
+            document.getElementById('scroll-element').addEventListener('scroll', () => {
+                if (document.getElementById('scroll-content').getBoundingClientRect().right === document.getElementById('scroll-content').offsetWidth)
+                    this.isLeft = false;
+                else if (document.getElementById('scroll-content').getBoundingClientRect().right <= window.innerWidth - 9)
+                    this.isRight = false;
+                else {
+                    this.isLeft = true;
+                    this.isRight = true;
+                }
+            });
         }
     }
 </script>
@@ -421,6 +434,9 @@
 
             &:hover
                 opacity 1
+
+            @media (max-width 768px)
+                display none
 
             button
                 cursor pointer
