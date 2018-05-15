@@ -9,16 +9,16 @@
             <div class="row news-section">
                 <div class="animate col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
 					<span>
-					<router-link tag="div" :to="`/blog/${n._id}`" class="news-block">
+					<router-link tag="div" :to="`/blog/${n.post._id}`" class="news-block">
 
 						<router-link :to="`/blog/${n._id}`">
-							<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
+							<img :src="n.image" alt="" class="picture" @click="goToNews(n.post._id)">
 						</router-link>
 						<div class="news-info">
                             <p class="news-title">
-                                {{ n.title }}
+                                {{ n.post.title }}
                             </p>
-							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
+							<i class="news-date">{{ n.post.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 
 					</router-link>

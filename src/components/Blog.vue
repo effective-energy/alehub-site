@@ -7,30 +7,18 @@
 
 
             <div class="blog-content">
-                <div class="date-filter">
-                    <div class="arrow-next"></div>
-                    <ul class="filter-list">
-                        <li class="filter-item">2018</li>
-                        <ul v-if="false">
-                            <li>March</li>
-                            <li class="active">February</li>
-                            <li>January</li>
-                        </ul>
-                    </ul>
-                    <div class="arrow-prev"></div>
-                </div>
 
                 <div class="posts">
 
                     <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="item.preview_image" alt="" class="image-preview">
+                        <img :src="item.image" alt="" class="image-preview">
                         <div class="post-content">
-                            <router-link tag="a" :to="`/blog/${item._id}`" class="title">
-                                {{ item.title }}
+                            <router-link tag="a" :to="`/blog/${item.post._id}`" class="title">
+                                {{ item.post.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
-                                <span v-if="false" class="author">Vadim Dudin</span>
+                                <span class="date">{{ item.post.date/1000 | moment("MMMM DD") }}</span>
+                                <span class="author">{{ item.post.author_name }}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -96,10 +84,10 @@
             filtersConfigure: function () {
                 this.filters = [];
                 for (let i = 0; i < this.content.length; i++) {
-                    if (this.content[i].categories) {
-                        for (let l = 0; l < this.content[i].categories.length; l++) {
-                            if (this.filters.indexOf(this.content[i].categories[l]) === -1) {
-                                this.filters.push(this.content[i].categories[l]);
+                    if (this.content[i].post.categories) {
+                        for (let l = 0; l < this.content[i].post.categories.length; l++) {
+                            if (this.filters.indexOf(this.content[i].post.categories[l]) === -1) {
+                                this.filters.push(this.content[i].post.categories[l]);
                             }
                         }
                     }

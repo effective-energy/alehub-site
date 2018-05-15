@@ -1,7 +1,7 @@
 <template>
 	<div class="section section-full-news">
 		<header-block :show="'blog'" />
-		<div class="container container-news" v-if="content">
+		<div class="container container-news" v-if="content && !isLoader">
 			<social-sharing :url="newsUrl" inline-template>
 				<div class="share-block">
 					<network network="twitter">
@@ -25,38 +25,39 @@
 				</div>
 			</social-sharing>
 			<div class="news-block">
-				<h1 class="title">{{ content.title }}</h1>
+				<h1 class="title">{{ content.data.title }}</h1>
 				<div class="news-info">
-					<img :src="content.author_image" alt="" class="news-author-image" />
+					<img :src="content.data.author_image" alt="" class="news-author-image" />
 					<div class="info">
-						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
-						<span class="author-name">{{ content.author_name }}</span>
+						<span class="datetime">{{ content.data.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
+						<span class="author-name">{{ content.data.author_name }}</span>
 					</div>
 				</div>
 				<div class="picture-block">
 					<img :src="content.preview_image" alt="" class="image" />
-					<p class="resource-image" v-if="false">Resource: <a href="https://unsplash.com">unsplash.com</a></p>
 				</div>
-				<div class="news-content" v-html="content.content">
+				<div class="news-content" v-html="content.data.content">
 
 				</div>
 
-				<div class="more-news" v-if="more">
+				<div class="more-news" v-if="more.length !== 0">
 					<h1 class="more-news-title">More news</h1>
 
 					<div class="more-news-content row">
-						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item._id">
-							<img :src="item.preview_image" @click="goToNews(item._id)" alt="" />
-							<router-link tag="a" :to="`./${item._id}`" class="news-link">
-                                {{ item.title }}
+						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item.post._id">
+							<router-link tag="a" :to="`./${item.post._id}`">
+                                <img :src="item.image" alt="" />
                             </router-link>
-							<i class="date">{{ item.date/1000 | moment("ddd  DD, YYYY") }}</i>
+							<router-link tag="a" :to="`./${item.post._id}`" class="news-link">
+                                {{ item.post.title }}
+                            </router-link>
+							<i class="date">{{ item.post.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="spinner" v-if="!content && !isError">
+		<div class="spinner" v-if="isLoader">
 			<spinner />
 		</div>
 		<div class="not-found" v-if="isError">
@@ -83,7 +84,8 @@
 				content: '',
 				more: '',
 				isError: false,
-				newsUrl: ''
+				newsUrl: '',
+				isLoader: false
 			}
 		},
 		watch: {
@@ -93,6 +95,7 @@
 		},
 		methods: {
 			getNews: function () {
+				this.isLoader = true;
 				this.content = '';
 				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`, {
                     headers : {
@@ -100,11 +103,13 @@
                         'Accept' : 'application/json'
                     }
                 }).then(response => {
+                	this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
 					this.content = response.body;
-					document.title = this.content.title;
+					document.title = this.content.data.title;
+					return this.getLastNews();
 				}, response => {
-					console.log('Error getting news', response);
 					this.isError = true;
+					this.isLoader = false;
 					document.title = 'News Not Found';
 				});
 			},
@@ -117,22 +122,23 @@
                         'Accept' : 'application/json'
                     }
                 }).then(response => {
-					this.more = response.body;
+                	this.isLoader = false;
+                	if (response.body.code === 2) {
+                		return this.more = [];
+                	} else {
+                		return this.more = response.body;
+                	}
 				}, response => {
 					this.isError = true;
+					this.isLoader = false;
 				});
 			},
 			goToNews: function (id) {
 				this.$router.push(`/blog/${id}`)
-			},
-			getNewsUrl: function () {
-				this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
 			}
 		},
 		created () {
 			this.getNews();
-			this.getLastNews();
-			this.getNewsUrl();
 		}
     }
 </script>
