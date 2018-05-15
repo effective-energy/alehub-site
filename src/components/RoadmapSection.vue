@@ -9,6 +9,32 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
+
+            <div class="scroll-block" style="margin-top: 0; position: absolute; top: -4px;">
+                <div id="scroll-element"
+                     class="scroll-element" style="max-width: 100%; margin: 0;"
+                     :style="{ 'width': scrollHorizontalWidth }"
+                     v-on:scroll="scrollForSlide($event)">
+
+                    <div id="scroll-content"
+                         class="scroll-content"
+                         :style="'width: ' + roadmapPanelWidth + 'px'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-to-left">
+                <button type="button" :disabled="disableControls" @click="prevSlide">
+                    <img src="../../static/images/arrow-left-roadmap.svg" alt="slide-to-left">
+                </button>
+            </div>
+
+            <div class="slide-to-right">
+                <button type="button" :disabled="disableControls" @click="nextSlide">
+                    <img src="../../static/images/arrow-right-roadmap.svg" alt="slide-to-right">
+                </button>
+            </div>
+
             <div class="slides-body"
                  @mousedown="dragStart($event)"
                  @mouseup="dragEnd()"
@@ -54,45 +80,45 @@
                 </div>
             </div>
 
-            <div class="scroll-block">
-                <button type="button"
-                        class="arrow-prev"
-                        v-if="!isRtl"
-                        :disabled="disableControls"
-                        @click="prevSlide">
-                </button>
-                <button type="button"
-                        class="arrow-prev"
-                        :class="{ 'arrow-prev__rtl': isRtl }"
-                        v-else
-                        :disabled="disableControls"
-                        @click="nextSlide">
-                </button>
+            <!--<div class="scroll-block">-->
+            <!--<button type="button"-->
+            <!--class="arrow-prev"-->
+            <!--v-if="!isRtl"-->
+            <!--:disabled="disableControls"-->
+            <!--@click="prevSlide">-->
+            <!--</button>-->
+            <!--<button type="button"-->
+            <!--class="arrow-prev"-->
+            <!--:class="{ 'arrow-prev__rtl': isRtl }"-->
+            <!--v-else-->
+            <!--:disabled="disableControls"-->
+            <!--@click="nextSlide">-->
+            <!--</button>-->
 
-                <div id="scroll-element"
-                     class="scroll-element"
-                     v-on:scroll="scrollForSlide($event)">
+            <!--<div id="scroll-element"-->
+            <!--class="scroll-element"-->
+            <!--v-on:scroll="scrollForSlide($event)">-->
 
-                    <div id="scroll-content"
-                         class="scroll-content"
-                         :style="'width: ' + roadmapPanelWidth + 'px'">
-                    </div>
-                </div>
+            <!--<div id="scroll-content"-->
+            <!--class="scroll-content"-->
+            <!--:style="'width: ' + roadmapPanelWidth + 'px'">-->
+            <!--</div>-->
+            <!--</div>-->
 
-                <button type="button"
-                        class="arrow-next"
-                        v-if="!isRtl"
-                        :disabled="disableControls"
-                        @click="nextSlide">
-                </button>
-                <button type="button"
-                        class="arrow-next"
-                        :class="{ 'arrow-next__rtl': isRtl }"
-                        v-else
-                        :disabled="disableControls"
-                        @click="prevSlide">
-                </button>
-            </div>
+            <!--<button type="button"-->
+            <!--class="arrow-next"-->
+            <!--v-if="!isRtl"-->
+            <!--:disabled="disableControls"-->
+            <!--@click="nextSlide">-->
+            <!--</button>-->
+            <!--<button type="button"-->
+            <!--class="arrow-next"-->
+            <!--:class="{ 'arrow-next__rtl': isRtl }"-->
+            <!--v-else-->
+            <!--:disabled="disableControls"-->
+            <!--@click="prevSlide">-->
+            <!--</button>-->
+            <!--</div>-->
         </div>
     </div>
 </template>
@@ -124,6 +150,10 @@
             },
             isDisableTouch: function () {
                 return this.disableTouch;
+            },
+            scrollHorizontalWidth: function () {
+                //9 ширина скролла
+                return window.innerWidth - 9 + 'px';
             }
         },
         methods: {
@@ -329,121 +359,11 @@
         .arrow-next__rtl
             background-image url('../../static/images/roadmap/arrow-left.svg')
 
-        .arrow-prev, .arrow-prev__rtl
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-
-            &:focus
-                -webkit-animation arrow-prev .75s infinite
-                -moz-animation arrow-prev .75s infinite
-                -o-animation arrow-prev .75s infinite;
-                @-webkit-keyframes arrow-prev {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @-moz-keyframes arrow-prev {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @-o-keyframes arrow-prev {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @keyframes arrow-prev {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-
-        .arrow-next, .arrow-next__rtl
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-
-            &:focus
-                -webkit-animation arrow-next .75s infinite
-                -moz-animation arrow-next .75s infinite
-                -o-animation arrow-next .75s infinite;
-                @-webkit-keyframes arrow-next {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(-5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @-moz-keyframes arrow-next {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(-5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @-o-keyframes arrow-next {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(-5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-                @keyframes arrow-next {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    25% {
-                        transform: translateX(-5px);
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-
         .scroll-element
             cursor pointer
-            height 6px
             max-width 768px
             width 768px
             overflow-x scroll
-            border-radius 2px
             margin 0 12px
 
             .scroll-content
@@ -453,17 +373,68 @@
                 width 75%
 
     .roadmap-slides
+        position relative
         user-select none
         margin-top 46px
+
+        &:hover
+            .slide-to-left, .slide-to-right
+                opacity .3
 
         .topline
             width 100%
             height 2px
             background-color #ffbc00
 
+        .slide-to-left
+            position absolute
+            left 0
+            padding-left 36px
+            top 25%
+            height 50%
+            display flex
+            justify-content center
+            align-items center
+
+            &:active
+                padding-left 18px
+
+        .slide-to-right
+            position absolute
+            right 0
+            padding-right 36px
+            top 25%
+            height 50%
+            display flex
+            justify-content center
+            align-items center
+
+            &:active
+                padding-right 18px
+
+        .slide-to-left, .slide-to-right
+            cursor pointer
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
+            opacity 0
+
+            &:hover
+                opacity 1
+
+            button
+                cursor pointer
+                padding 0
+                height 100%
+                background-color transparent
+                border none
+                &:focus
+                    outline none
+
+                img
+                    height 100%
+
         .slides-body
-            /*width 3584px*/
-            /*height 400px*/
             max-height 600px
             padding-bottom 5px
             display flex
