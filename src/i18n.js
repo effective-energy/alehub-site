@@ -23,6 +23,10 @@ const messages = {
                     name: '球队'
                 },
                 {
+                    path: '#advisors',
+                    name: '顾问'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -633,6 +637,10 @@ const messages = {
                     name: 'チーム'
                 },
                 {
+                    path: '#advisors',
+                    name: 'Advisors'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -1241,6 +1249,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Команда'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Советники'
                 },
                 {
                     path: '#ico',
@@ -1856,6 +1868,10 @@ const messages = {
                     name: 'Team'
                 },
                 {
+                    path: '#advisors',
+                    name: 'Advisors'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -2456,6 +2472,10 @@ const messages = {
                     name: 'Équipe'
                 },
                 {
+                    path: '#advisors',
+                    name: 'Conseillers'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -3041,6 +3061,10 @@ const messages = {
                     name: 'Mannschaft'
                 },
                 {
+                    path: '#advisors',
+                    name: 'Berater'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -3623,6 +3647,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'الفريق'
+                },
+                {
+                    path: '#advisors',
+                    name: 'المستشارين'
                 },
                 {
                     path: '#ico',
@@ -4210,6 +4238,10 @@ const messages = {
                     name: '팀'
                 },
                 {
+                    path: '#advisors',
+                    name: '문'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -4793,6 +4825,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Equipo'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Advisors'
                 },
                 {
                     path: '#ico',
