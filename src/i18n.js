@@ -379,7 +379,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -519,8 +519,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: '舞台没有开始'
+                    progress: 100,
+                    state: '部署'
                 },
                 {
                     title: 'Bounty',
@@ -638,7 +638,7 @@ const messages = {
                 },
                 {
                     path: '#advisors',
-                    name: 'Advisors'
+                    name: '顧問'
                 },
                 {
                     path: '#ico',
@@ -989,11 +989,11 @@ const messages = {
             ]
         },
         advisors: {
-            title: 'Advisors',
+            title: '顧問',
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -1138,8 +1138,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'the stage did not begin'
+                    progress: 100,
+                    state: 'deployed'
                 },
                 {
                     title: 'Bounty',
@@ -1607,7 +1607,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'Советник',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -1751,8 +1751,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'этап ещё не начался'
+                    progress: 100,
+                    state: 'готово'
                 },
                 {
                     title: 'Bounty',
@@ -2361,8 +2361,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'the stage did not begin'
+                    progress: 100,
+                    state: 'deployed'
                 },
                 {
                     title: 'Bounty',
@@ -2805,7 +2805,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -2945,8 +2945,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    progress: 100,
+                    state: 'déployé'
                 },
                 {
                     title: 'Bounty',
@@ -3534,8 +3534,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    progress: 100,
+                    state: 'bereitgestellt'
                 },
                 {
                     title: 'Bounty',
@@ -4122,8 +4122,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    progress: 100,
+                    state: 'نشر'
                 },
                 {
                     title: 'Bounty',
@@ -4711,8 +4711,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: '단계를 시작하지 않았'
+                    progress: 100,
+                    state: '배포'
                 },
                 {
                     title: 'Bounty',
@@ -5300,8 +5300,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    progress: 100,
+                    state: 'desplegado'
                 },
                 {
                     title: 'Bounty',
