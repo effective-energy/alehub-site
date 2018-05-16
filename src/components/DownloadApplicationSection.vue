@@ -153,6 +153,11 @@
                 width 33.33333%
                 padding 50px 50px
 
+                &:last-child
+                    .logo__wrap
+                        img
+                            margin-top 30px
+
                 &:hover
                     .logo__fade
                         opacity .4

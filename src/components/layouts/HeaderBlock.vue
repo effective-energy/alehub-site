@@ -1015,6 +1015,9 @@
             background-color #343a49
             color white
 
+            &:hover
+                color white
+
     .bg-dark-blue
         background-color #343a49
 
