@@ -77,7 +77,7 @@
             getDownloadsList() {
                 this.isLoader = true;
                 this.isError = false;
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-version`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-version`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -152,6 +152,11 @@
                 align-items center
                 width 33.33333%
                 padding 50px 50px
+
+                &:last-child
+                    .logo__wrap
+                        img
+                            margin-top 30px
 
                 &:hover
                     .logo__fade

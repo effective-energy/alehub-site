@@ -9,6 +9,32 @@
 
         <div class="roadmap-slides">
             <div class="topline"></div>
+
+            <div class="scroll-block" style="margin-top: 0; position: absolute; top: -4px;">
+                <div id="scroll-element"
+                     class="scroll-element" style="max-width: 100%; margin: 0;"
+                     :style="{ 'width': scrollHorizontalWidth }"
+                     v-on:scroll="scrollForSlide($event)">
+
+                    <div id="scroll-content"
+                         class="scroll-content"
+                         :style="'width: ' + roadmapPanelWidth + 'px'">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-to-left" v-if="isLeft">
+                <button type="button" :disabled="disableControls" @click="prevSlide">
+                    <img src="../../static/images/arrow-left-roadmap.svg" alt="slide-to-left">
+                </button>
+            </div>
+
+            <div class="slide-to-right" v-if="isRight">
+                <button type="button" :disabled="disableControls" @click="nextSlide">
+                    <img src="../../static/images/arrow-right-roadmap.svg" alt="slide-to-right">
+                </button>
+            </div>
+
             <div class="slides-body"
                  @mousedown="dragStart($event)"
                  @mouseup="dragEnd()"
@@ -21,7 +47,7 @@
                      :key="slideIndex">
                     <div class="line"></div>
                     <div class="slide-content"
-                         :class="{ 'deployed': slide.progress === 100 }">
+                         :class="{ 'deployed': slide.progress === 100, 'text-align-right-rtl': isRtl }">
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
@@ -31,13 +57,7 @@
                         <span class="date">
                             {{ slide.date }}
                         </span>
-                        <!--<div class="responsible">-->
-                            <!--<div class="avatar"-->
-                                 <!--v-for="(item, index) in slide.members"-->
-                                 <!--:key="index">-->
-                                <!--<img :src="item" alt="">-->
-                            <!--</div>-->
-                        <!--</div>-->
+
                         <div class="slide-progress">
                             <div class="progress-line-outer">
                                 <div class="progress-line"
@@ -60,30 +80,45 @@
                 </div>
             </div>
 
-            <div class="scroll-block">
-                <button type="button"
-                        class="arrow-prev"
-                        :disabled="disableControls"
-                        @click="prevSlide">
-                </button>
+            <!--<div class="scroll-block">-->
+            <!--<button type="button"-->
+            <!--class="arrow-prev"-->
+            <!--v-if="!isRtl"-->
+            <!--:disabled="disableControls"-->
+            <!--@click="prevSlide">-->
+            <!--</button>-->
+            <!--<button type="button"-->
+            <!--class="arrow-prev"-->
+            <!--:class="{ 'arrow-prev__rtl': isRtl }"-->
+            <!--v-else-->
+            <!--:disabled="disableControls"-->
+            <!--@click="nextSlide">-->
+            <!--</button>-->
 
-                <div id="scroll-element"
-                     class="scroll-element"
-                     v-on:scroll="scrollForSlide($event)">
+            <!--<div id="scroll-element"-->
+            <!--class="scroll-element"-->
+            <!--v-on:scroll="scrollForSlide($event)">-->
 
-                    <div id="scroll-content"
-                         class="scroll-content"
-                         :style="'width: ' + roadmapPanelWidth + 'px'">
-                    </div>
+            <!--<div id="scroll-content"-->
+            <!--class="scroll-content"-->
+            <!--:style="'width: ' + roadmapPanelWidth + 'px'">-->
+            <!--</div>-->
+            <!--</div>-->
 
-                </div>
-
-                <button type="button"
-                        class="arrow-next"
-                        :disabled="disableControls"
-                        @click="nextSlide">
-                </button>
-            </div>
+            <!--<button type="button"-->
+            <!--class="arrow-next"-->
+            <!--v-if="!isRtl"-->
+            <!--:disabled="disableControls"-->
+            <!--@click="nextSlide">-->
+            <!--</button>-->
+            <!--<button type="button"-->
+            <!--class="arrow-next"-->
+            <!--:class="{ 'arrow-next__rtl': isRtl }"-->
+            <!--v-else-->
+            <!--:disabled="disableControls"-->
+            <!--@click="prevSlide">-->
+            <!--</button>-->
+            <!--</div>-->
         </div>
     </div>
 </template>
@@ -91,8 +126,16 @@
 <script>
     export default {
         name: 'Roadmap',
+        props: {
+            isRtl: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
+                isRight: true,
+                isLeft: false,
                 xDrag: 0,
                 yDrag: 0,
                 xDown: 0,
@@ -109,6 +152,10 @@
             },
             isDisableTouch: function () {
                 return this.disableTouch;
+            },
+            scrollHorizontalWidth: function () {
+                //9 ширина скролла
+                return window.innerWidth - 9 + 'px';
             }
         },
         methods: {
@@ -248,6 +295,17 @@
                 this.getCoords(document.getElementById('scroll-element')).left * 2;
 
             this.slideWidth = document.querySelector('.slide').offsetWidth;
+
+            document.getElementById('scroll-element').addEventListener('scroll', () => {
+                if (document.getElementById('scroll-content').getBoundingClientRect().right === document.getElementById('scroll-content').offsetWidth)
+                    this.isLeft = false;
+                else if (document.getElementById('scroll-content').getBoundingClientRect().right <= window.innerWidth - 9)
+                    this.isRight = false;
+                else {
+                    this.isLeft = true;
+                    this.isRight = true;
+                }
+            });
         }
     }
 </script>
@@ -308,13 +366,17 @@
             background-image url('../../static/images/roadmap/arrow-right.svg')
             background-size cover
 
+        .arrow-prev__rtl
+            background-image url('../../static/images/roadmap/arrow-right.svg')
+
+        .arrow-next__rtl
+            background-image url('../../static/images/roadmap/arrow-left.svg')
+
         .scroll-element
             cursor pointer
-            height 6px
             max-width 768px
             width 768px
             overflow-x scroll
-            border-radius 2px
             margin 0 12px
 
             .scroll-content
@@ -323,19 +385,72 @@
             @media (max-width 420px)
                 width 75%
 
-
     .roadmap-slides
+        position relative
         user-select none
         margin-top 46px
+
+        &:hover
+            .slide-to-left, .slide-to-right
+                opacity .3
 
         .topline
             width 100%
             height 2px
             background-color #ffbc00
 
+        .slide-to-left
+            position absolute
+            left 0
+            padding-left 36px
+            top 25%
+            height 50%
+            display flex
+            justify-content center
+            align-items center
+
+            &:active
+                padding-left 18px
+
+        .slide-to-right
+            position absolute
+            right 0
+            padding-right 36px
+            top 25%
+            height 50%
+            display flex
+            justify-content center
+            align-items center
+
+            &:active
+                padding-right 18px
+
+        .slide-to-left, .slide-to-right
+            cursor pointer
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
+            opacity 0
+
+            &:hover
+                opacity 1
+
+            @media (max-width 768px)
+                display none
+
+            button
+                cursor pointer
+                padding 0
+                height 100%
+                background-color transparent
+                border none
+                &:focus
+                    outline none
+
+                img
+                    height 100%
+
         .slides-body
-            /*width 3584px*/
-            /*height 400px*/
             max-height 600px
             padding-bottom 5px
             display flex

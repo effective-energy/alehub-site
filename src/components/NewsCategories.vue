@@ -1,35 +1,29 @@
 <template>
     <div class="blog-entries">
         <Header :show="'blog'"/>
-        <div class="section blogEntries-section">
+
+        <div class="spinner" v-if="isLoader">
+            <Spinner />
+        </div>
+
+
+        <div class="section blogEntries-section" v-if="!isLoader">
             <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
 
 
             <div class="blog-content">
-                <div class="date-filter">
-                    <div class="arrow-next"></div>
-                    <ul class="filter-list">
-                        <li class="filter-item">2018</li>
-                        <ul v-if="false">
-                            <li>March</li>
-                            <li class="active">February</li>
-                            <li>January</li>
-                        </ul>
-                    </ul>
-                    <div class="arrow-prev"></div>
-                </div>
 
                 <div class="posts">
 
                     <div class="blog-post" v-for="item in content" :key="item._id" @click="goToNews(item._id)">
-                        <img :src="item.preview_image" alt="" class="image-preview">
+                        <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">
                                 <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
-                                <span v-if="false" class="author">Vadim Dudin</span>
+                                <span class="author">{{ item.author_name }}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -58,18 +52,21 @@
 <script>
     import Header from './layouts/HeaderBlock';
     import Footer from './layouts/FooterBlock';
+    import Spinner from './layouts/Spinner';
 
     export default {
         name: 'BlogEntries',
         components: {
             Header,
-            Footer
+            Footer,
+            Spinner
         },
         data() {
             return {
                 content: '',
                 allNews: '',
-                filters: []
+                filters: [],
+                isLoader: false
             }
         },
         watch: {
@@ -82,7 +79,8 @@
 		},
         methods: {
 			getNews: function () {
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
+                this.isLoader = true;
+				this.$http.get(`https://alehub-4550.nodechef.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -92,8 +90,9 @@
                     this.content = response.body.filter(item => {
                         return item.categories.indexOf(this.$route.params.id) !== -1;
                     }).reverse()
-                    this.filtersConfigure();
+                    return this.filtersConfigure();
 				}, response => {
+                    this.isLoader = false;
 					console.log('Error getting news', response);
 				});
             },
@@ -108,6 +107,7 @@
                         }
                     }
                 }
+                return this.isLoader = false;
             },
             goToNews: function (id) {
                 this.$router.push(`/blog/${id}`)
@@ -135,6 +135,11 @@
 </style>
 
 <style lang="stylus" scoped>
+    .spinner
+        min-height calc(100vh - 165px)
+        display flex
+        justify-content center
+
     body
         /*padding-top 74px*/
         background-color #ffffff !important

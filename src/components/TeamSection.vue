@@ -1,5 +1,7 @@
 <template>
-    <div class="team" id="team">
+    <div class="team"
+         id="team"
+         :class="{ 'direction-ltr': isRtl }">
 
         <div class="our-team">
 
@@ -11,10 +13,10 @@
             </div>
 
             <div class="serokell">
-
                 <p>
                     Serokell
                 </p>
+                +
 
                 <div class="images"
                      id="serokell-gallery"
@@ -39,7 +41,7 @@
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
                                         <img :class="{ 'in': social.type === 'linkedin' }"
                                              src="../../static/images/in.svg"
-                                             alt="in" />
+                                             alt="in"/>
                                     </a>
                                 </div>
                             </div>
@@ -67,7 +69,7 @@
                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
-        <div class="advisors" id="advisors" v-if="false">
+        <div class="advisors" id="advisors" v-if="true">
             <h3 class="title">
                 {{$t('advisors.title')}}
             </h3>
@@ -77,9 +79,8 @@
 
             <div class="advisors-team">
                 <div class="images"
-                     v-if="isWideScreen">
+                     v-if="isWideScreen || $t('advisors.members').length === 1">
                     <div class="image"
-                         style=""
                          v-for="(member, i) in $t('advisors.members')" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
                         <img class="layer__bottom"
@@ -98,7 +99,7 @@
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
                                         <img :class="{ 'in': social.type === 'linkedin' }"
                                              src="../../static/images/in.svg"
-                                             alt="in" />
+                                             alt="in"/>
                                     </a>
                                 </div>
                             </div>
@@ -131,7 +132,11 @@
         },
         props: {
             isTeam: {
-                type: [Boolean],
+                type: Boolean,
+                required: true
+            },
+            isRtl: {
+                type: Boolean,
                 required: true
             }
         },
@@ -355,7 +360,6 @@
                     -webkit-transition all 0.4s ease-in-out 0s
                     -ms-transition all 0.4s ease-in-out 0s
                     transition all 0.4s ease-in-out 0s
-
 
                 .layer__text
                     color #34343e

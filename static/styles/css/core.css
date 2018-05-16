@@ -31,7 +31,7 @@ body {
   display: flex;
 }
 .navbar-brand img {
-  margin-right: 8px;
+  margin: 0 8px 0 0;
 }
 .right-menu {
   padding-top: 0.5rem;
@@ -143,22 +143,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-/*&.partners
-            margin-top 150px
-            padding 0 225px
-            display flex
-            align-items center
-            justify-content center
-
-            .title
-                margin-right 96px
-                font-family MuseoSansCyrl700
-                font-size 30px
-                color #34343e
-                z-index 10
-
-            img
-                margin 16px 64px 0*/
 }
 @media (min-width: 1440px) and (max-width: 2560px) {
   #screen1 .home {
@@ -653,7 +637,7 @@ body {
   direction: rtl;
 }
 .text-align-right-rtl {
-  text-align: right;
+  text-align: right !important;
 }
 img,
 a {
@@ -664,7 +648,8 @@ a {
   height: 5px;
 }
 ::-webkit-scrollbar:horizontal {
-  background-color: #484e5b;
+  height: 8px;
+  background: transparent;
 }
 ::-webkit-scrollbar-track-piece {
   background-color: rgba(0,0,0,0);

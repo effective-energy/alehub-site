@@ -12,7 +12,7 @@
 					<router-link tag="div" :to="`/blog/${n._id}`" class="news-block">
 
 						<router-link :to="`/blog/${n._id}`">
-							<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
+							<img :src="'https://alehub-4550.nodechef.com/' + n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
 						</router-link>
 						<div class="news-info">
                             <p class="news-title">
@@ -52,7 +52,7 @@
         },
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en' ? '/last/6' : '/last/' + this.$i18n.locale + '6'}`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news${this.$i18n.locale === 'en' ? '/last/6' : '/last/' + this.$i18n.locale + '6'}`, {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'
@@ -66,7 +66,7 @@
                 });
             },
             getEngNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/6`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/last/6`, {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'

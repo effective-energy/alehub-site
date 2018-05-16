@@ -280,7 +280,7 @@
             opacity 0
 
         .l-2
-            transform translate(0, 0) rotate(135deg)
+            transform translate(1px, 1px) rotate(135deg)
 
         .l-3
             transform translate(0, 0) rotate(45deg)

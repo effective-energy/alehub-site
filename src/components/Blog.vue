@@ -7,30 +7,18 @@
 
 
             <div class="blog-content">
-                <div class="date-filter">
-                    <div class="arrow-next"></div>
-                    <ul class="filter-list">
-                        <li class="filter-item">2018</li>
-                        <ul v-if="false">
-                            <li>March</li>
-                            <li class="active">February</li>
-                            <li>January</li>
-                        </ul>
-                    </ul>
-                    <div class="arrow-prev"></div>
-                </div>
 
                 <div class="posts">
 
                     <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="item.preview_image" alt="" class="image-preview">
+                        <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">
                                 <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
-                                <span v-if="false" class="author">Vadim Dudin</span>
+                                <span class="author">{{ item.author_name }}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -79,12 +67,14 @@
 		},
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$i18n.locale === 'en'?'':this.$i18n.locale}`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/${this.$i18n.locale === 'en'?'':this.$i18n.locale}`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
                     }
                 }).then(response => {
+                    console.log(response.body);
+                    console.log(this.content);
                     this.content = response.body.reverse();
                     this.filtersConfigure();
                     if (response.body.length === 0 && this.$i18n.locale !== 'en') 
@@ -106,7 +96,7 @@
                 }
             },
             getEngNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/`, {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'

@@ -1,20 +1,28 @@
 <template>
     <div class="footer" id="footer">
         <div class="row footer-row">
-            <div class="col-5 copyright-block">
+            <div class="col-5 copyright-block"
+                 :class="{ 'text-align-right-rtl': isRtl }">
                 <router-link tag="a" to="/">
-                    <div class="ale-logo"></div>
+                    <div class="ale-logo"
+                         :class="{ 'ale-logo__rtl': isRtl }">
+                        <img src="../../../static/images/ale-logo-grey.svg" alt="ale-logo">
+                        <span>alehub</span>
+                    </div>
                 </router-link>
                 <span class="copyright-text">
 				    {{ $t('footer.left.copyright') }}
 				<div class="creator-and-terms">
 					<div class="creator">
-						<div class="rukin-logo"></div>
+						<div class="rukin-logo"
+                        :class="{ 'rukin-logo__rtl': isRtl }"></div>
 						<span class="rukin-about">
                             {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
-					<a href="#" class="terms">
+					<a href="#"
+                       class="terms"
+                    :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
                     </a>
 				</div>
@@ -71,7 +79,9 @@
                     </a>
                 </div>
                 <div class="subscribe-form">
-                    <div class="subscribe-form__wrap" v-if="!isSuccess">
+                    <div class="subscribe-form__wrap"
+                         :class="{ 'subscribe-form__wrap-rtl': isRtl }"
+                         v-if="!isSuccess">
                         <input class="subscribe-form__email"
                                :class="{ 'error': isError || alreadyExist }"
                                type="text"
@@ -91,17 +101,18 @@
                         </label> -->
                     </div>
                     <button class="subscribe-form__submit"
-                            @click="subscribe" 
-                            :class="{'btn-loading': isLoader}" 
+                            @click="subscribe"
+                            :class="{ 'btn-loading': isLoader, 'subscribe-form__submit-rtl': isRtl }"
                             :disabled="isLoader"
                             v-if="!isSuccess">
-                                <Spinner v-if="isLoader"/>
-                                <span v-else>
+                        <spinner v-if="isLoader"/>
+                        <span v-else>
                                     {{ $t('footer.right.btn') }}
                                 </span>
                     </button>
                     <p v-else class="subscribe-form__success">
-                        You have successfully subscribed to the newsletter. Check your email to confirm your subscription.
+                        You have successfully subscribed to the newsletter. Check your email to confirm your
+                        subscription.
                     </p>
                 </div>
             </div>
@@ -116,6 +127,12 @@
         name: 'FooterSection',
         components: {
             Spinner
+        },
+        props: {
+            isRtl: {
+                type: Boolean,
+                required: true
+            }
         },
         data() {
             return {
@@ -158,17 +175,17 @@
             subscribe: function () {
                 if (this.isCorrectEmail) {
                     this.isLoader = true;
-                    this.$http.post(`https://alehub.eu-4.evennode.com/subscribe/new`, {
+                    this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
                         "email": this.email
                     }, {
-                        headers : {
-                            'Content-Type' : 'application/json; charset=UTF-8',
-                            'Accept' : 'application/json'
+                        headers: {
+                            'Content-Type': 'application/json; charset=UTF-8',
+                            'Accept': 'application/json'
                         }
                     }).then(response => {
                         this.isLoader = false;
                         console.log(response.body);
-                        if(response.body.message === 'Email already exist')
+                        if (response.body.message === 'Email already exist')
                             return this.exist = true;
                         this.success = true;
                     }, response => {
@@ -180,7 +197,7 @@
             inputCheckCorrectEmail: function () {
                 if (this.isInitialFocus)
                     this.error = !this.isCorrectEmail;
-                    this.exist = false;
+                this.exist = false;
             },
             checkCorrectEmail: function () {
                 if (this.email.length === 0)
@@ -194,7 +211,7 @@
 </script>
 
 <style lang="stylus" scoped>
-    .spinner 
+    .spinner
         height 19px !important
         width 19px !important
 
@@ -251,7 +268,7 @@
                         -webkit-transition all .3s ease-out
                         -o-transition all .3s ease-out
                         transition all .3s ease-out
-                            
+
                         @media (max-width 1023px)
                             margin-bottom 0
 
@@ -279,17 +296,20 @@
                         padding 0
                         color #ff4f4f
                         margin-bottom 0
-                        position absolute 
+                        position absolute
                         top 40px
                         right 170px
 
-                        @media( max-width 1023px)
+                        @media ( max-width 1023px)
                             margin-bottom 10px
                             left 0
                             right unset
 
-                        @media( max-width 425px)
+                        @media ( max-width 425px)
                             top 54px
+
+                .subscribe-form__wrap-rtl
+                    text-align left
 
                 .subscribe-form__submit
                     cursor pointer
@@ -303,7 +323,7 @@
                     letter-spacing normal
                     color #34343e
                     padding 8px 20px
-                    margin-left 12px
+                    margin 0 0 0 12px
                     border 1px solid #ffd24f
                     border-radius 3px
                     white-space nowrap
@@ -323,9 +343,12 @@
                     &:focus
                         outline none
 
+                .subscribe-form__submit-rtl
+                    margin 0 12px 0 0
+
                 .subscribe-form__success
                     font-size 14px
-                    text-align right 
+                    text-align right
                     padding-right 20px
 
                     @media (max-width 767px)
@@ -423,13 +446,30 @@
                         background-image url(../../../static/images/social/vk.svg)
 
         .copyright-block
+            a.router-link-exact-active
+                &:hover
+                    text-decoration none
+
             .ale-logo
+                font-family Fairview
+                font-size 40px
+                display flex
+                align-items center
                 width 127px
                 height 40px
-                background-image url(../../../static/images/alehub-logo.svg)
+                margin-bottom 16px
                 background-repeat no-repeat
                 background-size contain
-                margin-bottom 16px
+                text-transform uppercase
+                text-decoration none
+                color #919198
+
+                img
+                    margin 0 8px 0 0
+
+            .ale-logo__rtl
+                img
+                    margin 0 0 0 8px
 
             .copyright-text
                 opacity 0.4
@@ -457,7 +497,10 @@
                         height 12px
                         background-image url('../../../static/images/ar-logo.svg')
                         background-size cover
-                        margin-right 8px
+                        margin 0 8px 0 0
+
+                    .rukin-logo__rtl
+                        margin 0 0 0 8px
 
                     .rukin-about
                         opacity 0.4
@@ -470,7 +513,7 @@
                         color #34343e
 
                 .terms
-                    margin-left 12px
+                    margin 0 0 0 12px
                     opacity 0.4
                     font-family MuseoSansCyrl500
                     font-size 14px
@@ -481,6 +524,9 @@
                     color #34343e
                     text-decoration underline
                     white-space nowrap
+
+                .terms__rtl
+                    margin 0 12px 0 0
 
     /*.top-icon*/
     /*width 32px*/
@@ -578,6 +624,7 @@
                         .social-item
                             &:last-child
                                 margin-right 0
+
     @media (max-width 760px)
         .footer
             .footer-row

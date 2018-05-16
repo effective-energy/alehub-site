@@ -5,14 +5,15 @@
                       :is-opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"/>
-        <advantages-section/>
+        <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
-        <team-section :is-team="isTeam"/>
-        <ico-section/>
-        <roadmap-section/>
+        <team-section :is-team="isTeam"
+                      :is-rtl="isRtl"/>
+        <ico-section :is-rtl="isRtl"/>
+        <roadmap-section :is-rtl="isRtl"/>
         <download-application-section/>
         <blog-section/>
-        <footer-block/>
+        <footer-block :is-rtl="isRtl"/>
     </div>
 </template>
 
