@@ -374,29 +374,19 @@ const messages = {
             title: '顾问',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -994,29 +984,19 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -1614,26 +1594,21 @@ const messages = {
             title: 'Советники',
             members: [
                 {
-                    name: 'Михаил Громыко',
-                    position: 'Генеральный директор',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                }, {
-                    name: 'Владимир Грудинин',
-                    position: 'Блокчейн эксперт',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                }, {
-                    name: 'Алексей Осипенко',
-                    position: 'Главный операционный директор',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                }, {
-                    name: 'Елена Цимбалюк',
-                    position: 'Начальник отдела маркетинговых операций',
-                    src: '../static/images/avatars/elena@3x.png'
-                }, {
-                    name: 'Егор Локтев',
-                    position: 'Директор по маркетингу',
-                    src: '../static/images/avatars/loktev@3x.png'
-                }]
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
+                }
+            ]
         },
         economy: {
             title: 'Экономика ICO',
@@ -2224,29 +2199,19 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -2819,29 +2784,19 @@ const messages = {
             title: 'Conseillers',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -3414,29 +3369,19 @@ const messages = {
             title: 'Berater',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -4008,29 +3953,19 @@ const messages = {
             title: 'المستشارين',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -4603,29 +4538,19 @@ const messages = {
             title: '문',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },
@@ -5198,29 +5123,19 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                        },
+                        // {
+                        //     type: 'icobench',
+                        //     link: 'https://icobench.com/u/purushotham'
+                        // }
+                    ]
                 }
             ]
         },

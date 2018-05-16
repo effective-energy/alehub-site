@@ -77,7 +77,7 @@
             getDownloadsList() {
                 this.isLoader = true;
                 this.isError = false;
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-version`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-version`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'

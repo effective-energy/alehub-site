@@ -15,15 +15,15 @@
 
                 <div class="posts">
 
-                    <div class="blog-post" v-for="item in content" :key="item._id" @click="goToNews(item.post._id)">
-                        <img :src="item.image" alt="" class="image-preview">
+                    <div class="blog-post" v-for="item in content" :key="item._id" @click="goToNews(item._id)">
+                        <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image" alt="" class="image-preview">
                         <div class="post-content">
                             <router-link tag="a" :to="`/blog/${item._id}`" class="title">
-                                {{ item.post.title }}
+                                {{ item.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">{{ item.post.date/1000 | moment("MMMM DD") }}</span>
-                                <span class="author">{{ item.post.author_name }}</span>
+                                <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
+                                <span class="author">{{ item.author_name }}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -80,7 +80,7 @@
         methods: {
 			getNews: function () {
                 this.isLoader = true;
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
+				this.$http.get(`https://alehub-4550.nodechef.com/ale-news${this.$i18n.locale === 'en'?'':'/rus'}`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
@@ -88,7 +88,7 @@
                 }).then(response => {
                     this.allNews = response.body.reverse();
                     this.content = response.body.filter(item => {
-                        return item.post.categories.indexOf(this.$route.params.id) !== -1;
+                        return item.categories.indexOf(this.$route.params.id) !== -1;
                     }).reverse()
                     return this.filtersConfigure();
 				}, response => {
@@ -99,10 +99,10 @@
             filtersConfigure: function () {
                 this.filters = [];
                 for (let i = 0; i < this.allNews.length; i++) {
-                    if (this.allNews[i].post.categories) {
-                        for (let l = 0; l < this.allNews[i].post.categories.length; l++) {
-                            if (this.filters.indexOf(this.allNews[i].post.categories[l]) === -1) {
-                                this.filters.push(this.allNews[i].post.categories[l]);
+                    if (this.allNews[i].categories) {
+                        for (let l = 0; l < this.allNews[i].categories.length; l++) {
+                            if (this.filters.indexOf(this.allNews[i].categories[l]) === -1) {
+                                this.filters.push(this.allNews[i].categories[l]);
                             }
                         }
                     }

@@ -175,7 +175,7 @@
             subscribe: function () {
                 if (this.isCorrectEmail) {
                     this.isLoader = true;
-                    this.$http.post(`https://alehub.eu-4.evennode.com/subscribe/new`, {
+                    this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
                         "email": this.email
                     }, {
                         headers: {

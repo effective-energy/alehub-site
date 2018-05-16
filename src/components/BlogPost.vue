@@ -25,18 +25,18 @@
 				</div>
 			</social-sharing>
 			<div class="news-block">
-				<h1 class="title">{{ content.data.title }}</h1>
+				<h1 class="title">{{ content.title }}</h1>
 				<div class="news-info">
-					<img :src="content.data.author_image" alt="" class="news-author-image" />
+					<img :src="'https://alehub-4550.nodechef.com/' + content.author_image" alt="" class="news-author-image" />
 					<div class="info">
-						<span class="datetime">{{ content.data.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
-						<span class="author-name">{{ content.data.author_name }}</span>
+						<span class="datetime">{{ content.date/1000 | moment("HH:mm dddd, MMMM DD, YYYY") }}</span>
+						<span class="author-name">{{ content.author_name }}</span>
 					</div>
 				</div>
 				<div class="picture-block">
-					<img :src="content.preview_image" alt="" class="image" />
+					<img :src="'https://alehub-4550.nodechef.com/' + content.preview_image" alt="" class="image" />
 				</div>
-				<div class="news-content" v-html="content.data.content">
+				<div class="news-content" v-html="content.content">
 
 				</div>
 
@@ -44,14 +44,14 @@
 					<h1 class="more-news-title">More news</h1>
 
 					<div class="more-news-content row">
-						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item.post._id">
-							<router-link tag="a" :to="`./${item.post._id}`">
-                                <img :src="item.image" alt="" />
+						<div class="news-item col-lg-3 col-md-3 col-sm-6 col-12" v-for="item in more" :key="item._id">
+							<router-link tag="a" :to="`./${item._id}`">
+                                <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image" alt="" />
                             </router-link>
-							<router-link tag="a" :to="`./${item.post._id}`" class="news-link">
-                                {{ item.post.title }}
+							<router-link tag="a" :to="`./${item._id}`" class="news-link">
+                                {{ item.title }}
                             </router-link>
-							<i class="date">{{ item.post.date/1000 | moment("ddd  DD, YYYY") }}</i>
+							<i class="date">{{ item.date/1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 					</div>
 				</div>
@@ -97,15 +97,15 @@
 			getNews: function () {
 				this.isLoader = true;
 				this.content = '';
-				this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$route.params.id}`, {
+				this.$http.get(`https://alehub-4550.nodechef.com/ale-news/${this.$route.params.id}`, {
                     headers : {
                         'Content-Type' : 'application/json; charset=UTF-8',
                         'Accept' : 'application/json'
                     }
                 }).then(response => {
                 	this.newsUrl = 'https://alehub.io/blog/' + this.$route.params.id;
-					this.content = response.body;
-					document.title = this.content.data.title;
+					this.content = response.body[0];
+;					document.title = this.content.title;
 					return this.getLastNews();
 				}, response => {
 					this.isError = true;
@@ -114,7 +114,7 @@
 				});
 			},
 			getLastNews: function () {
-				this.$http.post(`https://alehub.eu-4.evennode.com/ale-news/last/4/`, {
+				this.$http.post(`https://alehub-4550.nodechef.com/ale-news/last/4/`, {
 					"withoutNewsId": this.$route.params.id
 				}, {
                     headers : {

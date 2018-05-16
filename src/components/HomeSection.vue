@@ -882,7 +882,7 @@
                 }, 100);
             },
             getCurrentExchangeRates: function () {
-                this.$http.get('https://alehub.eu-4.evennode.com/ale-system/crypto-price', {
+                this.$http.get('https://alehub-4550.nodechef.com/ale-system/crypto-price', {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'

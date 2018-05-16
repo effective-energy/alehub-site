@@ -68,7 +68,7 @@
                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
-        <div class="advisors" id="advisors" v-if="false">
+        <div class="advisors" id="advisors" v-if="true">
             <h3 class="title">
                 {{$t('advisors.title')}}
             </h3>
