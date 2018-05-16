@@ -16,6 +16,7 @@
                 <p>
                     Serokell
                 </p>
+                +
 
                 <div class="images"
                      id="serokell-gallery"
@@ -78,9 +79,8 @@
 
             <div class="advisors-team">
                 <div class="images"
-                     v-if="isWideScreen">
+                     v-if="isWideScreen || $t('advisors.members').length === 1">
                     <div class="image"
-                         style=""
                          v-for="(member, i) in $t('advisors.members')" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
                         <img class="layer__bottom"
