@@ -27,15 +27,18 @@
         </div>
 
         <div class="scroll-to-top">
-            <a v-scroll-to="'#screen1'"></a>
+            <a @click="clickToTop($event)" v-if="!afterClickToTop"></a>
+            <a @click="returnPosition" v-else></a>
         </div>
         <div class="wrap__pointer"
              id="wrap-pointer">
             <img class="pointer-to-top"
+                 :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-dark.svg"
                  alt="to top"
                  v-if="!isPointerInDark">
             <img class="pointer-to-top"
+                 :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-yellow.svg"
                  alt="to top"
                  v-else>
@@ -554,10 +557,13 @@
                         document.querySelector('video').playbackRate = 0.75;
                     }, 40);
                 }
-            }
+            },
         },
         data() {
             return {
+                topScrollY: false,
+                position: 0,
+                afterClickToTop: false,
                 closedTelegramAlertMobile: false,
                 isVideo: false,
                 isDark: false,
@@ -721,9 +727,18 @@
             }
         },
         methods: {
+            clickToTop: function (e) {
+                this.afterClickToTop = true;
+                document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
+                this.position = window.scrollY;
+                console.log(this.position, 'this.position');
+            },
+            returnPosition: function () {
+                this.afterClickToTop = false;
+                window.scrollTo({top: this.position, behavior: 'smooth'});
+            },
             yaMetricaCollectionItem: function () {
                 yaCounter48802643.reachGoal('BuyCrypto');
-                console.log('cript');
                 return true;
             },
             yaMetricaCollectionLastItem: function () {
@@ -942,6 +957,19 @@
             },
         },
         mounted() {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY === 0) {
+                    this.topScrollY = true;
+                } else {
+                    if (this.afterClickToTop && this.topScrollY) {
+                        if (window.scrollY > 0) {
+                            this.afterClickToTop = false;
+                        }
+                    }
+                    this.topScrollY = false;
+                }
+            });
+
             let a = document.querySelector('.collection').getElementsByClassName('item');
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
 
@@ -1003,6 +1031,12 @@
 
         .pointer-to-top
             width 100%
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+
+        .pointer-to-bottom
+            transform rotateX(180deg)
 
 
     .scroll-to-top

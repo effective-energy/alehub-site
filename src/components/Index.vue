@@ -87,7 +87,6 @@
             });
 
             this.$on('pointerInDark', (pointerInDark) => {
-                console.log(pointerInDark, 'pointerInDark');
                 this.isPointerInDark = pointerInDark;
             });
         }
