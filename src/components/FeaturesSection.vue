@@ -148,7 +148,8 @@
 
             <div class="video__wrap">
                 <video autoplay muted loop id="myVideoScale">
-                    <source src="../../static/video/libra.mp4" type="video/mp4">
+                    <source src="../../static/video/libra.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                    <source src="../../static/video/libra.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
                 </video>
             </div>
 

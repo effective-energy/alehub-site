@@ -162,7 +162,9 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview.mp4" type="video/mp4">
+                <source src="../../static/video/preview.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                <source src="../../static/video/preview.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
+                <!--<source src="../../static/video/preview.ogg" type='video/ogg; codecs="theora, vorbis"'/>-->
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
