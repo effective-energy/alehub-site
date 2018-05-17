@@ -16,7 +16,7 @@
                 <p>
                     Serokell
                 </p>
-                +
+
 
                 <div class="images"
                      id="serokell-gallery"

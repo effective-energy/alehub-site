@@ -379,7 +379,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -638,7 +638,7 @@ const messages = {
                 },
                 {
                     path: '#advisors',
-                    name: 'Advisors'
+                    name: '顧問'
                 },
                 {
                     path: '#ico',
@@ -989,11 +989,11 @@ const messages = {
             ]
         },
         advisors: {
-            title: 'Advisors',
+            title: '顧問',
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -1607,7 +1607,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'Советник',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -2805,7 +2805,7 @@ const messages = {
             members: [
                 {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
