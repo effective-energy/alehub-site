@@ -35,8 +35,10 @@
                 </div>
             </div>
             <div class="row distribution">
-                <circle1 class="direction-ltr"
-                         :index="this.selectedDistributionIndex"/>
+                <circle1 v-if="isShowAnim"
+                        class="direction-ltr"
+                         :index="this.selectedDistributionIndex"
+                />
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list"
                          :class="{ 'steep-list__rtl': isRtl }">
@@ -102,14 +104,24 @@
                     type: 'bounty',
                     count: 2,
                     color: '#fab604'
-                }]
+                }],
+                isShowAnim: false
             }
+        },
+        mounted: function(){
+            window.addEventListener('scroll', () => {
+                if (document.querySelector('#ico').offsetTop - 400 <= window.pageYOffset) {
+                    this.isShowAnim = true;
+                } else {
+                    this.isShowAnim = false;
+                }
+            })
         },
         computed: {
             activeDistribution() {
                 if (this.selectedDistributionIndex === -1) return '100%';
                 else return this.distributionList[this.selectedDistributionIndex];
-            }
+            },
         },
         methods: {
             showDist(index) {
