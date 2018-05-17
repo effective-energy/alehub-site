@@ -469,7 +469,7 @@
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
            target="_blank"
-           v-if="!checkMobileWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
+           v-if="!checkTabletWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
            :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
 
             <div class="telegram-alert-mobile__wrap">
@@ -495,7 +495,7 @@
 
         <div id="telegram-alert"
              class="telegram-alert"
-             v-if="checkMobileWidth"
+             v-if="checkTabletWidth"
              :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
@@ -705,6 +705,9 @@
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
             },
+            checkTabletWidth: function () {
+                return window.innerWidth >= 768;
+            },
             checkMobileWidth: function () {
                 return window.innerWidth > 425;
             },
@@ -731,7 +734,6 @@
                 this.afterClickToTop = true;
                 document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
                 this.position = window.scrollY;
-                console.log(this.position, 'this.position');
             },
             returnPosition: function () {
                 this.afterClickToTop = false;
@@ -1028,6 +1030,9 @@
         right 10px
         top 100px
         z-index 110
+
+        @media (max-width 768px)
+            top 150px
 
         .pointer-to-top
             width 100%
