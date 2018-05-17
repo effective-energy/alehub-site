@@ -282,7 +282,7 @@
                 padding 80px 20% 40px 20%
 
             @media (min-width 490px) and (max-width 650px)
-                padding 80px 25% 40px 25%
+                padding 80px 15% 40px 15%
 
             @media (max-width 490px)
                 padding 80px 10% 40px 10%

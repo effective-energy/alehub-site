@@ -26,12 +26,15 @@
             </button>
         </div>
 
-        <div class="scroll-to-top">
-            <a @click="clickToTop($event)" v-if="!afterClickToTop"></a>
+        <div class="scroll-to-top"
+             v-if="checkSmallTabletWidth">
+            <a @click="clickToTop($event)"
+               v-if="!afterClickToTop"></a>
             <a @click="returnPosition" v-else></a>
         </div>
         <div class="wrap__pointer"
-             id="wrap-pointer">
+             id="wrap-pointer"
+             v-if="checkSmallTabletWidth">
             <img class="pointer-to-top"
                  :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-dark.svg"
@@ -708,6 +711,9 @@
             checkTabletWidth: function () {
                 return window.innerWidth >= 768;
             },
+            checkSmallTabletWidth: function () {
+                return window.innerWidth > 690;
+            },
             checkMobileWidth: function () {
                 return window.innerWidth > 425;
             },
@@ -1031,6 +1037,9 @@
         top 100px
         z-index 110
 
+        @media (max-width 690px)
+            display none
+
         @media (max-width 768px)
             top 150px
 
@@ -1053,6 +1062,9 @@
         display flex
         align-items center
         justify-content center
+
+        @media (max-width 690px)
+            display none
 
         a
             -webkit-transition all .3s ease

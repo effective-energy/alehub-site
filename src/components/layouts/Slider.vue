@@ -421,7 +421,7 @@
             .layer__top-visible
                 opacity 1 !important
 
-            @media (min-width 420px)
+            @media (min-width 425px)
                 &:hover
                     .layer__top
                         opacity 1
