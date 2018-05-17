@@ -31,7 +31,7 @@
         <div class="wrap"
              :class="{ 'width-95': isFrench && isUpTo1150,
                        'width-85': isDeutsch && (isUpTo1300 || isUpTo1250 || isUpTo1200 || isUpTo1150 || isUpTo1100) ||  isFrench &&
-                       (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && (isUpTo1150 || isUpTo1250) || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
+                       (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && (isUpTo1150 || isUpTo1250 || isUpTo1300) || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
                        'width-80': isRussian && isUpTo1100 || isFrench && isUpTo1100 }">
             <div class="b-carousel n-js-carousel">
                 <div class="b-carousel__wrap n-js-carousel__wrap"

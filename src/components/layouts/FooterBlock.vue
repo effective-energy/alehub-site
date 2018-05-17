@@ -29,11 +29,11 @@
 			</span>
             </div>
             <div class="col-2 back-to-top">
-                <div class="top-icon"
-                     v-scroll-to="'#home'">
-                    <img src="../../../static/images/go-home-ic.svg"
-                         alt="To top page">
-                </div>
+                <!--<div class="top-icon"-->
+                     <!--v-scroll-to="'#home'">-->
+                    <!--<img src="../../../static/images/go-home-ic.svg"-->
+                         <!--alt="To top page">-->
+                <!--</div>-->
             </div>
             <div class="col-5 social-block">
                 <div class="social-networks">

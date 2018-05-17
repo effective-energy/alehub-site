@@ -467,6 +467,8 @@
             }, 500);
 
             let navbarYOffset = document.getElementById('navbar').offsetHeight,
+                pointerToTop = document.getElementById('wrap-pointer'),
+                pointerToTopOffset = pointerToTop.offsetHeight,
                 tgButtonYOffset = null,
                 tgButtonHeight = null;
 
@@ -637,6 +639,14 @@
                     this.$parent.$emit('scrollInFooter', true);
                 else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                     this.$parent.$emit('scrollInFooter', false);
+
+                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
+                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                    this.$parent.$emit('pointerInDark', true);
+                } else if (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top)||
+                    window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                    this.$parent.$emit('pointerInDark', false);
+                }
 
             });
 

@@ -4,7 +4,8 @@
         <home-section :is-dark-section="isDarkSection"
                       :is-opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
-                      :is-rtl="isRtl"/>
+                      :is-rtl="isRtl"
+                      :is-pointer-in-dark="isPointerInDark"/>
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"
@@ -51,7 +52,8 @@
                 isDarkSection: false,
                 isScrollInFooter: false,
                 isRtl: false,
-                openedModalMenu: false
+                openedModalMenu: false,
+                isPointerInDark: false
                 // isLoading: true
             }
         },
@@ -81,8 +83,12 @@
             });
 
             this.$on('isRtl', (isRtl) => {
-                console.log(isRtl, 'isRtl');
                 this.isRtl = isRtl;
+            });
+
+            this.$on('pointerInDark', (pointerInDark) => {
+                console.log(pointerInDark, 'pointerInDark');
+                this.isPointerInDark = pointerInDark;
             });
         }
     }
