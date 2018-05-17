@@ -12,7 +12,8 @@
 
             <div class="scroll-block" style="margin-top: 0; position: absolute; top: -4px;">
                 <div id="scroll-element"
-                     class="scroll-element" style="max-width: 100%; margin: 0;"
+                     class="scroll-element"
+                     style="max-width: 100%; margin: 0;"
                      :style="{ 'width': scrollHorizontalWidth }"
                      v-on:scroll="scrollForSlide($event)">
 
@@ -79,46 +80,6 @@
                     </div>
                 </div>
             </div>
-
-            <!--<div class="scroll-block">-->
-            <!--<button type="button"-->
-            <!--class="arrow-prev"-->
-            <!--v-if="!isRtl"-->
-            <!--:disabled="disableControls"-->
-            <!--@click="prevSlide">-->
-            <!--</button>-->
-            <!--<button type="button"-->
-            <!--class="arrow-prev"-->
-            <!--:class="{ 'arrow-prev__rtl': isRtl }"-->
-            <!--v-else-->
-            <!--:disabled="disableControls"-->
-            <!--@click="nextSlide">-->
-            <!--</button>-->
-
-            <!--<div id="scroll-element"-->
-            <!--class="scroll-element"-->
-            <!--v-on:scroll="scrollForSlide($event)">-->
-
-            <!--<div id="scroll-content"-->
-            <!--class="scroll-content"-->
-            <!--:style="'width: ' + roadmapPanelWidth + 'px'">-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!--<button type="button"-->
-            <!--class="arrow-next"-->
-            <!--v-if="!isRtl"-->
-            <!--:disabled="disableControls"-->
-            <!--@click="nextSlide">-->
-            <!--</button>-->
-            <!--<button type="button"-->
-            <!--class="arrow-next"-->
-            <!--:class="{ 'arrow-next__rtl': isRtl }"-->
-            <!--v-else-->
-            <!--:disabled="disableControls"-->
-            <!--@click="prevSlide">-->
-            <!--</button>-->
-            <!--</div>-->
         </div>
     </div>
 </template>
@@ -134,6 +95,7 @@
         },
         data() {
             return {
+                currStageIndex: 0,
                 isRight: true,
                 isLeft: false,
                 xDrag: 0,
@@ -306,6 +268,14 @@
                     this.isRight = true;
                 }
             });
+
+            this.currStageIndex = this.$t('roadmap.stages').findIndex((item) => {
+                return item.status;
+            });
+
+            setTimeout(() => {
+                document.getElementById('scroll-element').scrollLeft = this.slideWidth * this.currStageIndex;
+            }, 0);
         }
     }
 </script>

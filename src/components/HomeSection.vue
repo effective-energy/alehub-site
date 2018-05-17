@@ -1038,7 +1038,6 @@
         .pointer-to-bottom
             transform rotateX(180deg)
 
-
     .scroll-to-top
         z-index 100
         cursor pointer
