@@ -26,6 +26,21 @@
             </button>
         </div>
 
+        <div class="scroll-to-top">
+            <a v-scroll-to="'#screen1'"></a>
+        </div>
+        <div class="wrap__pointer"
+             id="wrap-pointer">
+            <img class="pointer-to-top"
+                 src="../../static/images/arrow-top-dark.svg"
+                 alt="to top"
+                 v-if="!isPointerInDark">
+            <img class="pointer-to-top"
+                 src="../../static/images/arrow-top-yellow.svg"
+                 alt="to top"
+                 v-else>
+        </div>
+
         <div id="svg-anim"
              class="anim"
              v-if="checkWindowWidth && !isVideo"
@@ -147,7 +162,9 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview.mp4" type="video/mp4">
+                <source src="../../static/video/preview.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                <source src="../../static/video/preview.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
+                <!--<source src="../../static/video/preview.ogg" type='video/ogg; codecs="theora, vorbis"'/>-->
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
@@ -519,6 +536,10 @@
                 required: true
             },
             isRtl: {
+                type: Boolean,
+                required: true
+            },
+            isPointerInDark: {
                 type: Boolean,
                 required: true
             }
@@ -972,6 +993,41 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .wrap__pointer
+        position fixed
+        width 20px
+        right 10px
+        top 100px
+        z-index 110
+
+        .pointer-to-top
+            width 100%
+
+
+    .scroll-to-top
+        z-index 100
+        cursor pointer
+        width 40px
+        height 100%
+        position fixed
+        right 0
+        display flex
+        align-items center
+        justify-content center
+
+        a
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+            opacity 0
+            background-color #e3e3e6
+            height 100%
+            width 40px
+
+        &:hover
+            a
+                opacity .5
 
     .desc
         align-self flex-start
@@ -1599,8 +1655,6 @@
 
     .social-line
         padding 15px 0
-        /*@media (min-width 1024px) and (max-width 1440px)*/
-        /*margin-top 60px*/
 
         .social-item
             -webkit-transition background .3s ease-in-out
@@ -1752,7 +1806,6 @@
 
         .play-video
             display inline-block
-            /*position relative*/
 
             .play-button
                 cursor pointer
@@ -1781,12 +1834,6 @@
                     img
                         width 35px
                         height 35px
-
-            /*@media (max-width 1500px)*/
-            /*left 20%*/
-
-            /*@media (max-width 1400px)*/
-            /*left 15%*/
 
             @media (max-width 1274px)
                 position unset
@@ -1850,36 +1897,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @-o-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
+                          0% {
+                              transform: translateY(0);
+                          }
+                          25% {
+                              transform: translateY(5px);
+                          }
+                          100% {
+                              transform: translateY(0);
+                          }
+                      } @-o-keyframes wheel-to-bottom {
+                            0% {
+                                transform: translateY(0);
+                            }
+                            25% {
+                                transform: translateY(5px);
+                            }
+                            100% {
+                                transform: translateY(0);
+                            }
+                        } @keyframes wheel-to-bottom {
+                              0% {
+                                  transform: translateY(0);
+                              }
+                              25% {
+                                  transform: translateY(5px);
+                              }
+                              100% {
+                                  transform: translateY(0);
+                              }
+                          }
 
                 @media (max-width 1124px)
                     display none
@@ -1890,9 +1937,6 @@
             font-size 20px
             color #34343e
             padding 15px 0
-
-            /*@media (min-width 1024px) and (max-width 1440px)*/
-            /*margin-top 30px*/
 
             @media (max-width 425px)
                 font-size 16px

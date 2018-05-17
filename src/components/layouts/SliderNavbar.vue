@@ -1,6 +1,6 @@
 <template>
     <div class="slider-navbar"
-         :class="{ 'width-79': isDeutsch && isUpTo1200 || isFrench && isUpTo1200,
+         :class="{ 'width-79': isDeutsch && isUpTo1200 || isFrench && isUpTo1200 || isRussian && isUpTo1250,
                    'width-78': isSpanish && isUpTo1200 || isDeutsch && isUpTo1150 || isFrench && isUpTo1350,
                    'width-77': isSpanish && (isUpTo1150 || isUpTo1300 || isUpTo1350) || isFrench && isUpTo1300 || isArabic && (isUpTo1350 || isUpTo1200),
                    'width-76': isDeutsch && (isUpTo1250 || isUpTo1100) || isFrench && isUpTo1250 || isArabic && isUpTo1300,
@@ -31,7 +31,7 @@
         <div class="wrap"
              :class="{ 'width-95': isFrench && isUpTo1150,
                        'width-85': isDeutsch && (isUpTo1300 || isUpTo1250 || isUpTo1200 || isUpTo1150 || isUpTo1100) ||  isFrench &&
-                       (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && isUpTo1150 || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
+                       (isUpTo1250 || isUpTo1200 || isUpTo1150) || isRussian && (isUpTo1150 || isUpTo1250 || isUpTo1300) || isEnglish && isUpTo1100 || isSpanish && (isUpTo1100 || isUpTo1150),
                        'width-80': isRussian && isUpTo1100 || isFrench && isUpTo1100 }">
             <div class="b-carousel n-js-carousel">
                 <div class="b-carousel__wrap n-js-carousel__wrap"
@@ -42,7 +42,7 @@
                             'flex-basis-20': isFrench && (isUpTo1350 || isUpTo1300) || isDeutsch && (isUpTo1350 || isUpTo1300) ||
                             isRussian && (isUpTo1350 || isUpTo1300) || isArabic && (isUpTo1350 || isUpTo1300) ||
                             isEnglish && isUpTo1150 || isSpanish && (isUpTo1300 || isUpTo1350),
-                            'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250) || isArabic && (isUpTo1250 || isUpTo1200),
+                            'flex-basis-25': isFrench && (isUpTo1200 || isUpTo1250) || isArabic && (isUpTo1250 || isUpTo1200) || isRussian && isUpTo1250,
                              'flex-basis-33': isUpTo1100 && (isRussian || isFrench) }"
                          v-for="(item, index) in items"
                          :key="index">

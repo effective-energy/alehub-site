@@ -39,11 +39,18 @@
                                     </p>
 
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
-                                        <a :href="social.link" v-for="social in member.social" target="_blank">
+                                        <a :href="social.link"
+                                           v-for="social in member.social"
+                                           target="_blank">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
                                                  src="../../../static/images/in.svg"
                                                  alt="in"/>
                                         </a>
+                                        <!--<a :href="social.link" v-for="social in member.social" target="_blank">-->
+                                            <!--<img :class="{ 'in': social.type === 'linkedin' }"-->
+                                                 <!--src="../../../static/images/in.svg"-->
+                                                 <!--alt="in"/>-->
+                                        <!--</a>-->
                                     </div>
                                 </div>
                             </div>
