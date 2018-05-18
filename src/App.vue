@@ -1,9 +1,7 @@
 <template>
     <div id="app">
-        <!--<loading-screen />-->
         <loading-screen v-if="dataProcessing"/>
         <router-view/>
-        <!--<router-view />-->
     </div>
 </template>
 
@@ -19,40 +17,20 @@
         },
         data() {
             return {
-                isLoading: true,
-                isShow: false,
-                loadingTimer: 0,
-                allow: false,
-                allow2: true
             }
         },
         computed: {
-            ...mapGetters([
-                'cryptoPriceStatus',
-                'downloadAppStatus'
-            ]),
+            ...mapGetters(
+                [
+                    'cryptoPriceStatus',
+                    'downloadAppStatus',
+                    'blogStatus'
+                ]
+            ),
             dataProcessing: function () {
-                return !(this.cryptoPriceStatus === 'success' && this.downloadAppStatus === 'success');
+                return !(this.cryptoPriceStatus === 'success' && this.downloadAppStatus === 'success' && this.blogStatus === 'success');
             }
         },
-        methods: {},
-        mounted() {
-
-            this.$on('isShow', (val) => {
-                console.log('content');
-                this.isShow = val;
-            });
-
-            this.$on('endOfLoadingWideScreen', (val) => {
-                console.log('preloader');
-                this.isLoading = !val;
-                window.preloaderState = true;
-            });
-
-            this.$on('endOfLoadingNarrowScreen', (val) => {
-                this.isLoading = !val;
-            });
-        }
     }
 </script>
 

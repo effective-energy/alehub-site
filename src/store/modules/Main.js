@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const state = {
     cryptoPriceStatus: '',
-    downloadAppStatus: ''
+    downloadAppStatus: '',
+    blogStatus: ''
 };
 
 const actions = {
@@ -92,19 +93,20 @@ const mutations = {
         state.downloadAppStatus = 'error';
     },
     REQUEST_BLOG: (state) => {
-        state.downloadAppStatus = 'loading';
+        state.blogStatus = 'loading';
     },
     SUCCESS_BLOG: (state) => {
-        state.downloadAppStatus = 'success';
+        state.blogStatus = 'success';
     },
     ERROR_BLOG: (state) => {
-        state.downloadAppStatus = 'error';
+        state.blogStatus = 'error';
     },
 };
 
 const getters = {
     cryptoPriceStatus: state => state.cryptoPriceStatus,
-    downloadAppStatus: state => state.downloadAppStatus
+    downloadAppStatus: state => state.downloadAppStatus,
+    blogStatus: state => state.blogStatus
 };
 
 export default {

@@ -27,12 +27,14 @@
         </div>
 
         <div class="scroll-to-top"
+             :class="{ 'scroll-to-top__rtl': isRtl }"
              v-if="checkSmallTabletWidth">
             <a @click="clickToTop($event)"
                v-if="!afterClickToTop"></a>
             <a @click="returnPosition" v-else></a>
         </div>
         <div class="wrap__pointer"
+             :class="{ 'wrap-pointer__rtl': isRtl }"
              id="wrap-pointer"
              v-if="checkSmallTabletWidth">
             <img class="pointer-to-top"
@@ -508,6 +510,10 @@
                      alt="telegram"
                      v-if="isDarkSection">
             </a>
+            <div class="alert-message"
+                 :class="{ 'alert-message__dark': isDarkSection, 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
+                <span>3</span>
+            </div>
         </div>
 
     </section>
@@ -1038,6 +1044,10 @@
         top 100px
         z-index 110
 
+        @media (min-width 690px) and (max-width 1024px)
+            right 7.5px
+            width 15px
+
         @media (max-width 690px)
             display none
 
@@ -1053,6 +1063,15 @@
         .pointer-to-bottom
             transform rotateX(180deg)
 
+    .wrap-pointer__rtl
+        left 10px
+        right auto
+
+        @media (min-width 690px) and (max-width 1024px)
+            left 7.5px
+            right auto
+            width 15px
+
     .scroll-to-top
         z-index 100
         cursor pointer
@@ -1063,6 +1082,9 @@
         display flex
         align-items center
         justify-content center
+
+        @media (min-width 690px) and (max-width 1024px)
+            width 30px
 
         @media (max-width 690px)
             display none
@@ -1079,6 +1101,10 @@
         &:hover
             a
                 opacity .5
+
+    .scroll-to-top__rtl
+        left 0
+        right auto
 
     .desc
         align-self flex-start
@@ -1168,8 +1194,77 @@
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
 
+        .alert-message
+            background-color #ffd24f
+            border-radius 50%
+            width 25px
+            height 25px
+            display flex
+            justify-content center
+            align-items center
+            position fixed
+            bottom 125px
+            right 95px
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
+
+            @media (min-width 768px) and (max-width 1024px)
+                right 60px
+                bottom 90px
+                width 15px
+                height 15px
+
+                span
+                    font-size 12px
+
+            @media (min-width 1024px) and (max-width 1440px)
+                right 75px
+                bottom 95px
+                width 20px
+                height 20px
+
+                span
+                    font-size 12px
+
+            @media (min-width 1440px) and (max-width 2560px)
+                bottom 125px
+                right 95px
+                width 25px
+                height 25px
+
+        .alert-message__dark
+            background-color #747c8e
+            color #fff
+
+        .telegram-message__rtl
+            left 95px
+            right auto
+
+            @media (min-width 768px) and (max-width 1024px)
+                left 60px
+                right auto
+
+            @media (min-width 1024px) and (max-width 1440px)
+                left 75px
+                right auto
+
+            @media (min-width 1440px) and (max-width 2560px)
+                left 95px
+                right auto
+
+        .telegram-message__stop
+            bottom 235px
+
+            @media (min-width 768px) and (max-width 1024px)
+                bottom 265px
+
+            @media (min-width 425px) and (max-width 768px)
+                bottom 433px
+
+
         @media (min-width 768px) and (max-width 1024px)
-            right 30px
+            right 60px
             bottom 50px
             width 60px
             height 60px
@@ -1213,7 +1308,7 @@
         right auto
 
         @media (min-width 768px) and (max-width 1024px)
-            left 30px
+            left 60px
             right auto
 
         @media (min-width 1024px) and (max-width 1440px)
