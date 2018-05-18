@@ -15,23 +15,24 @@
                      v-for="(n, i) in blogIndex"
                      v-if="blogStatus === 'success' && !dataProcessing"
                      :key="i">
-                    <router-link class="news-block"
-                                 tag="div"
-                                 :to="`/blog/${n._id}`">
-                        <router-link :to="`/blog/${n._id}`">
-                            <img class="picture"
-                                 :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
-                                 :alt="n.title"
-                                 @click="goToNews(n._id)">
+                    <span>
+                        <router-link class="news-block"
+                                     tag="div"
+                                     :to="`/blog/${n._id}`">
+                            <router-link :to="`/blog/${n._id}`">
+                                <img class="picture"
+                                     :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
+                                     :alt="n.title"
+                                     @click="goToNews(n._id)">
+                            </router-link>
+                            <div class="news-info">
+                                <p class="news-title">
+                                    {{ n.title }}
+                                </p>
+                                <i class="news-date">{{ n.date / 1000 | moment("ddd DD, YYYY") }}</i>
+                            </div>
                         </router-link>
-                        <div class="news-info">
-                            <p class="news-title">
-                                {{ n.title }}
-                            </p>
-                            <i class="news-date">{{ n.date / 1000 | moment("ddd DD, YYYY") }}</i>
-                        </div>
-
-                    </router-link>
+                    </span>
                 </div>
                 <div class="col-12 news-button">
                     <div class="form-group is-center">

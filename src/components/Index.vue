@@ -1,5 +1,5 @@
 <template>
-    <div class="index">
+    <div class="index" id="index-main-component">
         <header-block :is-main-dark="isDark"/>
         <home-section :is-dark-section="isDarkSection"
                       :is-opened-modal-menu="openedModalMenu"

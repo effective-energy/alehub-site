@@ -60,10 +60,13 @@
                      v-html="selectedPost.content">
                 </div>
 
-                <div class="more-news" v-if="blogLastNews.length !== 0">
-                    <h1 class="more-news-title">
+                <div class="more-news"
+                     v-if="blogLastNews.length !== 0">
+                    <router-link class="more-news-title"
+                                 tag="h1"
+                                 to="/blog/categories/all">
                         More news
-                    </h1>
+                    </router-link>
 
                     <div class="more-news-content row">
                         <div class="news-item col-lg-3 col-md-3 col-sm-6 col-12"
@@ -351,6 +354,15 @@
                     line-height 1.21
                     color #34343e
                     margin-bottom 16px
+                    width fit-content
+                    cursor pointer
+                    text-decoration underline
+                    -webkit-transition all .3s ease
+                    -o-transition all .3s ease
+                    transition all .3s ease
+
+                    &:hover
+                        color #fea40f
 
                 .more-news-content
                     display flex

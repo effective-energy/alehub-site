@@ -1,13 +1,14 @@
 <template>
     <div id="loading-screen" class="loading-screen">
-
         <div class="wrap-loader">
             <h3 class="logo">
                 Alehub
             </h3>
 
             <svg class="spinner" viewBox="0 0 50 50">
-                <circle class="path" cx="25" cy="25" r="24" fill="none" stroke-width="1"></circle>
+                <circle class="path" cx="25" cy="25"
+                        r="24" fill="none" stroke-width="1">
+                </circle>
             </svg>
         </div>
     </div>
@@ -16,11 +17,12 @@
 <script>
 
     export default {
-        name: 'LoadingScreen',
+        name: 'LoadingScreen'
     }
 </script>
 
 <style lang="stylus" scoped>
+
     .spinner
         animation rotate 3s linear infinite
         z-index 2
@@ -74,9 +76,6 @@
         background-color #343a49
         width 100%
         height 100vh
-        opacity 1
-        -webkit-transition opacity .85s ease-out
-        transition opacity .85s ease-out
         z-index 9999
 
         .wrap-loader

@@ -1,5 +1,7 @@
 <template>
-    <div class="footer" id="footer">
+    <div id="footer"
+         class="footer"
+         :class="{ 'footer__sticky': isNotIndex }">
         <div class="row footer-row">
             <div class="col-5 copyright-block"
                  :class="{ 'text-align-right-rtl': isRtl }">
@@ -15,26 +17,23 @@
 				<div class="creator-and-terms">
 					<div class="creator">
 						<div class="rukin-logo"
-                        :class="{ 'rukin-logo__rtl': isRtl }"></div>
+                             :class="{ 'rukin-logo__rtl': isRtl }"></div>
 						<span class="rukin-about">
                             {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
 					<a href="#"
                        class="terms"
-                    :class="{ 'terms__rtl': isRtl }">
+                       :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
                     </a>
 				</div>
 			</span>
             </div>
+
             <div class="col-2 back-to-top">
-                <!--<div class="top-icon"-->
-                     <!--v-scroll-to="'#home'">-->
-                    <!--<img src="../../../static/images/go-home-ic.svg"-->
-                         <!--alt="To top page">-->
-                <!--</div>-->
             </div>
+
             <div class="col-5 social-block">
                 <div class="social-networks">
                     <a href="https://www.facebook.com/alehub.io/"
@@ -96,9 +95,6 @@
                         <label class="subscribe-form__error" v-if="alreadyExist">
                             Email already exist
                         </label>
-                        <!-- <label class="subscribe-form__success" v-if="isSuccess">
-                            {{ $t('footer.right.success') }}
-                        </label> -->
                     </div>
                     <button class="subscribe-form__submit"
                             @click="subscribe"
@@ -108,7 +104,7 @@
                         <spinner v-if="isLoader"/>
                         <span v-else>
                                     {{ $t('footer.right.btn') }}
-                                </span>
+                        </span>
                     </button>
                     <p v-else class="subscribe-form__success">
                         You have successfully subscribed to the newsletter. Check your email to confirm your
@@ -169,6 +165,9 @@
             },
             alreadyExist: function () {
                 return this.exist;
+            },
+            isNotIndex: function () {
+                return this.$route.path !== '/';
             }
         },
         methods: {
@@ -218,14 +217,16 @@
     .btn-loading
         background-color #fff !important
 
+    .footer__sticky
+        width 100%
+        position absolute
+        bottom 0
+
     .footer
         background-color #ececf0
         padding 32px 0
         padding-left 64px
         padding-right 64px
-        width 100%
-        position absolute
-        bottom 0
 
         .footer-row
             display flex
