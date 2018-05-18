@@ -523,14 +523,13 @@
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
 
-    //заменить на свой слайдер
-    import slider from 'vue-concise-slider';
+    import {mapGetters} from 'vuex';
+
     import anime from 'animejs';
 
     export default {
         name: 'Screen1',
         components: {
-            slider,
             MenuModal,
             SliderScreen
         },
@@ -699,6 +698,10 @@
             }
         },
         computed: {
+            ...mapGetters([
+                'cryptocurrencies',
+                'cryptoPriceStatus'
+            ]),
             isCollected: function () {
                 return this.collected;
             },
@@ -709,6 +712,27 @@
                 return this.hardCap;
             },
             isCurrentCurrency: function () {
+                if (this.cryptoPriceStatus === 'success') {
+
+                    this.currencies.btc.hardCap = this.cryptocurrencies.btc.hardCap;
+                    this.currencies.eth.hardCap = this.cryptocurrencies.eth.hardCap;
+                    this.currencies.bch.hardCap = this.cryptocurrencies.bch.hardCap;
+                    this.currencies.ltc.hardCap = this.cryptocurrencies.ltc.hardCap;
+                    this.currencies.dash.hardCap = this.cryptocurrencies.dash.hardCap;
+
+                    this.currencies.btc.softCap = this.cryptocurrencies.btc.softCap;
+                    this.currencies.eth.softCap = this.cryptocurrencies.eth.softCap;
+                    this.currencies.bch.softCap = this.cryptocurrencies.bch.softCap;
+                    this.currencies.ltc.softCap = this.cryptocurrencies.ltc.softCap;
+                    this.currencies.dash.softCap = this.cryptocurrencies.dash.softCap;
+
+                    this.currencies.btc.collected = this.cryptocurrencies.btc.collected;
+                    this.currencies.eth.collected = this.cryptocurrencies.eth.collected;
+                    this.currencies.bch.collected = this.cryptocurrencies.bch.collected;
+                    this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
+                    this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
+                }
+                
                 return this.currentCurrency;
             },
             checkWindowWidth: function () {
@@ -762,7 +786,6 @@
             },
             doCloseTelegramAlertMobile: function () {
                 this.closedTelegramAlertMobile = true;
-                // localStorage.setItem('closedTelegramAlertMobile', 'true');
             },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
@@ -931,35 +954,6 @@
                         this.startAnime();
                 }, 100);
             },
-            getCurrentExchangeRates: function () {
-
-                this.$http.get('https://alehub-4550.nodechef.com/ale-system/crypto-price', {
-                    headers: {
-                        'Content-Type': 'application/json; charset=UTF-8',
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    this.currencies.btc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.hardCap = Math.round(this.hardCap / response.body[1].price);
-                    this.currencies.bch.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[4].price / response.body[1].price));
-
-                    this.currencies.btc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.softCap = Math.round(this.softCap / response.body[1].price);
-                    this.currencies.bch.softCap = Math.round(this.softCap / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.softCap = Math.round(this.softCap / response.body[1].price / (response.body[4].price / response.body[1].price));
-
-                    this.currencies.btc.collected = Math.round(this.collected / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.collected = Math.round(this.collected / response.body[1].price);
-                    this.currencies.bch.collected = Math.round(this.collected / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.collected = Math.round(this.collected / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.collected = Math.round(this.collected / response.body[1].price / (response.body[4].price / response.body[1].price));
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
             getCoords: function (elem) {
                 if (!elem)
                     return false;
@@ -992,8 +986,6 @@
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
             }
-
-            this.getCurrentExchangeRates();
 
             setTimeout(() => {
                 if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
