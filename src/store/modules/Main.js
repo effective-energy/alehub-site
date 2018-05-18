@@ -10,7 +10,6 @@ const state = {
     collected: 2000000,
     cryptocurrencies: '',
     apps: '',
-    blogIndex: '',
     blogAll: '',
     blog: ''
 };
@@ -107,7 +106,6 @@ const mutations = {
     },
     SUCCESS_BLOG: (state, blog) => {
         state.blogStatus = 'success';
-        state.blogIndex = blog.slice(blog.length - 6, blog.length).reverse();
         state.blogAll = blog.reverse();
     },
     ERROR_BLOG: (state) => {
@@ -168,7 +166,8 @@ const getters = {
     cryptoPriceStatus: state => state.cryptoPriceStatus,
     apps: state => state.apps,
     downloadAppStatus: state => state.downloadAppStatus,
-    blogIndex: state => state.blogIndex,
+    blogIndex: state => state.blogAll.slice(state.blogAll.length - 6, state.blogAll.length),
+    blogLastNews: state => state.blogAll.slice(state.blogAll.length - 4, state.blogAll.length),
     blogAll: state => state.blogAll,
     filtersBlogAll: state => {
         let filters = [];

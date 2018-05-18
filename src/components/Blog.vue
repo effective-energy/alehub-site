@@ -11,7 +11,8 @@
                 <spinner/>
             </div>
 
-            <div class="blog-content" v-if="blogStatus === 'success'">
+            <div class="blog-content"
+                 v-if="blogStatus === 'success'">
                 <div class="posts">
                     <div class="blog-post"
                          v-for="item in selectedPost"
@@ -27,8 +28,12 @@
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">{{ item.date / 1000 | moment("MMMM DD") }}</span>
-                                <span class="author">{{ item.author_name }}</span>
+                                <span class="date">
+                                    {{ item.date / 1000 | moment("MMMM DD") }}
+                                </span>
+                                <span class="author">
+                                    {{ item.author_name }}
+                                </span>
                             </div>
                         </div>
                         <div class="divider"></div>
@@ -48,7 +53,9 @@
                                      tag="li"
                                      :to="`/blog/categories/${item}`"
                                      v-for="item in filtersBlogAll"
-                                     :key="item">
+                                     :key="item"
+                                     active-class
+                                     exact>
                             {{ item }}
                         </router-link>
                     </ul>
@@ -185,13 +192,13 @@
                     white-space nowrap
                     cursor pointer
 
-                    &.router-link-active
+                    &.router-link-exact-active
                         color #f3b300
 
         .posts
             padding-right 77.5px
             padding-left 77.5px
-            min-width 70%
+            width 80%
 
             .divider
                 background-color #000000

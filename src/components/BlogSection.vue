@@ -12,7 +12,7 @@
                     <spinner/>
                 </div>
                 <div class="animate col-md-6 col-sm-12 animate"
-                     v-for="(n, i) in blogAll"
+                     v-for="(n, i) in blogIndex"
                      v-if="blogStatus === 'success' && !dataProcessing"
                      :key="i">
                     <router-link class="news-block"
@@ -75,7 +75,7 @@
         computed: {
             ...mapGetters(
                 [
-                    'blogAll',
+                    'blogIndex',
                     'blogStatus'
                 ]
             )
