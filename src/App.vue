@@ -22,7 +22,21 @@
                 loadingTimer: 0
             }
         },
+        methods: {
+            dataProcessing: function () {
+                this.$store.dispatch('cryptoPriceRequest')
+                    .then(() => {
+                        console.log('success');
+                    })
+                    .catch(() => {
+                        console.log('error');
+                    });
+            }
+        },
         mounted() {
+
+            this.dataProcessing();
+
             this.$on('isShow', (val) => {
                 console.log('content');
                 this.isShow = val;

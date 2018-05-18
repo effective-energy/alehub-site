@@ -384,12 +384,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -1015,12 +1017,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -1646,12 +1650,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -2272,12 +2278,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -2878,12 +2886,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -2908,19 +2918,24 @@ const messages = {
             distribution: {
                 title: 'Vente pendant l’ICO',
                 description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
-                list: [{
+                list: [
+                    {
                     title: 'Vente pendant l’ICO',
                     amount: 77
-                }, {
+                },
+                    {
                     title: 'Commande',
                     amount: 11
-                }, {
+                },
+                    {
                     title: 'Programme de référencement et conseillés',
                     amount: 10
-                }, {
+                },
+                    {
                     title: 'Bounty',
                     amount: 2
-                }]
+                }
+                ]
             }
         },
         roadmap: {
@@ -3484,12 +3499,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -4089,12 +4106,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -4695,12 +4714,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]
@@ -5301,12 +5322,14 @@ const messages = {
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/purushotham-maralappa/'
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
                         },
-                        // {
-                        //     type: 'icobench',
-                        //     link: 'https://icobench.com/u/purushotham'
-                        // }
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
                     ]
                 }
             ]

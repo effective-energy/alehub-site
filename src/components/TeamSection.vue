@@ -97,9 +97,8 @@
 
                                 <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
-                                        <img :class="{ 'in': social.type === 'linkedin' }"
-                                             src="../../static/images/in.svg"
-                                             alt="in"/>
+                                        <img :src="social.src"
+                                             :alt="social.type"/>
                                     </a>
                                 </div>
                             </div>
@@ -558,6 +557,14 @@
     .image
         clip-path circle(50% at center) !important
         -webkit-clip-path circle(50% at center) !important
+
+        .layer__top
+            .layer__text
+                .icons
+                    a
+                        img
+                            width 17px
+                            height 17px
 
         @media (max-width 320px)
             position relative !important

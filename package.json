@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "animejs": "^2.2.0",
+    "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.6",
     "dragscroll": "0.0.8",
     "gulp": "^3.9.1",
@@ -33,7 +34,8 @@
     "vue-scrollto": "^2.11.0",
     "vue-social-sharing": "^2.3.3",
     "vue-tiny-slider": "^0.1.17",
-    "vue-yandex-metrika": "^1.6.1"
+    "vue-yandex-metrika": "^1.6.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

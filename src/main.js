@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import { store } from './store'
 import router from './router';
 import VueScrollTo from 'vue-scrollto';
 import VModal from 'vue-js-modal';
@@ -123,6 +124,7 @@ Vue.config.productionTip = false;
 
 new Vue({
     el: '#app',
+    store,
     i18n,
     router,
     components: {App},
