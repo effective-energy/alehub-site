@@ -4,7 +4,8 @@ import axios from 'axios';
 const state = {
     cryptoPriceStatus: '',
     downloadAppStatus: '',
-    blogStatus: ''
+    blogStatus: '',
+    apps: ''
 };
 
 const actions = {
@@ -42,7 +43,7 @@ const actions = {
                 method: 'GET'
             }).then(resp => {
                 console.log(resp, 'download app success');
-                commit('SUCCESS_DOWNLOAD_APP');
+                commit('SUCCESS_DOWNLOAD_APP', resp.data);
                 resolve(resp);
             }).catch(err => {
                 commit('ERROR_DOWNLOAD_APP', err);
@@ -86,8 +87,9 @@ const mutations = {
     REQUEST_DOWNLOAD_APP: (state) => {
         state.downloadAppStatus = 'loading';
     },
-    SUCCESS_DOWNLOAD_APP: (state) => {
+    SUCCESS_DOWNLOAD_APP: (state, apps) => {
         state.downloadAppStatus = 'success';
+        state.apps = apps;
     },
     ERROR_DOWNLOAD_APP: (state) => {
         state.downloadAppStatus = 'error';
@@ -104,6 +106,7 @@ const mutations = {
 };
 
 const getters = {
+    apps: state => state.apps,
     cryptoPriceStatus: state => state.cryptoPriceStatus,
     downloadAppStatus: state => state.downloadAppStatus,
     blogStatus: state => state.blogStatus

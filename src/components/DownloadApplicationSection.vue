@@ -1,17 +1,19 @@
 <template>
     <div class="download-app" id="download-application">
         <h3 class="title">
-            {{$t('download')}}
+            {{ $t('download') }}
         </h3>
         <div class="separator"></div>
-        <div class="loading-block" v-if="isLoader">
-            <Spinner />
+        <div class="loading-block"
+             v-if="downloadAppStatus === 'loading'">
+            <spinner/>
         </div>
-        <div class="error-block" v-if="!isLoader && isError">
+        <div class="error-block"
+             v-if="downloadAppStatus === 'error'">
             <p>{{$t('serverErr')}}</p>
         </div>
-        <div class="os-avail-list" v-if="!isLoader && !isError">
-            <div class="logo" v-for="app in downloadsList">
+        <div class="os-avail-list" v-if="downloadAppStatus === 'success'">
+            <div class="logo" v-for="app in apps">
                 <div class="logo__wrap">
                     <img class="logo__apple"
                          alt="logo"
@@ -49,50 +51,34 @@
     import Moment from 'moment';
     import Spinner from './layouts/Spinner';
 
+    import {mapGetters} from 'vuex';
+
     export default {
         name: 'DownloadApplicationClient',
         components: {
             Spinner
         },
-        data () {
-            return {
-                downloadsList: [],
-                isLoader: false,
-                isError: false
-            }
+        computed: {
+            ...mapGetters(
+                [
+                    'apps',
+                    'downloadAppStatus'
+                ]
+            )
         },
         methods: {
-            parseDate (date) {
+            parseDate(date) {
                 return Moment(date).format('DD.MM.YYYY')
             },
-            getPlatformLogo (platform) {
-                if(platform === 'macOS') {
+            getPlatformLogo(platform) {
+                if (platform === 'macOS') {
                     return require('../../static/images/logo/macOS.svg');
-                } else if(platform === 'Windows') {
+                } else if (platform === 'Windows') {
                     return require('../../static/images/logo/windows.svg');
                 } else {
                     return require('../../static/images/logo/linux.svg');
                 }
-            },
-            getDownloadsList() {
-                this.isLoader = true;
-                this.isError = false;
-                this.$http.get(`https://alehub-4550.nodechef.com/ale-version`, {
-                    headers : {
-                        'Content-Type' : 'application/json; charset=UTF-8',
-                        'Accept' : 'application/json'
-                    }
-                }).then(response => {
-                    this.isLoader = false;
-                    this.downloadsList = response.body;
-                }, response => {
-                    this.isLoader = false;
-                    this.isError = true;
-                });
             }
-        },
-        created () {
-            this.getDownloadsList();
         }
     }
 </script>
@@ -173,10 +159,8 @@
                             .download-ic
                                 transform translateY(7px)
 
-
                 @media (max-width 768px)
                     width 100%
-
 
                 .button__fade
                     cursor pointer
