@@ -278,13 +278,6 @@
                 if (document.querySelector('body').querySelector('.layer__top-visible'))
                     document.querySelector('body').querySelector('.layer__top-visible').classList.remove('layer__top-visible');
             }, false);
-            // if (this.privates.touch === true) {
-            //     document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
-            //     document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
-            // }
-            //if (this.privates.drag === true) {
-            // document.querySelector('.js-carousel').addEventListener('mousedown', this.dragStart, false);
-            // document.querySelector('.js-carousel').addEventListener('mousemove', this.dragMove, false);
         }
     }
 </script>
@@ -376,13 +369,25 @@
                             height 220px
                             margin 0
 
+                        @media (min-width 320px) and (max-width 360px)
+                            position relative
+                            width 250px
+                            height 250px
+                            margin 0
+
+                        @media (min-width 360px) and (max-width 425px)
+                            position relative
+                            width 300px
+                            height 300px
+                            margin 0
+
                         &:active
                             cursor -webkit-grab !important
 
                         .b-carousel__img
                             display block
 
-                            @media (max-width 320px)
+                            @media (max-width 425px)
                                 height 100%
 
                             &:active
@@ -477,7 +482,7 @@
 
                 p
                     font-size 12px
-                    margin-bottom 25px
+                    margin-bottom 10px
                     text-transform uppercase
                     font-family MuseoSansCyrl500
 

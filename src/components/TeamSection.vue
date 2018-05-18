@@ -261,9 +261,6 @@
 </script>
 
 <style lang="stylus" scoped>
-    .image
-        clip-path circle(50% at center)
-
     .b-carousel__prev
         margin-right 20px
 
@@ -517,7 +514,7 @@
 
                     p
                         font-size 12px
-                        margin-bottom 25px
+                        margin-bottom 10px
                         text-transform uppercase
                         font-family MuseoSansCyrl500
 
@@ -556,5 +553,37 @@
 
             .separator
                 margin 12px 0 24px
+
+
+    .image
+        clip-path circle(50% at center) !important
+        -webkit-clip-path circle(50% at center) !important
+
+        @media (max-width 320px)
+            position relative !important
+            width 220px !important
+            height 220px !important
+            margin 0 !important
+
+            img
+                height 100% !important
+
+        @media (min-width 320px) and (max-width 360px)
+            position relative !important
+            width 250px !important
+            height 250px !important
+            margin 0 !important
+
+            img
+                height 100% !important
+
+        @media (min-width 360px) and (max-width 425px)
+            position relative !important
+            width 300px !important
+            height 300px !important
+            margin 0 !important
+
+            img
+                height 100% !important
 
 </style>
