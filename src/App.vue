@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <!--<loading-screen />-->
-        <loading-screen v-if="dataProcessing" :data-processing="dataProcessing" />
-        <router-view v-else />
-         <!--<router-view />-->
+        <loading-screen v-if="dataProcessing"/>
+        <router-view/>
+        <!--<router-view />-->
     </div>
 </template>
 
@@ -21,23 +21,23 @@
             return {
                 isLoading: true,
                 isShow: false,
-                loadingTimer: 0
+                loadingTimer: 0,
+                allow: false,
+                allow2: true
             }
         },
         computed: {
             ...mapGetters([
-                'cryptoPriceStatus'
+                'cryptoPriceStatus',
+                'downloadAppStatus'
             ]),
             dataProcessing: function () {
-                if (this.cryptoPriceStatus === 'success')
-                    return false;
-                return true;
+                return !(this.cryptoPriceStatus === 'success' && this.downloadAppStatus === 'success');
             }
         },
-        methods: {
-
-        },
+        methods: {},
         mounted() {
+
             this.$on('isShow', (val) => {
                 console.log('content');
                 this.isShow = val;

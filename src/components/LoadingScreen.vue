@@ -8,11 +8,12 @@
                     <h3 class="logo-block__logo">
                         Alehub
                     </h3>
-                    <p class="logo-block__percent">
-                        {{ loadValue + '%' }}
-                    </p>
                 </div>
             </div>
+
+            <svg class="spinner" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="24" fill="none" stroke-width="1"></circle>
+            </svg>
 
             <div class="tmp-blocker" v-if="!isXSMobile">
             </div>
@@ -53,12 +54,6 @@
                 loadValue: 0,
                 loadingInterval: null,
                 closeAnimation: false
-            }
-        },
-        props: {
-            dataProcessing: {
-                type: Boolean,
-                required: true
             }
         },
         computed: {
@@ -135,9 +130,40 @@
 </script>
 
 <style lang="stylus" scoped>
-    svg
-        &:not(:root)
-            overflow hidden
+    .spinner
+        animation rotate 3s linear infinite
+        z-index 2
+        position absolute
+        width 400px
+        height 400px
+
+        & .path
+            stroke #ffd24f
+            stroke-linecap round
+            animation dash 2.5s ease-in-out infinite
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes dash {
+        0% {
+            stroke-dasharray: 1, 150;
+            stroke-dashoffset: 0;
+        }
+        50% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -75;
+        }
+        100% {
+            stroke-dasharray: 90, 150;
+            stroke-dashoffset: -150;
+        }
+    }
+
+
 
     .loading-screen
         position fixed
