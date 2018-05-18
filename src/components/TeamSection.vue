@@ -12,6 +12,17 @@
             <div class="separator">
             </div>
 
+            <div class="effective-energy">
+                <p>{{$t('team.effectiveEnergy[0].name')}}</p>
+
+                <slider :items="$t('team.effectiveEnergy[0].members')"
+                        :settings="settings.effectiveEnergy"
+                        :options="options.effectiveEnergy"
+                        :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
+                        :multiplier-position="multiplierPosition"
+                        :num-items-in-wrap="numItemsInWrap"/>
+            </div>
+
             <div class="serokell">
                 <p>
                     Serokell
@@ -58,16 +69,6 @@
                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
-            <div class="effective-energy">
-                <p>{{$t('team.effectiveEnergy[0].name')}}</p>
-
-                <slider :items="$t('team.effectiveEnergy[0].members')"
-                        :settings="settings.effectiveEnergy"
-                        :options="options.effectiveEnergy"
-                        :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
-            </div>
         </div>
         <div class="advisors" id="advisors" v-if="true">
             <h3 class="title">

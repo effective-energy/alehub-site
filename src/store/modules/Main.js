@@ -9,7 +9,10 @@ const state = {
     softCap: 2000000,
     collected: 2000000,
     cryptocurrencies: '',
-    apps: ''
+    apps: '',
+    blogIndex: '',
+    blogAll: '',
+    blog: ''
 };
 
 const actions = {
@@ -58,7 +61,7 @@ const actions = {
     blogRequest: ({commit}) => {
         return new Promise((resolve, reject) => {
             commit('REQUEST_BLOG');
-            let host = 'https://alehub-4550.nodechef.com/ale-news/last/6';
+            let host = 'https://alehub-4550.nodechef.com/ale-news';
             axios({
                 url: host,
                 headers: {
@@ -67,8 +70,8 @@ const actions = {
                 },
                 method: 'GET'
             }).then(resp => {
-                console.log(resp, 'download app success');
-                commit('SUCCESS_BLOG');
+                console.log(resp.data, 'resp.data');
+                commit('SUCCESS_BLOG', resp.data);
                 resolve(resp);
             }).catch(err => {
                 commit('ERROR_BLOG', err);
@@ -102,8 +105,10 @@ const mutations = {
     REQUEST_BLOG: (state) => {
         state.blogStatus = 'loading';
     },
-    SUCCESS_BLOG: (state) => {
+    SUCCESS_BLOG: (state, blog) => {
         state.blogStatus = 'success';
+        state.blogIndex = blog.slice(0, 6).reverse();
+        state.blogAll = blog.reverse();
     },
     ERROR_BLOG: (state) => {
         state.blogStatus = 'error';
@@ -112,7 +117,6 @@ const mutations = {
 
 const getters = {
     cryptocurrencies: state => {
-        
         let currencies = {
             btc: {
                 hardCap: null,
@@ -139,8 +143,8 @@ const getters = {
                 softCap: null,
                 collected: null
             }
-        }; 
-        
+        };
+
         currencies.btc.hardCap = Math.round(state.hardCap / state.cryptocurrencies[1].price / (state.cryptocurrencies[0].price / state.cryptocurrencies[1].price));
         currencies.eth.hardCap = Math.round(state.hardCap / state.cryptocurrencies[1].price);
         currencies.bch.hardCap = Math.round(state.hardCap / state.cryptocurrencies[1].price / (state.cryptocurrencies[2].price / state.cryptocurrencies[1].price));
@@ -161,10 +165,24 @@ const getters = {
 
         return currencies;
     },
-    apps: state => state.apps,
     cryptoPriceStatus: state => state.cryptoPriceStatus,
+    apps: state => state.apps,
     downloadAppStatus: state => state.downloadAppStatus,
-    blogStatus: state => state.blogStatus
+    blogIndex: state => state.blogIndex,
+    blogAll: state => state.blogAll,
+    filtersBlogAll: state => {
+        let filters = [];
+
+        for (let i = 0; i < state.blogAll.length; i++)
+            if (state.blogAll[i].categories)
+                for (let j = 0; j < state.blogAll[i].categories.length; j++)
+                    if (filters.indexOf(state.blogAll[i].categories[j]) === -1)
+                        filters.push(state.blogAll[i].categories[j]);
+
+        return filters;
+    },
+    blogStatus: state => state.blogStatus,
+
 };
 
 export default {

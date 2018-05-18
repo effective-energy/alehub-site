@@ -7,22 +7,28 @@
             <div class="divider"></div>
 
             <div class="row news-section">
-                <div class="animate col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
-					<span>
+                <div class="wrap-spinner"
+                     v-if="blogStatus === 'loading' && dataProcessing">
+                    <spinner/>
+                </div>
+                <div class="animate col-md-6 col-sm-12 animate"
+                     v-for="(n, i) in blogAll"
+                     v-if="blogStatus === 'success' && !dataProcessing"
+                     :key="i">
 					<router-link tag="div" :to="`/blog/${n._id}`" class="news-block">
 
 						<router-link :to="`/blog/${n._id}`">
-							<img :src="'https://alehub-4550.nodechef.com/' + n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
+							<img :src="'https://alehub-4550.nodechef.com/' + n.preview_image" alt="" class="picture"
+                                 @click="goToNews(n._id)">
 						</router-link>
 						<div class="news-info">
                             <p class="news-title">
                                 {{ n.title }}
                             </p>
-							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
+							<i class="news-date">{{ n.date / 1000 | moment("ddd  DD, YYYY") }}</i>
 						</div>
 
 					</router-link>
-					</span>
                 </div>
                 <div class="col-12 news-button">
                     <div class="form-group is-center">
@@ -38,17 +44,33 @@
 </template>
 
 <script>
+    import Spinner from './layouts/Spinner';
+
+    import {mapGetters} from 'vuex';
+
     export default {
-        name: "Blog",
+        name: 'Blog',
+        components: {
+            Spinner
+        },
         data() {
             return {
-                news: []
+                news: [],
+                dataProcessing: true
             }
         },
         watch: {
             '$i18n.locale'() {
                 this.getNews();
             }
+        },
+        computed: {
+            ...mapGetters(
+                [
+                    'blogAll',
+                    'blogStatus'
+                ]
+            )
         },
         methods: {
             getNews: function () {
@@ -59,7 +81,7 @@
                     }
                 }).then(response => {
                     this.news = response.body.reverse();
-                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
+                    if (response.body.length === 0 && this.$i18n.locale !== 'en')
                         this.getEngNews();
                 }, response => {
                     console.log('Error getting news', response);
@@ -83,6 +105,9 @@
         },
         created() {
             this.getNews();
+        },
+        mounted() {
+            this.dataProcessing = false;
         }
     }
 </script>
@@ -96,6 +121,12 @@
 </style>
 
 <style lang="stylus" scoped>
+
+    .wrap-spinner
+        width 100%
+        display flex
+        justify-content center
+        align-items center
 
     .section
         padding 71px 0 0 0

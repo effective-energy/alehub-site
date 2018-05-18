@@ -2,29 +2,36 @@
     <div class="blog-entries">
         <header-block :show="'blog'"/>
         <div class="section blogEntries-section">
-            <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
+            <h1 class="section-title is-center is-divider">
+                {{ $t("blog.title") }}
+            </h1>
 
+            <div class="wrap-spinner"
+                 v-if="blogStatus === 'loading'">
+                <spinner/>
+            </div>
 
-
-            <div class="blog-content">
-
+            <div class="blog-content" v-if="blogStatus === 'success'">
                 <div class="posts">
-
-                    <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image" alt="" class="image-preview">
+                    <div class="blog-post"
+                         v-for="item in blogAll" :key="item._id"
+                         onclick="yaCounter48802643.reachGoal('Blog'); return true;">
+                        <img class="image-preview"
+                             :src="'https://alehub-4550.nodechef.com/' + item.preview_image"
+                             :alt="item.title">
                         <div class="post-content">
-                            <router-link tag="a" :to="`/blog/${item._id}`" class="title">
+                            <router-link class="title"
+                                         tag="a"
+                                         :to="`/blog/${item._id}`">
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
+                                <span class="date">{{ item.date / 1000 | moment("MMMM DD") }}</span>
                                 <span class="author">{{ item.author_name }}</span>
                             </div>
                         </div>
                         <div class="divider"></div>
                     </div>
-
-
                 </div>
 
                 <div class="tags-filter">
@@ -32,7 +39,11 @@
                         <router-link tag="li" :to="`/blog`" class="filter-item active">
                             All
                         </router-link>
-                        <router-link v-for="item in filters" :key="item" tag="li" :to="`/blog/categories/${item}`" class="filter-item">
+                        <router-link class="filter-item"
+                                     tag="li"
+                                     :to="`/blog/categories/${item}`"
+                                     v-for="item in filtersBlogAll"
+                                     :key="item">
                             {{ item }}
                         </router-link>
                     </ul>
@@ -40,19 +51,23 @@
             </div>
 
         </div>
-        <footer-block/>
+        <footer-block :is-rtl="false"/>
     </div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
     import FooterBlock from './layouts/FooterBlock';
+    import Spinner from './layouts/Spinner';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'Blog',
         components: {
             HeaderBlock,
-            FooterBlock
+            FooterBlock,
+            Spinner
         },
         data() {
             return {
@@ -61,84 +76,50 @@
             }
         },
         watch: {
-			'$i18n.locale' () {
-				this.getNews();
-			}
-		},
-        methods: {
-            getNews: function () {
-                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/${this.$i18n.locale === 'en'?'':this.$i18n.locale}`, {
-                    headers : {
-                        'Content-Type' : 'application/json; charset=UTF-8',
-                        'Accept' : 'application/json'
-                    }
-                }).then(response => {
-                    console.log(response.body);
-                    console.log(this.content);
-                    this.content = response.body.reverse();
-                    this.filtersConfigure();
-                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
-                        this.getEngNews();
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
-            filtersConfigure: function () {
-                this.filters = [];
-                for (let i = 0; i < this.content.length; i++) {
-                    if (this.content[i].categories) {
-                        for (let l = 0; l < this.content[i].categories.length; l++) {
-                            if (this.filters.indexOf(this.content[i].categories[l]) === -1) {
-                                this.filters.push(this.content[i].categories[l]);
-                            }
-                        }
-                    }
-                }
-            },
-            getEngNews: function () {
-                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/`, {
-                    headers: {
-                        'Content-Type': 'application/json; charset=UTF-8',
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    this.content = response.body.reverse();
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
-			goToNews: function (id) {
-				this.$router.push(`/blog/${id}`)
-			}
+            '$i18n.locale'() {
+                this.getNews();
+            }
         },
-        created () {
-            this.getNews();
+        computed: {
+            ...mapGetters(
+                [
+                    'blogAll',
+                    'filtersBlogAll',
+                    'blogStatus'
+                ]
+            )
+        },
+        methods: {
+        },
+        created() {
         }
     }
 </script>
 
-<style>
-    body {
-        /*padding-top: 74px;*/
-        background-color: #ffffff !important;
-    }
+<style lang="stylus">
+    body
+        background-color #ffffff !important
 
-    .footer {
-        background-color: #e8ebef;
-	}
-	
-	.blog-entries {
-		min-height: 100vh;
-	}
+    .footer
+        background-color #e8ebef
 
-	.blog-post {
-		cursor: pointer;
-	}
+    .blog-entries
+        min-height 100vh
+
+    .blog-post
+        cursor pointer
+
 </style>
 
 <style lang="stylus" scoped>
+    .wrap-spinner
+        width 100%
+        display flex
+        justify-content center
+        align-items center
+        margin-top 100px
+
     body
-        /*padding-top 74px*/
         background-color #ffffff !important
 
     .section

@@ -466,189 +466,191 @@
                 this.changeLineWidth(this.activeItem);
             }, 500);
 
-            let navbarYOffset = document.getElementById('navbar').offsetHeight,
-                pointerToTop = document.getElementById('wrap-pointer'),
-                pointerToTopOffset = pointerToTop.offsetHeight,
-                tgButtonYOffset = null,
-                tgButtonHeight = null;
+            if (document.getElementById('navbar') && document.getElementById('wrap-pointer')) {
+                let navbarYOffset = document.getElementById('navbar').offsetHeight,
+                    pointerToTop = document.getElementById('wrap-pointer'),
+                    pointerToTopOffset = pointerToTop.offsetHeight,
+                    tgButtonYOffset = null,
+                    tgButtonHeight = null;
 
-            if (document.getElementById('telegram-alert')) {
-                tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
-                tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
-            } else if (document.getElementById('telegram-alert-mobile')) {
-                tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
-                tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+                if (document.getElementById('telegram-alert')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
+                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+                } else if (document.getElementById('telegram-alert-mobile')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
+                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+                }
+
+                window.addEventListener('scroll', () => {
+                    this.checkActive();
+
+                    if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (!this.isDarkSection) {
+                            this.isDarkSection = true;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                        if (!this.mainIsDark && (this.isDark || this.isYellow)) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.mainIsDark && (!this.isDark || this.isYellow)) {
+                            this.isDark = true;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (!this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                        if (!this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = true;
+                        }
+                        if (!this.isFeatures) {
+                            this.isFeatures = true;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (!this.isTeam) {
+                            this.isTeam = true;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
+                        if (this.isDarkSection) {
+                            this.isDarkSection = false;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (!this.isDarkSection) {
+                            this.isDarkSection = true;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (this.isDarkSection) {
+                            this.isDarkSection = false;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                        if (!this.isDark) {
+                            this.isYellow = false;
+                            this.isDark = true;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                        this.$parent.$emit('scrollInFooter', true);
+                    else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                        this.$parent.$emit('scrollInFooter', false);
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                        this.$parent.$emit('pointerInDark', true);
+                    } else if (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top)||
+                        window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                        this.$parent.$emit('pointerInDark', false);
+                    }
+
+                });
             }
-
-            window.addEventListener('scroll', () => {
-                this.checkActive();
-
-                if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (!this.isDarkSection) {
-                        this.isDarkSection = true;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (!this.mainIsDark && (this.isDark || this.isYellow)) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                    }
-                    if (this.mainIsDark && (!this.isDark || this.isYellow)) {
-                        this.isDark = true;
-                        this.isYellow = false;
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                    }
-                    if (!this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = true;
-                    }
-                    if (!this.isFeatures) {
-                        this.isFeatures = true;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (!this.isTeam) {
-                        this.isTeam = true;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
-                    if (this.isDarkSection) {
-                        this.isDarkSection = false;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (!this.isDarkSection) {
-                        this.isDarkSection = true;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (this.isDarkSection) {
-                        this.isDarkSection = false;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (!this.isDark) {
-                        this.isYellow = false;
-                        this.isDark = true;
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
-
-                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
-                    this.$parent.$emit('scrollInFooter', true);
-                else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
-                    this.$parent.$emit('scrollInFooter', false);
-
-                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
-                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
-                    this.$parent.$emit('pointerInDark', true);
-                } else if (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top)||
-                    window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
-                    this.$parent.$emit('pointerInDark', false);
-                }
-
-            });
 
             if (document.getElementById('select-lang'))
                 this.heightLangItem = document.getElementById('select-lang').offsetHeight;
