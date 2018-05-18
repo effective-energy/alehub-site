@@ -27,8 +27,17 @@
             <span class="line" :class="{ 'line__white': isDark }"></span>
             <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
-        <div class="navbar-folding" id="navbarText">
 
+        <div class="navbar__blog"
+             v-if="isNotIndex">
+            <router-link class="navbar-item"
+                         tag="a"
+                         :to="'/blog'">
+                {{ $t("navbar.blog") }}
+            </router-link>
+        </div>
+
+        <div class="navbar-folding" id="navbarText">
             <slider-navbar id="slider-navbar"
                            v-if="!show"
                            :is-dark="isDark"
@@ -53,17 +62,17 @@
                 </div>
             </div>
 
-            <div class="navbar__blog"
-                 v-if="show === 'blog'">
-                <router-link class="navbar-item"
-                             tag="a"
-                             :to="'/blog'">
-                    {{ $t("navbar.blog") }}
-                </router-link>
-            </div>
+            <!--<div class="navbar__blog"-->
+                 <!--v-if="show === 'blog'">-->
+                <!--<router-link class="navbar-item"-->
+                             <!--tag="a"-->
+                             <!--:to="'/blog'">-->
+                    <!--{{ $t("navbar.blog") }}-->
+                <!--</router-link>-->
+            <!--</div>-->
 
             <div class="right-menu"
-            :class="{ 'right-menu__rtl': rtl }">
+            :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
                    target="_blank">
@@ -288,6 +297,9 @@
             isHeightLangItem: function () {
                 return this.heightLangItem;
             },
+            isNotIndex: function () {
+                return !(this.$route.path === '/');
+            }
         },
         methods: {
             makeRTL: function () {
@@ -710,21 +722,6 @@
                     -o-transition all .5s ease
                     transition all .5s ease
 
-            .navbar__blog
-                width 100%
-                display flex
-                justify-content center
-                align-items center
-
-                .navbar-item
-                    font-size 18px
-                    font-weight 600
-                    color #0f1118
-
-                    &:hover
-                        text-decoration none
-
-
             .right-menu
                 position block
 
@@ -737,6 +734,22 @@
                     position absolute
                     left 0
                     right auto
+
+        .navbar__blog
+            width 100%
+            left 0
+            position absolute
+            display flex
+            justify-content center
+            align-items center
+
+            .navbar-item
+                font-size 18px
+                font-weight 600
+                color #0f1118
+
+                &:hover
+                    text-decoration none
 
     .select-lang
         cursor pointer
@@ -1217,5 +1230,10 @@
     .navbar-brand__rtl
         img
             margin 0 0 0 8px
+
+
+    .right-menu__abs
+        position absolute
+        right 0
 
 </style>
