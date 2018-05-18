@@ -1,14 +1,16 @@
 <template>
     <div id="app">
         <!--<loading-screen />-->
-        <loading-screen v-if="isLoading" />
-        <router-view v-if="true" />
+        <loading-screen v-if="dataProcessing" :data-processing="dataProcessing" />
+        <router-view v-else />
          <!--<router-view />-->
     </div>
 </template>
 
 <script>
     import LoadingScreen from './components/LoadingScreen';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'app',
@@ -22,21 +24,20 @@
                 loadingTimer: 0
             }
         },
-        methods: {
+        computed: {
+            ...mapGetters([
+                'cryptoPriceStatus'
+            ]),
             dataProcessing: function () {
-                this.$store.dispatch('cryptoPriceRequest')
-                    .then(() => {
-                        console.log('success');
-                    })
-                    .catch(() => {
-                        console.log('error');
-                    });
+                if (this.cryptoPriceStatus === 'success')
+                    return false;
+                return true;
             }
         },
+        methods: {
+
+        },
         mounted() {
-
-            this.dataProcessing();
-
             this.$on('isShow', (val) => {
                 console.log('content');
                 this.isShow = val;

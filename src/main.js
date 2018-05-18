@@ -97,14 +97,6 @@ switch (localStorage.getItem('systemLang')) {
     }
 }
 
-// if (localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
-//     localStorage.setItem('systemLang', 'en');
-//     systemLang = 'en';
-// } else if (localStorage.getItem('systemLang') === 'en') {
-//     systemLang = 'en';
-// } else if (localStorage.getItem('systemLang') === 'ru') {
-//     systemLang = 'ru';
-// }
 
 import messages from './i18n.js';
 
@@ -121,6 +113,16 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
+
+
+store.dispatch('cryptoPriceRequest')
+    .then(() => {
+        console.log('success');
+    })
+    .catch(() => {
+        console.log('error');
+    });
+
 
 new Vue({
     el: '#app',
