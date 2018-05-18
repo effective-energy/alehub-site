@@ -1,7 +1,7 @@
 <template>
     <div class="blog-entries">
         <header-block :show="'blog'"/>
-        <div class="section blogEntries-section">
+        <div class="section blog-entries-section">
             <h1 class="section-title is-center is-divider">
                 {{ $t("blog.title") }}
             </h1>
@@ -14,7 +14,8 @@
             <div class="blog-content" v-if="blogStatus === 'success'">
                 <div class="posts">
                     <div class="blog-post"
-                         v-for="item in blogAll" :key="item._id"
+                         v-for="item in selectedPost"
+                         :key="item._id"
                          onclick="yaCounter48802643.reachGoal('Blog'); return true;">
                         <img class="image-preview"
                              :src="'https://alehub-4550.nodechef.com/' + item.preview_image"
@@ -36,7 +37,11 @@
 
                 <div class="tags-filter">
                     <ul class="filter-list">
-                        <router-link tag="li" :to="`/blog`" class="filter-item active">
+                        <router-link tag="li"
+                                     :to="`/blog/categories/all`"
+                                     class="filter-item"
+                                     active-class
+                                     exact>
                             All
                         </router-link>
                         <router-link class="filter-item"
@@ -87,11 +92,24 @@
                     'filtersBlogAll',
                     'blogStatus'
                 ]
-            )
+            ),
+            selectedPost: function () {
+                if (this.$route.params.id === 'all') {
+                    return this.blogAll;
+                } else {
+                    return this.blogAll.filter((news) => {
+                        return news.categories.find((category) => {
+                            return category.toLowerCase() === this.$route.params.id.toLowerCase();
+                        });
+                    });
+                }
+            }
         },
-        methods: {
-        },
+        methods: {},
         created() {
+        },
+        mounted() {
+            this.selectedPost();
         }
     }
 </script>
@@ -105,6 +123,7 @@
 
     .blog-entries
         min-height 100vh
+        position relative
 
     .blog-post
         cursor pointer
@@ -123,7 +142,7 @@
         background-color #ffffff !important
 
     .section
-        padding 142px 80px
+        padding 142px 80px 205px 80px
 
     .is-center
         text-align center
@@ -165,7 +184,8 @@
                 .filter-item
                     white-space nowrap
                     cursor pointer
-                    &.active
+
+                    &.router-link-active
                         color #f3b300
 
         .posts

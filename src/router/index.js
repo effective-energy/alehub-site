@@ -20,7 +20,7 @@ const router = new Router({
             component: Index
         },
         {
-            path: '/blog',
+            path: '/blog/categories/:id',
             name: 'Blog',
             component: Blog
         },

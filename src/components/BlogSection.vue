@@ -15,25 +15,33 @@
                      v-for="(n, i) in blogAll"
                      v-if="blogStatus === 'success' && !dataProcessing"
                      :key="i">
-					<router-link tag="div" :to="`/blog/${n._id}`" class="news-block">
-
-						<router-link :to="`/blog/${n._id}`">
-							<img :src="'https://alehub-4550.nodechef.com/' + n.preview_image" alt="" class="picture"
+                    <router-link class="news-block"
+                                 tag="div"
+                                 :to="`/blog/${n._id}`">
+                        <router-link :to="`/blog/${n._id}`">
+                            <img class="picture"
+                                 :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
+                                 :alt="n.title"
                                  @click="goToNews(n._id)">
-						</router-link>
-						<div class="news-info">
+                        </router-link>
+                        <div class="news-info">
                             <p class="news-title">
                                 {{ n.title }}
                             </p>
-							<i class="news-date">{{ n.date / 1000 | moment("ddd  DD, YYYY") }}</i>
-						</div>
+                            <i class="news-date">{{ n.date / 1000 | moment("ddd DD, YYYY") }}</i>
+                        </div>
 
-					</router-link>
+                    </router-link>
                 </div>
                 <div class="col-12 news-button">
                     <div class="form-group is-center">
-                        <h5 v-if="news.length === 0">{{ $t("blog.notFound") }}</h5>
-                        <router-link v-else tag="a" to="/blog" class="btn btn-warning">
+                        <h5 v-if="news.length === 0">
+                            {{ $t("blog.notFound") }}
+                        </h5>
+                        <router-link class="btn btn-warning"
+                                     tag="a"
+                                     to="/blog/categories/all"
+                                     v-else>
                             {{ $t("blog.allPostsBtn") }}
                         </router-link>
                     </div>

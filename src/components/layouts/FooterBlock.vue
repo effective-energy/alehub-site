@@ -223,6 +223,9 @@
         padding 32px 0
         padding-left 64px
         padding-right 64px
+        width 100%
+        position absolute
+        bottom 0
 
         .footer-row
             display flex
