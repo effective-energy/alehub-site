@@ -69,7 +69,7 @@
                     </router-link>
 
                     <div class="more-news-content row">
-                        <div class="news-item col-lg-3 col-md-3 col-sm-6 col-12"
+                        <div class="news-item col-lg-3 col-md-6 col-sm-6 col-12"
                              v-for="item in blogLastNews"
                              :key="item._id">
                             <router-link tag="a"
@@ -137,8 +137,7 @@
                 });
             }
         },
-        methods: {
-        },
+        methods: {},
         created() {
         }
     }
@@ -402,17 +401,11 @@
                     .news-item:last-child
                         margin-right 0
 
-    @media (max-width: 1440px)
-        .container-news
-            max-width 1000px
+        @media (min-width 1024px) and (max-width 1440px)
+            max-width 75%
 
-    @media (max-width: 1200px)
-        .container-news
-            max-width 700px
-
-    @media (max-width: 1024px)
-        .container-news
-            max-width 600px
+        @media (min-width 768px) and (max-width 1024px)
+            max-width 75%
 
             .news-block
                 .title
@@ -423,49 +416,21 @@
                         .title
                             font-size 24px
 
-    @media (max-width: 860px)
-        .container-news
-            max-width 500px
-
-            .news-block
-                .title
-                    font-size 34px
-
-                .news-content
-                    .quote-block
-                        .title
-                            font-size 20px
-
-                .more-news
-                    .more-news-title
-                        font-size 20px
-
-                    .more-news-content
-                        flex-wrap wrap
-
-                        .news-item
-                            margin 0
-                            width 48%
-
-                            .news-link
-                                font-size 18px
-
-    @media (max-width: 700px)
-        .container-news
-            padding-right 32px
-            padding-left 32px
+        @media (min-width 425px) and (max-width 768px)
+            padding 50px 32px 200px 32px
             max-width unset
+            display flex
+            flex-direction column
+
 
             .share-block
+                left auto
+                top auto
                 display flex
                 flex-direction row
-                top 50px
-                left -10px
-                padding-left 42px
-                padding-left 42px
                 height 30px
-                width 280px
                 justify-content space-between
+                position relative
 
             .news-block
                 margin-top 24px
@@ -495,8 +460,19 @@
                             .news-link
                                 font-size 14px
 
-    @media (max-width: 425px)
-        .container-news
+        @media (max-width 425px)
+            padding 50px 32px 300px 32px
+
+            .news-block
+                .more-news
+                    .more-news-content
+                        .news-item
+                            padding-bottom 30px
+
+                            &:last-child
+                                padding-bottom 0
+
+        @media (min-width 375px) and (max-width 425px)
             .news-block
                 .title
                     font-size 24px
@@ -506,8 +482,7 @@
                     .image
                         height auto
 
-    @media (max-width: 375px)
-        .container-news
+        @media (min-width 320px) and (max-width 375px)
             .news-block
                 .title
                     font-size 20px
@@ -527,8 +502,7 @@
                     .more-news-title
                         text-align center
 
-    @media (max-width: 320px)
-        .container-news
+        @media (max-width 320px)
             .news-block
                 .title
                     font-size 18px

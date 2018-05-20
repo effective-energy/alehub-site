@@ -585,8 +585,6 @@
             padding-right 32px
             padding-left 32px
 
-    @media (max-width 760px)
-        .footer
             .footer-row
                 flex-direction column
                 align-items center

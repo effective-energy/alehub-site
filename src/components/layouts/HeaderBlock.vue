@@ -32,7 +32,7 @@
              v-if="isNotIndex">
             <router-link class="navbar-item"
                          tag="a"
-                         :to="'/blog'">
+                         :to="'/blog/categories/all'">
                 {{ $t("navbar.blog") }}
             </router-link>
         </div>
@@ -751,6 +751,10 @@
                 &:hover
                     text-decoration none
 
+
+            @media (max-width 425px)
+                display none
+
     .select-lang
         cursor pointer
         display flex
@@ -900,6 +904,8 @@
         box-shadow none !important
 
     .hamburger
+        cursor pointer
+        z-index 100
         display none
 
     .line__white
