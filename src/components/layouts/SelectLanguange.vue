@@ -1,13 +1,32 @@
 <template>
-    
+    <div>
+
+    </div>
 </template>
 
 <script>
     export default {
-        name: "SelectLanguange"
+        name: 'SelectLanguange',
+        props: {
+
+        },
+        data() {
+            return {
+
+            }
+        },
+        computed: {
+
+        },
+        methods: {
+
+        },
+        mounted() {
+
+        }
     }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>
