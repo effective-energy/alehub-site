@@ -148,202 +148,186 @@
     body
         background-color #ffffff !important
 
-    .section
+    .blog-entries-section
         padding 142px 80px 205px 80px
 
-    .is-center
-        text-align center
+        .is-center
+            text-align center
 
-    .blog-content
-        max-width 1600px
-        margin 0 auto
-        display flex
-        flex-direction row
+        .is-divider
+            width 120px
+            border-bottom 2px solid #34343e
+            margin 0 auto
+            padding 0 0 16px 0
 
-        .date-filter
-            width 190px
-            height auto
-            display flex
-            justify-content center
-            align-items flex-start
-            padding-top 170px
-            min-width 90px
-
-            .filter-list
-                text-align center
-                list-style none
-                padding 0
-
-        .tags-filter
-            width 190px
-            height auto
-            display flex
-            justify-content center
-            align-items flex-start
-            padding-top 110px
-            min-width 90px
-
-            .filter-list
-                text-align center
-                list-style none
-                padding 0
-
-                .filter-item
-                    white-space nowrap
-                    cursor pointer
-
-                    &.router-link-exact-active
-                        color #f3b300
-
-        .posts
-            padding-right 77.5px
-            padding-left 77.5px
-            width 80%
-
-            .divider
-                background-color #000000
-                height 0.8px
-                opacity 0.2
-
-    .is-divider
-        width 120px
-        border-bottom 2px solid #34343e
-        margin 0 auto
-        padding 0 0 16px 0
-
-    .blog-post
-        width 100%
-        margin 49px 0 49px 0
-        display flex
-
-        .image-preview
-            -o-object-fit cover
-            object-fit cover
-            width 200px
-            height 120px
-
-        .post-content
-            display flex
-            flex-direction column
-            justify-content center
-            padding 0 24px
-
-            .title
-                font-family MuseoSansCyrl500
-                font-size 22px
-                font-weight 500
-                line-height 1.45
-                color #34343e
-                text-decoration underline
-
-                &:hover
-                    color #f3b300
-
-            .post-info
-                margin 12px 0 0 0
-
-                span
-                    opacity 0.4
-                    font-family MuseoSansCyrl500
-                    font-size 16px
-                    font-weight 500
-                    line-height 1.25
-                    text-align left
-                    color #34343e
-
-    @media (max-width: 1200px)
-        .blog-post
-            .post-content
-                .title
-                    font-size 16px
-
-    @media (max-width: 1024px)
-        .blog-post
-            .post-content
-                .post-info
-                    span
-                        font-size 14px
-
-    @media (max-width: 991px)
         .blog-content
-            .posts
-                padding-right 32px
-                padding-left 32px
-
-        .blog-post
-            align-items center
-
-    @media (max-width: 900px)
-        .blog-post
-            flex-direction column
-
-            .image-preview
-                margin-bottom 12px
-
-            .post-content
-                .title
-                    text-align center
-                    margin-bottom 12px
-
-                .post-info
-                    margin 0 auto
-
-                    span
-                        font-size 12px
-
-    @media (max-width: 660px)
-        .blog-content
-            .date-filter, .tags-filter
-                display none
-
-            .posts
-                padding-right 0
-                padding-left 0
-
-        .section
-            padding-right 32px
-            padding-left 32px
-
-            .section-title
-                font-size 2rem
-                padding-bottom 12px
-
-        .blog-post
+            max-width 1600px
+            margin 0 auto
+            display flex
             flex-direction row
 
-    @media (max-width: 575px)
-        .blog-post
-            .post-content
-                .title
-                    font-size 14px
-                    text-align left
-                    margin-bottom 0
+            .date-filter
+                width 190px
+                height auto
+                display flex
+                justify-content center
+                align-items flex-start
+                padding-top 170px
+                min-width 90px
 
-                .post-info
-                    margin 12px 0 0 0
-
-    @media (max-width: 500px)
-        .blog-post
-            flex-direction column
-
-            .post-content
-                .title
+                .filter-list
                     text-align center
-                    margin-bottom 12px
+                    list-style none
+                    padding 0
 
-                .post-info
-                    margin 0 auto
+            .tags-filter
+                width 190px
+                height auto
+                display flex
+                justify-content center
+                align-items flex-start
+                padding-top 110px
+                min-width 90px
 
-    @media (max-width: 320px)
-        .section
-            padding-top 100px
-            padding-bottom 40px
+                .filter-list
+                    text-align center
+                    list-style none
+                    padding 0
 
-        .blog-post
-            margin 24px 0
+                    .filter-item
+                        white-space nowrap
+                        cursor pointer
 
-            .post-content
-                padding 0
+                        &.router-link-exact-active
+                            color #f3b300
+
+            .posts
+                padding-right 77.5px
+                padding-left 77.5px
+                width 80%
+
+                .divider
+                    background-color #000000
+                    height 0.8px
+                    opacity 0.2
+
+
+                .blog-post
+                    width 100%
+                    margin 49px 0 49px 0
+                    display flex
+
+                    .image-preview
+                        -o-object-fit cover
+                        object-fit cover
+                        width 200px
+                        height 120px
+
+                    .post-content
+                        display flex
+                        flex-direction column
+                        justify-content center
+                        padding 0 24px
+
+                        .title
+                            font-family MuseoSansCyrl500
+                            font-size 22px
+                            font-weight 500
+                            line-height 1.45
+                            color #34343e
+                            text-decoration underline
+
+                            &:hover
+                                color #f3b300
+
+                        .post-info
+                            margin 12px 0 0 0
+
+                            span
+                                opacity 0.4
+                                font-family MuseoSansCyrl500
+                                font-size 16px
+                                font-weight 500
+                                line-height 1.25
+                                text-align left
+                                color #34343e
+
+        @media (min-width 1024px) and (max-width 1440px)
+            .blog-post
+                .post-content
+                    .title
+                        font-size 16px
+
+        @media (min-width 768px) and (max-width 1024px)
+            padding 130px 5% 205px 5%
+
+            .blog-content
+                .posts
+                    padding 0 30px
+
+                    .blog-post
+                        .post-content
+                            .post-info
+                                span
+                                    font-size 14px
+
+        @media (min-width 425px) and (max-width 768px)
+            padding 130px 10% 400px 10%
+
+            .blog-content
+                display flex
+                flex-direction column-reverse
+                justify-content center
+
+                .posts
+                    padding 0
+                    width 100%
+
+                    .blog-post
+                        flex-direction column
+
+                        img
+                            width 100% !important
+                            height auto !important
+
+                        .post-content
+                            padding 24px
+
+                            .title
+                                text-align center
+                                margin-bottom 12px
+
+                            .post-info
+                                margin 0 auto
+
+                .tags-filter
+                    padding 50px 0 0 0
+                    width 100%
+
+                    .filter-list
+                        display flex
+                        flex-direction row
+                        justify-content space-between
+                        flex-wrap wrap
+
+                        li
+                            padding 5px 10px
+                            background-color #343a49
+                            color #f7f7f7
+                            border-radius 5px
+                            margin-bottom 10px
+
+
+        @media (max-width 320px)
+            .section
+                padding-top 100px
+                padding-bottom 40px
+
+            .blog-post
+                margin 24px 0
+
+                .post-content
+                    padding 0
 
 
 </style>
