@@ -18,7 +18,7 @@
                      @touchstart="(privates1.touch) ? touchStart($event) : 'false'"
                      @touchmove="(privates1.touch) ? touchMove($event) : 'false'">
 
-                    <div class="image b-carousel__item"
+                    <div class="b-carousel__item"
                          @mouseover="stopAutoplay"
                          @mouseleave="startAutoplay"
                          v-for="(member, i) in items"
@@ -32,23 +32,23 @@
                             <div class="layer__top">
                                 <div class="layer__text">
                                     <h3>
-                                        {{ member.name }}
-                                    </h3>
-                                    <p>
                                         {{ member.position }}
-                                    </p>
-
+                                    </h3>
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                         <a :href="social.link"
                                            v-for="social in member.social"
                                            target="_blank">
-                                            <img :class="{ 'in': social.type === 'linkedin' }"
-                                                 src="../../../static/images/in.svg"
-                                                 alt="in"/>
+                                            <img class="in"
+                                                 :src="social.src"
+                                                 :alt="social.type"/>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="b-carousel__name">
+                            {{ member.name }}
                         </div>
                     </div>
                 </div>
@@ -338,15 +338,38 @@
                     &:active
                         cursor -webkit-grab !important
 
-                    .image
+                    .b-carousel__item
+                        overflow hidden
+                        display flex
+                        flex-direction column
+                        align-items center
+                        justify-content space-around
                         cursor pointer
                         position relative
                         max-width 100%
-                        height 304px
-                        overflow hidden
+                        height 400px
                         text-align center
 
+                        @media (max-width 320px)
+                            width 270px
+
+                        @media (max-width 425px)
+                            flex 0 0 100% !important
+
+                        &:active
+                            cursor -webkit-grab !important
+
+                        .b-carousel__name
+                            font-size 20px
+
                         .b-carousel__inner
+                            position relative
+                            margin 0 15px
+                            padding 20px 20px 0 20px
+                            width 304px
+                            clip-path circle(50% at center)
+                            -webkit-clip-path circle(50% at center)
+
                             .layer__top-visible
                                 opacity 1 !important
 
@@ -393,25 +416,24 @@
                                 color #34343e
                                 text-align center
                                 font-size 18px
-                                display inline-block
+                                display flex
+                                flex-direction column
+                                justify-content space-around
+                                align-items center
                                 position absolute
                                 width 80%
-                                top 70%
+                                height 25%
+                                top 75%
                                 left 50%
                                 -moz-transform translate(-50%, -50%)
                                 -webkit-transform translate(-50%, -50%)
                                 -ms-transform translate(-50%, -50%)
                                 transform translate(-50%, -50%)
 
-                                .h3
-                                    font-weight 700
-                                    font-size 24px
-
-                                p
-                                    font-size 12px
-                                    margin-bottom 10px
-                                    text-transform uppercase
-                                    font-family MuseoSansCyrl500
+                                h3
+                                    text-transform capitalize
+                                    font-weight 500
+                                    font-size 28px
 
                                 .icons
                                     width 100%
@@ -436,29 +458,6 @@
 
                                     img
                                         margin auto 15px
-
-                    .b-carousel__item
-                        overflow hidden
-                        display flex
-                        align-items center
-                        justify-content center
-
-                        @media (max-width 320px)
-                            width 270px
-
-                        @media (max-width 425px)
-                            flex 0 0 100% !important
-
-                        &:active
-                            cursor -webkit-grab !important
-
-                        .b-carousel__inner
-                            position relative
-                            margin 0 15px
-                            padding 20px 20px 0 20px
-                            width 304px
-                            clip-path circle(50% at center)
-                            -webkit-clip-path circle(50% at center)
 
                             @media (max-width 490px)
                                 position relative
