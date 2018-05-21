@@ -115,7 +115,7 @@
                         :items="$t('advisors.members')"
                         :settings="settings.advisors"
                         :options="options.advisors"
-                        :autoplay="isAdvisorsAutoplay"
+                        :is-autoplay="isAdvisorsAutoplay"
                         :privates1="Object.assign(settings.advisors, options.advisors)"
                         :multiplier-position="multiplierPosition"
                         :num-items-in-wrap="numItemsInWrap"/>
@@ -165,9 +165,6 @@
             isTeam: function (inBlockTeam) {
                 this.options.serokell.inBlockTeam = inBlockTeam;
                 this.options.effectiveEnergy.inBlockTeam = inBlockTeam;
-            },
-            isEffectiveEnergyAutoplay: function (val) {
-                console.log(val, 'isEffectiveEnergyAutoplay');
             }
         },
         data() {
@@ -441,6 +438,8 @@
                 font-size 20px
 
         .serokell
+            padding 60px 0
+
             p
                 margin-bottom 50px
                 font-size 20px
@@ -451,7 +450,6 @@
             flex-direction column
             justify-content center
             align-items center
-            margin-bottom 60px
 
         .serokell
             .images
@@ -572,7 +570,7 @@
                         img
                             margin auto 15px
 
-    @media (max-width: 425px)
+    @media (max-width 425px)
         .team
             .our-team
                 .title

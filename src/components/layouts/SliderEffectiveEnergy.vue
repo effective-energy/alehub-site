@@ -115,13 +115,16 @@
         },
         watch: {
             isAutoplay: function (val) {
-                if (val)
+                if (val && this.isMobile)
                     this.initAutoplay(3000);
                 else
                     clearInterval(this.autoplay);
             }
         },
         computed: {
+            isMobile: function () {
+                return window.innerWidth <= 425;
+            },
             isControlButton: function () {
                 return !(window.innerWidth <= 490);
             },
@@ -228,7 +231,7 @@
                 });
             },
             initAutoplay: function (delay) {
-                if (this.isAutoplay)
+                if (this.isAutoplay && this.isMobile)
                     this.autoplay = setInterval(() => {
                         this.nextSlide();
                     }, delay);
@@ -237,7 +240,7 @@
                 clearInterval(this.autoplay);
             },
             startAutoplay: function () {
-                if (this.isAutoplay)
+                if (this.isAutoplay && this.isMobile)
                     this.initAutoplay(3000);
             },
         },

@@ -63,16 +63,16 @@
             </div>
 
             <!--<div class="navbar__blog"-->
-                 <!--v-if="show === 'blog'">-->
-                <!--<router-link class="navbar-item"-->
-                             <!--tag="a"-->
-                             <!--:to="'/blog'">-->
-                    <!--{{ $t("navbar.blog") }}-->
-                <!--</router-link>-->
+            <!--v-if="show === 'blog'">-->
+            <!--<router-link class="navbar-item"-->
+            <!--tag="a"-->
+            <!--:to="'/blog'">-->
+            <!--{{ $t("navbar.blog") }}-->
+            <!--</router-link>-->
             <!--</div>-->
 
             <div class="right-menu"
-            :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
+                 :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
                    target="_blank">
@@ -234,7 +234,7 @@
         },
         watch: {
             rtl: function (val) {
-                  console.log(val, 'rtl');
+                console.log(val, 'rtl');
             },
             activeItem: function (index) {
                 this.changeLineWidth(index);
@@ -313,7 +313,7 @@
             resetRTL: function () {
                 document.querySelector('body').style['direction'] = 'ltr';
                 this.rtl = false;
-                this.$parent.$emit('isRtl',this.rtl);
+                this.$parent.$emit('isRtl', this.rtl);
             },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
@@ -471,19 +471,25 @@
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
                 this.$parent.$emit('isOpenedModalMenu', true);
-                this.disableScroll();
+                // this.disableScroll();
             });
 
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
             }, 500);
 
-            if (document.getElementById('navbar') && document.getElementById('wrap-pointer')) {
-                let navbarYOffset = document.getElementById('navbar').offsetHeight,
-                    pointerToTop = document.getElementById('wrap-pointer'),
-                    pointerToTopOffset = pointerToTop.offsetHeight,
-                    tgButtonYOffset = null,
-                    tgButtonHeight = null;
+            let pointerToTop = null,
+                pointerToTopOffset = null,
+                tgButtonYOffset = null,
+                tgButtonHeight = null;
+
+            if (document.getElementById('wrap-pointer')) {
+                pointerToTop = document.getElementById('wrap-pointer'),
+                    pointerToTopOffset = pointerToTop.offsetHeight;
+            }
+
+            if (document.getElementById('navbar')) {
+                let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
                 if (document.getElementById('telegram-alert')) {
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
@@ -653,11 +659,11 @@
                     else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                         this.$parent.$emit('scrollInFooter', false);
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
+                    if (pointerToTop && window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
                         window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
                         this.$parent.$emit('pointerInDark', true);
-                    } else if (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top)||
-                        window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                    } else if (pointerToTop && (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) ||
+                        window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top))) {
                         this.$parent.$emit('pointerInDark', false);
                     }
 
@@ -774,7 +780,6 @@
 
                 &:hover
                     text-decoration none
-
 
             @media (max-width 425px)
                 display none
@@ -904,8 +909,6 @@
 
             .select-lang__fr
                 margin 0 0 0 3px
-
-
 
     .choose-languages
         display none
@@ -1260,7 +1263,6 @@
     .navbar-brand__rtl
         img
             margin 0 0 0 8px
-
 
     .right-menu__abs
         position absolute
