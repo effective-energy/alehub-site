@@ -34,7 +34,6 @@
                                     <h3>
                                         {{ member.position }}
                                     </h3>
-
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                         <a :href="social.link"
                                            v-for="social in member.social"

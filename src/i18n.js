@@ -230,7 +230,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -246,7 +247,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -257,14 +259,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -273,7 +283,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -284,7 +295,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -295,7 +307,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -306,7 +319,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -317,7 +331,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -328,7 +343,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -339,7 +355,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -350,7 +367,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -361,7 +379,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -914,7 +933,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -930,7 +950,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -941,14 +962,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -957,7 +986,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -968,7 +998,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -979,7 +1010,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -990,7 +1022,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1001,7 +1034,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1012,7 +1046,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1023,7 +1058,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1034,7 +1070,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1045,7 +1082,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1598,7 +1636,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1614,7 +1653,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1625,14 +1665,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Елена Цимбалюк',
                             position: 'Начальник отдела маркетинговых операций',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Егор Локтев',
@@ -1641,7 +1689,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1652,7 +1701,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1663,7 +1713,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1674,7 +1725,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1685,7 +1737,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1696,7 +1749,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1707,7 +1761,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1718,7 +1773,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -1729,7 +1785,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2277,7 +2334,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2293,7 +2351,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2304,14 +2363,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -2320,7 +2387,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2331,7 +2399,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2342,7 +2411,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2353,7 +2423,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2364,7 +2435,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2375,7 +2447,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2386,7 +2459,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2397,7 +2471,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2408,7 +2483,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2936,7 +3012,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2952,7 +3029,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2963,14 +3041,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -2979,7 +3065,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -2990,7 +3077,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3001,7 +3089,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3012,7 +3101,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3023,7 +3113,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3034,7 +3125,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3045,7 +3137,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3056,7 +3149,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3067,7 +3161,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3175,21 +3270,21 @@ const messages = {
                 description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
                 list: [
                     {
-                    title: 'Vente pendant l’ICO',
-                    amount: 77
-                },
+                        title: 'Vente pendant l’ICO',
+                        amount: 77
+                    },
                     {
-                    title: 'Commande',
-                    amount: 11
-                },
+                        title: 'Commande',
+                        amount: 11
+                    },
                     {
-                    title: 'Programme de référencement et conseillés',
-                    amount: 10
-                },
+                        title: 'Programme de référencement et conseillés',
+                        amount: 10
+                    },
                     {
-                    title: 'Bounty',
-                    amount: 2
-                }
+                        title: 'Bounty',
+                        amount: 2
+                    }
                 ]
             }
         },
@@ -3600,7 +3695,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3616,7 +3712,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3627,14 +3724,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -3643,7 +3748,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3654,7 +3760,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3665,7 +3772,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3676,7 +3784,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3687,7 +3796,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3698,7 +3808,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3709,7 +3820,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3720,7 +3832,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -3731,7 +3844,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4258,7 +4372,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4274,7 +4389,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4285,14 +4401,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -4301,7 +4425,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4312,7 +4437,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4323,7 +4449,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4334,7 +4461,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4345,7 +4473,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4356,7 +4485,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4367,7 +4497,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4378,7 +4509,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4389,7 +4521,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4917,7 +5050,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4933,7 +5067,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4944,14 +5079,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -4960,7 +5103,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4971,7 +5115,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4982,7 +5127,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -4993,7 +5139,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5004,7 +5151,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5015,7 +5163,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5026,7 +5175,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5037,7 +5187,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5048,7 +5199,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5576,7 +5728,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/'
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5592,7 +5745,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/'
+                                    link: 'https://www.linkedin.com/in/aleksey-osipenko-9a5822162/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5603,14 +5757,22 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/'
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
                         {
                             name: 'Elena Tsymbalyuk',
                             position: 'Head of Marketing Operations',
-                            src: '../static/images/avatars/elena@3x.png'
+                            src: '../static/images/avatars/elena@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Egor Loktev',
@@ -5619,7 +5781,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/'
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5630,7 +5793,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/'
+                                    link: 'https://www.linkedin.com/in/arseniy-voitenko-61aa08161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5641,7 +5805,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/'
+                                    link: 'https://www.linkedin.com/in/artem-levashov-177015125/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5652,7 +5817,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/'
+                                    link: 'https://www.linkedin.com/in/vadim-dudin-869493106/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5663,7 +5829,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/'
+                                    link: 'https://www.linkedin.com/in/aleksandr-vorontsov-419851161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5674,7 +5841,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mrdenzzz/'
+                                    link: 'https://www.linkedin.com/in/mrdenzzz/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5685,7 +5853,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/'
+                                    link: 'https://www.linkedin.com/in/galina-sergeeva-628a07161/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5696,7 +5865,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/'
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },
@@ -5707,7 +5877,8 @@ const messages = {
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/'
+                                    link: 'https://www.linkedin.com/in/evgeniy-zhitkov-670605163/',
+                                    src: '../static/images/in.svg'
                                 }
                             ]
                         },

@@ -33,7 +33,6 @@
                                     <h3>
                                         {{ member.position }}
                                     </h3>
-
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                         <a :href="social.link"
                                            v-for="social in member.social"
@@ -286,12 +285,6 @@
             &:nth-child(even)
                 .b-carousel__inner
                     background-color #dbe0e9
-
-    .advisors-team
-        .wrap
-            width 80%
-            @media (max-width 320px)
-                width 100%
 
     .slider-outer
         width 100%
