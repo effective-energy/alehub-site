@@ -37,8 +37,7 @@
                      v-if="isWideScreen">
                     <div class="image"
                          v-for="(member, i) in $t('team.serokell[0].members')"
-                         :key="i"
-                         :style="{ 'background-color': (i % 2 === 0) ? '#e8ebef' : '#abb8c6' }">
+                         :key="i">
                         <img class="layer__bottom"
                              :src="member.src"
                              :alt="member.name">
@@ -84,10 +83,9 @@
 
             <div class="advisors-team">
                 <div class="images"
-                     v-if="isWideScreen || $t('advisors.members').length === 1">
+                     v-if="isWideScreen">
                     <div class="image"
-                         v-for="(member, i) in $t('advisors.members')" :key="i"
-                         :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
+                         v-for="(member, i) in $t('advisors.members')" :key="i">
                         <img class="layer__bottom"
                              :src="$t('advisors.members['+i+'].src')"
                              :alt="member.name">
@@ -313,7 +311,7 @@
                 font-size 40px
 
         .advisors
-            padding 80px 5% 40px 5%
+            padding 80px 7.5% 40px 7.5%
             display flex
             flex-direction column
             justify-content center
@@ -438,14 +436,14 @@
                 margin-bottom 50px
                 font-size 20px
 
-        .serokell, .effective-energy
+        .serokell, .effective-energy, .advisors-team
             width 100%
             display flex
             flex-direction column
             justify-content center
             align-items center
 
-        .serokell
+        .serokell, .advisors-team
             .images
                 width 100%
                 display flex
@@ -453,22 +451,14 @@
                 justify-content space-around
 
         .advisors-team
-            width 100%
             margin-bottom 60px
 
             .images
-                width 100%
-                justify-content center !important
-
-        .advisors-team
-
-            .images
-                display flex
-                flex-wrap wrap
-                justify-content center
+                .image
+                    &:nth-child(2n)
+                        background-color #bbbec1
 
         .serokell, .advisors-team
-
             .image,
             .image *
                 -webkit-box-sizing border-box
@@ -580,6 +570,12 @@
     .image
         clip-path circle(50% at center) !important
         -webkit-clip-path circle(50% at center) !important
+
+        &:nth-child(2n)
+            background-color #e8ebef
+
+        &:nth-child(2n + 1)
+            background-color #abb8c6
 
         @media (max-width 320px)
             position relative

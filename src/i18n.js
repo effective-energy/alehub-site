@@ -378,6 +378,57 @@ const messages = {
             title: '顾问',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
                     position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
@@ -1010,6 +1061,57 @@ const messages = {
         advisors: {
             title: '顧問',
             members: [
+                {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
                 {
                     name: 'Purushotham Maralappa',
                     position: 'advisor',
@@ -1644,8 +1746,59 @@ const messages = {
             title: 'Советники',
             members: [
                 {
+                    name: 'Филипп Нанн',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Владимир Никитин',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Николай Шкилев',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Советник',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -2272,8 +2425,59 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -2879,6 +3083,57 @@ const messages = {
         advisors: {
             title: 'Conseillers',
             members: [
+                {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
                 {
                     name: 'Purushotham Maralappa',
                     position: 'advisor',
@@ -3493,8 +3748,59 @@ const messages = {
             title: 'Berater',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -4100,8 +4406,59 @@ const messages = {
             title: 'المستشارين',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -4708,8 +5065,59 @@ const messages = {
             title: '문',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
@@ -5316,8 +5724,59 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
+                    name: 'Phillip Nunn',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nunn@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/phillip-nunn/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/phillipnunn',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Vladimir Nikitin',
+                    position: 'advisor',
+                    src: '../static/images/avatars/nikitin@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadv/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Nikolay Shkilev',
+                    position: 'advisor',
+                    src: '../static/images/avatars/shkilev@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
                     name: 'Purushotham Maralappa',
-                    position: 'Advisor',
+                    position: 'advisor',
                     src: '../static/images/avatars/maralappa@3x.png',
                     social: [
                         {
