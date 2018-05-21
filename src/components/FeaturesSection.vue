@@ -116,7 +116,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/icon-volatility.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -129,7 +129,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/integrity-ic.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -148,7 +148,8 @@
 
             <div class="video__wrap">
                 <video autoplay muted loop id="myVideoScale">
-                    <source src="../../static/video/libra.mp4" type="video/mp4">
+                    <source src="../../static/video/libra.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                    <source src="../../static/video/libra.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
                 </video>
             </div>
 
@@ -280,7 +281,7 @@
             opacity 0
 
         .l-2
-            transform translate(0, 0) rotate(135deg)
+            transform translate(1px, 1px) rotate(135deg)
 
         .l-3
             transform translate(0, 0) rotate(45deg)
@@ -557,7 +558,16 @@
         .application
             padding 80px 5%
 
-    @media (max-width 768px)
+    @media (min-width 768px) and (max-width 1024px)
+        .application
+            .section-2
+                .list-items
+                    .item
+                        width 50%
+                        padding-right 16px
+                        margin-bottom 24px
+
+    @media (min-width 575px) and (max-width 768px)
         .application
             .section-2
                 .list-items
@@ -567,14 +577,11 @@
                         margin-bottom 24px
 
             .section-3
-                .figure
-                    width 50%
-                    display flex
-                    flex-direction column
-                    justify-content center
+                display flex
+                justify-content center
 
                 .info-block
-                    width 50%
+                    width 80%
                     padding-left 0
 
                     .title
@@ -589,12 +596,24 @@
 
     @media (max-width 575px)
         .application
+            .section-2
+                .list-items
+                    .item
+                        width 100%
+                        padding-right 0
+
             .section-3
                 .figure
                     display none
 
                 .info-block
                     width 100%
+
+                    .list-items
+                        .item
+                            width 100%
+                            padding-right 0
+                            margin-bottom 24px
 
     @media (max-width 425px)
         .application

@@ -20,7 +20,7 @@
 
                     <div class="image b-carousel__item"
                          @mouseover="stopAutoplay"
-                         @mouseleave="startAutoplay('true')"
+                         @mouseleave="startAutoplay"
                          v-for="(member, i) in items"
                          :key="i"
                          :style="`flex: 0 0 ${ multiplierPosition }%`">
@@ -39,11 +39,18 @@
                                     </p>
 
                                     <div class="icons" v-if="member.social !== undefined && member.length !== 0">
-                                        <a :href="social.link" v-for="social in member.social" target="_blank">
+                                        <a :href="social.link"
+                                           v-for="social in member.social"
+                                           target="_blank">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
                                                  src="../../../static/images/in.svg"
                                                  alt="in"/>
                                         </a>
+                                        <!--<a :href="social.link" v-for="social in member.social" target="_blank">-->
+                                        <!--<img :class="{ 'in': social.type === 'linkedin' }"-->
+                                        <!--src="../../../static/images/in.svg"-->
+                                        <!--alt="in"/>-->
+                                        <!--</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -89,12 +96,15 @@
             numItemsInWrap: {
                 type: Number,
                 required: true
+            },
+            autoplay: {
+                type: Boolean,
+                required: true
             }
         },
         data() {
             return {
                 autoplay: null,
-                isAutoplay: false,
                 carousel: null,
                 privates: null,
                 tmpPos: 0,
@@ -109,11 +119,11 @@
             }
         },
         watch: {
-            'options.inBlockTeam': function (inBlockTeam) {
-                this.startAutoplay(true);
-            },
-            isAutoplay: function () {
-                this.initAutoplay(3000);
+            autoplay: function (val) {
+                if (val)
+                    this.initAutoplay(3000);
+                else
+                    clearInterval(this.autoplay);
             }
         },
         computed: {
@@ -129,14 +139,14 @@
         },
         methods: {
             clickNext: function () {
-                this.stopAutoplay();
+                clearInterval(this.autoplay);
                 this.nextSlide();
-                this.startAutoplay(true);
+                this.initAutoplay(3000);
             },
             clickPrev: function () {
-                this.stopAutoplay();
+                clearInterval(this.autoplay);
                 this.prevSlide();
-                this.startAutoplay(true);
+                this.initAutoplay(3000);
             },
             dragStart: function (e) {
                 this.xDrag = e.pageX;
@@ -147,28 +157,20 @@
                 this.yDrag = 0;
             },
             dragMove: function (e) {
-                // console.log(e.pageX, 'mouse move X');
                 let xMove = e.pageX;
                 let yMove = e.pageY;
                 let xDiff = this.xDrag - xMove;
                 let yDiff = this.yDrag - yMove;
-                // console.log(xDiff, 'xDiff');
-                // console.log(yDiff, 'yDiff');
                 if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    //ширина фотки получать из DOM
-                    if (xDiff > 0) {
-                        if (Math.abs(xDiff) > 152) {
-                            this.nextSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
+                    if (xDiff > 0 && Math.abs(xDiff) > 152) {
+                        this.nextSlide();
+                        this.xDrag = 0;
+                        this.yDrag = 0;
                     }
-                    if (xDiff < 0) {
-                        if (Math.abs(xDiff) > 152) {
-                            this.prevSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
+                    if (xDiff < 0 && Math.abs(xDiff) > 152) {
+                        this.prevSlide();
+                        this.xDrag = 0;
+                        this.yDrag = 0;
                     }
                 }
             },
@@ -179,7 +181,6 @@
             touchMove: function (e) {
                 if (!this.xDown || !this.yDown)
                     return;
-
                 let xUp = e.touches[0].clientX;
                 let yUp = e.touches[0].clientY;
                 let xDiff = this.xDown - xUp;
@@ -231,21 +232,18 @@
                     }
                 });
             },
-            startAutoplay: function (val) {
-                if (this.inBlockTeam && this.isOptAutoplay)
-                    this.isAutoplay = val;
-            },
             initAutoplay: function (delay) {
-                clearInterval(this.autoplay);
-                if (this.isAutoplay) {
+                if (this.eAutoplay || this.sAutoplay || this.sAutoplay)
                     this.autoplay = setInterval(() => {
                         this.nextSlide();
                     }, delay);
-                }
             },
             stopAutoplay: function () {
-                this.isAutoplay = false;
                 clearInterval(this.autoplay);
+            },
+            startAutoplay: function () {
+                if (this.eAutoplay || this.sAutoplay || this.sAutoplay)
+                    this.initAutoplay(3000);
             },
         },
         created() {
@@ -253,7 +251,7 @@
             this.privates = this.privates1;
         },
         mounted() {
-            this.startAutoplay(true);
+
             this.opt.maxPosition = document.querySelector('.' + this.privates.wrap).children.length;
             document.querySelector('.' + this.privates.wrap).style['transform'] = 'translateX(0)';
             // в зависимости от количества на стартовом врэппе
@@ -271,13 +269,6 @@
                 if (document.querySelector('body').querySelector('.layer__top-visible'))
                     document.querySelector('body').querySelector('.layer__top-visible').classList.remove('layer__top-visible');
             }, false);
-            // if (this.privates.touch === true) {
-            //     document.querySelector(this.privates.wrap).addEventListener('touchstart', this.touchStart, false);
-            //     document.querySelector(this.privates.wrap).addEventListener('touchmove', this.touchMove, false);
-            // }
-            //if (this.privates.drag === true) {
-            // document.querySelector('.js-carousel').addEventListener('mousedown', this.dragStart, false);
-            // document.querySelector('.js-carousel').addEventListener('mousemove', this.dragMove, false);
         }
     }
 </script>
@@ -369,13 +360,25 @@
                             height 220px
                             margin 0
 
+                        @media (min-width 320px) and (max-width 360px)
+                            position relative
+                            width 250px
+                            height 250px
+                            margin 0
+
+                        @media (min-width 360px) and (max-width 425px)
+                            position relative
+                            width 300px
+                            height 300px
+                            margin 0
+
                         &:active
                             cursor -webkit-grab !important
 
                         .b-carousel__img
                             display block
 
-                            @media (max-width 320px)
+                            @media (max-width 425px)
                                 height 100%
 
                             &:active
@@ -414,7 +417,7 @@
             .layer__top-visible
                 opacity 1 !important
 
-            @media (min-width 420px)
+            @media (min-width 425px)
                 &:hover
                     .layer__top
                         opacity 1
@@ -470,7 +473,7 @@
 
                 p
                     font-size 12px
-                    margin-bottom 25px
+                    margin-bottom 10px
                     text-transform uppercase
                     font-family MuseoSansCyrl500
 

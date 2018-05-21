@@ -1,5 +1,6 @@
 <template>
     <div class="wrap"
+         :class="{ 'direction-ltr': isRtl }"
          @mouseover="(options.autoplay) ? stopAutoplay : 'false'"
          @mouseout="(options.autoplay) ? startAutoplay : 'false'">
 
@@ -32,14 +33,15 @@
             options: {
                 type: Object,
                 required: true
+            },
+            isRtl: {
+                type: Boolean,
+                required: true
             }
         },
         watch: {
-            autoplayAccess: function (val) {
-                // console.log(val, 'autoplayAccess');
-            },
-            autoplay: function (val) {
-                // console.log(val, 'autoplay');
+            isRtl: function (val) {
+                console.log(val, 'is rtl in slider screen');
             }
         },
         data() {
@@ -56,50 +58,6 @@
             }
         },
         methods: {
-            dragStart: function (e) {
-                this.xDrag = e.pageX;
-                this.yDrag = e.pageY;
-            },
-            dragEnd: function (e) {
-                this.xDrag = 0;
-                this.yDrag = 0;
-            },
-            dragMove: function (e) {
-                // console.log(e.pageX, 'mouse move X');
-
-                let xMove = e.pageX;
-                let yMove = e.pageY;
-
-                let xDiff = this.xDrag - xMove;
-                let yDiff = this.yDrag - yMove;
-
-                // console.log(xDiff, 'xDiff');
-                // console.log(yDiff, 'yDiff');
-
-                if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    //ширина фотки получать из DOM
-
-                    if (xDiff > 0) {
-
-                        if (Math.abs(xDiff) > 100) {
-                            this.nextSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
-
-                    }
-
-                    if (xDiff < 0) {
-
-                        if (Math.abs(xDiff) > 100) {
-                            this.prevSlide();
-                            this.xDrag = 0;
-                            this.yDrag = 0;
-                        }
-
-                    }
-                }
-            },
             prevSlide: function () {
                 let sel = {
                     wrap: document.querySelector('.js-carousel__wrap'),
@@ -165,10 +123,8 @@
         mounted() {
             document.querySelector('.js-carousel__wrap').appendChild(document.querySelector('.js-carousel__wrap').children[0].cloneNode(true));
 
-            if (this.options.autoplay) {
-                this.autoplayAccess = this.options.autoplay;
+            if (this.options.autoplay)
                 this.initAutoplay(5000);
-            }
         }
     }
 </script>

@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import Index from '@/components/Index';
 import Blog from '@/components/Blog';
 import BlogPost from '@/components/BlogPost';
-import Categories from '@/components/NewsCategories';
+import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
 
@@ -20,7 +20,7 @@ const router = new Router({
             component: Index
         },
         {
-            path: '/blog',
+            path: '/blog/categories/:id',
             name: 'Blog',
             component: Blog
         },
@@ -30,9 +30,9 @@ const router = new Router({
             component: BlogPost
         },
         {
-            path: '/blog/categories/:id',
-            name: 'Categories',
-            component: Categories
+            path: '*',
+            name: 'NotFound',
+            component: NotFound
         }
     ]
 });

@@ -6,6 +6,7 @@
         <router-link tag="a"
                      to="/"
                      class="navbar-brand"
+                     :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
                  src="../../../static/images/ale-logo.svg"
@@ -26,12 +27,22 @@
             <span class="line" :class="{ 'line__white': isDark }"></span>
             <span class="line" :class="{ 'line__white': isDark }"></span>
         </div>
-        <div class="navbar-folding" id="navbarText">
 
+        <div class="navbar__blog"
+             v-if="isNotIndex">
+            <router-link class="navbar-item"
+                         tag="a"
+                         :to="'/blog/categories/all'">
+                {{ $t("navbar.blog") }}
+            </router-link>
+        </div>
+
+        <div class="navbar-folding" id="navbarText">
             <slider-navbar id="slider-navbar"
                            v-if="!show"
                            :is-dark="isDark"
                            :is-yellow="isYellow"
+                           :is-rtl="rtl"
                            :items="$t('navbar.menuList')"
                            :options="optionsToSliderNavbar"/>
 
@@ -51,16 +62,8 @@
                 </div>
             </div>
 
-            <div class="navbar__blog"
-                 v-if="show === 'blog'">
-                <router-link class="navbar-item"
-                             tag="a"
-                             :to="'/blog'">
-                    {{ $t("navbar.blog") }}
-                </router-link>
-            </div>
-
-            <div class="right-menu">
+            <div class="right-menu"
+                 :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
                    href="http://presale.alehub.io/"
                    target="_blank">
@@ -222,7 +225,7 @@
         },
         watch: {
             rtl: function (val) {
-                  console.log(val, 'rtl');
+                console.log(val, 'rtl');
             },
             activeItem: function (index) {
                 this.changeLineWidth(index);
@@ -285,6 +288,9 @@
             isHeightLangItem: function () {
                 return this.heightLangItem;
             },
+            isNotIndex: function () {
+                return !(this.$route.path === '/');
+            }
         },
         methods: {
             makeRTL: function () {
@@ -298,7 +304,7 @@
             resetRTL: function () {
                 document.querySelector('body').style['direction'] = 'ltr';
                 this.rtl = false;
-                this.$parent.$emit('isRtl',this.rtl);
+                this.$parent.$emit('isRtl', this.rtl);
             },
             changeLanguage(index) {
                 this.selectedLanguage = this.languagesList[index];
@@ -324,8 +330,17 @@
                     firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left,
                     currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left;
 
+
+                let firstNavbarItemRtl = this.getCoords(document.querySelector('.navbar-item')).right,
+                    currentNavbarItemRtl = this.getCoords(document.querySelectorAll('.navbar-item')[index]).right;
+
+
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
-                document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+
+                if (!this.rtl)
+                    document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
+                else
+                    document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItemRtl - firstNavbarItemRtl }px,0,0)`;
             },
             getCoords: function (elem) {
                 if (!elem)
@@ -334,7 +349,8 @@
 
                 return {
                     top: box.top + pageYOffset,
-                    left: box.left + pageXOffset
+                    left: box.left + pageXOffset,
+                    right: box.right + pageXOffset
                 };
             },
             toggleDropdown: function () {
@@ -424,9 +440,6 @@
                 document.body.removeEventListener('touchmove', this.preventDefault, {passive: false});
             }
         },
-        created() {
-
-        },
         mounted() {
             if (this.selectedLanguage === 'ar') {
                 this.makeRTL();
@@ -446,186 +459,228 @@
             this.$on('openedModalMenu', () => {
                 document.getElementById('navbar').classList.add('no-boxshadow');
                 this.$parent.$emit('isOpenedModalMenu', true);
-                this.disableScroll();
+                // this.disableScroll();
             });
 
             setTimeout(() => {
                 this.changeLineWidth(this.activeItem);
             }, 500);
 
-            let navbarYOffset = document.getElementById('navbar').offsetHeight,
+            let pointerToTop = null,
+                pointerToTopOffset = null,
                 tgButtonYOffset = null,
                 tgButtonHeight = null;
 
-            if (document.getElementById('telegram-alert')) {
-                tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
-                tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
-            } else if (document.getElementById('telegram-alert-mobile')) {
-                tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
-                tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
+            if (document.getElementById('wrap-pointer')) {
+                pointerToTop = document.getElementById('wrap-pointer'),
+                    pointerToTopOffset = pointerToTop.offsetHeight;
             }
 
-            window.addEventListener('scroll', () => {
-                this.checkActive();
+            if (document.getElementById('navbar')) {
+                let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
-                if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (!this.isDarkSection) {
-                        this.isDarkSection = true;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
+                if (document.getElementById('telegram-alert')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
+                    tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
+                } else if (document.getElementById('telegram-alert-mobile')) {
+                    tgButtonYOffset = document.getElementById('telegram-alert-mobile').getBoundingClientRect().top;
+                    tgButtonHeight = document.getElementById('telegram-alert-mobile').offsetHeight;
                 }
 
-                if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (!this.mainIsDark && (this.isDark || this.isYellow)) {
-                        this.isDark = false;
-                        this.isYellow = false;
-                    }
-                    if (this.mainIsDark && (!this.isDark || this.isYellow)) {
-                        this.isDark = true;
-                        this.isYellow = false;
-                    }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
+                window.addEventListener('scroll', () => {
+                    this.checkActive();
 
-                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
+                    if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (!this.isDarkSection) {
+                            this.isDarkSection = true;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (!this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                    if (!this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = true;
+                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                        if (!this.mainIsDark && (this.isDark || this.isYellow)) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.mainIsDark && (!this.isDark || this.isYellow)) {
+                            this.isDark = true;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (!this.isFeatures) {
-                        this.isFeatures = true;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
+                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (!this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (!this.isTeam) {
-                        this.isTeam = true;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
-                    if (this.isDarkSection) {
-                        this.isDarkSection = false;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                        if (!this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = true;
+                        }
+                        if (!this.isFeatures) {
+                            this.isFeatures = true;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (!this.isDarkSection) {
-                        this.isDarkSection = true;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (!this.isTeam) {
+                            this.isTeam = true;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                    if (this.isDarkSection) {
-                        this.isDarkSection = false;
-                        this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
+                        if (this.isDarkSection) {
+                            this.isDarkSection = false;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                    window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (!this.isDark) {
-                        this.isYellow = false;
-                        this.isDark = true;
+                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (!this.isDarkSection) {
+                            this.isDarkSection = true;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                    if (this.isDark || this.isYellow) {
-                        this.isDark = false;
-                        this.isYellow = false;
+                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (this.isDarkSection) {
+                            this.isDarkSection = false;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
                     }
-                    if (this.isFeatures) {
-                        this.isFeatures = false;
-                        this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                    }
-                    if (this.isTeam) {
-                        this.isTeam = false;
-                        this.$parent.$emit('checkIsTeam', this.isTeam);
-                    }
-                }
 
-                if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
-                    this.$parent.$emit('scrollInFooter', true);
-                else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
-                    this.$parent.$emit('scrollInFooter', false);
+                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                        if (!this.isDark) {
+                            this.isYellow = false;
+                            this.isDark = true;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
 
-            });
+                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                        this.$parent.$emit('scrollInFooter', true);
+                    else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                        this.$parent.$emit('scrollInFooter', false);
+
+                    if (pointerToTop && window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
+                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                        this.$parent.$emit('pointerInDark', true);
+                    } else if (pointerToTop && (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) ||
+                        window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top))) {
+                        this.$parent.$emit('pointerInDark', false);
+                    }
+
+                    if (window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                        this.$parent.$emit('effectiveEnergyAutoplay', false);
+                        this.$parent.$emit('serokellAutoplay', false);
+                        this.$parent.$emit('advisorsAutoplay', false);
+                    }
+                    if (window.scrollY > this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset) {
+                        this.$parent.$emit('effectiveEnergyAutoplay', true);
+                        this.$parent.$emit('serokellAutoplay', false);
+                        this.$parent.$emit('advisorsAutoplay', false);
+                    }
+                    if (window.scrollY >= this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('advisors')).top - navbarYOffset) {
+                        this.$parent.$emit('effectiveEnergyAutoplay', false);
+                        this.$parent.$emit('serokellAutoplay', true);
+                        this.$parent.$emit('advisorsAutoplay', false);
+                    }
+                    if (window.scrollY >= this.getCoords(document.getElementById('advisors')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                        this.$parent.$emit('effectiveEnergyAutoplay', false);
+                        this.$parent.$emit('serokellAutoplay', false);
+                        this.$parent.$emit('advisorsAutoplay', true);
+                    }
+
+                });
+            }
 
             if (document.getElementById('select-lang'))
                 this.heightLangItem = document.getElementById('select-lang').offsetHeight;
@@ -685,27 +740,37 @@
                     -o-transition all .5s ease
                     transition all .5s ease
 
-            .navbar__blog
-                width 100%
-                display flex
-                justify-content center
-                align-items center
-
-                .navbar-item
-                    font-size 18px
-                    font-weight 600
-                    color #0f1118
-
-                    &:hover
-                        text-decoration none
-
-
             .right-menu
                 position block
 
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
                     right 0
+
+            .right-menu__rtl
+                @media (min-width 1024px) and (max-width 1350px)
+                    position absolute
+                    left 0
+                    right auto
+
+        .navbar__blog
+            width 100%
+            left 0
+            position absolute
+            display flex
+            justify-content center
+            align-items center
+
+            .navbar-item
+                font-size 18px
+                font-weight 600
+                color #0f1118
+
+                &:hover
+                    text-decoration none
+
+            @media (max-width 425px)
+                display none
 
     .select-lang
         cursor pointer
@@ -833,8 +898,6 @@
             .select-lang__fr
                 margin 0 0 0 3px
 
-
-
     .choose-languages
         display none
 
@@ -856,6 +919,8 @@
         box-shadow none !important
 
     .hamburger
+        cursor pointer
+        z-index 100
         display none
 
     .line__white
@@ -995,6 +1060,9 @@
         .btn-login
             background-color #343a49
             color white
+
+            &:hover
+                color white
 
     .bg-dark-blue
         background-color #343a49
@@ -1179,5 +1247,13 @@
 
         .hamburger
             display block
+
+    .navbar-brand__rtl
+        img
+            margin 0 0 0 8px
+
+    .right-menu__abs
+        position absolute
+        right 0
 
 </style>

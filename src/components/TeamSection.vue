@@ -1,17 +1,33 @@
 <template>
-    <div class="team" id="team">
+    <div class="team"
+         id="team"
+         :class="{ 'direction-ltr': isRtl }">
 
         <div class="our-team">
 
             <h3 class="title">
-                {{$t("team.title")}}
+                {{ $t("team.title") }}
             </h3>
 
             <div class="separator">
             </div>
 
-            <div class="serokell">
+            <div class="effective-energy" id="effective-energy-team">
 
+                <p>{{ $t('team.effectiveEnergy[0].name') }}</p>
+
+                <!--add static block images like serokell and advisors-->
+
+                <slider-effective-energy :items="$t('team.effectiveEnergy[0].members')"
+                                         :settings="settings.effectiveEnergy"
+                                         :options="options.effectiveEnergy"
+                                         :is-autoplay="isEffectiveEnergyAutoplay"
+                                         :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
+                                         :multiplier-position="multiplierPosition"
+                                         :num-items-in-wrap="numItemsInWrap"/>
+            </div>
+
+            <div class="serokell" id="serokell-team">
                 <p>
                     Serokell
                 </p>
@@ -39,7 +55,7 @@
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
                                         <img :class="{ 'in': social.type === 'linkedin' }"
                                              src="../../static/images/in.svg"
-                                             alt="in" />
+                                             alt="in"/>
                                     </a>
                                 </div>
                             </div>
@@ -47,27 +63,18 @@
                     </div>
                 </div>
 
-                <slider v-else
-                        :items="$t('team.serokell[0].members')"
-                        :settings="settings.serokell"
-                        :options="options.serokell"
-                        :privates1="Object.assign(settings.serokell, options.serokell)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
+                <slider-serokell v-else
+                                 :items="$t('team.serokell[0].members')"
+                                 :settings="settings.serokell"
+                                 :options="options.serokell"
+                                 :is-autoplay="isSerokellAutoplay"
+                                 :privates1="Object.assign(settings.serokell, options.serokell)"
+                                 :multiplier-position="multiplierPosition"
+                                 :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
-            <div class="effective-energy">
-                <p>{{$t('team.effectiveEnergy[0].name')}}</p>
-
-                <slider :items="$t('team.effectiveEnergy[0].members')"
-                        :settings="settings.effectiveEnergy"
-                        :options="options.effectiveEnergy"
-                        :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
-            </div>
         </div>
-        <div class="advisors" id="advisors" v-if="false">
+        <div class="advisors" id="advisors" v-if="true">
             <h3 class="title">
                 {{$t('advisors.title')}}
             </h3>
@@ -77,9 +84,8 @@
 
             <div class="advisors-team">
                 <div class="images"
-                     v-if="isWideScreen">
+                     v-if="isWideScreen || $t('advisors.members').length === 1">
                     <div class="image"
-                         style=""
                          v-for="(member, i) in $t('advisors.members')" :key="i"
                          :style="{ 'background-color': (i % 2 === 0) ? '#e2e8e8' : '#abb8c6' }">
                         <img class="layer__bottom"
@@ -96,9 +102,8 @@
 
                                 <div class="icons" v-if="member.social !== undefined && member.length !== 0">
                                     <a :href="social.link" v-for="social in member.social" target="_blank">
-                                        <img :class="{ 'in': social.type === 'linkedin' }"
-                                             src="../../static/images/in.svg"
-                                             alt="in" />
+                                        <img :src="social.src"
+                                             :alt="social.type"/>
                                     </a>
                                 </div>
                             </div>
@@ -106,37 +111,58 @@
                     </div>
                 </div>
 
-                <slider v-else
-                        :items="$t('advisors.members')"
-                        :settings="settings.advisors"
-                        :options="options.advisors"
-                        :privates1="Object.assign(settings.advisors, options.advisors)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
-
+                <slider-advisors v-else
+                                 :items="$t('advisors.members')"
+                                 :settings="settings.advisors"
+                                 :options="options.advisors"
+                                 :is-autoplay="isAdvisorsAutoplay"
+                                 :privates1="Object.assign(settings.advisors, options.advisors)"
+                                 :multiplier-position="multiplierPosition"
+                                 :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import TinySlider from 'vue-tiny-slider';
     import Slider from './layouts/Slider';
+
+    import SliderEffectiveEnergy from './layouts/SliderEffectiveEnergy';
+    import SliderSerokell from './layouts/SliderSerokell';
+    import SliderAdvisors from './layouts/SliderAdvisors';
 
     export default {
         name: 'Screen5',
         components: {
-            TinySlider,
-            Slider
+            Slider,
+            SliderEffectiveEnergy,
+            SliderSerokell,
+            SliderAdvisors
         },
         props: {
             isTeam: {
-                type: [Boolean],
+                type: Boolean,
+                required: true
+            },
+            isEffectiveEnergyAutoplay: {
+                type: Boolean,
+                required: true
+            },
+            isSerokellAutoplay: {
+                type: Boolean,
+                required: true
+            },
+            isAdvisorsAutoplay: {
+                type: Boolean,
+                required: true
+            },
+            isRtl: {
+                type: Boolean,
                 required: true
             }
         },
         watch: {
-            'isTeam': function (inBlockTeam) {
+            isTeam: function (inBlockTeam) {
                 this.options.serokell.inBlockTeam = inBlockTeam;
                 this.options.effectiveEnergy.inBlockTeam = inBlockTeam;
             }
@@ -144,17 +170,17 @@
         data() {
             return {
                 settings: {
-                    serokell: {
-                        main: 's-js-carousel',
-                        wrap: 's-js-carousel__wrap',
-                        prev: 's-js-carousel__prev',
-                        next: 's-js-carousel__next'
-                    },
                     effectiveEnergy: {
                         main: 'ee-js-carousel',
                         wrap: 'ee-js-carousel__wrap',
                         prev: 'ee-js-carousel__prev',
                         next: 'ee-js-carousel__next'
+                    },
+                    serokell: {
+                        main: 's-js-carousel',
+                        wrap: 's-js-carousel__wrap',
+                        prev: 's-js-carousel__prev',
+                        next: 's-js-carousel__next'
                     },
                     advisors: {
                         main: 'a-js-carousel',
@@ -164,9 +190,9 @@
                     }
                 },
                 options: {
-                    serokell: {
+                    effectiveEnergy: {
+                        title: 'effective',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -174,9 +200,9 @@
                         multiplierPosition: 25,
                         numItemsInWrap: 4
                     },
-                    effectiveEnergy: {
+                    serokell: {
+                        title: 'serokell',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -185,8 +211,8 @@
                         numItemsInWrap: 4
                     },
                     advisors: {
+                        title: 'advisors',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -203,10 +229,10 @@
                 return window.innerWidth <= 425;
             },
             isTabletScreen: function () {
-                return window.innerWidth <= 785;
+                return window.innerWidth <= 768;
             },
             isLaptopScreen: function () {
-                return window.innerWidth > 785 && window.innerWidth <= 1178;
+                return window.innerWidth > 768 && window.innerWidth <= 1178;
             },
             isLargeScreen: function () {
                 return window.innerWidth > 1178 && window.innerWidth <= 1571;
@@ -215,9 +241,9 @@
                 return window.innerWidth > 1571;
             },
             numItemsInWrap: function () {
-                if (window.innerWidth <= 785)
+                if (window.innerWidth <= 768)
                     return 1;
-                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
+                else if (window.innerWidth > 768 && window.innerWidth <= 1178)
                     return 2;
                 else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
                     return 3;
@@ -226,9 +252,9 @@
             },
             multiplierPosition: function () {
                 //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
-                if (window.innerWidth <= 785)
+                if (window.innerWidth <= 768)
                     return 100;
-                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
+                else if (window.innerWidth > 768 && window.innerWidth <= 1178)
                     return 50;
                 else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
                     return 33.33333;
@@ -237,7 +263,14 @@
             },
 
         },
-        methods: {},
+        methods: {
+            changeAutoplaySerokell: function () {
+                this.options.serokell.autoplay = !this.options.serokell.autoplay;
+            },
+            changeAutoplayEffective: function () {
+                this.options.effectiveEnergy.autoplay = !this.options.effectiveEnergy.autoplay;
+            }
+        },
         created() {
             this.options.serokell.multiplierPosition = this.multiplierPosition;
             this.options.serokell.numItemsInWrap = this.numItemsInWrap;
@@ -256,9 +289,6 @@
 </script>
 
 <style lang="stylus" scoped>
-    .image
-        clip-path circle(50% at center)
-
     .b-carousel__prev
         margin-right 20px
 
@@ -273,14 +303,8 @@
             align-items center
             background-color #fff
 
-            @media (min-width 650px) and (max-width 785px)
-                padding 80px 20% 40px 20%
-
-            @media (min-width 490px) and (max-width 650px)
-                padding 80px 25% 40px 25%
-
-            @media (max-width 490px)
-                padding 80px 10% 40px 10%
+            @media (min-width 490px) and (max-width 768px)
+                padding 80px 15% 40px 15%
 
             @media (max-width 490px)
                 padding 80px 5% 40px 5%
@@ -356,7 +380,6 @@
                     -ms-transition all 0.4s ease-in-out 0s
                     transition all 0.4s ease-in-out 0s
 
-
                 .layer__text
                     color #34343e
                     text-align center
@@ -409,6 +432,8 @@
                 font-size 20px
 
         .serokell
+            padding 60px 0
+
             p
                 margin-bottom 50px
                 font-size 20px
@@ -419,7 +444,6 @@
             flex-direction column
             justify-content center
             align-items center
-            margin-bottom 60px
 
         .serokell
             .images
@@ -513,7 +537,7 @@
 
                     p
                         font-size 12px
-                        margin-bottom 25px
+                        margin-bottom 10px
                         text-transform uppercase
                         font-family MuseoSansCyrl500
 
@@ -540,7 +564,7 @@
                         img
                             margin auto 15px
 
-    @media (max-width: 425px)
+    @media (max-width 425px)
         .team
             .our-team
                 .title
@@ -553,4 +577,51 @@
             .separator
                 margin 12px 0 24px
 
+    .image
+        clip-path circle(50% at center) !important
+        -webkit-clip-path circle(50% at center) !important
+
+        @media (max-width 320px)
+            position relative
+            width 180px !important
+            height 180px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 320px) and (max-width 360px)
+            position relative
+            width 200px !important
+            height 200px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 360px) and (max-width 425px)
+            position relative
+            width 220px !important
+            height 220px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            position relative
+            width 250px !important
+            height 250px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        .layer__top
+            .layer__text
+                .icons
+                    a
+                        img
+                            width 17px
+                            height 17px
 </style>

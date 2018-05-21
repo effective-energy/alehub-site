@@ -1,50 +1,61 @@
 <template>
     <div class="blog-entries">
         <header-block :show="'blog'"/>
-        <div class="section blogEntries-section">
-            <h1 class="section-title is-center is-divider">{{ $t("blog.title") }}</h1>
+        <div class="section blog-entries-section">
+            <h1 class="section-title is-center is-divider">
+                {{ $t("blog.title") }}
+            </h1>
 
+            <div class="wrap-spinner"
+                 v-if="blogStatus === 'loading'">
+                <spinner/>
+            </div>
 
-
-            <div class="blog-content">
-                <div class="date-filter">
-                    <div class="arrow-next"></div>
-                    <ul class="filter-list">
-                        <li class="filter-item">2018</li>
-                        <ul v-if="false">
-                            <li>March</li>
-                            <li class="active">February</li>
-                            <li>January</li>
-                        </ul>
-                    </ul>
-                    <div class="arrow-prev"></div>
-                </div>
-
+            <div class="blog-content"
+                 v-if="blogStatus === 'success'">
                 <div class="posts">
-
-                    <div onclick="yaCounter48802643.reachGoal('Blog'); return true;" class="blog-post" v-for="item in content" :key="item._id">
-                        <img :src="item.preview_image" alt="" class="image-preview">
+                    <div class="blog-post"
+                         v-for="item in selectedPost"
+                         :key="item._id"
+                         onclick="yaCounter48802643.reachGoal('Blog'); return true;">
+                        <img class="image-preview"
+                             :src="'https://alehub-4550.nodechef.com/' + item.preview_image"
+                             :alt="item.title">
                         <div class="post-content">
-                            <router-link tag="a" :to="`/blog/${item._id}`" class="title">
+                            <router-link class="title"
+                                         tag="a"
+                                         :to="`/blog/${item._id}`">
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">
-                                <span class="date">{{ item.date/1000 | moment("MMMM DD") }}</span>
-                                <span v-if="false" class="author">Vadim Dudin</span>
+                                <span class="date">
+                                    {{ item.date / 1000 | moment("MMMM DD") }}
+                                </span>
+                                <span class="author">
+                                    {{ item.author_name }}
+                                </span>
                             </div>
                         </div>
                         <div class="divider"></div>
                     </div>
-
-
                 </div>
 
                 <div class="tags-filter">
                     <ul class="filter-list">
-                        <router-link tag="li" :to="`/blog`" class="filter-item active">
+                        <router-link tag="li"
+                                     :to="`/blog/categories/all`"
+                                     class="filter-item"
+                                     active-class
+                                     exact>
                             All
                         </router-link>
-                        <router-link v-for="item in filters" :key="item" tag="li" :to="`/blog/categories/${item}`" class="filter-item">
+                        <router-link class="filter-item"
+                                     tag="li"
+                                     :to="`/blog/categories/${item}`"
+                                     v-for="item in filtersBlogAll"
+                                     :key="item"
+                                     active-class
+                                     exact>
                             {{ item }}
                         </router-link>
                     </ul>
@@ -52,19 +63,23 @@
             </div>
 
         </div>
-        <footer-block/>
+        <footer-block :is-rtl="false"/>
     </div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
     import FooterBlock from './layouts/FooterBlock';
+    import Spinner from './layouts/Spinner';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'Blog',
         components: {
             HeaderBlock,
-            FooterBlock
+            FooterBlock,
+            Spinner
         },
         data() {
             return {
@@ -73,279 +88,232 @@
             }
         },
         watch: {
-			'$i18n.locale' () {
-				this.getNews();
-			}
-		},
-        methods: {
-            getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/${this.$i18n.locale === 'en'?'':this.$i18n.locale}`, {
-                    headers : {
-                        'Content-Type' : 'application/json; charset=UTF-8',
-                        'Accept' : 'application/json'
-                    }
-                }).then(response => {
-                    this.content = response.body.reverse();
-                    this.filtersConfigure();
-                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
-                        this.getEngNews();
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
-            filtersConfigure: function () {
-                this.filters = [];
-                for (let i = 0; i < this.content.length; i++) {
-                    if (this.content[i].categories) {
-                        for (let l = 0; l < this.content[i].categories.length; l++) {
-                            if (this.filters.indexOf(this.content[i].categories[l]) === -1) {
-                                this.filters.push(this.content[i].categories[l]);
-                            }
-                        }
-                    }
-                }
-            },
-            getEngNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/`, {
-                    headers: {
-                        'Content-Type': 'application/json; charset=UTF-8',
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    this.content = response.body.reverse();
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
-			goToNews: function (id) {
-				this.$router.push(`/blog/${id}`)
-			}
+            '$i18n.locale'() {
+                this.getNews();
+            }
         },
-        created () {
-            this.getNews();
+        computed: {
+            ...mapGetters(
+                [
+                    'blogAll',
+                    'filtersBlogAll',
+                    'blogStatus'
+                ]
+            ),
+            selectedPost: function () {
+                if (this.$route.params.id === 'all') {
+                    return this.blogAll;
+                } else {
+                    return this.blogAll.filter((news) => {
+                        return news.categories.find((category) => {
+                            return category.toLowerCase() === this.$route.params.id.toLowerCase();
+                        });
+                    });
+                }
+            }
         }
     }
 </script>
 
-<style>
-    body {
-        /*padding-top: 74px;*/
-        background-color: #ffffff !important;
-    }
+<style lang="stylus">
+    body
+        background-color #ffffff !important
 
-    .footer {
-        background-color: #e8ebef;
-	}
-	
-	.blog-entries {
-		min-height: 100vh;
-	}
+    .footer
+        background-color #e8ebef
 
-	.blog-post {
-		cursor: pointer;
-	}
+    .blog-entries
+        min-height 100vh
+        position relative
+
+    .blog-post
+        cursor pointer
+
 </style>
 
 <style lang="stylus" scoped>
+    .wrap-spinner
+        width 100%
+        display flex
+        justify-content center
+        align-items center
+        margin-top 100px
+
     body
-        /*padding-top 74px*/
         background-color #ffffff !important
 
-    .section
-        padding 142px 80px
+    .blog-entries-section
+        padding 142px 80px 205px 80px
 
-    .is-center
-        text-align center
+        .is-center
+            text-align center
 
-    .blog-content
-        max-width 1600px
-        margin 0 auto
-        display flex
-        flex-direction row
+        .is-divider
+            width 120px
+            border-bottom 2px solid #34343e
+            margin 0 auto
+            padding 0 0 16px 0
 
-        .date-filter
-            width 190px
-            height auto
-            display flex
-            justify-content center
-            align-items flex-start
-            padding-top 170px
-            min-width 90px
-
-            .filter-list
-                text-align center
-                list-style none
-                padding 0
-
-        .tags-filter
-            width 190px
-            height auto
-            display flex
-            justify-content center
-            align-items flex-start
-            padding-top 110px
-            min-width 90px
-
-            .filter-list
-                text-align center
-                list-style none
-                padding 0
-
-                .filter-item
-                    white-space nowrap
-                    cursor pointer
-                    &.active
-                        color #f3b300
-
-        .posts
-            padding-right 77.5px
-            padding-left 77.5px
-            min-width 70%
-
-            .divider
-                background-color #000000
-                height 0.8px
-                opacity 0.2
-
-    .is-divider
-        width 120px
-        border-bottom 2px solid #34343e
-        margin 0 auto
-        padding 0 0 16px 0
-
-    .blog-post
-        width 100%
-        margin 49px 0 49px 0
-        display flex
-
-        .image-preview
-            -o-object-fit cover
-            object-fit cover
-            width 200px
-            height 120px
-
-        .post-content
-            display flex
-            flex-direction column
-            justify-content center
-            padding 0 24px
-
-            .title
-                font-family MuseoSansCyrl500
-                font-size 22px
-                font-weight 500
-                line-height 1.45
-                color #34343e
-                text-decoration underline
-
-                &:hover
-                    color #f3b300
-
-            .post-info
-                margin 12px 0 0 0
-
-                span
-                    opacity 0.4
-                    font-family MuseoSansCyrl500
-                    font-size 16px
-                    font-weight 500
-                    line-height 1.25
-                    text-align left
-                    color #34343e
-
-    @media (max-width: 1200px)
-        .blog-post
-            .post-content
-                .title
-                    font-size 16px
-
-    @media (max-width: 1024px)
-        .blog-post
-            .post-content
-                .post-info
-                    span
-                        font-size 14px
-
-    @media (max-width: 991px)
         .blog-content
-            .posts
-                padding-right 32px
-                padding-left 32px
-
-        .blog-post
-            align-items center
-
-    @media (max-width: 900px)
-        .blog-post
-            flex-direction column
-
-            .image-preview
-                margin-bottom 12px
-
-            .post-content
-                .title
-                    text-align center
-                    margin-bottom 12px
-
-                .post-info
-                    margin 0 auto
-
-                    span
-                        font-size 12px
-
-    @media (max-width: 660px)
-        .blog-content
-            .date-filter, .tags-filter
-                display none
-
-            .posts
-                padding-right 0
-                padding-left 0
-
-        .section
-            padding-right 32px
-            padding-left 32px
-
-            .section-title
-                font-size 2rem
-                padding-bottom 12px
-
-        .blog-post
+            max-width 1600px
+            margin 0 auto
+            display flex
             flex-direction row
 
-    @media (max-width: 575px)
-        .blog-post
-            .post-content
-                .title
-                    font-size 14px
-                    text-align left
-                    margin-bottom 0
+            .date-filter
+                width 190px
+                height auto
+                display flex
+                justify-content center
+                align-items flex-start
+                padding-top 170px
+                min-width 90px
 
-                .post-info
-                    margin 12px 0 0 0
-
-    @media (max-width: 500px)
-        .blog-post
-            flex-direction column
-
-            .post-content
-                .title
+                .filter-list
                     text-align center
-                    margin-bottom 12px
+                    list-style none
+                    padding 0
 
-                .post-info
-                    margin 0 auto
+            .tags-filter
+                width 190px
+                height auto
+                display flex
+                justify-content center
+                align-items flex-start
+                padding-top 110px
+                min-width 90px
 
-    @media (max-width: 320px)
-        .section
-            padding-top 100px
-            padding-bottom 40px
+                .filter-list
+                    text-align center
+                    list-style none
+                    padding 0
 
-        .blog-post
-            margin 24px 0
+                    .filter-item
+                        white-space nowrap
+                        cursor pointer
 
-            .post-content
-                padding 0
+                        &.router-link-exact-active
+                            color #f3b300
 
+            .posts
+                padding-right 77.5px
+                padding-left 77.5px
+                width 80%
+
+                .divider
+                    background-color #000000
+                    height 0.8px
+                    opacity 0.2
+
+
+                .blog-post
+                    width 100%
+                    margin 49px 0 49px 0
+                    display flex
+
+                    .image-preview
+                        -o-object-fit cover
+                        object-fit cover
+                        width 200px
+                        height 120px
+
+                    .post-content
+                        display flex
+                        flex-direction column
+                        justify-content center
+                        padding 0 24px
+
+                        .title
+                            font-family MuseoSansCyrl500
+                            font-size 22px
+                            font-weight 500
+                            line-height 1.45
+                            color #34343e
+                            text-decoration underline
+
+                            &:hover
+                                color #f3b300
+
+                        .post-info
+                            margin 12px 0 0 0
+
+                            span
+                                opacity 0.4
+                                font-family MuseoSansCyrl500
+                                font-size 16px
+                                font-weight 500
+                                line-height 1.25
+                                text-align left
+                                color #34343e
+
+        @media (min-width 1024px) and (max-width 1440px)
+            .blog-post
+                .post-content
+                    .title
+                        font-size 16px
+
+        @media (min-width 768px) and (max-width 1024px)
+            padding 130px 5% 205px 5%
+
+            .blog-content
+                .posts
+                    padding 0 30px
+
+                    .blog-post
+                        .post-content
+                            .post-info
+                                span
+                                    font-size 14px
+
+        @media (max-width 768px)
+            padding 130px 10% 400px 10%
+
+            .blog-content
+                display flex
+                flex-direction column-reverse
+                justify-content center
+
+                .posts
+                    padding 0
+                    width 100%
+
+                    .blog-post
+                        flex-direction column
+
+                        img
+                            width 100% !important
+                            height auto !important
+
+                        .post-content
+                            padding 24px
+
+                            .title
+                                text-align center
+                                margin-bottom 12px
+
+                            .post-info
+                                margin 0 auto
+
+                .tags-filter
+                    padding 50px 0 0 0
+                    width 100%
+
+                    .filter-list
+                        display flex
+                        flex-direction row
+                        justify-content flex-start
+                        flex-wrap wrap
+
+                        li
+                            padding 5px 10px
+                            margin-right 10px
+                            background-color #343a49
+                            color #f7f7f7
+                            border-radius 5px
+                            margin-bottom 10px
+
+
+        @media (max-width 425px)
+            padding 130px 10% 450px 10%
 
 </style>

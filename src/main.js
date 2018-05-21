@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import { store } from './store'
 import router from './router';
 import VueScrollTo from 'vue-scrollto';
 import VModal from 'vue-js-modal';
@@ -96,14 +97,6 @@ switch (localStorage.getItem('systemLang')) {
     }
 }
 
-// if (localStorage.getItem('systemLang') !== 'en' && localStorage.getItem('systemLang') !== 'ru') {
-//     localStorage.setItem('systemLang', 'en');
-//     systemLang = 'en';
-// } else if (localStorage.getItem('systemLang') === 'en') {
-//     systemLang = 'en';
-// } else if (localStorage.getItem('systemLang') === 'ru') {
-//     systemLang = 'ru';
-// }
 
 import messages from './i18n.js';
 
@@ -121,8 +114,38 @@ Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
+
+setTimeout(() => {
+    store.dispatch('cryptoPriceRequest')
+        .then(() => {
+            console.log('success crypto price');
+        })
+        .catch(() => {
+            console.log('error crypto price');
+        });
+
+    store.dispatch('downloadAppRequest')
+        .then(() => {
+            console.log('success download app');
+
+        })
+        .catch(() => {
+            console.log('success download app');
+        });
+
+    store.dispatch('blogRequest')
+        .then(() => {
+            console.log('success blog');
+        })
+        .catch(() => {
+            console.log('success blog');
+        });
+}, 2000);
+
+
 new Vue({
     el: '#app',
+    store,
     i18n,
     router,
     components: {App},

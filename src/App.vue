@@ -1,14 +1,16 @@
 <template>
     <div id="app">
-        <!--<loading-screen />-->
-        <loading-screen v-if="isLoading" />
-        <router-view v-if="true" />
-         <!--<router-view />-->
+        <transition name="fade">
+            <loading-screen v-if="dataProcessing"/>
+        </transition>
+        <router-view/>
     </div>
 </template>
 
 <script>
     import LoadingScreen from './components/LoadingScreen';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'app',
@@ -16,32 +18,34 @@
             LoadingScreen
         },
         data() {
-            return {
-                isLoading: true,
-                isShow: false,
-                loadingTimer: 0
+            return {}
+        },
+        computed: {
+            ...mapGetters(
+                [
+                    'cryptoPriceStatus',
+                    'downloadAppStatus',
+                    'blogStatus'
+                ]
+            ),
+            dataProcessing: function () {
+                return !(this.cryptoPriceStatus === 'success' && this.downloadAppStatus === 'success' && this.blogStatus === 'success');
             }
         },
-        mounted() {
-            this.$on('isShow', (val) => {
-                console.log('content');
-                this.isShow = val;
-            });
-
-            this.$on('endOfLoadingWideScreen', (val) => {
-                console.log('preloader');
-                this.isLoading = !val;
-                window.preloaderState = true;
-            });
-
-            this.$on('endOfLoadingNarrowScreen', (val) => {
-                this.isLoading = !val;
-            });
-        }
     }
 </script>
 
 <style lang="stylus">
+    .fade-enter-active,
+    .fade-leave-active
+        -webkit-transition all 1s
+        -o-transition all 1s
+        transition all 1s
+
+    .fade-enter,
+    .fade-leave-active
+        opacity 0
+
     body
         background-color #ededf1
 </style>

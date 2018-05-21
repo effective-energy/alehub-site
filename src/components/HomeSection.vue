@@ -26,6 +26,29 @@
             </button>
         </div>
 
+        <div class="scroll-to-top"
+             :class="{ 'scroll-to-top__rtl': isRtl }"
+             v-if="checkSmallTabletWidth">
+            <a @click="clickToTop($event)"
+               v-if="!afterClickToTop"></a>
+            <a @click="returnPosition" v-else></a>
+        </div>
+        <div class="wrap__pointer"
+             :class="{ 'wrap-pointer__rtl': isRtl }"
+             id="wrap-pointer"
+             v-if="checkSmallTabletWidth">
+            <img class="pointer-to-top"
+                 :class="{ 'pointer-to-bottom': afterClickToTop }"
+                 src="../../static/images/arrow-top-dark.svg"
+                 alt="to top"
+                 v-if="!isPointerInDark">
+            <img class="pointer-to-top"
+                 :class="{ 'pointer-to-bottom': afterClickToTop }"
+                 src="../../static/images/arrow-top-yellow.svg"
+                 alt="to top"
+                 v-else>
+        </div>
+
         <div id="svg-anim"
              class="anim"
              v-if="checkWindowWidth && !isVideo"
@@ -147,7 +170,9 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview.mp4" type="video/mp4">
+                <source src="../../static/video/preview.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                <source src="../../static/video/preview.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
+                <!--<source src="../../static/video/preview.ogg" type='video/ogg; codecs="theora, vorbis"'/>-->
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
@@ -156,7 +181,7 @@
                     <div class="row">
                         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
                             <h1 class="screen1 title"
-                            :class="{ 'text-align-right-rtl': isRtl }">
+                                :class="{ 'text-align-right-rtl': isRtl }">
                                 {{ $t("greeting.title") }}
                             </h1>
                         </div>
@@ -164,7 +189,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                            :class="{ 'direction-ltr': isRtl }">
+                                 :class="{ 'direction-ltr': isRtl }">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -393,20 +418,17 @@
              :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer" style="position: relative; display: flex; justify-content: center; align-items: center;">
+                    <div class="desktop-outer"
+                         style="position: relative; display: flex; justify-content: center; align-items: center;">
                         <div style="position: absolute; width: 80%; top: 7%;">
-                            <slider-screen :items="itemsToSliderScreen" :options="optionsToSliderScreen"/>
+                            <slider-screen :items="itemsToSliderScreen"
+                                           :options="optionsToSliderScreen"
+                                           :is-rtl="isRtl"/>
                         </div>
                         <img src="../../static/images/desctop-transparent.png"
                              class="desktop">
-                        <!--<slider v-if="reBuild" ref="slider"-->
-                        <!--:pages="pages"-->
-                        <!--:sliderinit="sliderInit">-->
-                        <!--</slider>-->
                     </div>
 
-                    <!--<img src="../../static/images/desctop.png"-->
-                    <!--class="desktop-for-mobile">-->
                     <a class="btn btn-black to-download"
                        @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
                        v-scroll-to="'#download-application'"
@@ -419,7 +441,8 @@
                         </button>
                     </a>
                 </div>
-                <div class="col-lg-6 desc" style="align-self: flex-start;">
+                <div class="col-lg-6 desc"
+                     :class="{ 'text-align-right-rtl': isRtl }">
                     <h1 class="title">
                         {{ $t("about.title") }}
                     </h1>
@@ -451,7 +474,7 @@
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
            target="_blank"
-           v-if="!checkMobileWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
+           v-if="!checkTabletWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
            :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
 
             <div class="telegram-alert-mobile__wrap">
@@ -477,7 +500,7 @@
 
         <div id="telegram-alert"
              class="telegram-alert"
-             v-if="checkMobileWidth"
+             v-if="checkTabletWidth"
              :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
@@ -487,6 +510,10 @@
                      alt="telegram"
                      v-if="isDarkSection">
             </a>
+            <div class="alert-message"
+                 :class="{ 'alert-message__dark': isDarkSection, 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
+                <span>3</span>
+            </div>
         </div>
 
     </section>
@@ -496,14 +523,13 @@
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
 
-    //заменить на свой слайдер
-    import slider from 'vue-concise-slider';
+    import {mapGetters} from 'vuex';
+
     import anime from 'animejs';
 
     export default {
         name: 'Screen1',
         components: {
-            slider,
             MenuModal,
             SliderScreen
         },
@@ -523,6 +549,10 @@
             isRtl: {
                 type: Boolean,
                 required: true
+            },
+            isPointerInDark: {
+                type: Boolean,
+                required: true
             }
         },
         watch: {
@@ -535,10 +565,13 @@
                         document.querySelector('video').playbackRate = 0.75;
                     }, 40);
                 }
-            }
+            },
         },
         data() {
             return {
+                topScrollY: false,
+                position: 0,
+                afterClickToTop: false,
                 closedTelegramAlertMobile: false,
                 isVideo: false,
                 isDark: false,
@@ -550,7 +583,7 @@
                 ],
                 optionsToSliderScreen: {
                     touch: true,
-                    autoplay: true,
+                    autoplay: false,
                     inBlockTeam: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
@@ -665,6 +698,10 @@
             }
         },
         computed: {
+            ...mapGetters([
+                'cryptocurrencies',
+                'cryptoPriceStatus'
+            ]),
             isCollected: function () {
                 return this.collected;
             },
@@ -675,10 +712,37 @@
                 return this.hardCap;
             },
             isCurrentCurrency: function () {
+                if (this.cryptoPriceStatus === 'success') {
+
+                    this.currencies.btc.hardCap = this.cryptocurrencies.btc.hardCap;
+                    this.currencies.eth.hardCap = this.cryptocurrencies.eth.hardCap;
+                    this.currencies.bch.hardCap = this.cryptocurrencies.bch.hardCap;
+                    this.currencies.ltc.hardCap = this.cryptocurrencies.ltc.hardCap;
+                    this.currencies.dash.hardCap = this.cryptocurrencies.dash.hardCap;
+
+                    this.currencies.btc.softCap = this.cryptocurrencies.btc.softCap;
+                    this.currencies.eth.softCap = this.cryptocurrencies.eth.softCap;
+                    this.currencies.bch.softCap = this.cryptocurrencies.bch.softCap;
+                    this.currencies.ltc.softCap = this.cryptocurrencies.ltc.softCap;
+                    this.currencies.dash.softCap = this.cryptocurrencies.dash.softCap;
+
+                    this.currencies.btc.collected = this.cryptocurrencies.btc.collected;
+                    this.currencies.eth.collected = this.cryptocurrencies.eth.collected;
+                    this.currencies.bch.collected = this.cryptocurrencies.bch.collected;
+                    this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
+                    this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
+                }
+                
                 return this.currentCurrency;
             },
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
+            },
+            checkTabletWidth: function () {
+                return window.innerWidth >= 768;
+            },
+            checkSmallTabletWidth: function () {
+                return window.innerWidth > 690;
             },
             checkMobileWidth: function () {
                 return window.innerWidth > 425;
@@ -702,9 +766,17 @@
             }
         },
         methods: {
+            clickToTop: function (e) {
+                this.afterClickToTop = true;
+                document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
+                this.position = window.scrollY;
+            },
+            returnPosition: function () {
+                this.afterClickToTop = false;
+                window.scrollTo({top: this.position, behavior: 'smooth'});
+            },
             yaMetricaCollectionItem: function () {
                 yaCounter48802643.reachGoal('BuyCrypto');
-                console.log('cript');
                 return true;
             },
             yaMetricaCollectionLastItem: function () {
@@ -714,7 +786,6 @@
             },
             doCloseTelegramAlertMobile: function () {
                 this.closedTelegramAlertMobile = true;
-                // localStorage.setItem('closedTelegramAlertMobile', 'true');
             },
             changeCurrentCurrency: function (name) {
                 this.collected = this.currencies[name].collected;
@@ -883,34 +954,6 @@
                         this.startAnime();
                 }, 100);
             },
-            getCurrentExchangeRates: function () {
-                this.$http.get('https://alehub.eu-4.evennode.com/ale-system/crypto-price', {
-                    headers: {
-                        'Content-Type': 'application/json; charset=UTF-8',
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    this.currencies.btc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.hardCap = Math.round(this.hardCap / response.body[1].price);
-                    this.currencies.bch.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.hardCap = Math.round(this.hardCap / response.body[1].price / (response.body[4].price / response.body[1].price));
-
-                    this.currencies.btc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.softCap = Math.round(this.softCap / response.body[1].price);
-                    this.currencies.bch.softCap = Math.round(this.softCap / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.softCap = Math.round(this.softCap / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.softCap = Math.round(this.softCap / response.body[1].price / (response.body[4].price / response.body[1].price));
-
-                    this.currencies.btc.collected = Math.round(this.collected / response.body[1].price / (response.body[0].price / response.body[1].price));
-                    this.currencies.eth.collected = Math.round(this.collected / response.body[1].price);
-                    this.currencies.bch.collected = Math.round(this.collected / response.body[1].price / (response.body[2].price / response.body[1].price));
-                    this.currencies.ltc.collected = Math.round(this.collected / response.body[1].price / (response.body[3].price / response.body[1].price));
-                    this.currencies.dash.collected = Math.round(this.collected / response.body[1].price / (response.body[4].price / response.body[1].price));
-                }, response => {
-                    console.log('Error getting news', response);
-                });
-            },
             getCoords: function (elem) {
                 if (!elem)
                     return false;
@@ -923,6 +966,19 @@
             },
         },
         mounted() {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY === 0) {
+                    this.topScrollY = true;
+                } else {
+                    if (this.afterClickToTop && this.topScrollY) {
+                        if (window.scrollY > 0) {
+                            this.afterClickToTop = false;
+                        }
+                    }
+                    this.topScrollY = false;
+                }
+            });
+
             let a = document.querySelector('.collection').getElementsByClassName('item');
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
 
@@ -930,8 +986,6 @@
             if (this.isVideo) {
                 document.querySelector('video').playbackRate = 0.75;
             }
-
-            this.getCurrentExchangeRates();
 
             setTimeout(() => {
                 if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
@@ -975,7 +1029,78 @@
 
 <style lang="stylus" scoped>
 
+    .wrap__pointer
+        position fixed
+        width 20px
+        right 10px
+        top 100px
+        z-index 110
+
+        @media (min-width 690px) and (max-width 1024px)
+            right 7.5px
+            width 15px
+
+        @media (max-width 690px)
+            display none
+
+        @media (max-width 768px)
+            top 150px
+
+        .pointer-to-top
+            width 100%
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+
+        .pointer-to-bottom
+            transform rotateX(180deg)
+
+    .wrap-pointer__rtl
+        left 10px
+        right auto
+
+        @media (min-width 690px) and (max-width 1024px)
+            left 7.5px
+            right auto
+            width 15px
+
+    .scroll-to-top
+        z-index 100
+        cursor pointer
+        width 40px
+        height 100%
+        position fixed
+        right 0
+        display flex
+        align-items center
+        justify-content center
+
+        @media (min-width 690px) and (max-width 1024px)
+            width 30px
+
+        @media (max-width 690px)
+            display none
+
+        a
+            -webkit-transition all .3s ease
+            -o-transition all .3s ease
+            transition all .3s ease
+            opacity 0
+            background-color #e3e3e6
+            height 100%
+            width 40px
+
+        &:hover
+            a
+                opacity .5
+
+    .scroll-to-top__rtl
+        left 0
+        right auto
+
     .desc
+        align-self flex-start
+
         .buttons
             .btn
                 &:focus
@@ -1003,12 +1128,9 @@
             padding-left 0
             padding-right 10px
 
-
         @media (min-width 848px)
             display flex
             align-items center
-
-
 
     .telegram-alert-mobile
         z-index 1100
@@ -1064,8 +1186,77 @@
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
 
+        .alert-message
+            background-color #ffd24f
+            border-radius 50%
+            width 25px
+            height 25px
+            display flex
+            justify-content center
+            align-items center
+            position fixed
+            bottom 125px
+            right 95px
+            -webkit-transition all .3s ease-in-out
+            -o-transition all .3s ease-in-out
+            transition all .3s ease-in-out
+
+            @media (min-width 768px) and (max-width 1024px)
+                right 60px
+                bottom 90px
+                width 15px
+                height 15px
+
+                span
+                    font-size 12px
+
+            @media (min-width 1024px) and (max-width 1440px)
+                right 75px
+                bottom 95px
+                width 20px
+                height 20px
+
+                span
+                    font-size 12px
+
+            @media (min-width 1440px) and (max-width 2560px)
+                bottom 125px
+                right 95px
+                width 25px
+                height 25px
+
+        .alert-message__dark
+            background-color #747c8e
+            color #fff
+
+        .telegram-message__rtl
+            left 95px
+            right auto
+
+            @media (min-width 768px) and (max-width 1024px)
+                left 60px
+                right auto
+
+            @media (min-width 1024px) and (max-width 1440px)
+                left 75px
+                right auto
+
+            @media (min-width 1440px) and (max-width 2560px)
+                left 95px
+                right auto
+
+        .telegram-message__stop
+            bottom 235px
+
+            @media (min-width 768px) and (max-width 1024px)
+                bottom 265px
+
+            @media (min-width 425px) and (max-width 768px)
+                bottom 433px
+
+
         @media (min-width 768px) and (max-width 1024px)
-            right 30px
+            right 60px
             bottom 50px
             width 60px
             height 60px
@@ -1095,7 +1286,6 @@
     .telegram-alert__yellow
         background-color #ffd24f
 
-
     .telegram-alert__stop
         bottom 185px
 
@@ -1110,7 +1300,7 @@
         right auto
 
         @media (min-width 768px) and (max-width 1024px)
-            left 30px
+            left 60px
             right auto
 
         @media (min-width 1024px) and (max-width 1440px)
@@ -1120,7 +1310,6 @@
         @media (min-width 1440px) and (max-width 2560px)
             left 100px
             right auto
-
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
@@ -1528,7 +1717,6 @@
             &:focus
                 outline none
 
-
     .button-choose__rtl
         right 20px
 
@@ -1605,8 +1793,6 @@
 
     .social-line
         padding 15px 0
-        /*@media (min-width 1024px) and (max-width 1440px)*/
-        /*margin-top 60px*/
 
         .social-item
             -webkit-transition background .3s ease-in-out
@@ -1640,7 +1826,7 @@
                 padding 60px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
-                padding 50px 75px 0 75px
+                padding 50px 75px 25px 75px
 
             @media (min-width 425px) and (max-width 768px)
                 padding 50px 50px 25px 50px
@@ -1690,7 +1876,6 @@
                         .desktop
                             width 100% !important
                             position relative
-
 
                     @media (max-width 991px)
                         .desktop-for-mobile
@@ -1759,7 +1944,6 @@
 
         .play-video
             display inline-block
-            /*position relative*/
 
             .play-button
                 cursor pointer
@@ -1788,12 +1972,6 @@
                     img
                         width 35px
                         height 35px
-
-            /*@media (max-width 1500px)*/
-            /*left 20%*/
-
-            /*@media (max-width 1400px)*/
-            /*left 15%*/
 
             @media (max-width 1274px)
                 position unset
@@ -1844,26 +2022,48 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease
+                    transition all .3s ease;
+
                     @-webkit-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @-moz-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @-o-keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
-                    }
-                    @keyframes wheel-to-bottom {
-                        0%   { transform: translateY(0); }
-                        25% { transform: translateY(5px); }
-                        100% { transform: translateY(0); }
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-moz-keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-o-keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
                     }
 
                 @media (max-width 1124px)
@@ -1875,9 +2075,6 @@
             font-size 20px
             color #34343e
             padding 15px 0
-
-            /*@media (min-width 1024px) and (max-width 1440px)*/
-            /*margin-top 30px*/
 
             @media (max-width 425px)
                 font-size 16px

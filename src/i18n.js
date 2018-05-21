@@ -23,6 +23,10 @@ const messages = {
                     name: '球队'
                 },
                 {
+                    path: '#advisors',
+                    name: '顾问'
+                },
+                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -374,29 +378,21 @@ const messages = {
             title: '顾问',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -454,7 +450,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: '部署'
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: '来自项目管理专家的专业意见. 定义需求',
@@ -464,7 +461,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: '部署'
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: '数学建模',
@@ -474,13 +472,12 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: '部署'
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: '职权范围的形成',
-                    desk: '与区块链专家和开发者磋商\n' +
-                    '\n' +
-                    '形成产品形象和职权范围',
+                    desk: '与区块链专家和开发者磋商 形成产品形象和职权范围',
                     date: '六月 - 七月 2017',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
@@ -488,7 +485,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: '部署'
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: '与SerokeII OU达成或作伙伴关系，并开始开发.',
@@ -505,7 +503,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: '实施'
+                    state: '实施',
+                    status: false
                 },
                 {
                     title: '预售',
@@ -518,7 +517,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: '部署'
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: '发行最小可行性产品（MVP）',
@@ -527,74 +527,85 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: '舞台没有开始'
+                    progress: 100,
+                    state: '部署',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 20,
-                    state: '舞台已经开始'
+                    state: '舞台已经开始',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '黄皮书开发',
                     desk: '黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '去中心化的MVP解决方案',
                     desc: '构建实施以下组件的系统版本：对等网络；使用内置代币和其他代币的自定义交易；',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '私人区块链',
                     desk: '开发私人区块链并集成到现有的基础设施中。确保Oracle 的不间断运作。 在整个系统的完整版本中进行注册—但还没存在争端机制（仲裁）。',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '争端解决机制的实施',
                     desk: '在去中心化的应用框架内完善争议解决机制。',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '变更投票制度的实施',
                     desk: '随着时间的变化进行系统修改。',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '系统发布',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '公开系统的源代码以及相关文件',
                     desk: '将系统的源代码和相关文件发布到公开的存储库中',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 },
                 {
                     title: '启动系统',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: '舞台没有开始'
+                    state: '舞台没有开始',
+                    status: false
                 }
             ]
         },
@@ -626,23 +637,27 @@ const messages = {
             menuList: [
                 {
                     path: '#home',
-                    name: 'Home'
+                    name: 'ホームページ'
                 },
                 {
                     path: '#description',
-                    name: 'Description'
+                    name: '説明'
                 },
                 {
                     path: '#advantages',
-                    name: 'Advantages'
+                    name: '優位'
                 },
                 {
                     path: '#features',
-                    name: 'Features'
+                    name: 'サービス'
                 },
                 {
                     path: '#team',
-                    name: 'Team'
+                    name: 'チーム'
+                },
+                {
+                    path: '#advisors',
+                    name: '顧問'
                 },
                 {
                     path: '#ico',
@@ -650,11 +665,11 @@ const messages = {
                 },
                 {
                     path: '#roadmap',
-                    name: 'Roadmap'
+                    name: 'プロジェクトマップ'
                 },
                 {
                     path: '#download-application',
-                    name: 'Download'
+                    name: 'アップロード'
                 },
                 {
                     path: '#blog',
@@ -993,32 +1008,24 @@ const messages = {
             ]
         },
         advisors: {
-            title: 'Advisors',
+            title: '顧問',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -1081,7 +1088,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Expertise from specialists in project management. Definition of requirements',
@@ -1091,7 +1099,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Mathematical modeling',
@@ -1101,7 +1110,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Formation of the Terms of Reference',
@@ -1113,7 +1123,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
@@ -1130,7 +1141,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'implementing'
+                    state: 'implementing',
+                    status: false
                 },
                 {
                     title: 'PreSale',
@@ -1143,7 +1155,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Publishing MVP',
@@ -1152,69 +1165,80 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'the stage did not begin'
+                    progress: 100,
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'stage in the process'
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Yellow Paper development',
                     desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Decentralization of MVP solutions',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Private blockchains',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Implementation of the dispute system',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Implementation of the voting system for changes',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Closed system testing',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Publication of the source code of the system and documentation',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Booting the system ',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 }
             ]
         },
@@ -1237,7 +1261,7 @@ const messages = {
             },
         },
         download: 'Download',
-        serverErr: 'A server error occurred while retrieving the application list.'
+        serverErr: 'アプリケーションリストをアップロード中にサーバーエラー起こりました'
     },
 
 
@@ -1263,6 +1287,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Команда'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Советники'
                 },
                 {
                     path: '#ico',
@@ -1616,26 +1644,23 @@ const messages = {
             title: 'Советники',
             members: [
                 {
-                    name: 'Михаил Громыко',
-                    position: 'Генеральный директор',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                }, {
-                    name: 'Владимир Грудинин',
-                    position: 'Блокчейн эксперт',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                }, {
-                    name: 'Алексей Осипенко',
-                    position: 'Главный операционный директор',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                }, {
-                    name: 'Елена Цимбалюк',
-                    position: 'Начальник отдела маркетинговых операций',
-                    src: '../static/images/avatars/elena@3x.png'
-                }, {
-                    name: 'Егор Локтев',
-                    position: 'Директор по маркетингу',
-                    src: '../static/images/avatars/loktev@3x.png'
-                }]
+                    name: 'Purushotham Maralappa',
+                    position: 'Советник',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                }
+            ]
         },
         economy: {
             title: 'Экономика ICO',
@@ -1695,7 +1720,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'готово'
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Экспертиза от специалистов по управлению проектами. Определение требований.',
@@ -1705,7 +1731,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'готово'
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Построение математической модели',
@@ -1715,7 +1742,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'готово'
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Формирование Технического задания',
@@ -1727,7 +1755,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'готово'
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Партнерство с Serokell OU. Начало разработки.',
@@ -1744,7 +1773,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'разработка'
+                    state: 'разработка',
+                    status: false
                 },
                 {
                     title: 'PreSale',
@@ -1757,7 +1787,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'готово'
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Публикация MVP',
@@ -1766,75 +1797,86 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'этап ещё не начался'
+                    progress: 100,
+                    state: 'готово',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '09.05.2018 – 25.05.2018',
                     progress: 20,
-                    state: 'этап идёт'
+                    state: 'этап идёт',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '25.05.2018 – 24.07.2018',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Yellow Paper – техническое описание работы системы. В документе рассматриваются архитектурные особенности построения системы, протоколы взаимодействия между узлами сети и иные технические детали.',
                     date: '02.07.2018 - 01.09.2018',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Децентрализация MVP решения',
                     desk: 'Построение версии системы, в которой реализованы следующие компоненты: Пиринговая сеть; Пользовательские транзакции с использованием встроенного токена и раскрашенных монет; Регистрация контрактов на разработку программного обеспечения; Обеспечение возможности изменения контрактов.',
                     date: '01.12.2018 - 01.02.2019',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Разработка приватных блокчейнов и их встраивание в существующую инфраструктуру. Обеспечение бесперебойной работы оракулов. Оформление в законченном варианте всей системы – за исключением механизма диспута (арбитража).',
                     date: '01.03.2019 – 01.05.2019',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Реализация системы диспута',
                     desk: 'Доработка системы диспутов для решения конфликтов в рамках децентрализованного приложения. ',
                     date: '01.05.2019 – 01.08.2019',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Реализация системы голосования за изменения',
                     desk: 'Доработка системы для обеспечения ее изменяемости с течением времени.',
                     date: '01.08.2019 - 01.10.2019',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Закрытое тестирование работы системы',
                     desk: 'Интеграционное тестирование системы в закрытом режиме.',
                     date: '01.10.2019 - 01.01.2020',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Публикация исходного кода системы и документации',
                     desk: 'Публикация исходного кода системы и документации в открытых репозиториях',
                     date: '01.01.2020 – 01.02.2020',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 },
                 {
                     title: 'Запуск эксплуатации системы',
                     date: '01.02.2020 – 01.03.2020',
                     progress: 0,
-                    state: 'этап ещё не начался'
+                    state: 'этап ещё не начался',
+                    status: false
                 }
             ]
         },
@@ -1881,6 +1923,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Team'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Advisors'
                 },
                 {
                     path: '#ico',
@@ -1955,29 +2001,29 @@ const messages = {
                 title: 'Solved problems',
                 list: [
                     {
-                    title: 'The legal nature of payment.',
-                    description: 'For mutual settlements ALE uses “containers” containing real currency.'
-                },
+                        title: 'The legal nature of payment.',
+                        description: 'For mutual settlements ALE uses “containers” containing real currency.'
+                    },
                     {
-                    title: 'Legal value of the electronic contract.',
-                    description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
-                },
+                        title: 'Legal value of the electronic contract.',
+                        description: 'All contracts concluded within the ALE platform are legally significant due to compliance with national requirements for documents.'
+                    },
                     {
-                    title: 'Highly volatile means of payment.',
-                    description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
-                },
+                        title: 'Highly volatile means of payment.',
+                        description: 'Cryptocurrencies are volatile, making them an unviable payment method for real business. The system of cash holding “containers” solves this problem.'
+                    },
                     {
-                    title: 'Contradiction to national and industrial standards. ',
-                    description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
-                },
+                        title: 'Contradiction to national and industrial standards. ',
+                        description: 'ALE allows users to choose the rules of interaction within the ALE platform. Therefore, one should act in accordance with the requirements of legislation and business.'
+                    },
                     {
-                    title: 'The inevitability of fulfilling obligations.',
-                    description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
-                },
+                        title: 'The inevitability of fulfilling obligations.',
+                        description: 'Financial obligations are regulated by smart contracts, through which a trusted environment is formed.'
+                    },
                     {
-                    title: 'Integrity and unchangeability of documentation.',
-                    description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
-                }
+                        title: 'Integrity and unchangeability of documentation.',
+                        description: 'Confirmed by storage in the blockchain, so documents within the ALE ecosystem are legally guaranteed.'
+                    }
                 ]
             }
         },
@@ -1985,21 +2031,21 @@ const messages = {
             title: 'The main distinguishing features of ALE',
             list: [
                 {
-                title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
-                description: ' '
-            },
+                    title: 'Prompt consensus establishment in the dynamics of the development of the user desires and changing economic conditions.',
+                    description: ' '
+                },
                 {
-                title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
-                description: ' '
-            },
+                    title: 'Simple and intuitive products in matters of handling data, functions and parameters at the level of the interactive interface.',
+                    description: ' '
+                },
                 {
-                title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
-                description: ' '
-            },
+                    title: 'Eliminate the substitution of existing verification organizations in the world for the full legitimacy of the relationship on the platform.',
+                    description: ' '
+                },
                 {
-                title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
-                description: ' '
-            }
+                    title: 'Ensuring commitment and financial reinforcement of multi-party arrangements, by avoiding duality, encouraging irresponsibility and freezing disproportionate amounts of liquidity as collateral.',
+                    description: ' '
+                }
             ]
         },
         table: {
@@ -2226,29 +2272,21 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -2311,7 +2349,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Expertise from specialists in project management. Definition of requirements',
@@ -2321,7 +2360,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Mathematical modeling',
@@ -2331,7 +2371,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Formation of the Terms of Reference',
@@ -2343,7 +2384,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
@@ -2360,7 +2402,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'implementing'
+                    state: 'implementing',
+                    status: false
                 },
                 {
                     title: 'PreSale',
@@ -2373,7 +2416,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'deployed'
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Publishing MVP',
@@ -2382,69 +2426,80 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'the stage did not begin'
+                    progress: 100,
+                    state: 'deployed',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'stage in the process'
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Yellow Paper development',
                     desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Decentralization of MVP solutions',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Private blockchains',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Implementation of the dispute system',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Implementation of the voting system for changes',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Closed system testing',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Publication of the source code of the system and documentation',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Booting the system ',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 }
             ]
         },
@@ -2491,6 +2546,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Équipe'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Conseillers'
                 },
                 {
                     path: '#ico',
@@ -2821,29 +2880,21 @@ const messages = {
             title: 'Conseillers',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -2867,19 +2918,24 @@ const messages = {
             distribution: {
                 title: 'Vente pendant l’ICO',
                 description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
-                list: [{
+                list: [
+                    {
                     title: 'Vente pendant l’ICO',
                     amount: 77
-                }, {
+                },
+                    {
                     title: 'Commande',
                     amount: 11
-                }, {
+                },
+                    {
                     title: 'Programme de référencement et conseillés',
                     amount: 10
-                }, {
+                },
+                    {
                     title: 'Bounty',
                     amount: 2
-                }]
+                }
+                ]
             }
         },
         roadmap: {
@@ -2901,7 +2957,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'déployé'
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'L\'expertise de spécialistes en gestion de projet. Définition des besoins',
@@ -2911,7 +2968,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'déployé'
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'Modèle mathématique',
@@ -2921,7 +2979,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'déployé'
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'Formation des termes de référence',
@@ -2933,7 +2992,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'déployé'
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'Partenariat avec Serokell OU, début du développement.',
@@ -2950,7 +3010,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'exécution'
+                    state: 'exécution',
+                    status: false
                 },
                 {
                     title: 'Pré-Vente',
@@ -2963,7 +3024,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'déployé'
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'Publication MVP',
@@ -2972,74 +3034,85 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    progress: 100,
+                    state: 'déployé',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'la scène dans le processus'
+                    state: 'la scène dans le processus',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Développement du Livret-jaune',
                     desk: 'Papier jaune - description technique du système. Le document illustre les caractéristiques architecturales de la construction du système, les protocoles d\'interaction entre les nœuds du réseau et d\'autres détails techniques.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Décentralisation des solutions MVP',
                     desk: 'Construire une version du système dans laquelle les composants suivants sont implémentés : Réseau Peering; Transactions personnalisées à l\'aide du jeton intégré et des jetons colorés;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Blockchain privée',
                     desk: 'Développement de filières privées et leur intégration dans l\'infrastructure existante. Assurer le fonctionnement ininterrompu des oracles. Enregistrement dans la version complète de l\'ensemble du système - à l\'exception du mécanisme de litige (arbitrage).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Mise en œuvre du système de règlement des différends',
                     desk: 'Améliorer le système de résolution des conflits dans le cadre d\'une application décentralisée.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Mise en œuvre du système de vote pour les changements',
                     desk: 'Modifier le système pour assurer sa variabilité dans le temps.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Closed system testing',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Publication du code source du système et de la documentation.',
                     desk: 'Publication du code source du système et de la documentation dans des référentiels ouverts.',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 },
                 {
                     title: 'Démarrage du système ',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'la scène n\'a pas commencé'
+                    state: 'la scène n\'a pas commencé',
+                    status: false
                 }
             ]
         },
@@ -3086,6 +3159,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Mannschaft'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Berater'
                 },
                 {
                     path: '#ico',
@@ -3416,29 +3493,21 @@ const messages = {
             title: 'Berater',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -3496,7 +3565,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'bereitgestellt'
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Kompetenz von Spezialisten im Projektmanagement. Anforderungsdefinition',
@@ -3506,7 +3576,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'bereitgestellt'
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Mathematische Modellierung',
@@ -3516,7 +3587,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'bereitgestellt'
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Bildung der Geschäftsordnung',
@@ -3528,7 +3600,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'bereitgestellt'
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Partnerschaft mit Serokell OU, Beginn der Entwicklung.',
@@ -3545,7 +3618,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'implementieren'
+                    state: 'implementieren',
+                    status: false
                 },
                 {
                     title: 'Vorverkauf',
@@ -3558,7 +3632,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'bereitgestellt'
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Veröffentlichung MVP',
@@ -3567,73 +3642,84 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    progress: 100,
+                    state: 'bereitgestellt',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'Stufe im Prozess'
+                    state: 'Stufe im Prozess',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Yellow Paper Entwicklung',
                     desk: 'Yellow Paper - Technische Beschreibung des Systems. Das Dokument veranschaulicht die architektonischen Merkmale des Systemaufbaus, die Protokolle der Interaktion zwischen den Netzknoten und andere technische Details.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Dezentralisierung der MVP-Lösungen',
                     desk: 'Aufbau einer Version des Systems, in der die folgenden Komponenten implementiert sind: Peering Netzwerk; Benutzerdefinierte Transaktionen mit dem eingebauten Token und farbigen Token;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Private Blockchains',
                     desk: 'Entwicklung von privaten Blockchains und deren Integration in die bestehende Infrastruktur. Sicherstellung des ununterbrochenen Betriebs von Orakeln. Registrierung in der fertigen Version des gesamten Systems - mit Ausnahme des Streitmechanismus (Schiedsverfahren).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Einführung des Streitbeilegungssystems',
                     desk: 'Verbesserung des Streitbeilegungssystems zur Lösung von Konflikten im Rahmen einer dezentralen Anwendung.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Implementierung des Abstimmungssystems für Änderungen',
                     desk: 'Modifizierung des Systems, um seine Variabilität im Laufe der Zeit zu gewährleisten.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Closed system testing',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Veröffentlichung des Quellcodes des Systems und der Dokumentation',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 },
                 {
                     title: 'Booten des Systems ',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'die Bühne hat nicht begonnen'
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
                 }
             ]
         },
@@ -3680,6 +3766,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'الفريق'
+                },
+                {
+                    path: '#advisors',
+                    name: 'المستشارين'
                 },
                 {
                     path: '#ico',
@@ -4010,29 +4100,21 @@ const messages = {
             title: 'المستشارين',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -4090,7 +4172,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'نشر'
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'متخصصين ذوي خبره في إدارة المشاريع .تعريف المتطلبا',
@@ -4100,7 +4183,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'نشر'
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'النمذجة الرياضية',
@@ -4110,7 +4194,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'نشر'
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'تشكيل الاختصاصات',
@@ -4122,7 +4207,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'نشر'
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'الشراكة مع Serokell OU ، بداية التطوير',
@@ -4139,7 +4225,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'تنفيذ'
+                    state: 'تنفيذ',
+                    status: false
                 },
                 {
                     title: 'البيع الأولي',
@@ -4152,7 +4239,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'نشر'
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'نشر ال MVP',
@@ -4161,74 +4249,85 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    progress: 100,
+                    state: 'نشر',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'بدأ المشهد'
+                    state: 'بدأ المشهد',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'تطوير الورقه الصفراء',
                     desk: 'الورقة الصفراء - مستند وصف فني للنظام. يوضح السمات الهيكليه لبناء النظام وبروتوكولات التفاعل بين عقد الشبكة(network nodes) والتفاصيل الفنية الأخرى',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'اللامركزية لحلول MVP',
                     desk: 'إنشاء إصدار من النظام يتم فيه تنفيذ المكونات التالية: شبكة التناظر. معاملات مخصصة باستخدام الرموز المميزة المدمجه (built-in token)  والرموز الملونة (colored tokens)(الرموز الملونه هو تطبيق متقدم للبلوك شين بت كوين)',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'البلوك شين الخاص',
                     desk: 'تطوير بلوك شين خاصة وادماجها في البنية التحتية الموجوده. ضمان عملية دون انقطاع من الوسيط. التسجيل في النسخة المكتملة من النظام بأكمله - باستثناء آلية النزاع (التحكيم).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'تنفيذ نظام التحكيم',
                     desk: 'تحسين نظام التحكيم لحل النزاعات في إطار تطبيق لامركزي',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'تنفيذ نظام التصويت من أجل التغييرات',
                     desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'اختبار النظام مغلق',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'نشر مصدر الكود  للنظام والمستندات',
                     desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 },
                 {
                     title: 'التمهيد لبدء تشغيل النظام',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ'
+                    state: 'المرحلة لم تبدأ',
+                    status: false
                 }
             ]
         },
@@ -4275,6 +4374,10 @@ const messages = {
                 {
                     path: '#team',
                     name: '팀'
+                },
+                {
+                    path: '#advisors',
+                    name: '문'
                 },
                 {
                     path: '#ico',
@@ -4605,29 +4708,21 @@ const messages = {
             title: '문',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -4685,7 +4780,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: '배포'
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: '프로젝트 관리 전문가. 요구 사항 정의',
@@ -4695,7 +4791,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: '배포'
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: '수학적 모델링',
@@ -4705,7 +4802,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: '배포'
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: '참조 조건의 형성',
@@ -4717,7 +4815,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: '배포'
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: 'Serokell OU와의 파트너십, 개발 시작',
@@ -4734,7 +4833,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: '구현'
+                    state: '구현',
+                    status: false
                 },
                 {
                     title: '선판매 (Pre-Sale)',
@@ -4747,7 +4847,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: '배포'
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: 'MVP 게시',
@@ -4756,74 +4857,85 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: '단계를 시작하지 않았'
+                    progress: 100,
+                    state: '배포',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 20,
-                    state: '무대가 시작되었습니다'
+                    state: '무대가 시작되었습니다',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '05/25/2018 - 07/24/2018',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '황색언론 개발',
                     desk: '황색언론– 시스탬의 기술 문서. 이 문서는 시스템 구성의 건축학적 특징, 네트워크 노드 간의 상호 작용 프로토콜 및 기타 기술적 세부 사항을 설명합니다.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: 'MVP 솔루션의 분산화',
                     desk: '다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '개인적인 블록체인',
                     desk: '개인 블록 체인 개발 및 기존 인프라에 대한 통합. 오라클의 중단 없는 운영 보장. 분쟁의 메커니즘 (중재)을 제외하고 전체 시스템의 완성 된 버전에 등록.',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '분쟁 해결 시스템 구현',
                     desk: '분산 된 응용 프로그램의 프레임 워크 내에서 충돌을 해결하기 위해 분쟁 시스템을 개선.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '변경을 위한 투표 시스템의 구현',
                     desk: '시간이 지남에 따라 시스템의 변동성을 보장하기 위해 시스템을 수정.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '폐쇄 시스템 테스트',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '시스템 및 문서의 소스 코드 공개',
                     desk: '시스템 및 문서의 소스 코드를 공개 저장소에 게시',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 },
                 {
                     title: '시스템 부팅',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: '단계를 시작하지 않았'
+                    state: '단계를 시작하지 않았',
+                    status: false
                 }
             ]
         },
@@ -4870,6 +4982,10 @@ const messages = {
                 {
                     path: '#team',
                     name: 'Equipo'
+                },
+                {
+                    path: '#advisors',
+                    name: 'Advisors'
                 },
                 {
                     path: '#ico',
@@ -5200,29 +5316,21 @@ const messages = {
             title: 'Advisors',
             members: [
                 {
-                    name: 'Mikhail Gromyko',
-                    position: 'Chief Executive Officer',
-                    src: '../static/images/avatars/gromyko@3x.png'
-                },
-                {
-                    name: 'Vladimir Grudinin',
-                    position: 'Blockchain Expert',
-                    src: '../static/images/avatars/grudinin@3x.png'
-                },
-                {
-                    name: 'Alexej Osipenko',
-                    position: 'Chief Operating Officer',
-                    src: '../static/images/avatars/osipenko@3x.png'
-                },
-                {
-                    name: 'Elena Tsymbalyuk',
-                    position: 'Head of Marketing Operations',
-                    src: '../static/images/avatars/elena@3x.png'
-                },
-                {
-                    name: 'Egor Loktev',
-                    position: 'Chief Marketing Officer',
-                    src: '../static/images/avatars/loktev@3x.png'
+                    name: 'Purushotham Maralappa',
+                    position: 'Advisor',
+                    src: '../static/images/avatars/maralappa@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/purushotham-maralappa/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -5280,7 +5388,8 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png'
                     ],
                     progress: 100,
-                    state: 'desplegado'
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Experiencia de especialistas en gestión de proyectos. Definición de requisitos',
@@ -5290,7 +5399,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'desplegado'
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Modelado matemático',
@@ -5300,7 +5410,8 @@ const messages = {
                         '../static/images/avatars/grudinin@3x.png'
                     ],
                     progress: 100,
-                    state: 'desplegado'
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Formación de los Términos de Referencia',
@@ -5312,7 +5423,8 @@ const messages = {
                         '../static/images/avatars/loktev@3x.png'
                     ],
                     progress: 100,
-                    state: 'desplegado'
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Asociación con Serokell OU, inicio del desarrollo',
@@ -5329,7 +5441,8 @@ const messages = {
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
                     progress: 25,
-                    state: 'implementar'
+                    state: 'implementar',
+                    status: false
                 },
                 {
                     title: 'Preventa',
@@ -5342,7 +5455,8 @@ const messages = {
                         '../static/images/avatars/levashow@3x.png'
                     ],
                     progress: 100,
-                    state: 'desplegado'
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Publicación MVP',
@@ -5351,74 +5465,85 @@ const messages = {
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
                     ],
-                    progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    progress: 100,
+                    state: 'desplegado',
+                    status: false
                 },
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 20,
-                    state: 'el escenario comenzó'
+                    state: 'el escenario comenzó',
+                    status: true
                 },
                 {
                     title: 'ICO',
                     date: '06/25/2018 - 09/07/2018',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Desarrollo de Yellow Paper',
                     desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnicos.',
                     date: '07/02/2018 - 01/01/2018',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Descentralización de las soluciones MVP',
                     desk: 'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
                     date: '01.12.2018 - 01/02/2019',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Blockchains privadas',
                     desk: 'Desarrollo de blockchains privados y su integración en la infraestructura existente. Garantizar la operación ininterrumpida de los oráculos. Registro en la versión completa de todo el sistema, a excepción del mecanismo de disputa (arbitraje).',
                     date: '01/03/2019 - 01/01/2019',
                     progress: 0,
-                    state: 'the stage did not begin'
+                    state: 'the stage did not begin',
+                    status: false
                 },
                 {
                     title: 'Implementación del sistema de disputas',
                     desk: 'Mejora del sistema de disputas para resolver conflictos en el marco de una aplicación descentralizada.',
                     date: '05/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Implementación del sistema de votación para cambios',
                     desk: 'Modificar el sistema para garantizar su variabilidad a lo largo del tiempo.',
                     date: '08/01/2018 - 01/01/2019',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Sistema cerrado de pruebas',
                     date: '10/01/2019 - 01/01/2020',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Publicación del código fuente del sistema y documentación',
                     desk: 'Publicación del código fuente del sistema y la documentación en repositorios abiertos',
                     date: '01/01/2020 - 01/02/2020',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 },
                 {
                     title: 'Iniciando el sistema',
                     date: '01/02/2020 – 01/03/2020',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar'
+                    state: 'el escenario no pudo comenzar',
+                    status: false
                 }
             ]
         },

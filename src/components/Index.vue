@@ -1,18 +1,23 @@
 <template>
-    <div class="index">
+    <div class="index" id="index-main-component">
         <header-block :is-main-dark="isDark"/>
         <home-section :is-dark-section="isDarkSection"
                       :is-opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
-                      :is-rtl="isRtl"/>
-        <advantages-section/>
+                      :is-rtl="isRtl"
+                      :is-pointer-in-dark="isPointerInDark"/>
+        <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
-        <team-section :is-team="isTeam"/>
-        <ico-section/>
-        <roadmap-section/>
+        <team-section :is-team="isTeam"
+                      :is-effective-energy-autoplay="isEffectiveEnergyAutoplay"
+                      :is-serokell-autoplay="isSerokellAutoplay"
+                      :is-advisors-autoplay="isAdvisorsAutoplay"
+                      :is-rtl="isRtl"/>
+        <ico-section :is-rtl="isRtl"/>
+        <roadmap-section :is-rtl="isRtl"/>
         <download-application-section/>
         <blog-section/>
-        <footer-block/>
+        <footer-block :is-rtl="isRtl"/>
     </div>
 </template>
 
@@ -50,7 +55,11 @@
                 isDarkSection: false,
                 isScrollInFooter: false,
                 isRtl: false,
-                openedModalMenu: false
+                openedModalMenu: false,
+                isPointerInDark: false,
+                isEffectiveEnergyAutoplay: false,
+                isSerokellAutoplay: false,
+                isAdvisorsAutoplay: false
                 // isLoading: true
             }
         },
@@ -80,8 +89,23 @@
             });
 
             this.$on('isRtl', (isRtl) => {
-                console.log(isRtl, 'isRtl');
                 this.isRtl = isRtl;
+            });
+
+            this.$on('pointerInDark', (pointerInDark) => {
+                this.isPointerInDark = pointerInDark;
+            });
+
+            this.$on('effectiveEnergyAutoplay', (autoplay) => {
+                this.isEffectiveEnergyAutoplay = autoplay;
+            });
+
+            this.$on('serokellAutoplay', (autoplay) => {
+                this.isSerokellAutoplay = autoplay;
+            });
+
+            this.$on('advisorsAutoplay', (autoplay) => {
+                this.isAdvisorsAutoplay = autoplay;
             });
         }
     }

@@ -7,27 +7,42 @@
             <div class="divider"></div>
 
             <div class="row news-section">
-                <div class="animate col-md-6 col-sm-12 animate" v-for="(n, i) in news" :key="i">
-					<span>
-					<router-link tag="div" :to="`/blog/${n._id}`" class="news-block">
-
-						<router-link :to="`/blog/${n._id}`">
-							<img :src="n.preview_image" alt="" class="picture" @click="goToNews(n._id)">
-						</router-link>
-						<div class="news-info">
-                            <p class="news-title">
-                                {{ n.title }}
-                            </p>
-							<i class="news-date">{{ n.date/1000 | moment("ddd  DD, YYYY") }}</i>
-						</div>
-
-					</router-link>
-					</span>
+                <div class="wrap-spinner"
+                     v-if="blogStatus === 'loading' && dataProcessing">
+                    <spinner/>
+                </div>
+                <div class="animate col-md-6 col-sm-12 animate"
+                     v-for="(n, i) in blogIndex"
+                     v-if="blogStatus === 'success' && !dataProcessing"
+                     :key="i">
+                    <span>
+                        <router-link class="news-block"
+                                     tag="div"
+                                     :to="`/blog/${n._id}`">
+                            <router-link :to="`/blog/${n._id}`">
+                                <img class="picture"
+                                     :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
+                                     :alt="n.title"
+                                     @click="goToNews(n._id)">
+                            </router-link>
+                            <div class="news-info">
+                                <p class="news-title">
+                                    {{ n.title }}
+                                </p>
+                                <i class="news-date">{{ n.date / 1000 | moment("ddd DD, YYYY") }}</i>
+                            </div>
+                        </router-link>
+                    </span>
                 </div>
                 <div class="col-12 news-button">
                     <div class="form-group is-center">
-                        <h5 v-if="news.length === 0">{{ $t("blog.notFound") }}</h5>
-                        <router-link v-else tag="a" to="/blog" class="btn btn-warning">
+                        <h5 v-if="news.length === 0">
+                            {{ $t("blog.notFound") }}
+                        </h5>
+                        <router-link class="btn btn-warning"
+                                     tag="a"
+                                     to="/blog/categories/all"
+                                     v-else>
                             {{ $t("blog.allPostsBtn") }}
                         </router-link>
                     </div>
@@ -38,11 +53,19 @@
 </template>
 
 <script>
+    import Spinner from './layouts/Spinner';
+
+    import {mapGetters} from 'vuex';
+
     export default {
-        name: "Blog",
+        name: 'Blog',
+        components: {
+            Spinner
+        },
         data() {
             return {
-                news: []
+                news: [],
+                dataProcessing: true
             }
         },
         watch: {
@@ -50,23 +73,31 @@
                 this.getNews();
             }
         },
+        computed: {
+            ...mapGetters(
+                [
+                    'blogIndex',
+                    'blogStatus'
+                ]
+            )
+        },
         methods: {
             getNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news${this.$i18n.locale === 'en' ? '/last/6' : '/last/' + this.$i18n.locale + '6'}`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news${this.$i18n.locale === 'en' ? '/last/6' : '/last/' + this.$i18n.locale + '6'}`, {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'
                     }
                 }).then(response => {
                     this.news = response.body.reverse();
-                    if (response.body.length === 0 && this.$i18n.locale !== 'en') 
+                    if (response.body.length === 0 && this.$i18n.locale !== 'en')
                         this.getEngNews();
                 }, response => {
                     console.log('Error getting news', response);
                 });
             },
             getEngNews: function () {
-                this.$http.get(`https://alehub.eu-4.evennode.com/ale-news/last/6`, {
+                this.$http.get(`https://alehub-4550.nodechef.com/ale-news/last/6`, {
                     headers: {
                         'Content-Type': 'application/json; charset=UTF-8',
                         'Accept': 'application/json'
@@ -83,6 +114,9 @@
         },
         created() {
             this.getNews();
+        },
+        mounted() {
+            this.dataProcessing = false;
         }
     }
 </script>
@@ -96,6 +130,12 @@
 </style>
 
 <style lang="stylus" scoped>
+
+    .wrap-spinner
+        width 100%
+        display flex
+        justify-content center
+        align-items center
 
     .section
         padding 71px 0 0 0
