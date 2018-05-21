@@ -19,12 +19,12 @@
                 <!--add static block images like serokell and advisors-->
 
                 <slider-effective-energy :items="$t('team.effectiveEnergy[0].members')"
-                        :settings="settings.effectiveEnergy"
-                        :options="options.effectiveEnergy"
-                        :is-autoplay="isEffectiveEnergyAutoplay"
-                        :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
+                                         :settings="settings.effectiveEnergy"
+                                         :options="options.effectiveEnergy"
+                                         :is-autoplay="isEffectiveEnergyAutoplay"
+                                         :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
+                                         :multiplier-position="multiplierPosition"
+                                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
             <div class="serokell" id="serokell-team">
@@ -64,13 +64,13 @@
                 </div>
 
                 <slider-serokell v-else
-                        :items="$t('team.serokell[0].members')"
-                        :settings="settings.serokell"
-                        :options="options.serokell"
-                        :is-autoplay="isSerokellAutoplay"
-                        :privates1="Object.assign(settings.serokell, options.serokell)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
+                                 :items="$t('team.serokell[0].members')"
+                                 :settings="settings.serokell"
+                                 :options="options.serokell"
+                                 :is-autoplay="isSerokellAutoplay"
+                                 :privates1="Object.assign(settings.serokell, options.serokell)"
+                                 :multiplier-position="multiplierPosition"
+                                 :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
         </div>
@@ -112,13 +112,13 @@
                 </div>
 
                 <slider-advisors v-else
-                        :items="$t('advisors.members')"
-                        :settings="settings.advisors"
-                        :options="options.advisors"
-                        :is-autoplay="isAdvisorsAutoplay"
-                        :privates1="Object.assign(settings.advisors, options.advisors)"
-                        :multiplier-position="multiplierPosition"
-                        :num-items-in-wrap="numItemsInWrap"/>
+                                 :items="$t('advisors.members')"
+                                 :settings="settings.advisors"
+                                 :options="options.advisors"
+                                 :is-autoplay="isAdvisorsAutoplay"
+                                 :privates1="Object.assign(settings.advisors, options.advisors)"
+                                 :multiplier-position="multiplierPosition"
+                                 :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
     </div>
@@ -229,10 +229,10 @@
                 return window.innerWidth <= 425;
             },
             isTabletScreen: function () {
-                return window.innerWidth <= 785;
+                return window.innerWidth <= 768;
             },
             isLaptopScreen: function () {
-                return window.innerWidth > 785 && window.innerWidth <= 1178;
+                return window.innerWidth > 768 && window.innerWidth <= 1178;
             },
             isLargeScreen: function () {
                 return window.innerWidth > 1178 && window.innerWidth <= 1571;
@@ -241,9 +241,9 @@
                 return window.innerWidth > 1571;
             },
             numItemsInWrap: function () {
-                if (window.innerWidth <= 785)
+                if (window.innerWidth <= 768)
                     return 1;
-                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
+                else if (window.innerWidth > 768 && window.innerWidth <= 1178)
                     return 2;
                 else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
                     return 3;
@@ -252,9 +252,9 @@
             },
             multiplierPosition: function () {
                 //вынести значения ширины экрана наружу и сравнивать свичем стринги (mobile, laptop, laptopL, wideScreen)
-                if (window.innerWidth <= 785)
+                if (window.innerWidth <= 768)
                     return 100;
-                else if (window.innerWidth > 785 && window.innerWidth <= 1178)
+                else if (window.innerWidth > 768 && window.innerWidth <= 1178)
                     return 50;
                 else if (window.innerWidth > 1178 && window.innerWidth <= 1571)
                     return 33.33333;
@@ -303,14 +303,8 @@
             align-items center
             background-color #fff
 
-            @media (min-width 650px) and (max-width 785px)
-                padding 80px 20% 40px 20%
-
-            @media (min-width 490px) and (max-width 650px)
+            @media (min-width 490px) and (max-width 768px)
                 padding 80px 15% 40px 15%
-
-            @media (max-width 490px)
-                padding 80px 10% 40px 10%
 
             @media (max-width 490px)
                 padding 80px 5% 40px 5%
@@ -583,10 +577,45 @@
             .separator
                 margin 12px 0 24px
 
-
     .image
         clip-path circle(50% at center) !important
         -webkit-clip-path circle(50% at center) !important
+
+        @media (max-width 320px)
+            position relative
+            width 180px !important
+            height 180px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 320px) and (max-width 360px)
+            position relative
+            width 200px !important
+            height 200px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 360px) and (max-width 425px)
+            position relative
+            width 220px !important
+            height 220px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            position relative
+            width 250px !important
+            height 250px !important
+            margin 0
+
+            .layer__bottom
+                height 100% !important
 
         .layer__top
             .layer__text
@@ -595,32 +624,4 @@
                         img
                             width 17px
                             height 17px
-
-        @media (max-width 320px)
-            position relative !important
-            width 220px !important
-            height 220px !important
-            margin 0 !important
-
-            img
-                height 100% !important
-
-        @media (min-width 320px) and (max-width 360px)
-            position relative !important
-            width 250px !important
-            height 250px !important
-            margin 0 !important
-
-            img
-                height 100% !important
-
-        @media (min-width 360px) and (max-width 425px)
-            position relative !important
-            width 300px !important
-            height 300px !important
-            margin 0 !important
-
-            img
-                height 100% !important
-
 </style>

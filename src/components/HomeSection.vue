@@ -1826,7 +1826,7 @@
                 padding 60px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
-                padding 50px 75px 0 75px
+                padding 50px 75px 25px 75px
 
             @media (min-width 425px) and (max-width 768px)
                 padding 50px 50px 25px 50px

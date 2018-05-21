@@ -1,8 +1,7 @@
 <template>
-    <div style="width: 100%; display: flex; justify-content: center;">
+    <div class="slider-outer">
 
         <button :class="['b-carousel__prev', settings.prev]"
-                v-if="isControlButton"
                 @click="clickPrev">
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
@@ -56,7 +55,6 @@
         </div>
 
         <button :class="['b-carousel__next', settings.next]"
-                v-if="isControlButton"
                 @click="clickNext">
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
@@ -124,9 +122,6 @@
         computed: {
             isMobile: function () {
                 return window.innerWidth <= 425;
-            },
-            isControlButton: function () {
-                return !(window.innerWidth <= 490);
             },
             inBlockTeam: function () {
                 return this.options.inBlockTeam;
@@ -293,221 +288,249 @@
             @media (max-width 320px)
                 width 100%
 
-    .wrap
+    .slider-outer
         width 100%
         display flex
         justify-content center
 
-        &:active
-            cursor -webkit-grab !important
+        @media (min-width 768px) and (max-width 1440px)
+            width 90%
 
-        .b-carousel
+        @media (max-width 425px)
+            width 70%
+
+        .wrap
             width 100%
-            overflow hidden
-            position relative
-            -webkit-box-sizing border-box
-            -moz-box-sizing border-box
-            box-sizing border-box
             display flex
-            flex-direction column
+            justify-content center
 
             &:active
                 cursor -webkit-grab !important
 
-            .b-carousel__wrap
-                display flex
-                -webkit-transition transform .5s
-                -o-transition transform .5s
-                transition transform .5s
-                will-change transform
+            .b-carousel
+                width 100%
+                overflow hidden
                 position relative
-                z-index 1
-                height 100%
+                -webkit-box-sizing border-box
+                -moz-box-sizing border-box
+                box-sizing border-box
+                display flex
+                flex-direction column
 
                 &:active
                     cursor -webkit-grab !important
 
-                .b-carousel__item
-                    /*flex 0 0 25%*/
-                    overflow hidden
+                .b-carousel__wrap
                     display flex
-                    align-items center
-                    justify-content center
-
-                    @media (max-width 320px)
-                        width 270px
+                    -webkit-transition transform .5s
+                    -o-transition transform .5s
+                    transition transform .5s
+                    will-change transform
+                    position relative
+                    z-index 1
+                    height 100%
 
                     &:active
                         cursor -webkit-grab !important
 
-                    .b-carousel__inner
+                    .image
+                        cursor pointer
                         position relative
-                        margin 0 15px
-                        padding 20px 20px 0 20px
-                        width 304px
-                        clip-path circle(50% at center)
-                        -webkit-clip-path circle(50% at center)
+                        max-width 100%
+                        height 304px
+                        overflow hidden
+                        text-align center
 
-                        @media (max-width 490px)
-                            position relative
-                            margin 0 5px
+                        .b-carousel__inner
+                            .layer__top-visible
+                                opacity 1 !important
+
+                            @media (min-width 425px)
+                                &:hover
+                                    .layer__top
+                                        opacity 1
+
+                            img
+                                max-width 100%
+                                height 284px
+                                width auto
+                                margin auto
+
+                                @media (min-width 768px) and (max-width 1024px)
+                                    max-height 230px
+
+                            .layer__bottom
+                                display block
+
+                            .layer__top
+                                opacity 0
+                                position absolute
+                                z-index 10000
+                                top 0
+                                left 0
+                                right 0
+                                bottom 0
+                                width 100%
+                                height 100%
+                                background rgba(255, 210, 79, 0.8)
+                                color #fff
+                                padding 15px
+                                -moz-transition all 0.4s ease-in-out 0s
+                                -webkit-transition all 0.4s ease-in-out 0s
+                                -ms-transition all 0.4s ease-in-out 0s
+                                transition all 0.4s ease-in-out 0s
+                                clip-path circle(50% at center)
+
+                                &:active
+                                    cursor -webkit-grab !important
+
+                            .layer__text
+                                color #34343e
+                                text-align center
+                                font-size 18px
+                                display inline-block
+                                position absolute
+                                width 80%
+                                top 70%
+                                left 50%
+                                -moz-transform translate(-50%, -50%)
+                                -webkit-transform translate(-50%, -50%)
+                                -ms-transform translate(-50%, -50%)
+                                transform translate(-50%, -50%)
+
+                                .h3
+                                    font-weight 700
+                                    font-size 24px
+
+                                p
+                                    font-size 12px
+                                    margin-bottom 10px
+                                    text-transform uppercase
+                                    font-family MuseoSansCyrl500
+
+                                .icons
+                                    width 100%
+                                    display flex
+                                    justify-content center
+
+                                    .telegram
+                                        width 18px
+                                        height 14.5px
+
+                                    .vk
+                                        width 21px
+                                        height 13px
+
+                                    .fb
+                                        width 9px
+                                        height 18px
+
+                                    .in
+                                        width 17px
+                                        height 17px
+
+                                    img
+                                        margin auto 15px
+
+                    .b-carousel__item
+                        overflow hidden
+                        display flex
+                        align-items center
+                        justify-content center
 
                         @media (max-width 320px)
-                            position relative
-                            width 220px
-                            height 220px
-                            margin 0
+                            width 270px
 
-                        @media (min-width 320px) and (max-width 360px)
-                            position relative
-                            width 250px
-                            height 250px
-                            margin 0
-
-                        @media (min-width 360px) and (max-width 425px)
-                            position relative
-                            width 300px
-                            height 300px
-                            margin 0
+                        @media (max-width 425px)
+                            flex 0 0 100% !important
 
                         &:active
                             cursor -webkit-grab !important
 
-                        .b-carousel__img
-                            display block
+                        .b-carousel__inner
+                            position relative
+                            margin 0 15px
+                            padding 20px 20px 0 20px
+                            width 304px
+                            clip-path circle(50% at center)
+                            -webkit-clip-path circle(50% at center)
 
-                            @media (max-width 425px)
-                                height 100%
+                            @media (max-width 490px)
+                                position relative
+                                margin 0 5px
+
+                            @media (max-width 320px)
+                                position relative
+                                width 180px
+                                height 180px
+                                margin 0
+
+                            @media (min-width 320px) and (max-width 360px)
+                                position relative
+                                width 200px
+                                height 200px
+                                margin 0
+
+                            @media (min-width 360px) and (max-width 425px)
+                                position relative
+                                width 220px
+                                height 220px
+                                margin 0
+
+                            @media (min-width 768px) and (max-width 1024px)
+                                position relative
+                                width 250px
+                                height 250px
+                                margin 0
 
                             &:active
                                 cursor -webkit-grab !important
 
-    .b-carousel__prev
-        margin-right 20px
+                            .b-carousel__img
+                                display block
 
-        &:active
-            transform translateX(-20px)
+                                @media (max-width 425px)
+                                    height 100%
 
-    .b-carousel__next
-        margin-left 20px
+                                &:active
+                                    cursor -webkit-grab !important
 
-        &:active
-            transform translateX(20px)
+        .b-carousel__prev
+            margin-right 20px
 
-    .b-carousel__prev, .b-carousel__next
-        background transparent
-        border none
-        cursor pointer
-        transition transform 0.5s ease
+            &:active
+                transform translateX(-20px)
 
-        &:focus
-            outline 0
+            @media (max-width 425px)
+                margin-right 10px
 
-    .image
-        cursor pointer
-        position relative
-        max-width 100%
-        height 304px
-        overflow hidden
-        text-align center
-
-        .b-carousel__inner
-            .layer__top-visible
-                opacity 1 !important
-
-            @media (min-width 425px)
-                &:hover
-                    .layer__top
-                        opacity 1
-
-            img
-                max-width 100%
-                height 284px
-                width auto
-                margin auto
-
-            .layer__bottom
-                display block
-
-            .layer__top
-                opacity 0
-                position absolute
-                z-index 10000
-                top 0
-                left 0
-                right 0
-                bottom 0
-                width 100%
-                height 100%
-                background rgba(255, 210, 79, 0.8)
-                color #fff
-                padding 15px
-                -moz-transition all 0.4s ease-in-out 0s
-                -webkit-transition all 0.4s ease-in-out 0s
-                -ms-transition all 0.4s ease-in-out 0s
-                transition all 0.4s ease-in-out 0s
-                clip-path circle(50% at center)
+                img
+                    width 20px
 
                 &:active
-                    cursor -webkit-grab !important
+                    transform translateX(-10px)
 
-            .layer__text
-                color #34343e
-                text-align center
-                font-size 18px
-                display inline-block
-                position absolute
-                width 80%
-                top 70%
-                left 50%
-                -moz-transform translate(-50%, -50%)
-                -webkit-transform translate(-50%, -50%)
-                -ms-transform translate(-50%, -50%)
-                transform translate(-50%, -50%)
+        .b-carousel__next
+            margin-left 20px
 
-                .h3
-                    font-weight 700
-                    font-size 24px
+            &:active
+                transform translateX(20px)
 
-                p
-                    font-size 12px
-                    margin-bottom 10px
-                    text-transform uppercase
-                    font-family MuseoSansCyrl500
+            @media (max-width 425px)
+                margin-left 10px
 
-                .icons
-                    width 100%
-                    display flex
-                    justify-content center
+                img
+                    width 20px
 
-                    .telegram
-                        width 18px
-                        height 14.5px
+                &:active
+                    transform translateX(10px)
 
-                    .vk
-                        width 21px
-                        height 13px
-
-                    .fb
-                        width 9px
-                        height 18px
-
-                    .in
-                        width 17px
-                        height 17px
-
-                    img
-                        margin auto 15px
-
-    .s-notransition
-        -webkit-transition 0s !important
-        -o-transition 0s !important
-        transition 0s !important
-
-    @media (max-width 425px)
         .b-carousel__prev, .b-carousel__next
-            display none
+            background transparent
+            border none
+            cursor pointer
+            transition transform 0.5s ease
 
-        .b-carousel__item
-            flex 0 0 100% !important
+            &:focus
+                outline 0
 </style>

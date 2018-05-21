@@ -116,7 +116,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/icon-volatility.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -129,7 +129,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/integrity-ic.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -557,6 +557,15 @@
     @media (max-width 1250px)
         .application
             padding 80px 5%
+
+    @media (min-width 768px) and (max-width 1024px)
+        .application
+            .section-2
+                .list-items
+                    .item
+                        width 50%
+                        padding-right 16px
+                        margin-bottom 24px
 
     @media (min-width 575px) and (max-width 768px)
         .application
