@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Index from '@/components/Index';
 import Blog from '@/components/Blog';
 import BlogPost from '@/components/BlogPost';
+import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
 
@@ -27,6 +28,11 @@ const router = new Router({
             path: '/blog/:id',
             name: 'BlogPost',
             component: BlogPost
+        },
+        {
+            path: '*',
+            name: 'NotFound',
+            component: NotFound
         }
     ]
 });

@@ -661,22 +661,24 @@
                         this.$parent.$emit('pointerInDark', false);
                     }
 
-
                     if (window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', false);
                         this.$parent.$emit('advisorsAutoplay', false);
-                    } else if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                    }
+                    if (window.scrollY > this.getCoords(document.getElementById('team')).top - navbarYOffset &&
                         window.scrollY < this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', true);
                         this.$parent.$emit('serokellAutoplay', false);
                         this.$parent.$emit('advisorsAutoplay', false);
-                    } else if (window.scrollY >= this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('advisors-team')).top - navbarYOffset) {
+                    }
+                    if (window.scrollY >= this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('advisors')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', true);
                         this.$parent.$emit('advisorsAutoplay', false);
-                    } else if (window.scrollY >= this.getCoords(document.getElementById('advisors-team')).top - navbarYOffset &&
+                    }
+                    if (window.scrollY >= this.getCoords(document.getElementById('advisors')).top - navbarYOffset &&
                         window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', false);

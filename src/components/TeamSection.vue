@@ -6,20 +6,22 @@
         <div class="our-team">
 
             <h3 class="title">
-                {{$t("team.title")}}
+                {{ $t("team.title") }}
             </h3>
 
             <div class="separator">
             </div>
 
             <div class="effective-energy" id="effective-energy-team">
-                <p>{{$t('team.effectiveEnergy[0].name')}}</p>
+
+                <p>{{ $t('team.effectiveEnergy[0].name') }}</p>
 
                 <!--add static block images like serokell and advisors-->
 
-                <slider :items="$t('team.effectiveEnergy[0].members')"
+                <slider-effective-energy :items="$t('team.effectiveEnergy[0].members')"
                         :settings="settings.effectiveEnergy"
                         :options="options.effectiveEnergy"
+                        :is-autoplay="isEffectiveEnergyAutoplay"
                         :privates1="Object.assign(settings.effectiveEnergy, options.effectiveEnergy)"
                         :multiplier-position="multiplierPosition"
                         :num-items-in-wrap="numItemsInWrap"/>
@@ -29,10 +31,6 @@
                 <p>
                     Serokell
                 </p>
-
-                <button type="button" @click="changeAutoplay">
-                    change autoplay
-                </button>
 
                 <div class="images"
                      id="serokell-gallery"
@@ -65,10 +63,11 @@
                     </div>
                 </div>
 
-                <slider v-else
+                <slider-serokell v-else
                         :items="$t('team.serokell[0].members')"
                         :settings="settings.serokell"
                         :options="options.serokell"
+                        :is-autoplay="isSerokellAutoplay"
                         :privates1="Object.assign(settings.serokell, options.serokell)"
                         :multiplier-position="multiplierPosition"
                         :num-items-in-wrap="numItemsInWrap"/>
@@ -112,10 +111,11 @@
                     </div>
                 </div>
 
-                <slider v-else
+                <slider-advisors v-else
                         :items="$t('advisors.members')"
                         :settings="settings.advisors"
                         :options="options.advisors"
+                        :autoplay="isAdvisorsAutoplay"
                         :privates1="Object.assign(settings.advisors, options.advisors)"
                         :multiplier-position="multiplierPosition"
                         :num-items-in-wrap="numItemsInWrap"/>
@@ -125,14 +125,19 @@
 </template>
 
 <script>
-    import TinySlider from 'vue-tiny-slider';
     import Slider from './layouts/Slider';
+
+    import SliderEffectiveEnergy from './layouts/SliderEffectiveEnergy';
+    import SliderSerokell from './layouts/SliderSerokell';
+    import SliderAdvisors from './layouts/SliderAdvisors';
 
     export default {
         name: 'Screen5',
         components: {
-            TinySlider,
-            Slider
+            Slider,
+            SliderEffectiveEnergy,
+            SliderSerokell,
+            SliderAdvisors
         },
         props: {
             isTeam: {
@@ -161,15 +166,9 @@
                 this.options.serokell.inBlockTeam = inBlockTeam;
                 this.options.effectiveEnergy.inBlockTeam = inBlockTeam;
             },
-            isEffectiveEnergyAutoplay: function (autoplay) {
-                this.options.effectiveEnergy.autoplay = autoplay;
-            },
-            isSerokellAutoplay: function (autoplay) {
-                this.options.serokell.autoplay = autoplay;
-            },
-            isAdvisorsAutoplay: function (autoplay) {
-                this.options.advisors.autoplay = autoplay;
-            },
+            isEffectiveEnergyAutoplay: function (val) {
+                console.log(val, 'isEffectiveEnergyAutoplay');
+            }
         },
         data() {
             return {
@@ -195,8 +194,8 @@
                 },
                 options: {
                     effectiveEnergy: {
+                        title: 'effective',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -205,8 +204,8 @@
                         numItemsInWrap: 4
                     },
                     serokell: {
+                        title: 'serokell',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -215,8 +214,8 @@
                         numItemsInWrap: 4
                     },
                     advisors: {
+                        title: 'advisors',
                         touch: true,
-                        autoplay: false,
                         inBlockTeam: false,
                         autoplayDelay: 3000,
                         pauseOnFocus: true,
@@ -268,8 +267,11 @@
 
         },
         methods: {
-            changeAutoplay: function () {
+            changeAutoplaySerokell: function () {
                 this.options.serokell.autoplay = !this.options.serokell.autoplay;
+            },
+            changeAutoplayEffective: function () {
+                this.options.effectiveEnergy.autoplay = !this.options.effectiveEnergy.autoplay;
             }
         },
         created() {

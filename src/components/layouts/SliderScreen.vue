@@ -123,10 +123,8 @@
         mounted() {
             document.querySelector('.js-carousel__wrap').appendChild(document.querySelector('.js-carousel__wrap').children[0].cloneNode(true));
 
-            if (this.options.autoplay) {
-                this.autoplayAccess = this.options.autoplay;
+            if (this.options.autoplay)
                 this.initAutoplay(5000);
-            }
         }
     }
 </script>

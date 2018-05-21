@@ -46,11 +46,6 @@
                                                  src="../../../static/images/in.svg"
                                                  alt="in"/>
                                         </a>
-                                        <!--<a :href="social.link" v-for="social in member.social" target="_blank">-->
-                                        <!--<img :class="{ 'in': social.type === 'linkedin' }"-->
-                                        <!--src="../../../static/images/in.svg"-->
-                                        <!--alt="in"/>-->
-                                        <!--</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +66,7 @@
 
 <script>
     export default {
-        name: 'Slider',
+        name: 'SliderSerokell',
         props: {
             items: {
                 type: Array,
@@ -97,7 +92,7 @@
                 type: Number,
                 required: true
             },
-            autoplay: {
+            isAutoplay: {
                 type: Boolean,
                 required: true
             }
@@ -119,7 +114,7 @@
             }
         },
         watch: {
-            autoplay: function (val) {
+            isAutoplay: function (val) {
                 if (val)
                     this.initAutoplay(3000);
                 else
@@ -233,7 +228,7 @@
                 });
             },
             initAutoplay: function (delay) {
-                if (this.eAutoplay || this.sAutoplay || this.sAutoplay)
+                if (this.isAutoplay)
                     this.autoplay = setInterval(() => {
                         this.nextSlide();
                     }, delay);
@@ -242,7 +237,7 @@
                 clearInterval(this.autoplay);
             },
             startAutoplay: function () {
-                if (this.eAutoplay || this.sAutoplay || this.sAutoplay)
+                if (this.isAutoplay)
                     this.initAutoplay(3000);
             },
         },
