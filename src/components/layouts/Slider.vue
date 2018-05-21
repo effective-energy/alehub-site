@@ -121,6 +121,9 @@
             },
             isAutoplay: function () {
                 this.initAutoplay(3000);
+            },
+            'options.autoplay': function (val) {
+                console.log(val, 'is autoplay');
             }
         },
         computed: {

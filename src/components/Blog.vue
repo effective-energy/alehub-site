@@ -271,7 +271,7 @@
                                 span
                                     font-size 14px
 
-        @media (min-width 425px) and (max-width 768px)
+        @media (max-width 768px)
             padding 130px 10% 400px 10%
 
             .blog-content
@@ -307,27 +307,19 @@
                     .filter-list
                         display flex
                         flex-direction row
-                        justify-content space-between
+                        justify-content flex-start
                         flex-wrap wrap
 
                         li
                             padding 5px 10px
+                            margin-right 10px
                             background-color #343a49
                             color #f7f7f7
                             border-radius 5px
                             margin-bottom 10px
 
 
-        @media (max-width 320px)
-            .section
-                padding-top 100px
-                padding-bottom 40px
-
-            .blog-post
-                margin 24px 0
-
-                .post-content
-                    padding 0
-
+        @media (max-width 425px)
+            padding 130px 10% 450px 10%
 
 </style>

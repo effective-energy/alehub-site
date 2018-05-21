@@ -9,6 +9,9 @@
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"
+                      :is-effective-energy-autoplay="isEffectiveEnergyAutoplay"
+                      :is-serokell-autoplay="isSerokellAutoplay"
+                      :is-advisors-autoplay="isAdvisorsAutoplay"
                       :is-rtl="isRtl"/>
         <ico-section :is-rtl="isRtl"/>
         <roadmap-section :is-rtl="isRtl"/>
@@ -53,7 +56,10 @@
                 isScrollInFooter: false,
                 isRtl: false,
                 openedModalMenu: false,
-                isPointerInDark: false
+                isPointerInDark: false,
+                isEffectiveEnergyAutoplay: false,
+                isSerokellAutoplay: false,
+                isAdvisorsAutoplay: false
                 // isLoading: true
             }
         },
@@ -88,6 +94,18 @@
 
             this.$on('pointerInDark', (pointerInDark) => {
                 this.isPointerInDark = pointerInDark;
+            });
+
+            this.$on('effectiveEnergyAutoplay', (autoplay) => {
+                this.isEffectiveEnergyAutoplay = autoplay;
+            });
+
+            this.$on('serokellAutoplay', (autoplay) => {
+                this.isSerokellAutoplay = autoplay;
+            });
+
+            this.$on('advisorsAutoplay', (autoplay) => {
+                this.isAdvisorsAutoplay = autoplay;
             });
         }
     }

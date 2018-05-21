@@ -583,7 +583,7 @@
                 ],
                 optionsToSliderScreen: {
                     touch: true,
-                    autoplay: true,
+                    autoplay: false,
                     inBlockTeam: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,

@@ -12,8 +12,10 @@
             <div class="separator">
             </div>
 
-            <div class="effective-energy">
+            <div class="effective-energy" id="effective-energy-team">
                 <p>{{$t('team.effectiveEnergy[0].name')}}</p>
+
+                <!--add static block images like serokell and advisors-->
 
                 <slider :items="$t('team.effectiveEnergy[0].members')"
                         :settings="settings.effectiveEnergy"
@@ -23,11 +25,14 @@
                         :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
-            <div class="serokell">
+            <div class="serokell" id="serokell-team">
                 <p>
                     Serokell
                 </p>
 
+                <button type="button" @click="changeAutoplay">
+                    change autoplay
+                </button>
 
                 <div class="images"
                      id="serokell-gallery"
@@ -114,7 +119,6 @@
                         :privates1="Object.assign(settings.advisors, options.advisors)"
                         :multiplier-position="multiplierPosition"
                         :num-items-in-wrap="numItemsInWrap"/>
-
             </div>
         </div>
     </div>
@@ -135,31 +139,52 @@
                 type: Boolean,
                 required: true
             },
+            isEffectiveEnergyAutoplay: {
+                type: Boolean,
+                required: true
+            },
+            isSerokellAutoplay: {
+                type: Boolean,
+                required: true
+            },
+            isAdvisorsAutoplay: {
+                type: Boolean,
+                required: true
+            },
             isRtl: {
                 type: Boolean,
                 required: true
             }
         },
         watch: {
-            'isTeam': function (inBlockTeam) {
+            isTeam: function (inBlockTeam) {
                 this.options.serokell.inBlockTeam = inBlockTeam;
                 this.options.effectiveEnergy.inBlockTeam = inBlockTeam;
-            }
+            },
+            isEffectiveEnergyAutoplay: function (autoplay) {
+                this.options.effectiveEnergy.autoplay = autoplay;
+            },
+            isSerokellAutoplay: function (autoplay) {
+                this.options.serokell.autoplay = autoplay;
+            },
+            isAdvisorsAutoplay: function (autoplay) {
+                this.options.advisors.autoplay = autoplay;
+            },
         },
         data() {
             return {
                 settings: {
-                    serokell: {
-                        main: 's-js-carousel',
-                        wrap: 's-js-carousel__wrap',
-                        prev: 's-js-carousel__prev',
-                        next: 's-js-carousel__next'
-                    },
                     effectiveEnergy: {
                         main: 'ee-js-carousel',
                         wrap: 'ee-js-carousel__wrap',
                         prev: 'ee-js-carousel__prev',
                         next: 'ee-js-carousel__next'
+                    },
+                    serokell: {
+                        main: 's-js-carousel',
+                        wrap: 's-js-carousel__wrap',
+                        prev: 's-js-carousel__prev',
+                        next: 's-js-carousel__next'
                     },
                     advisors: {
                         main: 'a-js-carousel',
@@ -169,7 +194,7 @@
                     }
                 },
                 options: {
-                    serokell: {
+                    effectiveEnergy: {
                         touch: true,
                         autoplay: false,
                         inBlockTeam: false,
@@ -179,7 +204,7 @@
                         multiplierPosition: 25,
                         numItemsInWrap: 4
                     },
-                    effectiveEnergy: {
+                    serokell: {
                         touch: true,
                         autoplay: false,
                         inBlockTeam: false,
@@ -242,7 +267,11 @@
             },
 
         },
-        methods: {},
+        methods: {
+            changeAutoplay: function () {
+                this.options.serokell.autoplay = !this.options.serokell.autoplay;
+            }
+        },
         created() {
             this.options.serokell.multiplierPosition = this.multiplierPosition;
             this.options.serokell.numItemsInWrap = this.numItemsInWrap;
