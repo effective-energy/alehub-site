@@ -116,7 +116,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/icon-volatility.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -129,7 +129,7 @@
                 </div>
                 <div class="item">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img src="../../static/images/integrity-ic.svg">
                     </div>
                     <div class="right">
                         <p class="right__title">
@@ -558,7 +558,16 @@
         .application
             padding 80px 5%
 
-    @media (max-width 768px)
+    @media (min-width 768px) and (max-width 1024px)
+        .application
+            .section-2
+                .list-items
+                    .item
+                        width 50%
+                        padding-right 16px
+                        margin-bottom 24px
+
+    @media (min-width 575px) and (max-width 768px)
         .application
             .section-2
                 .list-items
@@ -568,14 +577,11 @@
                         margin-bottom 24px
 
             .section-3
-                .figure
-                    width 50%
-                    display flex
-                    flex-direction column
-                    justify-content center
+                display flex
+                justify-content center
 
                 .info-block
-                    width 50%
+                    width 80%
                     padding-left 0
 
                     .title
@@ -590,12 +596,24 @@
 
     @media (max-width 575px)
         .application
+            .section-2
+                .list-items
+                    .item
+                        width 100%
+                        padding-right 0
+
             .section-3
                 .figure
                     display none
 
                 .info-block
                     width 100%
+
+                    .list-items
+                        .item
+                            width 100%
+                            padding-right 0
+                            margin-bottom 24px
 
     @media (max-width 425px)
         .application

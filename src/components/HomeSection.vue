@@ -172,7 +172,6 @@
             <video autoplay muted loop id="myVideo" v-if="isVideo">
                 <source src="../../static/video/preview.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
                 <source src="../../static/video/preview.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
-                <!--<source src="../../static/video/preview.ogg" type='video/ogg; codecs="theora, vorbis"'/>-->
                 <p>This is fallback content to display for user agents that do not support the video tag.</p>
             </video>
 
@@ -653,8 +652,8 @@
                         alt: 'usd',
                         count: 3.3,
                         name: 'usd',
-                        collected: 2000000,
-                        softCap: 2000000,
+                        collected: 1250000,
+                        softCap: 7500000,
                         hardCap: 33000000
                     }
                 },
@@ -688,8 +687,8 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 2000000,
-                softCap: 2000000,
+                collected: 1250000,
+                softCap: 7500000,
                 hardCap: 33000000,
                 currentCurrency: 'usd',
                 anime: '',
@@ -743,9 +742,6 @@
             },
             checkSmallTabletWidth: function () {
                 return window.innerWidth > 690;
-            },
-            checkMobileWidth: function () {
-                return window.innerWidth > 425;
             },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
@@ -1826,7 +1822,7 @@
                 padding 60px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
-                padding 50px 75px 0 75px
+                padding 50px 75px 25px 75px
 
             @media (min-width 425px) and (max-width 768px)
                 padding 50px 50px 25px 50px
