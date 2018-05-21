@@ -399,6 +399,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -416,6 +429,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -433,6 +451,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -1102,6 +1125,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1119,6 +1155,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1136,6 +1177,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -1805,6 +1851,19 @@ const messages = {
                 {
                     name: 'Филипп Нанн',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1822,6 +1881,11 @@ const messages = {
                 {
                     name: 'Владимир Никитин',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1839,6 +1903,11 @@ const messages = {
                 {
                     name: 'Николай Шкилев',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2503,6 +2572,21 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; ' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.</p>' +
+                    '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.</p>' +
+                    '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2520,6 +2604,14 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/nikitin@3x.png" alt="Philipp Nunn" style="width: 200px;' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members.</p> ' +
+                    '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -2537,6 +2629,13 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/shkilev@3x.png" alt="Philipp Nunn" style="width: 200px;' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
+                    '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -3181,6 +3280,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3198,6 +3310,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3215,6 +3332,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -3864,6 +3986,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3881,6 +4016,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3898,6 +4038,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -4541,6 +4686,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4558,6 +4716,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -4575,6 +4738,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5219,6 +5387,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5236,6 +5417,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5253,6 +5439,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5897,6 +6088,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5914,6 +6118,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5931,6 +6140,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {

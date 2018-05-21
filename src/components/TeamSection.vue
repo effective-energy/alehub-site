@@ -119,12 +119,16 @@
                                  :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
+
+        <advisor-info-modal :advisor="currentAdvisor"/>
+
     </div>
 </template>
 
 <script>
     import Slider from './layouts/Slider';
 
+    import AdvisorInfoModal from './modals/AdvisorInfoModal';
     import SliderEffectiveEnergy from './layouts/SliderEffectiveEnergy';
     import SliderSerokell from './layouts/SliderSerokell';
     import SliderAdvisors from './layouts/SliderAdvisors';
@@ -133,6 +137,7 @@
         name: 'Screen5',
         components: {
             Slider,
+            AdvisorInfoModal,
             SliderEffectiveEnergy,
             SliderSerokell,
             SliderAdvisors
@@ -218,6 +223,13 @@
                         multiplierPosition: 25,
                         numItemsInWrap: 4
                     }
+                },
+                currentAdvisor: {
+                    name: '',
+                    position: '',
+                    description: '',
+                    src: '',
+                    social: []
                 }
             }
         },
@@ -262,12 +274,9 @@
 
         },
         methods: {
-            changeAutoplaySerokell: function () {
-                this.options.serokell.autoplay = !this.options.serokell.autoplay;
+            openModal: function (name) {
+                this.$modal.show(name);
             },
-            changeAutoplayEffective: function () {
-                this.options.effectiveEnergy.autoplay = !this.options.effectiveEnergy.autoplay;
-            }
         },
         created() {
             this.options.serokell.multiplierPosition = this.multiplierPosition;
@@ -281,7 +290,10 @@
 
         },
         mounted() {
-            // document.getElementById('effective-energy').style.width = document.getElementById('serokell-gallery').offsetWidth + 'px';
+            this.$on('openAdvisorInfoModal', (currentAdvisor) => {
+                this.currentAdvisor = currentAdvisor;
+                this.openModal('advisor-info-modal');
+            });
         }
     }
 </script>

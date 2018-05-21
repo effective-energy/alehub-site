@@ -48,7 +48,11 @@
                         </div>
 
                         <div class="b-carousel__name">
-                            {{ member.name }}
+                            <span>{{ member.name }}</span>
+                            <div @click="openAdvisorInfoModal(member)">
+                                info
+                                <!--<img src="" alt="advisor info">-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,6 +64,8 @@
                 @click="clickNext">
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
+
+
 
     </div>
 </template>
@@ -136,6 +142,9 @@
             }
         },
         methods: {
+            openAdvisorInfoModal: function (member) {
+                this.$parent.$emit('openAdvisorInfoModal', member);
+            },
             clickNext: function () {
                 clearInterval(this.autoplay);
                 this.nextSlide();
@@ -361,6 +370,10 @@
 
                         .b-carousel__name
                             font-size 20px
+                            display flex
+                            flex-direction column
+                            justify-content center
+                            align-items center
 
                         .b-carousel__inner
                             position relative
