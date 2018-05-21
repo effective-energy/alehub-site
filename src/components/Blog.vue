@@ -111,12 +111,6 @@
                     });
                 }
             }
-        },
-        methods: {},
-        created() {
-        },
-        mounted() {
-            this.selectedPost();
         }
     }
 </script>

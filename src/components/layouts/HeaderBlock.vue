@@ -62,15 +62,6 @@
                 </div>
             </div>
 
-            <!--<div class="navbar__blog"-->
-            <!--v-if="show === 'blog'">-->
-            <!--<router-link class="navbar-item"-->
-            <!--tag="a"-->
-            <!--:to="'/blog'">-->
-            <!--{{ $t("navbar.blog") }}-->
-            <!--</router-link>-->
-            <!--</div>-->
-
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
@@ -448,9 +439,6 @@
             enableScroll: function () {
                 document.body.removeEventListener('touchmove', this.preventDefault, {passive: false});
             }
-        },
-        created() {
-
         },
         mounted() {
             if (this.selectedLanguage === 'ar') {

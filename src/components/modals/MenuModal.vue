@@ -15,7 +15,7 @@
                 </a>
             </div>
 
-            <div class="body__menu" v-if="!isSelectingLanguage">
+            <div class="body__menu" v-if="!isSelectingLanguage && isIndex">
                 <div v-for="item in $t('navbar.menuList')">
                     <a v-scroll-to="item.path"
                        @click="closeModal('menu-modal')">
@@ -23,6 +23,15 @@
                     </a>
                 </div>
             </div>
+
+            <div class="body__menu" v-if="!isSelectingLanguage && !isIndex">
+                <div>
+                    <router-link tag="a" to="/blog/categories/all" @click.native="closeModal('menu-modal')">
+                        {{ 'Blog' }}
+                    </router-link>
+                </div>
+            </div>
+
             <div class="body__languages"
                  v-if="isSelectingLanguage">
                 <div v-for="(item, langIndex) in languages">
@@ -67,6 +76,11 @@
             return {
                 selectingLanguage: false,
                 languages: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
+                blog: [
+                    {
+                        title: 'Blog'
+                    }
+                ]
             }
         },
         computed: {
@@ -78,6 +92,9 @@
             },
             isYellow: function () {
                 return this.yellow;
+            },
+            isIndex: function () {
+                return this.$route.path === '/';
             }
         },
         methods: {

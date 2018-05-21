@@ -27,7 +27,6 @@ const actions = {
                 },
                 method: 'GET'
             }).then(resp => {
-                console.log(resp, 'crypto price success');
                 commit('SUCCESS_CRYPTO_PRICE', resp.data);
                 resolve(resp);
             }).catch(err => {
@@ -48,7 +47,6 @@ const actions = {
                 },
                 method: 'GET'
             }).then(resp => {
-                console.log(resp, 'download app success');
                 commit('SUCCESS_DOWNLOAD_APP', resp.data);
                 resolve(resp);
             }).catch(err => {
@@ -69,7 +67,6 @@ const actions = {
                 },
                 method: 'GET'
             }).then(resp => {
-                console.log(resp.data, 'resp.data');
                 commit('SUCCESS_BLOG', resp.data);
                 resolve(resp);
             }).catch(err => {
