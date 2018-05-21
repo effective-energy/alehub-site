@@ -9,14 +9,13 @@
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
-                 src="../../../static/images/ale-logo.svg"
+                 src="../../../static/images/logo/alehub-dark.svg"
                  alt="ALEHUB"
                  v-if="!isDark">
             <img class="d-inline-block align-top"
-                 src="../../../static/images/ale-logo-white.svg"
+                 src="../../../static/images/logo/alehub.svg"
                  alt="ALEHUB"
                  v-else>
-            ALEHUB
         </router-link>
 
         <div class="hamburger"
