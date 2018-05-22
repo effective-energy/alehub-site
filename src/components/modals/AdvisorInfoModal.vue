@@ -59,12 +59,18 @@
                 position relative
                 border-radius 10px
 
+
                 @media (max-width 768px)
                     border-radius 0
                     width 100% !important
                     left 0 !important
+                    max-height calc(100vh - 74px - 40px) !important
                     height calc(100vh - 74px - 40px) !important
                     top 114px !important
+
+                @media (min-width 768px) and (max-width 1024px)
+                    max-height calc(100vh - 74px - 40px - 20vh) !important
+
 
 
 </style>
@@ -100,11 +106,14 @@
             padding 30px 0
 
             .advisor-info__description
-                max-height 500px
+                max-height 400px
                 overflow-y scroll
 
                 @media (max-width 768px)
                     max-height 100%
+
+                @media (min-width 768px) and (max-width 1024px)
+                    max-height 300px
 
                 p
                     font-size 16px

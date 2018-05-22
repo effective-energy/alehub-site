@@ -365,6 +365,9 @@
                         @media (max-width 425px)
                             flex 0 0 100% !important
 
+                        @media (min-width 768px) and (max-width 1024px)
+                            height 360px
+
                         &:active
                             cursor -webkit-grab !important
 
