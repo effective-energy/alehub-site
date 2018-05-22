@@ -199,7 +199,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -209,12 +216,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -287,6 +308,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -925,7 +951,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -935,12 +968,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1013,6 +1060,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -1651,7 +1703,14 @@ const messages = {
                         {
                             name: 'Арсений Серока',
                             position: 'Ведущий разработчик Serokell',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Йон Мостовой',
@@ -1661,12 +1720,26 @@ const messages = {
                         {
                             name: 'Александр Рукин',
                             position: 'UI/UX Дизайнер',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Кирилл Елагин',
                             position: 'Backend Разработчик',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1739,6 +1812,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Антон Беляков',
+                            position: 'Исследователь',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Арсений Войтенко',
@@ -2372,7 +2450,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -2382,12 +2467,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -2460,6 +2559,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -2572,7 +2676,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; ' +
+                    description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; height: auto; ' +
                     'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
                     'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
@@ -3080,7 +3184,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -3090,12 +3201,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -3168,6 +3293,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -3786,7 +3916,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -3796,12 +3933,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -3874,6 +4025,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -4486,7 +4642,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -4496,12 +4659,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -4574,6 +4751,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -5187,7 +5369,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -5197,12 +5386,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -5275,6 +5478,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -5888,7 +6096,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -5898,12 +6113,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -5976,6 +6205,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',

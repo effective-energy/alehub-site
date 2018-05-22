@@ -110,6 +110,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="image__info">
+                            <span>{{ member.name }}</span>
+                            <div @click="openAdvisorInfoModal(member)">
+                                <img src="../../static/images/info-ic.svg"
+                                     alt="advisor info">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -280,6 +287,10 @@
         methods: {
             openModal: function (name) {
                 this.$modal.show(name);
+            },
+            openAdvisorInfoModal: function (member) {
+                this.currentAdvisor = member;
+                this.openModal('advisor-info-modal');
             },
         },
         created() {
@@ -488,6 +499,10 @@
                         flex-direction column
                         justify-content center
                         align-items center
+
+                        div
+                            img
+                                height 25px
 
                     @media (max-width 320px)
                         position relative

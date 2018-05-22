@@ -50,8 +50,8 @@
                         <div class="b-carousel__info">
                             <span>{{ member.name }}</span>
                             <div @click="openAdvisorInfoModal(member)">
-                                info
-                                <!--<img src="" alt="advisor info">-->
+                                <img src="../../../static/images/info-ic.svg"
+                                     alt="advisor info">
                             </div>
                         </div>
                     </div>
@@ -374,6 +374,10 @@
                             flex-direction column
                             justify-content center
                             align-items center
+
+                            div
+                                img
+                                    height 25px
 
                         .b-carousel__inner
                             position relative
