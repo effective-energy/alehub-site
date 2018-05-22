@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="b-carousel__name">
+                        <div class="b-carousel__info">
                             <span>{{ member.name }}</span>
                             <div @click="openAdvisorInfoModal(member)">
                                 info
@@ -368,7 +368,7 @@
                         &:active
                             cursor -webkit-grab !important
 
-                        .b-carousel__name
+                        .b-carousel__info
                             font-size 20px
                             display flex
                             flex-direction column
@@ -421,6 +421,7 @@
                                 -ms-transition all 0.4s ease-in-out 0s
                                 transition all 0.4s ease-in-out 0s
                                 clip-path circle(50% at center)
+                                -webkit-clip-path circle(50% at center)
 
                                 &:active
                                     cursor -webkit-grab !important
@@ -445,8 +446,7 @@
 
                                 h3
                                     text-transform capitalize
-                                    font-weight 500
-                                    font-size 28px
+                                    font-size 24px
 
                                 .icons
                                     width 100%
