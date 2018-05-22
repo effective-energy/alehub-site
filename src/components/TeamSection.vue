@@ -321,12 +321,14 @@
         background-color #fff
 
         .our-team
+            background-color #fff
+
+        .our-team, .advisors
             padding 80px 7.5% 40px 7.5%
             display flex
             flex-direction column
             justify-content center
             align-items center
-            background-color #fff
 
             @media (min-width 490px) and (max-width 768px)
                 padding 80px 15% 40px 15%
@@ -338,11 +340,6 @@
                 font-size 40px
 
         .advisors
-            padding 80px 7.5% 40px 7.5%
-            display flex
-            flex-direction column
-            justify-content center
-            align-items center
             background-color #ececf0
 
             .title

@@ -56,18 +56,30 @@
     .advisor-info
         .v--modal-background-click
             .v--modal-box
+                position relative
                 border-radius 10px
+
+                @media (max-width 768px)
+                    border-radius 0
+                    width 100% !important
+                    left 0 !important
+                    height calc(100vh - 74px - 40px) !important
+                    top 114px !important
+
 
 </style>
 
 <style lang="stylus" scoped>
     .advisor-info__wrap
+        position relative
+        height 100%
         padding 30px 40px
         display flex
         flex-direction column
 
         .advisor-info__header
             width 100%
+            min-height 10%
             display flex
             flex-direction row
             justify-content space-between
@@ -82,18 +94,24 @@
                     width 15px
 
         .advisor-info__body
+            position relative
             width 100%
+            height 80%
             padding 30px 0
 
             .advisor-info__description
                 max-height 500px
                 overflow-y scroll
 
+                @media (max-width 768px)
+                    max-height 100%
+
                 p
                     font-size 16px
 
         .advisor-info__footer
             width 100%
+            min-height 5%
             display flex
             flex-direction row
             justify-content center
