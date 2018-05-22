@@ -44,6 +44,31 @@
                 </a>
             </div>
         </div>
+        <div class="os-avail-list">
+            <div class="logo">
+                <div class="logo__wrap">
+                    <img class="logo__apple"
+                         alt="logo"
+                         src="../../static/images/android.svg">
+                </div>
+                <h4 class="logo__title">
+                    Android
+                </h4>
+                <p class="version">
+                    Version 0.0.1
+                </p>
+                <p class="release">
+                    22.05.2018
+                </p>
+                <a href="https://alehub.io/wallet/alehub.apk">
+                    <button onclick="yaCounter48802643.reachGoal('DownloadWallet'); return true;"
+                            type="button"
+                            class="button button__download">
+                        {{$t('download')}}
+                    </button>
+                </a>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -93,7 +118,8 @@
 
     .download-app
         background-color #f5f5f7
-        height 100vh
+        height 100%
+        min-height 100vh
         width 100%
         padding 80px 20%
         display flex
