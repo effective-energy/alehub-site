@@ -473,20 +473,45 @@
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img src="../../static/images/cancel-light.svg" alt="close subscribe">
+                    <img src="../../static/images/cancel-light.svg"
+                         alt="close subscribe">
                 </div>
                 <p>
                     Подпишитесь на нашу новостную рассылку
                 </p>
                 <form @submit.prevent="subscribe">
-                    <input type="text" placeholder="Your e-mail address">
-                    <button type="submit">Subscribe</button>
+                    <label class="top-label-subscribe"
+                           :class="{ 'error-label': subscriber.error,
+                           'exist-label': subscriber.exist,
+                           'success-label': subscriber.success }"
+                           v-if="subscriber.error || subscriber.exist || subscriber.success">
+                        <span v-if="subscriber.error">incorrect address</span>
+                        <span v-if="subscriber.success">successful subscription</span>
+                        <span v-if="subscriber.exist">this email is already in use</span>
+                    </label>
+                    <input id="subscribe-email-input"
+                           type="text"
+                           placeholder="Your e-mail address"
+                           required
+                           :class="{ 'error__email-subscribe-input': subscriber.error,
+                           'success__email-subscribe-input': subscriber.success,
+                           'exist__email-subscribe-input': subscriber.exist}"
+                           v-model="subscriber.email"
+                           @blur="blurCheckCorrectEmail(subscriber.email)"
+                           @input="inputCheckCorrectEmail(subscriber.email)"
+                           :disabled="subscriber.loader">
+                    <button type="submit"
+                            :disabled="subscriber.loader">
+                        Subscribe
+                    </button>
                 </form>
                 <div>
                     <label for="toggle-web-push">
                         И не забудьте включить оповещения
                     </label>
-                    <label class="switch-control" id="toggle-web-push" @click="toggleNotification">
+                    <label class="switch-control"
+                           id="toggle-web-push"
+                           @click="toggleNotification">
                         <input type="checkbox">
                         <span class="slider"></span>
                     </label>
@@ -605,10 +630,28 @@
                     }, 40);
                 }
             },
+            openedEmailSubscribeAlert: function () {
+                this.subscriber = {
+                    email: '',
+                    initialFocus: false,
+                    loader: false,
+                    success: false,
+                    error: false,
+                    exist: false
+                }
+            }
         },
         data() {
             return {
                 openedEmailSubscribeAlert: true,
+                subscriber: {
+                    email: '',
+                    initialFocus: false,
+                    loader: false,
+                    success: false,
+                    error: false,
+                    exist: false
+                },
 
                 topScrollY: false,
                 position: 0,
@@ -809,6 +852,60 @@
             }
         },
         methods: {
+            blurCheckCorrectEmail: function (email) {
+                (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
+                this.subscriber.error = !this.checkCorrectEmail(email);
+
+                if (this.subscriber.error) {
+                    this.subscriber.success = false;
+                    this.subscriber.exist = false;
+                }
+            },
+            inputCheckCorrectEmail: function (email) {
+                if (this.subscriber.initialFocus) {
+                    this.subscriber.error = !this.checkCorrectEmail(email);
+
+                    this.subscriber.exist = false;
+
+                    if (this.subscriber.error)
+                        this.subscriber.success = false;
+                }
+            },
+            checkCorrectEmail: function (email) {
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (email.length === 0)
+                    return true;
+
+                return re.test(String(email).toLowerCase());
+            },
+            subscribe: function () {
+                console.log(123123);
+                if (this.checkCorrectEmail(this.subscriber.email)) {
+                    this.subscriber.loader = true;
+                    this.subscriber.success = false;
+                    this.subscriber.error = false;
+                    this.subscriber.exist = false;
+
+                    this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
+                        'email': this.subscriber.email
+                    }, {
+                        headers: {
+                            'Content-Type': 'application/json; charset=UTF-8',
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        this.subscriber.loader = false;
+                        console.log(response.body);
+                        if (response.body.message === 'Email already exist')
+                            return this.subscriber.exist = true;
+                        this.subscriber.success = true;
+                        localStorage.setItem('subscriber-email', this.subscriber.email);
+                    }, response => {
+                        this.subscriber.loader = false;
+                        this.subscriber.error = true;
+                    })
+                }
+            },
             toggleNotification: function () {
 
             },
@@ -1258,14 +1355,39 @@
             margin 0
 
         form
+            position relative
             display flex
             justify-content space-between
+
+            .top-label-subscribe
+                position absolute
+                top -10px
+                left 15px
+                margin 0
+                font-size 12px
+                font-family MuseoSansCyrl500
+                font-weight 700
+                letter-spacing .4px
+                padding 0 7px
+
+            .error-label
+                background-color #ff4f4f
+                color #f7f7f7
+
+            .success-label
+                background-color green
+                color #f7f7f7
+
+            .exist-label
+                background-color #2e86ce
+                color #f7f7f7
+
 
             input
                 width 67%
                 background-color #f0f0f0
                 border-radius 3px
-                border solid .5px transparent
+                border solid 1px transparent
                 border-bottom-width 1.5px
                 font-family MuseoSansCyrl300
                 font-size 14px
@@ -1288,10 +1410,22 @@
                 &:-moz-placeholder
                     color #909090
 
-
                 &:focus
                     color #333333
                     outline none
+
+                &:disabled
+                    color #666666
+                    background-color #cccccc
+
+            .error__email-subscribe-input
+                border-color #ff4f4f
+
+            .success__email-subscribe-input
+                border-color green
+
+            .exist__email-subscribe-input
+                border-color #2e86ce
 
             button
                 width 30%
@@ -1316,6 +1450,14 @@
 
                 &:focus
                     outline none
+
+                &:disabled
+                    color #666666
+                    background-color #cccccc
+                    border 1px solid rgba(0, 0, 0, .75)
+                    -webkit-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                    -moz-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                    box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
 
         div
             position relative

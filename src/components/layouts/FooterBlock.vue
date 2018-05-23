@@ -23,7 +23,8 @@
                             {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
-					<a href="#"
+					<a href="https://alehub.io/privacy_policy_eng.pdf"
+                       target="_blank"
                        class="terms"
                        :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
@@ -104,7 +105,7 @@
                             v-if="!isSuccess">
                         <spinner v-if="isLoader"/>
                         <span v-else>
-                                    {{ $t('footer.right.btn') }}
+                            {{ $t('footer.right.btn') }}
                         </span>
                     </button>
                     <p v-else class="subscribe-form__success">
@@ -143,7 +144,7 @@
         },
         watch: {
             error: function (val) {
-                console.log(val, 'error');
+                // console.log(val, 'error');
             }
         },
         computed: {
@@ -176,7 +177,7 @@
                 if (this.isCorrectEmail) {
                     this.isLoader = true;
                     this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
-                        "email": this.email
+                        'email': this.email
                     }, {
                         headers: {
                             'Content-Type': 'application/json; charset=UTF-8',
@@ -200,10 +201,7 @@
                 this.exist = false;
             },
             checkCorrectEmail: function () {
-                if (this.email.length === 0)
-                    this.initialFocus = false;
-                else
-                    this.initialFocus = true;
+                (this.email.length === 0) ? this.initialFocus = false : this.initialFocus = true;
                 this.error = !this.isCorrectEmail;
             }
         }
