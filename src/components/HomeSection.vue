@@ -414,6 +414,9 @@
                      alt="Serokell">
             </a>
         </div>
+
+        <media-block/>
+
         <div id="description"
              class="what-is"
              :class="{ 'description__dark': isDark }">
@@ -594,6 +597,7 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import MediaBlock from './layouts/MediaBlock';
 
     import {mapGetters} from 'vuex';
 
@@ -603,7 +607,8 @@
         name: 'Screen1',
         components: {
             MenuModal,
-            SliderScreen
+            SliderScreen,
+            MediaBlock
         },
         props: {
             isDarkSection: {
@@ -2296,7 +2301,7 @@
                 padding 100px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
-                padding 100px
+                padding 50px 75px 0 75px
 
             @media (min-width 425px) and (max-width 768px)
                 padding 75px 50px
