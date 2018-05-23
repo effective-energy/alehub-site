@@ -26,17 +26,11 @@
             </button>
         </div>
 
-        <div class="scroll-to-top"
-             :class="{ 'scroll-to-top__rtl': isRtl }"
-             v-if="checkSmallTabletWidth">
-            <a @click="clickToTop($event)"
-               v-if="!afterClickToTop"></a>
-            <a @click="returnPosition" v-else></a>
-        </div>
         <div class="wrap__pointer"
              :class="{ 'wrap-pointer__rtl': isRtl }"
              id="wrap-pointer"
-             v-if="checkSmallTabletWidth">
+             v-if="checkSmallTabletWidth"
+             @click="changePosition">
             <img class="pointer-to-top"
                  :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-dark.svg"
@@ -47,6 +41,14 @@
                  src="../../static/images/arrow-top-yellow.svg"
                  alt="to top"
                  v-else>
+        </div>
+
+        <div class="scroll-to-top"
+             :class="{ 'scroll-to-top__rtl': isRtl }"
+             v-if="checkSmallTabletWidth">
+            <a @click="clickToTop"
+               v-if="!afterClickToTop"></a>
+            <a @click="returnPosition" v-else></a>
         </div>
 
         <div id="svg-anim"
@@ -858,6 +860,9 @@
             }
         },
         methods: {
+            changePosition: function () {
+                (!this.afterClickToTop) ? this.clickToTop() : this.returnPosition();
+            },
             blurCheckCorrectEmail: function (email) {
                 (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
                 this.subscriber.error = !this.checkCorrectEmail(email);
@@ -918,7 +923,7 @@
             toggleEmailSubscribeAlert: function () {
                 this.openedEmailSubscribeAlert = !this.openedEmailSubscribeAlert;
             },
-            clickToTop: function (e) {
+            clickToTop: function () {
                 this.afterClickToTop = true;
                 document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
                 this.position = window.scrollY;
@@ -1182,6 +1187,7 @@
 <style lang="stylus" scoped>
 
     .wrap__pointer
+        cursor pointer
         position fixed
         width 20px
         right 10px
@@ -2658,4 +2664,10 @@
             font-size 18px !important
             font-weight 700
 
+</style>
+
+<style scoped>
+    .wrap__pointer:hover + .scroll-to-top > a{
+        opacity: 0.5 !important;
+    }
 </style>
