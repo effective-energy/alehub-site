@@ -471,6 +471,10 @@
         <transition name="fade">
             <div class="email-subscribe-panel"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
+                <div class="close__email-subscribe-panel"
+                     @click="toggleEmailSubscribeAlert">
+                    <img src="../../static/images/cancel-light.svg" alt="close subscribe">
+                </div>
                 <p>
                     Подпишитесь на нашу новостную рассылку
                 </p>
@@ -482,15 +486,19 @@
                     <label for="toggle-web-push">
                         И не забудьте включить оповещения
                     </label>
-                    <input type="checkbox" id="toggle-web-push">
+                    <label class="switch-control" id="toggle-web-push" @click="toggleNotification">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
                 </div>
             </div>
         </transition>
 
-        <div id="email-subscribe-alert"
-             class="email-subscribe-alert"
-             v-if="checkTabletWidth"
-             @click="toggleEmailSubscribeAlert">
+        <button id="email-subscribe-alert"
+                class="email-subscribe-alert"
+                type="button"
+                v-if="checkTabletWidth"
+                @click="toggleEmailSubscribeAlert">
             <div class="el-base">
                 <div class="el-inner-space">
                     <div class="el-flap"
@@ -498,7 +506,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </button>
 
         <a id="telegram-alert-mobile"
            class="telegram-alert-mobile"
@@ -801,6 +809,9 @@
             }
         },
         methods: {
+            toggleNotification: function () {
+
+            },
             toggleEmailSubscribeAlert: function () {
                 this.openedEmailSubscribeAlert = !this.openedEmailSubscribeAlert;
             },
@@ -812,10 +823,6 @@
             returnPosition: function () {
                 this.afterClickToTop = false;
                 window.scrollTo({top: this.position, behavior: 'smooth'});
-            },
-            yaMetricaCollectionItem: function () {
-                yaCounter48802643.reachGoal('BuyCrypto');
-                return true;
             },
             yaMetricaCollectionLastItem: function () {
                 yaCounter48802643.reachGoal('BuyUSD');
@@ -1004,6 +1011,10 @@
             },
         },
         mounted() {
+
+            //устанавливать начальное значение checked на включение оповещений
+
+
             window.addEventListener('scroll', () => {
                 if (window.scrollY === 0) {
                     this.topScrollY = true;
@@ -1224,12 +1235,26 @@
         justify-content space-between
         width 400px
         height 150px
-        padding 20px
+        padding 20px 25px 15px 20px
         background-color #343a49
         border-radius 4px
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+
+        .close__email-subscribe-panel
+            cursor pointer
+            position absolute
+            right 10px
+            top 10px
+
+            img
+                width 15px
 
         p
             color #f7f7f7
+            font-family MuseoSansCyrl500
+            font-weight 500
             margin 0
 
         form
@@ -1238,18 +1263,121 @@
 
             input
                 width 67%
+                background-color #f0f0f0
+                border-radius 3px
+                border solid .5px transparent
+                border-bottom-width 1.5px
+                font-family MuseoSansCyrl300
+                font-size 14px
+                color #666666
+                padding 7px 15px 7px 15px
+                font-weight 700
+                -webkit-transition all .3s ease-out
+                -o-transition all .3s ease-out
+                transition all .3s ease-out
+
+                &::-webkit-input-placeholder
+                    color #909090
+
+                &::-moz-placeholder
+                    color #909090
+
+                &:-ms-input-placeholder
+                    color #909090
+
+                &:-moz-placeholder
+                    color #909090
+
+
+                &:focus
+                    color #333333
+                    outline none
 
             button
                 width 30%
+                cursor pointer
+                background-color #ffd24f
+                font-family MuseoSansCyrl300
+                font-size 14px
+                font-weight 700
+                color #34343e
+                padding 8px 5px
+                margin 0 0 0 12px
+                border 1px solid #ffd24f
+                border-radius 3px
+                white-space nowrap
+                -webkit-transition all .2s ease-out
+                -o-transition all .2s ease-out
+                transition all .2s ease-out
+
+                &:active
+                    background-color #ffbe00
+                    border 1px solid #d39e00
+
+                &:focus
+                    outline none
 
         div
+            position relative
             display flex
             flex-direction row
             align-items center
 
             label
-                color #f7f7f7
+                color #dedfe1
+                font-family MuseoSansCyrl500
+                font-weight 500
                 margin 0
+
+            .switch-control
+                right 0
+                position absolute
+                display inline-block
+                width 40px
+                height 22px
+
+                input
+                    display none !important
+
+                    &:checked + .slider
+                        background-color #3292e0
+
+                        &:before
+                            background-color #ffd24f
+                            -webkit-transform translateX(18px)
+                            -ms-transform translateX(18px)
+                            transform translateX(18px)
+
+
+                .slider
+                    position absolute
+                    cursor pointer
+                    top 0
+                    left 0
+                    right 0
+                    bottom 0
+                    background-color #dedfe1
+                    -webkit-transition .5s
+                    transition .5s
+                    border-radius 20px
+                    -webkit-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+                    -moz-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+                    box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+
+                    &:before
+                        position absolute
+                        content ""
+                        height 16px
+                        width 16px
+                        border-radius 50%
+                        left 3px
+                        bottom 3px
+                        background-color #5a8bb3
+                        -webkit-transition .4s ease
+                        transition .4s ease
+                        -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+                        -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+                        box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
 
     .fade-enter-active,
     .fade-leave-active
@@ -1273,15 +1401,26 @@
         bottom 180px
         width 70px
         height 70px
-        border-radius  50%
+        border-radius 50%
+        border none
+        padding 0
         background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
-        -webkit-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
-        -moz-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
-        box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+
+        &:focus
+            outline none
+
+        &:active
+            -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
+            -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
+            box-shadow none
+            transform translateY(2px)
 
         @media (max-width 768px)
             display none !important
@@ -1344,9 +1483,9 @@
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
-        -webkit-box-shadow 2px 0 3px 0 rgba(0, 0, 0, .5)
-        -moz-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
-        box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
 
         @media (max-width 768px)
             display none !important

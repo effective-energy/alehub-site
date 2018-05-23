@@ -8,7 +8,8 @@
                 <router-link tag="a" to="/">
                     <div class="ale-logo"
                          :class="{ 'ale-logo__rtl': isRtl }">
-                        <img src="../../../static/images/ale-logo-grey.svg" alt="ale-logo">
+                        <img src="../../../static/images/ale-logo-grey.svg"
+                             alt="ale-logo">
                         <span>alehub</span>
                     </div>
                 </router-link>
@@ -261,7 +262,7 @@
                         order 2
                         background none
                         border-radius 3px
-                        border solid 0.5px #a3a3a9
+                        border solid .5px #a3a3a9
                         border-bottom-width 1.5px
                         font-family MuseoSansCyrl300
                         font-size 14px
