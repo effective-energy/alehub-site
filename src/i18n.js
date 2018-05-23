@@ -299,7 +299,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -1051,7 +1051,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -1803,7 +1803,7 @@ const messages = {
                         },
                         {
                             name: 'Егор Локтев',
-                            position: 'Директор по маркетингу',
+                            position: 'Руководитель проекта',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -2550,7 +2550,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -3284,7 +3284,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -4016,7 +4016,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -4742,7 +4742,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -5469,7 +5469,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -6196,7 +6196,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
