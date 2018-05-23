@@ -1339,6 +1339,17 @@
         -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
 
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 150px
+            bottom 50px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 180px
+            bottom 50px
+
         .close__email-subscribe-panel
             cursor pointer
             position absolute
@@ -1569,7 +1580,7 @@
 
         @media (min-width 768px) and (max-width 1024px)
             right 60px
-            bottom 50px
+            bottom 140px
             width 60px
             height 60px
 
