@@ -477,7 +477,7 @@
                          alt="close subscribe">
                 </div>
                 <p>
-                    Подпишитесь на нашу новостную рассылку
+                    Subscribe to our newsletter
                 </p>
                 <form @submit.prevent="subscribe">
                     <label class="top-label-subscribe"
@@ -507,7 +507,7 @@
                 </form>
                 <div>
                     <label for="toggle-web-push">
-                        И не забудьте включить оповещения
+                        And don't forget to turn on notifications
                     </label>
                     <label class="switch-control"
                            id="toggle-web-push"
