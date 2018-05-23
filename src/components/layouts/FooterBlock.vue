@@ -23,7 +23,7 @@
                             {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
-					<a href="https://alehub.io/privacy_policy_eng.pdf"
+					<a href="https://alehub.io/terms_and_conditions.pdf"
                        target="_blank"
                        class="terms"
                        :class="{ 'terms__rtl': isRtl }">

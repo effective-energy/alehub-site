@@ -1,5 +1,6 @@
 <template>
-    <div class="media-block">
+    <div class="media-block"
+         :class="{ 'media-block__dark': isDark }">
         <div class="title">
             Mass media:
         </div>
@@ -10,8 +11,24 @@
             <a target="_blank"
                v-for="item in media"
                :href="item.href">
-                <img :src="item.src"
-                     :alt="item.title">
+                <transition name="fade-media">
+                    <img class="light"
+                         :src="item.src"
+                         :alt="item.title"
+                         v-if="!isDark">
+                </transition>
+                <transition name="fade-media">
+                    <img class="dark"
+                         :src="item.darkSrc"
+                         :alt="item.title"
+                         v-if="isDark">
+                </transition>
+                <transition name="fade-media">
+                    <img class="hover"
+                         :src="item.hoverSrc"
+                         :alt="item.title"
+                         v-if="item.isHover">
+                </transition>
             </a>
         </div>
     </div>
@@ -20,56 +37,86 @@
 <script>
     export default {
         name: 'MediaBlock',
+        props: {
+            isDark: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
                 media: [
                     {
-                        title: 'Bitcoin Magazin',
+                        title: 'Bitcoin Magazine',
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
+                        darkSrc: '../../../static/images/logo/bitcoin-magazine-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'Coin Telegraph',
                         src: '../../../static/images/logo/coin-telegraph.svg',
+                        darkSrc: '../../../static/images/logo/coin-telegraph-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'Forklog',
                         src: '../../../static/images/logo/forklog.svg',
+                        darkSrc: '../../../static/images/logo/forklog-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'TheMerkle',
                         src: '../../../static/images/logo/the-merkle.svg',
+                        darkSrc: '../../../static/images/logo/the-merkle-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
+                        darkSrc: '../../../static/images/logo/ccn-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'BtcManager',
                         src: '../../../static/images/logo/btc-manager.svg',
+                        darkSrc: '../../../static/images/logo/btc-manager-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CryptoNinjas',
                         src: '../../../static/images/logo/crypto-ninjas.svg',
+                        darkSrc: '../../../static/images/logo/crypto-ninjas-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CoinStaker',
                         src: '../../../static/images/logo/coin-staker.svg',
+                        darkSrc: '../../../static/images/logo/coin-staker-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
+                    },
+                    {
+                        title: 'CoinNewsAsia',
+                        src: '../../../static/images/logo/coin-news-asia.svg',
+                        darkSrc: '../../../static/images/logo/coin-news-asia-light.svg',
+                        hoverSrc: '../../../static/images/logo/crypto-ninjas.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     }
                 ]
             }
@@ -84,6 +131,7 @@
         display flex
         flex-direction row
         justify-content space-between
+        background-color #ececf0
 
         @media (min-width 1024px) and (max-width 1440px)
             padding 100px 100px 0 100px
@@ -139,6 +187,14 @@
                 display flex
                 justify-content center
 
+                .fade-media-enter
+                    opacity 0
+
+                .fade-media-enter-active
+                    -webkit-transition all .5s ease-in-out
+                    -o-transition all .5s ease-in-out
+                    transition all .5s ease-in-out
+
                 @media (max-width 768px)
                     margin 0
                     flex-basis unset
@@ -150,4 +206,11 @@
                         height unset
                         width 100%
                         max-height 60px
+
+    .media-block__dark
+        background-color #343a49
+
+        .title
+            color #f7f7f7
+
 </style>

@@ -384,38 +384,10 @@
                    target="_blank"></a>
             </div>
         </div>
-        <div class="partners"
-             :class="{ 'partners__dark': isDark }">
-            <div class="title">
-                {{ $t("partners.title") }}:
-            </div>
-            <a href="http://ifmo.ru/ru/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
-                     height="60px"
-                     width="114px"
-                     alt="ITMO">
-            </a>
-            <a href="https://cryptob2b.io/ru/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
-                     height="46px"
-                     width="158px"
-                     alt="CryptoB2B">
-            </a>
-            <a href="https://www.blockchain-spb.org/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
-                     height="59px"
-                     width="57px"
-                     alt="BEAR">
-            </a>
-            <a href="https://serokell.io/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
-                     height="43px"
-                     width="87px"
-                     alt="Serokell">
-            </a>
-        </div>
 
-        <media-block/>
+        <partners-block :is-dark="isDark"/>
+
+        <media-block :is-dark="isDark"/>
 
         <div id="description"
              class="what-is"
@@ -598,6 +570,7 @@
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
     import MediaBlock from './layouts/MediaBlock';
+    import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
 
@@ -608,7 +581,8 @@
         components: {
             MenuModal,
             SliderScreen,
-            MediaBlock
+            MediaBlock,
+            PartnersBlock
         },
         props: {
             isDarkSection: {
@@ -1873,9 +1847,6 @@
         background-repeat no-repeat
         background-size cover
 
-    .partners
-        background-color #ececf0
-
     .play-video
         z-index 10000
         width 100%
@@ -2104,12 +2075,6 @@
     .ico-progress__dark
         color #f7f7f7 !important
 
-    .partners__dark
-        background-color #343a49 !important
-
-        .title
-            color #f7f7f7 !important
-
     .social-line__dark
         .line
             border-color #f7f7f7 !important
@@ -2277,70 +2242,6 @@
 
             img
                 transform rotateY(180deg)
-
-    #screen1
-        .partners
-            display flex
-            justify-content space-between
-            align-items center
-            flex-wrap nowrap
-            width 100%
-            margin-top 0
-            padding-top 150px
-
-            .title
-                z-index 2
-                font-size 22px
-                font-weight 700
-                white-space nowrap
-
-            @media (min-width 1440px) and (max-width 2560px)
-                padding 150px 150px 0 150px
-
-            @media (min-width 1024px) and (max-width 1440px)
-                padding 100px 100px 0 100px
-
-            @media (min-width 768px) and (max-width 1024px)
-                padding 50px 75px 0 75px
-
-            @media (min-width 425px) and (max-width 768px)
-                padding 75px 50px
-                height 75vh
-                display flex
-                flex-direction column
-                justify-content space-around
-                align-items center
-
-                .title
-                    display none
-
-            @media (min-width 320px) and (max-width 425px)
-                height 100vh
-                display flex
-                flex-direction column
-                justify-content space-around
-                align-items center
-                padding-top 50px
-                padding-bottom 50px
-
-                .title
-                    display none
-
-                a
-                    margin-bottom 20px
-
-            @media (max-width 320px)
-                display flex
-                flex-direction column
-                justify-content center
-                align-items center
-                padding-top 50px !important
-
-                .title
-                    display none
-
-                a
-                    margin-bottom 20px
 
     .social-line
         padding 15px 0
