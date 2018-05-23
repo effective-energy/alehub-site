@@ -417,8 +417,7 @@
              :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer"
-                         style="position: relative; display: flex; justify-content: center; align-items: center;">
+                    <div class="desktop-outer">
                         <div style="position: absolute; width: 80%; top: 7%;">
                             <slider-screen :items="itemsToSliderScreen"
                                            :options="optionsToSliderScreen"
@@ -469,6 +468,38 @@
             </div>
         </div>
 
+        <transition name="fade">
+            <div class="email-subscribe-panel"
+                 v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
+                <p>
+                    Подпишитесь на нашу новостную рассылку
+                </p>
+                <form @submit.prevent="subscribe">
+                    <input type="text" placeholder="Your e-mail address">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div>
+                    <label for="toggle-web-push">
+                        И не забудьте включить оповещения
+                    </label>
+                    <input type="checkbox" id="toggle-web-push">
+                </div>
+            </div>
+        </transition>
+
+        <div id="email-subscribe-alert"
+             class="email-subscribe-alert"
+             v-if="checkTabletWidth"
+             @click="toggleEmailSubscribeAlert">
+            <div class="el-base">
+                <div class="el-inner-space">
+                    <div class="el-flap"
+                    :class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <a id="telegram-alert-mobile"
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
@@ -494,13 +525,13 @@
             <img src="../../static/images/cancel-dark.svg"
                  v-if="isDarkSection"
                  @click.prevent="doCloseTelegramAlertMobile">
-
         </a>
 
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkTabletWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
+             :class="{ 'telegram-alert__yellow': isDarkSection,
+             'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
@@ -510,7 +541,8 @@
                      v-if="isDarkSection">
             </a>
             <div class="alert-message"
-                 :class="{ 'alert-message__dark': isDarkSection, 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
+                 :class="{ 'alert-message__dark': isDarkSection,
+                 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
                 <span>3</span>
             </div>
         </div>
@@ -568,6 +600,8 @@
         },
         data() {
             return {
+                openedEmailSubscribeAlert: true,
+
                 topScrollY: false,
                 position: 0,
                 afterClickToTop: false,
@@ -697,10 +731,12 @@
             }
         },
         computed: {
-            ...mapGetters([
-                'cryptocurrencies',
-                'cryptoPriceStatus'
-            ]),
+            ...mapGetters(
+                [
+                    'cryptocurrencies',
+                    'cryptoPriceStatus'
+                ]
+            ),
             isCollected: function () {
                 return this.collected;
             },
@@ -731,8 +767,11 @@
                     this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
                     this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
                 }
-                
+
                 return this.currentCurrency;
+            },
+            isOpenEmailSubscribeAlert: function () {
+                return this.openedEmailSubscribeAlert;
             },
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
@@ -762,6 +801,9 @@
             }
         },
         methods: {
+            toggleEmailSubscribeAlert: function () {
+                this.openedEmailSubscribeAlert = !this.openedEmailSubscribeAlert;
+            },
             clickToTop: function (e) {
                 this.afterClickToTop = true;
                 document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -1161,6 +1203,9 @@
             height 15px
             width 15px
 
+        @media (min-width 768px)
+            display none !important
+
     .telegram-alert-mobile__yellow
         background-color #ffd24f
 
@@ -1168,19 +1213,155 @@
             span
                 color #343a49
 
+
+    .email-subscribe-panel
+        z-index 1000
+        position fixed
+        bottom 100px
+        right 200px
+        display flex
+        flex-direction column
+        justify-content space-between
+        width 400px
+        height 150px
+        padding 20px
+        background-color #343a49
+        border-radius 4px
+
+        p
+            color #f7f7f7
+            margin 0
+
+        form
+            display flex
+            justify-content space-between
+
+            input
+                width 67%
+
+            button
+                width 30%
+
+        div
+            display flex
+            flex-direction row
+            align-items center
+
+            label
+                color #f7f7f7
+                margin 0
+
+    .fade-enter-active,
+    .fade-leave-active
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+    .fade-enter,
+    .fade-leave-active
+        opacity 1
+        bottom -150px
+
+
+    .email-subscribe-alert
+        cursor pointer
+        position fixed
+        display flex
+        justify-content center
+        align-items center
+        right 100px
+        bottom 180px
+        width 70px
+        height 70px
+        border-radius  50%
+        background-color #343a49
+        z-index 1000
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+        -webkit-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 60px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 140px
+            width 60px
+            height 60px
+
+
+        .el-base
+            position relative
+            height 22.5px
+            width 36px
+            background #2e86ce
+            border-radius 3px
+
+        .el-inner-space
+            border-radius 3px
+            border-top solid 11px transparent
+            border-right solid 18px #f7f7f7
+            border-bottom solid 11px #f7f7f7
+            border-left solid 18px #f7f7f7
+
+        .el-flap
+            position absolute
+            top 0
+            left 0
+            border-radius 3px
+            border-top solid 11px #ffd24f
+            border-right solid 18px transparent
+            border-left solid 18px transparent
+            -webkit-transition all 1s ease-in-out
+            -o-transition all 1s ease-in-out
+            transition all 1s ease-in-out
+
+        .el-flap-active
+            border-top solid 11px #3292e0
+            transform rotateX(180deg)
+            transform-origin center top
+
+
     .telegram-alert
         cursor pointer
         position fixed
         right 100px
         bottom 75px
-        border-radius 50%
-        background-color #343a49
         width 70px
         height 70px
+        border-radius 50%
+        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
+        -webkit-box-shadow 2px 0 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 0 2px 3px 0 rgba(0, 0, 0, .5)
+
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 60px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 50px
+            width 60px
+            height 60px
 
         .alert-message
             background-color #ffd24f
@@ -1215,12 +1396,6 @@
                 span
                     font-size 12px
 
-            @media (min-width 1440px) and (max-width 2560px)
-                bottom 125px
-                right 95px
-                width 25px
-                height 25px
-
         .alert-message__dark
             background-color #747c8e
             color #fff
@@ -1249,25 +1424,6 @@
 
             @media (min-width 425px) and (max-width 768px)
                 bottom 433px
-
-
-        @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 50px
-            width 60px
-            height 60px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 50px
-            width 60px
-            height 60px
-
-        @media (min-width 1440px) and (max-width 2560px)
-            right 100px
-            bottom 75px
-            width 70px
-            height 70px
 
         a
             width 100%
@@ -1862,6 +2018,10 @@
                             margin-top 25px
 
                     .desktop-outer
+                        position relative
+                        display flex
+                        justify-content center
+                        align-items center
                         margin 0 auto
 
                         .slider-container
