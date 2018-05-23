@@ -47,8 +47,12 @@
                             </div>
                         </div>
 
-                        <div class="b-carousel__name">
-                            {{ member.name }}
+                        <div class="b-carousel__info">
+                            <span>{{ member.name }}</span>
+                            <div @click="openAdvisorInfoModal(member)">
+                                <img src="../../../static/images/info-ic.svg"
+                                     alt="advisor info">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,6 +64,8 @@
                 @click="clickNext">
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
+
+
 
     </div>
 </template>
@@ -136,6 +142,9 @@
             }
         },
         methods: {
+            openAdvisorInfoModal: function (member) {
+                this.$parent.$emit('openAdvisorInfoModal', member);
+            },
             clickNext: function () {
                 clearInterval(this.autoplay);
                 this.nextSlide();
@@ -356,11 +365,22 @@
                         @media (max-width 425px)
                             flex 0 0 100% !important
 
+                        @media (min-width 768px) and (max-width 1024px)
+                            height 360px
+
                         &:active
                             cursor -webkit-grab !important
 
-                        .b-carousel__name
+                        .b-carousel__info
                             font-size 20px
+                            display flex
+                            flex-direction column
+                            justify-content center
+                            align-items center
+
+                            div
+                                img
+                                    height 25px
 
                         .b-carousel__inner
                             position relative
@@ -408,6 +428,7 @@
                                 -ms-transition all 0.4s ease-in-out 0s
                                 transition all 0.4s ease-in-out 0s
                                 clip-path circle(50% at center)
+                                -webkit-clip-path circle(50% at center)
 
                                 &:active
                                     cursor -webkit-grab !important
@@ -432,8 +453,7 @@
 
                                 h3
                                     text-transform capitalize
-                                    font-weight 500
-                                    font-size 28px
+                                    font-size 24px
 
                                 .icons
                                     width 100%

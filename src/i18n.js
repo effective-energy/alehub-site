@@ -53,7 +53,7 @@ const messages = {
         greeting: {
             title: '项目管理的新时代即将到来',
             countDown: {
-                title: '第一回合将开始',
+                title: 'PreICO将开始',
                 time: {
                     days: '天',
                     hours: '小时',
@@ -199,7 +199,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -209,12 +216,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -278,7 +299,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -287,6 +308,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -399,6 +425,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -416,6 +455,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -433,6 +477,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -486,19 +535,24 @@ const messages = {
             distribution: {
                 title: '在ICO期间出售',
                 description: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
-                list: [{
-                    title: '为ICO出售',
-                    amount: 77
-                }, {
-                    title: '团队',
-                    amount: 11
-                }, {
-                    title: '推荐计划和顾问',
-                    amount: 10
-                }, {
-                    title: '赏金',
-                    amount: 2
-                }]
+                list: [
+                    {
+                        title: '为ICO出售',
+                        amount: 77
+                    },
+                    {
+                        title: '团队',
+                        amount: 11
+                    },
+                    {
+                        title: '推荐计划和顾问',
+                        amount: 10
+                    },
+                    {
+                        title: '赏金',
+                        amount: 2
+                    }
+                ]
             }
         },
         roadmap: {
@@ -604,13 +658,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: '舞台已经开始',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: '舞台没有开始',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -756,7 +817,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'Round 1 will begin',
+                title: 'PreICO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -902,7 +963,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -912,12 +980,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -981,7 +1063,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -990,6 +1072,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -1102,6 +1189,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1119,6 +1219,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1136,6 +1241,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -1312,13 +1422,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'stage in the process',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -1459,7 +1576,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'ICO начинается через',
+                title: 'PreICO начинается через',
                 time: {
                     days: 'Дней',
                     hours: 'Часов',
@@ -1605,7 +1722,14 @@ const messages = {
                         {
                             name: 'Арсений Серока',
                             position: 'Ведущий разработчик Serokell',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Йон Мостовой',
@@ -1615,12 +1739,26 @@ const messages = {
                         {
                             name: 'Александр Рукин',
                             position: 'UI/UX Дизайнер',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Кирилл Елагин',
                             position: 'Backend Разработчик',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1684,7 +1822,7 @@ const messages = {
                         },
                         {
                             name: 'Егор Локтев',
-                            position: 'Директор по маркетингу',
+                            position: 'Руководитель проекта',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -1693,6 +1831,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Антон Беляков',
+                            position: 'Исследователь',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Арсений Войтенко',
@@ -1805,6 +1948,19 @@ const messages = {
                 {
                     name: 'Филипп Нанн',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1822,6 +1978,11 @@ const messages = {
                 {
                     name: 'Владимир Никитин',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1839,6 +2000,11 @@ const messages = {
                 {
                     name: 'Николай Шкилев',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2014,13 +2180,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '09.05.2018 – 25.05.2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'этап идёт',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '25.05.2018 – 15.06.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '25.05.2018 – 24.07.2018',
+                    date: '15.06.2018 – 15.08.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
@@ -2165,7 +2338,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'Round 1 will begin',
+                title: 'PreICO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -2303,7 +2476,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -2313,12 +2493,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -2382,7 +2576,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -2391,6 +2585,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -2503,6 +2702,21 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; height: auto; ' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.</p>' +
+                    '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.</p>' +
+                    '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2520,6 +2734,14 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/nikitin@3x.png" alt="Philipp Nunn" style="width: 200px;' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members.</p> ' +
+                    '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -2537,6 +2759,13 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/shkilev@3x.png" alt="Philipp Nunn" style="width: 200px;' +
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
+                    '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2713,13 +2942,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'stage in the process',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2858,7 +3094,7 @@ const messages = {
         greeting: {
             title: 'La nouvelle ère de la gestion de projet',
             countDown: {
-                title: 'La ronde 1 va commencer',
+                title: 'PreICO va commencer',
                 time: {
                     days: 'Journées',
                     hours: 'Heures',
@@ -2981,7 +3217,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -2991,12 +3234,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -3060,7 +3317,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -3069,6 +3326,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -3181,6 +3443,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3198,6 +3473,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3215,6 +3495,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -3391,13 +3676,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'la scène dans le processus',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'la scène n\'a pas commencé',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -3541,7 +3833,7 @@ const messages = {
         greeting: {
             title: 'La nouvelle ère de la gestion de projet',
             countDown: {
-                title: 'Runde 1 wird beginnen',
+                title: 'PreICO wird beginnen',
                 time: {
                     days: 'Tage',
                     hours: 'Std',
@@ -3664,7 +3956,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -3674,12 +3973,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -3743,7 +4056,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -3752,6 +4065,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -3864,6 +4182,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3881,6 +4212,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3898,6 +4234,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -4069,13 +4410,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'Stufe im Prozess',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -4218,7 +4566,7 @@ const messages = {
         greeting: {
             title: 'العصر الجديد لإدارة المشاريع قادم',
             countDown: {
-                title: 'الجولة الأولى ستبدأ',
+                title: 'سيبدأ البيع المسبق للقطع النقدية',
                 time: {
                     days: 'أيام',
                     hours: 'ساعات',
@@ -4341,7 +4689,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -4351,12 +4706,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -4420,7 +4789,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -4429,6 +4798,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -4541,6 +4915,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4558,6 +4945,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -4575,6 +4967,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -4746,13 +5143,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'بدأ المشهد',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'المرحلة لم تبدأ',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -4896,7 +5300,7 @@ const messages = {
         greeting: {
             title: '프로젝트 관리의 새로운 시대가 오고 있습니다',
             countDown: {
-                title: '1 라운드가 시작됩',
+                title: 'PreICO가 시작됩니다.',
                 time: {
                     days: '일',
                     hours: '시간',
@@ -5019,7 +5423,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -5029,12 +5440,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -5098,7 +5523,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -5107,6 +5532,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -5219,6 +5649,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5236,6 +5679,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5253,6 +5701,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5424,13 +5877,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: '무대가 시작되었습니다',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: '단계를 시작하지 않았',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -5574,7 +6034,7 @@ const messages = {
         greeting: {
             title: 'La nueva era de la gestión de proyectos está llegando',
             countDown: {
-                title: 'Ronda 1 comenzará',
+                title: 'PreICO comenzará',
                 time: {
                     days: 'Días',
                     hours: 'Horas',
@@ -5697,7 +6157,14 @@ const messages = {
                         {
                             name: 'Arseniy Seroka',
                             position: 'Lead Serokell Developer',
-                            src: '../static/images/avatars/seroka@3x.png'
+                            src: '../static/images/avatars/seroka@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/seroka/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'John Mostovoy',
@@ -5707,12 +6174,26 @@ const messages = {
                         {
                             name: 'Alexander Rukin',
                             position: 'UI/UX Designer',
-                            src: '../static/images/avatars/rukin@3x.png'
+                            src: '../static/images/avatars/rukin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/arukin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Kirill Elagin',
                             position: 'Backend Engineer',
-                            src: '../static/images/avatars/elagin@3x.png'
+                            src: '../static/images/avatars/elagin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/kirelagin/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         }
                     ]
                 }
@@ -5776,7 +6257,7 @@ const messages = {
                         },
                         {
                             name: 'Egor Loktev',
-                            position: 'Chief Marketing Officer',
+                            position: 'Project Lead',
                             src: '../static/images/avatars/loktev@3x.png',
                             social: [
                                 {
@@ -5785,6 +6266,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -5897,6 +6383,19 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
+                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5914,6 +6413,11 @@ const messages = {
                 {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
+                    description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5931,6 +6435,11 @@ const messages = {
                 {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
+                    description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -6102,15 +6611,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'el escenario comenzó',
                     status: true
                 },
                 {
-                    title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'ICO',
+                    date: '06/15/2018 - 08/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {

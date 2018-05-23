@@ -422,8 +422,7 @@
 
                                 h3
                                     text-transform capitalize
-                                    font-weight 500
-                                    font-size 28px
+                                    font-size 24px
 
                                 .icons
                                     width 100%

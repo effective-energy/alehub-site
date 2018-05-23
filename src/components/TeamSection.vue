@@ -12,7 +12,7 @@
             <div class="separator">
             </div>
 
-            <div class="effective-energy" id="effective-energy-team">
+            <div class="effective-energy-team" id="effective-energy-team">
 
                 <p>{{ $t('team.effectiveEnergy[0].name') }}</p>
 
@@ -27,7 +27,7 @@
                                          :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
-            <div class="serokell" id="serokell-team">
+            <div class="serokell-team" id="serokell-team">
                 <p>
                     Serokell
                 </p>
@@ -38,26 +38,28 @@
                     <div class="image"
                          v-for="(member, i) in $t('team.serokell[0].members')"
                          :key="i">
-                        <img class="layer__bottom"
-                             :src="member.src"
-                             :alt="member.name">
-                        <div class="layer__top">
-                            <div class="layer__text">
-                                <h3>
-                                    {{ member.name }}
-                                </h3>
-                                <p>
-                                    {{ member.position }}
-                                </p>
+                        <div class="image__inner">
+                            <img class="layer__bottom"
+                                 :src="member.src"
+                                 :alt="member.name">
+                            <div class="layer__top">
+                                <div class="layer__text">
+                                    <h3>
+                                        {{ member.position }}
+                                    </h3>
 
-                                <div class="icons" v-if="member.social !== undefined && member.length !== 0">
-                                    <a :href="social.link" v-for="social in member.social" target="_blank">
-                                        <img :class="{ 'in': social.type === 'linkedin' }"
-                                             src="../../static/images/in.svg"
-                                             alt="in"/>
-                                    </a>
+                                    <div class="icons" v-if="member.social !== undefined && member.length !== 0">
+                                        <a :href="social.link" v-for="social in member.social" target="_blank">
+                                            <img :class="{ 'in': social.type === 'linkedin' }"
+                                                 src="../../static/images/in.svg"
+                                                 alt="in"/>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="image__info">
+                            <span>{{ member.name }}</span>
                         </div>
                     </div>
                 </div>
@@ -86,24 +88,33 @@
                      v-if="isWideScreen">
                     <div class="image"
                          v-for="(member, i) in $t('advisors.members')" :key="i">
-                        <img class="layer__bottom"
-                             :src="$t('advisors.members['+i+'].src')"
-                             :alt="member.name">
-                        <div class="layer__top">
-                            <div class="layer__text">
-                                <h3>
-                                    {{ member.name }}
-                                </h3>
-                                <p>
-                                    {{ member.position }}
-                                </p>
+                        <div class="image__inner">
+                            <img class="layer__bottom"
+                                 :src="$t('advisors.members['+i+'].src')"
+                                 :alt="member.name">
+                            <div class="layer__top">
+                                <div class="layer__text">
+                                    <h3>
+                                        {{ member.position }}
+                                    </h3>
 
-                                <div class="icons" v-if="member.social !== undefined && member.length !== 0">
-                                    <a :href="social.link" v-for="social in member.social" target="_blank">
-                                        <img :src="social.src"
-                                             :alt="social.type"/>
-                                    </a>
+                                    <div class="icons"
+                                         v-if="member.social !== undefined && member.length !== 0">
+                                        <a target="_blank"
+                                           :href="social.link"
+                                           v-for="social in member.social">
+                                            <img :src="social.src"
+                                                 :alt="social.type"/>
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="image__info">
+                            <span>{{ member.name }}</span>
+                            <div @click="openAdvisorInfoModal(member)">
+                                <img src="../../static/images/info-ic.svg"
+                                     alt="advisor info">
                             </div>
                         </div>
                     </div>
@@ -119,12 +130,16 @@
                                  :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
+
+        <advisor-info-modal :advisor="currentAdvisor"/>
+
     </div>
 </template>
 
 <script>
     import Slider from './layouts/Slider';
 
+    import AdvisorInfoModal from './modals/AdvisorInfoModal';
     import SliderEffectiveEnergy from './layouts/SliderEffectiveEnergy';
     import SliderSerokell from './layouts/SliderSerokell';
     import SliderAdvisors from './layouts/SliderAdvisors';
@@ -133,6 +148,7 @@
         name: 'Screen5',
         components: {
             Slider,
+            AdvisorInfoModal,
             SliderEffectiveEnergy,
             SliderSerokell,
             SliderAdvisors
@@ -218,6 +234,13 @@
                         multiplierPosition: 25,
                         numItemsInWrap: 4
                     }
+                },
+                currentAdvisor: {
+                    name: '',
+                    position: '',
+                    description: '',
+                    src: '',
+                    social: []
                 }
             }
         },
@@ -262,12 +285,13 @@
 
         },
         methods: {
-            changeAutoplaySerokell: function () {
-                this.options.serokell.autoplay = !this.options.serokell.autoplay;
+            openModal: function (name) {
+                this.$modal.show(name);
             },
-            changeAutoplayEffective: function () {
-                this.options.effectiveEnergy.autoplay = !this.options.effectiveEnergy.autoplay;
-            }
+            openAdvisorInfoModal: function (member) {
+                this.currentAdvisor = member;
+                this.openModal('advisor-info-modal');
+            },
         },
         created() {
             this.options.serokell.multiplierPosition = this.multiplierPosition;
@@ -281,7 +305,10 @@
 
         },
         mounted() {
-            // document.getElementById('effective-energy').style.width = document.getElementById('serokell-gallery').offsetWidth + 'px';
+            this.$on('openAdvisorInfoModal', (currentAdvisor) => {
+                this.currentAdvisor = currentAdvisor;
+                this.openModal('advisor-info-modal');
+            });
         }
     }
 </script>
@@ -294,12 +321,14 @@
         background-color #fff
 
         .our-team
+            background-color #fff
+
+        .our-team, .advisors
             padding 80px 7.5% 40px 7.5%
             display flex
             flex-direction column
             justify-content center
             align-items center
-            background-color #fff
 
             @media (min-width 490px) and (max-width 768px)
                 padding 80px 15% 40px 15%
@@ -311,11 +340,6 @@
                 font-size 40px
 
         .advisors
-            padding 80px 7.5% 40px 7.5%
-            display flex
-            flex-direction column
-            justify-content center
-            align-items center
             background-color #ececf0
 
             .title
@@ -330,125 +354,188 @@
             margin 25px 0
             background-color #34343e
 
-        .effective-energy
+        .effective-energy-team
             width 100%
 
-            .image,
-            .image *
-                -webkit-box-sizing border-box
-                -moz-box-sizing border-box
-                box-sizing border-box
-
-            .image
-                cursor pointer
-                position relative
-                max-width 100%
-                height 304px
-                overflow hidden
-                text-align center
-
-                &:hover
-                    .layer__top
-                        opacity 1
-
-                img
-                    max-width 100%
-                    height 284px
-                    width auto
-                    margin auto
-
-                .layer__bottom
-                    display block
-
-                .layer__top
-                    opacity 0
-                    position absolute
-                    z-index 10000
-                    top 0
-                    left 15px
-                    right 0
-                    bottom 0
-                    width calc(100% - 30px)
-                    height 100%
-                    background rgba(255, 210, 79, 0.8)
-                    color #fff
-                    padding 15px
-                    -moz-transition all 0.4s ease-in-out 0s
-                    -webkit-transition all 0.4s ease-in-out 0s
-                    -ms-transition all 0.4s ease-in-out 0s
-                    transition all 0.4s ease-in-out 0s
-
-                .layer__text
-                    color #34343e
-                    text-align center
-                    font-size 18px
-                    display inline-block
-                    position absolute
-                    width 80%
-                    top 70%
-                    left 50%
-                    -moz-transform translate(-50%, -50%)
-                    -webkit-transform translate(-50%, -50%)
-                    -ms-transform translate(-50%, -50%)
-                    transform translate(-50%, -50%)
-
-                    .h3
-                        font-weight 700
-                        font-size 24px
-
-                    p
-                        font-size 12px
-                        margin-bottom 25px
-                        text-transform uppercase
-                        font-family MuseoSansCyrl500
-
-                    .icons
-                        width 100%
-                        display flex
-                        justify-content center
-
-                        .telegram
-                            width 18px
-                            height 14.5px
-
-                        .vk
-                            width 21px
-                            height 13px
-
-                        .fb
-                            width 9px
-                            height 18px
-
-                        .in
-                            width 17px
-                            height 17px
-                        img
-                            margin auto 15px
-
-            p
-                margin-bottom 50px
-                font-size 20px
-
-        .serokell
+        .serokell-team
             padding 60px 0
 
             p
                 margin-bottom 50px
                 font-size 20px
 
-        .serokell, .effective-energy, .advisors-team
+        .serokell-team, .effective-energy-team, .advisors-team
             width 100%
             display flex
             flex-direction column
             justify-content center
             align-items center
 
-        .serokell, .advisors-team
+        .serokell-team, .advisors-team, .effective-energy-team
             .images
                 width 100%
                 display flex
                 flex-wrap wrap
                 justify-content space-around
+
+                .image
+                    cursor pointer
+                    display flex
+                    flex-direction column
+                    align-items center
+                    justify-content space-around
+                    max-width 100%
+                    margin 0 15px 30px 15px
+                    padding 20px 40px 0 40px
+                    height 400px
+                    width 304px
+                    overflow hidden
+                    text-align center
+
+                    &:nth-child(2n)
+                        .image__inner
+                            background-color #e8ebef
+
+                    &:nth-child(2n + 1)
+                        .image__inner
+                            background-color #abb8c6
+
+                    .image__inner
+                        position relative
+                        display flex
+                        align-items flex-end
+                        clip-path circle(50% at center)
+                        -webkit-clip-path circle(50% at center)
+                        height 304px
+                        width 304px
+
+                        &:hover
+                            .layer__top
+                                opacity 1
+
+                        img
+                            max-width 100%
+                            height 284px
+                            width auto
+                            margin-left auto
+                            margin-right auto
+
+                        .layer__bottom
+                            display block
+
+                        .layer__top
+                            z-index 10000
+                            opacity 0
+                            position absolute
+                            top 0
+                            left 0
+                            right 0
+                            bottom 0
+                            width 100%
+                            height 100%
+                            background rgba(255, 210, 79, 0.8)
+                            color #fff
+                            padding 15px
+                            -moz-transition all 0.4s ease-in-out 0s
+                            -webkit-transition all 0.4s ease-in-out 0s
+                            -ms-transition all 0.4s ease-in-out 0s
+                            transition all 0.4s ease-in-out 0s
+                            clip-path circle(50% at center)
+                            -webkit-clip-path circle(50% at center)
+
+                            .layer__text
+                                color #34343e
+                                text-align center
+                                font-size 18px
+                                display inline-block
+                                position absolute
+                                width 80%
+                                top 70%
+                                left 50%
+                                -moz-transform translate(-50%, -50%)
+                                -webkit-transform translate(-50%, -50%)
+                                -ms-transform translate(-50%, -50%)
+                                transform translate(-50%, -50%)
+
+                                h3
+                                    text-transform capitalize
+                                    font-size 24px
+
+                                .icons
+                                    width 100%
+                                    display flex
+                                    justify-content center
+
+                                    .telegram
+                                        width 18px
+                                        height 14.5px
+
+                                    .vk
+                                        width 21px
+                                        height 13px
+
+                                    .fb
+                                        width 9px
+                                        height 18px
+
+                                    .in
+                                        width 17px
+                                        height 17px
+
+                                    img
+                                        margin auto 15px
+
+                                    a
+                                        img
+                                            width 17px
+                                            height 17px
+
+                    .image__info
+                        font-size 20px
+                        display flex
+                        flex-direction column
+                        justify-content center
+                        align-items center
+
+                        div
+                            img
+                                height 25px
+
+                    @media (max-width 320px)
+                        position relative
+                        width 180px !important
+                        height 180px !important
+                        margin 0
+
+                        .layer__bottom
+                            height 100% !important
+
+                    @media (min-width 320px) and (max-width 360px)
+                        position relative
+                        width 200px !important
+                        height 200px !important
+                        margin 0
+
+                        .layer__bottom
+                            height 100% !important
+
+                    @media (min-width 360px) and (max-width 425px)
+                        position relative
+                        width 220px !important
+                        height 220px !important
+                        margin 0
+
+                        .layer__bottom
+                            height 100% !important
+
+                    @media (min-width 768px) and (max-width 1024px)
+                        position relative
+                        width 250px !important
+                        height 250px !important
+                        margin 0
+
+                        .layer__bottom
+                            height 100% !important
 
         .advisors-team
             margin-bottom 60px
@@ -456,103 +543,8 @@
             .images
                 .image
                     &:nth-child(2n)
-                        background-color #bbbec1
-
-        .serokell, .advisors-team
-            .image,
-            .image *
-                -webkit-box-sizing border-box
-                -moz-box-sizing border-box
-                box-sizing border-box
-
-            .image
-                cursor pointer
-                position relative
-                display inline-block
-                max-width 100%
-                margin 0 15px 30px 15px
-                padding 20px 40px 0 40px
-                height 304px
-                width 304px
-                overflow hidden
-                text-align center
-
-                &:hover
-                    .layer__top
-                        opacity 1
-
-                img
-                    max-width 100%
-                    height 284px
-                    width auto
-                    margin auto
-
-                .layer__bottom
-                    display block
-
-                .layer__top
-                    opacity 0
-                    position absolute
-                    top: 0
-                    left 0
-                    right 0
-                    bottom 0
-                    width 100%
-                    height 100%
-                    background rgba(255, 210, 79, 0.8)
-                    color #fff
-                    padding 15px
-                    -moz-transition all 0.4s ease-in-out 0s
-                    -webkit-transition all 0.4s ease-in-out 0s
-                    -ms-transition all 0.4s ease-in-out 0s
-                    transition all 0.4s ease-in-out 0s
-
-                .layer__text
-                    color #34343e
-                    text-align center
-                    font-size 18px
-                    display inline-block
-                    position absolute
-                    width 80%
-                    top 70%
-                    left 50%
-                    -moz-transform translate(-50%, -50%)
-                    -webkit-transform translate(-50%, -50%)
-                    -ms-transform translate(-50%, -50%)
-                    transform translate(-50%, -50%)
-
-                    .h3
-                        font-weight 700
-                        font-size 24px
-
-                    p
-                        font-size 12px
-                        margin-bottom 10px
-                        text-transform uppercase
-                        font-family MuseoSansCyrl500
-
-                    .icons
-                        width 100%
-                        display flex
-                        justify-content center
-
-                        .telegram
-                            width 18px
-                            height 14.5px
-
-                        .vk
-                            width 21px
-                            height 13px
-
-                        .fb
-                            width 9px
-                            height 18px
-
-                        .in
-                            width 17px
-                            height 17px
-                        img
-                            margin auto 15px
+                        .image__inner
+                            background-color #bbbec1 !important
 
     @media (max-width 425px)
         .team
@@ -567,57 +559,5 @@
             .separator
                 margin 12px 0 24px
 
-    .image
-        clip-path circle(50% at center) !important
-        -webkit-clip-path circle(50% at center) !important
 
-        &:nth-child(2n)
-            background-color #e8ebef
-
-        &:nth-child(2n + 1)
-            background-color #abb8c6
-
-        @media (max-width 320px)
-            position relative
-            width 180px !important
-            height 180px !important
-            margin 0
-
-            .layer__bottom
-                height 100% !important
-
-        @media (min-width 320px) and (max-width 360px)
-            position relative
-            width 200px !important
-            height 200px !important
-            margin 0
-
-            .layer__bottom
-                height 100% !important
-
-        @media (min-width 360px) and (max-width 425px)
-            position relative
-            width 220px !important
-            height 220px !important
-            margin 0
-
-            .layer__bottom
-                height 100% !important
-
-        @media (min-width 768px) and (max-width 1024px)
-            position relative
-            width 250px !important
-            height 250px !important
-            margin 0
-
-            .layer__bottom
-                height 100% !important
-
-        .layer__top
-            .layer__text
-                .icons
-                    a
-                        img
-                            width 17px
-                            height 17px
 </style>

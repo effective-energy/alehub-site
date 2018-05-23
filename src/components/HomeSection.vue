@@ -417,8 +417,7 @@
              :class="{ 'description__dark': isDark }">
             <div class="row">
                 <div class="col-lg-6 promo">
-                    <div class="desktop-outer"
-                         style="position: relative; display: flex; justify-content: center; align-items: center;">
+                    <div class="desktop-outer">
                         <div style="position: absolute; width: 80%; top: 7%;">
                             <slider-screen :items="itemsToSliderScreen"
                                            :options="optionsToSliderScreen"
@@ -469,6 +468,77 @@
             </div>
         </div>
 
+        <transition name="fade">
+            <div class="email-subscribe-panel"
+                 :class="{ 'email-subscribe-panel__yellow': isDarkSection,
+                  'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
+                 v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
+                <div class="close__email-subscribe-panel"
+                     @click="toggleEmailSubscribeAlert">
+                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' : '../../static/images/cancel-light.svg'"
+                         alt="close subscribe">
+                </div>
+                <div class="email-subscribe__wrap">
+                    <p>
+                        Subscribe to our newsletter
+                    </p>
+                    <form @submit.prevent="subscribe">
+                        <label class="top-label-subscribe"
+                               :class="{ 'error-label': subscriber.error,
+                           'exist-label': subscriber.exist,
+                           'success-label': subscriber.success }"
+                               v-if="subscriber.error || subscriber.exist || subscriber.success">
+                            <span v-if="subscriber.error">incorrect address</span>
+                            <span v-if="subscriber.success">successful subscription</span>
+                            <span v-if="subscriber.exist">this email is already in use</span>
+                        </label>
+                        <input id="subscribe-email-input"
+                               type="text"
+                               placeholder="Your e-mail address"
+                               required
+                               :class="{ 'error__email-subscribe-input': subscriber.error,
+                           'success__email-subscribe-input': subscriber.success,
+                           'exist__email-subscribe-input': subscriber.exist}"
+                               v-model="subscriber.email"
+                               @blur="blurCheckCorrectEmail(subscriber.email)"
+                               @input="inputCheckCorrectEmail(subscriber.email)"
+                               :disabled="subscriber.loader">
+                        <button type="submit"
+                                :disabled="subscriber.loader">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="web-push-notif">
+                    <label for="toggle-web-push">
+                        And don't forget to turn on notifications
+                    </label>
+                    <label class="switch-control"
+                           id="toggle-web-push"
+                           @click="toggleNotification">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </transition>
+
+        <button type="button"
+                id="email-subscribe-alert"
+                class="email-subscribe-alert"
+                :class="{ 'email-subscribe-alert__yellow': isDarkSection,
+                'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }"
+                v-if="checkTabletWidth"
+                @click="toggleEmailSubscribeAlert">
+            <div class="el-base">
+                <div class="el-inner-space">
+                    <div class="el-flap"
+                         :class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">
+                    </div>
+                </div>
+            </div>
+        </button>
+
         <a id="telegram-alert-mobile"
            class="telegram-alert-mobile"
            href="https://t.me/alehub"
@@ -494,13 +564,13 @@
             <img src="../../static/images/cancel-dark.svg"
                  v-if="isDarkSection"
                  @click.prevent="doCloseTelegramAlertMobile">
-
         </a>
 
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkTabletWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection, 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
+             :class="{ 'telegram-alert__yellow': isDarkSection,
+             'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
@@ -510,7 +580,8 @@
                      v-if="isDarkSection">
             </a>
             <div class="alert-message"
-                 :class="{ 'alert-message__dark': isDarkSection, 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
+                 :class="{ 'alert-message__dark': isDarkSection,
+                 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
                 <span>3</span>
             </div>
         </div>
@@ -565,9 +636,29 @@
                     }, 40);
                 }
             },
+            openedEmailSubscribeAlert: function () {
+                this.subscriber = {
+                    email: '',
+                    initialFocus: false,
+                    loader: false,
+                    success: false,
+                    error: false,
+                    exist: false
+                }
+            }
         },
         data() {
             return {
+                openedEmailSubscribeAlert: true,
+                subscriber: {
+                    email: '',
+                    initialFocus: false,
+                    loader: false,
+                    success: false,
+                    error: false,
+                    exist: false
+                },
+
                 topScrollY: false,
                 position: 0,
                 afterClickToTop: false,
@@ -697,10 +788,12 @@
             }
         },
         computed: {
-            ...mapGetters([
-                'cryptocurrencies',
-                'cryptoPriceStatus'
-            ]),
+            ...mapGetters(
+                [
+                    'cryptocurrencies',
+                    'cryptoPriceStatus'
+                ]
+            ),
             isCollected: function () {
                 return this.collected;
             },
@@ -731,8 +824,11 @@
                     this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
                     this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
                 }
-                
+
                 return this.currentCurrency;
+            },
+            isOpenEmailSubscribeAlert: function () {
+                return this.openedEmailSubscribeAlert;
             },
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
@@ -762,6 +858,66 @@
             }
         },
         methods: {
+            blurCheckCorrectEmail: function (email) {
+                (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
+                this.subscriber.error = !this.checkCorrectEmail(email);
+
+                if (this.subscriber.error) {
+                    this.subscriber.success = false;
+                    this.subscriber.exist = false;
+                }
+            },
+            inputCheckCorrectEmail: function (email) {
+                if (this.subscriber.initialFocus) {
+                    this.subscriber.error = !this.checkCorrectEmail(email);
+
+                    this.subscriber.exist = false;
+
+                    if (this.subscriber.error)
+                        this.subscriber.success = false;
+                }
+            },
+            checkCorrectEmail: function (email) {
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (email.length === 0)
+                    return true;
+
+                return re.test(String(email).toLowerCase());
+            },
+            subscribe: function () {
+                console.log(123123);
+                if (this.checkCorrectEmail(this.subscriber.email)) {
+                    this.subscriber.loader = true;
+                    this.subscriber.success = false;
+                    this.subscriber.error = false;
+                    this.subscriber.exist = false;
+
+                    this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
+                        'email': this.subscriber.email
+                    }, {
+                        headers: {
+                            'Content-Type': 'application/json; charset=UTF-8',
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        this.subscriber.loader = false;
+                        console.log(response.body);
+                        if (response.body.message === 'Email already exist')
+                            return this.subscriber.exist = true;
+                        this.subscriber.success = true;
+                        localStorage.setItem('subscriber-email', this.subscriber.email);
+                    }, response => {
+                        this.subscriber.loader = false;
+                        this.subscriber.error = true;
+                    })
+                }
+            },
+            toggleNotification: function () {
+
+            },
+            toggleEmailSubscribeAlert: function () {
+                this.openedEmailSubscribeAlert = !this.openedEmailSubscribeAlert;
+            },
             clickToTop: function (e) {
                 this.afterClickToTop = true;
                 document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -770,10 +926,6 @@
             returnPosition: function () {
                 this.afterClickToTop = false;
                 window.scrollTo({top: this.position, behavior: 'smooth'});
-            },
-            yaMetricaCollectionItem: function () {
-                yaCounter48802643.reachGoal('BuyCrypto');
-                return true;
             },
             yaMetricaCollectionLastItem: function () {
                 yaCounter48802643.reachGoal('BuyUSD');
@@ -962,6 +1114,10 @@
             },
         },
         mounted() {
+
+            //устанавливать начальное значение checked на включение оповещений
+
+
             window.addEventListener('scroll', () => {
                 if (window.scrollY === 0) {
                     this.topScrollY = true;
@@ -1161,6 +1317,9 @@
             height 15px
             width 15px
 
+        @media (min-width 768px)
+            display none !important
+
     .telegram-alert-mobile__yellow
         background-color #ffd24f
 
@@ -1168,19 +1327,439 @@
             span
                 color #343a49
 
+
+    .email-subscribe-panel
+        z-index 1000
+        position fixed
+        bottom 75px
+        right 200px
+        display flex
+        flex-direction column
+        justify-content space-between
+        width 400px
+        height 175px
+        padding 20px 25px 20px 20px
+        background-color #343a49
+        border-radius 4px
+        -webkit-transition all .3s ease-out
+        -o-transition all .3s ease-out
+        transition all .3s ease-out
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 150px
+            bottom 50px
+            height 150px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 170px
+            bottom 50px
+            height 150px
+
+        .close__email-subscribe-panel
+            cursor pointer
+            position absolute
+            right 10px
+            left auto
+            top 10px
+
+            img
+                width 15px
+
+        .email-subscribe__wrap
+            p
+                color #f7f7f7
+                font-family MuseoSansCyrl500
+                font-weight 500
+                margin-bottom 10px
+
+            form
+                position relative
+                display flex
+                justify-content space-between
+
+                .top-label-subscribe
+                    position absolute
+                    top -10px
+                    left 15px
+                    margin 0
+                    font-size 12px
+                    font-family MuseoSansCyrl500
+                    font-weight 700
+                    letter-spacing .4px
+                    padding 0 7px
+
+                .error-label
+                    background-color #ff4f4f
+                    color #f7f7f7
+
+                .success-label
+                    background-color green
+                    color #f7f7f7
+
+                .exist-label
+                    background-color #2e86ce
+                    color #f7f7f7
+
+
+                input
+                    width 67%
+                    background-color #f0f0f0
+                    border-radius 3px
+                    border solid 1px transparent
+                    border-bottom-width 1.5px
+                    font-family MuseoSansCyrl300
+                    font-size 14px
+                    color #666666
+                    padding 7px 15px 7px 15px
+                    font-weight 700
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
+
+                    &::-webkit-input-placeholder
+                        color #909090
+
+                    &::-moz-placeholder
+                        color #909090
+
+                    &:-ms-input-placeholder
+                        color #909090
+
+                    &:-moz-placeholder
+                        color #909090
+
+                    &:focus
+                        color #333333
+                        outline none
+
+                    &:disabled
+                        color #666666
+                        background-color #cccccc
+
+                .error__email-subscribe-input
+                    border-color #ff4f4f
+
+                .success__email-subscribe-input
+                    border-color green
+
+                .exist__email-subscribe-input
+                    border-color #2e86ce
+
+                button
+                    width 30%
+                    cursor pointer
+                    background-color #ffd24f
+                    font-family MuseoSansCyrl300
+                    font-size 14px
+                    font-weight 700
+                    color #34343e
+                    padding 8px 5px
+                    margin 0 0 0 12px
+                    border 1px solid #ffd24f
+                    border-radius 3px
+                    white-space nowrap
+                    -webkit-transition all .2s ease-out
+                    -o-transition all .2s ease-out
+                    transition all .2s ease-out
+
+                    &:active
+                        background-color #ffbe00
+                        border 1px solid #d39e00
+
+                    &:focus
+                        outline none
+
+                    &:disabled
+                        color #666666
+                        background-color #cccccc
+                        border 1px solid rgba(0, 0, 0, .75)
+                        -webkit-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                        -moz-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                        box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+
+        .web-push-notif
+            position relative
+            display flex
+            flex-direction row
+            justify-content flex-start
+            align-items center
+
+            label
+                color #dedfe1
+                font-family MuseoSansCyrl500
+                font-weight 500
+                margin 0
+
+            .switch-control
+                right 0
+                position absolute
+                display inline-block
+                width 40px
+                height 22px
+
+                input
+                    display none !important
+
+                    &:checked + .slider
+                        background-color #3292e0
+
+                        &:before
+                            background-color #ffd24f
+                            -webkit-transform translateX(18px)
+                            -ms-transform translateX(18px)
+                            transform translateX(18px)
+
+
+                .slider
+                    position absolute
+                    cursor pointer
+                    top 0
+                    left 0
+                    right 0
+                    bottom 0
+                    background-color #dedfe1
+                    -webkit-transition .5s
+                    transition .5s
+                    border-radius 20px
+                    -webkit-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+                    -moz-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+                    box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
+
+                    &:before
+                        position absolute
+                        content ""
+                        height 16px
+                        width 16px
+                        border-radius 50%
+                        left 3px
+                        bottom 3px
+                        background-color #5a8bb3
+                        -webkit-transition .4s ease
+                        transition .4s ease
+                        -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+                        -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+                        box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+
+    .fade-enter-active,
+    .fade-leave-active
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+    .fade-enter,
+    .fade-leave-active
+        opacity 1
+        bottom -150px
+
+    .email-subscribe-panel__yellow
+        background-color #ffd24f
+
+        .email-subscribe__wrap
+            p
+                color #34343e
+
+            form
+                input
+                    border-color #7c8089
+
+                button
+                    background-color #343a49
+                    color #f7f7f7
+
+                    &:active
+                        background-color #2e86ce
+                        border 1px solid #0060af
+
+        .web-push-notif
+            label
+                color #4c4c4c
+
+    .email-subscribe-panel__stop
+        bottom 185px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            bottom 185px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 226px
+
+    .email-subscribe-panel__rtl
+        left 200px
+        right auto
+
+        .close__email-subscribe-panel
+            left 10px
+            right auto
+
+        .email-subscribe__wrap
+            p
+                text-align right
+
+            form
+                button
+                    margin 0 12px 0 0
+
+        .web-push-notif
+            justify-content flex-end
+
+        @media (min-width 768px) and (max-width 1024px)
+            left 150px
+            right auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            left 170px
+            right auto
+
+    .email-subscribe-alert
+        cursor pointer
+        position fixed
+        display flex
+        justify-content center
+        align-items center
+        right 100px
+        bottom 180px
+        width 70px
+        height 70px
+        border-radius 50%
+        border none
+        padding 0
+        background-color #343a49
+        z-index 1000
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+
+        &:focus
+            outline none
+
+        &:active
+            -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
+            -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
+            box-shadow none
+            transform translateY(2px)
+
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 60px
+            bottom 140px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 140px
+            width 60px
+            height 60px
+
+
+        .el-base
+            position relative
+            height 22.5px
+            width 36px
+            background-color #2e86ce
+            border-radius 3px
+
+            .el-inner-space
+                border-radius 3px
+                border-top solid 11px transparent
+                border-right solid 18px #f7f7f7
+                border-bottom solid 11px #f7f7f7
+                border-left solid 18px #f7f7f7
+
+                .el-flap
+                    position absolute
+                    top 0
+                    left 0
+                    border-radius 3px
+                    border-top solid 11px #ffd24f
+                    border-right solid 18px transparent
+                    border-left solid 18px transparent
+                    -webkit-transition all 1s ease-in-out
+                    -o-transition all 1s ease-in-out
+                    transition all 1s ease-in-out
+
+                .el-flap-active
+                    border-top solid 11px #3292e0
+                    transform rotateX(180deg)
+                    transform-origin center top
+
+    .email-subscribe-alert__yellow
+        background-color #ffd24f
+
+        .el-base
+            background-color #1a7bca
+
+            .el-inner-space
+                border-right solid 18px #343a49
+                border-bottom solid 11px #343a49
+                border-left solid 18px #343a49
+
+                .el-flap
+                    border-top solid 11px #3292e0
+
+    .email-subscribe-alert__stop
+        bottom 290px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            bottom 275px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 315px
+
+    .email-subscribe-alert__rtl
+        left 100px
+        right auto
+
+        @media (min-width 768px) and (max-width 1024px)
+            left 60px
+            right auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            left 75px
+            right auto
+
     .telegram-alert
         cursor pointer
         position fixed
         right 100px
         bottom 75px
-        border-radius 50%
-        background-color #343a49
         width 70px
         height 70px
+        border-radius 50%
+        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
+        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
+
+        @media (max-width 768px)
+            display none !important
+
+        @media (min-width 768px) and (max-width 1024px)
+            right 60px
+            bottom 50px
+            width 60px
+            height 60px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            right 75px
+            bottom 50px
+            width 60px
+            height 60px
 
         .alert-message
             background-color #ffd24f
@@ -1215,12 +1794,6 @@
                 span
                     font-size 12px
 
-            @media (min-width 1440px) and (max-width 2560px)
-                bottom 125px
-                right 95px
-                width 25px
-                height 25px
-
         .alert-message__dark
             background-color #747c8e
             color #fff
@@ -1237,9 +1810,6 @@
                 left 75px
                 right auto
 
-            @media (min-width 1440px) and (max-width 2560px)
-                left 95px
-                right auto
 
         .telegram-message__stop
             bottom 235px
@@ -1249,25 +1819,6 @@
 
             @media (min-width 425px) and (max-width 768px)
                 bottom 433px
-
-
-        @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 50px
-            width 60px
-            height 60px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 50px
-            width 60px
-            height 60px
-
-        @media (min-width 1440px) and (max-width 2560px)
-            right 100px
-            bottom 75px
-            width 70px
-            height 70px
 
         a
             width 100%
@@ -1288,9 +1839,6 @@
         @media (min-width 768px) and (max-width 1024px)
             bottom 226px
 
-        @media (min-width 425px) and (max-width 768px)
-            bottom 433px
-
     .telegram-alert__rtl
         left 100px
         right auto
@@ -1301,10 +1849,6 @@
 
         @media (min-width 1024px) and (max-width 1440px)
             left 75px
-            right auto
-
-        @media (min-width 1440px) and (max-width 2560px)
-            left 100px
             right auto
 
     .screen1.title
@@ -1862,6 +2406,10 @@
                             margin-top 25px
 
                     .desktop-outer
+                        position relative
+                        display flex
+                        justify-content center
+                        align-items center
                         margin 0 auto
 
                         .slider-container
