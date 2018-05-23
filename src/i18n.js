@@ -53,7 +53,7 @@ const messages = {
         greeting: {
             title: '项目管理的新时代即将到来',
             countDown: {
-                title: '第一回合将开始',
+                title: 'PreICO将开始',
                 time: {
                     days: '天',
                     hours: '小时',
@@ -535,19 +535,24 @@ const messages = {
             distribution: {
                 title: '在ICO期间出售',
                 description: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
-                list: [{
-                    title: '为ICO出售',
-                    amount: 77
-                }, {
-                    title: '团队',
-                    amount: 11
-                }, {
-                    title: '推荐计划和顾问',
-                    amount: 10
-                }, {
-                    title: '赏金',
-                    amount: 2
-                }]
+                list: [
+                    {
+                        title: '为ICO出售',
+                        amount: 77
+                    },
+                    {
+                        title: '团队',
+                        amount: 11
+                    },
+                    {
+                        title: '推荐计划和顾问',
+                        amount: 10
+                    },
+                    {
+                        title: '赏金',
+                        amount: 2
+                    }
+                ]
             }
         },
         roadmap: {
@@ -653,13 +658,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: '舞台已经开始',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: '舞台没有开始',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -805,7 +817,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'Round 1 will begin',
+                title: 'PreICO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -1410,13 +1422,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'stage in the process',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -1557,7 +1576,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'ICO начинается через',
+                title: 'PreICO начинается через',
                 time: {
                     days: 'Дней',
                     hours: 'Часов',
@@ -2161,13 +2180,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '09.05.2018 – 25.05.2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'этап идёт',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '25.05.2018 – 15.06.2018',
+                    progress: 0,
+                    state: 'этап ещё не начался',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '25.05.2018 – 24.07.2018',
+                    date: '15.06.2018 – 15.08.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
@@ -2312,7 +2338,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'Round 1 will begin',
+                title: 'PreICO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -2916,13 +2942,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'stage in the process',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3061,7 +3094,7 @@ const messages = {
         greeting: {
             title: 'La nouvelle ère de la gestion de projet',
             countDown: {
-                title: 'La ronde 1 va commencer',
+                title: 'PreICO va commencer',
                 time: {
                     days: 'Journées',
                     hours: 'Heures',
@@ -3643,13 +3676,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'la scène dans le processus',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'la scène n\'a pas commencé',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -3793,7 +3833,7 @@ const messages = {
         greeting: {
             title: 'La nouvelle ère de la gestion de projet',
             countDown: {
-                title: 'Runde 1 wird beginnen',
+                title: 'PreICO wird beginnen',
                 time: {
                     days: 'Tage',
                     hours: 'Std',
@@ -4370,13 +4410,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'Stufe im Prozess',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'die Bühne hat nicht begonnen',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -4519,7 +4566,7 @@ const messages = {
         greeting: {
             title: 'العصر الجديد لإدارة المشاريع قادم',
             countDown: {
-                title: 'الجولة الأولى ستبدأ',
+                title: 'سيبدأ البيع المسبق للقطع النقدية',
                 time: {
                     days: 'أيام',
                     hours: 'ساعات',
@@ -5096,13 +5143,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'بدأ المشهد',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: 'المرحلة لم تبدأ',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5246,7 +5300,7 @@ const messages = {
         greeting: {
             title: '프로젝트 관리의 새로운 시대가 오고 있습니다',
             countDown: {
-                title: '1 라운드가 시작됩',
+                title: 'PreICO가 시작됩니다.',
                 time: {
                     days: '일',
                     hours: '시간',
@@ -5823,13 +5877,20 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: '무대가 시작되었습니다',
                     status: true
                 },
                 {
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
+                    progress: 0,
+                    state: '단계를 시작하지 않았',
+                    status: false
+                },
+                {
                     title: 'ICO',
-                    date: '05/25/2018 - 07/24/2018',
+                    date: '06/15/2018 - 08/15/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -5973,7 +6034,7 @@ const messages = {
         greeting: {
             title: 'La nueva era de la gestión de proyectos está llegando',
             countDown: {
-                title: 'Ronda 1 comenzará',
+                title: 'PreICO comenzará',
                 time: {
                     days: 'Días',
                     hours: 'Horas',
@@ -6550,15 +6611,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 20,
+                    progress: 80,
                     state: 'el escenario comenzó',
                     status: true
                 },
                 {
-                    title: 'ICO',
-                    date: '06/25/2018 - 09/07/2018',
+                    title: 'PreICO',
+                    date: '05/25/2018 - 06/15/2018',
                     progress: 0,
-                    state: 'el escenario no pudo comenzar',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'ICO',
+                    date: '06/15/2018 - 08/15/2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {

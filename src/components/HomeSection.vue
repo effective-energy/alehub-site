@@ -470,7 +470,8 @@
 
         <transition name="fade">
             <div class="email-subscribe-panel"
-                 :class="{ 'email-subscribe-panel__yellow': isDarkSection }"
+                 :class="{ 'email-subscribe-panel__yellow': isDarkSection,
+                  'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
@@ -1364,6 +1365,7 @@
             cursor pointer
             position absolute
             right 10px
+            left auto
             top 10px
 
             img
@@ -1485,6 +1487,7 @@
             position relative
             display flex
             flex-direction row
+            justify-content flex-start
             align-items center
 
             label
@@ -1577,6 +1580,41 @@
             label
                 color #4c4c4c
 
+    .email-subscribe-panel__stop
+        bottom 185px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            bottom 185px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 226px
+
+    .email-subscribe-panel__rtl
+        left 200px
+        right auto
+
+        .close__email-subscribe-panel
+            left 10px
+            right auto
+
+        .email-subscribe__wrap
+            p
+                text-align right
+
+            form
+                button
+                    margin 0 12px 0 0
+
+        .web-push-notif
+            justify-content flex-end
+
+        @media (min-width 768px) and (max-width 1024px)
+            left 150px
+            right auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            left 170px
+            right auto
 
     .email-subscribe-alert
         cursor pointer
@@ -1660,7 +1698,7 @@
         background-color #ffd24f
 
         .el-base
-            background-color #2e6bce
+            background-color #1a7bca
 
             .el-inner-space
                 border-right solid 18px #343a49
@@ -1668,7 +1706,28 @@
                 border-left solid 18px #343a49
 
                 .el-flap
-                    border-top solid 11px #ff7c7c
+                    border-top solid 11px #3292e0
+
+    .email-subscribe-alert__stop
+        bottom 290px
+
+        @media (min-width 1024px) and (max-width 1440px)
+            bottom 275px
+
+        @media (min-width 768px) and (max-width 1024px)
+            bottom 315px
+
+    .email-subscribe-alert__rtl
+        left 100px
+        right auto
+
+        @media (min-width 768px) and (max-width 1024px)
+            left 60px
+            right auto
+
+        @media (min-width 1024px) and (max-width 1440px)
+            left 75px
+            right auto
 
     .telegram-alert
         cursor pointer
@@ -1751,9 +1810,6 @@
                 left 75px
                 right auto
 
-            @media (min-width 1440px) and (max-width 2560px)
-                left 95px
-                right auto
 
         .telegram-message__stop
             bottom 235px
@@ -1783,9 +1839,6 @@
         @media (min-width 768px) and (max-width 1024px)
             bottom 226px
 
-        @media (min-width 425px) and (max-width 768px)
-            bottom 433px
-
     .telegram-alert__rtl
         left 100px
         right auto
@@ -1796,10 +1849,6 @@
 
         @media (min-width 1024px) and (max-width 1440px)
             left 75px
-            right auto
-
-        @media (min-width 1440px) and (max-width 2560px)
-            left 100px
             right auto
 
     .screen1.title
