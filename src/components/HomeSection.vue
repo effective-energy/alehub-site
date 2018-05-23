@@ -470,42 +470,45 @@
 
         <transition name="fade">
             <div class="email-subscribe-panel"
+                 :class="{ 'email-subscribe-panel__yellow': isDarkSection }"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img src="../../static/images/cancel-light.svg"
+                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' : '../../static/images/cancel-light.svg'"
                          alt="close subscribe">
                 </div>
-                <p>
-                    Subscribe to our newsletter
-                </p>
-                <form @submit.prevent="subscribe">
-                    <label class="top-label-subscribe"
-                           :class="{ 'error-label': subscriber.error,
+                <div class="email-subscribe__wrap">
+                    <p>
+                        Subscribe to our newsletter
+                    </p>
+                    <form @submit.prevent="subscribe">
+                        <label class="top-label-subscribe"
+                               :class="{ 'error-label': subscriber.error,
                            'exist-label': subscriber.exist,
                            'success-label': subscriber.success }"
-                           v-if="subscriber.error || subscriber.exist || subscriber.success">
-                        <span v-if="subscriber.error">incorrect address</span>
-                        <span v-if="subscriber.success">successful subscription</span>
-                        <span v-if="subscriber.exist">this email is already in use</span>
-                    </label>
-                    <input id="subscribe-email-input"
-                           type="text"
-                           placeholder="Your e-mail address"
-                           required
-                           :class="{ 'error__email-subscribe-input': subscriber.error,
+                               v-if="subscriber.error || subscriber.exist || subscriber.success">
+                            <span v-if="subscriber.error">incorrect address</span>
+                            <span v-if="subscriber.success">successful subscription</span>
+                            <span v-if="subscriber.exist">this email is already in use</span>
+                        </label>
+                        <input id="subscribe-email-input"
+                               type="text"
+                               placeholder="Your e-mail address"
+                               required
+                               :class="{ 'error__email-subscribe-input': subscriber.error,
                            'success__email-subscribe-input': subscriber.success,
                            'exist__email-subscribe-input': subscriber.exist}"
-                           v-model="subscriber.email"
-                           @blur="blurCheckCorrectEmail(subscriber.email)"
-                           @input="inputCheckCorrectEmail(subscriber.email)"
-                           :disabled="subscriber.loader">
-                    <button type="submit"
-                            :disabled="subscriber.loader">
-                        Subscribe
-                    </button>
-                </form>
-                <div>
+                               v-model="subscriber.email"
+                               @blur="blurCheckCorrectEmail(subscriber.email)"
+                               @input="inputCheckCorrectEmail(subscriber.email)"
+                               :disabled="subscriber.loader">
+                        <button type="submit"
+                                :disabled="subscriber.loader">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <div class="web-push-notif">
                     <label for="toggle-web-push">
                         And don't forget to turn on notifications
                     </label>
@@ -519,15 +522,17 @@
             </div>
         </transition>
 
-        <button id="email-subscribe-alert"
+        <button type="button"
+                id="email-subscribe-alert"
                 class="email-subscribe-alert"
-                type="button"
+                :class="{ 'email-subscribe-alert__yellow': isDarkSection,
+                'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }"
                 v-if="checkTabletWidth"
                 @click="toggleEmailSubscribeAlert">
             <div class="el-base">
                 <div class="el-inner-space">
                     <div class="el-flap"
-                    :class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">
+                         :class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">
                     </div>
                 </div>
             </div>
@@ -1325,16 +1330,19 @@
     .email-subscribe-panel
         z-index 1000
         position fixed
-        bottom 100px
+        bottom 75px
         right 200px
         display flex
         flex-direction column
         justify-content space-between
         width 400px
-        height 150px
-        padding 20px 25px 15px 20px
+        height 175px
+        padding 20px 25px 20px 20px
         background-color #343a49
         border-radius 4px
+        -webkit-transition all .3s ease-out
+        -o-transition all .3s ease-out
+        transition all .3s ease-out
         -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
@@ -1345,10 +1353,12 @@
         @media (min-width 768px) and (max-width 1024px)
             right 150px
             bottom 50px
+            height 150px
 
         @media (min-width 1024px) and (max-width 1440px)
-            right 180px
+            right 170px
             bottom 50px
+            height 150px
 
         .close__email-subscribe-panel
             cursor pointer
@@ -1359,118 +1369,119 @@
             img
                 width 15px
 
-        p
-            color #f7f7f7
-            font-family MuseoSansCyrl500
-            font-weight 500
-            margin 0
-
-        form
-            position relative
-            display flex
-            justify-content space-between
-
-            .top-label-subscribe
-                position absolute
-                top -10px
-                left 15px
-                margin 0
-                font-size 12px
+        .email-subscribe__wrap
+            p
+                color #f7f7f7
                 font-family MuseoSansCyrl500
-                font-weight 700
-                letter-spacing .4px
-                padding 0 7px
+                font-weight 500
+                margin-bottom 10px
 
-            .error-label
-                background-color #ff4f4f
-                color #f7f7f7
+            form
+                position relative
+                display flex
+                justify-content space-between
 
-            .success-label
-                background-color green
-                color #f7f7f7
+                .top-label-subscribe
+                    position absolute
+                    top -10px
+                    left 15px
+                    margin 0
+                    font-size 12px
+                    font-family MuseoSansCyrl500
+                    font-weight 700
+                    letter-spacing .4px
+                    padding 0 7px
 
-            .exist-label
-                background-color #2e86ce
-                color #f7f7f7
+                .error-label
+                    background-color #ff4f4f
+                    color #f7f7f7
+
+                .success-label
+                    background-color green
+                    color #f7f7f7
+
+                .exist-label
+                    background-color #2e86ce
+                    color #f7f7f7
 
 
-            input
-                width 67%
-                background-color #f0f0f0
-                border-radius 3px
-                border solid 1px transparent
-                border-bottom-width 1.5px
-                font-family MuseoSansCyrl300
-                font-size 14px
-                color #666666
-                padding 7px 15px 7px 15px
-                font-weight 700
-                -webkit-transition all .3s ease-out
-                -o-transition all .3s ease-out
-                transition all .3s ease-out
-
-                &::-webkit-input-placeholder
-                    color #909090
-
-                &::-moz-placeholder
-                    color #909090
-
-                &:-ms-input-placeholder
-                    color #909090
-
-                &:-moz-placeholder
-                    color #909090
-
-                &:focus
-                    color #333333
-                    outline none
-
-                &:disabled
+                input
+                    width 67%
+                    background-color #f0f0f0
+                    border-radius 3px
+                    border solid 1px transparent
+                    border-bottom-width 1.5px
+                    font-family MuseoSansCyrl300
+                    font-size 14px
                     color #666666
-                    background-color #cccccc
+                    padding 7px 15px 7px 15px
+                    font-weight 700
+                    -webkit-transition all .3s ease-out
+                    -o-transition all .3s ease-out
+                    transition all .3s ease-out
 
-            .error__email-subscribe-input
-                border-color #ff4f4f
+                    &::-webkit-input-placeholder
+                        color #909090
 
-            .success__email-subscribe-input
-                border-color green
+                    &::-moz-placeholder
+                        color #909090
 
-            .exist__email-subscribe-input
-                border-color #2e86ce
+                    &:-ms-input-placeholder
+                        color #909090
 
-            button
-                width 30%
-                cursor pointer
-                background-color #ffd24f
-                font-family MuseoSansCyrl300
-                font-size 14px
-                font-weight 700
-                color #34343e
-                padding 8px 5px
-                margin 0 0 0 12px
-                border 1px solid #ffd24f
-                border-radius 3px
-                white-space nowrap
-                -webkit-transition all .2s ease-out
-                -o-transition all .2s ease-out
-                transition all .2s ease-out
+                    &:-moz-placeholder
+                        color #909090
 
-                &:active
-                    background-color #ffbe00
-                    border 1px solid #d39e00
+                    &:focus
+                        color #333333
+                        outline none
 
-                &:focus
-                    outline none
+                    &:disabled
+                        color #666666
+                        background-color #cccccc
 
-                &:disabled
-                    color #666666
-                    background-color #cccccc
-                    border 1px solid rgba(0, 0, 0, .75)
-                    -webkit-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
-                    -moz-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
-                    box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                .error__email-subscribe-input
+                    border-color #ff4f4f
 
-        div
+                .success__email-subscribe-input
+                    border-color green
+
+                .exist__email-subscribe-input
+                    border-color #2e86ce
+
+                button
+                    width 30%
+                    cursor pointer
+                    background-color #ffd24f
+                    font-family MuseoSansCyrl300
+                    font-size 14px
+                    font-weight 700
+                    color #34343e
+                    padding 8px 5px
+                    margin 0 0 0 12px
+                    border 1px solid #ffd24f
+                    border-radius 3px
+                    white-space nowrap
+                    -webkit-transition all .2s ease-out
+                    -o-transition all .2s ease-out
+                    transition all .2s ease-out
+
+                    &:active
+                        background-color #ffbe00
+                        border 1px solid #d39e00
+
+                    &:focus
+                        outline none
+
+                    &:disabled
+                        color #666666
+                        background-color #cccccc
+                        border 1px solid rgba(0, 0, 0, .75)
+                        -webkit-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                        -moz-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+                        box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
+
+        .web-push-notif
             position relative
             display flex
             flex-direction row
@@ -1543,6 +1554,29 @@
         opacity 1
         bottom -150px
 
+    .email-subscribe-panel__yellow
+        background-color #ffd24f
+
+        .email-subscribe__wrap
+            p
+                color #34343e
+
+            form
+                input
+                    border-color #7c8089
+
+                button
+                    background-color #343a49
+                    color #f7f7f7
+
+                    &:active
+                        background-color #2e86ce
+                        border 1px solid #0060af
+
+        .web-push-notif
+            label
+                color #4c4c4c
+
 
     .email-subscribe-alert
         cursor pointer
@@ -1595,33 +1629,46 @@
             position relative
             height 22.5px
             width 36px
-            background #2e86ce
+            background-color #2e86ce
             border-radius 3px
 
-        .el-inner-space
-            border-radius 3px
-            border-top solid 11px transparent
-            border-right solid 18px #f7f7f7
-            border-bottom solid 11px #f7f7f7
-            border-left solid 18px #f7f7f7
+            .el-inner-space
+                border-radius 3px
+                border-top solid 11px transparent
+                border-right solid 18px #f7f7f7
+                border-bottom solid 11px #f7f7f7
+                border-left solid 18px #f7f7f7
 
-        .el-flap
-            position absolute
-            top 0
-            left 0
-            border-radius 3px
-            border-top solid 11px #ffd24f
-            border-right solid 18px transparent
-            border-left solid 18px transparent
-            -webkit-transition all 1s ease-in-out
-            -o-transition all 1s ease-in-out
-            transition all 1s ease-in-out
+                .el-flap
+                    position absolute
+                    top 0
+                    left 0
+                    border-radius 3px
+                    border-top solid 11px #ffd24f
+                    border-right solid 18px transparent
+                    border-left solid 18px transparent
+                    -webkit-transition all 1s ease-in-out
+                    -o-transition all 1s ease-in-out
+                    transition all 1s ease-in-out
 
-        .el-flap-active
-            border-top solid 11px #3292e0
-            transform rotateX(180deg)
-            transform-origin center top
+                .el-flap-active
+                    border-top solid 11px #3292e0
+                    transform rotateX(180deg)
+                    transform-origin center top
 
+    .email-subscribe-alert__yellow
+        background-color #ffd24f
+
+        .el-base
+            background-color #2e6bce
+
+            .el-inner-space
+                border-right solid 18px #343a49
+                border-bottom solid 11px #343a49
+                border-left solid 18px #343a49
+
+                .el-flap
+                    border-top solid 11px #ff7c7c
 
     .telegram-alert
         cursor pointer
