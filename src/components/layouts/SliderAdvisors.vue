@@ -475,10 +475,6 @@
                                     img
                                         margin auto 15px
 
-                            @media (max-width 490px)
-                                position relative
-                                margin 0 5px
-
                             @media (max-width 320px)
                                 position relative
                                 width 180px
@@ -495,6 +491,12 @@
                                 position relative
                                 width 220px
                                 height 220px
+                                margin 0
+
+                            @media (min-width 425px) and (max-width 768px)
+                                position relative
+                                width 280px
+                                height 280px
                                 margin 0
 
                             @media (min-width 768px) and (max-width 1024px)

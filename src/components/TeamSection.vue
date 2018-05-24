@@ -27,7 +27,8 @@
                                          :num-items-in-wrap="numItemsInWrap"/>
             </div>
 
-            <div class="serokell-team" id="serokell-team">
+            <div id="serokell-team"
+                 class="serokell-team">
                 <p>
                     Serokell
                 </p>
@@ -48,8 +49,11 @@
                                         {{ member.position }}
                                     </h3>
 
-                                    <div class="icons" v-if="member.social !== undefined && member.length !== 0">
-                                        <a :href="social.link" v-for="social in member.social" target="_blank">
+                                    <div class="icons"
+                                         v-if="member.social !== undefined && member.length !== 0">
+                                        <a target="_blank"
+                                           :href="social.link"
+                                           v-for="social in member.social">
                                             <img :class="{ 'in': social.type === 'linkedin' }"
                                                  src="../../static/images/in.svg"
                                                  alt="in"/>
@@ -330,10 +334,10 @@
             justify-content center
             align-items center
 
-            @media (min-width 490px) and (max-width 768px)
+            @media (min-width 425px) and (max-width 768px)
                 padding 80px 15% 40px 15%
 
-            @media (max-width 490px)
+            @media (max-width 425px)
                 padding 80px 5% 40px 5%
 
             .title

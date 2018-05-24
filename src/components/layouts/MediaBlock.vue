@@ -173,7 +173,7 @@
             display flex
             flex-direction row
             flex-wrap wrap
-            justify-content space-between
+            justify-content space-evenly
 
             @media (max-width 768px)
                 flex-basis unset
