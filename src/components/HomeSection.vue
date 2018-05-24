@@ -474,8 +474,8 @@
                                placeholder="Your e-mail address"
                                required
                                :class="{ 'error__email-subscribe-input': subscriber.error,
-                           'success__email-subscribe-input': subscriber.success,
-                           'exist__email-subscribe-input': subscriber.exist}"
+                               'success__email-subscribe-input': subscriber.success,
+                               'exist__email-subscribe-input': subscriber.exist}"
                                v-model="subscriber.email"
                                @blur="blurCheckCorrectEmail(subscriber.email)"
                                @input="inputCheckCorrectEmail(subscriber.email)"
@@ -869,7 +869,6 @@
                 return re.test(String(email).toLowerCase());
             },
             subscribe: function () {
-                console.log(123123);
                 if (this.checkCorrectEmail(this.subscriber.email)) {
                     this.subscriber.loader = true;
                     this.subscriber.success = false;
@@ -886,8 +885,10 @@
                     }).then(response => {
                         this.subscriber.loader = false;
                         console.log(response.body);
-                        if (response.body.message === 'Email already exist')
+                        if (response.body.message === 'Email already exist') {
+                            localStorage.setItem('subscriber-email', this.subscriber.email);
                             return this.subscriber.exist = true;
+                        }
                         this.subscriber.success = true;
                         localStorage.setItem('subscriber-email', this.subscriber.email);
                     }, response => {
@@ -1097,10 +1098,17 @@
                 };
             },
         },
+        created() {
+            if (localStorage.getItem('subscriber-email') !== 'undefined' &&
+                localStorage.getItem('subscriber-email') !== null && localStorage.getItem('subscriber-email') !== undefined) {
+                if (this.checkCorrectEmail(localStorage.getItem('subscriber-email'))) {
+                    this.openedEmailSubscribeAlert = false;
+                }
+            }
+        },
         mounted() {
 
             //устанавливать начальное значение checked на включение оповещений
-
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY === 0) {
