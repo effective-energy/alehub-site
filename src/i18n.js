@@ -672,14 +672,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -1444,14 +1444,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2210,14 +2210,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '25.05.2018 – 15.06.2018',
+                    date: '25.05.2018 – 25.07.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '15.06.2018 – 15.08.2018',
+                    date: '25.07.2018 – 25.09.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
@@ -2980,14 +2980,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3722,14 +3722,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4464,14 +4464,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5205,14 +5205,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5947,14 +5947,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6689,14 +6689,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
+                    date: '05/25/2018 - 07/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
