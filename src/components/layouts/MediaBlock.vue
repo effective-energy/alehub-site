@@ -10,12 +10,14 @@
             </div>
             <a target="_blank"
                v-for="item in media"
-               :href="item.href">
+               :href="item.href"
+            @mouseenter="enterMediaHover(item)"
+               @mouseleave="leaveMediaHover(item)">
                 <transition name="fade-media">
-                <img class="light"
-                     :src="item.src"
-                     :alt="item.title"
-                     v-if="!isDark">
+                    <img class="light"
+                         :src="item.src"
+                         :alt="item.title"
+                         v-if="!isDark">
                 </transition>
                 <transition name="fade-media">
                     <img class="dark"
@@ -23,9 +25,12 @@
                          :alt="item.title"
                          v-if="isDark">
                 </transition>
-                <!--<img class="hover"-->
-                <!--:src="item.hoverSrc"-->
-                <!--:alt="item.title">-->
+                <transition name="fade-media-hover">
+                    <img class="hover"
+                         :src="item.hoverSrc"
+                         :alt="item.title"
+                         v-if="item.isHover">
+                </transition>
             </a>
         </div>
     </div>
@@ -47,58 +52,85 @@
                         title: 'Bitcoin Magazine',
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
                         darkSrc: '../../../static/images/logo/bitcoin-magazine-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/bitcoin-magazine-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'Coin Telegraph',
                         src: '../../../static/images/logo/coin-telegraph.svg',
                         darkSrc: '../../../static/images/logo/coin-telegraph-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/coin-telegraph-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'Forklog',
                         src: '../../../static/images/logo/forklog.svg',
                         darkSrc: '../../../static/images/logo/forklog-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/forklog-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'TheMerkle',
                         src: '../../../static/images/logo/the-merkle.svg',
                         darkSrc: '../../../static/images/logo/the-merkle-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
                         darkSrc: '../../../static/images/logo/ccn-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/ccn-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'BtcManager',
                         src: '../../../static/images/logo/btc-manager.svg',
                         darkSrc: '../../../static/images/logo/btc-manager-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/btc-manager-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CryptoNinjas',
                         src: '../../../static/images/logo/crypto-ninjas.svg',
                         darkSrc: '../../../static/images/logo/crypto-ninjas-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/crypto-ninjas-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CoinStaker',
                         src: '../../../static/images/logo/coin-staker.svg',
                         darkSrc: '../../../static/images/logo/coin-staker-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/coin-staker-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     },
                     {
                         title: 'CoinNewsAsia',
                         src: '../../../static/images/logo/coin-news-asia.svg',
                         darkSrc: '../../../static/images/logo/coin-news-asia-light.svg',
-                        href: 'https://www.cryptoninjas.net/'
+                        hoverSrc: '../../../static/images/logo/coin-news-asia-hover.svg',
+                        href: 'https://www.cryptoninjas.net/',
+                        isHover: false
                     }
+
                 ]
             }
+        },
+        methods: {
+            enterMediaHover: function (item) {
+                item.isHover = true;
+            },
+            leaveMediaHover: function (item) {
+                item.isHover = false;
+            },
         }
     }
 </script>
@@ -166,9 +198,9 @@
                 display flex
                 justify-content center
 
-                &:hover
-                    img
-                        filter grayscale(0)
+                @media (max-width 768px)
+                    margin 0
+                    flex-basis unset
 
                 .fade-media-enter-active
                     -webkit-transition all .5s ease-in-out
@@ -178,16 +210,19 @@
                 .fade-media-enter
                     opacity 0
 
-                @media (max-width 768px)
-                    margin 0
-                    flex-basis unset
+                .hover
+                    position absolute
+
+                .fade-media-hover-enter-active, .fade-media-hover-leave-active
+                    -webkit-transition all .5s ease-in-out
+                    -o-transition all .5s ease-in-out
+                    transition all .5s ease-in-out
+
+                .fade-media-hover-enter, .fade-media-hover-leave-active
+                    opacity 0
 
                 img
                     height 60px
-                    filter grayscale(100%)
-                    -webkit-transition all .3s ease-in-out
-                    -o-transition all .3s ease-in-out
-                    transition all .3s ease-in-out
 
                     @media (max-width 768px)
                         height unset
