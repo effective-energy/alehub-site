@@ -16,6 +16,7 @@
         <ico-section :is-rtl="isRtl"/>
         <roadmap-section :is-rtl="isRtl"/>
         <download-application-section/>
+        <mass-media-section/>
         <blog-section/>
         <footer-block :is-rtl="isRtl"/>
     </div>
@@ -30,6 +31,7 @@
     import TeamSection from './TeamSection';
     import IcoSection from './IcoSection';
     import RoadmapSection from './RoadmapSection';
+    import MassMediaSection from './MassMediaSection';
     import BlogSection from './BlogSection';
     import FooterBlock from './layouts/FooterBlock';
 
@@ -44,6 +46,7 @@
             TeamSection,
             IcoSection,
             RoadmapSection,
+            MassMediaSection,
             BlogSection,
             FooterBlock,
         },

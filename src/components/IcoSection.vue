@@ -22,7 +22,7 @@
                         {{ $t('economy.ICOinfo.hardCap.title') }}
                     </h1>
                     <h3 class="figures-subtitle">
-                        {{ $t('economy.ICOinfo.hardCap.amount') }} ETH
+                        {{ hardCap }} ETH
                     </h3>
                 </div>
                 <div class="col-4 is-center is-white">
@@ -30,27 +30,29 @@
                         {{ $t('economy.ICOinfo.softCap.title') }}
                     </h1>
                     <h3 class="figures-subtitle">
-                        {{ $t('economy.ICOinfo.softCap.amount') }} ETH
+                        {{ softCap }} ETH
                     </h3>
                 </div>
             </div>
             <div class="row distribution">
                 <circle1 v-if="isShowAnim"
-                        class="direction-ltr"
-                         :index="this.selectedDistributionIndex"
-                />
+                         class="direction-ltr"
+                         :index="this.selectedDistributionIndex"/>
+
                 <div class="col-lg-3 col-md-3 col-sm-6 col-6">
                     <div class="steep-list"
                          :class="{ 'steep-list__rtl': isRtl }">
+
                         <div class="item-list"
                              v-for="(dist, distIndex) in distributionList"
                              @mouseover="showDist(distIndex)"
                              @touchend="showDist(distIndex)">
+
                             <div class="color-steep steep-sale"
                                  :class="['steep-'+dist.type]">
                             </div>
                             <span>
-                                {{$t('economy.distribution.list['+distIndex+'].title')}}
+                                {{ $t('economy.distribution.list['+distIndex+'].title') }}
                             </span>
                         </div>
                     </div>
@@ -72,7 +74,9 @@
 </template>
 
 <script>
-    import Circle1 from "./layouts/Circle";
+    import Circle1 from './layouts/Circle';
+
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'Economy',
@@ -88,46 +92,67 @@
         data() {
             return {
                 selectedDistributionIndex: -1,
-                distributionList: [{
-                    type: 'sale',
-                    count: 77,
-                    color: '#139ac9'
-                }, {
-                    type: 'team',
-                    count: 11,
-                    color: '#6289fd'
-                }, {
-                    type: 'referral',
-                    count: 10,
-                    color: '#80ff89'
-                }, {
-                    type: 'bounty',
-                    count: 2,
-                    color: '#fab604'
-                }],
+                distributionList: [
+                    {
+                        type: 'sale',
+                        count: 77,
+                        color: '#139ac9'
+                    },
+                    {
+                        type: 'team',
+                        count: 11,
+                        color: '#6289fd'
+                    },
+                    {
+                        type: 'referral',
+                        count: 10,
+                        color: '#80ff89'
+                    },
+                    {
+                        type: 'bounty',
+                        count: 2,
+                        color: '#fab604'
+                    }
+                ],
                 isShowAnim: false
             }
         },
-        mounted: function(){
-            window.addEventListener('scroll', () => {
-                if (document.querySelector('#ico').offsetTop - 400 <= window.pageYOffset) {
-                    this.isShowAnim = true;
-                } else {
-                    this.isShowAnim = false;
-                }
-            })
-        },
         computed: {
-            activeDistribution() {
-                if (this.selectedDistributionIndex === -1) return '100%';
-                else return this.distributionList[this.selectedDistributionIndex];
+            ...mapGetters(
+                [
+                    'cryptocurrencies',
+                    'cryptoPriceStatus'
+                ]
+            ),
+            activeDistribution: function () {
+                if (this.selectedDistributionIndex === -1)
+                    return '100%';
+                else
+                    return this.distributionList[this.selectedDistributionIndex];
+            },
+            softCap: function () {
+                if (this.cryptoPriceStatus === 'success')
+                    return (this.cryptocurrencies.eth.softCap);
+
+                 return 'loading';
+            },
+            hardCap: function () {
+                if (this.cryptoPriceStatus === 'success')
+                    return (this.cryptocurrencies.eth.hardCap);
+
+                return 'loading';
             },
         },
         methods: {
             showDist(index) {
                 this.selectedDistributionIndex = index;
             }
-        }
+        },
+        mounted() {
+            window.addEventListener('scroll', () => {
+                this.isShowAnim = document.querySelector('#ico').offsetTop - 400 <= window.pageYOffset;
+            })
+        },
     }
 </script>
 
