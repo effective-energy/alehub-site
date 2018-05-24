@@ -272,7 +272,7 @@
                                 </div>
                                 <div class="main-player" v-if="mainPlayer">
                                     <iframe class="iframe"
-                                            src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
+                                            src="https://www.youtube.com/embed/Xdh9VONh45E?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
                                             frameborder="0"
                                             allow="autoplay; encrypted-media"
                                             allowfullscreen>

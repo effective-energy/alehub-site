@@ -103,7 +103,7 @@
                         src: '../../../static/images/logo/crypto-ninjas.svg',
                         darkSrc: '../../../static/images/logo/crypto-ninjas-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://www.cryptoninjas.net/2018/05/24/ale-combining-blockchain-and-classic-project-management-services/',
                         isHover: false
                     },
                     {
