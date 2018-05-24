@@ -55,7 +55,7 @@
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
                         darkSrc: '../../../static/images/logo/bitcoin-magazine-light.svg',
                         hoverSrc: '../../../static/images/logo/bitcoin-magazine-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://bitcoinmagazine.com/',
                         isHover: false
                     },
                     {
@@ -63,7 +63,7 @@
                         src: '../../../static/images/logo/coin-telegraph.svg',
                         darkSrc: '../../../static/images/logo/coin-telegraph-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-telegraph-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://cointelegraph.com/',
                         isHover: false
                     },
                     {
@@ -71,7 +71,7 @@
                         src: '../../../static/images/logo/forklog.svg',
                         darkSrc: '../../../static/images/logo/forklog-light.svg',
                         hoverSrc: '../../../static/images/logo/forklog-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://forklog.com/',
                         isHover: false
                     },
                     {
@@ -79,7 +79,7 @@
                         src: '../../../static/images/logo/the-merkle.svg',
                         darkSrc: '../../../static/images/logo/the-merkle-light.svg',
                         hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://themerkle.com/',
                         isHover: false
                     },
                     {
@@ -87,7 +87,7 @@
                         src: '../../../static/images/logo/ccn.svg',
                         darkSrc: '../../../static/images/logo/ccn-light.svg',
                         hoverSrc: '../../../static/images/logo/ccn-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://www.ccn.com/',
                         isHover: false
                     },
                     {
@@ -95,7 +95,7 @@
                         src: '../../../static/images/logo/btc-manager.svg',
                         darkSrc: '../../../static/images/logo/btc-manager-light.svg',
                         hoverSrc: '../../../static/images/logo/btc-manager-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://btcmanager.com//',
                         isHover: false
                     },
                     {
@@ -111,7 +111,7 @@
                         src: '../../../static/images/logo/coin-staker.svg',
                         darkSrc: '../../../static/images/logo/coin-staker-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-staker-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'https://www.coinstaker.com/alehub-decentralized-project-management/',
                         isHover: false
                     },
                     {
@@ -119,7 +119,15 @@
                         src: '../../../static/images/logo/coin-news-asia.svg',
                         darkSrc: '../../../static/images/logo/coin-news-asia-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-news-asia-hover.svg',
-                        href: 'https://www.cryptoninjas.net/',
+                        href: 'http://www.coinnewsasia.com/',
+                        isHover: false
+                    },
+                    {
+                        title: 'Medium',
+                        src: '../../../static/images/logo/medium.svg',
+                        darkSrc: '../../../static/images/logo/medium-light.svg',
+                        hoverSrc: '../../../static/images/logo/medium.svg',
+                        href: 'https://medium.com/@alehub',
                         isHover: false
                     }
 
