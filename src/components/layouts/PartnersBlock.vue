@@ -23,12 +23,6 @@
                          :alt="item.title"
                          v-if="isDark">
                 </transition>
-                <transition name="fade-partners">
-                    <img class="hover"
-                         :src="item.hoverSrc"
-                         :alt="item.title"
-                         v-if="item.isHover">
-                </transition>
             </a>
         </div>
     </div>
@@ -50,33 +44,25 @@
                         title: 'ITMO University',
                         src: '../../../static/images/logo/itmo.svg',
                         darkSrc: '../../../static/images/logo/itmo-light.svg',
-                        hoverSrc: '../../../static/images/logo/itmo-hover.svg',
-                        href: 'http://en.ifmo.ru/en/',
-                        isHover: false
+                        href: 'http://en.ifmo.ru/en/'
                     },
                     {
                         title: 'Crypto b2b',
                         src: '../../../static/images/logo/b2b.svg',
                         darkSrc: '../../../static/images/logo/b2b-light.svg',
-                        hoverSrc: '../../../static/images/logo/b2b-hover.svg',
-                        href: 'https://cryptob2b.io/ru/',
-                        isHover: false
+                        href: 'https://cryptob2b.io/ru/'
                     },
                     {
                         title: 'Blockchain Spb',
                         src: '../../../static/images/logo/bear.svg',
                         darkSrc: '../../../static/images/logo/bear-light.svg',
-                        hoverSrc: '../../../static/images/logo/bear-hover.svg',
-                        href: 'https://www.blockchain-spb.org/',
-                        isHover: false
+                        href: 'https://www.blockchain-spb.org/'
                     },
                     {
                         title: 'Serokell',
                         src: '../../../static/images/logo/serokell.svg',
                         darkSrc: '../../../static/images/logo/serokell-light.svg',
-                        hoverSrc: '../../../static/images/logo/serokell-hover.svg',
-                        href: 'https://serokell.io/',
-                        isHover: false
+                        href: 'https://serokell.io/'
                     }
                 ]
             }

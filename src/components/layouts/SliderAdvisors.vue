@@ -2,7 +2,6 @@
     <div class="slider-outer">
 
         <button :class="['b-carousel__prev', settings.prev]"
-                v-if="isControlButton"
                 @click="clickPrev">
             <img src="../../../static/images/arrow-left-dark.svg" alt="prev">
         </button>
@@ -60,7 +59,6 @@
         </div>
 
         <button :class="['b-carousel__next', settings.next]"
-                v-if="isControlButton"
                 @click="clickNext">
             <img src="../../../static/images/arrow-right-dark.svg" alt="prev">
         </button>
@@ -130,9 +128,6 @@
         computed: {
             isMobile: function () {
                 return window.innerWidth <= 425;
-            },
-            isControlButton: function () {
-                return !(window.innerWidth <= 490);
             },
             inBlockTeam: function () {
                 return this.options.inBlockTeam;
@@ -363,6 +358,7 @@
                             width 270px
 
                         @media (max-width 425px)
+                            height 300px
                             flex 0 0 100% !important
 
                         @media (min-width 768px) and (max-width 1024px)

@@ -11,16 +11,18 @@
             <a target="_blank"
                v-for="item in media"
                :href="item.href"
-            @mouseenter="enterMediaHover(item)"
+               @mouseenter="enterMediaHover(item)"
                @mouseleave="leaveMediaHover(item)">
                 <transition name="fade-media">
                     <img class="light"
+                         :class="{ 'light__transparent': item.isHover }"
                          :src="item.src"
                          :alt="item.title"
                          v-if="!isDark">
                 </transition>
                 <transition name="fade-media">
                     <img class="dark"
+                         :class="{ 'dark__transparent': item.isHover }"
                          :src="item.darkSrc"
                          :alt="item.title"
                          v-if="isDark">
@@ -220,6 +222,12 @@
 
                 .fade-media-hover-enter, .fade-media-hover-leave-active
                     opacity 0
+
+                .light__transparent, .dark__transparent
+                    opacity 0
+                    -webkit-transition all 1s ease-in-out
+                    -o-transition all 1s ease-in-out
+                    transition all 1s ease-in-out
 
                 img
                     height 60px
