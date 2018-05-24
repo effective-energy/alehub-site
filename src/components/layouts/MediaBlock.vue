@@ -1,32 +1,29 @@
 <template>
-    <div class="media-block"
-         :class="{ 'media-block__dark': isDark }">
-        <div class="title">
-            Mass media:
+    <div class="media-block">
+        <div class="media-block__header">
+            <div class="title">
+                Mass media
+            </div>
+            <div class="separator">
+            </div>
         </div>
         <div class="media-block__list">
-            <div class="title__list">
-                Mass media:
-            </div>
             <a target="_blank"
                v-for="item in media"
                :href="item.href"
                @mouseenter="enterMediaHover(item)"
                @mouseleave="leaveMediaHover(item)">
-                <transition name="fade-media">
-                    <img class="light"
-                         :class="{ 'light__transparent': item.isHover }"
-                         :src="item.src"
-                         :alt="item.title"
-                         v-if="!isDark">
-                </transition>
-                <transition name="fade-media">
-                    <img class="dark"
-                         :class="{ 'dark__transparent': item.isHover }"
-                         :src="item.darkSrc"
-                         :alt="item.title"
-                         v-if="isDark">
-                </transition>
+                <img class="light"
+                     :class="{ 'light__transparent': item.isHover }"
+                     :src="item.src"
+                     :alt="item.title">
+                <!--<transition name="fade-media">-->
+                <!--<img class="dark"-->
+                <!--:class="{ 'dark__transparent': item.isHover }"-->
+                <!--:src="item.darkSrc"-->
+                <!--:alt="item.title"-->
+                <!--v-if="isDark">-->
+                <!--</transition>-->
                 <transition name="fade-media-hover">
                     <img class="hover"
                          :src="item.hoverSrc"
@@ -42,10 +39,10 @@
     export default {
         name: 'MediaBlock',
         props: {
-            isDark: {
-                type: Boolean,
-                required: true
-            }
+            // isDark: {
+            //     type: Boolean,
+            //     required: true
+            // }
         },
         data() {
             return {
@@ -140,17 +137,18 @@
 <style lang="stylus" scoped>
     .media-block
         width 100%
-        padding 150px 150px 0 150px
+        padding 80px 150px 80px 150px
         display flex
-        flex-direction row
+        flex-direction column
         justify-content space-between
+        align-items center
         background-color #ececf0
 
         @media (min-width 1024px) and (max-width 1440px)
-            padding 100px 100px 0 100px
+            padding 60px 100px 60px 100px
 
         @media (min-width 768px) and (max-width 1024px)
-            padding 50px 75px 0 75px
+            padding 50px 75px 50px 75px
 
         @media (min-width 425px) and (max-width 768px)
             flex-direction column
@@ -160,16 +158,26 @@
         @media (max-width 425px)
             padding 50px 10% 50px 10%
 
-        .title
-            flex-basis 20%
-            font-size 22px
-            font-weight 700
+        .media-block__header
+            margin 0 0 60px 0
+            display flex
+            flex-direction column
+            align-items center
 
             @media (max-width 768px)
-                display none
+                margin 0
+
+            .title
+                font-size 3em
+                font-weight 500
+
+            .separator
+                width 120px
+                height 2px
+                margin 25px 0
+                background-color #34343e
 
         .media-block__list
-            flex-basis 80%
             display flex
             flex-direction row
             flex-wrap wrap
@@ -195,8 +203,8 @@
                     display block
 
             a
-                margin 0 0 60px 0
                 flex-basis 25%
+                margin 0 0 80px 0
                 display flex
                 justify-content center
 
@@ -205,29 +213,28 @@
                     flex-basis unset
 
                 .fade-media-enter-active
-                    -webkit-transition all .5s ease-in-out
-                    -o-transition all .5s ease-in-out
-                    transition all .5s ease-in-out
+                    -webkit-transition all .3s ease-in-out
+                    -o-transition all .3s ease-in-out
+                    transition all .3s ease-in-out
 
                 .fade-media-enter
                     opacity 0
-
-                .hover
-                    position absolute
 
                 .fade-media-hover-enter-active, .fade-media-hover-leave-active
                     -webkit-transition all .5s ease-in-out
                     -o-transition all .5s ease-in-out
                     transition all .5s ease-in-out
-
                 .fade-media-hover-enter, .fade-media-hover-leave-active
                     opacity 0
 
+                .hover
+                    position absolute
+
                 .light__transparent, .dark__transparent
                     opacity 0
-                    -webkit-transition all 1s ease-in-out
-                    -o-transition all 1s ease-in-out
-                    transition all 1s ease-in-out
+                    -webkit-transition all .6s ease-in-out
+                    -o-transition all .6s ease-in-out
+                    transition all .6s ease-in-out
 
                 img
                     height 60px

@@ -136,7 +136,7 @@
 
         .title
             text-align center
-            font-size 40px
+            font-size 3em
 
         .separator
             width 120px
