@@ -679,7 +679,7 @@ const messages = {
                 {
                     title: '黄皮书开发',
                     desk: '黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -687,7 +687,7 @@ const messages = {
                 {
                     title: '去中心化的MVP解决方案',
                     desc: '构建实施以下组件的系统版本：对等网络；使用内置代币和其他代币的自定义交易；',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -1443,14 +1443,14 @@ const messages = {
                 {
                     title: 'Yellow Paper development',
                     desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Decentralization of MVP solutions',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2963,14 +2963,14 @@ const messages = {
                 {
                     title: 'Yellow Paper development',
                     desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Decentralization of MVP solutions',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3697,7 +3697,7 @@ const messages = {
                 {
                     title: 'Développement du Livret-jaune',
                     desk: 'Papier jaune - description technique du système. Le document illustre les caractéristiques architecturales de la construction du système, les protocoles d\'interaction entre les nœuds du réseau et d\'autres détails techniques.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -3705,7 +3705,7 @@ const messages = {
                 {
                     title: 'Décentralisation des solutions MVP',
                     desk: 'Construire une version du système dans laquelle les composants suivants sont implémentés : Réseau Peering; Transactions personnalisées à l\'aide du jeton intégré et des jetons colorés;',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4431,7 +4431,7 @@ const messages = {
                 {
                     title: 'Yellow Paper Entwicklung',
                     desk: 'Yellow Paper - Technische Beschreibung des Systems. Das Dokument veranschaulicht die architektonischen Merkmale des Systemaufbaus, die Protokolle der Interaktion zwischen den Netzknoten und andere technische Details.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -4439,7 +4439,7 @@ const messages = {
                 {
                     title: 'Dezentralisierung der MVP-Lösungen',
                     desk: 'Aufbau einer Version des Systems, in der die folgenden Komponenten implementiert sind: Peering Netzwerk; Benutzerdefinierte Transaktionen mit dem eingebauten Token und farbigen Token;',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5164,7 +5164,7 @@ const messages = {
                 {
                     title: 'تطوير الورقه الصفراء',
                     desk: 'الورقة الصفراء - مستند وصف فني للنظام. يوضح السمات الهيكليه لبناء النظام وبروتوكولات التفاعل بين عقد الشبكة(network nodes) والتفاصيل الفنية الأخرى',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5172,7 +5172,7 @@ const messages = {
                 {
                     title: 'اللامركزية لحلول MVP',
                     desk: 'إنشاء إصدار من النظام يتم فيه تنفيذ المكونات التالية: شبكة التناظر. معاملات مخصصة باستخدام الرموز المميزة المدمجه (built-in token)  والرموز الملونة (colored tokens)(الرموز الملونه هو تطبيق متقدم للبلوك شين بت كوين)',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5898,7 +5898,7 @@ const messages = {
                 {
                     title: '황색언론 개발',
                     desk: '황색언론– 시스탬의 기술 문서. 이 문서는 시스템 구성의 건축학적 특징, 네트워크 노드 간의 상호 작용 프로토콜 및 기타 기술적 세부 사항을 설명합니다.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -5906,7 +5906,7 @@ const messages = {
                 {
                     title: 'MVP 솔루션의 분산화',
                     desk: '다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6632,7 +6632,7 @@ const messages = {
                 {
                     title: 'Desarrollo de Yellow Paper',
                     desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnicos.',
-                    date: '07/02/2018 - 01/01/2018',
+                    date: '07/02/2018 - 01/01/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -6640,7 +6640,7 @@ const messages = {
                 {
                     title: 'Descentralización de las soluciones MVP',
                     desk: 'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
-                    date: '01.12.2018 - 01/02/2019',
+                    date: '12/01/2018 - 01/02/2019',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
