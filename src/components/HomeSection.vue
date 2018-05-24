@@ -35,7 +35,7 @@
                  :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-dark.svg"
                  alt="to top"
-                 v-if="!isPointerInDark || !isDarkSection">
+                 v-if="!isPointerInDark">
             <img class="pointer-to-top"
                  :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-yellow.svg"
@@ -457,7 +457,8 @@
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' : '../../static/images/cancel-light.svg'"
+                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' :
+                         '../../static/images/cancel-light.svg'"
                          alt="close subscribe">
                 </div>
                 <div class="email-subscribe__wrap">
@@ -613,7 +614,7 @@
         },
         watch: {
             isDarkSection: function (val) {
-                // console.log(val, 'isDarkSection');
+                console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
