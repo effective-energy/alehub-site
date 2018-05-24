@@ -17,13 +17,6 @@
                      :class="{ 'light__transparent': item.isHover }"
                      :src="item.src"
                      :alt="item.title">
-                <!--<transition name="fade-media">-->
-                <!--<img class="dark"-->
-                <!--:class="{ 'dark__transparent': item.isHover }"-->
-                <!--:src="item.darkSrc"-->
-                <!--:alt="item.title"-->
-                <!--v-if="isDark">-->
-                <!--</transition>-->
                 <transition name="fade-media-hover">
                     <img class="hover"
                          :src="item.hoverSrc"
@@ -50,7 +43,6 @@
                     {
                         title: 'Bitcoin Magazine',
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
-                        darkSrc: '../../../static/images/logo/bitcoin-magazine-light.svg',
                         hoverSrc: '../../../static/images/logo/bitcoin-magazine-hover.svg',
                         href: 'https://bitcoinmagazine.com/',
                         isHover: false
@@ -58,7 +50,6 @@
                     {
                         title: 'Coin Telegraph',
                         src: '../../../static/images/logo/coin-telegraph.svg',
-                        darkSrc: '../../../static/images/logo/coin-telegraph-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-telegraph-hover.svg',
                         href: 'https://cointelegraph.com/',
                         isHover: false
@@ -66,7 +57,6 @@
                     {
                         title: 'Forklog',
                         src: '../../../static/images/logo/forklog.svg',
-                        darkSrc: '../../../static/images/logo/forklog-light.svg',
                         hoverSrc: '../../../static/images/logo/forklog-hover.svg',
                         href: 'https://forklog.com/',
                         isHover: false
@@ -74,7 +64,6 @@
                     {
                         title: 'TheMerkle',
                         src: '../../../static/images/logo/the-merkle.svg',
-                        darkSrc: '../../../static/images/logo/the-merkle-light.svg',
                         hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
                         href: 'https://themerkle.com/',
                         isHover: false
@@ -82,7 +71,6 @@
                     {
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
-                        darkSrc: '../../../static/images/logo/ccn-light.svg',
                         hoverSrc: '../../../static/images/logo/ccn-hover.svg',
                         href: 'https://www.ccn.com/',
                         isHover: false
@@ -90,7 +78,6 @@
                     {
                         title: 'BtcManager',
                         src: '../../../static/images/logo/btc-manager.svg',
-                        darkSrc: '../../../static/images/logo/btc-manager-light.svg',
                         hoverSrc: '../../../static/images/logo/btc-manager-hover.svg',
                         href: 'https://btcmanager.com//',
                         isHover: false
@@ -98,7 +85,6 @@
                     {
                         title: 'CryptoNinjas',
                         src: '../../../static/images/logo/crypto-ninjas.svg',
-                        darkSrc: '../../../static/images/logo/crypto-ninjas-light.svg',
                         hoverSrc: '../../../static/images/logo/crypto-ninjas-hover.svg',
                         href: 'https://www.cryptoninjas.net/2018/05/24/ale-combining-blockchain-and-classic-project-management-services/',
                         isHover: false
@@ -106,7 +92,6 @@
                     {
                         title: 'CoinStaker',
                         src: '../../../static/images/logo/coin-staker.svg',
-                        darkSrc: '../../../static/images/logo/coin-staker-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-staker-hover.svg',
                         href: 'https://www.coinstaker.com/alehub-decentralized-project-management/',
                         isHover: false
@@ -114,7 +99,6 @@
                     {
                         title: 'CoinNewsAsia',
                         src: '../../../static/images/logo/coin-news-asia.svg',
-                        darkSrc: '../../../static/images/logo/coin-news-asia-light.svg',
                         hoverSrc: '../../../static/images/logo/coin-news-asia-hover.svg',
                         href: 'http://www.coinnewsasia.com/',
                         isHover: false
@@ -122,12 +106,17 @@
                     {
                         title: 'Medium',
                         src: '../../../static/images/logo/medium.svg',
-                        darkSrc: '../../../static/images/logo/medium-light.svg',
-                        hoverSrc: '../../../static/images/logo/medium.svg',
+                        hoverSrc: '../../../static/images/logo/medium-hover.svg',
                         href: 'https://medium.com/@alehub',
                         isHover: false
+                    },
+                    {
+                        title: 'Bitjournal',
+                        src: '../../../static/images/logo/bitjournal.svg',
+                        hoverSrc: '../../../static/images/logo/bitjournal-hover.svg',
+                        href: 'https://bitjournal.media/17-04-2018/alehub-universalnaya-platforma-dlya-upravleniya-proektami/',
+                        isHover: false
                     }
-
                 ]
             }
         },
@@ -220,18 +209,11 @@
                     margin 0
                     flex-basis unset
 
-                .fade-media-enter-active
+                .fade-media-hover-enter-active, .fade-media-hover-leave-active
                     -webkit-transition all .3s ease-in-out
                     -o-transition all .3s ease-in-out
                     transition all .3s ease-in-out
 
-                .fade-media-enter
-                    opacity 0
-
-                .fade-media-hover-enter-active, .fade-media-hover-leave-active
-                    -webkit-transition all .5s ease-in-out
-                    -o-transition all .5s ease-in-out
-                    transition all .5s ease-in-out
                 .fade-media-hover-enter, .fade-media-hover-leave-active
                     opacity 0
 
@@ -240,9 +222,9 @@
 
                 .light__transparent, .dark__transparent
                     opacity 0
-                    -webkit-transition all .6s ease-in-out
-                    -o-transition all .6s ease-in-out
-                    transition all .6s ease-in-out
+                    -webkit-transition all .4s ease-in-out
+                    -o-transition all .4s ease-in-out
+                    transition all .4s ease-in-out
 
                 img
                     height 60px
@@ -251,11 +233,5 @@
                         height unset
                         width 100%
                         max-height 60px
-
-    .media-block__dark
-        background-color #343a49
-
-        .title
-            color #f7f7f7
 
 </style>

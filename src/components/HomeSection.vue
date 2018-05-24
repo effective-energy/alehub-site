@@ -392,8 +392,6 @@
 
         <partners-block :is-dark="isDark"/>
 
-        <media-block :is-dark="isDark"/>
-
         <div id="description"
              class="what-is"
              :class="{ 'description__dark': isDark }">
@@ -575,7 +573,6 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
-    import MediaBlock from './layouts/MediaBlock';
     import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
@@ -587,7 +584,6 @@
         components: {
             MenuModal,
             SliderScreen,
-            MediaBlock,
             PartnersBlock
         },
         props: {
