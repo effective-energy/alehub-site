@@ -1,5 +1,13 @@
 const messages = {
     zh: {
+        emailSubscribePanel: {
+            newsletter:"訂閱我們的通訊",
+            YourAddress:"您的電子郵件地址”",
+            subscribe:"訂閱",
+            turnOn:"並且不要忘記打開通知",
+            success:"成功訂閱",
+            alreadyUse:"此電子郵件已被使用"
+        },
         navbar: {
             menuList: [
                 {
@@ -764,6 +772,14 @@ const messages = {
 
 
     ja: {
+        emailSubscribePanel: {
+            newsletter:"ニュースレターを購読する",
+            YourAddress:"あなたのEメールアドレス",
+            subscribe:"購読する",
+            turnOn:"通知をオンにすることを忘れないでください",
+            success:"成功した購読」",
+            alreadyUse:"このメールは既に使用中です"
+        },
         navbar: {
             menuList: [
                 {
@@ -1523,6 +1539,14 @@ const messages = {
 
 
     ru: {
+        emailSubscribePanel: {
+            newsletter:"Подпишитесь на нашу рассылку",
+            YourAddress:"Ваш адрес электронной почты",
+            subscribe:"Подписаться",
+            turnOn:"И не забудьте включить уведомления",
+            success:"Вы успешно подписались",
+            alreadyUse:"Эта почта уже используется"
+        },
         navbar: {
             menuList: [
                 {
@@ -2277,14 +2301,22 @@ const messages = {
             right: {
                 input: 'Ваш e-mail',
                 btn: 'Подписаться',
-                error: 'Невалидный адрес',
-                success: 'Валидный адрес'
+                error: 'неправильный адрес',
+                success: 'правильный адрес'
             },
         },
         download: 'Скачать',
         serverErr: 'Произошла ошибка сервера при получении списка приложений.'
     },
     en: {
+        emailSubscribePanel: {
+            newsletter:"Subscribe to our newsletter",
+            YourAddress:"Your e-mail address",
+            subscribe:"Subscribe",
+            turnOn:"And don't forget to turn on notifications",
+            success:"successful subscription",
+            alreadyUse:"this email is already in use"
+        },
         navbar: {
             menuList: [
                 {
@@ -3041,6 +3073,14 @@ const messages = {
         serverErr: 'A server error occurred while retrieving the application list.'
     },
     fr: {
+        emailSubscribePanel: {
+            newsletter:"Abonnez-vous à notre newsletter",
+            YourAddress:"Votre adresse e-mail",
+            subscribe:"S'abonner",
+            turnOn:"Et n'oubliez pas d'activer les notifications",
+            success:"abonnement réussi",
+            alreadyUse:"cet e-mail est déjà utilisé"
+        },
         navbar: {
             menuList: [
                 {
@@ -3780,6 +3820,14 @@ const messages = {
         serverErr: 'Une erreur de serveur s\'est produite lors de la récupération de la liste des applications.'
     },
     de: {
+        emailSubscribePanel: {
+            newsletter:"Abonnieren Sie unseren Newsletter",
+            YourAddress:"Ihre E-Mail-Adresse",
+            subscribe:"Abonnieren",
+            turnOn:"Und vergiss nicht, Benachrichtigungen zu aktivieren",
+            success:"erfolgreiches Abonnement",
+            alreadyUse:"Diese E-Mail wird bereits verwendet"
+        },
         navbar: {
             menuList: [
                 {
@@ -4513,6 +4561,14 @@ const messages = {
         serverErr: 'Serverfehler beim abrufen der Liste der Anwendungen.'
     },
     ar: {
+        emailSubscribePanel: {
+            newsletter:"اشترك في النشرة الإخبارية لدينا",
+            YourAddress:"عنوان بريدك الإلكتروني",
+            subscribe:"اشتراك",
+            turnOn:"ولا تنس تشغيل الإشعارات",
+            success:"الاشتراك الناجح",
+            alreadyUse:"هذا البريد الإلكتروني قيد الاستخدام بالفعل"
+        },
         navbar: {
             menuList: [
                 {
@@ -5247,6 +5303,14 @@ const messages = {
         serverErr: 'خادم حدث خطأ أثناء استرداد قائمة التطبيقات.'
     },
     ko: {
+        emailSubscribePanel: {
+            newsletter:"뉴스 레터 구독",
+            YourAddress:"귀하의 이메일 주소",
+            subscribe:"구독",
+            turnOn:"알림을 켜는 것을 잊지 마세요",
+            success:"성공적인 구독",
+            alreadyUse:"이 이메일은 이미 사용 중입니다"
+        },
         navbar: {
             menuList: [
                 {
@@ -5981,6 +6045,14 @@ const messages = {
         serverErr: '서버 오류가 발생했을 검색하는 동안 이 응용 프로그램의 목록이 있습니다.'
     },
     es: {
+        emailSubscribePanel: {
+            newsletter:"Suscríbete a nuestro boletín informativo",
+            YourAddress:"Su dirección de correo electrónico",
+            subscribe:"Suscribir",
+            turnOn:"Y no olvides activar las notificaciones",
+            success:"suscripción exitosa",
+            alreadyUse:"este correo electrónico ya está en uso"
+        },
         navbar: {
             menuList: [
                 {

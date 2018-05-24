@@ -272,7 +272,7 @@
                                 </div>
                                 <div class="main-player" v-if="mainPlayer">
                                     <iframe class="iframe"
-                                            src="https://www.youtube.com/embed/6I8xN_RiHXY?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
+                                            src="https://www.youtube.com/embed/Xdh9VONh45E?ecver=1&autoplay=1&showinfo=0&controls=0&loop=1&playlist=6I8xN_RiHXY"
                                             frameborder="0"
                                             allow="autoplay; encrypted-media"
                                             allowfullscreen>
@@ -463,7 +463,7 @@
                 </div>
                 <div class="email-subscribe__wrap">
                     <p>
-                        Subscribe to our newsletter
+                        {{$t("emailSubscribePanel.newsletter")}}
                     </p>
                     <form @submit.prevent="subscribe">
                         <label class="top-label-subscribe"
@@ -471,13 +471,13 @@
                            'exist-label': subscriber.exist,
                            'success-label': subscriber.success }"
                                v-if="subscriber.error || subscriber.exist || subscriber.success">
-                            <span v-if="subscriber.error">incorrect address</span>
+                            <span v-if="subscriber.error">{{$t("footer.right.error")}}</span>
                             <span v-if="subscriber.success">successful subscription</span>
                             <span v-if="subscriber.exist">this email is already in use</span>
                         </label>
                         <input id="subscribe-email-input"
                                type="text"
-                               placeholder="Your e-mail address"
+                               :placeholder='$t("emailSubscribePanel.YourAddress")'
                                required
                                :class="{ 'error__email-subscribe-input': subscriber.error,
                                'success__email-subscribe-input': subscriber.success,
@@ -488,13 +488,13 @@
                                :disabled="subscriber.loader">
                         <button type="submit"
                                 :disabled="subscriber.loader">
-                            Subscribe
+                            {{$t("emailSubscribePanel.subscribe")}}
                         </button>
                     </form>
                 </div>
                 <div class="web-push-notif">
                     <label for="toggle-web-push">
-                        And don't forget to turn on notifications
+                        {{$t("emailSubscribePanel.turnOn")}}
                     </label>
                     <label class="switch-control"
                            id="toggle-web-push"
