@@ -26,17 +26,11 @@
             </button>
         </div>
 
-        <div class="scroll-to-top"
-             :class="{ 'scroll-to-top__rtl': isRtl }"
-             v-if="checkSmallTabletWidth">
-            <a @click="clickToTop($event)"
-               v-if="!afterClickToTop"></a>
-            <a @click="returnPosition" v-else></a>
-        </div>
         <div class="wrap__pointer"
              :class="{ 'wrap-pointer__rtl': isRtl }"
              id="wrap-pointer"
-             v-if="checkSmallTabletWidth">
+             v-if="checkSmallTabletWidth"
+             @click="changePosition">
             <img class="pointer-to-top"
                  :class="{ 'pointer-to-bottom': afterClickToTop }"
                  src="../../static/images/arrow-top-dark.svg"
@@ -47,6 +41,14 @@
                  src="../../static/images/arrow-top-yellow.svg"
                  alt="to top"
                  v-else>
+        </div>
+
+        <div class="scroll-to-top"
+             :class="{ 'scroll-to-top__rtl': isRtl }"
+             v-if="checkSmallTabletWidth">
+            <a @click="clickToTop"
+               v-if="!afterClickToTop"></a>
+            <a @click="returnPosition" v-else></a>
         </div>
 
         <div id="svg-anim"
@@ -170,9 +172,13 @@
              id="home">
 
             <video autoplay muted loop id="myVideo" v-if="isVideo">
-                <source src="../../static/video/preview.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
-                <source src="../../static/video/preview.webm" type='video/webm; codecs="vp8.0, vorbis"'/>
-                <p>This is fallback content to display for user agents that do not support the video tag.</p>
+                <source src="../../static/video/preview.mp4"
+                        type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
+                <source src="../../static/video/preview.webm"
+                        type='video/webm; codecs="vp8.0, vorbis"'/>
+                <p>
+                    This is fallback content to display for user agents that do not support the video tag.
+                </p>
             </video>
 
             <div class="row">
@@ -342,7 +348,8 @@
                 <div class="scroll-next">
                     <a class="scroll-ic"
                        v-scroll-to="'#description'">
-                        <img src="../../static/images/scroll-ic.svg" alt="scroll-to-bottom">
+                        <img src="../../static/images/scroll-ic.svg"
+                             alt="scroll-to-bottom">
                         <div class="wheel"></div>
                     </a>
                 </div>
@@ -382,36 +389,11 @@
                    target="_blank"></a>
             </div>
         </div>
-        <div class="partners"
-             :class="{ 'partners__dark': isDark }">
-            <div class="title">
-                {{ $t("partners.title") }}:
-            </div>
-            <a href="http://ifmo.ru/ru/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/itmo-dark.png' : '../../static/images/itmo.png']"
-                     height="60px"
-                     width="114px"
-                     alt="ITMO">
-            </a>
-            <a href="https://cryptob2b.io/ru/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/cb2b-dark.png' : '../../static/images/crypto.png']"
-                     height="46px"
-                     width="158px"
-                     alt="CryptoB2B">
-            </a>
-            <a href="https://www.blockchain-spb.org/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/bspb-dark.png' : '../../static/images/beer.png']"
-                     height="59px"
-                     width="57px"
-                     alt="BEAR">
-            </a>
-            <a href="https://serokell.io/" target="_blank">
-                <img :src="[(isDark) ? '../../static/images/serokell-dark.png' : '../../static/images/serokell.png']"
-                     height="43px"
-                     width="87px"
-                     alt="Serokell">
-            </a>
-        </div>
+
+        <partners-block :is-dark="isDark"/>
+
+        <media-block :is-dark="isDark"/>
+
         <div id="description"
              class="what-is"
              :class="{ 'description__dark': isDark }">
@@ -475,7 +457,8 @@
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' : '../../static/images/cancel-light.svg'"
+                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' :
+                         '../../static/images/cancel-light.svg'"
                          alt="close subscribe">
                 </div>
                 <div class="email-subscribe__wrap">
@@ -497,8 +480,8 @@
                                placeholder="Your e-mail address"
                                required
                                :class="{ 'error__email-subscribe-input': subscriber.error,
-                           'success__email-subscribe-input': subscriber.success,
-                           'exist__email-subscribe-input': subscriber.exist}"
+                               'success__email-subscribe-input': subscriber.success,
+                               'exist__email-subscribe-input': subscriber.exist}"
                                v-model="subscriber.email"
                                @blur="blurCheckCorrectEmail(subscriber.email)"
                                @input="inputCheckCorrectEmail(subscriber.email)"
@@ -592,6 +575,8 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import MediaBlock from './layouts/MediaBlock';
+    import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
 
@@ -601,7 +586,9 @@
         name: 'Screen1',
         components: {
             MenuModal,
-            SliderScreen
+            SliderScreen,
+            MediaBlock,
+            PartnersBlock
         },
         props: {
             isDarkSection: {
@@ -627,7 +614,7 @@
         },
         watch: {
             isDarkSection: function (val) {
-                // console.log(val, 'isDarkSection');
+                console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
@@ -858,6 +845,9 @@
             }
         },
         methods: {
+            changePosition: function () {
+                (!this.afterClickToTop) ? this.clickToTop() : this.returnPosition();
+            },
             blurCheckCorrectEmail: function (email) {
                 (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
                 this.subscriber.error = !this.checkCorrectEmail(email);
@@ -885,7 +875,6 @@
                 return re.test(String(email).toLowerCase());
             },
             subscribe: function () {
-                console.log(123123);
                 if (this.checkCorrectEmail(this.subscriber.email)) {
                     this.subscriber.loader = true;
                     this.subscriber.success = false;
@@ -902,8 +891,10 @@
                     }).then(response => {
                         this.subscriber.loader = false;
                         console.log(response.body);
-                        if (response.body.message === 'Email already exist')
+                        if (response.body.message === 'Email already exist') {
+                            localStorage.setItem('subscriber-email', this.subscriber.email);
                             return this.subscriber.exist = true;
+                        }
                         this.subscriber.success = true;
                         localStorage.setItem('subscriber-email', this.subscriber.email);
                     }, response => {
@@ -918,7 +909,7 @@
             toggleEmailSubscribeAlert: function () {
                 this.openedEmailSubscribeAlert = !this.openedEmailSubscribeAlert;
             },
-            clickToTop: function (e) {
+            clickToTop: function () {
                 this.afterClickToTop = true;
                 document.getElementById('screen1').scrollIntoView({block: 'start', behavior: 'smooth'});
                 this.position = window.scrollY;
@@ -1113,10 +1104,17 @@
                 };
             },
         },
+        created() {
+            if (localStorage.getItem('subscriber-email') !== 'undefined' &&
+                localStorage.getItem('subscriber-email') !== null && localStorage.getItem('subscriber-email') !== undefined) {
+                if (this.checkCorrectEmail(localStorage.getItem('subscriber-email'))) {
+                    this.openedEmailSubscribeAlert = false;
+                }
+            }
+        },
         mounted() {
 
             //устанавливать начальное значение checked на включение оповещений
-
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY === 0) {
@@ -1182,6 +1180,7 @@
 <style lang="stylus" scoped>
 
     .wrap__pointer
+        cursor pointer
         position fixed
         width 20px
         right 10px
@@ -1862,9 +1861,6 @@
         background-repeat no-repeat
         background-size cover
 
-    .partners
-        background-color #ececf0
-
     .play-video
         z-index 10000
         width 100%
@@ -2093,12 +2089,6 @@
     .ico-progress__dark
         color #f7f7f7 !important
 
-    .partners__dark
-        background-color #343a49 !important
-
-        .title
-            color #f7f7f7 !important
-
     .social-line__dark
         .line
             border-color #f7f7f7 !important
@@ -2266,70 +2256,6 @@
 
             img
                 transform rotateY(180deg)
-
-    #screen1
-        .partners
-            display flex
-            justify-content space-between
-            align-items center
-            flex-wrap nowrap
-            width 100%
-            margin-top 0
-            padding-top 150px
-
-            .title
-                z-index 2
-                font-size 22px
-                font-weight 700
-                white-space nowrap
-
-            @media (min-width 1440px) and (max-width 2560px)
-                padding 150px 150px 0 150px
-
-            @media (min-width 1024px) and (max-width 1440px)
-                padding 100px 100px 0 100px
-
-            @media (min-width 768px) and (max-width 1024px)
-                padding 100px
-
-            @media (min-width 425px) and (max-width 768px)
-                padding 75px 50px
-                height 75vh
-                display flex
-                flex-direction column
-                justify-content space-around
-                align-items center
-
-                .title
-                    display none
-
-            @media (min-width 320px) and (max-width 425px)
-                height 100vh
-                display flex
-                flex-direction column
-                justify-content space-around
-                align-items center
-                padding-top 50px
-                padding-bottom 50px
-
-                .title
-                    display none
-
-                a
-                    margin-bottom 20px
-
-            @media (max-width 320px)
-                display flex
-                flex-direction column
-                justify-content center
-                align-items center
-                padding-top 50px !important
-
-                .title
-                    display none
-
-                a
-                    margin-bottom 20px
 
     .social-line
         padding 15px 0
@@ -2658,4 +2584,10 @@
             font-size 18px !important
             font-weight 700
 
+</style>
+
+<style scoped>
+    .wrap__pointer:hover + .scroll-to-top > a{
+        opacity: 0.5 !important;
+    }
 </style>

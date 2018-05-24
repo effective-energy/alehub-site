@@ -23,13 +23,23 @@
                             {{ $t('footer.left.designBy') }}
                         </span>
 					</div>
-					<a href="https://alehub.io/privacy_policy_eng.pdf"
+					<a href="https://alehub.io/terms_and_conditions.pdf"
                        target="_blank"
                        class="terms"
                        :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
                     </a>
 				</div>
+                    <div class="creator-and-terms">
+                        <span class="copyright-text" >
+                            <a class="telephone"
+                               :class="{ 'terms__rtl': isRtl }"
+                               href="tel:+75281916064">
+                                +852 8191 6064
+                            </a>
+                                Hong Kong
+                        </span>
+                    </div>
 			</span>
             </div>
 
@@ -224,6 +234,7 @@
     .footer
         background-color #ececf0
         padding 32px 0
+        padding-top 12px
         padding-left 64px
         padding-right 64px
 
@@ -527,6 +538,8 @@
                     color #34343e
                     text-decoration underline
                     white-space nowrap
+                .telephone
+                    color #34343e
 
                 .terms__rtl
                     margin 0 12px 0 0

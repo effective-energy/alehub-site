@@ -344,6 +344,7 @@
                             width 270px
 
                         @media (max-width 425px)
+                            height 270px
                             flex 0 0 100% !important
 
                         &:active

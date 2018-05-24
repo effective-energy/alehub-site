@@ -124,9 +124,6 @@
             isMobile: function () {
                 return window.innerWidth <= 425;
             },
-            isControlButton: function () {
-                return !(window.innerWidth <= 490);
-            },
             inBlockTeam: function () {
                 return this.options.inBlockTeam;
             },
@@ -149,7 +146,7 @@
                 this.xDrag = e.pageX;
                 this.yDrag = e.pageY;
             },
-            dragEnd: function (e) {
+            dragEnd: function () {
                 this.xDrag = 0;
                 this.yDrag = 0;
             },
@@ -347,6 +344,7 @@
                             width 270px
 
                         @media (max-width 425px)
+                            height 270px
                             flex 0 0 100% !important
 
                         &:active
