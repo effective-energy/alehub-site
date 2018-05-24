@@ -30,6 +30,16 @@
                         {{ $t('footer.left.terms') }}
                     </a>
 				</div>
+                    <div class="creator-and-terms">
+                        <span class="copyright-text" >
+                            <a class="telephone"
+                               :class="{ 'terms__rtl': isRtl }"
+                               href="tel:+75281916064">
+                                +852 8191 6064
+                            </a>
+                                Hong Kong
+                        </span>
+                    </div>
 			</span>
             </div>
 
@@ -527,6 +537,8 @@
                     color #34343e
                     text-decoration underline
                     white-space nowrap
+                .telephone
+                    color #34343e
 
                 .terms__rtl
                     margin 0 12px 0 0
