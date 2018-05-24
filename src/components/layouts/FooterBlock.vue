@@ -234,6 +234,7 @@
     .footer
         background-color #ececf0
         padding 32px 0
+        padding-top 12px
         padding-left 64px
         padding-right 64px
 
