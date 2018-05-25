@@ -840,7 +840,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Buy tokens',
-                bonus: 'Bonus 20% up to 25 June 2018',
+                bonus: 'Bonus 25% up to 25 June 2018',
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
@@ -1607,7 +1607,7 @@ const messages = {
                     minutes: 'Минут'
                 },
                 btnBuyTokens: 'Купить токены',
-                bonus: 'Бонус 20% до 25 Июня 2018',
+                bonus: 'Бонус 25% до 25 Июня 2018',
                 notAvailable: 'В данный момент недоступно'
             },
             acceptedCrypto: {
@@ -2377,7 +2377,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Buy tokens',
-                bonus: 'Bonus 20% up to 25 June 2018',
+                bonus: 'Bonus 25% up to 25 June 2018',
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
@@ -3141,7 +3141,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Acheter des jetons',
-                bonus: "Bonus de 20% jusqu'au 25 juin 2018",
+                bonus: "Bonus de 25% jusqu'au 25 juin 2018",
                 notAvailable: 'Maintenant non disponible'
             },
             acceptedCrypto: {
@@ -3888,7 +3888,7 @@ const messages = {
                     minutes: 'Protokoll'
                 },
                 btnBuyTokens: 'Kaufe Token',
-                bonus: 'Bonus 20% bis zum 25 Juni 2018',
+                bonus: 'Bonus 25% bis zum 25 Juni 2018',
                 notAvailable: 'Jetzt nicht verfügbar'
             },
             acceptedCrypto: {
@@ -5371,7 +5371,7 @@ const messages = {
                     minutes: '분'
                 },
                 btnBuyTokens: '보',
-                bonus: '보너스 20%7 월 2018',
+                bonus: '보너스 25%7 월 2018',
                 notAvailable: '지금 이용할 수 없'
             },
             acceptedCrypto: {
@@ -6113,7 +6113,7 @@ const messages = {
                     minutes: 'Minutos'
                 },
                 btnBuyTokens: 'Comprar fichas',
-                bonus: '20% de bonificación de hasta el 25 de junio de 2018',
+                bonus: '25% de bonificación de hasta el 25 de junio de 2018',
                 notAvailable: 'Ahora no está disponible'
             },
             acceptedCrypto: {

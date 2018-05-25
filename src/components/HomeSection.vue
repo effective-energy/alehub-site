@@ -194,7 +194,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                                 :class="{ 'direction-ltr': isRtl }">
+                                 :class="{ 'direction-ltr': isRtl }" v-if="false">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
