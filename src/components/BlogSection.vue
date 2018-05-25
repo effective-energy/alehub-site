@@ -18,12 +18,12 @@
                     <span>
                         <router-link class="news-block"
                                      tag="div"
-                                     :to="`/blog/${n._id}`">
-                            <router-link :to="`/blog/${n._id}`">
+                                     :to="`/blog/${n.url}`">
+                            <router-link :to="`/blog/${n.url}`">
                                 <img class="picture"
                                      :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
                                      :alt="n.title"
-                                     @click="goToNews(n._id)">
+                                     @click="goToNews(n.url)">
                             </router-link>
                             <div class="news-info">
                                 <p class="news-title">
