@@ -253,7 +253,7 @@
                             <div class="bonus-desc"
                                  :class="{ 'padding-right-rtl': isRtl }">
                                 <span>{{ $t("greeting.countDown.bonus") }}</span>
-                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
+                                <span v-if="false">{{ $t("greeting.countDown.notAvailable") }}</span>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-12 col-md-12">
