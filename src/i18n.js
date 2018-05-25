@@ -673,9 +673,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: '舞台没有开始',
-                    status: false
+                    progress: 5,
+                    state: '舞台已经开始',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -1445,9 +1445,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -2211,9 +2211,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '25.05.2018 – 25.07.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался',
-                    status: false
+                    progress: 5,
+                    state: 'этап идёт',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -2981,9 +2981,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -3723,9 +3723,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé',
-                    status: false
+                    progress: 5,
+                    state: 'la scène dans le processus',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -4465,9 +4465,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen',
-                    status: false
+                    progress: 5,
+                    state: 'Stufe im Prozess',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -5206,9 +5206,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ',
-                    status: false
+                    progress: 5,
+                    state: 'بدأ المشهد',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -5948,9 +5948,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: '단계를 시작하지 않았',
-                    status: false
+                    progress: 5,
+                    state: '무대가 시작되었습니다',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -6690,9 +6690,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'el escenario comenzó',
+                    status: true
                 },
                 {
                     title: 'ICO',
