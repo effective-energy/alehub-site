@@ -407,6 +407,11 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                        },
+                        {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
                             src: '../static/images/avatars/zhitkov@3x.png',
@@ -1179,6 +1184,11 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                        },
+                        {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
                             src: '../static/images/avatars/zhitkov@3x.png',
@@ -1934,16 +1944,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Дмитрий Журавлев',
-                            position: 'Разработчик мобильных приложений',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Сергей Тимохин',
+                            position: 'Комьюнити-менеджер',
+                            src: '../static/images/avatars/timohin@3x.png',
                         },
                         {
                             name: 'Евгений Житков',
@@ -1958,10 +1961,22 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Дмитрий Журавлев',
+                            position: 'Разработчик мобильных приложений',
+                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Евгений Коробицин',
                             position: 'Графический Дизайнер',
                             src: '../../static/images/avatars/korobitsyn@3x.png'
-                        }
+                        },
                     ]
                 }
             ]
@@ -2706,6 +2721,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -3457,6 +3477,11 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                        },
+                        {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
                             src: '../static/images/avatars/zhitkov@3x.png',
@@ -4204,6 +4229,11 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                        },
+                        {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
                             src: '../static/images/avatars/zhitkov@3x.png',
@@ -4943,6 +4973,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5687,6 +5722,11 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                        },
+                        {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
                             src: '../static/images/avatars/zhitkov@3x.png',
@@ -6427,6 +6467,11 @@ const messages = {
                                     src: '../static/images/in.svg'
                                 }
                             ]
+                        },
+                        {
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
                         },
                         {
                             name: 'Evgeniy Zhitkov',
