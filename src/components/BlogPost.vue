@@ -71,15 +71,15 @@
                     <div class="more-news-content row">
                         <div class="news-item col-lg-3 col-md-6 col-sm-6 col-12"
                              v-for="item in blogLastNews"
-                             :key="item._id">
+                             :key="item.url">
                             <router-link tag="a"
-                                         :to="`./${item._id}`">
+                                         :to="`./${item.url}`">
                                 <img :src="'https://alehub-4550.nodechef.com/' + item.preview_image"
                                      :alt="item.title"/>
                             </router-link>
                             <router-link class="news-link"
                                          tag="a"
-                                         :to="`./${item._id}`">
+                                         :to="`./${item.url}`">
                                 {{ item.title }}
                             </router-link>
                             <i class="date">
@@ -133,7 +133,7 @@
             ),
             selectedPost: function () {
                 return this.blogAll.find((item) => {
-                    return item._id.toLowerCase() === this.$route.params.id.toLowerCase();
+                    return item.url.toLowerCase() === this.$route.params.id.toLowerCase();
                 });
             }
         },

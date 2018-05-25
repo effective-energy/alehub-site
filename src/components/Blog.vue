@@ -16,7 +16,7 @@
                 <div class="posts">
                     <div class="blog-post"
                          v-for="item in selectedPost"
-                         :key="item._id"
+                         :key="item.url"
                          onclick="yaCounter48802643.reachGoal('Blog'); return true;">
                         <img class="image-preview"
                              :src="'https://alehub-4550.nodechef.com/' + item.preview_image"
@@ -24,7 +24,7 @@
                         <div class="post-content">
                             <router-link class="title"
                                          tag="a"
-                                         :to="`/blog/${item._id}`">
+                                         :to="`/blog/${item.url}`">
                                 {{ item.title }}
                             </router-link>
                             <div class="post-info">

@@ -677,14 +677,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: '舞台没有开始',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: '舞台已经开始',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -845,7 +845,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Buy tokens',
-                bonus: 'Bonus 20% up to 25 June 2018',
+                bonus: 'Bonus 25% up to 25 June 2018',
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
@@ -1454,14 +1454,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -1617,7 +1617,7 @@ const messages = {
                     minutes: 'Минут'
                 },
                 btnBuyTokens: 'Купить токены',
-                bonus: 'Бонус 20% до 25 Июня 2018',
+                bonus: 'Бонус 25% до 25 Июня 2018',
                 notAvailable: 'В данный момент недоступно'
             },
             acceptedCrypto: {
@@ -2225,14 +2225,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '25.05.2018 – 15.06.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался',
-                    status: false
+                    date: '25.05.2018 – 25.07.2018',
+                    progress: 5,
+                    state: 'этап идёт',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '15.06.2018 – 15.08.2018',
+                    date: '25.07.2018 – 25.09.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
@@ -2392,7 +2392,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Buy tokens',
-                bonus: 'Bonus 20% up to 25 June 2018',
+                bonus: 'Bonus 25% up to 25 June 2018',
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
@@ -3000,14 +3000,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3161,7 +3161,7 @@ const messages = {
                     minutes: 'Minutes'
                 },
                 btnBuyTokens: 'Acheter des jetons',
-                bonus: "Bonus de 20% jusqu'au 25 juin 2018",
+                bonus: "Bonus de 25% jusqu'au 25 juin 2018",
                 notAvailable: 'Maintenant non disponible'
             },
             acceptedCrypto: {
@@ -3747,14 +3747,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'la scène dans le processus',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -3913,7 +3913,7 @@ const messages = {
                     minutes: 'Protokoll'
                 },
                 btnBuyTokens: 'Kaufe Token',
-                bonus: 'Bonus 20% bis zum 25 Juni 2018',
+                bonus: 'Bonus 25% bis zum 25 Juni 2018',
                 notAvailable: 'Jetzt nicht verfügbar'
             },
             acceptedCrypto: {
@@ -4494,14 +4494,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'Stufe im Prozess',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5240,14 +5240,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'بدأ المشهد',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5406,7 +5406,7 @@ const messages = {
                     minutes: '분'
                 },
                 btnBuyTokens: '보',
-                bonus: '보너스 20%7 월 2018',
+                bonus: '보너스 25%7 월 2018',
                 notAvailable: '지금 이용할 수 없'
             },
             acceptedCrypto: {
@@ -5987,14 +5987,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: '단계를 시작하지 않았',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: '무대가 시작되었습니다',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6153,7 +6153,7 @@ const messages = {
                     minutes: 'Minutos'
                 },
                 btnBuyTokens: 'Comprar fichas',
-                bonus: '20% de bonificación de hasta el 25 de junio de 2018',
+                bonus: '25% de bonificación de hasta el 25 de junio de 2018',
                 notAvailable: 'Ahora no está disponible'
             },
             acceptedCrypto: {
@@ -6734,14 +6734,14 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 06/15/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    date: '05/25/2018 - 07/25/2018',
+                    progress: 5,
+                    state: 'el escenario comenzó',
+                    status: true
                 },
                 {
                     title: 'ICO',
-                    date: '06/15/2018 - 08/15/2018',
+                    date: '07/25/2018 - 09/25/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
