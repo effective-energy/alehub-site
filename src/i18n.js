@@ -271,7 +271,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -1048,7 +1048,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -1820,7 +1820,7 @@ const messages = {
                         },
                         {
                             name: 'Алексей Осипенко',
-                            position: 'Главный операционный директор',
+                            position: 'Исполнительный диреткор',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -2587,7 +2587,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -3341,7 +3341,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -4093,7 +4093,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -4839,7 +4839,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -5586,7 +5586,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -6333,7 +6333,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
