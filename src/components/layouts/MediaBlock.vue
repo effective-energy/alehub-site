@@ -72,7 +72,7 @@
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
                         hoverSrc: '../../../static/images/logo/ccn-hover.svg',
-                        href: 'https://www.ccn.com/',
+                        href: 'https://www.ccn.com/alehub-revolutionizing-the-project-management-landscape-with-blockchain/',
                         isHover: false
                     },
                     {

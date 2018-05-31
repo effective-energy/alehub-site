@@ -64,9 +64,9 @@
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
-                   href="http://presale.alehub.io/"
+                   href="https://sale.alehub.io/"
                    target="_blank">
-                    {{ $t("navbar.loginBtn") }}
+                    {{ $t("greeting.countDown.btnBuyTokens") }}
                 </a>
                 <div id="select-lang"
                      class="select-lang"
