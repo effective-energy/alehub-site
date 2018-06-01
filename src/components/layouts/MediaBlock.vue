@@ -44,7 +44,7 @@
                         title: 'Bitcoin Magazine',
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
                         hoverSrc: '../../../static/images/logo/bitcoin-magazine-hover.svg',
-                        href: 'https://bitcoinmagazine.com/',
+                        href: 'https://bitcoinmagazine.com/articles/alehubs-new-blockchain-based-architecture-project-manageme/',
                         isHover: false
                     },
                     {
@@ -100,7 +100,7 @@
                         title: 'CoinNewsAsia',
                         src: '../../../static/images/logo/coin-news-asia.svg',
                         hoverSrc: '../../../static/images/logo/coin-news-asia-hover.svg',
-                        href: 'http://www.coinnewsasia.com/',
+                        href: 'http://www.coinnewsasia.com/alehub-decentralization-mining-and-anonymity/',
                         isHover: false
                     },
                     {

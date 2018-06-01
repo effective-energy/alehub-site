@@ -353,7 +353,7 @@
 
 <style lang="stylus" scoped>
     .slider-navbar
-        width 100%
+        width 70%
         display flex
         justify-content center
 

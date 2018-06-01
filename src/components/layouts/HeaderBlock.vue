@@ -9,9 +9,9 @@
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub-dark.svg"
-                 alt="ALEHUB"
-                 v-if="!isDark">
+            src="../../../static/images/logo/alehub-dark.svg"
+            alt="ALEHUB"
+            v-if="!isDark">
             <img class="d-inline-block align-top"
                  src="../../../static/images/logo/alehub.svg"
                  alt="ALEHUB"
@@ -709,6 +709,7 @@
                     display flex !important
 
             .navbar-folding__inner
+                width 100%
                 width 100%
                 position relative
                 display flex
