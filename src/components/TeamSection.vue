@@ -88,7 +88,7 @@
             </div>
 
             <div class="advisors-team">
-                <div class="images"
+                <!-- <div class="images"
                      v-if="isWideScreen">
                     <div class="image"
                          v-for="(member, i) in $t('advisors.members')" :key="i">
@@ -122,9 +122,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <slider-advisors v-else
+                <slider-advisors
                                  :items="$t('advisors.members')"
                                  :settings="settings.advisors"
                                  :options="options.advisors"

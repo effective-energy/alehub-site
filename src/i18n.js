@@ -525,6 +525,24 @@ const messages = {
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -1302,6 +1320,24 @@ const messages = {
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -2071,6 +2107,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2848,6 +2902,26 @@ const messages = {
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/bonnie@3x.png" alt="Bonnie Normile" style="width: 200px;' +
+                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                        'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.</p> ',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -3592,6 +3666,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4347,6 +4439,24 @@ const messages = {
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -5090,6 +5200,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5840,6 +5968,24 @@ const messages = {
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
                 }
             ]
         },
@@ -6584,6 +6730,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
