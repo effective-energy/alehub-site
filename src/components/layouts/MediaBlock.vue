@@ -79,7 +79,7 @@
                         title: 'BtcManager',
                         src: '../../../static/images/logo/btc-manager.svg',
                         hoverSrc: '../../../static/images/logo/btc-manager-hover.svg',
-                        href: 'https://btcmanager.com//',
+                        href: ' https://btcmanager.com/alehub-introducing-the-next-generation-freelancing-platform/',
                         isHover: false
                     },
                     {
