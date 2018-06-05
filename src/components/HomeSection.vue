@@ -284,9 +284,12 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-3">
-                        <a href="https://www.trackico.io/ico/alehub/" target="_blank" title="Alehub on TrackICO" class="trackico">
+                      <div class="icorating-list col-12">
+                        <a href="https://www.trackico.io/ico/alehub/" target="_blank" title="Alehub on TrackICO">
                           <img border="0" src="https://www.trackico.io/widget/horizontal/alehub/483.png" width="322px" height="90px" alt="Alehub TrackICO rating" />
+                        </a>
+                        <a href="https://icomarks.com/ico/alehub" target="_blank" rel="nofollow" title="Alehub">
+                          <img border="0" src="https://icomarks.com/widget/a/alehub/horizontal.svg" width="322px" height="90px" alt="Alehub ICO rating" />
                         </a>
                       </div>
                     </div>
@@ -1185,9 +1188,22 @@
 
 <style lang="stylus" scoped>
 
-    .trackico
-      position relative
-      top 20px
+    .icorating-list
+        a
+            img
+                max-width 100%
+                width 322px
+                height 90px
+                max-height 90px
+
+        @media (max-width 690px)
+            margin-top 20px
+            a
+                img
+                    margin 10px 0
+
+        @media (min-width 690px) and (max-width 1024px)
+            margin-top 20px
 
     .wrap__pointer
         cursor pointer
