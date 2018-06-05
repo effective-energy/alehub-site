@@ -191,6 +191,7 @@
                             </h1>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
@@ -281,6 +282,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                      <div class="col-3">
+                        <a href="https://www.trackico.io/ico/alehub/" target="_blank" title="Alehub on TrackICO" class="trackico">
+                          <img border="0" src="https://www.trackico.io/widget/horizontal/alehub/483.png" width="322px" height="90px" alt="Alehub TrackICO rating" />
+                        </a>
+                      </div>
+                    </div>
+
                 </div>
             </div>
             <div class="row">
@@ -1174,6 +1184,10 @@
 </script>
 
 <style lang="stylus" scoped>
+
+    .trackico
+      position relative
+      top 20px
 
     .wrap__pointer
         cursor pointer
