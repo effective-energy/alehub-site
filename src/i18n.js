@@ -410,6 +410,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -1205,6 +1212,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -1982,7 +1996,7 @@ const messages = {
                         {
                             name: 'Сергей Тимохин',
                             position: 'Комьюнити-менеджер',
-                            src: '../static/images/avatars/timohin@3x.png',
+                            src: '../static/images/avatars/timohin@3x.png',                             social: [                                 {                                     type: 'linkedin',                                     link: 'https://www.linkedin.com/in/timokhinsergey/',                                     src: '../static/images/in.svg'                                 }                             ]
                         },
                         {
                             name: 'Евгений Житков',
@@ -2780,6 +2794,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -3554,6 +3575,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -4324,6 +4352,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5088,6 +5123,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                                ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5853,6 +5895,13 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -6618,7 +6667,15 @@ const messages = {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'                                 }
+                                        ]
                         },
+
+
                         {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
