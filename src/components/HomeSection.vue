@@ -451,6 +451,11 @@
                            target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
+                        <a href="https://alehub.io/ALEHUB_OP_eng.pdf"
+                          class="btn btn-yellow"
+                           target="_blank">
+                            One Page
+                        </a>
                         <a class="btn btn-yellow"
                            v-scroll-to="'#features'"
                            target="_blank">
