@@ -9,9 +9,9 @@
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub-dark.svg"
-                 alt="ALEHUB"
-                 v-if="!isDark">
+            src="../../../static/images/logo/alehub-dark.svg"
+            alt="ALEHUB"
+            v-if="!isDark">
             <img class="d-inline-block align-top"
                  src="../../../static/images/logo/alehub.svg"
                  alt="ALEHUB"
@@ -64,9 +64,9 @@
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
                 <a class="btn btn-login"
-                   href="http://presale.alehub.io/"
+                   href="https://sale.alehub.io/"
                    target="_blank">
-                    {{ $t("navbar.loginBtn") }}
+                    {{ $t("greeting.countDown.btnBuyTokens") }}
                 </a>
                 <div id="select-lang"
                      class="select-lang"
@@ -709,6 +709,7 @@
                     display flex !important
 
             .navbar-folding__inner
+                width 100%
                 width 100%
                 position relative
                 display flex
