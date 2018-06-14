@@ -512,6 +512,7 @@
                 overflow hidden
                 text-align center
                 background-color #6f757f
+                -webkit-clip-path circle(50% at center)
                 clip-path circle(50% at center)
 
                 @media (max-width: 320px)
