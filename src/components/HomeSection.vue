@@ -194,7 +194,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                                 :class="{ 'direction-ltr': isRtl }" v-if="false">
+                                 :class="{ 'direction-ltr': isRtl }">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -253,7 +253,7 @@
                             <div class="bonus-desc"
                                  :class="{ 'padding-right-rtl': isRtl }">
                                 <span>{{ $t("greeting.countDown.bonus") }}</span>
-                                <span v-if="false">{{ $t("greeting.countDown.notAvailable") }}</span>
+                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-12 col-md-12">
@@ -315,34 +315,34 @@
                 <div class="col-xl-12 col-lg-11">
                     <div class="ico-progress"
                          :class="{ 'ico-progress__dark': isDark }">
-                        <div class="state">
-                            <div class="title">
-                                Soft cap
-                            </div>
-                            <div class="count">
-                                {{ isCollected }} / {{ isSoftCap }} <span
-                                    class="currency">{{ isCurrentCurrency }}</span>
-                            </div>
-                        </div>
-                        <div class="progress-bar-outer">
-                            <div class="progress-bar-inner"
-                                 :style="{ width: softCapWidth }">
-                            </div>
-                        </div>
-                        <div class="state hard-cap">
-                            <div class="title">
-                                Hard cap
-                            </div>
-                            <div class="count">
-                                {{ isCollected }} / {{ isHardCap }} <span
-                                    class="currency">{{ isCurrentCurrency }}</span>
-                            </div>
-                        </div>
-                        <div class="progress-bar-outer">
-                            <div class="progress-bar-inner"
-                                 :style="{ width: hardCapWidth }">
-                            </div>
-                        </div>
+                        <!--<div class="state">-->
+                        <!--<div class="title">-->
+                        <!--Soft cap-->
+                        <!--</div>-->
+                        <!--<div class="count">-->
+                        <!--{{ isCollected }} / {{ isSoftCap }} <span-->
+                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="progress-bar-outer">-->
+                        <!--<div class="progress-bar-inner"-->
+                        <!--:style="{ width: softCapWidth }">-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="state hard-cap">-->
+                        <!--<div class="title">-->
+                        <!--Hard cap-->
+                        <!--</div>-->
+                        <!--<div class="count">-->
+                        <!--{{ isCollected }} / {{ isHardCap }} <span-->
+                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="progress-bar-outer">-->
+                        <!--<div class="progress-bar-inner"-->
+                        <!--:style="{ width: hardCapWidth }">-->
+                        <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
                 <div class="scroll-next">
@@ -437,6 +437,11 @@
                            class="btn btn-yellow"
                            target="_blank">
                             {{ $t("about.btnGroup.whitePaper") }}
+                        </a>
+                        <a href="https://alehub.io/ALEHUB_OP_eng.pdf"
+                          class="btn btn-yellow"
+                           target="_blank">
+                            One Page
                         </a>
                         <a class="btn btn-yellow"
                            v-scroll-to="'#features'"
@@ -576,6 +581,7 @@
     import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
+    import { mapActions } from 'vuex';
 
     import anime from 'animejs';
 
@@ -679,56 +685,38 @@
                     btc: {
                         src: '../../static/images/btc.svg',
                         alt: 'bitcoin',
-                        count: 32256,
-                        name: 'btc',
-                        collected: 0,
-                        softCap: 0,
-                        hardCap: 3521.5
+                        count: 0,
+                        name: 'btc'
                     },
                     eth: {
                         src: '../../static/images/eth.svg',
                         alt: 'etherium',
-                        count: 2606,
-                        name: 'eth',
-                        collected: 0,
-                        softCap: 0,
-                        hardCap: 45144
+                        count: 0,
+                        name: 'eth'
                     },
                     bch: {
                         src: '../../static/images/bch.svg',
                         alt: 'bitcoin cash',
-                        count: 4946,
-                        name: 'bch',
-                        collected: 0,
-                        softCap: 0,
-                        hardCap: 20246
+                        count: 0,
+                        name: 'bch'
                     },
                     ltc: {
                         src: '../../static/images/ltc.svg',
                         alt: 'litecoin',
-                        count: 503,
-                        name: 'ltc',
-                        collected: 0,
-                        softCap: 0,
-                        hardCap: 202454
+                        count: 0,
+                        name: 'ltc'
                     },
                     dash: {
                         src: '../../static/images/dash.svg',
                         alt: 'dash',
-                        count: 1605,
-                        name: 'dash',
-                        collected: 0,
-                        softCap: 0,
-                        hardCap: 72746.5
+                        count: 0,
+                        name: 'dash'
                     },
                     usd: {
                         src: '../../static/images/usd.svg',
                         alt: 'usd',
-                        count: 3.3,
-                        name: 'usd',
-                        collected: 1250000,
-                        softCap: 7500000,
-                        hardCap: 33000000
+                        count: 0,
+                        name: 'usd'
                     }
                 },
                 reBuild: true,
@@ -773,7 +761,6 @@
         computed: {
             ...mapGetters(
                 [
-                    'cryptocurrencies',
                     'cryptoPriceStatus'
                 ]
             ),
@@ -1101,6 +1088,21 @@
             },
         },
         created() {
+            this.$store.dispatch('cryptoPriceRequest')
+                .then((resp) => {
+                    console.log('OK');
+                    console.log(resp.data.round.ico);
+                    let counts = resp.data.round.ico;
+                    this.currencies.btc.count = counts['BTC'].value;
+                    this.currencies.eth.count = counts['ETH'].value.toFixed(2);
+                    this.currencies.bch.count = counts['BCH'].value;
+                    this.currencies.ltc.count = counts['LTC'].value;
+                    this.currencies.dash.count = counts['DASH'].value;
+                    this.currencies.usd.count = counts['USD'].value;
+                    console.log(this.currencies);
+                }).catch((resp) => {
+                console.log('NO');
+            })
             if (localStorage.getItem('subscriber-email') !== 'undefined' &&
                 localStorage.getItem('subscriber-email') !== null && localStorage.getItem('subscriber-email') !== undefined) {
                 if (this.checkCorrectEmail(localStorage.getItem('subscriber-email'))) {
@@ -2501,36 +2503,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @-o-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
+                          0% {
+                              transform: translateY(0);
+                          }
+                          25% {
+                              transform: translateY(5px);
+                          }
+                          100% {
+                              transform: translateY(0);
+                          }
+                      } @-o-keyframes wheel-to-bottom {
+                            0% {
+                                transform: translateY(0);
+                            }
+                            25% {
+                                transform: translateY(5px);
+                            }
+                            100% {
+                                transform: translateY(0);
+                            }
+                        } @keyframes wheel-to-bottom {
+                              0% {
+                                  transform: translateY(0);
+                              }
+                              25% {
+                                  transform: translateY(5px);
+                              }
+                              100% {
+                                  transform: translateY(0);
+                              }
+                          }
 
                 @media (max-width 1124px)
                     display none

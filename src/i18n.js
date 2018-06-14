@@ -271,7 +271,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -394,17 +394,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -517,6 +518,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -673,9 +692,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: '舞台没有开始',
-                    status: false
+                    progress: 5,
+                    state: '舞台已经开始',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -1043,7 +1062,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -1166,17 +1185,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -1289,6 +1309,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -1445,9 +1483,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -1810,7 +1848,7 @@ const messages = {
                         },
                         {
                             name: 'Алексей Осипенко',
-                            position: 'Главный операционный директор',
+                            position: 'Исполнительный диреткор',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -1934,16 +1972,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Дмитрий Журавлев',
-                            position: 'Разработчик мобильных приложений',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Сергей Тимохин',
+                            position: 'Комьюнити-менеджер',
+                            src: '../static/images/avatars/timohin@3x.png',                             social: [                                 {                                     type: 'linkedin',                                     link: 'https://www.linkedin.com/in/timokhinsergey/',                                     src: '../static/images/in.svg'                                 }                             ]
                         },
                         {
                             name: 'Евгений Житков',
@@ -1957,11 +1988,12 @@ const messages = {
                                 }
                             ]
                         },
+
                         {
                             name: 'Евгений Коробицин',
                             position: 'Графический Дизайнер',
                             src: '../../static/images/avatars/korobitsyn@3x.png'
-                        }
+                        },
                     ]
                 }
             ]
@@ -2056,6 +2088,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2211,9 +2261,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '25.05.2018 – 25.07.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался',
-                    status: false
+                    progress: 5,
+                    state: 'этап идёт',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -2572,7 +2622,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -2695,14 +2745,15 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -2825,6 +2876,26 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: '<p><img src="../static/images/avatars/bonnie@3x.png" alt="Bonnie Normile" style="width: 200px;' +
+                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                        'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.</p> ',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2981,9 +3052,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'stage in the process',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -3321,7 +3392,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -3444,17 +3515,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -3567,6 +3639,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -3723,9 +3813,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé',
-                    status: false
+                    progress: 5,
+                    state: 'la scène dans le processus',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -4068,7 +4158,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -4191,17 +4281,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -4314,6 +4405,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4465,9 +4574,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen',
-                    status: false
+                    progress: 5,
+                    state: 'Stufe im Prozess',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -4809,7 +4918,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -4932,17 +5041,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
                             social: [
                                 {
                                     type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
                                     src: '../static/images/in.svg'
                                 }
-                            ]
+                                ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5055,6 +5165,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5206,9 +5334,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'المرحلة لم تبدأ',
-                    status: false
+                    progress: 5,
+                    state: 'بدأ المشهد',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -5551,7 +5679,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -5674,17 +5802,18 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'
+                                    }
+                                    ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5797,6 +5926,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5948,9 +6095,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: '단계를 시작하지 않았',
-                    status: false
+                    progress: 5,
+                    state: '무대가 시작되었습니다',
+                    status: true
                 },
                 {
                     title: 'ICO',
@@ -6293,7 +6440,7 @@ const messages = {
                         },
                         {
                             name: 'Alexej Osipenko',
-                            position: 'Chief Operating Officer',
+                            position: 'Executive Director',
                             src: '../static/images/avatars/osipenko@3x.png',
                             social: [
                                 {
@@ -6416,18 +6563,20 @@ const messages = {
                                 }
                             ]
                         },
+                        
                         {
-                            name: 'Dmitry Zhuravlev',
-                            position: 'Mobile developer',
-                            src: '../static/images/avatars/zhuravlev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9-%D0%B6%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%B2-66ba3765/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Sergey Timohin',
+                            position: 'Community manager',
+                            src: '../static/images/avatars/timohin@3x.png',
+                                social: [
+                                    {
+                                        type: 'linkedin',
+                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                        src: '../static/images/in.svg'                                 }
+                                        ]
                         },
+
+
                         {
                             name: 'Evgeniy Zhitkov',
                             position: 'Testing Engineer',
@@ -6539,6 +6688,24 @@ const messages = {
                         {
                             type: 'icobench',
                             link: 'https://icobench.com/u/purushotham',
+                            src: '../static/images/icobench-ic.svg'
+                        }
+                    ]
+                },
+                {
+                    name: 'Bonnie Normile',
+                    position: 'advisor',
+                    description: 'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.',
+                    src: '../static/images/avatars/bonnie@3x.png',
+                    social: [
+                        {
+                            type: 'linkedin',
+                            link: 'https://www.linkedin.com/in/bonnie-normile-27366683/',
+                            src: '../static/images/in.svg'
+                        },
+                        {
+                            type: 'icobench',
+                            link: 'https://icobench.com/u/bonnienormile',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -6690,9 +6857,9 @@ const messages = {
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 07/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
-                    status: false
+                    progress: 5,
+                    state: 'el escenario comenzó',
+                    status: true
                 },
                 {
                     title: 'ICO',

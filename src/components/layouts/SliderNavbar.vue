@@ -353,12 +353,12 @@
 
 <style lang="stylus" scoped>
     .slider-navbar
-        width 80%
+        width 70%
         display flex
         justify-content center
 
     .wrap
-        width 100%
+        width 100% !important
         display flex
         justify-content center
 
