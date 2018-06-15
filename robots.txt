@@ -1,0 +1,93 @@
+
+User-agent: Applebot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: baiduspider
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+User-agent: Bingbot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+User-agent: Googlebot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+User-agent: ia_archiver
+Disallow: /
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: msnbot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Naverbot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: seznambot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Slurp
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: teoma
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Twitterbot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Yandex
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Yeti
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Applebot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: baiduspider
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
+
+
+User-agent: Bingbot
+Disallow: /static/js/vendor.1c3891a2048ccddd189f.js
+Disallow: /static/css/app.4c54a20cdeda564906d77aa74e055a1b.css
+Disallow: /static/js/app.7d4cce82163aeef09b9a.js
