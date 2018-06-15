@@ -194,7 +194,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                                 :class="{ 'direction-ltr': isRtl }">
+                                 :class="{ 'direction-ltr': isRtl }" v-if="false">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -279,6 +279,16 @@
                                     </iframe>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="icorating-list col-12">
+                            <a href="https://www.trackico.io/ico/alehub/" target="_blank" title="Alehub on TrackICO">
+                                <img border="0" src="https://www.trackico.io/widget/horizontal/alehub/483.png" width="322px" height="90px" alt="Alehub TrackICO rating" />
+                            </a>
+                            <a href="https://icomarks.com/ico/alehub" target="_blank" rel="nofollow" title="Alehub">
+                                <img border="0" src="https://icomarks.com/widget/a/alehub/horizontal.svg" width="322px" height="90px" alt="Alehub ICO rating" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1177,6 +1187,23 @@
 
 <style lang="stylus" scoped>
 
+    .icorating-list
+        a
+            img
+                max-width 100%
+                width 322px
+                height 90px
+                max-height 90px
+
+        @media (max-width 690px)
+            margin-top 20px
+                a
+                    img
+                        margin 10px 0
+
+        @media (min-width 690px) and (max-width 1024px)
+            margin-top 20px
+
     .wrap__pointer
         cursor pointer
         position fixed
@@ -1184,6 +1211,8 @@
         right 10px
         top 100px
         z-index 110
+
+
 
         @media (min-width 690px) and (max-width 1024px)
             right 7.5px
