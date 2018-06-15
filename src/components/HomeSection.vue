@@ -1016,7 +1016,7 @@
             handlerScroll: function () {
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
 
-                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                if (window.scrollY > this.getCoords(document.getElementById('screen1').nextElementSibling).top - window.innerHeight) {
                     this.pause();
                     document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
                     document.getElementById('button-choose').classList.add('button-choose__stop');
@@ -1112,7 +1112,7 @@
                     console.log(this.currencies);
                 }).catch((resp) => {
                 console.log('NO');
-            })
+            });
             if (localStorage.getItem('subscriber-email') !== 'undefined' &&
                 localStorage.getItem('subscriber-email') !== null && localStorage.getItem('subscriber-email') !== undefined) {
                 if (this.checkCorrectEmail(localStorage.getItem('subscriber-email'))) {
@@ -2519,7 +2519,7 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease;
+                    transition all .3s ease
 
                     @-webkit-keyframes wheel-to-bottom {
                         0% {
@@ -2532,36 +2532,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                          0% {
-                              transform: translateY(0);
-                          }
-                          25% {
-                              transform: translateY(5px);
-                          }
-                          100% {
-                              transform: translateY(0);
-                          }
-                      } @-o-keyframes wheel-to-bottom {
-                            0% {
-                                transform: translateY(0);
-                            }
-                            25% {
-                                transform: translateY(5px);
-                            }
-                            100% {
-                                transform: translateY(0);
-                            }
-                        } @keyframes wheel-to-bottom {
-                              0% {
-                                  transform: translateY(0);
-                              }
-                              25% {
-                                  transform: translateY(5px);
-                              }
-                              100% {
-                                  transform: translateY(0);
-                              }
-                          }
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-o-keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
 
                 @media (max-width 1124px)
                     display none

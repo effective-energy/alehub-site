@@ -38,11 +38,18 @@
         color #f7f7f7
         padding 120px 0
 
+        @media (max-width 425px)
+            padding 60px 0
+
+
         h1.title
             font-size 60px
 
-            @media (max-width 1024px)
+            @media (min-width 425px) and (max-width 1024px)
                 font-size 40px
+
+            @media (max-width 425px)
+                font-size 30px
 
         .separator
             width 152px
