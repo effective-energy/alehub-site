@@ -6,6 +6,7 @@
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"
                       :is-pointer-in-dark="isPointerInDark"/>
+        <mission-section :is-rtl="isRtl"/>
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
         <team-section :is-team="isTeam"
@@ -25,12 +26,13 @@
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
     import HomeSection from './HomeSection';
-    import DownloadApplicationSection from './DownloadApplicationSection';
+    import MissionSection from './MissionSection';
     import AdvantagesSection from './AdvantagesSection';
     import FeaturesSection from './FeaturesSection';
     import TeamSection from './TeamSection';
     import IcoSection from './IcoSection';
     import RoadmapSection from './RoadmapSection';
+    import DownloadApplicationSection from './DownloadApplicationSection';
     import MassMediaSection from './MassMediaSection';
     import BlogSection from './BlogSection';
     import FooterBlock from './layouts/FooterBlock';
@@ -40,12 +42,13 @@
         components: {
             HeaderBlock,
             HomeSection,
-            DownloadApplicationSection,
+            MissionSection,
             AdvantagesSection,
             FeaturesSection,
             TeamSection,
             IcoSection,
             RoadmapSection,
+            DownloadApplicationSection,
             MassMediaSection,
             BlogSection,
             FooterBlock,

@@ -88,6 +88,17 @@ const messages = {
                 download: '下载'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+            }
+        },
         advantages: {
             title: '优势',
             lists: [
@@ -879,6 +890,17 @@ const messages = {
                 download: 'ダウンロード'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+            }
+        },
         advantages: {
             title: 'ALEの優位',
             lists: [
@@ -1663,6 +1685,17 @@ const messages = {
                 whitePaper: 'White paper',
                 techDetails: 'Подробнее про ALE',
                 download: 'Загрузить MVP-версию приложения'
+            }
+        },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
             }
         },
         advantages: {
@@ -2613,6 +2646,17 @@ const messages = {
                 whitePaper: 'White paper',
                 techDetails: 'More about ALE',
                 download: 'Download MVP-version application'
+            }
+        },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
             }
         },
         advantages: {
@@ -3572,6 +3616,17 @@ const messages = {
                 download: 'Télécharger MVP-version'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+            }
+        },
         advantages: {
             title: 'Advantages',
             lists: [{
@@ -4338,6 +4393,17 @@ const messages = {
                 download: 'Download MVP-version'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+            }
+        },
         advantages: {
             title: 'Vorteile',
             lists: [{
@@ -5096,6 +5162,17 @@ const messages = {
                 whitePaper: 'ورق العمل',
                 techDetails: 'المزيد عن ALE',
                 download: 'تحميل'
+            }
+        },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
             }
         },
         advantages: {
@@ -5859,6 +5936,17 @@ const messages = {
                 download: '다운로드'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+            }
+        },
         advantages: {
             title: '장점',
             lists: [{
@@ -6618,6 +6706,17 @@ const messages = {
                 whitePaper: 'Libro Blanco',
                 techDetails: 'Más información sobre ALE',
                 download: 'Descargar'
+            }
+        },
+        mission: {
+            title: 'Mission & Vision',
+            mission: {
+                title: 'Mission',
+                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+            },
+            vision: {
+                title: 'Vision',
+                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
             }
         },
         advantages: {
