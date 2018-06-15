@@ -2650,14 +2650,20 @@ const messages = {
         },
         mission: {
             title: 'Mission & Vision',
-            mission: {
-                title: 'Mission',
-                text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
-            },
-            vision: {
-                title: 'Vision',
-                text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
-            }
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
         },
         advantages: {
             title: 'ALE advantages',
