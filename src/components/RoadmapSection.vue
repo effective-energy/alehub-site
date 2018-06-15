@@ -52,8 +52,11 @@
                         <h1 class="slide-title">
                             {{ slide.title }}
                         </h1>
-                        <h6>
+                        <h6 class="top-line">
                             {{ slide.desk }}
+                        </h6>
+                        <h6>
+                            {{ slide.result}}
                         </h6>
                         <span class="date">
                             {{ slide.date }}
@@ -281,7 +284,7 @@
 </script>
 
 <style lang="stylus" scoped>
-    h6
+    h6.top-line
         border-top #343a49 1px solid
         margin-bottom 12px
         padding-top 12px

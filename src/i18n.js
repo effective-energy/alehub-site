@@ -1,12 +1,12 @@
 const messages = {
     zh: {
         emailSubscribePanel: {
-            newsletter:"訂閱我們的通訊",
-            YourAddress:"您的電子郵件地址”",
-            subscribe:"訂閱",
-            turnOn:"並且不要忘記打開通知",
-            success:"成功訂閱",
-            alreadyUse:"此電子郵件已被使用"
+            newsletter: "訂閱我們的通訊",
+            YourAddress: "您的電子郵件地址”",
+            subscribe: "訂閱",
+            turnOn: "並且不要忘記打開通知",
+            success: "成功訂閱",
+            alreadyUse: "此電子郵件已被使用"
         },
         navbar: {
             menuList: [
@@ -394,18 +394,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'
-                                    }
-                                    ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -435,18 +435,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -465,10 +465,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -487,10 +487,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -547,8 +547,8 @@ const messages = {
             subTitle: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -792,12 +792,12 @@ const messages = {
 
     ja: {
         emailSubscribePanel: {
-            newsletter:"ニュースレターを購読する",
-            YourAddress:"あなたのEメールアドレス",
-            subscribe:"購読する",
-            turnOn:"通知をオンにすることを忘れないでください",
-            success:"成功した購読」",
-            alreadyUse:"このメールは既に使用中です"
+            newsletter: "ニュースレターを購読する",
+            YourAddress: "あなたのEメールアドレス",
+            subscribe: "購読する",
+            turnOn: "通知をオンにすることを忘れないでください",
+            success: "成功した購読」",
+            alreadyUse: "このメールは既に使用中です"
         },
         navbar: {
             menuList: [
@@ -1185,18 +1185,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'
-                                    }
-                                    ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -1226,18 +1226,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1256,10 +1256,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1278,10 +1278,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -1339,7 +1339,7 @@ const messages = {
             ICOinfo: {
                 emission: {
                     title: 'Объем эмиссии',
-                    amount: "110,000,000"
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -1578,12 +1578,12 @@ const messages = {
 
     ru: {
         emailSubscribePanel: {
-            newsletter:"Подпишитесь на нашу рассылку",
-            YourAddress:"Ваш адрес электронной почты",
-            subscribe:"Подписаться",
-            turnOn:"И не забудьте включить уведомления",
-            success:"Вы успешно подписались",
-            alreadyUse:"Эта почта уже используется"
+            newsletter: "Подпишитесь на нашу рассылку",
+            YourAddress: "Ваш адрес электронной почты",
+            subscribe: "Подписаться",
+            turnOn: "И не забудьте включить уведомления",
+            success: "Вы успешно подписались",
+            alreadyUse: "Эта почта уже используется"
         },
         navbar: {
             menuList: [
@@ -1974,7 +1974,13 @@ const messages = {
                         {
                             name: 'Сергей Тимохин',
                             position: 'Комьюнити-менеджер',
-                            src: '../static/images/avatars/timohin@3x.png',                             social: [                                 {                                     type: 'linkedin',                                     link: 'https://www.linkedin.com/in/timokhinsergey/',                                     src: '../static/images/in.svg'                                 }                             ]
+                            src: '../static/images/avatars/timohin@3x.png',
+                            social: [{
+                                type: 'linkedin',
+                                link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                src: '../static/images/in.svg'
+                            }
+                            ]
                         },
                         {
                             name: 'Евгений Житков',
@@ -2005,18 +2011,18 @@ const messages = {
                     name: 'Филипп Нанн',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2035,10 +2041,10 @@ const messages = {
                     name: 'Владимир Никитин',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -2057,10 +2063,10 @@ const messages = {
                     name: 'Николай Шкилев',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2118,7 +2124,7 @@ const messages = {
             ICOinfo: {
                 emission: {
                     title: 'Объем эмиссии',
-                    amount: "110,000,000"
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -2267,74 +2273,236 @@ const messages = {
                 },
                 {
                     title: 'ICO',
-                    date: '25.07.2018 – 25.09.2018',
+                    date: '25.07.2018 – 24.09.2018',
                     progress: 0,
                     state: 'этап ещё не начался',
                     status: false
                 },
                 {
                     title: 'Разработка Yellow Paper',
-                    desk: 'Yellow Paper – техническое описание работы системы. В документе рассматриваются архитектурные особенности построения системы, протоколы взаимодействия между узлами сети и иные технические детали.',
-                    date: '02.07.2018 - 01.09.2018',
+                    desk: 'Формализация блокчейна верхнего уровня',
+                    result: 'Результат: Yellow Paper, v0.1',
+                    date: '09.25.2018 - 10.30.2018',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Формализация процедуры майнинга',
+                    result: 'Результат: Yellow Paper, v0.2',
+                    date: '10.30.2018 - 11.19.2018',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Формализация вложенных блокчейнов',
+                    result: 'Результат: Yellow Paper, v0.3',
+                    date: '11.19.2018 - 12.25.18',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Формализация системы диспута',
+                    result: 'Результат: Yellow Paper, v0.4',
+                    date: '12.25.18 - 01.22.2019',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Разработка виртуальной машины',
+                    result: 'Результат: Yellow Paper, v0.5',
+                    date: '01.22.19 - 26.02.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка Yellow Paper',
+                    desk: 'Формализация процедуры внесения изменений',
+                    result: 'Результат:\tYellow Paper, v0.6; Yellow Paper v1.0.',
+                    date: '02.26.19 - 03.26.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка технического описания реализации',
+                    desk: 'Разработка технического описания модулей системы',
+                    result: 'Результат:\tBlue Paper, v0.1',
+                    date: '09.26.2019 - 04.09.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка технического описания реализации',
+                    desk: 'Разработка требований к frontend-модулю',
+                    result: 'Результат:\tBlue Paper, v0.2',
+                    date: '04.09.19 - 04.23.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка технического описания реализации',
+                    desk: 'Разработка технического описания блокчейна верхнего уровня',
+                    result: 'Результат:\tBlue Paper, v0.3',
+                    date: '04.23.19 - 05.28.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Разработка технического описания реализации',
+                    desk: 'Разработка технического описания вложенных блокчейнов',
+                    result: 'Результат:\tBlue Paper, v1.0',
+                    date: '05.28.19 - 07.02.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Децентрализация MVP решения',
-                    desk: 'Построение версии системы, в которой реализованы следующие компоненты: Пиринговая сеть; Пользовательские транзакции с использованием встроенного токена и раскрашенных монет; Регистрация контрактов на разработку программного обеспечения; Обеспечение возможности изменения контрактов.',
-                    date: '01.12.2018 - 01.02.2019',
+                    desk: 'Реализация пиринговой сети',
+                    date: '07.02.19 - 08.06.19',
+                    result: 'Результат:\tПиринговая сеть, поверх которой функционирует базовый блокчейн',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Децентрализация MVP решения',
+                    desk: 'Реализация базового блокчейна и майнинга',
+                    result: 'Результат:\tАбстракция блокчейна без привязки к логике приложения',
+                    date: '08.06.19 - 09.03.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Децентрализация MVP решения',
+                    desk: 'Реализация логики приложения',
+                    result: 'Результат:\tpre-aplha, v0.1',
+                    date: '09.03.19 - 11.12.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Реализация приватных блокчейнов',
-                    desk: 'Разработка приватных блокчейнов и их встраивание в существующую инфраструктуру. Обеспечение бесперебойной работы оракулов. Оформление в законченном варианте всей системы – за исключением механизма диспута (арбитража).',
-                    date: '01.03.2019 – 01.05.2019',
+                    desk: 'Реализация шаблона для построения вложенных блокчейнов',
+                    result: 'Результат:\tшаблон для построения вложенных блокчейнов',
+                    date: '11.12.19 - 12.17.19',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Реализация приватных блокчейнов',
+                    desk: 'Реализация вложенных блокчейнов на основе шаблона',
+                    result: 'Результат:\tpre-alpha v0.2',
+                    date: '12.17.19 - 01.14.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Реализация приватных блокчейнов',
+                    desk: 'Встраивание вложенных блокчейнов в платформу',
+                    result: 'Результат:\tpre-alpha v1.0; alpha v0.1',
+                    date: '01.14.20 - 02.11.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Реализация системы диспута',
-                    desk: 'Доработка системы диспутов для решения конфликтов в рамках децентрализованного приложения. ',
-                    date: '01.05.2019 – 01.08.2019',
+                    desk: 'Реализация логики работы агентов верификации',
+                    result: 'Результат:\talpha v0.2',
+                    date: '02.11.20 - 03.10.20',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Реализация системы диспута',
+                    desk: 'Реализация логики работы агентов верификации',
+                    result: 'Результат:\talpha v0.3',
+                    date: '03.10.20 - 03.24.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Реализация системы диспута',
+                    desk: 'Реализация логики работы агентов верификации',
+                    result: 'Результат:\talpha v0.4',
+                    date: '03.24.20 - 04.14.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Реализация системы диспута',
+                    desk: 'Реализация логики работы агентов верификации',
+                    result: 'Результат:\talpha v1.0; beta v0.1',
+                    date: '04.14.20 - 05.12.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Реализация системы голосования за изменения',
-                    desk: 'Доработка системы для обеспечения ее изменяемости с течением времени.',
-                    date: '01.08.2019 - 01.10.2019',
+                    desk: 'Реализация системы голосования за монетарную политику',
+                    result: 'Результат:\tbeta v0.2',
+                    date: '05.12.20 - 06.02.20',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Закрытое тестирование работы системы',
-                    desk: 'Интеграционное тестирование системы в закрытом режиме.',
-                    date: '01.10.2019 - 01.01.2020',
+                    title: 'Реализация системы голосования за изменения',
+                    desk: 'Реализация системы голосования за техническую модификацию',
+                    result: 'Результат:\tbeta v1.0',
+                    date: '06.02.20 - 06.23.20',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Публикация исходного кода системы и документации',
-                    desk: 'Публикация исходного кода системы и документации в открытых репозиториях',
-                    date: '01.01.2020 – 01.02.2020',
+                    title: 'Выпуск системы',
+                    desk: 'Закрытое тестирование работы системы',
+                    result: 'Результат:\tbeta v1.1',
+                    date: '06.23.20 - 08.25.20',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Запуск эксплуатации системы',
-                    date: '01.02.2020 – 01.03.2020',
+                    title: 'Выпуск системы',
+                    desk: 'Публикация исходного кода системы и документации',
+                    result: 'Результат:\tbeta v2.0',
+                    date: '08.04.20 - 08.25.20',
                     progress: 0,
-                    state: 'этап ещё не начался',
+                    state: 'the stage did not begin',
                     status: false
-                }
+                },
+                {
+                    title: 'Выпуск системы',
+                    desk: 'Запуск эксплуатации системы',
+                    result: 'Результат:\tфункционирующая версия системы ALEHUB',
+                    date: '08.25.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
             ]
         },
         blog: {
@@ -2360,12 +2528,12 @@ const messages = {
     },
     en: {
         emailSubscribePanel: {
-            newsletter:"Subscribe to our newsletter",
-            YourAddress:"Your e-mail address",
-            subscribe:"Subscribe",
-            turnOn:"And don't forget to turn on notifications",
-            success:"successful subscription",
-            alreadyUse:"this email is already in use"
+            newsletter: "Subscribe to our newsletter",
+            YourAddress: "Your e-mail address",
+            subscribe: "Subscribe",
+            turnOn: "And don't forget to turn on notifications",
+            success: "successful subscription",
+            alreadyUse: "this email is already in use"
         },
         navbar: {
             menuList: [
@@ -2745,7 +2913,7 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
@@ -2786,20 +2954,20 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; height: auto; ' +
-                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                    'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.</p>' +
-                    '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.</p>' +
-                    '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
+                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                        'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.</p>' +
+                        '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.</p>' +
+                        '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2818,13 +2986,13 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/nikitin@3x.png" alt="Philipp Nunn" style="width: 200px;' +
-                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                    'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members.</p> ' +
-                    '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
+                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                        'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members.</p> ' +
+                        '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -2843,12 +3011,12 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/shkilev@3x.png" alt="Philipp Nunn" style="width: 200px;' +
-                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                    'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
-                    '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".</p>',
+                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                        'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
+                        '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2907,8 +3075,8 @@ const messages = {
             subTitle: 'ALE is a security token, which provides the owner with the ALE system profit share. The protocol mirrors the Ethereum network (ERC-20 protocol) to provide liquidity.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -2949,7 +3117,11 @@ const messages = {
                 deployed: 'deployed',
                 implementing: 'implementing',
                 review: 'review',
-                notNow: 'the stage did not begin'
+                notNow: 'the stage did not begin',
+            },
+            stateKind: {
+                task: 'task',
+                target: 'target'
             },
             stages: [
                 {
@@ -3044,7 +3216,7 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/09/2018 - 05/25/2018',
+                    date: '05.09.2018 - 05.25.2018',
                     progress: 80,
                     state: 'stage in the process',
                     status: true
@@ -3058,68 +3230,236 @@ const messages = {
                 },
                 {
                     title: 'ICO',
-                    date: '07/25/2018 - 09/25/2018',
+                    date: '07.25.2018 - 09.24.2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Yellow Paper development',
-                    desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
-                    date: '07/02/2018 - 01/01/2019',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Formalization of the top level blockchain.',
+                    result: 'Result: Yellow Paper, v0.1',
+                    date: '09.25.2018 - 10.30.2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Decentralization of MVP solutions',
-                    date: '12/01/2018 - 01/02/2019',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Formalization of mining procedure.',
+                    result: 'Result: Yellow Paper, v0.2',
+                    date: '10.30.2018 - 11.19.2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Private blockchains',
-                    date: '01/03/2019 - 01/01/2019',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Formalization of embedded blockchains',
+                    result: 'Result: Yellow Paper, v0.3',
+                    date: '11.19.2018 - 12.25.18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Implementation of the dispute system',
-                    date: '05/01/2018 - 01/01/2019',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Formalization of a dispute system',
+                    result: 'Result: Yellow Paper, v0.4',
+                    date: '12.25.18 - 01.22.2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Implementation of the voting system for changes',
-                    date: '08/01/2018 - 01/01/2019',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Development of a virtual machine',
+                    result: 'Result: Yellow Paper, v0.5',
+                    date: '01.22.19 - 26.02.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Closed system testing',
-                    date: '10/01/2019 - 01/01/2020',
+                    title: 'Development of Yellow Paper',
+                    desk: 'Formalization of changes procedure',
+                    result: 'Result: Yellow Paper, v0.6; Yellow Paper, v1.0',
+                    date: '02.26.19 - 03.26.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Publication of the source code of the system and documentation',
-                    date: '01/01/2020 - 01/02/2020',
+                    title: 'Development of technical description of implementation',
+                    desk: 'Development of technical description of system modules',
+                    result: 'Result: Blue paper, v0.1',
+                    date: '09.26.2019 - 04.09.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
-                    title: 'Booting the system ',
-                    date: '01/02/2020 – 01/03/2020',
+                    title: 'Development of technical description of implementation',
+                    desk: 'Development of requirements for frontend-module',
+                    result: 'Result: Blue paper, v0.2',
+                    date: '04.09.19 - 04.23.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
-                }
+                },
+                {
+                    title: 'Development of technical description of implementation',
+                    desk: 'Development of technical description of a top level blockchain',
+                    result: 'Result: Blue paper, v0.3',
+                    date: '04.23.19 - 05.28.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Development of technical description of implementation',
+                    desk: 'Development of technical description of an embedded blockchain',
+                    result: 'Result: Blue paper, v1.0',
+                    date: '05.28.19 - 07.02.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'MVP solution decentralizing',
+                    desk: 'Implementation of peer-to-peer network',
+                    date: '07.02.19 - 08.06.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'MVP solution decentralizing',
+                    desk: ' Implementation of basic blockchain and mining',
+                    result: 'Result: Blockchain abstraction without reference to application logic',
+                    date: '08.06.19 - 09.03.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'MVP solution decentralizing',
+                    desk: 'Implementation of application logic',
+                    result: 'Result: pre-alpha, v0.1',
+                    date: '09.03.19 - 11.12.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Implementation of private blockchains',
+                    desk: ' Implementation of template for building embedded blockchains',
+                    result: 'Result: template for building embedded blockchains',
+                    date: '11.12.19 - 12.17.19',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Implementation of private blockchains',
+                    desk: 'Implementation of embedded blockchains based on a template',
+                    result: 'Result: pre-alpha v0.2',
+                    date: '12.17.19 - 01.14.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Implementation of private blockchains',
+                    desk: 'Integration of embedded blockchains into the platform',
+                    result: 'Result: pre-alpha,v1.0; alpha v0.1',
+                    date: '01.14.20 - 02.11.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: ' Implementation of a dispute system',
+                    desk: 'Implementation of verification agents logic',
+                    result: 'Result: alpha v0.2',
+                    date: '02.11.20 - 03.10.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: ' Implementation of a dispute system',
+                    desk: 'Implementation of a first level dispute',
+                    result: 'Result: alpha v0.3',
+                    date: '03.10.20 - 03.24.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: ' Implementation of a dispute system',
+                    desk: 'Implementation of a second level dispute',
+                    result: 'Result: alpha v0.4',
+                    date: '03.24.20 - 04.14.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: ' Implementation of a dispute system',
+                    desk: 'Implementation of a third level dispute',
+                    result: 'Result: alpha v1.0; beta v0.1',
+                    date: '04.14.20 - 05.12.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Implementation of a system for voting for changes',
+                    desk: 'Implementation of system of voting for monetary policy',
+                    result: 'Result: beta v0.2',
+                    date: '05.12.20 - 06.02.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Implementation of a system for voting for changes',
+                    desk: 'Implementation of system of voting for technological upgrade',
+                    result: 'Result: beta v1.0',
+                    date: '06.02.20 - 06.23.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Release of the system',
+                    desk: 'Closed testing of the system',
+                    result: 'Result: beta v1.1',
+                    date: '06.23.20 - 08.25.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Release of the system',
+                    desk: 'Publication of the system source code and documentation',
+                    result: 'Result: beta v2.0',
+                    date: '08.04.20 - 08.25.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+                {
+                    title: 'Release of the system',
+                    desk: 'Putting the system into operation',
+                    result: 'Result: fully operational ALEHUB system',
+                    date: '08.25.20',
+                    progress: 0,
+                    state: 'the stage did not begin',
+                    status: false
+                },
+
             ]
         },
         blog: {
@@ -3145,12 +3485,12 @@ const messages = {
     },
     fr: {
         emailSubscribePanel: {
-            newsletter:"Abonnez-vous à notre newsletter",
-            YourAddress:"Votre adresse e-mail",
-            subscribe:"S'abonner",
-            turnOn:"Et n'oubliez pas d'activer les notifications",
-            success:"abonnement réussi",
-            alreadyUse:"cet e-mail est déjà utilisé"
+            newsletter: "Abonnez-vous à notre newsletter",
+            YourAddress: "Votre adresse e-mail",
+            subscribe: "S'abonner",
+            turnOn: "Et n'oubliez pas d'activer les notifications",
+            success: "abonnement réussi",
+            alreadyUse: "cet e-mail est déjà utilisé"
         },
         navbar: {
             menuList: [
@@ -3515,18 +3855,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'
-                                    }
-                                    ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -3556,18 +3896,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3586,10 +3926,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3608,10 +3948,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -3668,8 +4008,8 @@ const messages = {
             subTitle: 'ALE est un jeton de sécurité qui fournit au propriétaire la participation aux bénéfices du système ALE. Le protocole reflète le réseau Ethereum (protocole ERC-20) pour fournir des liquidités.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -3911,12 +4251,12 @@ const messages = {
     },
     de: {
         emailSubscribePanel: {
-            newsletter:"Abonnieren Sie unseren Newsletter",
-            YourAddress:"Ihre E-Mail-Adresse",
-            subscribe:"Abonnieren",
-            turnOn:"Und vergiss nicht, Benachrichtigungen zu aktivieren",
-            success:"erfolgreiches Abonnement",
-            alreadyUse:"Diese E-Mail wird bereits verwendet"
+            newsletter: "Abonnieren Sie unseren Newsletter",
+            YourAddress: "Ihre E-Mail-Adresse",
+            subscribe: "Abonnieren",
+            turnOn: "Und vergiss nicht, Benachrichtigungen zu aktivieren",
+            success: "erfolgreiches Abonnement",
+            alreadyUse: "Diese E-Mail wird bereits verwendet"
         },
         navbar: {
             menuList: [
@@ -4281,18 +4621,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'
-                                    }
-                                    ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -4322,18 +4662,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4352,10 +4692,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -4374,10 +4714,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -4434,8 +4774,8 @@ const messages = {
             subTitle: 'ALE ist ein Sicherheitstoken, das dem Eigentümer den Gewinnanteil des ALE-Systems zur Verfügung stellt. Das Protokoll spiegelt das Ethereum-Netzwerk (ERC-20-Protokoll) wider, um Liquidität bereitzustellen.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -4671,12 +5011,12 @@ const messages = {
     },
     ar: {
         emailSubscribePanel: {
-            newsletter:"اشترك في النشرة الإخبارية لدينا",
-            YourAddress:"عنوان بريدك الإلكتروني",
-            subscribe:"اشتراك",
-            turnOn:"ولا تنس تشغيل الإشعارات",
-            success:"الاشتراك الناجح",
-            alreadyUse:"هذا البريد الإلكتروني قيد الاستخدام بالفعل"
+            newsletter: "اشترك في النشرة الإخبارية لدينا",
+            YourAddress: "عنوان بريدك الإلكتروني",
+            subscribe: "اشتراك",
+            turnOn: "ولا تنس تشغيل الإشعارات",
+            success: "الاشتراك الناجح",
+            alreadyUse: "هذا البريد الإلكتروني قيد الاستخدام بالفعل"
         },
         navbar: {
             menuList: [
@@ -5041,7 +5381,7 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
@@ -5052,7 +5392,7 @@ const messages = {
                                     link: 'https://www.linkedin.com/in/timokhinsergey/',
                                     src: '../static/images/in.svg'
                                 }
-                                ]
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5082,18 +5422,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5112,10 +5452,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5134,10 +5474,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5194,8 +5534,8 @@ const messages = {
             subTitle: 'ALE هو رمز أمان ، والذي يزود المالك بمشاركة أرباح نظام ALE. يعكس البروتوكول شبكة الايثريوم (بروتوكول ERC-20) لتوفير السيولة.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -5432,12 +5772,12 @@ const messages = {
     },
     ko: {
         emailSubscribePanel: {
-            newsletter:"뉴스 레터 구독",
-            YourAddress:"귀하의 이메일 주소",
-            subscribe:"구독",
-            turnOn:"알림을 켜는 것을 잊지 마세요",
-            success:"성공적인 구독",
-            alreadyUse:"이 이메일은 이미 사용 중입니다"
+            newsletter: "뉴스 레터 구독",
+            YourAddress: "귀하의 이메일 주소",
+            subscribe: "구독",
+            turnOn: "알림을 켜는 것을 잊지 마세요",
+            success: "성공적인 구독",
+            alreadyUse: "이 이메일은 이미 사용 중입니다"
         },
         navbar: {
             menuList: [
@@ -5802,18 +6142,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'
-                                    }
-                                    ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Evgeniy Zhitkov',
@@ -5843,18 +6183,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5873,10 +6213,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5895,10 +6235,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5955,8 +6295,8 @@ const messages = {
             subTitle: 'ALE는 소유자에게 ALE 시스템 이익 분배를 제공하는 보안 토큰입니다. 이 프로토콜은 이더리움 (Ethereum) 네트워크 (ERC-20 프로토콜)를 반영하여 유동성을 제공합니다.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
@@ -6193,12 +6533,12 @@ const messages = {
     },
     es: {
         emailSubscribePanel: {
-            newsletter:"Suscríbete a nuestro boletín informativo",
-            YourAddress:"Su dirección de correo electrónico",
-            subscribe:"Suscribir",
-            turnOn:"Y no olvides activar las notificaciones",
-            success:"suscripción exitosa",
-            alreadyUse:"este correo electrónico ya está en uso"
+            newsletter: "Suscríbete a nuestro boletín informativo",
+            YourAddress: "Su dirección de correo electrónico",
+            subscribe: "Suscribir",
+            turnOn: "Y no olvides activar las notificaciones",
+            success: "suscripción exitosa",
+            alreadyUse: "este correo electrónico ya está en uso"
         },
         navbar: {
             menuList: [
@@ -6563,17 +6903,18 @@ const messages = {
                                 }
                             ]
                         },
-                        
+
                         {
                             name: 'Sergey Timohin',
                             position: 'Community manager',
                             src: '../static/images/avatars/timohin@3x.png',
-                                social: [
-                                    {
-                                        type: 'linkedin',
-                                        link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                        src: '../static/images/in.svg'                                 }
-                                        ]
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
 
 
@@ -6605,18 +6946,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                    'assets under management and a suite of investment products across multiple classes for individuals' +
-                    ' and institutions in the UK and overseas.\n' +
-                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                    'performance and providing “future proof” investment strategies.\n' +
-                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                        'assets under management and a suite of investment products across multiple classes for individuals' +
+                        ' and institutions in the UK and overseas.\n' +
+                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                        'performance and providing “future proof” investment strategies.\n' +
+                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -6635,10 +6976,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -6657,10 +6998,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                        'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -6717,8 +7058,8 @@ const messages = {
             subTitle: 'ALE es un token de seguridad, que proporciona al propietario el porcentaje de ganancia del sistema ALE. El protocolo está reflejado en la red Ethereum (protocolo ERC-20) para proporcionar liquidez.',
             ICOinfo: {
                 emission: {
-                    title: 'Emission',
-                    amount: "110,000,000"
+                    title: 'Maximal supply',
+                    amount: "∽211 000 000"
                 },
                 hardCap: {
                     title: 'Hardcap',
