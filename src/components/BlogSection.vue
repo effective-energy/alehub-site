@@ -17,14 +17,13 @@
                      :key="i">
                     <span>
                         <router-link class="news-block"
-                                     tag="div"
+                                     tag="a"
                                      :to="`/blog/${n.url}`">
-                            <router-link :to="`/blog/${n.url}`">
+                            <!--<router-link :to="`/blog/${n.url}`">-->
                                 <img class="picture"
                                      :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
                                      :alt="n.title"
-                                     @click="goToNews(n.url)">
-                            </router-link>
+                                     @click="goToNews(n.url)"/>
                             <div class="news-info">
                                 <p class="news-title">
                                     {{ n.title }}
@@ -247,22 +246,47 @@
         height: 100%
 
     .news-block
-        width 100%
-        height 94px
-        margin 32px 16px
         display flex
-        justify-content flex-start
+        justify-content center
+        align-items: center
+        margin 32px 16px 32px 16px
         transition 2s
+        margin-left 0px
+        &:hover
+            text-decoration none
+        &:hover img
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
 
         @media (max-width 320px)
             flex-direction column
 
         .picture
-            max-width 150px
+            width auto
+            max-width 100%
+            max-height 100%
+            padding 10px
             height 100%
-            width 150px
-            -o-object-fit cover
-            object-fit cover
+            -o-object-fit contain
+            object-fit contain
+            position absolute
+            z-index 3
+            -webkit-filter: blur(4px);
+            -moz-filter: blur(4px);
+            -o-filter: blur(4px);
+            -ms-filter: blur(4px);
+            filter: blur(4px);
+            transition .5s
+            &:hover
+                -webkit-filter: blur(0px);
+                -moz-filter: blur(0px);
+                -o-filter: blur(0px);
+                -ms-filter: blur(0px);
+                filter: blur(0px);
+
 
             @media (max-width 320px)
                 max-width 85%
@@ -272,6 +296,13 @@
             margin 4px 16px
             display flex
             flex-direction column
+            width 80%
+            z-index 3
+            text-align: center;
+            background-color #ffffffa0
+
+
+
 
             .news-title
                 font-family MuseoSansCyrl300
