@@ -49,7 +49,7 @@
                 autoplay: null,
                 opt: {
                     position: 0,
-                    maxPosition: 3
+                    maxPosition: 4
                 },
                 xDown: 0,
                 yDown: 0,

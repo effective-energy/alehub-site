@@ -660,30 +660,19 @@
                 isDark: false,
 
                 itemsToSliderScreen: [
-                    '../../../static/images/screen1.png',
-                    '../../../static/images/screen2.png',
-                    '../../../static/images/screen3.png'
+                    '../../../static/images/interface/summary.png',
+                    '../../../static/images/interface/export-to-pdf.png',
+                    '../../../static/images/interface/notifications.png',
+                    '../../../static/images/interface/settings.png'
                 ],
                 optionsToSliderScreen: {
                     touch: true,
-                    autoplay: false,
+                    autoplay: true,
                     inBlockTeam: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
                     pauseOnHover: true
                 },
-
-                pages: [
-                    {
-                        html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                    },
-                    {
-                        html: '<img src="../../static/images/screen2.png" class="screenshot" alt="">'
-                    },
-                    {
-                        html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                    }
-                ],
                 alePrice: 0.3,
                 currencies: {
                     btc: {
@@ -1025,12 +1014,6 @@
                 this.isVideo = true;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'video');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
@@ -1045,12 +1028,6 @@
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
@@ -1067,12 +1044,6 @@
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
