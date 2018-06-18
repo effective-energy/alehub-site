@@ -30,7 +30,7 @@
                         src: 'https://icomarks.com/widget/a/alehub/horizontal.svg',
                         altSrc: '../../../static/images/ratings/ico-marks.png',
                         alt: 'Alehub ICO rating',
-                        width: '322px',
+                        width: '308px',
                         height: '90px'
                     },
                     {
@@ -72,17 +72,24 @@
     .section
         .list
             display flex
-            justify-content flex-start
+            justify-content space-evenly
             padding 150px 150px 0 150px
 
-            @media (min-width 150px) and (max-width 150px)
+            @media (min-width 1024px) and (max-width 1440px)
                 padding 100px 100px 0 100px
+
+            @media (min-width 768px) and (max-width 1024px)
+                padding 75px
+
+            @media (max-width 425px)
+                padding 50px 0
+
+            @media (max-width 1024px)
+                height 75vh
+                flex-direction column
+                align-items center
 
             .mark
                 z-index 10
-                width 25%
                 background-color transparent
-
-                @media (min-width 1024px) and (max-width 1440px)
-                    width 33.3%
 </style>
