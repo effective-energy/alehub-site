@@ -281,16 +281,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="icorating-list col-12">
-                            <a href="https://www.trackico.io/ico/alehub/" target="_blank" title="Alehub on TrackICO">
-                                <img border="0" src="https://www.trackico.io/widget/horizontal/alehub/483.png" width="322px" height="90px" alt="Alehub TrackICO rating" />
-                            </a>
-                            <a href="https://icomarks.com/ico/alehub" target="_blank" rel="nofollow" title="Alehub">
-                                <img border="0" src="https://icomarks.com/widget/a/alehub/horizontal.svg" width="322px" height="90px" alt="Alehub ICO rating" />
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -399,6 +389,8 @@
                    target="_blank"></a>
             </div>
         </div>
+
+        <rating-block/>
 
         <partners-block :is-dark="isDark"/>
 
@@ -588,6 +580,7 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
@@ -600,6 +593,7 @@
         components: {
             MenuModal,
             SliderScreen,
+            RatingBlock,
             PartnersBlock
         },
         props: {
