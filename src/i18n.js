@@ -116,6 +116,16 @@ const messages = {
                 }
             ]
         },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
+        },
         alePlatform: {
             title: 'ALE 平台',
             subTitle: 'ALE是一种可以修改并结合实体经济和加密经济优势的结构，以便于创建出一种全新的生态系统—复合经济。ALE重塑了现有的金融和法律结构，以使他们更灵活且跟符合法律，并确认了大多数国家在识别金融机构、存储私人数据方面的价值，并提供了数字支付手段的流动性和合法性。   ',
@@ -452,18 +462,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -482,10 +492,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -504,10 +514,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -924,6 +934,16 @@ const messages = {
                 }
             ]
         },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
+        },
         alePlatform: {
             title: 'ALE サービス',
             subTitle: 'Ale は複合経済という新しい経済の分野を作るように、実際経済と暗号経済の優位を兼ね備えるエコシステムです。Ale は財務体質と法律体質の可能を広げます。プライベートデーターをキープする方法とディジタルの財源の合法は多数の国の法律に相当しています。',
@@ -1260,18 +1280,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1290,10 +1310,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -1312,10 +1332,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -1727,6 +1747,16 @@ const messages = {
                 }
             ]
         },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
+        },
         alePlatform: {
             title: 'Платформа ALE',
             subTitle: 'ALE объединяет преимущества реальной и крипто экономики для создания принципиально новой среды - композитной экономики. ALE делает существующую финансовую и юридическую структуру более гибкой, соответствуя законодательству и признанным ценностям большинства стран в вопросах идентификации финансовых агентов, хранения приватных данных, ликвидности и легальности цифровых платежных средств.',
@@ -2062,18 +2092,18 @@ const messages = {
                     name: 'Филипп Нанн',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2092,10 +2122,10 @@ const messages = {
                     name: 'Владимир Никитин',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -2114,10 +2144,10 @@ const messages = {
                     name: 'Николай Шкилев',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -2694,6 +2724,16 @@ const messages = {
                 }
             ]
         },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
+        },
         alePlatform: {
             title: 'ALE platform',
             subTitle: 'ALE is a construct that modifies and combines the advantages of real and crypto economies to create a fundamentally new ecosystem - the composite economy. ALE reinvents the existing financial and legal structure as more flexible, more congruent to the laws and recognizes values of most countries in identifying financial agents, storing private data, offering liquidity and legality of digital means of payments.',
@@ -3022,20 +3062,20 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; height: auto; ' +
-                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                        'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.</p>' +
-                        '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.</p>' +
-                        '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.</p>' +
+                    '<p>With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.</p>' +
+                    '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3054,13 +3094,13 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/nikitin@3x.png" alt="Philipp Nunn" style="width: 200px;' +
-                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                        'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members.</p> ' +
-                        '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members.</p> ' +
+                    '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -3079,12 +3119,12 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/shkilev@3x.png" alt="Philipp Nunn" style="width: 200px;' +
-                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                        'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
-                        '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".</p>',
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
+                    '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -3120,8 +3160,8 @@ const messages = {
                     name: 'Bonnie Normile',
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/bonnie@3x.png" alt="Bonnie Normile" style="width: 200px;' +
-                        'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                        'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.</p> ',
+                    'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
+                    'Bonnie Normile is an advocate of the DLT/blockchain/cryptocurrency evolution.She assists in business development, funding & marketing / public relations.Bonnie is an analyst at ICOBench and a board member of the Israeli Blockchain Association.She is the U.S.ambassador to Perhalic Group, a partner at Coinsulters Blockchain Media, member of the International Blockchain Assoc.Foundation(IBAF), International Decentralized Assoc. (IDACB), Woman in Blockchain International(WIBI) and other notable organizations.Bonnie acts as advisor to an diverse array of blockchain projects, both new issue and post token offerings while managing clients with branding, strategy and listing services.</p> ',
                     src: '../static/images/avatars/bonnie@3x.png',
                     social: [
                         {
@@ -3659,11 +3699,24 @@ const messages = {
         },
         advantages: {
             title: 'Advantages',
-            lists: [{
-                title: 'ALE comparé au système de management de projet actuel'
-            }, {
-                title: 'ALE comparé aux autres plateformes sur blockchain'
-            }]
+            lists: [
+                {
+                    title: 'ALE comparé au système de management de projet actuel'
+                },
+                {
+                    title: 'ALE comparé aux autres plateformes sur blockchain'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'Plateforme ALE ',
@@ -3981,18 +4034,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4011,10 +4064,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -4033,10 +4086,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -4442,11 +4495,24 @@ const messages = {
         },
         advantages: {
             title: 'Vorteile',
-            lists: [{
-                title: 'ALE vs. Projektmanagementsysteme'
-            }, {
-                title: 'ALE vs. andere Blockchain-Plattformen'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs. Projektmanagementsysteme'
+                },
+                {
+                    title: 'ALE vs. andere Blockchain-Plattformen'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE-Plattform',
@@ -4764,18 +4830,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4794,10 +4860,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -4816,10 +4882,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5219,11 +5285,24 @@ const messages = {
         },
         advantages: {
             title: 'ALE المميزات',
-            lists: [{
-                title: 'ALE مقابل انظمة إدارة المشاريع'
-            }, {
-                title: 'ALE مقابل منصات البلوك شين الأخرى'
-            }]
+            lists: [
+                {
+                    title: 'ALE مقابل انظمة إدارة المشاريع'
+                },
+                {
+                    title: 'ALE مقابل منصات البلوك شين الأخرى'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'منصة ALE',
@@ -5541,18 +5620,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5571,10 +5650,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -5593,10 +5672,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -5997,11 +6076,24 @@ const messages = {
         },
         advantages: {
             title: '장점',
-            lists: [{
-                title: 'ALE vs 프로젝트 관리 시스템'
-            }, {
-                title: 'ALE vs 다른 블록체인 플랫폼'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs 프로젝트 관리 시스템'
+                },
+                {
+                    title: 'ALE vs 다른 블록체인 플랫폼'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE 플랫폼',
@@ -6319,18 +6411,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -6349,10 +6441,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -6371,10 +6463,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
@@ -6775,11 +6867,24 @@ const messages = {
         },
         advantages: {
             title: 'ALE Ventajas',
-            lists: [{
-                title: 'ALE vs sistemas de gestión de proyectos'
-            }, {
-                title: 'ALE vs otras plataformas blockchain'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs sistemas de gestión de proyectos'
+                },
+                {
+                    title: 'ALE vs otras plataformas blockchain'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'Plataforma ALE ',
@@ -7099,18 +7204,18 @@ const messages = {
                     name: 'Phillip Nunn',
                     position: 'advisor',
                     description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
-                        'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
-                        'assets under management and a suite of investment products across multiple classes for individuals' +
-                        ' and institutions in the UK and overseas.\n' +
-                        'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
-                        'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
-                        'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
-                        'performance and providing “future proof” investment strategies.\n' +
-                        'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
-                        'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                        ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
-                        'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                        'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
+                    'assets under management and a suite of investment products across multiple classes for individuals' +
+                    ' and institutions in the UK and overseas.\n' +
+                    'With more than 15 years’ experience in financial services, Phillip specialises in wealth management, ' +
+                    'angel investment, commercial property investment and financial technology. He founded The Blackmore ' +
+                    'Group on the core belief of giving clients real and tangible alternatives to poor investment ' +
+                    'performance and providing “future proof” investment strategies.\n' +
+                    'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
+                    'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
+                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
+                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -7129,10 +7234,10 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                        ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
-                        '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                        'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                        'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
+                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
@@ -7151,10 +7256,10 @@ const messages = {
                     name: 'Nikolay Shkilev',
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
-                        'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                        'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
-                        ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                        'directions. Co-Founder "Top ICO advisors".',
+                    'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
+                    'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {

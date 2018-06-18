@@ -1,25 +1,23 @@
 <template>
-    <div class="section" id="mission">
+    <div class="section" id="project-economy">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="header">
                         <h1 class="title">
-                            {{ $t('mission.title') }}
+                            {{ $t('projectEconomy.title') }}
                         </h1>
                         <div class="separator"></div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12"
-                     v-for="item in $t('mission.blocks')">
-                    <h3>
-                        {{ item.title }}
-                    </h3>
-                    <p>
-                        {{ item.text }}
-                    </p>
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                    <img class="schema" src="../../static/images/project-economy-schema.png"
+                         alt="project economy schema">
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 p-l-40">
+                    <div v-html="$t('projectEconomy.text')"></div>
                 </div>
             </div>
         </div>
@@ -28,25 +26,34 @@
 
 <script>
     export default {
-        name: 'MissionSection',
+        name: 'ProjectEconomy',
         props: {
             isRtl: {
                 type: Boolean,
                 required: true
+
             }
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .schema
+        width inherit
+
+    .p-l-40
+        padding-left 40px
+
+        @media (max-width 992px)
+            padding-left 0
+
     .section
         background-color #343a49
         color #f7f7f7
-        padding 120px 0
+        padding 80px 0
 
         @media (max-width 425px)
             padding 60px 0
-
 
         h1.title
             font-size 40px
@@ -61,13 +68,7 @@
             background-color #f7f7f7
 
         .header
-            @media (max-width 992px)
-                display flex
-                flex-direction column
-                align-items center
-
-        .row
-            div
-                padding 0 30px
-
+            display flex
+            flex-direction column
+            align-items center
 </style>

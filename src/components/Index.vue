@@ -9,6 +9,7 @@
         <mission-section :is-rtl="isRtl"/>
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
+        <project-economy :is-rtl="isRtl"/>
         <team-section :is-team="isTeam"
                       :is-effective-energy-autoplay="isEffectiveEnergyAutoplay"
                       :is-serokell-autoplay="isSerokellAutoplay"
@@ -29,6 +30,7 @@
     import MissionSection from './MissionSection';
     import AdvantagesSection from './AdvantagesSection';
     import FeaturesSection from './FeaturesSection';
+    import ProjectEconomy from './ProjectEconomy';
     import TeamSection from './TeamSection';
     import IcoSection from './IcoSection';
     import RoadmapSection from './RoadmapSection';
@@ -45,6 +47,7 @@
             MissionSection,
             AdvantagesSection,
             FeaturesSection,
+            ProjectEconomy,
             TeamSection,
             IcoSection,
             RoadmapSection,
