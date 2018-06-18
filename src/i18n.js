@@ -1,12 +1,12 @@
 const messages = {
     zh: {
         emailSubscribePanel: {
-            newsletter:"訂閱我們的通訊",
-            YourAddress:"您的電子郵件地址”",
-            subscribe:"訂閱",
-            turnOn:"並且不要忘記打開通知",
-            success:"成功訂閱",
-            alreadyUse:"此電子郵件已被使用"
+            newsletter: "訂閱我們的通訊",
+            YourAddress: "您的電子郵件地址”",
+            subscribe: "訂閱",
+            turnOn: "並且不要忘記打開通知",
+            success: "成功訂閱",
+            alreadyUse: "此電子郵件已被使用"
         },
         navbar: {
             menuList: [
@@ -88,6 +88,23 @@ const messages = {
                 download: '下载'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: '优势',
             lists: [
@@ -98,6 +115,16 @@ const messages = {
                     title: 'ALE与其他区块链平台相比'
                 }
             ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE 平台',
@@ -792,12 +819,12 @@ const messages = {
 
     ja: {
         emailSubscribePanel: {
-            newsletter:"ニュースレターを購読する",
-            YourAddress:"あなたのEメールアドレス",
-            subscribe:"購読する",
-            turnOn:"通知をオンにすることを忘れないでください",
-            success:"成功した購読」",
-            alreadyUse:"このメールは既に使用中です"
+            newsletter: "ニュースレターを購読する",
+            YourAddress: "あなたのEメールアドレス",
+            subscribe: "購読する",
+            turnOn: "通知をオンにすることを忘れないでください",
+            success: "成功した購読」",
+            alreadyUse: "このメールは既に使用中です"
         },
         navbar: {
             menuList: [
@@ -879,6 +906,23 @@ const messages = {
                 download: 'ダウンロード'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'ALEの優位',
             lists: [
@@ -889,6 +933,16 @@ const messages = {
                     title: 'ALEサービス VS 他のブロックチェーンサービス'
                 }
             ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE サービス',
@@ -1578,12 +1632,12 @@ const messages = {
 
     ru: {
         emailSubscribePanel: {
-            newsletter:"Подпишитесь на нашу рассылку",
-            YourAddress:"Ваш адрес электронной почты",
-            subscribe:"Подписаться",
-            turnOn:"И не забудьте включить уведомления",
-            success:"Вы успешно подписались",
-            alreadyUse:"Эта почта уже используется"
+            newsletter: "Подпишитесь на нашу рассылку",
+            YourAddress: "Ваш адрес электронной почты",
+            subscribe: "Подписаться",
+            turnOn: "И не забудьте включить уведомления",
+            success: "Вы успешно подписались",
+            alreadyUse: "Эта почта уже используется"
         },
         navbar: {
             menuList: [
@@ -1665,6 +1719,23 @@ const messages = {
                 download: 'Загрузить MVP-версию приложения'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'Преимущества ALE',
             lists: [
@@ -1675,6 +1746,16 @@ const messages = {
                     title: 'ALE vs блокчейн платформы'
                 }
             ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'Платформа ALE',
@@ -1975,11 +2056,12 @@ const messages = {
                             name: 'Сергей Тимохин',
                             position: 'Комьюнити-менеджер',
                             src: '../static/images/avatars/timohin@3x.png',
-                            social: [                                 {
-                                type: 'linkedin',
-                                link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                src: '../static/images/in.svg'
-                            }
+                            social: [                                 
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
                             ]
                         },
                         {
@@ -2281,7 +2363,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация блокчейна верхнего уровня',
-                    result:'Результат: Yellow Paper, v0.1',
+                    result: 'Результат: Yellow Paper, v0.1',
                     date: '09.25.2018 - 10.30.2018',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2290,7 +2372,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация процедуры майнинга',
-                    result:'Результат: Yellow Paper, v0.2',
+                    result: 'Результат: Yellow Paper, v0.2',
                     date: '10.30.2018 - 11.19.2018',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2299,7 +2381,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация вложенных блокчейнов',
-                    result:'Результат: Yellow Paper, v0.3',
+                    result: 'Результат: Yellow Paper, v0.3',
                     date: '11.19.2018 - 12.25.18',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2308,7 +2390,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация системы диспута',
-                    result:'Результат: Yellow Paper, v0.4',
+                    result: 'Результат: Yellow Paper, v0.4',
                     date: '12.25.18 - 01.22.2019',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2317,7 +2399,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Разработка виртуальной машины',
-                    result:'Результат: Yellow Paper, v0.5',
+                    result: 'Результат: Yellow Paper, v0.5',
                     date: '01.22.19 - 26.02.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2326,7 +2408,7 @@ const messages = {
                 {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация процедуры внесения изменений',
-                    result:'Результат:\tYellow Paper, v0.6; Yellow Paper v1.0.',
+                    result: 'Результат:\tYellow Paper, v0.6; Yellow Paper v1.0.',
                     date: '02.26.19 - 03.26.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2335,7 +2417,7 @@ const messages = {
                 {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания модулей системы',
-                    result:'Результат:\tBlue Paper, v0.1',
+                    result: 'Результат:\tBlue Paper, v0.1',
                     date: '09.26.2019 - 04.09.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2344,7 +2426,7 @@ const messages = {
                 {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка требований к frontend-модулю',
-                    result:'Результат:\tBlue Paper, v0.2',
+                    result: 'Результат:\tBlue Paper, v0.2',
                     date: '04.09.19 - 04.23.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2353,7 +2435,7 @@ const messages = {
                 {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания блокчейна верхнего уровня',
-                    result:'Результат:\tBlue Paper, v0.3',
+                    result: 'Результат:\tBlue Paper, v0.3',
                     date: '04.23.19 - 05.28.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2362,7 +2444,7 @@ const messages = {
                 {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания вложенных блокчейнов',
-                    result:'Результат:\tBlue Paper, v1.0',
+                    result: 'Результат:\tBlue Paper, v1.0',
                     date: '05.28.19 - 07.02.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2372,7 +2454,7 @@ const messages = {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация пиринговой сети',
                     date: '07.02.19 - 08.06.19',
-                    result:'Результат:\tПиринговая сеть, поверх которой функционирует базовый блокчейн',
+                    result: 'Результат:\tПиринговая сеть, поверх которой функционирует базовый блокчейн',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2380,7 +2462,7 @@ const messages = {
                 {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация базового блокчейна и майнинга',
-                    result:'Результат:\tАбстракция блокчейна без привязки к логике приложения',
+                    result: 'Результат:\tАбстракция блокчейна без привязки к логике приложения',
                     date: '08.06.19 - 09.03.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2389,7 +2471,7 @@ const messages = {
                 {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация логики приложения',
-                    result:'Результат:\tpre-aplha, v0.1',
+                    result: 'Результат:\tpre-aplha, v0.1',
                     date: '09.03.19 - 11.12.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2398,7 +2480,7 @@ const messages = {
                 {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Реализация шаблона для построения вложенных блокчейнов',
-                    result:'Результат:\tшаблон для построения вложенных блокчейнов',
+                    result: 'Результат:\tшаблон для построения вложенных блокчейнов',
                     date: '11.12.19 - 12.17.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2407,7 +2489,7 @@ const messages = {
                 {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Реализация вложенных блокчейнов на основе шаблона',
-                    result:'Результат:\tpre-alpha v0.2',
+                    result: 'Результат:\tpre-alpha v0.2',
                     date: '12.17.19 - 01.14.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2416,7 +2498,7 @@ const messages = {
                 {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Встраивание вложенных блокчейнов в платформу',
-                    result:'Результат:\tpre-alpha v1.0; alpha v0.1',
+                    result: 'Результат:\tpre-alpha v1.0; alpha v0.1',
                     date: '01.14.20 - 02.11.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2425,7 +2507,7 @@ const messages = {
                 {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
-                    result:'Результат:\talpha v0.2',
+                    result: 'Результат:\talpha v0.2',
                     date: '02.11.20 - 03.10.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2434,7 +2516,7 @@ const messages = {
                 {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
-                    result:'Результат:\talpha v0.3',
+                    result: 'Результат:\talpha v0.3',
                     date: '03.10.20 - 03.24.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2443,7 +2525,7 @@ const messages = {
                 {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
-                    result:'Результат:\talpha v0.4',
+                    result: 'Результат:\talpha v0.4',
                     date: '03.24.20 - 04.14.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2452,7 +2534,7 @@ const messages = {
                 {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
-                    result:'Результат:\talpha v1.0; beta v0.1',
+                    result: 'Результат:\talpha v1.0; beta v0.1',
                     date: '04.14.20 - 05.12.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2461,7 +2543,7 @@ const messages = {
                 {
                     title: 'Реализация системы голосования за изменения',
                     desk: 'Реализация системы голосования за монетарную политику',
-                    result:'Результат:\tbeta v0.2',
+                    result: 'Результат:\tbeta v0.2',
                     date: '05.12.20 - 06.02.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2470,7 +2552,7 @@ const messages = {
                 {
                     title: 'Реализация системы голосования за изменения',
                     desk: 'Реализация системы голосования за техническую модификацию',
-                    result:'Результат:\tbeta v1.0',
+                    result: 'Результат:\tbeta v1.0',
                     date: '06.02.20 - 06.23.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2479,7 +2561,7 @@ const messages = {
                 {
                     title: 'Выпуск системы',
                     desk: 'Закрытое тестирование работы системы',
-                    result:'Результат:\tbeta v1.1',
+                    result: 'Результат:\tbeta v1.1',
                     date: '06.23.20 - 08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2488,7 +2570,7 @@ const messages = {
                 {
                     title: 'Выпуск системы',
                     desk: 'Публикация исходного кода системы и документации',
-                    result:'Результат:\tbeta v2.0',
+                    result: 'Результат:\tbeta v2.0',
                     date: '08.04.20 - 08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2497,7 +2579,7 @@ const messages = {
                 {
                     title: 'Выпуск системы',
                     desk: 'Запуск эксплуатации системы',
-                    result:'Результат:\tфункционирующая версия системы ALEHUB',
+                    result: 'Результат:\tфункционирующая версия системы ALEHUB',
                     date: '08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2528,12 +2610,12 @@ const messages = {
     },
     en: {
         emailSubscribePanel: {
-            newsletter:"Subscribe to our newsletter",
-            YourAddress:"Your e-mail address",
-            subscribe:"Subscribe",
-            turnOn:"And don't forget to turn on notifications",
-            success:"successful subscription",
-            alreadyUse:"this email is already in use"
+            newsletter: "Subscribe to our newsletter",
+            YourAddress: "Your e-mail address",
+            subscribe: "Subscribe",
+            turnOn: "And don't forget to turn on notifications",
+            success: "successful subscription",
+            alreadyUse: "this email is already in use"
         },
         navbar: {
             menuList: [
@@ -2615,6 +2697,23 @@ const messages = {
                 download: 'Download MVP-version application'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'ALE advantages',
             lists: [
@@ -2625,6 +2724,16 @@ const messages = {
                     title: 'ALE vs Other Blockchain Platforms'
                 }
             ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE platform',
@@ -3119,9 +3228,9 @@ const messages = {
                 review: 'review',
                 notNow: 'the stage did not begin',
             },
-            stateKind:{
-                task:'task',
-                target:'target'
+            stateKind: {
+                task: 'task',
+                target: 'target'
             },
             stages: [
                 {
@@ -3238,7 +3347,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of the top level blockchain.',
-                    result:'Result: Yellow Paper, v0.1',
+                    result: 'Result: Yellow Paper, v0.1',
                     date: '09.25.2018 - 10.30.2018',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3247,7 +3356,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of mining procedure.',
-                    result:'Result: Yellow Paper, v0.2',
+                    result: 'Result: Yellow Paper, v0.2',
                     date: '10.30.2018 - 11.19.2018',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3256,7 +3365,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of embedded blockchains',
-                    result:'Result: Yellow Paper, v0.3',
+                    result: 'Result: Yellow Paper, v0.3',
                     date: '11.19.2018 - 12.25.18',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3265,7 +3374,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of a dispute system',
-                    result:'Result: Yellow Paper, v0.4',
+                    result: 'Result: Yellow Paper, v0.4',
                     date: '12.25.18 - 01.22.2019',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3274,7 +3383,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Development of a virtual machine',
-                    result:'Result: Yellow Paper, v0.5',
+                    result: 'Result: Yellow Paper, v0.5',
                     date: '01.22.19 - 26.02.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3283,7 +3392,7 @@ const messages = {
                 {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of changes procedure',
-                    result:'Result: Yellow Paper, v0.6; Yellow Paper, v1.0',
+                    result: 'Result: Yellow Paper, v0.6; Yellow Paper, v1.0',
                     date: '02.26.19 - 03.26.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3292,7 +3401,7 @@ const messages = {
                 {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of system modules',
-                    result:'Result: Blue paper, v0.1',
+                    result: 'Result: Blue paper, v0.1',
                     date: '09.26.2019 - 04.09.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3301,7 +3410,7 @@ const messages = {
                 {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of requirements for frontend-module',
-                    result:'Result: Blue paper, v0.2',
+                    result: 'Result: Blue paper, v0.2',
                     date: '04.09.19 - 04.23.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3310,7 +3419,7 @@ const messages = {
                 {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of a top level blockchain',
-                    result:'Result: Blue paper, v0.3',
+                    result: 'Result: Blue paper, v0.3',
                     date: '04.23.19 - 05.28.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3319,7 +3428,7 @@ const messages = {
                 {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of an embedded blockchain',
-                    result:'Result: Blue paper, v1.0',
+                    result: 'Result: Blue paper, v1.0',
                     date: '05.28.19 - 07.02.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3336,7 +3445,7 @@ const messages = {
                 {
                     title: 'MVP solution decentralizing',
                     desk: ' Implementation of basic blockchain and mining',
-                    result:'Result: Blockchain abstraction without reference to application logic',
+                    result: 'Result: Blockchain abstraction without reference to application logic',
                     date: '08.06.19 - 09.03.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3345,7 +3454,7 @@ const messages = {
                 {
                     title: 'MVP solution decentralizing',
                     desk: 'Implementation of application logic',
-                    result:'Result: pre-alpha, v0.1',
+                    result: 'Result: pre-alpha, v0.1',
                     date: '09.03.19 - 11.12.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3354,7 +3463,7 @@ const messages = {
                 {
                     title: 'Implementation of private blockchains',
                     desk: ' Implementation of template for building embedded blockchains',
-                    result:'Result: template for building embedded blockchains',
+                    result: 'Result: template for building embedded blockchains',
                     date: '11.12.19 - 12.17.19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3363,7 +3472,7 @@ const messages = {
                 {
                     title: 'Implementation of private blockchains',
                     desk: 'Implementation of embedded blockchains based on a template',
-                    result:'Result: pre-alpha v0.2',
+                    result: 'Result: pre-alpha v0.2',
                     date: '12.17.19 - 01.14.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3372,7 +3481,7 @@ const messages = {
                 {
                     title: 'Implementation of private blockchains',
                     desk: 'Integration of embedded blockchains into the platform',
-                    result:'Result: pre-alpha,v1.0; alpha v0.1',
+                    result: 'Result: pre-alpha,v1.0; alpha v0.1',
                     date: '01.14.20 - 02.11.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3381,7 +3490,7 @@ const messages = {
                 {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of verification agents logic',
-                    result:'Result: alpha v0.2',
+                    result: 'Result: alpha v0.2',
                     date: '02.11.20 - 03.10.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3390,7 +3499,7 @@ const messages = {
                 {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a first level dispute',
-                    result:'Result: alpha v0.3',
+                    result: 'Result: alpha v0.3',
                     date: '03.10.20 - 03.24.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3399,7 +3508,7 @@ const messages = {
                 {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a second level dispute',
-                    result:'Result: alpha v0.4',
+                    result: 'Result: alpha v0.4',
                     date: '03.24.20 - 04.14.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3408,7 +3517,7 @@ const messages = {
                 {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a third level dispute',
-                    result:'Result: alpha v1.0; beta v0.1',
+                    result: 'Result: alpha v1.0; beta v0.1',
                     date: '04.14.20 - 05.12.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3417,7 +3526,7 @@ const messages = {
                 {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for monetary policy',
-                    result:'Result: beta v0.2',
+                    result: 'Result: beta v0.2',
                     date: '05.12.20 - 06.02.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3426,7 +3535,7 @@ const messages = {
                 {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for technological upgrade',
-                    result:'Result: beta v1.0',
+                    result: 'Result: beta v1.0',
                     date: '06.02.20 - 06.23.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3435,7 +3544,7 @@ const messages = {
                 {
                     title: 'Release of the system',
                     desk: 'Closed testing of the system',
-                    result:'Result: beta v1.1',
+                    result: 'Result: beta v1.1',
                     date: '06.23.20 - 08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3444,7 +3553,7 @@ const messages = {
                 {
                     title: 'Release of the system',
                     desk: 'Publication of the system source code and documentation',
-                    result:'Result: beta v2.0',
+                    result: 'Result: beta v2.0',
                     date: '08.04.20 - 08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3453,7 +3562,7 @@ const messages = {
                 {
                     title: 'Release of the system',
                     desk: 'Putting the system into operation',
-                    result:'Result: fully operational ALEHUB system',
+                    result: 'Result: fully operational ALEHUB system',
                     date: '08.25.20',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -3485,12 +3594,12 @@ const messages = {
     },
     fr: {
         emailSubscribePanel: {
-            newsletter:"Abonnez-vous à notre newsletter",
-            YourAddress:"Votre adresse e-mail",
-            subscribe:"S'abonner",
-            turnOn:"Et n'oubliez pas d'activer les notifications",
-            success:"abonnement réussi",
-            alreadyUse:"cet e-mail est déjà utilisé"
+            newsletter: "Abonnez-vous à notre newsletter",
+            YourAddress: "Votre adresse e-mail",
+            subscribe: "S'abonner",
+            turnOn: "Et n'oubliez pas d'activer les notifications",
+            success: "abonnement réussi",
+            alreadyUse: "cet e-mail est déjà utilisé"
         },
         navbar: {
             menuList: [
@@ -3572,13 +3681,43 @@ const messages = {
                 download: 'Télécharger MVP-version'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'Advantages',
-            lists: [{
-                title: 'ALE comparé au système de management de projet actuel'
-            }, {
-                title: 'ALE comparé aux autres plateformes sur blockchain'
-            }]
+            lists: [
+                {
+                    title: 'ALE comparé au système de management de projet actuel'
+                },
+                {
+                    title: 'ALE comparé aux autres plateformes sur blockchain'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'Plateforme ALE ',
@@ -4251,12 +4390,12 @@ const messages = {
     },
     de: {
         emailSubscribePanel: {
-            newsletter:"Abonnieren Sie unseren Newsletter",
-            YourAddress:"Ihre E-Mail-Adresse",
-            subscribe:"Abonnieren",
-            turnOn:"Und vergiss nicht, Benachrichtigungen zu aktivieren",
-            success:"erfolgreiches Abonnement",
-            alreadyUse:"Diese E-Mail wird bereits verwendet"
+            newsletter: "Abonnieren Sie unseren Newsletter",
+            YourAddress: "Ihre E-Mail-Adresse",
+            subscribe: "Abonnieren",
+            turnOn: "Und vergiss nicht, Benachrichtigungen zu aktivieren",
+            success: "erfolgreiches Abonnement",
+            alreadyUse: "Diese E-Mail wird bereits verwendet"
         },
         navbar: {
             menuList: [
@@ -4338,13 +4477,43 @@ const messages = {
                 download: 'Download MVP-version'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'Vorteile',
-            lists: [{
-                title: 'ALE vs. Projektmanagementsysteme'
-            }, {
-                title: 'ALE vs. andere Blockchain-Plattformen'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs. Projektmanagementsysteme'
+                },
+                {
+                    title: 'ALE vs. andere Blockchain-Plattformen'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE-Plattform',
@@ -5011,12 +5180,12 @@ const messages = {
     },
     ar: {
         emailSubscribePanel: {
-            newsletter:"اشترك في النشرة الإخبارية لدينا",
-            YourAddress:"عنوان بريدك الإلكتروني",
-            subscribe:"اشتراك",
-            turnOn:"ولا تنس تشغيل الإشعارات",
-            success:"الاشتراك الناجح",
-            alreadyUse:"هذا البريد الإلكتروني قيد الاستخدام بالفعل"
+            newsletter: "اشترك في النشرة الإخبارية لدينا",
+            YourAddress: "عنوان بريدك الإلكتروني",
+            subscribe: "اشتراك",
+            turnOn: "ولا تنس تشغيل الإشعارات",
+            success: "الاشتراك الناجح",
+            alreadyUse: "هذا البريد الإلكتروني قيد الاستخدام بالفعل"
         },
         navbar: {
             menuList: [
@@ -5098,13 +5267,43 @@ const messages = {
                 download: 'تحميل'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'ALE المميزات',
-            lists: [{
-                title: 'ALE مقابل انظمة إدارة المشاريع'
-            }, {
-                title: 'ALE مقابل منصات البلوك شين الأخرى'
-            }]
+            lists: [
+                {
+                    title: 'ALE مقابل انظمة إدارة المشاريع'
+                },
+                {
+                    title: 'ALE مقابل منصات البلوك شين الأخرى'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'منصة ALE',
@@ -5772,12 +5971,12 @@ const messages = {
     },
     ko: {
         emailSubscribePanel: {
-            newsletter:"뉴스 레터 구독",
-            YourAddress:"귀하의 이메일 주소",
-            subscribe:"구독",
-            turnOn:"알림을 켜는 것을 잊지 마세요",
-            success:"성공적인 구독",
-            alreadyUse:"이 이메일은 이미 사용 중입니다"
+            newsletter: "뉴스 레터 구독",
+            YourAddress: "귀하의 이메일 주소",
+            subscribe: "구독",
+            turnOn: "알림을 켜는 것을 잊지 마세요",
+            success: "성공적인 구독",
+            alreadyUse: "이 이메일은 이미 사용 중입니다"
         },
         navbar: {
             menuList: [
@@ -5859,13 +6058,43 @@ const messages = {
                 download: '다운로드'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: '장점',
-            lists: [{
-                title: 'ALE vs 프로젝트 관리 시스템'
-            }, {
-                title: 'ALE vs 다른 블록체인 플랫폼'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs 프로젝트 관리 시스템'
+                },
+                {
+                    title: 'ALE vs 다른 블록체인 플랫폼'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'ALE 플랫폼',
@@ -6533,12 +6762,12 @@ const messages = {
     },
     es: {
         emailSubscribePanel: {
-            newsletter:"Suscríbete a nuestro boletín informativo",
-            YourAddress:"Su dirección de correo electrónico",
-            subscribe:"Suscribir",
-            turnOn:"Y no olvides activar las notificaciones",
-            success:"suscripción exitosa",
-            alreadyUse:"este correo electrónico ya está en uso"
+            newsletter: "Suscríbete a nuestro boletín informativo",
+            YourAddress: "Su dirección de correo electrónico",
+            subscribe: "Suscribir",
+            turnOn: "Y no olvides activar las notificaciones",
+            success: "suscripción exitosa",
+            alreadyUse: "este correo electrónico ya está en uso"
         },
         navbar: {
             menuList: [
@@ -6620,13 +6849,43 @@ const messages = {
                 download: 'Descargar'
             }
         },
+        mission: {
+            title: 'Mission & Vision',
+            blocks: [
+                {
+                    title: 'Mission',
+                    text: 'ALEHUB brings together best aspects of crypto- and real economy in order to get to a qualitatively new level - composite economy. This means a simple integration of rules and customs of existing industries and segments of global and local economies with the new processing and verification capabilities. So it becomes cheaper, simpler, more reliable and flexible.'
+                },
+                {
+                    title: 'Vision',
+                    text: 'Integrating blockchain into the real economy, not substituting it. ALEHUB creates an environment for real business entities to do real business (contracts, finance, management, etc). The main goal is to comply with legislation systems and smoothly integrate into the economy: sector by sector.'
+                },
+                {
+                    title: 'Background',
+                    text: 'ALEHUB idea was developed in cooperation with consultants from “Siemens AG” and “Bayer AG”. ALEHUB is being developed with synergy of industry enterprises, former Cardano developers & leading IT specialists. Backed by German companies, ALEHUB is created for real business.'
+                }
+            ]
+        },
         advantages: {
             title: 'ALE Ventajas',
-            lists: [{
-                title: 'ALE vs sistemas de gestión de proyectos'
-            }, {
-                title: 'ALE vs otras plataformas blockchain'
-            }]
+            lists: [
+                {
+                    title: 'ALE vs sistemas de gestión de proyectos'
+                },
+                {
+                    title: 'ALE vs otras plataformas blockchain'
+                }
+            ]
+        },
+        projectEconomy: {
+            title: 'Project economy',
+            text: '<p>ALE profit is generated from the commission fees charged by the Platform. Note that commissions, ' +
+            'their volume and subjects are determined by the consensus of the ALE token holders. When ALE platform will' +
+            ' be launched, the tariffs for its users will be: 0,1% for funds withdrawal and 0,1$ for every document' +
+            ' published.</p><p>Financial operations are settled using AXEL (ALEHUB eXchange ELement) The exchange rate ' +
+            'of this token is pegged to the US dollar rate at the ratio: 1 AXEL ≡ 1 $. AXEL encapsulates the change in' +
+            ' the exchange rate. Since the account stores exactly AXEL tokens, user can at any time convert them into' +
+            ' any currency at his own choice.</p>'
         },
         alePlatform: {
             title: 'Plataforma ALE ',
@@ -6912,7 +7171,8 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                    src: '../static/images/in.svg'                                 }
+                                    src: '../static/images/in.svg'
+                                }
                             ]
                         },
 

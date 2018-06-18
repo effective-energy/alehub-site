@@ -194,7 +194,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-xs-12 countdown-block">
                             <div class="countdown"
-                                 :class="{ 'direction-ltr': isRtl }">
+                                 :class="{ 'direction-ltr': isRtl }" v-if="false">
                                 <h2 class="title">
                                     {{ $t("greeting.countDown.title") }}
                                 </h2>
@@ -390,6 +390,8 @@
             </div>
         </div>
 
+        <rating-block/>
+
         <partners-block :is-dark="isDark"/>
 
         <div id="description"
@@ -578,6 +580,7 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
 
     import {mapGetters} from 'vuex';
@@ -590,6 +593,7 @@
         components: {
             MenuModal,
             SliderScreen,
+            RatingBlock,
             PartnersBlock
         },
         props: {
@@ -656,30 +660,19 @@
                 isDark: false,
 
                 itemsToSliderScreen: [
-                    '../../../static/images/screen1.png',
-                    '../../../static/images/screen2.png',
-                    '../../../static/images/screen3.png'
+                    '../../../static/images/interface/summary.png',
+                    '../../../static/images/interface/export-to-pdf.png',
+                    '../../../static/images/interface/notifications.png',
+                    '../../../static/images/interface/settings.png'
                 ],
                 optionsToSliderScreen: {
                     touch: true,
-                    autoplay: false,
+                    autoplay: true,
                     inBlockTeam: false,
                     autoplayDelay: 3000,
                     pauseOnFocus: true,
                     pauseOnHover: true
                 },
-
-                pages: [
-                    {
-                        html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                    },
-                    {
-                        html: '<img src="../../static/images/screen2.png" class="screenshot" alt="">'
-                    },
-                    {
-                        html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                    }
-                ],
                 alePrice: 0.3,
                 currencies: {
                     btc: {
@@ -1006,7 +999,7 @@
             handlerScroll: function () {
                 let buttonAbsPos = this.getCoords(document.getElementById('description')).top + window.innerHeight * 0.4;
 
-                if (window.scrollY > this.getCoords(document.getElementById('advantages')).top - window.innerHeight) {
+                if (window.scrollY > this.getCoords(document.getElementById('screen1').nextElementSibling).top - window.innerHeight) {
                     this.pause();
                     document.getElementById('button-choose').style['top'] = buttonAbsPos + 'px';
                     document.getElementById('button-choose').classList.add('button-choose__stop');
@@ -1021,12 +1014,6 @@
                 this.isVideo = true;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'video');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
@@ -1041,12 +1028,6 @@
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
@@ -1063,12 +1044,6 @@
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
-                this.pages[0] = {
-                    html: '<img src="../../static/images/screen1_dark.png" class="screenshot" alt="">'
-                };
-                this.pages[2] = {
-                    html: '<img src="../../static/images/screen3_dark.png" class="screenshot" alt="">'
-                };
                 this.reBuild = false;
                 setTimeout(() => {
                     this.reBuild = true;
@@ -1102,7 +1077,7 @@
                     console.log(this.currencies);
                 }).catch((resp) => {
                 console.log('NO');
-            })
+            });
             if (localStorage.getItem('subscriber-email') !== 'undefined' &&
                 localStorage.getItem('subscriber-email') !== null && localStorage.getItem('subscriber-email') !== undefined) {
                 if (this.checkCorrectEmail(localStorage.getItem('subscriber-email'))) {
@@ -1177,6 +1152,23 @@
 
 <style lang="stylus" scoped>
 
+    .icorating-list
+        a
+            img
+                max-width 100%
+                width 322px
+                height 90px
+                max-height 90px
+
+        @media (max-width 690px)
+            margin-top 20px
+                a
+                    img
+                        margin 10px 0
+
+        @media (min-width 690px) and (max-width 1024px)
+            margin-top 20px
+
     .wrap__pointer
         cursor pointer
         position fixed
@@ -1184,6 +1176,8 @@
         right 10px
         top 100px
         z-index 110
+
+
 
         @media (min-width 690px) and (max-width 1024px)
             right 7.5px
@@ -2490,7 +2484,7 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease;
+                    transition all .3s ease
 
                     @-webkit-keyframes wheel-to-bottom {
                         0% {
@@ -2503,36 +2497,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                          0% {
-                              transform: translateY(0);
-                          }
-                          25% {
-                              transform: translateY(5px);
-                          }
-                          100% {
-                              transform: translateY(0);
-                          }
-                      } @-o-keyframes wheel-to-bottom {
-                            0% {
-                                transform: translateY(0);
-                            }
-                            25% {
-                                transform: translateY(5px);
-                            }
-                            100% {
-                                transform: translateY(0);
-                            }
-                        } @keyframes wheel-to-bottom {
-                              0% {
-                                  transform: translateY(0);
-                              }
-                              25% {
-                                  transform: translateY(5px);
-                              }
-                              100% {
-                                  transform: translateY(0);
-                              }
-                          }
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @-o-keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    } @keyframes wheel-to-bottom {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(5px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
 
                 @media (max-width 1124px)
                     display none

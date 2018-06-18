@@ -489,7 +489,58 @@
                 window.addEventListener('scroll', () => {
                     this.checkActive();
 
-                    if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (!this.isDarkSection) {
+                            this.isDarkSection = true;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+
+                        //этот блок в функцию
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (!this.isMainDark && window.scrollY < this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                        if (this.isDarkSection) {
+                            this.isDarkSection = false;
+                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                        }
+
+                        //этот блок в функцию
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - navbarYOffset &&
+                        window.scrollY <= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
+                        if (!this.isDark) {
+                            this.isDark = true;
+                            this.isYellow = false;
+                        }
+                        if (this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (!this.isTeam) {
+                            this.isTeam = true;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                        window.scrollY < this.getCoords(document.getElementById('mission').nextElementSibling).top - tgButtonYOffset - navbarYOffset) {
                         if (!this.isDarkSection) {
                             this.isDarkSection = true;
                             this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
@@ -504,7 +555,23 @@
                         }
                     }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                    if (window.scrollY < this.getCoords(document.getElementById('mission')).top - navbarYOffset) {
+                        if (this.isDark || this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = false;
+                        }
+                        if (!this.isFeatures) {
+                            this.isFeatures = false;
+                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                        }
+                        if (this.isTeam) {
+                            this.isTeam = false;
+                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                        }
+                    }
+
+                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                        window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
                         if (!this.mainIsDark && (this.isDark || this.isYellow)) {
                             this.isDark = false;
                             this.isYellow = false;
