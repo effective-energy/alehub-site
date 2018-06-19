@@ -309,16 +309,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -345,9 +338,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -1127,16 +1127,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -1163,9 +1156,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -1940,16 +1940,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Илья Шилов',
-                            position: 'Технический директор',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Антон Беляков',
+                            position: 'Исследователь',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Елена Цимбалюк',
@@ -1976,9 +1969,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Антон Беляков',
-                            position: 'Исследователь',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Илья Шилов',
+                            position: 'Технический директор',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Арсений Войтенко',
@@ -2910,16 +2910,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -2946,9 +2939,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -3882,16 +3882,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -3918,9 +3911,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -4678,16 +4678,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -4714,9 +4707,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -5464,16 +5464,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -5500,9 +5493,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -6255,16 +6255,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -6291,9 +6284,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
@@ -7046,16 +7046,9 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Ilya Shilov',
-                            position: 'Chief Technology Officer',
-                            src: '../static/images/avatars/shilov@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
+                            name: 'Anton Beliakov',
+                            position: 'Senior Research Manager',
+                            src: '../static/images/avatars/beliakov@3x.png',
                         },
                         {
                             name: 'Elena Tsymbalyuk',
@@ -7082,9 +7075,16 @@ const messages = {
                             ]
                         },
                         {
-                            name: 'Anton Beliakov',
-                            position: 'Senior Research Manager',
-                            src: '../static/images/avatars/beliakov@3x.png',
+                            name: 'Ilya Shilov',
+                            position: 'Chief Technology Officer',
+                            src: '../static/images/avatars/shilov@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/ilia-shilov-454a14163/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Arseniy Voytenko',
