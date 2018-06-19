@@ -237,24 +237,24 @@
 
                 if (dark) {
                     this.mainIsDark = true;
-                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
+                    if (window.scrollY < this.getPageCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = true;
                         this.isYellow = false;
                     }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (window.scrollY < this.getPageCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
                         this.isDarkSection = true;
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
 
                 } else {
                     this.mainIsDark = false;
-                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
+                    if (window.scrollY < this.getPageCoords(document.getElementById('features')).top - document.getElementById('navbar').offsetHeight) {
                         this.isDark = false;
                         this.isYellow = false;
                     }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    if (window.scrollY < this.getPageCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
                         this.isDarkSection = false;
                         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
                     }
@@ -298,24 +298,75 @@
             },
             yellowSections: function () {
                 return document.getElementsByClassName('section__yellow');
+            },
+            wrapPointer: function () {
+                return document.getElementById('wrap-pointer');
+            },
+            tgButton: function () {
+                return document.getElementById('telegram-alert');
+            },
+            tgButtonYOffset: function () {
+                return this.getScreenCoords(this.tgButton).top + this.tgButton.offsetHeight / 2;
+            },
+            mailButton: function () {
+                return document.getElementById('email-subscribe-alert');
+            },
+            mailButtonYOffset: function () {
+                return this.getScreenCoords(this.mailButton).top + this.mailButton.offsetHeight / 2;
             }
         },
         methods: {
+            /**
+             * checking for a page in the dark section
+             *
+             * @returns {boolean}
+             */
             checkIsADarkSection: function () {
-                for (let i = 0; i < this.darkSections.length; i++) {
-                    if (window.scrollY >= this.getCoords(this.darkSections[i]).top - this.navbarOffset &&
-                        window.scrollY < this.getCoords(this.darkSections[i]).bottom - this.navbarOffset) {
-                        console.log('im in dark');
+                for (let i = 0; i < this.darkSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.darkSections[i]).top - this.navbarOffset &&
+                        window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - this.navbarOffset)
                         return true;
-                    }
-                }
 
                 return false;
             },
+            /**
+             * checking for a page in the yellow section
+             *
+             * @returns {boolean}
+             */
             checkIsAYellowSection: function () {
-                for (let i = 0; i < this.yellowSections.length; i++) {
+                for (let i = 0; i < this.yellowSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.yellowSections[i]).top - this.navbarOffset &&
+                        window.scrollY < this.getPageCoords(this.yellowSections[i]).bottom - this.navbarOffset)
+                        return true;
 
-                }
+                return false;
+            },
+            /**
+             * checking for a toTopPanel in the dark section
+             *
+             * @returns {boolean}
+             */
+            checkToTopPanelInDarkSection: function () {
+                for (let i = 0; i < this.darkSections.length; i++)
+                    if (this.wrapPointer && window.scrollY >= this.getPageCoords(this.darkSections[i]).top - parseFloat(getComputedStyle(this.wrapPointer).top) &&
+                        window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - parseFloat(getComputedStyle(this.wrapPointer).top))
+                        return true;
+
+                return false;
+            },
+            /**
+             * checking for a tgButton in the dark section
+             *
+             * @returns {boolean}
+             */
+            checkTgButtonInDarkSection: function () {
+                for (let i = 0; i < this.darkSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.darkSections[i]).top - this.tgButtonYOffset &&
+                        window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - this.tgButtonYOffset)
+                        return true;
+
+                return false;
             },
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
@@ -351,12 +402,12 @@
                     return false;
 
                 let elWidth = document.querySelectorAll('.navbar-item')[index].offsetWidth,
-                    firstNavbarItem = this.getCoords(document.querySelector('.navbar-item')).left,
-                    currentNavbarItem = this.getCoords(document.querySelectorAll('.navbar-item')[index]).left;
+                    firstNavbarItem = this.getPageCoords(document.querySelector('.navbar-item')).left,
+                    currentNavbarItem = this.getPageCoords(document.querySelectorAll('.navbar-item')[index]).left;
 
 
-                let firstNavbarItemRtl = this.getCoords(document.querySelector('.navbar-item')).right,
-                    currentNavbarItemRtl = this.getCoords(document.querySelectorAll('.navbar-item')[index]).right;
+                let firstNavbarItemRtl = this.getPageCoords(document.querySelector('.navbar-item')).right,
+                    currentNavbarItemRtl = this.getPageCoords(document.querySelectorAll('.navbar-item')[index]).right;
 
 
                 document.querySelector('.nav-line').style.width = elWidth + 'px';
@@ -366,7 +417,13 @@
                 else
                     document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItemRtl - firstNavbarItemRtl }px,0,0)`;
             },
-            getCoords: function (elem) {
+            /**
+             * getting the coordinates of the element on the page
+             *
+             * @param elem
+             * @returns {*}
+             */
+            getPageCoords: function (elem) {
                 let box = elem.getBoundingClientRect();
 
                 if (!elem)
@@ -377,6 +434,22 @@
                     left: box.left + pageXOffset,
                     right: box.right + pageXOffset,
                     bottom: box.bottom + pageYOffset
+                };
+            },
+            /**
+             * getting the coordinates of the element on the screen
+             *
+             * @param elem
+             * @returns {{top: number, left: number, right: number, bottom: number}}
+             */
+            getScreenCoords: function (elem) {
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    top: box.top,
+                    left: box.left,
+                    right: box.right,
+                    bottom: box.bottom
                 };
             },
             toggleDropdown: function () {
@@ -516,7 +589,7 @@
                 window.addEventListener('scroll', () => {
                     this.checkActive();
 
-                    //чекаем навбары
+                    //check navbar
                     if (this.checkIsADarkSection()) {
                         if (!this.isDark) {
                             this.isDark = true;
@@ -527,44 +600,70 @@
                             this.isDark = false;
                             this.isYellow = true;
                         }
-                    }
-
-                    if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                        if (!this.isDarkSection) {
-                            this.isDarkSection = true;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-
-                        //этот блок в функцию
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
+                    } else {
+                        if (this.isYellow || this.isDark) {
+                            this.isDark = false;
+                            this.isYellow = false;
                         }
                     }
 
-                    if (!this.isMainDark && window.scrollY < this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                        if (this.isDarkSection) {
-                            this.isDarkSection = false;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-
-                        //этот блок в функцию
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
+                    //check to top pointer
+                    if (this.checkToTopPanelInDarkSection()) {
+                        this.$parent.$emit('pointerInDark', true);
+                        this.$parent.$emit('checkPointerStyle', 'pointer__white');
+                    } else {
+                        this.$parent.$emit('pointerInDark', false);
+                        this.$parent.$emit('checkPointerStyle', 'pointer__dark');
                     }
 
-                    // if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - navbarYOffset &&
-                    //     window.scrollY <= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
+                    //check tg button
+                    if (this.checkTgButtonInDarkSection()) {
+                        console.log('tg in dark');
+                        this.$parent.$emit('checkIsDarkSection', true);
+                        this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__yellow');
+                    } else {
+                        this.$parent.$emit('checkIsDarkSection', false);
+                        this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__dark');
+                    }
+
+                    //check mail button
+
+                    // if (this.isMainDark && window.scrollY < this.getPageCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    //     if (!this.isDarkSection) {
+                    //         this.isDarkSection = true;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    //
+                    //     //этот блок в функцию
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
+
+                    // if (!this.isMainDark && window.scrollY < this.getPageCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    //     if (this.isDarkSection) {
+                    //         this.isDarkSection = false;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    //
+                    //     //этот блок в функцию
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
+
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('mission')).top - navbarYOffset &&
+                    //     window.scrollY <= this.getPageCoords(document.getElementById('advantages')).top - navbarYOffset) {
                     //     if (!this.isDark) {
                     //         this.isDark = true;
                     //         this.isYellow = false;
@@ -579,23 +678,23 @@
                     //     }
                     // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('mission').nextElementSibling).top - tgButtonYOffset - navbarYOffset) {
-                        if (!this.isDarkSection) {
-                            this.isDarkSection = true;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('mission').nextElementSibling).top - tgButtonYOffset - navbarYOffset) {
+                    //     if (!this.isDarkSection) {
+                    //         this.isDarkSection = true;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    // if (window.scrollY < this.getCoords(document.getElementById('mission')).top - navbarYOffset) {
+                    // if (window.scrollY < this.getPageCoords(document.getElementById('mission')).top - navbarYOffset) {
                     //     if (this.isDark || this.isYellow) {
                     //         this.isDark = false;
                     //         this.isYellow = false;
@@ -610,8 +709,8 @@
                     //     }
                     // }
 
-                    // if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    //     window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
+                    // if (window.scrollY < this.getPageCoords(document.getElementById('features')).top - navbarYOffset &&
+                    //     window.scrollY >= this.getPageCoords(document.getElementById('advantages')).top - navbarYOffset) {
                     //     if (!this.mainIsDark && (this.isDark || this.isYellow)) {
                     //         this.isDark = false;
                     //         this.isYellow = false;
@@ -630,8 +729,8 @@
                     //     }
                     // }
 
-                    // if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
-                    //     window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('advantages')).top - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('features')).top - navbarYOffset) {
                     //     if (this.isDark || this.isYellow) {
                     //         this.isDark = false;
                     //         this.isYellow = false;
@@ -646,8 +745,8 @@
                     //     }
                     // }
 
-                    // if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                    //     window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('features')).top - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('team')).top - navbarYOffset) {
                     //     if (!this.isYellow) {
                     //         this.isDark = false;
                     //         this.isYellow = true;
@@ -662,8 +761,8 @@
                     //     }
                     // }
 
-                    // if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                    //     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('team')).top - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('ico')).top - navbarYOffset) {
                     //     if (this.isDark || this.isYellow) {
                     //         this.isDark = false;
                     //         this.isYellow = false;
@@ -678,47 +777,47 @@
                     //     }
                     // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
-                        if (this.isDarkSection) {
-                            this.isDarkSection = false;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-                    }
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
+                    //     if (this.isDarkSection) {
+                    //         this.isDarkSection = false;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    // }
+                    //
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    //     if (!this.isDarkSection) {
+                    //         this.isDarkSection = true;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
+                    //
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
+                    //     if (this.isDarkSection) {
+                    //         this.isDarkSection = false;
+                    //         this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                        if (!this.isDarkSection) {
-                            this.isDarkSection = true;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
-
-                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
-                        if (this.isDarkSection) {
-                            this.isDarkSection = false;
-                            this.$parent.$emit('checkIsDarkSection', this.isDarkSection);
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
-
-                    // if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                    //     window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('ico')).top - navbarYOffset &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     //     if (!this.isDark) {
                     //         this.isYellow = false;
                     //         this.isDark = true;
@@ -733,7 +832,7 @@
                     //     }
                     // }
 
-                    // if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                    // if (window.scrollY >= this.getPageCoords(document.getElementById('download-application')).top - navbarYOffset) {
                     //     if (this.isDark || this.isYellow) {
                     //         this.isDark = false;
                     //         this.isYellow = false;
@@ -748,38 +847,38 @@
                     //     }
                     // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                    if (window.scrollY >= this.getPageCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                         this.$parent.$emit('scrollInFooter', true);
-                    else if (window.scrollY < this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
+                    else if (window.scrollY < this.getPageCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                         this.$parent.$emit('scrollInFooter', false);
 
-                    if (pointerToTop && window.scrollY >= this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
-                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
-                        this.$parent.$emit('pointerInDark', true);
-                    } else if (pointerToTop && (window.scrollY < this.getCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) ||
-                        window.scrollY >= this.getCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top))) {
-                        this.$parent.$emit('pointerInDark', false);
-                    }
+                    // if (pointerToTop && window.scrollY >= this.getPageCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) &&
+                    //     window.scrollY < this.getPageCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top)) {
+                    //     this.$parent.$emit('pointerInDark', true);
+                    // } else if (pointerToTop && (window.scrollY < this.getPageCoords(document.getElementById('ico')).top - parseFloat(getComputedStyle(pointerToTop).top) ||
+                    //     window.scrollY >= this.getPageCoords(document.getElementById('download-application')).top - parseFloat(getComputedStyle(pointerToTop).top))) {
+                    //     this.$parent.$emit('pointerInDark', false);
+                    // }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    if (window.scrollY < this.getPageCoords(document.getElementById('team')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', false);
                         this.$parent.$emit('advisorsAutoplay', false);
                     }
-                    if (window.scrollY > this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset) {
+                    if (window.scrollY > this.getPageCoords(document.getElementById('team')).top - navbarYOffset &&
+                        window.scrollY < this.getPageCoords(document.getElementById('serokell-team')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', true);
                         this.$parent.$emit('serokellAutoplay', false);
                         this.$parent.$emit('advisorsAutoplay', false);
                     }
-                    if (window.scrollY >= this.getCoords(document.getElementById('serokell-team')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('advisors')).top - navbarYOffset) {
+                    if (window.scrollY >= this.getPageCoords(document.getElementById('serokell-team')).top - navbarYOffset &&
+                        window.scrollY < this.getPageCoords(document.getElementById('advisors')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', true);
                         this.$parent.$emit('advisorsAutoplay', false);
                     }
-                    if (window.scrollY >= this.getCoords(document.getElementById('advisors')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                    if (window.scrollY >= this.getPageCoords(document.getElementById('advisors')).top - navbarYOffset &&
+                        window.scrollY < this.getPageCoords(document.getElementById('ico')).top - navbarYOffset) {
                         this.$parent.$emit('effectiveEnergyAutoplay', false);
                         this.$parent.$emit('serokellAutoplay', false);
                         this.$parent.$emit('advisorsAutoplay', true);

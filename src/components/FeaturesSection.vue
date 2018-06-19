@@ -1,5 +1,5 @@
 <template>
-    <div class="application" id="features">
+    <div class="section section__yellow" id="features">
         <vue-particles v-if="isFeatures && !isLessThanTablet"
                        id="particles-js"
                        color="#ffffff"
@@ -408,7 +408,7 @@
             align-items center
             flex-direction column
 
-    .application
+    .section
         display flex
         flex-direction column
         justify-content center
