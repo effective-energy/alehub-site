@@ -15,8 +15,8 @@ const messages = {
                     name: '家'
                 },
                 {
-                    path: '#description',
-                    name: '描述'
+                    path: '#mission',
+                    name: '任务'
                 },
                 {
                     path: '#advantages',
@@ -31,10 +31,6 @@ const messages = {
                     name: '球队'
                 },
                 {
-                    path: '#advisors',
-                    name: '顾问'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -45,6 +41,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: '下载'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: '媒体'
                 },
                 {
                     path: '#blog',
@@ -833,8 +833,8 @@ const messages = {
                     name: 'ホームページ'
                 },
                 {
-                    path: '#description',
-                    name: '説明'
+                    path: '#mission',
+                    name: 'ミッション'
                 },
                 {
                     path: '#advantages',
@@ -849,10 +849,6 @@ const messages = {
                     name: 'チーム'
                 },
                 {
-                    path: '#advisors',
-                    name: '顧問'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -863,6 +859,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'アップロード'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'マスメディア'
                 },
                 {
                     path: '#blog',
@@ -1646,8 +1646,8 @@ const messages = {
                     name: 'Домой'
                 },
                 {
-                    path: '#description',
-                    name: 'О проекте'
+                    path: '#mission',
+                    name: 'Миссия'
                 },
                 {
                     path: '#advantages',
@@ -1662,10 +1662,6 @@ const messages = {
                     name: 'Команда'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Советники'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -1676,6 +1672,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Загрузка'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Медиа о нас'
                 },
                 {
                     path: '#blog',
@@ -2623,8 +2623,8 @@ const messages = {
                     name: 'Home'
                 },
                 {
-                    path: '#description',
-                    name: 'Description'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -2639,10 +2639,6 @@ const messages = {
                     name: 'Team'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Advisors'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -2653,6 +2649,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Download'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Mass media'
                 },
                 {
                     path: '#blog',
@@ -3607,8 +3607,8 @@ const messages = {
                     name: 'Accueil'
                 },
                 {
-                    path: '#description',
-                    name: 'La description'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -3623,10 +3623,6 @@ const messages = {
                     name: 'Équipe'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Conseillers'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -3637,6 +3633,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Télécharger'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Médias de masse'
                 },
                 {
                     path: '#blog',
@@ -4403,8 +4403,8 @@ const messages = {
                     name: 'Zuhause'
                 },
                 {
-                    path: '#description',
-                    name: 'Beschreibung'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -4419,10 +4419,6 @@ const messages = {
                     name: 'Mannschaft'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Berater'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -4433,6 +4429,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Herunterladen'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Massenmedien'
                 },
                 {
                     path: '#blog',
@@ -5193,8 +5193,8 @@ const messages = {
                     name: 'الصفحة الرئيسية'
                 },
                 {
-                    path: '#description',
-                    name: 'وصف'
+                    path: '#mission',
+                    name: 'مهمة'
                 },
                 {
                     path: '#advantages',
@@ -5209,10 +5209,6 @@ const messages = {
                     name: 'الفريق'
                 },
                 {
-                    path: '#advisors',
-                    name: 'المستشارين'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -5221,8 +5217,8 @@ const messages = {
                     name: 'خريطة الطريق'
                 },
                 {
-                    path: '#download-application',
-                    name: 'تحميل'
+                    path: '#mass-media-section',
+                    name: 'وسائل الإعلام الجماهيرية'
                 },
                 {
                     path: '#blog',
@@ -5984,8 +5980,8 @@ const messages = {
                     name: '홈'
                 },
                 {
-                    path: '#description',
-                    name: '설명'
+                    path: '#mission',
+                    name: '사명'
                 },
                 {
                     path: '#advantages',
@@ -6000,10 +5996,6 @@ const messages = {
                     name: '팀'
                 },
                 {
-                    path: '#advisors',
-                    name: '문'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -6014,6 +6006,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: '다운로드'
+                },
+                {
+                    path: '#download-application',
+                    name: '매스 미디어'
                 },
                 {
                     path: '#blog',
@@ -6775,8 +6771,8 @@ const messages = {
                     name: 'Casa'
                 },
                 {
-                    path: '#description',
-                    name: 'Descripción'
+                    path: '#mission',
+                    name: 'Misión'
                 },
                 {
                     path: '#advantages',
@@ -6791,10 +6787,6 @@ const messages = {
                     name: 'Equipo'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Advisors'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -6805,6 +6797,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Descargar'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Medios de comunicación'
                 },
                 {
                     path: '#blog',
