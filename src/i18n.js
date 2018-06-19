@@ -2056,11 +2056,12 @@ const messages = {
                             name: 'Сергей Тимохин',
                             position: 'Комьюнити-менеджер',
                             src: '../static/images/avatars/timohin@3x.png',
-                            social: [{
-                                type: 'linkedin',
-                                link: 'https://www.linkedin.com/in/timokhinsergey/',
-                                src: '../static/images/in.svg'
-                            }
+                            social: [                                 
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/timokhinsergey/',
+                                    src: '../static/images/in.svg'
+                                }
                             ]
                         },
                         {
