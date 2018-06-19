@@ -441,7 +441,7 @@
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
                         <a href="https://alehub.io/ALEHUB_OP_eng.pdf"
-                          class="btn btn-yellow"
+                           class="btn btn-yellow"
                            target="_blank">
                             One Page
                         </a>
@@ -457,12 +457,12 @@
 
         <transition name="fade">
             <div class="email-subscribe-panel"
-                 :class="{ 'email-subscribe-panel__yellow': isDarkSection,
-                  'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
+                 :class="{ 'email-subscribe-panel__yellow': alertButtonInDarkSection(emailButtonClass),
+                 'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' :
+                    <img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :
                          '../../static/images/cancel-light.svg'"
                          alt="close subscribe">
                 </div>
@@ -514,8 +514,7 @@
         <button type="button"
                 id="email-subscribe-alert"
                 class="email-subscribe-alert"
-                :class="{ 'email-subscribe-alert__yellow': isDarkSection,
-                'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }"
+                :class="[compEmailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"
                 v-if="checkTabletWidth"
                 @click="toggleEmailSubscribeAlert">
             <div class="el-base">
@@ -557,22 +556,28 @@
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkTabletWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection,
-             'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
+             :class="[ compTgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
-                     v-if="!isDarkSection">
+                     v-if="!alertButtonInDarkSection(tgButtonClass)">
                 <img src="../../static/images/telegram-ic-default.svg"
                      alt="telegram"
-                     v-if="isDarkSection">
+                     v-if="alertButtonInDarkSection(tgButtonClass)">
             </a>
             <div class="alert-message"
-                 :class="{ 'alert-message__dark': isDarkSection,
-                 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
-                <span>3</span>
+                 :class="[ compTgButtonMessagesClass, {'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">
+                <span>{{ randomNumMessages }}</span>
             </div>
         </div>
+
+
+        <!--<group-alert-buttons :email-button-class="compEmailButtonClass"-->
+        <!--:tg-button-class="compTgButtonClass"-->
+        <!--:tg-button-messages-class="compTgButtonMessagesClass"-->
+        <!--:tg-in-dark-section="alertButtonInDarkSection(tgButtonClass)"-->
+        <!--:email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"-->
+        <!--:is-rtl="isRtl"/>-->
 
     </section>
 </template>
@@ -582,9 +587,9 @@
     import SliderScreen from './layouts/SliderScreen';
     import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
+    import GroupAlertButtons from './layouts/GroupAlertButtons';
 
     import {mapGetters} from 'vuex';
-    import { mapActions } from 'vuex';
 
     import anime from 'animejs';
 
@@ -594,7 +599,8 @@
             MenuModal,
             SliderScreen,
             RatingBlock,
-            PartnersBlock
+            PartnersBlock,
+            GroupAlertButtons
         },
         props: {
             isDarkSection: {
@@ -616,9 +622,23 @@
             isPointerInDark: {
                 type: Boolean,
                 required: true
+            },
+            tgButtonClass: {
+                type: String,
+                required: true
+            },
+            tgButtonMessagesClass: {
+                type: String,
+                required: true
+            },
+            emailButtonClass: {
+                type: String,
+                required: true
             }
         },
         watch: {
+            tgButtonClass: function (val) {
+            },
             isDarkSection: function (val) {
                 console.log(val, 'isDarkSection');
             },
@@ -748,7 +768,8 @@
                 currentCurrency: 'usd',
                 anime: '',
                 isPaused: false,
-                mainPlayer: false
+                mainPlayer: false,
+                randomNumMessages: null
             }
         },
         computed: {
@@ -818,9 +839,30 @@
                 } else if (localStorage.getItem('systemLang') === 'ru') {
                     return 'https://alehub.io/ALEHUB_WP_rus.pdf';
                 }
-            }
+            },
+            compTgButtonClass: function () {
+                if (this.tgButtonClass.length !== 0)
+                    return this.tgButtonClass;
+
+                return 'telegram-alert__dark';
+            },
+            compTgButtonMessagesClass: function () {
+                if (this.tgButtonMessagesClass.length !== 0)
+                    return this.tgButtonMessagesClass;
+
+                return 'alert-messages__yellow';
+            },
+            compEmailButtonClass: function () {
+                if (this.emailButtonClass.length !== 0)
+                    return this.emailButtonClass;
+
+                return 'email-subscribe-alert__dark';
+            },
         },
         methods: {
+            alertButtonInDarkSection: function (factor) {
+                return factor.includes('yellow');
+            },
             changePosition: function () {
                 (!this.afterClickToTop) ? this.clickToTop() : this.returnPosition();
             },
@@ -1063,6 +1105,8 @@
             },
         },
         created() {
+            this.randomNumMessages = Math.round(Math.random() * 10) + 1;
+
             this.$store.dispatch('cryptoPriceRequest')
                 .then((resp) => {
                     console.log('OK');
@@ -1086,6 +1130,8 @@
             }
         },
         mounted() {
+
+            console.log(this.tgButtonClass, 'mounted');
 
             //устанавливать начальное значение checked на включение оповещений
 
@@ -1161,10 +1207,11 @@
                 max-height 90px
 
         @media (max-width 690px)
-            margin-top 20px
-                a
-                    img
-                        margin 10px 0
+            margin-top
+        20px
+        a
+            img
+                margin 10px 0
 
         @media (min-width 690px) and (max-width 1024px)
             margin-top 20px
@@ -1176,8 +1223,6 @@
         right 10px
         top 100px
         z-index 110
-
-
 
         @media (min-width 690px) and (max-width 1024px)
             right 7.5px
@@ -1318,7 +1363,6 @@
             span
                 color #343a49
 
-
     .email-subscribe-panel
         z-index 1000
         position fixed
@@ -1396,7 +1440,6 @@
                 .exist-label
                     background-color #2e86ce
                     color #f7f7f7
-
 
                 input
                     width 67%
@@ -1505,7 +1548,6 @@
                             -webkit-transform translateX(18px)
                             -ms-transform translateX(18px)
                             transform translateX(18px)
-
 
                 .slider
                     position absolute
@@ -1620,7 +1662,6 @@
         border-radius 50%
         border none
         padding 0
-        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
@@ -1653,27 +1694,20 @@
             width 60px
             height 60px
 
-
         .el-base
             position relative
             height 22.5px
             width 36px
-            background-color #2e86ce
             border-radius 3px
 
             .el-inner-space
                 border-radius 3px
-                border-top solid 11px transparent
-                border-right solid 18px #f7f7f7
-                border-bottom solid 11px #f7f7f7
-                border-left solid 18px #f7f7f7
 
                 .el-flap
                     position absolute
                     top 0
                     left 0
                     border-radius 3px
-                    border-top solid 11px #ffd24f
                     border-right solid 18px transparent
                     border-left solid 18px transparent
                     -webkit-transition all 1s ease-in-out
@@ -1692,12 +1726,28 @@
             background-color #1a7bca
 
             .el-inner-space
+                border-top solid 11px transparent
                 border-right solid 18px #343a49
                 border-bottom solid 11px #343a49
                 border-left solid 18px #343a49
 
                 .el-flap
                     border-top solid 11px #3292e0
+
+    .email-subscribe-alert__dark
+        background-color #343a49
+
+        .el-base
+            background-color #2e86ce
+
+            .el-inner-space
+                border-top solid 11px transparent
+                border-right solid 18px #f7f7f7
+                border-bottom solid 11px #f7f7f7
+                border-left solid 18px #f7f7f7
+
+                .el-flap
+                    border-top solid 11px #ffd24f
 
     .email-subscribe-alert__stop
         bottom 290px
@@ -1728,7 +1778,6 @@
         width 70px
         height 70px
         border-radius 50%
-        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
@@ -1753,7 +1802,6 @@
             height 60px
 
         .alert-message
-            background-color #ffd24f
             border-radius 50%
             width 25px
             height 25px
@@ -1785,9 +1833,13 @@
                 span
                     font-size 12px
 
-        .alert-message__dark
+        .alert-messages__grey
             background-color #747c8e
             color #fff
+
+        .alert-messages__yellow
+            background-color #ffd24f
+            color #343a49
 
         .telegram-message__rtl
             left 95px
@@ -1800,7 +1852,6 @@
             @media (min-width 1024px) and (max-width 1440px)
                 left 75px
                 right auto
-
 
         .telegram-message__stop
             bottom 235px
@@ -1823,6 +1874,9 @@
 
     .telegram-alert__yellow
         background-color #ffd24f
+
+    .telegram-alert__dark
+        background-color #343a49
 
     .telegram-alert__stop
         bottom 185px
@@ -2484,7 +2538,7 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease
+                    transition all .3s ease;
 
                     @-webkit-keyframes wheel-to-bottom {
                         0% {
@@ -2497,36 +2551,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @-o-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
+                          0% {
+                              transform: translateY(0);
+                          }
+                          25% {
+                              transform: translateY(5px);
+                          }
+                          100% {
+                              transform: translateY(0);
+                          }
+                      } @-o-keyframes wheel-to-bottom {
+                            0% {
+                                transform: translateY(0);
+                            }
+                            25% {
+                                transform: translateY(5px);
+                            }
+                            100% {
+                                transform: translateY(0);
+                            }
+                        } @keyframes wheel-to-bottom {
+                              0% {
+                                  transform: translateY(0);
+                              }
+                              25% {
+                                  transform: translateY(5px);
+                              }
+                              100% {
+                                  transform: translateY(0);
+                              }
+                          }
 
                 @media (max-width 1124px)
                     display none
@@ -2579,7 +2633,7 @@
 </style>
 
 <style scoped>
-    .wrap__pointer:hover + .scroll-to-top > a{
+    .wrap__pointer:hover + .scroll-to-top > a {
         opacity: 0.5 !important;
     }
 </style>

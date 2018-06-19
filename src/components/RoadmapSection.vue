@@ -1,5 +1,5 @@
 <template>
-    <div class="section roadmap-section"
+    <div class="section roadmap-section section__dark"
          id="roadmap">
         <div class="container">
             <h1 class="section-title is-center">

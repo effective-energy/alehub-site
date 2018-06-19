@@ -1,5 +1,5 @@
 <template>
-    <div class="section" id="mission">
+    <div class="section section__dark" id="mission">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

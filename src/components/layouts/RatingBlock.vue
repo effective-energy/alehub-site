@@ -70,6 +70,8 @@
 
 <style lang="stylus" scoped>
     .section
+        background-color #ececf0
+
         .list
             display flex
             justify-content space-evenly

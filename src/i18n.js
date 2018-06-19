@@ -15,8 +15,8 @@ const messages = {
                     name: '家'
                 },
                 {
-                    path: '#description',
-                    name: '描述'
+                    path: '#mission',
+                    name: '任务'
                 },
                 {
                     path: '#advantages',
@@ -31,10 +31,6 @@ const messages = {
                     name: '球队'
                 },
                 {
-                    path: '#advisors',
-                    name: '顾问'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -45,6 +41,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: '下载'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: '媒体'
                 },
                 {
                     path: '#blog',
@@ -718,7 +718,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: '舞台已经开始',
                     status: true
@@ -833,8 +833,8 @@ const messages = {
                     name: 'ホームページ'
                 },
                 {
-                    path: '#description',
-                    name: '説明'
+                    path: '#mission',
+                    name: 'ミッション'
                 },
                 {
                     path: '#advantages',
@@ -849,10 +849,6 @@ const messages = {
                     name: 'チーム'
                 },
                 {
-                    path: '#advisors',
-                    name: '顧問'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -863,6 +859,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'アップロード'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'マスメディア'
                 },
                 {
                     path: '#blog',
@@ -1536,7 +1536,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: 'stage in the process',
                     status: true
@@ -1646,8 +1646,8 @@ const messages = {
                     name: 'Домой'
                 },
                 {
-                    path: '#description',
-                    name: 'О проекте'
+                    path: '#mission',
+                    name: 'Миссия'
                 },
                 {
                     path: '#advantages',
@@ -1662,10 +1662,6 @@ const messages = {
                     name: 'Команда'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Советники'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -1676,6 +1672,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Загрузка'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Медиа о нас'
                 },
                 {
                     path: '#blog',
@@ -2348,7 +2348,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '25.05.2018 – 25.07.2018',
+                    date: '25.05.2018 – 25.06.2018',
                     progress: 5,
                     state: 'этап идёт',
                     status: true
@@ -2624,8 +2624,8 @@ const messages = {
                     name: 'Home'
                 },
                 {
-                    path: '#description',
-                    name: 'Description'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -2640,10 +2640,6 @@ const messages = {
                     name: 'Team'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Advisors'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -2654,6 +2650,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Download'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Mass media'
                 },
                 {
                     path: '#blog',
@@ -3325,21 +3325,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05.09.2018 - 05.25.2018',
-                    progress: 80,
+                    date: '09/05/2018 - 25/05/2018',
+                    progress: 90,
                     state: 'stage in the process',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
-                    progress: 5,
+                    date: '05/25/2018 - 06/25/2018',
+                    progress: 25,
                     state: 'stage in the process',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '07.25.2018 - 09.24.2018',
+                    date: '07/25/2018 - 09/24/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3348,7 +3348,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of the top level blockchain.',
                     result: 'Result: Yellow Paper, v0.1',
-                    date: '09.25.2018 - 10.30.2018',
+                    date: '09/25/2018 - 10/30/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3357,7 +3357,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of mining procedure.',
                     result: 'Result: Yellow Paper, v0.2',
-                    date: '10.30.2018 - 11.19.2018',
+                    date: '10/30/2018 - 11/19/2018',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3366,7 +3366,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of embedded blockchains',
                     result: 'Result: Yellow Paper, v0.3',
-                    date: '11.19.2018 - 12.25.18',
+                    date: '11/19/2018 - 12/25/18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3375,7 +3375,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of a dispute system',
                     result: 'Result: Yellow Paper, v0.4',
-                    date: '12.25.18 - 01.22.2019',
+                    date: '12/25/18 - 01/22/2019',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3384,7 +3384,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Development of a virtual machine',
                     result: 'Result: Yellow Paper, v0.5',
-                    date: '01.22.19 - 26.02.19',
+                    date: '01/22/19 - 26/02/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3393,7 +3393,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of changes procedure',
                     result: 'Result: Yellow Paper, v0.6; Yellow Paper, v1.0',
-                    date: '02.26.19 - 03.26.19',
+                    date: '02/26/19 - 03/26/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3402,7 +3402,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of system modules',
                     result: 'Result: Blue paper, v0.1',
-                    date: '09.26.2019 - 04.09.19',
+                    date: '09/26/2019 - 04/09/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3411,7 +3411,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of requirements for frontend-module',
                     result: 'Result: Blue paper, v0.2',
-                    date: '04.09.19 - 04.23.19',
+                    date: '04/09/19 - 04/23/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3420,7 +3420,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of a top level blockchain',
                     result: 'Result: Blue paper, v0.3',
-                    date: '04.23.19 - 05.28.19',
+                    date: '04/23/19 - 05/28/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3429,7 +3429,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of an embedded blockchain',
                     result: 'Result: Blue paper, v1.0',
-                    date: '05.28.19 - 07.02.19',
+                    date: '05/28/19 - 07/02/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3437,7 +3437,7 @@ const messages = {
                 {
                     title: 'MVP solution decentralizing',
                     desk: 'Implementation of peer-to-peer network',
-                    date: '07.02.19 - 08.06.19',
+                    date: '07/02/19 - 08/06/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3446,7 +3446,7 @@ const messages = {
                     title: 'MVP solution decentralizing',
                     desk: ' Implementation of basic blockchain and mining',
                     result: 'Result: Blockchain abstraction without reference to application logic',
-                    date: '08.06.19 - 09.03.19',
+                    date: '08/06/19 - 09/03/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3455,7 +3455,7 @@ const messages = {
                     title: 'MVP solution decentralizing',
                     desk: 'Implementation of application logic',
                     result: 'Result: pre-alpha, v0.1',
-                    date: '09.03.19 - 11.12.19',
+                    date: '09/03/19 - 11/12/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3464,7 +3464,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: ' Implementation of template for building embedded blockchains',
                     result: 'Result: template for building embedded blockchains',
-                    date: '11.12.19 - 12.17.19',
+                    date: '11/12/19 - 12/17/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3473,7 +3473,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: 'Implementation of embedded blockchains based on a template',
                     result: 'Result: pre-alpha v0.2',
-                    date: '12.17.19 - 01.14.20',
+                    date: '12/17/19 - 01/14/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3482,7 +3482,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: 'Integration of embedded blockchains into the platform',
                     result: 'Result: pre-alpha,v1.0; alpha v0.1',
-                    date: '01.14.20 - 02.11.20',
+                    date: '01/14/20 - 02/11/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3491,7 +3491,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of verification agents logic',
                     result: 'Result: alpha v0.2',
-                    date: '02.11.20 - 03.10.20',
+                    date: '02/11/20 - 03/10/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3500,7 +3500,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a first level dispute',
                     result: 'Result: alpha v0.3',
-                    date: '03.10.20 - 03.24.20',
+                    date: '03/10/20 - 03/24/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3509,7 +3509,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a second level dispute',
                     result: 'Result: alpha v0.4',
-                    date: '03.24.20 - 04.14.20',
+                    date: '03/24/20 - 04/14/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3518,7 +3518,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a third level dispute',
                     result: 'Result: alpha v1.0; beta v0.1',
-                    date: '04.14.20 - 05.12.20',
+                    date: '04/14/20 - 05/12/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3527,7 +3527,7 @@ const messages = {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for monetary policy',
                     result: 'Result: beta v0.2',
-                    date: '05.12.20 - 06.02.20',
+                    date: '05/12/20 - 06/02/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3536,7 +3536,7 @@ const messages = {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for technological upgrade',
                     result: 'Result: beta v1.0',
-                    date: '06.02.20 - 06.23.20',
+                    date: '06/02/20 - 06/23/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3545,7 +3545,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Closed testing of the system',
                     result: 'Result: beta v1.1',
-                    date: '06.23.20 - 08.25.20',
+                    date: '06/23/20 - 08/25/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3554,7 +3554,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Publication of the system source code and documentation',
                     result: 'Result: beta v2.0',
-                    date: '08.04.20 - 08.25.20',
+                    date: '08/04/20 - 08/25/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3563,7 +3563,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Putting the system into operation',
                     result: 'Result: fully operational ALEHUB system',
-                    date: '08.25.20',
+                    date: '08/25/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3608,8 +3608,8 @@ const messages = {
                     name: 'Accueil'
                 },
                 {
-                    path: '#description',
-                    name: 'La description'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -3624,10 +3624,6 @@ const messages = {
                     name: 'Équipe'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Conseillers'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -3638,6 +3634,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Télécharger'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Médias de masse'
                 },
                 {
                     path: '#blog',
@@ -4291,7 +4291,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: 'la scène dans le processus',
                     status: true
@@ -4404,8 +4404,8 @@ const messages = {
                     name: 'Zuhause'
                 },
                 {
-                    path: '#description',
-                    name: 'Beschreibung'
+                    path: '#mission',
+                    name: 'Mission'
                 },
                 {
                     path: '#advantages',
@@ -4420,10 +4420,6 @@ const messages = {
                     name: 'Mannschaft'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Berater'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -4434,6 +4430,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Herunterladen'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Massenmedien'
                 },
                 {
                     path: '#blog',
@@ -5082,7 +5082,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: 'Stufe im Prozess',
                     status: true
@@ -5194,8 +5194,8 @@ const messages = {
                     name: 'الصفحة الرئيسية'
                 },
                 {
-                    path: '#description',
-                    name: 'وصف'
+                    path: '#mission',
+                    name: 'مهمة'
                 },
                 {
                     path: '#advantages',
@@ -5210,10 +5210,6 @@ const messages = {
                     name: 'الفريق'
                 },
                 {
-                    path: '#advisors',
-                    name: 'المستشارين'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -5222,8 +5218,8 @@ const messages = {
                     name: 'خريطة الطريق'
                 },
                 {
-                    path: '#download-application',
-                    name: 'تحميل'
+                    path: '#mass-media-section',
+                    name: 'وسائل الإعلام الجماهيرية'
                 },
                 {
                     path: '#blog',
@@ -5872,7 +5868,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: 'بدأ المشهد',
                     status: true
@@ -5985,8 +5981,8 @@ const messages = {
                     name: '홈'
                 },
                 {
-                    path: '#description',
-                    name: '설명'
+                    path: '#mission',
+                    name: '사명'
                 },
                 {
                     path: '#advantages',
@@ -6001,10 +5997,6 @@ const messages = {
                     name: '팀'
                 },
                 {
-                    path: '#advisors',
-                    name: '문'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -6015,6 +6007,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: '다운로드'
+                },
+                {
+                    path: '#download-application',
+                    name: '매스 미디어'
                 },
                 {
                     path: '#blog',
@@ -6663,7 +6659,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: '무대가 시작되었습니다',
                     status: true
@@ -6776,8 +6772,8 @@ const messages = {
                     name: 'Casa'
                 },
                 {
-                    path: '#description',
-                    name: 'Descripción'
+                    path: '#mission',
+                    name: 'Misión'
                 },
                 {
                     path: '#advantages',
@@ -6792,10 +6788,6 @@ const messages = {
                     name: 'Equipo'
                 },
                 {
-                    path: '#advisors',
-                    name: 'Advisors'
-                },
-                {
                     path: '#ico',
                     name: 'ICO'
                 },
@@ -6806,6 +6798,10 @@ const messages = {
                 {
                     path: '#download-application',
                     name: 'Descargar'
+                },
+                {
+                    path: '#mass-media-section',
+                    name: 'Medios de comunicación'
                 },
                 {
                     path: '#blog',
@@ -7456,7 +7452,7 @@ const messages = {
                 },
                 {
                     title: 'PreICO',
-                    date: '05/25/2018 - 07/25/2018',
+                    date: '05/25/2018 - 06/25/2018',
                     progress: 5,
                     state: 'el escenario comenzó',
                     status: true

@@ -5,7 +5,10 @@
                       :is-opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"
-                      :is-pointer-in-dark="isPointerInDark"/>
+                      :is-pointer-in-dark="isPointerInDark"
+                      :tg-button-class="tgButtonClass"
+                      :tg-button-messages-class="tgButtonMessagesClass"
+                      :email-button-class="emailButtonClass"/>
         <mission-section :is-rtl="isRtl"/>
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
@@ -66,6 +69,9 @@
                 isRtl: false,
                 openedModalMenu: false,
                 isPointerInDark: false,
+                tgButtonClass: '',
+                emailButtonClass: '',
+                tgButtonMessagesClass: '',
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
                 isAdvisorsAutoplay: false
@@ -103,6 +109,18 @@
 
             this.$on('pointerInDark', (pointerInDark) => {
                 this.isPointerInDark = pointerInDark;
+            });
+
+            this.$on('checkTgButtonStyle', style => {
+                this.tgButtonClass = style;
+            });
+
+            this.$on('checkTgButtonMessagesStyle', style => {
+                this.tgButtonMessagesClass = style;
+            });
+
+            this.$on('checkMailButtonStyle', style => {
+                this.emailButtonClass = style;
             });
 
             this.$on('effectiveEnergyAutoplay', (autoplay) => {
