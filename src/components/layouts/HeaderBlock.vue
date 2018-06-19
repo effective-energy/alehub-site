@@ -368,6 +368,32 @@
 
                 return false;
             },
+            /**
+             * checking for a tgButton in the yellow section
+             *
+             * @returns {boolean}
+             */
+            checkTgButtonInYellowSection: function () {
+                for (let i = 0; i < this.yellowSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.yellowSections[i]).top - this.tgButtonYOffset &&
+                        window.scrollY < this.getPageCoords(this.yellowSections[i]).bottom - this.tgButtonYOffset)
+                        return true;
+
+                return false;
+            },
+            /**
+             * checking for a mailButton in the dark section
+             *
+             * @returns {boolean}
+             */
+            checkMailButtonInDarkSection: function () {
+                for (let i = 0; i < this.darkSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.darkSections[i]).top - this.mailButtonYOffset &&
+                        window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - this.mailButtonYOffset)
+                        return true;
+
+                return false;
+            },
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
                 this.rtl = true;
@@ -618,15 +644,23 @@
 
                     //check tg button
                     if (this.checkTgButtonInDarkSection()) {
-                        console.log('tg in dark');
-                        this.$parent.$emit('checkIsDarkSection', true);
                         this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__yellow');
-                    } else {
-                        this.$parent.$emit('checkIsDarkSection', false);
+                        this.$parent.$emit('checkTgButtonMessagesStyle', 'alert-messages__grey');
+                    } else if (this.checkTgButtonInYellowSection()) {
                         this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__dark');
+                        this.$parent.$emit('checkTgButtonMessagesStyle', 'alert-messages__grey');
+                    } else {
+                        this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__dark');
+                        this.$parent.$emit('checkTgButtonMessagesStyle', 'alert-messages__yellow');
                     }
 
                     //check mail button
+                    if (this.checkMailButtonInDarkSection()) {
+                        console.log('mail in dark');
+                        this.$parent.$emit('checkMailButtonStyle', 'email-subscribe-alert__yellow');
+                    } else {
+                        this.$parent.$emit('checkMailButtonStyle', 'email-subscribe-alert__dark');
+                    }
 
                     // if (this.isMainDark && window.scrollY < this.getPageCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
                     //     if (!this.isDarkSection) {

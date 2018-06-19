@@ -458,7 +458,7 @@
         <transition name="fade">
             <div class="email-subscribe-panel"
                  :class="{ 'email-subscribe-panel__yellow': isDarkSection,
-                  'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
+                 'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
@@ -514,8 +514,7 @@
         <button type="button"
                 id="email-subscribe-alert"
                 class="email-subscribe-alert"
-                :class="{ 'email-subscribe-alert__yellow': isDarkSection,
-                'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }"
+                :class="[compEmailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"
                 v-if="checkTabletWidth"
                 @click="toggleEmailSubscribeAlert">
             <div class="el-base">
@@ -557,20 +556,18 @@
         <div id="telegram-alert"
              class="telegram-alert"
              v-if="checkTabletWidth"
-             :class="{ 'telegram-alert__yellow': isDarkSection,
-             'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }">
+             :class="[ compTgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">
             <a href="https://t.me/alehub" target="_blank">
                 <img src="../../static/images/telegram-ic-dark.svg"
                      alt="telegram"
-                     v-if="!isDarkSection">
+                     v-if="!alertButtonInDarkSection(tgButtonClass)">
                 <img src="../../static/images/telegram-ic-default.svg"
                      alt="telegram"
-                     v-if="isDarkSection">
+                     v-if="alertButtonInDarkSection(tgButtonClass)">
             </a>
             <div class="alert-message"
-                 :class="{ 'alert-message__dark': isDarkSection,
-                 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }">
-                <span>3</span>
+                 :class="[ compTgButtonMessagesClass, {'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">
+                <span>{{ randomNumMessages }}</span>
             </div>
         </div>
 
@@ -616,9 +613,24 @@
             isPointerInDark: {
                 type: Boolean,
                 required: true
+            },
+            tgButtonClass: {
+                type: String,
+                required: true
+            },
+            tgButtonMessagesClass: {
+                type: String,
+                required: true
+            },
+            emailButtonClass: {
+                type: String,
+                required: true
             }
         },
         watch: {
+            tgButtonClass: function (val) {
+                console.log(val, 'AAAAAAAAAAAAAAAAAAa');
+            },
             isDarkSection: function (val) {
                 console.log(val, 'isDarkSection');
             },
@@ -748,7 +760,8 @@
                 currentCurrency: 'usd',
                 anime: '',
                 isPaused: false,
-                mainPlayer: false
+                mainPlayer: false,
+                randomNumMessages: null
             }
         },
         computed: {
@@ -818,9 +831,30 @@
                 } else if (localStorage.getItem('systemLang') === 'ru') {
                     return 'https://alehub.io/ALEHUB_WP_rus.pdf';
                 }
-            }
+            },
+            compTgButtonClass: function () {
+                if (this.tgButtonClass.length !== 0)
+                    return this.tgButtonClass;
+
+                return 'telegram-alert__dark';
+            },
+            compTgButtonMessagesClass: function () {
+                if (this.tgButtonMessagesClass.length !== 0)
+                    return this.tgButtonMessagesClass;
+
+                return 'alert-messages__yellow';
+            },
+            compEmailButtonClass: function () {
+                if (this.emailButtonClass.length !== 0)
+                    return this.emailButtonClass;
+
+                return 'email-subscribe-alert__dark';
+            },
         },
         methods: {
+            alertButtonInDarkSection: function (factor) {
+                return factor.includes('yellow');
+            },
             changePosition: function () {
                 (!this.afterClickToTop) ? this.clickToTop() : this.returnPosition();
             },
@@ -1063,6 +1097,8 @@
             },
         },
         created() {
+            this.randomNumMessages = Math.round(Math.random() * 10) + 1;
+
             this.$store.dispatch('cryptoPriceRequest')
                 .then((resp) => {
                     console.log('OK');
@@ -1086,6 +1122,8 @@
             }
         },
         mounted() {
+
+            console.log(this.tgButtonClass, 'mounted');
 
             //устанавливать начальное значение checked на включение оповещений
 
@@ -1620,7 +1658,6 @@
         border-radius 50%
         border none
         padding 0
-        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
@@ -1658,22 +1695,16 @@
             position relative
             height 22.5px
             width 36px
-            background-color #2e86ce
             border-radius 3px
 
             .el-inner-space
                 border-radius 3px
-                border-top solid 11px transparent
-                border-right solid 18px #f7f7f7
-                border-bottom solid 11px #f7f7f7
-                border-left solid 18px #f7f7f7
 
                 .el-flap
                     position absolute
                     top 0
                     left 0
                     border-radius 3px
-                    border-top solid 11px #ffd24f
                     border-right solid 18px transparent
                     border-left solid 18px transparent
                     -webkit-transition all 1s ease-in-out
@@ -1692,12 +1723,28 @@
             background-color #1a7bca
 
             .el-inner-space
+                border-top solid 11px transparent
                 border-right solid 18px #343a49
                 border-bottom solid 11px #343a49
                 border-left solid 18px #343a49
 
                 .el-flap
                     border-top solid 11px #3292e0
+
+    .email-subscribe-alert__dark
+        background-color #343a49
+
+        .el-base
+            background-color #2e86ce
+
+            .el-inner-space
+                border-top solid 11px transparent
+                border-right solid 18px #f7f7f7
+                border-bottom solid 11px #f7f7f7
+                border-left solid 18px #f7f7f7
+
+                .el-flap
+                    border-top solid 11px #ffd24f
 
     .email-subscribe-alert__stop
         bottom 290px
@@ -1728,7 +1775,6 @@
         width 70px
         height 70px
         border-radius 50%
-        background-color #343a49
         z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
@@ -1753,7 +1799,6 @@
             height 60px
 
         .alert-message
-            background-color #ffd24f
             border-radius 50%
             width 25px
             height 25px
@@ -1785,9 +1830,13 @@
                 span
                     font-size 12px
 
-        .alert-message__dark
+        .alert-messages__grey
             background-color #747c8e
             color #fff
+
+        .alert-messages__yellow
+            background-color #ffd24f
+            color #343a49
 
         .telegram-message__rtl
             left 95px
@@ -1823,6 +1872,9 @@
 
     .telegram-alert__yellow
         background-color #ffd24f
+
+    .telegram-alert__dark
+        background-color #343a49
 
     .telegram-alert__stop
         bottom 185px
