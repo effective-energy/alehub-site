@@ -9,9 +9,9 @@
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
-            src="../../../static/images/logo/alehub-dark.svg"
-            alt="ALEHUB"
-            v-if="!isDark">
+                 src="../../../static/images/logo/alehub-dark.svg"
+                 alt="ALEHUB"
+                 v-if="!isDark">
             <img class="d-inline-block align-top"
                  src="../../../static/images/logo/alehub.svg"
                  alt="ALEHUB"
@@ -289,9 +289,34 @@
             },
             isNotIndex: function () {
                 return !(this.$route.path === '/');
+            },
+            navbarOffset: function () {
+                return document.getElementById('navbar').offsetHeight;
+            },
+            darkSections: function () {
+                return document.getElementsByClassName('section__dark');
+            },
+            yellowSections: function () {
+                return document.getElementsByClassName('section__yellow');
             }
         },
         methods: {
+            checkIsADarkSection: function () {
+                for (let i = 0; i < this.darkSections.length; i++) {
+                    if (window.scrollY >= this.getCoords(this.darkSections[i]).top - this.navbarOffset &&
+                        window.scrollY < this.getCoords(this.darkSections[i]).bottom - this.navbarOffset) {
+                        console.log('im in dark');
+                        return true;
+                    }
+                }
+
+                return false;
+            },
+            checkIsAYellowSection: function () {
+                for (let i = 0; i < this.yellowSections.length; i++) {
+
+                }
+            },
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
                 this.rtl = true;
@@ -342,14 +367,16 @@
                     document.querySelector('.nav-line').style.transform = `translate3D(${ currentNavbarItemRtl - firstNavbarItemRtl }px,0,0)`;
             },
             getCoords: function (elem) {
+                let box = elem.getBoundingClientRect();
+
                 if (!elem)
                     return false;
-                let box = elem.getBoundingClientRect();
 
                 return {
                     top: box.top + pageYOffset,
                     left: box.left + pageXOffset,
-                    right: box.right + pageXOffset
+                    right: box.right + pageXOffset,
+                    bottom: box.bottom + pageYOffset
                 };
             },
             toggleDropdown: function () {
@@ -489,6 +516,19 @@
                 window.addEventListener('scroll', () => {
                     this.checkActive();
 
+                    //чекаем навбары
+                    if (this.checkIsADarkSection()) {
+                        if (!this.isDark) {
+                            this.isDark = true;
+                            this.isYellow = false;
+                        }
+                    } else if (this.checkIsAYellowSection()) {
+                        if (!this.isYellow) {
+                            this.isDark = false;
+                            this.isYellow = true;
+                        }
+                    }
+
                     if (this.isMainDark && window.scrollY < this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset) {
                         if (!this.isDarkSection) {
                             this.isDarkSection = true;
@@ -523,21 +563,21 @@
                         }
                     }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - navbarYOffset &&
-                        window.scrollY <= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
-                        if (!this.isDark) {
-                            this.isDark = true;
-                            this.isYellow = false;
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (!this.isTeam) {
-                            this.isTeam = true;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - navbarYOffset &&
+                    //     window.scrollY <= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
+                    //     if (!this.isDark) {
+                    //         this.isDark = true;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (!this.isTeam) {
+                    //         this.isTeam = true;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
                     if (window.scrollY >= this.getCoords(document.getElementById('mission')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
                         window.scrollY < this.getCoords(document.getElementById('mission').nextElementSibling).top - tgButtonYOffset - navbarYOffset) {
@@ -555,88 +595,88 @@
                         }
                     }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('mission')).top - navbarYOffset) {
-                        if (this.isDark || this.isYellow) {
-                            this.isDark = false;
-                            this.isYellow = false;
-                        }
-                        if (!this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY < this.getCoords(document.getElementById('mission')).top - navbarYOffset) {
+                    //     if (this.isDark || this.isYellow) {
+                    //         this.isDark = false;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (!this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                        window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
-                        if (!this.mainIsDark && (this.isDark || this.isYellow)) {
-                            this.isDark = false;
-                            this.isYellow = false;
-                        }
-                        if (this.mainIsDark && (!this.isDark || this.isYellow)) {
-                            this.isDark = true;
-                            this.isYellow = false;
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                    //     window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset) {
+                    //     if (!this.mainIsDark && (this.isDark || this.isYellow)) {
+                    //         this.isDark = false;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (this.mainIsDark && (!this.isDark || this.isYellow)) {
+                    //         this.isDark = true;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
-                        if (this.isDark || this.isYellow) {
-                            this.isDark = false;
-                            this.isYellow = false;
-                        }
-                        if (!this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - navbarYOffset &&
+                    //     window.scrollY < this.getCoords(document.getElementById('features')).top - navbarYOffset) {
+                    //     if (this.isDark || this.isYellow) {
+                    //         this.isDark = false;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (!this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
-                        if (!this.isYellow) {
-                            this.isDark = false;
-                            this.isYellow = true;
-                        }
-                        if (!this.isFeatures) {
-                            this.isFeatures = true;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('features')).top - navbarYOffset &&
+                    //     window.scrollY < this.getCoords(document.getElementById('team')).top - navbarYOffset) {
+                    //     if (!this.isYellow) {
+                    //         this.isDark = false;
+                    //         this.isYellow = true;
+                    //     }
+                    //     if (!this.isFeatures) {
+                    //         this.isFeatures = true;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
-                        if (this.isDark || this.isYellow) {
-                            this.isDark = false;
-                            this.isYellow = false;
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (!this.isTeam) {
-                            this.isTeam = true;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('team')).top - navbarYOffset &&
+                    //     window.scrollY < this.getCoords(document.getElementById('ico')).top - navbarYOffset) {
+                    //     if (this.isDark || this.isYellow) {
+                    //         this.isDark = false;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (!this.isTeam) {
+                    //         this.isTeam = true;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
                     if (window.scrollY >= this.getCoords(document.getElementById('advantages')).top - tgButtonYOffset + tgButtonHeight - navbarYOffset &&
                         window.scrollY < this.getCoords(document.getElementById('ico')).top - tgButtonYOffset - navbarYOffset) {
@@ -677,36 +717,36 @@
                         }
                     }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
-                        window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                        if (!this.isDark) {
-                            this.isYellow = false;
-                            this.isDark = true;
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('ico')).top - navbarYOffset &&
+                    //     window.scrollY < this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                    //     if (!this.isDark) {
+                    //         this.isYellow = false;
+                    //         this.isDark = true;
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
-                    if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
-                        if (this.isDark || this.isYellow) {
-                            this.isDark = false;
-                            this.isYellow = false;
-                        }
-                        if (this.isFeatures) {
-                            this.isFeatures = false;
-                            this.$parent.$emit('checkIsFeatures', this.isFeatures);
-                        }
-                        if (this.isTeam) {
-                            this.isTeam = false;
-                            this.$parent.$emit('checkIsTeam', this.isTeam);
-                        }
-                    }
+                    // if (window.scrollY >= this.getCoords(document.getElementById('download-application')).top - navbarYOffset) {
+                    //     if (this.isDark || this.isYellow) {
+                    //         this.isDark = false;
+                    //         this.isYellow = false;
+                    //     }
+                    //     if (this.isFeatures) {
+                    //         this.isFeatures = false;
+                    //         this.$parent.$emit('checkIsFeatures', this.isFeatures);
+                    //     }
+                    //     if (this.isTeam) {
+                    //         this.isTeam = false;
+                    //         this.$parent.$emit('checkIsTeam', this.isTeam);
+                    //     }
+                    // }
 
                     if (window.scrollY >= this.getCoords(document.getElementById('footer')).top + navbarYOffset - 20 - window.innerHeight)
                         this.$parent.$emit('scrollInFooter', true);
