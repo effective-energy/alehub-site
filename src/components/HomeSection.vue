@@ -441,7 +441,7 @@
                             {{ $t("about.btnGroup.whitePaper") }}
                         </a>
                         <a href="https://alehub.io/ALEHUB_OP_eng.pdf"
-                          class="btn btn-yellow"
+                           class="btn btn-yellow"
                            target="_blank">
                             One Page
                         </a>
@@ -457,12 +457,12 @@
 
         <transition name="fade">
             <div class="email-subscribe-panel"
-                 :class="{ 'email-subscribe-panel__yellow': isDarkSection,
+                 :class="{ 'email-subscribe-panel__yellow': alertButtonInDarkSection(emailButtonClass),
                  'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
                  v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
                 <div class="close__email-subscribe-panel"
                      @click="toggleEmailSubscribeAlert">
-                    <img :src="(isDarkSection) ? '../../static/images/cancel-dark.svg' :
+                    <img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :
                          '../../static/images/cancel-light.svg'"
                          alt="close subscribe">
                 </div>
@@ -571,6 +571,14 @@
             </div>
         </div>
 
+
+        <!--<group-alert-buttons :email-button-class="compEmailButtonClass"-->
+        <!--:tg-button-class="compTgButtonClass"-->
+        <!--:tg-button-messages-class="compTgButtonMessagesClass"-->
+        <!--:tg-in-dark-section="alertButtonInDarkSection(tgButtonClass)"-->
+        <!--:email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"-->
+        <!--:is-rtl="isRtl"/>-->
+
     </section>
 </template>
 
@@ -579,9 +587,9 @@
     import SliderScreen from './layouts/SliderScreen';
     import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
+    import GroupAlertButtons from './layouts/GroupAlertButtons';
 
     import {mapGetters} from 'vuex';
-    import { mapActions } from 'vuex';
 
     import anime from 'animejs';
 
@@ -591,7 +599,8 @@
             MenuModal,
             SliderScreen,
             RatingBlock,
-            PartnersBlock
+            PartnersBlock,
+            GroupAlertButtons
         },
         props: {
             isDarkSection: {
@@ -629,7 +638,6 @@
         },
         watch: {
             tgButtonClass: function (val) {
-                console.log(val, 'AAAAAAAAAAAAAAAAAAa');
             },
             isDarkSection: function (val) {
                 console.log(val, 'isDarkSection');
@@ -1199,10 +1207,11 @@
                 max-height 90px
 
         @media (max-width 690px)
-            margin-top 20px
-                a
-                    img
-                        margin 10px 0
+            margin-top
+        20px
+        a
+            img
+                margin 10px 0
 
         @media (min-width 690px) and (max-width 1024px)
             margin-top 20px
@@ -1214,8 +1223,6 @@
         right 10px
         top 100px
         z-index 110
-
-
 
         @media (min-width 690px) and (max-width 1024px)
             right 7.5px
@@ -1356,7 +1363,6 @@
             span
                 color #343a49
 
-
     .email-subscribe-panel
         z-index 1000
         position fixed
@@ -1434,7 +1440,6 @@
                 .exist-label
                     background-color #2e86ce
                     color #f7f7f7
-
 
                 input
                     width 67%
@@ -1543,7 +1548,6 @@
                             -webkit-transform translateX(18px)
                             -ms-transform translateX(18px)
                             transform translateX(18px)
-
 
                 .slider
                     position absolute
@@ -1689,7 +1693,6 @@
             bottom 140px
             width 60px
             height 60px
-
 
         .el-base
             position relative
@@ -1849,7 +1852,6 @@
             @media (min-width 1024px) and (max-width 1440px)
                 left 75px
                 right auto
-
 
         .telegram-message__stop
             bottom 235px
@@ -2536,7 +2538,7 @@
                     animation wheel-to-bottom 2s infinite
                     -webkit-transition all .3s ease
                     -o-transition all .3s ease
-                    transition all .3s ease
+                    transition all .3s ease;
 
                     @-webkit-keyframes wheel-to-bottom {
                         0% {
@@ -2549,36 +2551,36 @@
                             transform: translateY(0);
                         }
                     } @-moz-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @-o-keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    } @keyframes wheel-to-bottom {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        25% {
-                            transform: translateY(5px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
+                          0% {
+                              transform: translateY(0);
+                          }
+                          25% {
+                              transform: translateY(5px);
+                          }
+                          100% {
+                              transform: translateY(0);
+                          }
+                      } @-o-keyframes wheel-to-bottom {
+                            0% {
+                                transform: translateY(0);
+                            }
+                            25% {
+                                transform: translateY(5px);
+                            }
+                            100% {
+                                transform: translateY(0);
+                            }
+                        } @keyframes wheel-to-bottom {
+                              0% {
+                                  transform: translateY(0);
+                              }
+                              25% {
+                                  transform: translateY(5px);
+                              }
+                              100% {
+                                  transform: translateY(0);
+                              }
+                          }
 
                 @media (max-width 1124px)
                     display none
@@ -2631,7 +2633,7 @@
 </style>
 
 <style scoped>
-    .wrap__pointer:hover + .scroll-to-top > a{
+    .wrap__pointer:hover + .scroll-to-top > a {
         opacity: 0.5 !important;
     }
 </style>

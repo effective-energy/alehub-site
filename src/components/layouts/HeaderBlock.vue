@@ -656,7 +656,6 @@
 
                     //check mail button
                     if (this.checkMailButtonInDarkSection()) {
-                        console.log('mail in dark');
                         this.$parent.$emit('checkMailButtonStyle', 'email-subscribe-alert__yellow');
                     } else {
                         this.$parent.$emit('checkMailButtonStyle', 'email-subscribe-alert__dark');
