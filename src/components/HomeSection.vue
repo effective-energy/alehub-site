@@ -292,9 +292,9 @@
                         </div>
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
-                            <div class="item" v-for="item in currencies"
-                                 @mouseover="changeCurrentCurrency(item.name)"
-                                 @mouseout="resetCurrentCurrency">
+                            <div class="item" v-for="item in cryptocurrencies">
+                                <!--@mouseover="changeCurrentCurrency(item.name)"-->
+                                <!--@mouseout="resetCurrentCurrency"-->
                                 <div class="inner">
                                     <a href="https://sale.alehub.io/" target="_blank">
                                         <div class="cur-logo">
@@ -315,34 +315,34 @@
                 <div class="col-xl-12 col-lg-11">
                     <div class="ico-progress"
                          :class="{ 'ico-progress__dark': isDark }">
-                        <!--<div class="state">-->
-                        <!--<div class="title">-->
-                        <!--Soft cap-->
-                        <!--</div>-->
-                        <!--<div class="count">-->
-                        <!--{{ isCollected }} / {{ isSoftCap }} <span-->
-                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="progress-bar-outer">-->
-                        <!--<div class="progress-bar-inner"-->
-                        <!--:style="{ width: softCapWidth }">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="state hard-cap">-->
-                        <!--<div class="title">-->
-                        <!--Hard cap-->
-                        <!--</div>-->
-                        <!--<div class="count">-->
-                        <!--{{ isCollected }} / {{ isHardCap }} <span-->
-                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="progress-bar-outer">-->
-                        <!--<div class="progress-bar-inner"-->
-                        <!--:style="{ width: hardCapWidth }">-->
-                        <!--</div>-->
-                        <!--</div>-->
+                        <div class="state">
+                            <div class="title">
+                                Soft cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ softCap }} <span
+                                    class="currency">{{ '$' }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: softCapWidth }">
+                            </div>
+                        </div>
+                        <div class="state hard-cap">
+                            <div class="title">
+                                Hard cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ hardCap }} <span
+                                    class="currency">{{ '$' }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: hardCapWidth }">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="scroll-next">
@@ -705,44 +705,6 @@
                     pauseOnHover: true
                 },
                 alePrice: 0.3,
-                currencies: {
-                    btc: {
-                        src: '../../static/images/btc.svg',
-                        alt: 'bitcoin',
-                        count: 0,
-                        name: 'btc'
-                    },
-                    eth: {
-                        src: '../../static/images/eth.svg',
-                        alt: 'etherium',
-                        count: 0,
-                        name: 'eth'
-                    },
-                    bch: {
-                        src: '../../static/images/bch.svg',
-                        alt: 'bitcoin cash',
-                        count: 0,
-                        name: 'bch'
-                    },
-                    ltc: {
-                        src: '../../static/images/ltc.svg',
-                        alt: 'litecoin',
-                        count: 0,
-                        name: 'ltc'
-                    },
-                    dash: {
-                        src: '../../static/images/dash.svg',
-                        alt: 'dash',
-                        count: 0,
-                        name: 'dash'
-                    },
-                    usd: {
-                        src: '../../static/images/usd.svg',
-                        alt: 'usd',
-                        count: 0,
-                        name: 'usd'
-                    }
-                },
                 reBuild: true,
                 sliderInit: {
                     currentPage: 0,
@@ -773,9 +735,6 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 1250000,
-                softCap: 7500000,
-                hardCap: 33000000,
                 currentCurrency: 'usd',
                 anime: '',
                 isPaused: false,
@@ -786,45 +745,14 @@
         computed: {
             ...mapGetters(
                 [
-                    'cryptoPriceStatus'
+                    'cryptoPriceStatus',
+
+                    'cryptocurrencies',
+                    'softCap',
+                    'hardCap',
+                    'collected'
                 ]
             ),
-            isCollected: function () {
-                return this.collected;
-            },
-            isSoftCap: function () {
-                return this.softCap;
-            },
-            isHardCap: function () {
-                return this.hardCap;
-            },
-            isCurrentCurrency: function () {
-                if (this.cryptoPriceStatus === 'success') {
-
-                    this.currencies.btc.hardCap = this.cryptocurrencies.btc.hardCap;
-                    this.currencies.eth.hardCap = this.cryptocurrencies.eth.hardCap;
-                    this.currencies.bch.hardCap = this.cryptocurrencies.bch.hardCap;
-                    this.currencies.ltc.hardCap = this.cryptocurrencies.ltc.hardCap;
-                    this.currencies.dash.hardCap = this.cryptocurrencies.dash.hardCap;
-
-                    this.currencies.btc.softCap = this.cryptocurrencies.btc.softCap;
-                    this.currencies.eth.softCap = this.cryptocurrencies.eth.softCap;
-                    this.currencies.bch.softCap = this.cryptocurrencies.bch.softCap;
-                    this.currencies.ltc.softCap = this.cryptocurrencies.ltc.softCap;
-                    this.currencies.dash.softCap = this.cryptocurrencies.dash.softCap;
-
-                    this.currencies.btc.collected = this.cryptocurrencies.btc.collected;
-                    this.currencies.eth.collected = this.cryptocurrencies.eth.collected;
-                    this.currencies.bch.collected = this.cryptocurrencies.bch.collected;
-                    this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
-                    this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
-                }
-
-                return this.currentCurrency;
-            },
-            isOpenEmailSubscribeAlert: function () {
-                return this.openedEmailSubscribeAlert;
-            },
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
             },
@@ -1125,18 +1053,9 @@
             this.randomNumMessages = Math.round(Math.random() * 10) + 1;
 
             this.$store.dispatch('cryptoPriceRequest')
-                .then((resp) => {
+                .then(resp => {
                     console.log('OK');
-                    console.log(resp.data.round.ico);
-                    let counts = resp.data.round.ico;
-                    this.currencies.btc.count = counts['BTC'].value;
-                    this.currencies.eth.count = counts['ETH'].value.toFixed(2);
-                    this.currencies.bch.count = counts['BCH'].value;
-                    this.currencies.ltc.count = counts['LTC'].value;
-                    this.currencies.dash.count = counts['DASH'].value;
-                    this.currencies.usd.count = counts['USD'].value;
-                    console.log(this.currencies);
-                }).catch((resp) => {
+                }).catch(err => {
                 console.log('NO');
             });
             if (localStorage.getItem('subscriber-email') !== 'undefined' &&
