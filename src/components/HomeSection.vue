@@ -455,129 +455,130 @@
             </div>
         </div>
 
-        <transition name="fade">
-            <div class="email-subscribe-panel"
-                 :class="{ 'email-subscribe-panel__yellow': alertButtonInDarkSection(emailButtonClass),
-                 'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"
-                 v-if="checkTabletWidth && isOpenEmailSubscribeAlert">
-                <div class="close__email-subscribe-panel"
-                     @click="toggleEmailSubscribeAlert">
-                    <img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :
-                         '../../static/images/cancel-light.svg'"
-                         alt="close subscribe">
-                </div>
-                <div class="email-subscribe__wrap">
-                    <p>
-                        {{$t("emailSubscribePanel.newsletter")}}
-                    </p>
-                    <form @submit.prevent="subscribe">
-                        <label class="top-label-subscribe"
-                               :class="{ 'error-label': subscriber.error,
-                           'exist-label': subscriber.exist,
-                           'success-label': subscriber.success }"
-                               v-if="subscriber.error || subscriber.exist || subscriber.success">
-                            <span v-if="subscriber.error">{{$t("footer.right.error")}}</span>
-                            <span v-if="subscriber.success">successful subscription</span>
-                            <span v-if="subscriber.exist">this email is already in use</span>
-                        </label>
-                        <input id="subscribe-email-input"
-                               type="text"
-                               :placeholder='$t("emailSubscribePanel.YourAddress")'
-                               required
-                               :class="{ 'error__email-subscribe-input': subscriber.error,
-                               'success__email-subscribe-input': subscriber.success,
-                               'exist__email-subscribe-input': subscriber.exist}"
-                               v-model="subscriber.email"
-                               @blur="blurCheckCorrectEmail(subscriber.email)"
-                               @input="inputCheckCorrectEmail(subscriber.email)"
-                               :disabled="subscriber.loader">
-                        <button type="submit"
-                                :disabled="subscriber.loader">
-                            {{$t("emailSubscribePanel.subscribe")}}
-                        </button>
-                    </form>
-                </div>
-                <div class="web-push-notif">
-                    <label for="toggle-web-push">
-                        {{$t("emailSubscribePanel.turnOn")}}
-                    </label>
-                    <label class="switch-control"
-                           id="toggle-web-push"
-                           @click="toggleNotification">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </transition>
+        <!--<transition name="fade">-->
+            <!--<div class="email-subscribe-panel"-->
+                 <!--:class="{ 'email-subscribe-panel__yellow': alertButtonInDarkSection(emailButtonClass),-->
+                 <!--'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"-->
+                 <!--v-if="checkTabletWidth && isOpenEmailSubscribeAlert">-->
+                <!--<div class="close__email-subscribe-panel"-->
+                     <!--@click="toggleEmailSubscribeAlert">-->
+                    <!--<img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :-->
+                         <!--'../../static/images/cancel-light.svg'"-->
+                         <!--alt="close subscribe">-->
+                <!--</div>-->
+                <!--<div class="email-subscribe__wrap">-->
+                    <!--<p>-->
+                        <!--{{$t("emailSubscribePanel.newsletter")}}-->
+                    <!--</p>-->
+                    <!--<form @submit.prevent="subscribe">-->
+                        <!--<label class="top-label-subscribe"-->
+                               <!--:class="{ 'error-label': subscriber.error,-->
+                           <!--'exist-label': subscriber.exist,-->
+                           <!--'success-label': subscriber.success }"-->
+                               <!--v-if="subscriber.error || subscriber.exist || subscriber.success">-->
+                            <!--<span v-if="subscriber.error">{{$t("footer.right.error")}}</span>-->
+                            <!--<span v-if="subscriber.success">successful subscription</span>-->
+                            <!--<span v-if="subscriber.exist">this email is already in use</span>-->
+                        <!--</label>-->
+                        <!--<input id="subscribe-email-input"-->
+                               <!--type="text"-->
+                               <!--:placeholder='$t("emailSubscribePanel.YourAddress")'-->
+                               <!--required-->
+                               <!--:class="{ 'error__email-subscribe-input': subscriber.error,-->
+                               <!--'success__email-subscribe-input': subscriber.success,-->
+                               <!--'exist__email-subscribe-input': subscriber.exist}"-->
+                               <!--v-model="subscriber.email"-->
+                               <!--@blur="blurCheckCorrectEmail(subscriber.email)"-->
+                               <!--@input="inputCheckCorrectEmail(subscriber.email)"-->
+                               <!--:disabled="subscriber.loader">-->
+                        <!--<button type="submit"-->
+                                <!--:disabled="subscriber.loader">-->
+                            <!--{{$t("emailSubscribePanel.subscribe")}}-->
+                        <!--</button>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="web-push-notif">-->
+                    <!--<label for="toggle-web-push">-->
+                        <!--{{$t("emailSubscribePanel.turnOn")}}-->
+                    <!--</label>-->
+                    <!--<label class="switch-control"-->
+                           <!--id="toggle-web-push"-->
+                           <!--@click="toggleNotification">-->
+                        <!--<input type="checkbox">-->
+                        <!--<span class="slider"></span>-->
+                    <!--</label>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</transition>-->
 
-        <button type="button"
-                id="email-subscribe-alert"
-                class="email-subscribe-alert"
-                :class="[compEmailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"
-                v-if="checkTabletWidth"
-                @click="toggleEmailSubscribeAlert">
-            <div class="el-base">
-                <div class="el-inner-space">
-                    <div class="el-flap"
-                         :class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">
-                    </div>
-                </div>
-            </div>
-        </button>
+        <!--<button type="button"-->
+                <!--id="email-subscribe-alert"-->
+                <!--class="email-subscribe-alert"-->
+                <!--:class="[compEmailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"-->
+                <!--v-if="checkTabletWidth"-->
+                <!--@click="toggleEmailSubscribeAlert">-->
+            <!--<div class="el-base">-->
+                <!--<div class="el-inner-space">-->
+                    <!--<div class="el-flap"-->
+                         <!--:class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</button>-->
 
-        <a id="telegram-alert-mobile"
-           class="telegram-alert-mobile"
-           href="https://t.me/alehub"
-           target="_blank"
-           v-if="!checkTabletWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"
-           :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
+        <!--<a id="telegram-alert-mobile"-->
+           <!--class="telegram-alert-mobile"-->
+           <!--href="https://t.me/alehub"-->
+           <!--target="_blank"-->
+           <!--v-if="!checkTabletWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"-->
+           <!--:class="{ 'telegram-alert-mobile__yellow': isDarkSection }">-->
 
-            <div class="telegram-alert-mobile__wrap">
-                <img src="../../static/images/telegram-ic-dark.svg"
-                     v-if="!isDarkSection"
-                     alt="telegram">
-                <img src="../../static/images/telegram-ic-default.svg"
-                     v-if="isDarkSection"
-                     alt="telegram">
-                <span>{{ 'Join us in telegram' }}</span>
-            </div>
-
-
-            <img src="../../static/images/cancel-light.svg"
-                 v-if="!isDarkSection"
-                 @click.prevent="doCloseTelegramAlertMobile">
-
-            <img src="../../static/images/cancel-dark.svg"
-                 v-if="isDarkSection"
-                 @click.prevent="doCloseTelegramAlertMobile">
-        </a>
-
-        <div id="telegram-alert"
-             class="telegram-alert"
-             v-if="checkTabletWidth"
-             :class="[ compTgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">
-            <a href="https://t.me/alehub" target="_blank">
-                <img src="../../static/images/telegram-ic-dark.svg"
-                     alt="telegram"
-                     v-if="!alertButtonInDarkSection(tgButtonClass)">
-                <img src="../../static/images/telegram-ic-default.svg"
-                     alt="telegram"
-                     v-if="alertButtonInDarkSection(tgButtonClass)">
-            </a>
-            <div class="alert-message"
-                 :class="[ compTgButtonMessagesClass, {'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">
-                <span>{{ randomNumMessages }}</span>
-            </div>
-        </div>
+            <!--<div class="telegram-alert-mobile__wrap">-->
+                <!--<img src="../../static/images/telegram-ic-dark.svg"-->
+                     <!--v-if="!isDarkSection"-->
+                     <!--alt="telegram">-->
+                <!--<img src="../../static/images/telegram-ic-default.svg"-->
+                     <!--v-if="isDarkSection"-->
+                     <!--alt="telegram">-->
+                <!--<span>{{ 'Join us in telegram' }}</span>-->
+            <!--</div>-->
 
 
-        <!--<group-alert-buttons :email-button-class="compEmailButtonClass"-->
-        <!--:tg-button-class="compTgButtonClass"-->
-        <!--:tg-button-messages-class="compTgButtonMessagesClass"-->
-        <!--:tg-in-dark-section="alertButtonInDarkSection(tgButtonClass)"-->
-        <!--:email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"-->
-        <!--:is-rtl="isRtl"/>-->
+            <!--<img src="../../static/images/cancel-light.svg"-->
+                 <!--v-if="!isDarkSection"-->
+                 <!--@click.prevent="doCloseTelegramAlertMobile">-->
+
+            <!--<img src="../../static/images/cancel-dark.svg"-->
+                 <!--v-if="isDarkSection"-->
+                 <!--@click.prevent="doCloseTelegramAlertMobile">-->
+        <!--</a>-->
+
+        <!--<div id="telegram-alert"-->
+             <!--class="telegram-alert"-->
+             <!--v-if="checkTabletWidth"-->
+             <!--:class="[ compTgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">-->
+            <!--<a href="https://t.me/alehub" target="_blank">-->
+                <!--<img src="../../static/images/telegram-ic-dark.svg"-->
+                     <!--alt="telegram"-->
+                     <!--v-if="!alertButtonInDarkSection(tgButtonClass)">-->
+                <!--<img src="../../static/images/telegram-ic-default.svg"-->
+                     <!--alt="telegram"-->
+                     <!--v-if="alertButtonInDarkSection(tgButtonClass)">-->
+            <!--</a>-->
+            <!--<div class="alert-message"-->
+                 <!--:class="[ compTgButtonMessagesClass, {'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">-->
+                <!--<span>{{ randomNumMessages }}</span>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <group-alert-buttons :email-button-class="compEmailButtonClass"
+                             :tg-button-class="compTgButtonClass"
+                             :tg-button-messages-class="compTgButtonMessagesClass"
+                             :tg-in-dark-section="alertButtonInDarkSection(tgButtonClass)"
+                             :email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"
+                             :scroll-in-footer="isScrollInFooter"
+                             :rtl="isRtl"/>
 
     </section>
 </template>
