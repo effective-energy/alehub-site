@@ -2,11 +2,16 @@ const messages = {
     zh: {
         emailSubscribePanel: {
             newsletter: "訂閱我們的通訊",
-            YourAddress: "您的電子郵件地址”",
+            yourAddress: "您的電子郵件地址”",
             subscribe: "訂閱",
             turnOn: "並且不要忘記打開通知",
             success: "成功訂閱",
-            alreadyUse: "此電子郵件已被使用"
+            alreadyUse: "此電子郵件已被使用",
+            label: {
+                success: '成功订阅',
+                error: '不正确的电子邮件',
+                exist: '此电子邮件已被使用'
+            }
         },
         navbar: {
             menuList: [
@@ -820,11 +825,16 @@ const messages = {
     ja: {
         emailSubscribePanel: {
             newsletter: "ニュースレターを購読する",
-            YourAddress: "あなたのEメールアドレス",
+            yourAddress: "あなたのEメールアドレス",
             subscribe: "購読する",
             turnOn: "通知をオンにすることを忘れないでください",
             success: "成功した購読」",
-            alreadyUse: "このメールは既に使用中です"
+            alreadyUse: "このメールは既に使用中です",
+            label: {
+                success: '成功した購読',
+                error: '誤ったメール',
+                exist: 'この電子メールは既に利用されています\n'
+            }
         },
         navbar: {
             menuList: [
@@ -1629,15 +1639,19 @@ const messages = {
         serverErr: 'アプリケーションリストをアップロード中にサーバーエラー起こりました'
     },
 
-
     ru: {
         emailSubscribePanel: {
-            newsletter: "Подпишитесь на нашу рассылку",
-            YourAddress: "Ваш адрес электронной почты",
-            subscribe: "Подписаться",
-            turnOn: "И не забудьте включить уведомления",
-            success: "Вы успешно подписались",
-            alreadyUse: "Эта почта уже используется"
+            newsletter: 'Подпишитесь на нашу рассылку',
+            yourAddress: 'Ваш адрес электронной почты',
+            subscribe: 'Подписаться',
+            turnOn: 'И не забудьте включить уведомления',
+            success: 'Вы успешно подписались',
+            alreadyUse: 'Эта почта уже используется',
+            label: {
+                success: 'вы успешно подписались',
+                error: 'неправильный email',
+                exist: 'этот email уже используется'
+            }
         },
         navbar: {
             menuList: [
@@ -2056,7 +2070,7 @@ const messages = {
                             name: 'Сергей Тимохин',
                             position: 'Комьюнити-менеджер',
                             src: '../static/images/avatars/timohin@3x.png',
-                            social: [                                 
+                            social: [
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/timokhinsergey/',
@@ -2610,12 +2624,17 @@ const messages = {
     },
     en: {
         emailSubscribePanel: {
-            newsletter: "Subscribe to our newsletter",
-            YourAddress: "Your e-mail address",
-            subscribe: "Subscribe",
-            turnOn: "And don't forget to turn on notifications",
-            success: "successful subscription",
-            alreadyUse: "this email is already in use"
+            newsletter: 'Subscribe to our newsletter',
+            yourAddress: 'Your e-mail address',
+            subscribe: 'Subscribe',
+            turnOn: 'And don\'t forget to turn on notifications',
+            success: 'successful subscription',
+            alreadyUse: 'this email is already in use',
+            label: {
+                success: 'successful subscription',
+                error: 'incorrect email',
+                exist: 'this email is already in use'
+            }
         },
         navbar: {
             menuList: [
@@ -3594,12 +3613,17 @@ const messages = {
     },
     fr: {
         emailSubscribePanel: {
-            newsletter: "Abonnez-vous à notre newsletter",
-            YourAddress: "Votre adresse e-mail",
-            subscribe: "S'abonner",
-            turnOn: "Et n'oubliez pas d'activer les notifications",
-            success: "abonnement réussi",
-            alreadyUse: "cet e-mail est déjà utilisé"
+            newsletter: 'Abonnez-vous à notre newsletter',
+            yourAddress: 'Votre adresse e-mail',
+            subscribe: 'S\'abonner',
+            turnOn: 'Et n\'oubliez pas d\'activer les notifications',
+            success: 'abonnement réussi',
+            alreadyUse: 'cet e-mail est déjà utilisé',
+            label: {
+                success: 'abonnement réussi',
+                error: 'Adresse Email incorrecte\n',
+                exist: 'Cet e-mail est déjà utilisée'
+            }
         },
         navbar: {
             menuList: [
@@ -4390,12 +4414,17 @@ const messages = {
     },
     de: {
         emailSubscribePanel: {
-            newsletter: "Abonnieren Sie unseren Newsletter",
-            YourAddress: "Ihre E-Mail-Adresse",
-            subscribe: "Abonnieren",
-            turnOn: "Und vergiss nicht, Benachrichtigungen zu aktivieren",
-            success: "erfolgreiches Abonnement",
-            alreadyUse: "Diese E-Mail wird bereits verwendet"
+            newsletter: 'Abonnieren Sie unseren Newsletter',
+            yourAddress: 'Ihre E-Mail-Adresse',
+            subscribe: 'Abonnieren',
+            turnOn: 'Und vergiss nicht, Benachrichtigungen zu aktivieren',
+            success: 'erfolgreiches Abonnement',
+            alreadyUse: 'Diese E-Mail wird bereits verwendet',
+            label: {
+                success: 'erfolgreiches Abonnement',
+                error: 'Falsche Email',
+                exist: 'Diese E-Mail-Adresse wird schon verwendet'
+            }
         },
         navbar: {
             menuList: [
@@ -5180,12 +5209,17 @@ const messages = {
     },
     ar: {
         emailSubscribePanel: {
-            newsletter: "اشترك في النشرة الإخبارية لدينا",
-            YourAddress: "عنوان بريدك الإلكتروني",
+            newsletter: 'اشترك في النشرة الإخبارية لدين',
+            yourAddress: "عنوان بريدك الإلكتروني",
             subscribe: "اشتراك",
             turnOn: "ولا تنس تشغيل الإشعارات",
             success: "الاشتراك الناجح",
-            alreadyUse: "هذا البريد الإلكتروني قيد الاستخدام بالفعل"
+            alreadyUse: "هذا البريد الإلكتروني قيد الاستخدام بالفعل",
+            label: {
+                success: 'الاشتراك الناجح',
+                error: 'غير صحيح البريد الإلكتروني',
+                exist: 'هذا البريد استخدم من قبل'
+            }
         },
         navbar: {
             menuList: [
@@ -5968,11 +6002,16 @@ const messages = {
     ko: {
         emailSubscribePanel: {
             newsletter: "뉴스 레터 구독",
-            YourAddress: "귀하의 이메일 주소",
+            yourAddress: "귀하의 이메일 주소",
             subscribe: "구독",
             turnOn: "알림을 켜는 것을 잊지 마세요",
             success: "성공적인 구독",
-            alreadyUse: "이 이메일은 이미 사용 중입니다"
+            alreadyUse: "이 이메일은 이미 사용 중입니다",
+            label: {
+                success: '성공적인 구독',
+                error: '잘못된 이메일',
+                exist: '이 이메일은 이미 사용중입니다'
+            }
         },
         navbar: {
             menuList: [
@@ -6758,12 +6797,17 @@ const messages = {
     },
     es: {
         emailSubscribePanel: {
-            newsletter: "Suscríbete a nuestro boletín informativo",
-            YourAddress: "Su dirección de correo electrónico",
-            subscribe: "Suscribir",
-            turnOn: "Y no olvides activar las notificaciones",
-            success: "suscripción exitosa",
-            alreadyUse: "este correo electrónico ya está en uso"
+            newsletter: 'Suscríbete a nuestro boletín informativo',
+            yourAddress: 'Su dirección de correo electrónico',
+            subscribe: 'Suscribir',
+            turnOn: 'Y no olvides activar las notificaciones',
+            success: 'suscripción exitosa',
+            alreadyUse: 'este correo electrónico ya está en uso',
+            label: {
+                success: 'suscripción exitosa',
+                error: 'email incorrecto',
+                exist: 'este correo electrónico ya está en uso'
+            }
         },
         navbar: {
             menuList: [

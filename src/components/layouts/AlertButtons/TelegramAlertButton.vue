@@ -4,7 +4,7 @@
          :class="tgButtonClass">
         <a href="https://t.me/alehub" target="_blank">
             <img alt="telegram"
-                 :src="(tgInDarkSection) ? img.dark : img.white">
+                 :src="(tgInDarkSection) ? icon.dark : icon.white">
         </a>
         <div class="alert-message"
              :class="tgButtonMessagesClass">
@@ -33,7 +33,7 @@
         data() {
             return {
                 randomNumMessages: null,
-                img: {
+                icon: {
                     white: '../../../static/images/telegram-ic-dark.svg',
                     dark: '../../../static/images/telegram-ic-default.svg'
                 }

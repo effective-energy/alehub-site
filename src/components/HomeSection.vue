@@ -573,10 +573,10 @@
 
 
         <group-alert-buttons :email-button-class="compEmailButtonClass"
+                             :email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"
                              :tg-button-class="compTgButtonClass"
                              :tg-button-messages-class="compTgButtonMessagesClass"
                              :tg-in-dark-section="alertButtonInDarkSection(tgButtonClass)"
-                             :email-in-dark-section="alertButtonInDarkSection(emailButtonClass)"
                              :scroll-in-footer="isScrollInFooter"
                              :rtl="isRtl"/>
 
@@ -588,7 +588,7 @@
     import SliderScreen from './layouts/SliderScreen';
     import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
-    import GroupAlertButtons from './layouts/GroupAlertButtons';
+    import GroupAlertButtons from './layouts/AlertButtons/GroupAlertButtons';
 
     import {mapGetters} from 'vuex';
 

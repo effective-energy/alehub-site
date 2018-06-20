@@ -7,21 +7,21 @@
        :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
 
         <div class="telegram-alert-mobile__wrap">
-            <img src="../../../static/images/telegram-ic-dark.svg"
+            <img src="../../../../static/images/telegram-ic-dark.svg"
                  v-if="!isDarkSection"
                  alt="telegram">
-            <img src="../../../static/images/telegram-ic-default.svg"
+            <img src="../../../../static/images/telegram-ic-default.svg"
                  v-if="isDarkSection"
                  alt="telegram">
             <span>{{ 'Join us in telegram' }}</span>
         </div>
 
 
-        <img src="../../../static/images/cancel-light.svg"
+        <img src="../../../../static/images/cancel-light.svg"
              v-if="!isDarkSection"
              @click.prevent="doCloseTelegramAlertMobile">
 
-        <img src="../../../static/images/cancel-dark.svg"
+        <img src="../../../../static/images/cancel-dark.svg"
              v-if="isDarkSection"
              @click.prevent="doCloseTelegramAlertMobile">
     </a>

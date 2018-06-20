@@ -1,11 +1,15 @@
 <template>
     <div class="group-alert-button">
-        <!--<transition name="fade">-->
-        <!--<email-subscribe-alert-panel v-if="openedEmailSubscribePanel"-->
-        <!--:in-dark-section="emailInDarkSection"/>-->
-        <!--</transition>-->
+        <transition name="fade">
+            <email-subscribe-alert-panel v-if="openedEmailSubscribePanel"
+                                         :opened-email-subscribe-panel="openedEmailSubscribePanel"
+                                         :in-dark-section="emailInDarkSection"/>
+        </transition>
 
-        <!--<email-subscribe-alert-button/>-->
+        <email-subscribe-alert-button :email-button-class="emailButtonClass"
+                                      :opened-email-subscribe-panel="openedEmailSubscribePanel"/>
+
+        <!--<telegram-alert-button-mobile/>-->
 
         <telegram-alert-button :tg-button-class="tgButtonClass"
                                :tg-button-messages-class="tgButtonMessagesClass"
@@ -30,11 +34,15 @@
             TelegramAlertButton
         },
         props: {
-            tgButtonClass: {
+            emailButtonClass: {
                 type: String,
                 required: true
             },
-            emailButtonClass: {
+            emailInDarkSection: {
+                type: Boolean,
+                required: true
+            },
+            tgButtonClass: {
                 type: String,
                 required: true
             },
@@ -43,10 +51,6 @@
                 required: true
             },
             tgInDarkSection: {
-                type: Boolean,
-                required: true
-            },
-            emailInDarkSection: {
                 type: Boolean,
                 required: true
             },
@@ -72,6 +76,11 @@
             doCloseTelegramAlertMobile: function () {
                 this.openedTelegramAlertMobile = false;
             },
+        },
+        mounted() {
+            this.$on('toggleEmailSubscribePanel', toggle => {
+                this.openedEmailSubscribePanel = toggle;
+            });
         }
     }
 </script>
@@ -87,7 +96,7 @@
         right 100px
         bottom 75px
         width 70px
-        height 200px
+        height 180px
 
         @media (max-width 768px)
             display none !important
@@ -96,14 +105,13 @@
             right 60px
             bottom 50px
             width 60px
-            height 180px
+            height 160px
 
         @media (min-width 1024px) and (max-width 1440px)
             right 75px
             bottom 50px
             width 60px
-            height 170px
-
+            height 160px
 
     .fade-enter-active,
     .fade-leave-active

@@ -1,47 +1,39 @@
 <template>
     <div class="email-subscribe-panel"
-         :class="{ 'email-subscribe-panel__yellow': inDarkSection,
-                 'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }">
+         :class="{ 'email-subscribe-panel__yellow': inDarkSection, 'email-subscribe-panel__rtl': rtl }">
         <div class="close__email-subscribe-panel"
-             @click="toggleEmailSubscribeAlert">
-            <img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :
-                         '../../static/images/cancel-light.svg'"
+             @click="closeEmailSubscribePanel">
+            <img :src="inDarkSection ? close.dark : close.white"
                  alt="close subscribe">
         </div>
         <div class="email-subscribe__wrap">
             <p>
-                {{$t("emailSubscribePanel.newsletter")}}
+                {{ $t("emailSubscribePanel.newsletter") }}
             </p>
             <form @submit.prevent="subscribe">
                 <label class="top-label-subscribe"
-                       :class="{ 'error-label': subscriber.error,
-                           'exist-label': subscriber.exist,
-                           'success-label': subscriber.success }"
-                       v-if="subscriber.error || subscriber.exist || subscriber.success">
-                    <span v-if="subscriber.error">{{$t("footer.right.error")}}</span>
-                    <span v-if="subscriber.success">successful subscription</span>
-                    <span v-if="subscriber.exist">this email is already in use</span>
+                       :class="calcTopLabelClass"
+                       v-if="subscriber.status">
+                    <span>{{ calcLabelText }}</span>
                 </label>
                 <input id="subscribe-email-input"
                        type="text"
-                       :placeholder='$t("emailSubscribePanel.YourAddress")'
                        required
-                       :class="{ 'error__email-subscribe-input': subscriber.error,
-                               'success__email-subscribe-input': subscriber.success,
-                               'exist__email-subscribe-input': subscriber.exist}"
+                       :class="calcInputClass"
+                       :placeholder='$t("emailSubscribePanel.yourAddress")'
+                       :disabled="subscriber.loader"
                        v-model="subscriber.email"
                        @blur="blurCheckCorrectEmail(subscriber.email)"
-                       @input="inputCheckCorrectEmail(subscriber.email)"
-                       :disabled="subscriber.loader">
+                       @input="inputCheckCorrectEmail(subscriber.email)">
                 <button type="submit"
                         :disabled="subscriber.loader">
-                    {{$t("emailSubscribePanel.subscribe")}}
+                    {{ $t("emailSubscribePanel.subscribe") }}
                 </button>
             </form>
         </div>
         <div class="web-push-notif">
             <label for="toggle-web-push">
-                {{$t("emailSubscribePanel.turnOn")}}
+                {{ $t("emailSubscribePanel.turnOn") }}
             </label>
             <label class="switch-control"
                    id="toggle-web-push"
@@ -56,19 +48,135 @@
 <script>
     export default {
         name: 'EmailSubscribePanel',
-        components: {
-
-        },
+        components: {},
         props: {
+            openedEmailSubscribePanel: {
+                type: Boolean,
+                required: true
+            },
             inDarkSection: {
+                type: Boolean,
+                required: true
+            },
+            rtl: {
                 type: Boolean,
                 required: true
             }
         },
         data() {
             return {
-
+                subscriber: {
+                    email: '',
+                    initialFocus: false,
+                    loader: false,
+                    status: false
+                },
+                close: {
+                    white: '../../../static/images/cancel-light.svg',
+                    dark: '../../../static/images/cancel-dark.svg'
+                }
             }
+        },
+        computed: {
+            calcTopLabelClass: function () {
+                switch (this.subscriber.status) {
+                    case 'success':
+                        return 'success-label';
+                    case 'exist':
+                        return 'exist-label';
+                    case 'error':
+                        return 'error-label';
+                    default:
+                        return '';
+                }
+            },
+            calcLabelText: function () {
+                switch (this.subscriber.status) {
+                    case 'success':
+                        return this.$t("emailSubscribePanel.label.success");
+                    case 'exist':
+                        return this.$t("emailSubscribePanel.label.exist");
+                    case 'error':
+                        return this.$t("emailSubscribePanel.label.error");
+                    default:
+                        return '';
+                }
+            },
+            calcInputClass: function () {
+                switch (this.subscriber.status) {
+                    case 'success':
+                        return 'email-subscribe-input__success';
+                    case 'exist':
+                        return 'email-subscribe-input__exist';
+                    case 'error':
+                        return 'email-subscribe-input__error';
+                    default:
+                        return '';
+                }
+            }
+        },
+        methods: {
+            closeEmailSubscribePanel: function () {
+                this.$parent.$emit('toggleEmailSubscribePanel',);
+            },
+            blurCheckCorrectEmail: function (email) {
+                (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
+                this.subscriber.error = !this.checkCorrectEmail(email);
+
+                if (this.subscriber.error) {
+                    this.subscriber.success = false;
+                    this.subscriber.exist = false;
+                }
+            },
+            inputCheckCorrectEmail: function (email) {
+                if (this.subscriber.initialFocus) {
+                    this.subscriber.error = !this.checkCorrectEmail(email);
+
+                    this.subscriber.exist = false;
+
+                    if (this.subscriber.error)
+                        this.subscriber.success = false;
+                }
+            },
+            checkCorrectEmail: function (email) {
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (email.length === 0)
+                    return true;
+
+                return re.test(String(email).toLowerCase());
+            },
+            subscribe: function () {
+                if (this.checkCorrectEmail(this.subscriber.email)) {
+                    this.subscriber.loader = true;
+                    this.subscriber.success = false;
+                    this.subscriber.error = false;
+                    this.subscriber.exist = false;
+
+                    this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
+                        'email': this.subscriber.email
+                    }, {
+                        headers: {
+                            'Content-Type': 'application/json; charset=UTF-8',
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        this.subscriber.loader = false;
+                        console.log(response.body);
+                        if (response.body.message === 'Email already exist') {
+                            localStorage.setItem('subscriber-email', this.subscriber.email);
+                            return this.subscriber.exist = true;
+                        }
+                        this.subscriber.success = true;
+                        localStorage.setItem('subscriber-email', this.subscriber.email);
+                    }, response => {
+                        this.subscriber.loader = false;
+                        this.subscriber.error = true;
+                    })
+                }
+            },
+            toggleNotification: function () {
+
+            },
         }
     }
 </script>
@@ -152,7 +260,6 @@
                     background-color #2e86ce
                     color #f7f7f7
 
-
                 input
                     width 67%
                     background-color #f0f0f0
@@ -188,14 +295,14 @@
                         color #666666
                         background-color #cccccc
 
-                .error__email-subscribe-input
-                    border-color #ff4f4f
-
-                .success__email-subscribe-input
+                .email-subscribe-input__success
                     border-color green
 
-                .exist__email-subscribe-input
+                .email-subscribe-input__exist
                     border-color #2e86ce
+
+                .email-subscribe-input__error
+                    border-color #ff4f4f
 
                 button
                     width 30%
@@ -260,7 +367,6 @@
                             -webkit-transform translateX(18px)
                             -ms-transform translateX(18px)
                             transform translateX(18px)
-
 
                 .slider
                     position absolute

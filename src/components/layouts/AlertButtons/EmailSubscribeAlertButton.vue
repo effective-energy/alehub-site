@@ -2,8 +2,8 @@
     <button type="button"
             id="email-subscribe-alert"
             class="email-subscribe-alert"
-            :class="[emailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"
-            @click="toggleEmailSubscribeAlert">
+            :class="emailButtonClass"
+            @click="toggleEmailSubscribePanel">
         <div class="el-base">
             <div class="el-inner-space">
                 <div class="el-flap"
@@ -16,20 +16,38 @@
 
 <script>
     export default {
-        name: 'EmailAlertButton'
+        name: 'EmailAlertButton',
+        props: {
+            emailButtonClass: {
+                type: String,
+                required: true
+            },
+            openedEmailSubscribePanel: {
+                type: Boolean,
+                required: true
+            }
+        },
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+            toggleEmailSubscribePanel: function () {
+                this.$parent.$emit('toggleEmailSubscribePanel', !this.openedEmailSubscribePanel);
+            }
+        }
     }
 </script>
 
 <style lang="stylus" scoped>
     .email-subscribe-alert
         cursor pointer
-        position fixed
         display flex
         justify-content center
         align-items center
-        right 100px
-        bottom 180px
-        width 70px
+        position relative
+        width 100%
         height 70px
         border-radius 50%
         border none
@@ -51,19 +69,10 @@
             box-shadow none
             transform translateY(2px)
 
-        @media (max-width 768px)
-            display none !important
-
         @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 140px
-            width 60px
             height 60px
 
         @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 140px
-            width 60px
             height 60px
 
         .el-base
