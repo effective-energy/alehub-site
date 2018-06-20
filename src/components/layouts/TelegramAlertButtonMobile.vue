@@ -1,5 +1,30 @@
 <template>
-    
+    <a id="telegram-alert-mobile"
+       class="telegram-alert-mobile"
+       href="https://t.me/alehub"
+       target="_blank"
+       v-if="!closedTelegramAlertMobile && !isOpenedModalMenu"
+       :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
+
+        <div class="telegram-alert-mobile__wrap">
+            <img src="../../../static/images/telegram-ic-dark.svg"
+                 v-if="!isDarkSection"
+                 alt="telegram">
+            <img src="../../../static/images/telegram-ic-default.svg"
+                 v-if="isDarkSection"
+                 alt="telegram">
+            <span>{{ 'Join us in telegram' }}</span>
+        </div>
+
+
+        <img src="../../../static/images/cancel-light.svg"
+             v-if="!isDarkSection"
+             @click.prevent="doCloseTelegramAlertMobile">
+
+        <img src="../../../static/images/cancel-dark.svg"
+             v-if="isDarkSection"
+             @click.prevent="doCloseTelegramAlertMobile">
+    </a>
 </template>
 
 <script>

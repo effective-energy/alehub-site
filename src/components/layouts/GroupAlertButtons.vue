@@ -1,77 +1,29 @@
 <template>
     <div class="group-alert-button">
         <transition name="fade">
-            <email-subscribe-panel v-if="openedEmailSubscribePanel"
+            <email-subscribe-alert-panel v-if="openedEmailSubscribePanel"
                                    :in-dark-section="emailInDarkSection"/>
         </transition>
 
-        <button type="button"
-                id="email-subscribe-alert"
-                class="email-subscribe-alert"
-                :class="[emailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"
-                @click="toggleEmailSubscribeAlert">
-            <div class="el-base">
-                <div class="el-inner-space">
-                    <div class="el-flap"
-                         :class="{ 'el-flap-active': openedEmailSubscribePanel }">
-                    </div>
-                </div>
-            </div>
-        </button>
+        <email-subscribe-alert-button/>
 
-        <a id="telegram-alert-mobile"
-           class="telegram-alert-mobile"
-           href="https://t.me/alehub"
-           target="_blank"
-           v-if="!closedTelegramAlertMobile && !isOpenedModalMenu"
-           :class="{ 'telegram-alert-mobile__yellow': isDarkSection }">
-
-            <div class="telegram-alert-mobile__wrap">
-                <img src="../../../static/images/telegram-ic-dark.svg"
-                     v-if="!isDarkSection"
-                     alt="telegram">
-                <img src="../../../static/images/telegram-ic-default.svg"
-                     v-if="isDarkSection"
-                     alt="telegram">
-                <span>{{ 'Join us in telegram' }}</span>
-            </div>
+        <telegram-alert-button/>
 
 
-            <img src="../../../static/images/cancel-light.svg"
-                 v-if="!isDarkSection"
-                 @click.prevent="doCloseTelegramAlertMobile">
-
-            <img src="../../../static/images/cancel-dark.svg"
-                 v-if="isDarkSection"
-                 @click.prevent="doCloseTelegramAlertMobile">
-        </a>
-
-        <div id="telegram-alert"
-             class="telegram-alert"
-             :class="[ tgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">
-            <a href="https://t.me/alehub" target="_blank">
-                <img src="../../../static/images/telegram-ic-dark.svg"
-                     alt="telegram"
-                     v-if="!tgInDarkSection">
-                <img src="../../../static/images/telegram-ic-default.svg"
-                     alt="telegram"
-                     v-if="tgInDarkSection">
-            </a>
-            <div class="alert-message"
-                 :class="[ tgButtonMessagesClass, { 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">
-                <span>{{ randomNumMessages }}</span>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
-    import EmailSubscribePanel from './EmailSubscribePanel';
+    import EmailSubscribeAlertPanel from './EmailSubscribeAlertPanel';
+    import EmailSubscribeAlertButton from './EmailSubscribeAlertButton';
+    import TelegramAlertButton from './TelegramAlertButton';
 
     export default {
         name: 'GroupAlertButtons',
         components: {
-            EmailSubscribePanel
+            EmailSubscribeAlertPanel,
+            EmailSubscribeAlertButton,
+            TelegramAlertButton
         },
         props: {
             tgButtonClass: {

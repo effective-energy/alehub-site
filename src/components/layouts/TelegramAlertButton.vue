@@ -1,5 +1,20 @@
 <template>
-    
+    <div id="telegram-alert"
+         class="telegram-alert"
+         :class="[ tgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">
+        <a href="https://t.me/alehub" target="_blank">
+            <img src="../../../static/images/telegram-ic-dark.svg"
+                 alt="telegram"
+                 v-if="!tgInDarkSection">
+            <img src="../../../static/images/telegram-ic-default.svg"
+                 alt="telegram"
+                 v-if="tgInDarkSection">
+        </a>
+        <div class="alert-message"
+             :class="[ tgButtonMessagesClass, { 'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">
+            <span>{{ randomNumMessages }}</span>
+        </div>
+    </div>
 </template>
 
 <script>
