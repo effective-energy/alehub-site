@@ -1,23 +1,58 @@
 <template>
-    
+    <div id="telegram-alert"
+         class="telegram-alert"
+         :class="tgButtonClass">
+        <a href="https://t.me/alehub" target="_blank">
+            <img alt="telegram"
+                 :src="(tgInDarkSection) ? icon.dark : icon.white">
+        </a>
+        <div class="alert-message"
+             :class="tgButtonMessagesClass">
+            <span>{{ randomNumMessages }}</span>
+        </div>
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'TelegramAlertButton'
+        name: 'TelegramAlertButton',
+        props: {
+            tgButtonClass: {
+                type: String,
+                required: true
+            },
+            tgButtonMessagesClass: {
+                type: String,
+                required: true
+            },
+            tgInDarkSection: {
+                type: Boolean,
+                required: true
+            }
+        },
+        data() {
+            return {
+                randomNumMessages: null,
+                icon: {
+                    white: '../../../static/images/telegram-ic-dark.svg',
+                    dark: '../../../static/images/telegram-ic-default.svg'
+                }
+            }
+        },
+        mounted() {
+            this.randomNumMessages = Math.round(Math.random() * 10) + 1;
+        }
     }
 </script>
 
 <style lang="stylus" scoped>
     .telegram-alert
+        z-index 1000
         cursor pointer
-        position fixed
-        right 100px
-        bottom 75px
-        width 70px
+        position relative
+        width 100%
         height 70px
         border-radius 50%
-        z-index 1000
         -webkit-transition all .3s ease-in-out
         -o-transition all .3s ease-in-out
         transition all .3s ease-in-out
@@ -25,19 +60,10 @@
         -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
 
-        @media (max-width 768px)
-            display none !important
-
         @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 50px
-            width 60px
             height 60px
 
         @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 50px
-            width 60px
             height 60px
 
         .alert-message
@@ -47,27 +73,27 @@
             display flex
             justify-content center
             align-items center
-            position fixed
-            bottom 125px
-            right 95px
+            position absolute
+            top 0
+            right -10px
             -webkit-transition all .3s ease-in-out
             -o-transition all .3s ease-in-out
             transition all .3s ease-in-out
 
             @media (min-width 768px) and (max-width 1024px)
-                right 60px
-                bottom 90px
-                width 15px
-                height 15px
+                width 20px
+                height 20px
+                top 0
+                right -5px
 
                 span
                     font-size 12px
 
             @media (min-width 1024px) and (max-width 1440px)
-                right 75px
-                bottom 95px
                 width 20px
                 height 20px
+                top 0
+                right -5px
 
                 span
                     font-size 12px

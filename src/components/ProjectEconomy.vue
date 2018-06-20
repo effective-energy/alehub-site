@@ -12,12 +12,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                     <img class="schema" src="../../static/images/project-economy-schema.png"
                          alt="project economy schema">
                 </div>
-                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 p-l-40">
-                    <div v-html="$t('projectEconomy.text')"></div>
+                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 p-l-40">
+                    <div class="desc" v-html="$t('projectEconomy.text')"></div>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
         padding-left 40px
 
         @media (max-width 992px)
-            padding-left 0
+            padding-left unset
 
     .section
         background-color #343a49
@@ -71,4 +71,12 @@
             display flex
             flex-direction column
             align-items center
+
+        .desc
+            @media (max-width 992px)
+                padding-top 60px
+
+            @media (max-width 768px)
+                padding-right 30px
+                padding-left 30px
 </style>

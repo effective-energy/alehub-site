@@ -308,6 +308,12 @@
             tgButtonYOffset: function () {
                 return this.getScreenCoords(this.tgButton).top + this.tgButton.offsetHeight / 2;
             },
+            tgButtonMobile: function () {
+                return document.getElementById('telegram-alert-mobile');
+            },
+            tgButtonMobileYOffset: function () {
+                return this.navbarOffset + this.tgButtonMobile.offsetHeight;
+            },
             mailButton: function () {
                 return document.getElementById('email-subscribe-alert');
             },
@@ -364,6 +370,19 @@
                 for (let i = 0; i < this.darkSections.length; i++)
                     if (window.scrollY >= this.getPageCoords(this.darkSections[i]).top - this.tgButtonYOffset &&
                         window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - this.tgButtonYOffset)
+                        return true;
+
+                return false;
+            },
+            /**
+             * checking for a tgButtonMobile in the dark section
+             *
+             * @returns {boolean}
+             */
+            checkTgButtonMobileInDarkSection: function () {
+                for (let i = 0; i < this.darkSections.length; i++)
+                    if (window.scrollY >= this.getPageCoords(this.darkSections[i]).top - this.tgButtonMobileYOffset &&
+                        window.scrollY < this.getPageCoords(this.darkSections[i]).bottom - this.tgButtonMobileYOffset)
                         return true;
 
                 return false;
@@ -597,8 +616,8 @@
                 tgButtonHeight = null;
 
             if (document.getElementById('wrap-pointer')) {
-                pointerToTop = document.getElementById('wrap-pointer'),
-                    pointerToTopOffset = pointerToTop.offsetHeight;
+                pointerToTop = document.getElementById('wrap-pointer');
+                pointerToTopOffset = pointerToTop.offsetHeight;
             }
 
             if (document.getElementById('navbar')) {
@@ -652,6 +671,13 @@
                     } else {
                         this.$parent.$emit('checkTgButtonStyle', 'telegram-alert__dark');
                         this.$parent.$emit('checkTgButtonMessagesStyle', 'alert-messages__yellow');
+                    }
+
+                    //check tg mobile button
+                    if (this.checkTgButtonMobileInDarkSection()) {
+                        this.$parent.$emit('checkTgButtonMobileStyle', 'telegram-alert-mobile__yellow');
+                    } else {
+                        this.$parent.$emit('checkTgButtonMobileStyle', 'telegram-alert-mobile__dark');
                     }
 
                     //check mail button
