@@ -81,8 +81,8 @@
             transition all .3s ease-in-out
 
             @media (min-width 768px) and (max-width 1024px)
-                width 15px
-                height 15px
+                width 20px
+                height 20px
                 top 0
                 right -5px
 

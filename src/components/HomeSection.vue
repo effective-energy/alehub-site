@@ -573,7 +573,7 @@
 
         <telegram-alert-button-mobile :tg-button-mobile-class="compTgButtonMobileClass"
                                       :opened-modal-menu="openedModalMenu"
-                                      :tg-mobile-in-dark-section="alertButtonInDarkSection(tgButtonMessagesClass)"/>
+                                      :tg-mobile-in-dark-section="!alertButtonInDarkSection(tgButtonMobileClass)"/>
 
 
         <group-alert-buttons :email-button-class="compEmailButtonClass"

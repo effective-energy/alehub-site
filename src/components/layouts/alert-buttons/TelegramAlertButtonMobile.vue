@@ -12,13 +12,7 @@
             <span>{{ 'Join us in telegram' }}</span>
         </div>
 
-
-        <img src="../../../../static/images/cancel-light.svg"
-             v-if="!tgMobileInDarkSection"
-             @click.prevent="doCloseTelegramAlertMobile">
-
-        <img src="../../../../static/images/cancel-dark.svg"
-             v-if="tgMobileInDarkSection"
+        <img :src="(tgMobileInDarkSection) ? close.white : close.dark"
              @click.prevent="doCloseTelegramAlertMobile">
     </a>
 </template>
@@ -40,12 +34,21 @@
                 required: true
             }
         },
+        watch: {
+            tgMobileInDarkSection: function (val) {
+                console.log(val, 'watch tgMobileInDarkSection');
+            }
+        },
         data() {
             return {
                 openedMobileAlert: true,
                 icon: {
                     white: '../../../../static/images/telegram-ic-default.svg',
                     dark: '../../../../static/images/telegram-ic-dark.svg'
+                },
+                close: {
+                    white: '../../../../static/images/cancel-light.svg',
+                    dark: '../../../../static/images/cancel-dark.svg'
                 }
             }
         },
@@ -53,6 +56,9 @@
             doCloseTelegramAlertMobile: function () {
                 this.openedMobileAlert = !this.openedMobileAlert;
             }
+        },
+        mounted() {
+            console.log(this.tgMobileInDarkSection, 'tgMobileInDarkSection');
         }
     }
 </script>
