@@ -390,7 +390,7 @@
             </div>
         </div>
 
-        <rating-block/>
+        <rating-block :is-dark="isDark"/>
 
         <partners-block :is-dark="isDark"/>
 

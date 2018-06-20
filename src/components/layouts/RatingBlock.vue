@@ -1,5 +1,7 @@
 <template>
-    <div class="section" id="ratings">
+    <div id="ratings"
+         class="section"
+         :class="calcSectionClass">
         <div class="list">
             <div class="mark" v-for="item in list">
                 <a target="_blank"
@@ -20,6 +22,12 @@
 <script>
     export default {
         name: 'RatingBlock',
+        props: {
+            isDark: {
+                type: Boolean,
+                required: true
+            }
+        },
         data() {
             return {
                 list: [
@@ -56,6 +64,11 @@
                 ]
             }
         },
+        computed: {
+            calcSectionClass: function () {
+                return (this.isDark) ? 'section__dark' : 'section__light';
+            }
+        },
         methods: {
             imageLoadOnError: function (id) {
                 let el = this.list.find(item => {
@@ -70,7 +83,12 @@
 
 <style lang="stylus" scoped>
     .section
-        background-color #ececf0
+
+        &.section__dark
+            background-color #343a49
+
+        &.section__light
+            background-color #ececf0
 
         .list
             display flex
