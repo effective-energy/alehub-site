@@ -2,12 +2,13 @@
     <div class="index" id="index-main-component">
         <header-block :is-main-dark="isDark"/>
         <home-section :is-dark-section="isDarkSection"
-                      :is-opened-modal-menu="openedModalMenu"
+                      :opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"
                       :is-pointer-in-dark="isPointerInDark"
                       :tg-button-class="tgButtonClass"
                       :tg-button-messages-class="tgButtonMessagesClass"
+                      :tg-button-mobile-class="tgButtonMobileClass"
                       :email-button-class="emailButtonClass"/>
         <mission-section :is-rtl="isRtl"/>
         <advantages-section :is-rtl="isRtl"/>
@@ -72,6 +73,7 @@
                 tgButtonClass: '',
                 emailButtonClass: '',
                 tgButtonMessagesClass: '',
+                tgButtonMobileClass: '',
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
                 isAdvisorsAutoplay: false
@@ -95,8 +97,8 @@
                 this.isDark = val;
             });
 
-            this.$on('isOpenedModalMenu', (val) => {
-                this.openedModalMenu = val;
+            this.$on('isOpenedModalMenu', opened => {
+                this.openedModalMenu = opened;
             });
 
             this.$on('scrollInFooter', (val) => {
@@ -117,6 +119,10 @@
 
             this.$on('checkTgButtonMessagesStyle', style => {
                 this.tgButtonMessagesClass = style;
+            });
+
+            this.$on('checkTgButtonMobileStyle', style => {
+                this.tgButtonMobileClass = style;
             });
 
             this.$on('checkMailButtonStyle', style => {

@@ -1,6 +1,5 @@
 <template>
     <div class="group-alert-button">
-
         <email-subscribe-alert-panel :opened-email-subscribe-panel="openedEmailSubscribePanel"
                                      :in-dark-section="emailInDarkSection"
                                      :rtl="rtl"/>
@@ -8,20 +7,15 @@
         <email-subscribe-alert-button :email-button-class="emailButtonClass"
                                       :opened-email-subscribe-panel="openedEmailSubscribePanel"/>
 
-        <!--<telegram-alert-button-mobile/>-->
-
         <telegram-alert-button :tg-button-class="tgButtonClass"
                                :tg-button-messages-class="tgButtonMessagesClass"
                                :tg-in-dark-section="tgInDarkSection"/>
-
-
     </div>
 </template>
 
 <script>
     import EmailSubscribeAlertPanel from './EmailSubscribeAlertPanel';
     import EmailSubscribeAlertButton from './EmailSubscribeAlertButton';
-    import TelegramAlertButtonMobile from './TelegramAlertButtonMobile';
     import TelegramAlertButton from './TelegramAlertButton';
 
     export default {
@@ -29,7 +23,6 @@
         components: {
             EmailSubscribeAlertPanel,
             EmailSubscribeAlertButton,
-            TelegramAlertButtonMobile,
             TelegramAlertButton
         },
         props: {
