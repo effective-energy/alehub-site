@@ -62,81 +62,17 @@
             </h3>
 
             <div class="list-items">
-                <div class="item">
+                <div class="item"
+                     v-for="problem in problems">
                     <div class="left">
-                        <img src="../../static/images/icon-money.svg">
+                        <img :src="problem.img">
                     </div>
                     <div class="right">
                         <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[0].title") }}
+                            {{ problem.title }}
                         </p>
                         <p>
-                            {{ $t("alePlatform.solvingProblems.list[0].description") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <img src="../../static/images/icon-pen.svg">
-                    </div>
-                    <div class="right">
-                        <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[1].title") }}
-                        </p>
-                        <p>
-                            {{ $t("alePlatform.solvingProblems.list[1].description") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <img src="../../static/images/icon-contract.svg">
-                    </div>
-                    <div class="right">
-                        <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[2].title") }}
-                        </p>
-                        <p>
-                            {{ $t("alePlatform.solvingProblems.list[2].description") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <img src="../../static/images/icon-integration.svg">
-                    </div>
-                    <div class="right">
-                        <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[3].title") }}
-                        </p>
-                        <p>
-                            {{ $t("alePlatform.solvingProblems.list[3].description") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <img src="../../static/images/icon-volatility.svg">
-                    </div>
-                    <div class="right">
-                        <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[4].title") }}
-                        </p>
-                        <p>
-                            {{ $t("alePlatform.solvingProblems.list[4].description") }}
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="left">
-                        <img src="../../static/images/integrity-ic.svg">
-                    </div>
-                    <div class="right">
-                        <p class="right__title">
-                            {{ $t("alePlatform.solvingProblems.list[5].title") }}
-                        </p>
-                        <p>
-                            {{ $t("alePlatform.solvingProblems.list[5].description") }}
+                            {{ problem.desc }}
                         </p>
                     </div>
                 </div>
@@ -144,8 +80,6 @@
         </div>
 
         <div class="section-3" id="main-features">
-            <!--v-if="isVideo"-->
-
             <div class="video__wrap">
                 <video autoplay muted loop id="myVideoScale">
                     <source src="../../static/video/libra.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'/>
@@ -153,65 +87,22 @@
                 </video>
             </div>
 
-
-            <!--<div class="figure">-->
-                <!--<img src="../../static/images/layer.png" alt="" style="width: 100%;">-->
-            <!--</div>-->
-
             <div class="info-block">
                 <h3 class="title">
                     {{ $t("features.title") }}
                 </h3>
                 <div class="list-items">
-                    <div class="item">
+                    <div class="item"
+                         v-for="feature in features">
                         <div class="left">
-                            <img src="../../static/images/icon-lock.svg">
+                            <img :src="feature.img">
                         </div>
                         <div class="right">
                             <p class="right__title">
-                                {{ $t("features.list[0].title") }}
+                                {{ feature.title }}
                             </p>
                             <p>
-                                {{ $t("features.list[0].description") }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="left">
-                            <img src="../../static/images/icon-relationship.svg">
-                        </div>
-                        <div class="right">
-                            <p class="right__title">
-                                {{ $t("features.list[1].title") }}
-                            </p>
-                            <p>
-                                {{ $t("features.list[1].description") }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="left">
-                            <img src="../../static/images/icon-adjust.svg">
-                        </div>
-                        <div class="right">
-                            <p class="right__title">
-                                {{ $t("features.list[2].title") }}
-                            </p>
-                            <p>
-                                {{ $t("features.list[2].description") }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="left">
-                            <img src="../../static/images/icon-process.svg">
-                        </div>
-                        <div class="right">
-                            <p class="right__title">
-                                {{ $t("features.list[3].title") }}
-                            </p>
-                            <p>
-                                {{ $t("features.list[3].description") }}
+                                {{ feature.text }}
                             </p>
                         </div>
                     </div>
@@ -223,7 +114,7 @@
 
 <script>
     export default {
-        name: 'Screen4',
+        name: 'Features',
         props: {
             isFeatures: {
                 required: true
@@ -231,7 +122,61 @@
         },
         data() {
             return {
-                mainPlayer: false
+                mainPlayer: false,
+                problems: [
+                    {
+                        img: '../../static/images/icon-money.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[0].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[0].description')
+                    },
+                    {
+                        img: '../../static/images/icon-pen.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[1].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[1].description')
+                    },
+                    {
+                        img: '../../static/images/icon-contract.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[2].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[2].description')
+                    },
+                    {
+                        img: '../../static/images/icon-integration.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[3].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[3].description')
+                    },
+                    {
+                        img: '../../static/images/icon-volatility.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[4].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[4].description')
+                    },
+                    {
+                        img: '../../static/images/integrity-ic.svg',
+                        title: this.$t('alePlatform.solvingProblems.list[5].title'),
+                        desc: this.$t('alePlatform.solvingProblems.list[5].description')
+                    },
+                ],
+                features: [
+                    {
+                        img: '../../static/images/icon-lock.svg',
+                        title: this.$t('features.list[0].title'),
+                        desc: this.$t('features.list[0].description')
+                    },
+                    {
+                        img: '../../static/images/icon-relationship.svg',
+                        title: this.$t('features.list[1].title'),
+                        desc: this.$t('features.list[1].description')
+                    },
+                    {
+                        img: '../../static/images/icon-adjust.svg',
+                        title: this.$t('features.list[2].title'),
+                        desc: this.$t('features.list[2].description')
+                    },
+                    {
+                        img: '../../static/images/icon-process.svg',
+                        title: this.$t('features.list[3].title'),
+                        desc: this.$t('features.list[3].description')
+                    },
+                ]
             }
         },
         computed: {
@@ -518,7 +463,6 @@
 
                 video
                     width 100%
-
 
             .figure
                 width 30%
