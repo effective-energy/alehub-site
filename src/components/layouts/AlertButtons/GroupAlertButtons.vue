@@ -1,10 +1,9 @@
 <template>
     <div class="group-alert-button">
-        <transition name="fade">
-            <email-subscribe-alert-panel v-if="openedEmailSubscribePanel"
-                                         :opened-email-subscribe-panel="openedEmailSubscribePanel"
-                                         :in-dark-section="emailInDarkSection"/>
-        </transition>
+
+        <email-subscribe-alert-panel :opened-email-subscribe-panel="openedEmailSubscribePanel"
+                                     :in-dark-section="emailInDarkSection"
+                                     :rtl="rtl"/>
 
         <email-subscribe-alert-button :email-button-class="emailButtonClass"
                                       :opened-email-subscribe-panel="openedEmailSubscribePanel"/>
@@ -112,15 +111,4 @@
             bottom 50px
             width 60px
             height 160px
-
-    .fade-enter-active,
-    .fade-leave-active
-        -webkit-transition all .5s ease-in-out
-        -o-transition all .5s ease-in-out
-        transition all .5s ease-in-out
-
-    .fade-enter,
-    .fade-leave-active
-        opacity 1
-        bottom -150px
 </style>

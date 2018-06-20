@@ -1,47 +1,53 @@
 <template>
-    <div class="email-subscribe-panel"
-         :class="{ 'email-subscribe-panel__yellow': inDarkSection, 'email-subscribe-panel__rtl': rtl }">
-        <div class="close__email-subscribe-panel"
-             @click="closeEmailSubscribePanel">
-            <img :src="inDarkSection ? close.dark : close.white"
-                 alt="close subscribe">
-        </div>
-        <div class="email-subscribe__wrap">
-            <p>
-                {{ $t("emailSubscribePanel.newsletter") }}
-            </p>
-            <form @submit.prevent="subscribe">
-                <label class="top-label-subscribe"
-                       :class="calcTopLabelClass"
-                       v-if="subscriber.status">
-                    <span>{{ calcLabelText }}</span>
-                </label>
-                <input id="subscribe-email-input"
-                       type="text"
-                       required
-                       :class="calcInputClass"
-                       :placeholder='$t("emailSubscribePanel.yourAddress")'
-                       :disabled="subscriber.loader"
-                       v-model="subscriber.email"
-                       @blur="blurCheckCorrectEmail(subscriber.email)"
-                       @input="inputCheckCorrectEmail(subscriber.email)">
-                <button type="submit"
-                        :disabled="subscriber.loader">
-                    {{ $t("emailSubscribePanel.subscribe") }}
-                </button>
-            </form>
-        </div>
-        <div class="web-push-notif">
-            <label for="toggle-web-push">
-                {{ $t("emailSubscribePanel.turnOn") }}
-            </label>
-            <label class="switch-control"
-                   id="toggle-web-push"
-                   @click="toggleNotification">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
+    <div class="email-subscribe-panel__wrap">
+        <transition name="fade">
+            <div class="email-subscribe-panel"
+                 v-if="openedEmailSubscribePanel"
+                 :class="{ 'email-subscribe-panel__yellow': inDarkSection, 'email-subscribe-panel__rtl': rtl }">
+                <div class="email-subscribe-panel__close"
+                     @click="closeEmailSubscribePanel">
+                    <img :src="inDarkSection ? close.dark : close.white"
+                         alt="close subscribe">
+                </div>
+                <div class="email-subscribe__wrap">
+                    <p>
+                        {{ $t("emailSubscribePanel.newsletter") }}
+                    </p>
+                    <form @submit.prevent="subscribe">
+                        <label class="top-label-subscribe"
+                               :class="calcTopLabelClass"
+                               v-if="subscriber.status">
+                            <span>{{ calcLabelText }}</span>
+                        </label>
+                        <input id="subscribe-email-input"
+                               type="text"
+                               required
+                               :class="calcInputClass"
+                               :placeholder='$t("emailSubscribePanel.yourAddress")'
+                               :disabled="subscriber.loader"
+                               v-model="subscriber.email"
+                               @blur="blurCheckCorrectEmail(subscriber.email)"
+                               @input="inputCheckCorrectEmail(subscriber.email)"
+                               @keyup.enter="subscribe">
+                        <button type="submit"
+                                :disabled="subscriber.loader">
+                            {{ $t("emailSubscribePanel.subscribe") }}
+                        </button>
+                    </form>
+                </div>
+                <div class="web-push-notif">
+                    <label for="toggle-web-push">
+                        {{ $t("emailSubscribePanel.turnOn") }}
+                    </label>
+                    <label class="switch-control"
+                           id="toggle-web-push"
+                           @click="toggleNotification">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -77,6 +83,16 @@
                 }
             }
         },
+        watch: {
+            openedEmailSubscribePanel: function (opened) {
+                if (!opened) {
+                    this.subscriber.email = '';
+                    this.subscriber.initialFocus = false;
+                    this.subscriber.loader = false;
+                    this.subscriber.status = false;
+                }
+            }
+        },
         computed: {
             calcTopLabelClass: function () {
                 switch (this.subscriber.status) {
@@ -93,11 +109,11 @@
             calcLabelText: function () {
                 switch (this.subscriber.status) {
                     case 'success':
-                        return this.$t("emailSubscribePanel.label.success");
+                        return this.$t('emailSubscribePanel.label.success');
                     case 'exist':
-                        return this.$t("emailSubscribePanel.label.exist");
+                        return this.$t('emailSubscribePanel.label.exist');
                     case 'error':
-                        return this.$t("emailSubscribePanel.label.error");
+                        return this.$t('emailSubscribePanel.label.error');
                     default:
                         return '';
                 }
@@ -120,22 +136,19 @@
                 this.$parent.$emit('toggleEmailSubscribePanel',);
             },
             blurCheckCorrectEmail: function (email) {
-                (this.subscriber.email.length === 0) ? this.subscriber.initialFocus = false : this.subscriber.initialFocus = true;
-                this.subscriber.error = !this.checkCorrectEmail(email);
+                this.subscriber.initialFocus = this.subscriber.email.length === 0;
 
-                if (this.subscriber.error) {
-                    this.subscriber.success = false;
-                    this.subscriber.exist = false;
-                }
+                if (this.checkCorrectEmail(email))
+                    this.subscriber.status = false;
+                else
+                    this.subscriber.status = 'error';
             },
             inputCheckCorrectEmail: function (email) {
                 if (this.subscriber.initialFocus) {
-                    this.subscriber.error = !this.checkCorrectEmail(email);
-
-                    this.subscriber.exist = false;
-
-                    if (this.subscriber.error)
-                        this.subscriber.success = false;
+                    if (this.checkCorrectEmail(email))
+                        this.subscriber.status = false;
+                    else
+                        this.subscriber.status = 'error';
                 }
             },
             checkCorrectEmail: function (email) {
@@ -148,9 +161,7 @@
             subscribe: function () {
                 if (this.checkCorrectEmail(this.subscriber.email)) {
                     this.subscriber.loader = true;
-                    this.subscriber.success = false;
-                    this.subscriber.error = false;
-                    this.subscriber.exist = false;
+                    this.subscriber.status = false;
 
                     this.$http.post(`https://alehub-4550.nodechef.com/subscribe/new`, {
                         'email': this.subscriber.email
@@ -161,16 +172,15 @@
                         }
                     }).then(response => {
                         this.subscriber.loader = false;
-                        console.log(response.body);
                         if (response.body.message === 'Email already exist') {
                             localStorage.setItem('subscriber-email', this.subscriber.email);
-                            return this.subscriber.exist = true;
+                            return this.subscriber.status = 'exist';
                         }
-                        this.subscriber.success = true;
+                        this.subscriber.status = 'success';
                         localStorage.setItem('subscriber-email', this.subscriber.email);
                     }, response => {
                         this.subscriber.loader = false;
-                        this.subscriber.error = true;
+                        this.subscriber.status = 'error';
                     })
                 }
             },
@@ -195,15 +205,12 @@
         padding 20px 25px 20px 20px
         background-color #343a49
         border-radius 4px
-        -webkit-transition all .3s ease-out
-        -o-transition all .3s ease-out
-        transition all .3s ease-out
+        -webkit-transition all .3s ease-in-out
+        -o-transition all .3s ease-in-out
+        transition all .3s ease-in-out
         -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
         box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-
-        @media (max-width 768px)
-            display none !important
 
         @media (min-width 768px) and (max-width 1024px)
             right 150px
@@ -215,7 +222,7 @@
             bottom 50px
             height 150px
 
-        .close__email-subscribe-panel
+        .email-subscribe-panel__close
             cursor pointer
             position absolute
             right 10px
@@ -397,4 +404,15 @@
                         -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
                         -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
                         box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
+
+    .fade-enter-active,
+    .fade-leave-active
+        -webkit-transition all .5s ease-in-out
+        -o-transition all .5s ease-in-out
+        transition all .5s ease-in-out
+
+    .fade-enter,
+    .fade-leave-active
+        opacity 1
+        bottom -200px
 </style>
