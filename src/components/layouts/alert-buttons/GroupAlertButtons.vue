@@ -88,7 +88,7 @@
         right 100px
         bottom 75px
         width 70px
-        height 180px
+        height 200px
 
         @media (max-width 768px)
             display none !important

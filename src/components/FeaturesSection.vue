@@ -1,5 +1,6 @@
 <template>
-    <div class="section section__yellow" id="features">
+    <div class="section section__yellow features" id="features">
+        <!--вернуть партиклы-->
         <vue-particles v-if="isFeatures && !isLessThanTablet"
                        id="particles-js"
                        color="#ffffff"
@@ -29,8 +30,7 @@
                 <div onclick="yaCounter48802643.reachGoal('SecVideo'); return true;"
                      class="play-video">
                     <button class="play-button"
-                            @click="playVideo"
-                            style="display: flex; justify-content: center; align-items: center;">
+                            @click="playVideo">
                         <div class="wrap-play"
                              :class="{ 'active': mainPlayer }">
                             <span class="line l-1"></span>
@@ -101,9 +101,6 @@
                             <p class="right__title">
                                 {{ feature.title }}
                             </p>
-                            <p>
-                                {{ feature.text }}
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -158,23 +155,19 @@
                 features: [
                     {
                         img: '../../static/images/icon-lock.svg',
-                        title: this.$t('features.list[0].title'),
-                        desc: this.$t('features.list[0].description')
+                        title: this.$t('features.list[0].title')
                     },
                     {
                         img: '../../static/images/icon-relationship.svg',
-                        title: this.$t('features.list[1].title'),
-                        desc: this.$t('features.list[1].description')
+                        title: this.$t('features.list[1].title')
                     },
                     {
                         img: '../../static/images/icon-adjust.svg',
-                        title: this.$t('features.list[2].title'),
-                        desc: this.$t('features.list[2].description')
+                        title: this.$t('features.list[2].title')
                     },
                     {
                         img: '../../static/images/icon-process.svg',
-                        title: this.$t('features.list[3].title'),
-                        desc: this.$t('features.list[3].description')
+                        title: this.$t('features.list[3].title')
                     },
                 ]
             }
@@ -387,6 +380,9 @@
                 justify-content center
 
                 .play-button
+                    display flex
+                    justify-content center
+                    align-items center
                     cursor pointer
                     width 85px
                     height 85px
@@ -495,15 +491,15 @@
                             margin-right 30px
 
     @media (min-width 1250px) and (max-width 1650px)
-        .application
+        .features
             padding 80px 10%
 
     @media (max-width 1250px)
-        .application
+        .features
             padding 80px 5%
 
     @media (min-width 768px) and (max-width 1024px)
-        .application
+        .features
             .section-2
                 .list-items
                     .item
@@ -512,7 +508,7 @@
                         margin-bottom 24px
 
     @media (min-width 575px) and (max-width 768px)
-        .application
+        .features
             .section-2
                 .list-items
                     .item
@@ -539,7 +535,7 @@
                             margin-bottom 24px
 
     @media (max-width 575px)
-        .application
+        .features
             .section-2
                 .list-items
                     .item
@@ -560,7 +556,7 @@
                             margin-bottom 24px
 
     @media (max-width 425px)
-        .application
+        .features
             padding-top 60px
             padding-bottom 60px
 
@@ -619,7 +615,7 @@
                                     margin-right 38px
 
     @media (max-width 320px)
-        .application
+        .features
             .section-2
                 .list-items
                     .item
