@@ -130,7 +130,7 @@ setTimeout(() => {
 
         })
         .catch(() => {
-            console.log('success download app');
+            console.log('error download app');
         });
 
     store.dispatch('blogRequest')
@@ -138,7 +138,7 @@ setTimeout(() => {
             console.log('success blog');
         })
         .catch(() => {
-            console.log('success blog');
+            console.log('error blog');
         });
 }, 2000);
 

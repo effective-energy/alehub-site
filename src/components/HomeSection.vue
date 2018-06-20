@@ -292,9 +292,9 @@
                         </div>
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
-                            <div class="item" v-for="item in currencies"
-                                 @mouseover="changeCurrentCurrency(item.name)"
-                                 @mouseout="resetCurrentCurrency">
+                            <div class="item" v-for="item in cryptocurrencies">
+                                <!--@mouseover="changeCurrentCurrency(item.name)"-->
+                                <!--@mouseout="resetCurrentCurrency"-->
                                 <div class="inner">
                                     <a href="https://sale.alehub.io/" target="_blank">
                                         <div class="cur-logo">
@@ -315,34 +315,34 @@
                 <div class="col-xl-12 col-lg-11">
                     <div class="ico-progress"
                          :class="{ 'ico-progress__dark': isDark }">
-                        <!--<div class="state">-->
-                        <!--<div class="title">-->
-                        <!--Soft cap-->
-                        <!--</div>-->
-                        <!--<div class="count">-->
-                        <!--{{ isCollected }} / {{ isSoftCap }} <span-->
-                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="progress-bar-outer">-->
-                        <!--<div class="progress-bar-inner"-->
-                        <!--:style="{ width: softCapWidth }">-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="state hard-cap">-->
-                        <!--<div class="title">-->
-                        <!--Hard cap-->
-                        <!--</div>-->
-                        <!--<div class="count">-->
-                        <!--{{ isCollected }} / {{ isHardCap }} <span-->
-                        <!--class="currency">{{ isCurrentCurrency }}</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="progress-bar-outer">-->
-                        <!--<div class="progress-bar-inner"-->
-                        <!--:style="{ width: hardCapWidth }">-->
-                        <!--</div>-->
-                        <!--</div>-->
+                        <div class="state">
+                            <div class="title">
+                                Soft cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ softCap }} <span
+                                    class="currency">{{ '$' }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: softCapWidth }">
+                            </div>
+                        </div>
+                        <div class="state hard-cap">
+                            <div class="title">
+                                Hard cap
+                            </div>
+                            <div class="count">
+                                {{ collected }} / {{ hardCap }} <span
+                                    class="currency">{{ '$' }}</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-outer">
+                            <div class="progress-bar-inner"
+                                 :style="{ width: hardCapWidth }">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="scroll-next">
@@ -390,7 +390,7 @@
             </div>
         </div>
 
-        <rating-block/>
+        <rating-block :is-dark="isDark"/>
 
         <partners-block :is-dark="isDark"/>
 
@@ -705,44 +705,6 @@
                     pauseOnHover: true
                 },
                 alePrice: 0.3,
-                currencies: {
-                    btc: {
-                        src: '../../static/images/btc.svg',
-                        alt: 'bitcoin',
-                        count: 0,
-                        name: 'btc'
-                    },
-                    eth: {
-                        src: '../../static/images/eth.svg',
-                        alt: 'etherium',
-                        count: 0,
-                        name: 'eth'
-                    },
-                    bch: {
-                        src: '../../static/images/bch.svg',
-                        alt: 'bitcoin cash',
-                        count: 0,
-                        name: 'bch'
-                    },
-                    ltc: {
-                        src: '../../static/images/ltc.svg',
-                        alt: 'litecoin',
-                        count: 0,
-                        name: 'ltc'
-                    },
-                    dash: {
-                        src: '../../static/images/dash.svg',
-                        alt: 'dash',
-                        count: 0,
-                        name: 'dash'
-                    },
-                    usd: {
-                        src: '../../static/images/usd.svg',
-                        alt: 'usd',
-                        count: 0,
-                        name: 'usd'
-                    }
-                },
                 reBuild: true,
                 sliderInit: {
                     currentPage: 0,
@@ -773,9 +735,6 @@
                 },
                 endTime: 1527206400000,
                 timeInterval: 0,
-                collected: 1250000,
-                softCap: 7500000,
-                hardCap: 33000000,
                 currentCurrency: 'usd',
                 anime: '',
                 isPaused: false,
@@ -786,45 +745,14 @@
         computed: {
             ...mapGetters(
                 [
-                    'cryptoPriceStatus'
+                    'cryptoPriceStatus',
+
+                    'cryptocurrencies',
+                    'softCap',
+                    'hardCap',
+                    'collected'
                 ]
             ),
-            isCollected: function () {
-                return this.collected;
-            },
-            isSoftCap: function () {
-                return this.softCap;
-            },
-            isHardCap: function () {
-                return this.hardCap;
-            },
-            isCurrentCurrency: function () {
-                if (this.cryptoPriceStatus === 'success') {
-
-                    this.currencies.btc.hardCap = this.cryptocurrencies.btc.hardCap;
-                    this.currencies.eth.hardCap = this.cryptocurrencies.eth.hardCap;
-                    this.currencies.bch.hardCap = this.cryptocurrencies.bch.hardCap;
-                    this.currencies.ltc.hardCap = this.cryptocurrencies.ltc.hardCap;
-                    this.currencies.dash.hardCap = this.cryptocurrencies.dash.hardCap;
-
-                    this.currencies.btc.softCap = this.cryptocurrencies.btc.softCap;
-                    this.currencies.eth.softCap = this.cryptocurrencies.eth.softCap;
-                    this.currencies.bch.softCap = this.cryptocurrencies.bch.softCap;
-                    this.currencies.ltc.softCap = this.cryptocurrencies.ltc.softCap;
-                    this.currencies.dash.softCap = this.cryptocurrencies.dash.softCap;
-
-                    this.currencies.btc.collected = this.cryptocurrencies.btc.collected;
-                    this.currencies.eth.collected = this.cryptocurrencies.eth.collected;
-                    this.currencies.bch.collected = this.cryptocurrencies.bch.collected;
-                    this.currencies.ltc.collected = this.cryptocurrencies.ltc.collected;
-                    this.currencies.dash.collected = this.cryptocurrencies.dash.collected;
-                }
-
-                return this.currentCurrency;
-            },
-            isOpenEmailSubscribeAlert: function () {
-                return this.openedEmailSubscribeAlert;
-            },
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
             },
@@ -1125,18 +1053,9 @@
             this.randomNumMessages = Math.round(Math.random() * 10) + 1;
 
             this.$store.dispatch('cryptoPriceRequest')
-                .then((resp) => {
+                .then(resp => {
                     console.log('OK');
-                    console.log(resp.data.round.ico);
-                    let counts = resp.data.round.ico;
-                    this.currencies.btc.count = counts['BTC'].value;
-                    this.currencies.eth.count = counts['ETH'].value.toFixed(2);
-                    this.currencies.bch.count = counts['BCH'].value;
-                    this.currencies.ltc.count = counts['LTC'].value;
-                    this.currencies.dash.count = counts['DASH'].value;
-                    this.currencies.usd.count = counts['USD'].value;
-                    console.log(this.currencies);
-                }).catch((resp) => {
+                }).catch(err => {
                 console.log('NO');
             });
             if (localStorage.getItem('subscriber-email') !== 'undefined' &&
@@ -1336,539 +1255,6 @@
         @media (min-width 848px)
             display flex
             align-items center
-
-    .email-subscribe-panel
-        z-index 1000
-        position fixed
-        bottom 75px
-        right 200px
-        display flex
-        flex-direction column
-        justify-content space-between
-        width 400px
-        height 175px
-        padding 20px 25px 20px 20px
-        background-color #343a49
-        border-radius 4px
-        -webkit-transition all .3s ease-out
-        -o-transition all .3s ease-out
-        transition all .3s ease-out
-        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-
-        @media (max-width 768px)
-            display none !important
-
-        @media (min-width 768px) and (max-width 1024px)
-            right 150px
-            bottom 50px
-            height 150px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            right 170px
-            bottom 50px
-            height 150px
-
-        .close__email-subscribe-panel
-            cursor pointer
-            position absolute
-            right 10px
-            left auto
-            top 10px
-
-            img
-                width 15px
-
-        .email-subscribe__wrap
-            p
-                color #f7f7f7
-                font-family MuseoSansCyrl500
-                font-weight 500
-                margin-bottom 10px
-
-            form
-                position relative
-                display flex
-                justify-content space-between
-
-                .top-label-subscribe
-                    position absolute
-                    top -10px
-                    left 15px
-                    margin 0
-                    font-size 12px
-                    font-family MuseoSansCyrl500
-                    font-weight 700
-                    letter-spacing .4px
-                    padding 0 7px
-
-                .error-label
-                    background-color #ff4f4f
-                    color #f7f7f7
-
-                .success-label
-                    background-color green
-                    color #f7f7f7
-
-                .exist-label
-                    background-color #2e86ce
-                    color #f7f7f7
-
-                input
-                    width 67%
-                    background-color #f0f0f0
-                    border-radius 3px
-                    border solid 1px transparent
-                    border-bottom-width 1.5px
-                    font-family MuseoSansCyrl300
-                    font-size 14px
-                    color #666666
-                    padding 7px 15px 7px 15px
-                    font-weight 700
-                    -webkit-transition all .3s ease-out
-                    -o-transition all .3s ease-out
-                    transition all .3s ease-out
-
-                    &::-webkit-input-placeholder
-                        color #909090
-
-                    &::-moz-placeholder
-                        color #909090
-
-                    &:-ms-input-placeholder
-                        color #909090
-
-                    &:-moz-placeholder
-                        color #909090
-
-                    &:focus
-                        color #333333
-                        outline none
-
-                    &:disabled
-                        color #666666
-                        background-color #cccccc
-
-                .error__email-subscribe-input
-                    border-color #ff4f4f
-
-                .success__email-subscribe-input
-                    border-color green
-
-                .exist__email-subscribe-input
-                    border-color #2e86ce
-
-                button
-                    width 30%
-                    cursor pointer
-                    background-color #ffd24f
-                    font-family MuseoSansCyrl300
-                    font-size 14px
-                    font-weight 700
-                    color #34343e
-                    padding 8px 5px
-                    margin 0 0 0 12px
-                    border 1px solid #ffd24f
-                    border-radius 3px
-                    white-space nowrap
-                    -webkit-transition all .2s ease-out
-                    -o-transition all .2s ease-out
-                    transition all .2s ease-out
-
-                    &:active
-                        background-color #ffbe00
-                        border 1px solid #d39e00
-
-                    &:focus
-                        outline none
-
-                    &:disabled
-                        color #666666
-                        background-color #cccccc
-                        border 1px solid rgba(0, 0, 0, .75)
-                        -webkit-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
-                        -moz-box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
-                        box-shadow inset 0 0 6px 0 rgba(0, 0, 0, .75)
-
-        .web-push-notif
-            position relative
-            display flex
-            flex-direction row
-            justify-content flex-start
-            align-items center
-
-            label
-                color #dedfe1
-                font-family MuseoSansCyrl500
-                font-weight 500
-                margin 0
-
-            .switch-control
-                right 0
-                position absolute
-                display inline-block
-                width 40px
-                height 22px
-
-                input
-                    display none !important
-
-                    &:checked + .slider
-                        background-color #3292e0
-
-                        &:before
-                            background-color #ffd24f
-                            -webkit-transform translateX(18px)
-                            -ms-transform translateX(18px)
-                            transform translateX(18px)
-
-                .slider
-                    position absolute
-                    cursor pointer
-                    top 0
-                    left 0
-                    right 0
-                    bottom 0
-                    background-color #dedfe1
-                    -webkit-transition .5s
-                    transition .5s
-                    border-radius 20px
-                    -webkit-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
-                    -moz-box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
-                    box-shadow inset 0 0 4px 0 rgba(0, 0, 0, .5)
-
-                    &:before
-                        position absolute
-                        content ""
-                        height 16px
-                        width 16px
-                        border-radius 50%
-                        left 3px
-                        bottom 3px
-                        background-color #5a8bb3
-                        -webkit-transition .4s ease
-                        transition .4s ease
-                        -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
-                        -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
-                        box-shadow 0 0 4px 0 rgba(0, 0, 0, .3)
-
-    .fade-enter-active,
-    .fade-leave-active
-        -webkit-transition all .5s ease-in-out
-        -o-transition all .5s ease-in-out
-        transition all .5s ease-in-out
-
-    .fade-enter,
-    .fade-leave-active
-        opacity 1
-        bottom -150px
-
-    .email-subscribe-panel__yellow
-        background-color #ffd24f
-
-        .email-subscribe__wrap
-            p
-                color #34343e
-
-            form
-                input
-                    border-color #7c8089
-
-                button
-                    background-color #343a49
-                    color #f7f7f7
-
-                    &:active
-                        background-color #2e86ce
-                        border 1px solid #0060af
-
-        .web-push-notif
-            label
-                color #4c4c4c
-
-    .email-subscribe-panel__stop
-        bottom 185px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            bottom 185px
-
-        @media (min-width 768px) and (max-width 1024px)
-            bottom 226px
-
-    .email-subscribe-panel__rtl
-        left 200px
-        right auto
-
-        .close__email-subscribe-panel
-            left 10px
-            right auto
-
-        .email-subscribe__wrap
-            p
-                text-align right
-
-            form
-                button
-                    margin 0 12px 0 0
-
-        .web-push-notif
-            justify-content flex-end
-
-        @media (min-width 768px) and (max-width 1024px)
-            left 150px
-            right auto
-
-        @media (min-width 1024px) and (max-width 1440px)
-            left 170px
-            right auto
-
-    .email-subscribe-alert
-        cursor pointer
-        position fixed
-        display flex
-        justify-content center
-        align-items center
-        right 100px
-        bottom 180px
-        width 70px
-        height 70px
-        border-radius 50%
-        border none
-        padding 0
-        z-index 1000
-        -webkit-transition all .3s ease-in-out
-        -o-transition all .3s ease-in-out
-        transition all .3s ease-in-out
-        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-
-        &:focus
-            outline none
-
-        &:active
-            -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
-            -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .3)
-            box-shadow none
-            transform translateY(2px)
-
-        @media (max-width 768px)
-            display none !important
-
-        @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 140px
-            width 60px
-            height 60px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 140px
-            width 60px
-            height 60px
-
-        .el-base
-            position relative
-            height 22.5px
-            width 36px
-            border-radius 3px
-
-            .el-inner-space
-                border-radius 3px
-
-                .el-flap
-                    position absolute
-                    top 0
-                    left 0
-                    border-radius 3px
-                    border-right solid 18px transparent
-                    border-left solid 18px transparent
-                    -webkit-transition all 1s ease-in-out
-                    -o-transition all 1s ease-in-out
-                    transition all 1s ease-in-out
-
-                .el-flap-active
-                    border-top solid 11px #3292e0
-                    transform rotateX(180deg)
-                    transform-origin center top
-
-    .email-subscribe-alert__yellow
-        background-color #ffd24f
-
-        .el-base
-            background-color #1a7bca
-
-            .el-inner-space
-                border-top solid 11px transparent
-                border-right solid 18px #343a49
-                border-bottom solid 11px #343a49
-                border-left solid 18px #343a49
-
-                .el-flap
-                    border-top solid 11px #3292e0
-
-    .email-subscribe-alert__dark
-        background-color #343a49
-
-        .el-base
-            background-color #2e86ce
-
-            .el-inner-space
-                border-top solid 11px transparent
-                border-right solid 18px #f7f7f7
-                border-bottom solid 11px #f7f7f7
-                border-left solid 18px #f7f7f7
-
-                .el-flap
-                    border-top solid 11px #ffd24f
-
-    .email-subscribe-alert__stop
-        bottom 290px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            bottom 275px
-
-        @media (min-width 768px) and (max-width 1024px)
-            bottom 315px
-
-    .email-subscribe-alert__rtl
-        left 100px
-        right auto
-
-        @media (min-width 768px) and (max-width 1024px)
-            left 60px
-            right auto
-
-        @media (min-width 1024px) and (max-width 1440px)
-            left 75px
-            right auto
-
-    .telegram-alert
-        cursor pointer
-        position fixed
-        right 100px
-        bottom 75px
-        width 70px
-        height 70px
-        border-radius 50%
-        z-index 1000
-        -webkit-transition all .3s ease-in-out
-        -o-transition all .3s ease-in-out
-        transition all .3s ease-in-out
-        -webkit-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        -moz-box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-        box-shadow 1px 2px 3px 0 rgba(0, 0, 0, .5)
-
-        @media (max-width 768px)
-            display none !important
-
-        @media (min-width 768px) and (max-width 1024px)
-            right 60px
-            bottom 50px
-            width 60px
-            height 60px
-
-        @media (min-width 1024px) and (max-width 1440px)
-            right 75px
-            bottom 50px
-            width 60px
-            height 60px
-
-        .alert-message
-            border-radius 50%
-            width 25px
-            height 25px
-            display flex
-            justify-content center
-            align-items center
-            position fixed
-            bottom 125px
-            right 95px
-            -webkit-transition all .3s ease-in-out
-            -o-transition all .3s ease-in-out
-            transition all .3s ease-in-out
-
-            @media (min-width 768px) and (max-width 1024px)
-                right 60px
-                bottom 90px
-                width 15px
-                height 15px
-
-                span
-                    font-size 12px
-
-            @media (min-width 1024px) and (max-width 1440px)
-                right 75px
-                bottom 95px
-                width 20px
-                height 20px
-
-                span
-                    font-size 12px
-
-        .alert-messages__grey
-            background-color #747c8e
-            color #fff
-
-        .alert-messages__yellow
-            background-color #ffd24f
-            color #343a49
-
-        .telegram-message__rtl
-            left 95px
-            right auto
-
-            @media (min-width 768px) and (max-width 1024px)
-                left 60px
-                right auto
-
-            @media (min-width 1024px) and (max-width 1440px)
-                left 75px
-                right auto
-
-        .telegram-message__stop
-            bottom 235px
-
-            @media (min-width 768px) and (max-width 1024px)
-                bottom 265px
-
-            @media (min-width 425px) and (max-width 768px)
-                bottom 433px
-
-        a
-            width 100%
-            height 100%
-            display flex
-            align-items center
-            justify-content center
-
-            img
-                width 45%
-
-    .telegram-alert__yellow
-        background-color #ffd24f
-
-    .telegram-alert__dark
-        background-color #343a49
-
-    .telegram-alert__stop
-        bottom 185px
-
-        @media (min-width 768px) and (max-width 1024px)
-            bottom 226px
-
-    .telegram-alert__rtl
-        left 100px
-        right auto
-
-        @media (min-width 768px) and (max-width 1024px)
-            left 60px
-            right auto
-
-        @media (min-width 1024px) and (max-width 1440px)
-            left 75px
-            right auto
 
     .screen1.title
         @media (min-width 425px) and (max-width 768px)
