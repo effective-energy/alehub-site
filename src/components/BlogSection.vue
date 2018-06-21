@@ -1,9 +1,9 @@
 <template>
     <div class="section blog-section" id="blog">
-        <h1 class="section-title is-center">
-            {{ $t("blog.title") }}
-        </h1>
-        <div class="container-fluid">
+        <div class="container">
+            <h1 class="section-title is-center">
+                {{ $t("blog.title") }}
+            </h1>
             <div class="divider"></div>
 
             <div class="row news-section">
@@ -11,26 +11,27 @@
                      v-if="blogStatus === 'loading' && dataProcessing">
                     <spinner/>
                 </div>
-                <div class="animate col-md-6  col-sm-12"
+                <div class="animate col-md-6 col-sm-12 animate"
                      v-for="(n, i) in blogIndex"
                      v-if="blogStatus === 'success' && !dataProcessing"
-                     :key="i"
-                     :style="{ backgroundImage: 'url(' + 'https://alehub-4550.nodechef.com/' + n.preview_image + ')' }"
-                     @click="goToNews(n.url)">
+                     :key="i">
                     <span>
-                        <!--<div class="news-block"></div>-->
+                        <router-link class="news-block"
+                                     tag="div"
+                                     :to="`/blog/${n.url}`">
                             <!--<router-link :to="`/blog/${n.url}`">-->
-                                <!--<img class="picture"-->
-                                     <!--:src="'https://alehub-4550.nodechef.com/' + n.preview_image"-->
-                                     <!--:alt="n.title"-->
-                                     <!--@click="goToNews(n.url)">-->
-                        <!--</router-link>-->
-                         <div class="news-info is-center">
+                                <img class="picture"
+                                     :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
+                                     :alt="n.title"
+                                     @click="goToNews(n.url)">
+                            <!--</router-link>-->
+                            <div class="news-info">
                                 <p class="news-title">
                                     {{ n.title }}
                                 </p>
                                 <i class="news-date">{{ n.date / 1000 | moment("ddd DD, YYYY") }}</i>
                             </div>
+                        </router-link>
                     </span>
                 </div>
                 <div class="col-12 news-button">
@@ -124,7 +125,6 @@
     .blog-section
         background-color #ffffff
         min-height calc(100vh - 165px)
-        max-width 100%
 
 
 </style>
@@ -142,7 +142,6 @@
 
     .is-center
         text-align center
-
 
     .section-title
         font-family MuseoSansCyrl300
@@ -164,8 +163,6 @@
 
     .news-section
         padding 72px 0
-        display: flex;
-        justify-content: center;
 
         .news-button
             padding 72px 0
@@ -219,24 +216,18 @@
         transition-delay 0.6s
 
     .animate
+        background none
         border none
+        color #fff
         cursor pointer
-        padding 20px
-        padding-top 0px
-        min-width 400px
-        min-height 300px
-        background-size: 96% 70%
-        background-position center
-        background-repeat no-repeat
-        padding 2%
-        width 46%
-        max-width 26%
-
+        padding 0
+        height 30vw
+        max-height 220px
 
 
 
     .animate span
-        padding 25px 80px
+        /*padding 25px 80px*/
 
     .animate::before, .animate::after
         content ""
@@ -262,65 +253,87 @@
 
     .news-block
         width 100%
-        height 85px
+        height 100%
+        /*margin 32px 16px*/
         display flex
-        justify-content flex-start
+        justify-content center
+        align-items center
         transition 2s
+        text-align center
 
-
-
+        &:hover .news-info { .news-date {
+            margin-right: 0
+        }
+        }
+        &:hover img {
+            padding 1%
+        }
 
         @media (max-width 320px)
             flex-direction column
 
         .picture
-            height 100%
-            width 100%
-            -o-object-fit cover
-            object-fit cover
+            z-index 0
+            width 98%
+            height 98%
+            position absolute
+            -o-object-fit contain
+            object-fit contain
+            display flex
+            padding 3%
+            transition 2s
+
+
+
 
             @media (max-width 320px)
                 max-width 85%
                 width 85%
 
-    .news-info
-        padding 5px
-        margin 4px 16px
-        display flex
-        align-content center
-        margin-top 15%
-        flex-direction column
-        background-color #ececf0b0
+        .news-info
+            z-index 1
+            /*margin 4px 16px*/
+            display flex
+            flex-direction column
+            width 50%
+            padding 10px
+            background-color rgba(255,255,255,0.627);
 
-        .news-title
-            font-family MuseoSansCyrl300
-            font-size 22px
-            font-weight 500
-            font-style normal
-            font-stretch normal
-            line-height 1.33
-            letter-spacing normal
-            color #34343e
-            margin-bottom 8px
-            text-decoration: none;
 
-            @media (max-width 320px)
-                font-size 16px !important
 
-        .news-date
-            font-family MuseoSansCyrl300
-            font-size 18px
-            font-weight 300
-            font-style normal
-            font-stretch normal
-            line-height normal
-            letter-spacing normal
-            text-align left
-            color #34343e
 
-            @media (max-width 320px)
-                font-size 14px !important
-                color #ccc
+
+            .news-title
+                font-family MuseoSansCyrl300
+                font-size 20px
+                font-weight 500
+                font-style normal
+                font-stretch normal
+                line-height 1.33
+                letter-spacing normal
+                color #34343e
+                margin-bottom 8px
+                text-decoration: none;
+
+                @media (max-width 425px)
+                    font-size 4vw !important
+
+            .news-date
+                font-family MuseoSansCyrl300
+                font-size 18px
+                font-weight 300
+                font-style normal
+                font-stretch normal
+                line-height normal
+                letter-spacing normal
+                text-align right
+                color #34343e
+                margin-right: 8%
+                transition 2s
+
+
+                @media (max-width 320px)
+                    font-size 14px !important
 
     @media screen and (max-width 600px)
         .news-title
