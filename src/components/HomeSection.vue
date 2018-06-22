@@ -1,5 +1,8 @@
 <template>
     <section id="screen1">
+
+
+
         <div class="button-choose"
              :class="{ 'button-choose__rtl': isRtl }"
              id="button-choose"
@@ -26,30 +29,8 @@
             </button>
         </div>
 
-        <div class="wrap__pointer"
-             :class="{ 'wrap-pointer__rtl': isRtl }"
-             id="wrap-pointer"
-             v-if="checkSmallTabletWidth"
-             @click="changePosition">
-            <img class="pointer-to-top"
-                 :class="{ 'pointer-to-bottom': afterClickToTop }"
-                 src="../../static/images/arrow-top-dark.svg"
-                 alt="to top"
-                 v-if="!isPointerInDark">
-            <img class="pointer-to-top"
-                 :class="{ 'pointer-to-bottom': afterClickToTop }"
-                 src="../../static/images/arrow-top-yellow.svg"
-                 alt="to top"
-                 v-else>
-        </div>
-
-        <div class="scroll-to-top"
-             :class="{ 'scroll-to-top__rtl': isRtl }"
-             v-if="checkSmallTabletWidth">
-            <a @click="clickToTop"
-               v-if="!afterClickToTop"></a>
-            <a @click="returnPosition" v-else></a>
-        </div>
+        <scroll-to-top-button :in-dark="isPointerInDark"
+                              :rtl="isRtl"/>
 
         <div id="svg-anim"
              class="anim"
@@ -590,6 +571,7 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import ScrollToTopButton from './layouts/ScrollToTopButton';
     import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
     import TelegramAlertButtonMobile from './layouts/alert-buttons/TelegramAlertButtonMobile';
@@ -604,6 +586,7 @@
         components: {
             MenuModal,
             SliderScreen,
+            ScrollToTopButton,
             RatingBlock,
             PartnersBlock,
             TelegramAlertButtonMobile,
@@ -1152,75 +1135,7 @@
         @media (min-width 690px) and (max-width 1024px)
             margin-top 20px
 
-    .wrap__pointer
-        cursor pointer
-        position fixed
-        width 20px
-        right 10px
-        top 100px
-        z-index 110
 
-        @media (min-width 690px) and (max-width 1024px)
-            right 7.5px
-            width 15px
-
-        @media (max-width 690px)
-            display none
-
-        @media (max-width 768px)
-            top 150px
-
-        .pointer-to-top
-            width 100%
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-
-        .pointer-to-bottom
-            transform rotateX(180deg)
-
-    .wrap-pointer__rtl
-        left 10px
-        right auto
-
-        @media (min-width 690px) and (max-width 1024px)
-            left 7.5px
-            right auto
-            width 15px
-
-    .scroll-to-top
-        z-index 100
-        cursor pointer
-        width 40px
-        height 100%
-        position fixed
-        right 0
-        display flex
-        align-items center
-        justify-content center
-
-        @media (min-width 690px) and (max-width 1024px)
-            width 30px
-
-        @media (max-width 690px)
-            display none
-
-        a
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-            opacity 0
-            background-color #e3e3e6
-            height 100%
-            width 40px
-
-        &:hover
-            a
-                opacity .5
-
-    .scroll-to-top__rtl
-        left 0
-        right auto
 
     .desc
         align-self flex-start
@@ -1990,10 +1905,4 @@
             font-size 18px !important
             font-weight 700
 
-</style>
-
-<style scoped>
-    .wrap__pointer:hover + .scroll-to-top > a {
-        opacity: 0.5 !important;
-    }
 </style>
