@@ -12,11 +12,11 @@
                 </div>
             </div>
             <div class="row">
-                <div v-if="this.$i18n.locale === 'ru'" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-                    <img class="schema" src="../../static/images/project-economy-schema-rus.png"
-                         alt="project economy schema rus">
-                </div>
-                <div v-else class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                <!--<div v-if="this.$i18n.locale === 'ru'" class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">-->
+                    <!--<img class="schema" src="../../static/images/project-economy-schema-rus.png"-->
+                         <!--alt="project economy schema rus">-->
+                <!--</div>-->
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                     <img class="schema" src="../../static/images/project-economy-schema.png"
                          alt="project economy schema">
                 </div>
