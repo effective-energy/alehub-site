@@ -2,12 +2,18 @@
     <div class="index" id="index-main-component">
         <header-block :is-main-dark="isDark"/>
         <home-section :is-dark-section="isDarkSection"
-                      :is-opened-modal-menu="openedModalMenu"
+                      :opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
                       :is-rtl="isRtl"
-                      :is-pointer-in-dark="isPointerInDark"/>
+                      :is-pointer-in-dark="isPointerInDark"
+                      :tg-button-class="tgButtonClass"
+                      :tg-button-messages-class="tgButtonMessagesClass"
+                      :tg-button-mobile-class="tgButtonMobileClass"
+                      :email-button-class="emailButtonClass"/>
+        <mission-section :is-rtl="isRtl"/>
         <advantages-section :is-rtl="isRtl"/>
         <features-section :is-features="isFeatures"/>
+        <project-economy :is-rtl="isRtl"/>
         <team-section :is-team="isTeam"
                       :is-effective-energy-autoplay="isEffectiveEnergyAutoplay"
                       :is-serokell-autoplay="isSerokellAutoplay"
@@ -25,12 +31,14 @@
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
     import HomeSection from './HomeSection';
-    import DownloadApplicationSection from './DownloadApplicationSection';
+    import MissionSection from './MissionSection';
     import AdvantagesSection from './AdvantagesSection';
     import FeaturesSection from './FeaturesSection';
+    import ProjectEconomy from './ProjectEconomy';
     import TeamSection from './TeamSection';
     import IcoSection from './IcoSection';
     import RoadmapSection from './RoadmapSection';
+    import DownloadApplicationSection from './DownloadApplicationSection';
     import MassMediaSection from './MassMediaSection';
     import BlogSection from './BlogSection';
     import FooterBlock from './layouts/FooterBlock';
@@ -40,12 +48,14 @@
         components: {
             HeaderBlock,
             HomeSection,
-            DownloadApplicationSection,
+            MissionSection,
             AdvantagesSection,
             FeaturesSection,
+            ProjectEconomy,
             TeamSection,
             IcoSection,
             RoadmapSection,
+            DownloadApplicationSection,
             MassMediaSection,
             BlogSection,
             FooterBlock,
@@ -60,6 +70,10 @@
                 isRtl: false,
                 openedModalMenu: false,
                 isPointerInDark: false,
+                tgButtonClass: '',
+                emailButtonClass: '',
+                tgButtonMessagesClass: '',
+                tgButtonMobileClass: '',
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
                 isAdvisorsAutoplay: false
@@ -83,8 +97,8 @@
                 this.isDark = val;
             });
 
-            this.$on('isOpenedModalMenu', (val) => {
-                this.openedModalMenu = val;
+            this.$on('isOpenedModalMenu', opened => {
+                this.openedModalMenu = opened;
             });
 
             this.$on('scrollInFooter', (val) => {
@@ -97,6 +111,22 @@
 
             this.$on('pointerInDark', (pointerInDark) => {
                 this.isPointerInDark = pointerInDark;
+            });
+
+            this.$on('checkTgButtonStyle', style => {
+                this.tgButtonClass = style;
+            });
+
+            this.$on('checkTgButtonMessagesStyle', style => {
+                this.tgButtonMessagesClass = style;
+            });
+
+            this.$on('checkTgButtonMobileStyle', style => {
+                this.tgButtonMobileClass = style;
+            });
+
+            this.$on('checkMailButtonStyle', style => {
+                this.emailButtonClass = style;
             });
 
             this.$on('effectiveEnergyAutoplay', (autoplay) => {

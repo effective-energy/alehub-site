@@ -32,7 +32,6 @@
             <transition name="fade">
                 <div class="project-management"
                      :class="{ 'project-management__rtl': isRtl }"
-                     key="one"
                      v-if="selectedType === 1">
                     <div class="left-block">
                         <div class="title">

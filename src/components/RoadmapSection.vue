@@ -1,5 +1,5 @@
 <template>
-    <div class="section roadmap-section"
+    <div class="section roadmap-section section__dark"
          id="roadmap">
         <div class="container">
             <h1 class="section-title is-center">
@@ -515,6 +515,7 @@
                 overflow hidden
                 text-align center
                 background-color #6f757f
+                -webkit-clip-path circle(50% at center)
                 clip-path circle(50% at center)
 
                 @media (max-width: 320px)

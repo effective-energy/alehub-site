@@ -1,5 +1,5 @@
 <template>
-    <div class="section economy-section" id="ico">
+    <div class="section economy-section section__dark" id="ico">
         <div class="container">
             <h1 class="section-title is-center">
                 {{ $t('economy.title') }}
@@ -131,16 +131,18 @@
                     return this.distributionList[this.selectedDistributionIndex];
             },
             softCap: function () {
-                if (this.cryptoPriceStatus === 'success')
-                    return (this.cryptocurrencies.eth.softCap);
-
-                 return 'loading';
+                // if (this.cryptoPriceStatus === 'success')
+                //     return (this.cryptocurrencies.eth.softCap);
+                //
+                //  return 'loading';
+                return 16859;
             },
             hardCap: function () {
-                if (this.cryptoPriceStatus === 'success')
-                    return (this.cryptocurrencies.eth.hardCap);
-
-                return 'loading';
+                // if (this.cryptoPriceStatus === 'success')
+                //     return (this.cryptocurrencies.eth.hardCap);
+                //
+                // return 'loading';
+                return 47143;
             },
         },
         methods: {
