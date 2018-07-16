@@ -19,6 +19,10 @@
     </div>
 </template>
 
+<a href="https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale" target="_blank" rel="nofollow"
+   title="Alehub (ALE)"><img src="https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium"
+                             alt="Alehub (ALE)"/></a>
+
 <script>
     export default {
         name: 'RatingBlock',
@@ -60,6 +64,16 @@
                         alt: 'Alehub TrackICO rating',
                         width: '322px',
                         height: '90px'
+                    },
+                    {
+                        id: 4,
+                        title: 'Alehub on ICO rating',
+                        href: 'https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale',
+                        src: 'https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium',
+                        altSrc: '../../../static/images/ratings/ico-rating.png',
+                        alt: 'Alehub ICO rating',
+                        width: '342px',
+                        height: '90px'
                     }
                 ]
             }
@@ -93,6 +107,7 @@
         .list
             display flex
             justify-content space-evenly
+            flex-wrap wrap
             padding 150px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
@@ -112,4 +127,5 @@
             .mark
                 z-index 10
                 background-color transparent
+                margin-bottom 30px
 </style>
