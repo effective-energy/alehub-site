@@ -81,19 +81,19 @@
             }
         },
         mounted() {
-            this.$on('checkIsFeatures', (isFeatures) => {
+            this.$on('checkIsFeatures', isFeatures => {
                 this.isFeatures = isFeatures;
             });
 
-            this.$on('checkIsTeam', (isTeam) => {
+            this.$on('checkIsTeam', isTeam => {
                 this.isTeam = isTeam;
             });
 
-            this.$on('checkIsDarkSection', (isDarkSection) => {
+            this.$on('checkIsDarkSection', isDarkSection => {
                 this.isDarkSection = isDarkSection;
             });
 
-            this.$on('isDarkTheme', (val) => {
+            this.$on('isDarkTheme', val => {
                 this.isDark = val;
             });
 
@@ -101,15 +101,15 @@
                 this.openedModalMenu = opened;
             });
 
-            this.$on('scrollInFooter', (val) => {
+            this.$on('scrollInFooter', val => {
                 this.isScrollInFooter = val;
             });
 
-            this.$on('isRtl', (isRtl) => {
+            this.$on('isRtl', isRtl => {
                 this.isRtl = isRtl;
             });
 
-            this.$on('pointerInDark', (pointerInDark) => {
+            this.$on('pointerInDark', pointerInDark => {
                 this.isPointerInDark = pointerInDark;
             });
 
@@ -129,15 +129,15 @@
                 this.emailButtonClass = style;
             });
 
-            this.$on('effectiveEnergyAutoplay', (autoplay) => {
+            this.$on('effectiveEnergyAutoplay', autoplay => {
                 this.isEffectiveEnergyAutoplay = autoplay;
             });
 
-            this.$on('serokellAutoplay', (autoplay) => {
+            this.$on('serokellAutoplay', autoplay => {
                 this.isSerokellAutoplay = autoplay;
             });
 
-            this.$on('advisorsAutoplay', (autoplay) => {
+            this.$on('advisorsAutoplay', autoplay => {
                 this.isAdvisorsAutoplay = autoplay;
             });
         }
