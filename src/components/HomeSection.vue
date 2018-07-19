@@ -231,11 +231,11 @@
                                     {{ $t("greeting.countDown.btnBuyTokens") }}
                                 </button>
                             </a>
-                            <div class="bonus-desc"
-                                 :class="{ 'padding-right-rtl': isRtl }">
-                                <span>{{ $t("greeting.countDown.bonus") }}</span>
-                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
-                            </div>
+                            <!--<div class="bonus-desc"-->
+                                 <!--:class="{ 'padding-right-rtl': isRtl }">-->
+                                <!--<span>{{ $t("greeting.countDown.bonus") }}</span>-->
+                                <!--<span>{{ $t("greeting.countDown.notAvailable") }}</span>-->
+                            <!--</div>-->
                         </div>
                         <div class="col-xl-4 col-lg-12 col-md-12">
                             <div class="play-video">
@@ -894,7 +894,30 @@
         },
         mounted() {
 
-            console.log(this.tgButtonClass, 'mounted');
+            this.$on('isDarkTheme', isDark => {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
+                this.isDark = isDark;
+                this.isVideo = false;
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
+                }, 100);
+            });
+
+            this.$on('isVideoTheme', isVideo => {
+                this.isDark = true;
+                this.isVideo = isVideo;
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
+            });
+
 
             //устанавливать начальное значение checked на включение оповещений
 

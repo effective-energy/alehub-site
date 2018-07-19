@@ -47,52 +47,40 @@
             },
         },
         methods: {
+            /**
+             * set video rate for video theme
+             */
             setVideoRate: function () {
                 if (this.isVideo)
                     document.querySelector('video').playbackRate = 0.75;
             },
+            /**
+             * changes the selected theme to a video theme in the home section
+             */
             doVideoTheme: function () {
                 this.isDark = true;
                 this.isVideo = true;
                 this.setVideoRate();
-                this.$parent.$emit('isDarkTheme', true);
+                this.$parent.$emit('isVideoTheme', true);
                 localStorage.setItem('color-theme', 'video');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                }, 100);
             },
+            /**
+             * changes the selected theme to a light theme in the home section
+             */
             doLightTheme: function () {
-                let flag = false;
-                if (this.isVideo)
-                    flag = true;
-
                 this.isDark = false;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', false);
                 localStorage.setItem('color-theme', 'light');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                    if (flag)
-                        this.startAnime();
-                }, 100);
             },
+            /**
+             * changes the selected theme to a dark theme in the home section
+             */
             doDarkTheme: function () {
-                let flag = false;
-                if (this.isVideo)
-                    flag = true;
-
                 this.isDark = true;
                 this.isVideo = false;
                 this.$parent.$emit('isDarkTheme', true);
                 localStorage.setItem('color-theme', 'dark');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                    if (flag)
-                        this.startAnime();
-                }, 100);
             },
             initTheme: function () {
                 setTimeout(() => {
