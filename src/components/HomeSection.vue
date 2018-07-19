@@ -3,32 +3,6 @@
 
         <group-change-theme-button :rtl="isRtl"/>
 
-        <!--<div class="button-choose"-->
-             <!--:class="{ 'button-choose__rtl': isRtl }"-->
-             <!--id="button-choose"-->
-             <!--v-if="checkWindowWidth">-->
-            <!--<button type="button"-->
-                    <!--id="do-video-theme"-->
-                    <!--class="button-choose_video"-->
-                    <!--:class="{ 'button-choose__active-video': isVideo }"-->
-                    <!--@click="doVideoTheme">-->
-                <!--<img src="../../static/images/play.svg"-->
-                     <!--alt="video">-->
-            <!--</button>-->
-            <!--<button type="button"-->
-                    <!--id="do-light-theme"-->
-                    <!--class="button-choose_light"-->
-                    <!--:class="{ 'button-choose__active': !isDark && !isVideo }"-->
-                    <!--@click="doLightTheme">-->
-            <!--</button>-->
-            <!--<button type="button"-->
-                    <!--id="do-dark-theme"-->
-                    <!--class="button-choose_dark"-->
-                    <!--:class="{ 'button-choose__active': isDark && !isVideo }"-->
-                    <!--@click="doDarkTheme">-->
-            <!--</button>-->
-        <!--</div>-->
-
         <scroll-to-top-button :in-dark="isPointerInDark"
                               :rtl="isRtl"/>
 
@@ -936,36 +910,6 @@
 
             let a = document.querySelector('.collection').getElementsByClassName('item');
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
-
-
-            // if (this.isVideo) {
-            //     document.querySelector('video').playbackRate = 0.75;
-            // }
-
-            // setTimeout(() => {
-            //     if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
-            //         this.isDark = true;
-            //         this.isVideo = false;
-            //         this.$parent.$emit('isDarkTheme', true);
-            //     } else if (localStorage.getItem('color-theme') === 'light' && this.checkWindowWidth) {
-            //         this.isDark = false;
-            //         this.isVideo = false;
-            //         this.$parent.$emit('isDarkTheme', false);
-            //     } else if (localStorage.getItem('color-theme') === 'video' && this.checkWindowWidth) {
-            //         this.isDark = true;
-            //         this.isVideo = true;
-            //         this.$parent.$emit('isDarkTheme', true);
-            //     } else if (this.checkWindowWidth) {
-            //         this.isDark = true;
-            //         this.isVideo = true;
-            //         localStorage.setItem('color-theme', 'video');
-            //         this.$parent.$emit('isDarkTheme', true);
-            //     } else {
-            //         this.isDark = false;
-            //         this.isVideo = false;
-            //         this.$parent.$emit('isDarkTheme', false);
-            //     }
-            // }, 40);
 
             setTimeout(() => {
                 this.startAnime();
