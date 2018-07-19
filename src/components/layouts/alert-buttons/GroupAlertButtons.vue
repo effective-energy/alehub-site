@@ -1,5 +1,5 @@
 <template>
-    <div class="group-alert-button" :class="{ 'group-alert-button__top': scrollInFooter}">
+    <div class="group-alert-button" :class="{ 'group-alert-button__top': scrollInFooter }">
         <email-subscribe-alert-panel :opened-email-subscribe-panel="openedEmailSubscribePanel"
                                      :in-dark-section="emailInDarkSection"
                                      :rtl="rtl"/>
@@ -67,9 +67,6 @@
             },
             doCloseTelegramAlertMobile: function () {
                 this.openedTelegramAlertMobile = false;
-            },
-            calcBlockInFooter: function () {
-
             }
         },
         mounted() {
@@ -92,6 +89,7 @@
         bottom 75px
         width 70px
         height 200px
+        transition all .3s ease
 
         @media (max-width 768px)
             display none !important
@@ -109,10 +107,9 @@
             height 160px
 
         &.group-alert-button__top
-            -webkit-transform all .3s ease
-            -moz-transform all .3s ease
-            -ms-transform all .3s ease
-            -o-transform all .3s ease
-            transform all .3s ease
+            transition all .3s ease
             bottom 200px
+
+            @media (max-width 1024px)
+                bottom 250px
 </style>
