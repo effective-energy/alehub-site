@@ -76,7 +76,7 @@
                 tgButtonMobileClass: '',
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
-                isAdvisorsAutoplay: false
+                isAdvisorsAutoplay: false,
                 // isLoading: true
             }
         },
@@ -139,6 +139,10 @@
 
             this.$on('advisorsAutoplay', autoplay => {
                 this.isAdvisorsAutoplay = autoplay;
+            });
+
+            this.$on('isDarkTheme', isDark => {
+                this.isDark = isDark;
             });
         }
     }

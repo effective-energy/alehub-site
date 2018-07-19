@@ -881,6 +881,8 @@
                     if (flag)
                         this.startAnime();
                 }, 100);
+
+                this.$parent.$emit('isDarkTheme', this.isDark);
             });
 
             this.$on('isVideoTheme', isVideo => {
@@ -890,6 +892,8 @@
                 setTimeout(() => {
                     this.reBuild = true;
                 }, 100);
+
+                this.$parent.$emit('isDarkTheme', true);
             });
 
 
