@@ -1,55 +1,10 @@
 <template>
     <section id="screen1">
-        <div class="button-choose"
-             :class="{ 'button-choose__rtl': isRtl }"
-             id="button-choose"
-             v-if="checkWindowWidth">
-            <button type="button"
-                    id="do-video-theme"
-                    class="button-choose_video"
-                    :class="{ 'button-choose__active-video': isVideo }"
-                    @click="doVideoTheme">
-                <img src="../../static/images/play.svg"
-                     alt="video">
-            </button>
-            <button type="button"
-                    id="do-light-theme"
-                    class="button-choose_light"
-                    :class="{ 'button-choose__active': !isDark && !isVideo }"
-                    @click="doLightTheme">
-            </button>
-            <button type="button"
-                    id="do-dark-theme"
-                    class="button-choose_dark"
-                    :class="{ 'button-choose__active': isDark && !isVideo }"
-                    @click="doDarkTheme">
-            </button>
-        </div>
 
-        <div class="wrap__pointer"
-             :class="{ 'wrap-pointer__rtl': isRtl }"
-             id="wrap-pointer"
-             v-if="checkSmallTabletWidth"
-             @click="changePosition">
-            <img class="pointer-to-top"
-                 :class="{ 'pointer-to-bottom': afterClickToTop }"
-                 src="../../static/images/arrow-top-dark.svg"
-                 alt="to top"
-                 v-if="!isPointerInDark">
-            <img class="pointer-to-top"
-                 :class="{ 'pointer-to-bottom': afterClickToTop }"
-                 src="../../static/images/arrow-top-yellow.svg"
-                 alt="to top"
-                 v-else>
-        </div>
+        <group-change-theme-button :rtl="isRtl"/>
 
-        <div class="scroll-to-top"
-             :class="{ 'scroll-to-top__rtl': isRtl }"
-             v-if="checkSmallTabletWidth">
-            <a @click="clickToTop"
-               v-if="!afterClickToTop"></a>
-            <a @click="returnPosition" v-else></a>
-        </div>
+        <scroll-to-top-button :in-dark="isPointerInDark"
+                              :rtl="isRtl"/>
 
         <div id="svg-anim"
              class="anim"
@@ -250,11 +205,11 @@
                                     {{ $t("greeting.countDown.btnBuyTokens") }}
                                 </button>
                             </a>
-                            <div class="bonus-desc"
-                                 :class="{ 'padding-right-rtl': isRtl }">
-                                <span>{{ $t("greeting.countDown.bonus") }}</span>
-                                <span>{{ $t("greeting.countDown.notAvailable") }}</span>
-                            </div>
+                            <!--<div class="bonus-desc"-->
+                                 <!--:class="{ 'padding-right-rtl': isRtl }">-->
+                                <!--<span>{{ $t("greeting.countDown.bonus") }}</span>-->
+                                <!--<span>{{ $t("greeting.countDown.notAvailable") }}</span>-->
+                            <!--</div>-->
                         </div>
                         <div class="col-xl-4 col-lg-12 col-md-12">
                             <div class="play-video">
@@ -455,122 +410,6 @@
             </div>
         </div>
 
-        <!--<transition name="fade">-->
-        <!--<div class="email-subscribe-panel"-->
-        <!--:class="{ 'email-subscribe-panel__yellow': alertButtonInDarkSection(emailButtonClass),-->
-        <!--'email-subscribe-panel__stop': isScrollInFooter, 'email-subscribe-panel__rtl': isRtl }"-->
-        <!--v-if="checkTabletWidth && isOpenEmailSubscribeAlert">-->
-        <!--<div class="close__email-subscribe-panel"-->
-        <!--@click="toggleEmailSubscribeAlert">-->
-        <!--<img :src="alertButtonInDarkSection(emailButtonClass) ? '../../static/images/cancel-dark.svg' :-->
-        <!--'../../static/images/cancel-light.svg'"-->
-        <!--alt="close subscribe">-->
-        <!--</div>-->
-        <!--<div class="email-subscribe__wrap">-->
-        <!--<p>-->
-        <!--{{$t("emailSubscribePanel.newsletter")}}-->
-        <!--</p>-->
-        <!--<form @submit.prevent="subscribe">-->
-        <!--<label class="top-label-subscribe"-->
-        <!--:class="{ 'error-label': subscriber.error,-->
-        <!--'exist-label': subscriber.exist,-->
-        <!--'success-label': subscriber.success }"-->
-        <!--v-if="subscriber.error || subscriber.exist || subscriber.success">-->
-        <!--<span v-if="subscriber.error">{{$t("footer.right.error")}}</span>-->
-        <!--<span v-if="subscriber.success">successful subscription</span>-->
-        <!--<span v-if="subscriber.exist">this email is already in use</span>-->
-        <!--</label>-->
-        <!--<input id="subscribe-email-input"-->
-        <!--type="text"-->
-        <!--:placeholder='$t("emailSubscribePanel.YourAddress")'-->
-        <!--required-->
-        <!--:class="{ 'error__email-subscribe-input': subscriber.error,-->
-        <!--'success__email-subscribe-input': subscriber.success,-->
-        <!--'exist__email-subscribe-input': subscriber.exist}"-->
-        <!--v-model="subscriber.email"-->
-        <!--@blur="blurCheckCorrectEmail(subscriber.email)"-->
-        <!--@input="inputCheckCorrectEmail(subscriber.email)"-->
-        <!--:disabled="subscriber.loader">-->
-        <!--<button type="submit"-->
-        <!--:disabled="subscriber.loader">-->
-        <!--{{$t("emailSubscribePanel.subscribe")}}-->
-        <!--</button>-->
-        <!--</form>-->
-        <!--</div>-->
-        <!--<div class="web-push-notif">-->
-        <!--<label for="toggle-web-push">-->
-        <!--{{$t("emailSubscribePanel.turnOn")}}-->
-        <!--</label>-->
-        <!--<label class="switch-control"-->
-        <!--id="toggle-web-push"-->
-        <!--@click="toggleNotification">-->
-        <!--<input type="checkbox">-->
-        <!--<span class="slider"></span>-->
-        <!--</label>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</transition>-->
-
-        <!--<button type="button"-->
-        <!--id="email-subscribe-alert"-->
-        <!--class="email-subscribe-alert"-->
-        <!--:class="[compEmailButtonClass, {'email-subscribe-alert__stop': isScrollInFooter, 'email-subscribe-alert__rtl': isRtl }]"-->
-        <!--v-if="checkTabletWidth"-->
-        <!--@click="toggleEmailSubscribeAlert">-->
-        <!--<div class="el-base">-->
-        <!--<div class="el-inner-space">-->
-        <!--<div class="el-flap"-->
-        <!--:class="{ 'el-flap-active': isOpenEmailSubscribeAlert }">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</button>-->
-
-        <!--<a id="telegram-alert-mobile"-->
-        <!--class="telegram-alert-mobile"-->
-        <!--href="https://t.me/alehub"-->
-        <!--target="_blank"-->
-        <!--v-if="!checkTabletWidth && !closedTelegramAlertMobile && !isOpenedModalMenu"-->
-        <!--:class="{ 'telegram-alert-mobile__yellow': isDarkSection }">-->
-
-        <!--<div class="telegram-alert-mobile__wrap">-->
-        <!--<img src="../../static/images/telegram-ic-dark.svg"-->
-        <!--v-if="!isDarkSection"-->
-        <!--alt="telegram">-->
-        <!--<img src="../../static/images/telegram-ic-default.svg"-->
-        <!--v-if="isDarkSection"-->
-        <!--alt="telegram">-->
-        <!--<span>{{ 'Join us in telegram' }}</span>-->
-        <!--</div>-->
-
-
-        <!--<img src="../../static/images/cancel-light.svg"-->
-        <!--v-if="!isDarkSection"-->
-        <!--@click.prevent="doCloseTelegramAlertMobile">-->
-
-        <!--<img src="../../static/images/cancel-dark.svg"-->
-        <!--v-if="isDarkSection"-->
-        <!--@click.prevent="doCloseTelegramAlertMobile">-->
-        <!--</a>-->
-
-        <!--<div id="telegram-alert"-->
-        <!--class="telegram-alert"-->
-        <!--v-if="checkTabletWidth"-->
-        <!--:class="[ compTgButtonClass, { 'telegram-alert__stop': isScrollInFooter, 'telegram-alert__rtl': isRtl }]">-->
-        <!--<a href="https://t.me/alehub" target="_blank">-->
-        <!--<img src="../../static/images/telegram-ic-dark.svg"-->
-        <!--alt="telegram"-->
-        <!--v-if="!alertButtonInDarkSection(tgButtonClass)">-->
-        <!--<img src="../../static/images/telegram-ic-default.svg"-->
-        <!--alt="telegram"-->
-        <!--v-if="alertButtonInDarkSection(tgButtonClass)">-->
-        <!--</a>-->
-        <!--<div class="alert-message"-->
-        <!--:class="[ compTgButtonMessagesClass, {'telegram-message__stop': isScrollInFooter, 'telegram-message__rtl': isRtl }]">-->
-        <!--<span>{{ randomNumMessages }}</span>-->
-        <!--</div>-->
-        <!--</div>-->
-
         <telegram-alert-button-mobile :tg-button-mobile-class="compTgButtonMobileClass"
                                       :opened-modal-menu="openedModalMenu"
                                       :tg-mobile-in-dark-section="!alertButtonInDarkSection(tgButtonMobileClass)"/>
@@ -590,6 +429,8 @@
 <script>
     import MenuModal from './modals/MenuModal';
     import SliderScreen from './layouts/SliderScreen';
+    import GroupChangeThemeButton from './layouts/GroupChangeThemeButton';
+    import ScrollToTopButton from './layouts/ScrollToTopButton';
     import RatingBlock from './layouts/RatingBlock';
     import PartnersBlock from './layouts/PartnersBlock';
     import TelegramAlertButtonMobile from './layouts/alert-buttons/TelegramAlertButtonMobile';
@@ -604,6 +445,8 @@
         components: {
             MenuModal,
             SliderScreen,
+            GroupChangeThemeButton,
+            ScrollToTopButton,
             RatingBlock,
             PartnersBlock,
             TelegramAlertButtonMobile,
@@ -996,48 +839,6 @@
                     document.getElementById('button-choose').classList.remove('button-choose__stop');
                 }
             },
-            doVideoTheme: function () {
-                this.isDark = true;
-                this.isVideo = true;
-                this.$parent.$emit('isDarkTheme', true);
-                localStorage.setItem('color-theme', 'video');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                }, 100);
-            },
-            doLightTheme: function () {
-                let flag = false;
-                if (this.isVideo)
-                    flag = true;
-
-                this.isDark = false;
-                this.isVideo = false;
-                this.$parent.$emit('isDarkTheme', false);
-                localStorage.setItem('color-theme', 'light');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                    if (flag)
-                        this.startAnime();
-                }, 100);
-            },
-            doDarkTheme: function () {
-                let flag = false;
-                if (this.isVideo)
-                    flag = true;
-
-                this.isDark = true;
-                this.isVideo = false;
-                this.$parent.$emit('isDarkTheme', true);
-                localStorage.setItem('color-theme', 'dark');
-                this.reBuild = false;
-                setTimeout(() => {
-                    this.reBuild = true;
-                    if (flag)
-                        this.startAnime();
-                }, 100);
-            },
             getCoords: function (elem) {
                 if (!elem)
                     return false;
@@ -1067,7 +868,34 @@
         },
         mounted() {
 
-            console.log(this.tgButtonClass, 'mounted');
+            this.$on('isDarkTheme', isDark => {
+                let flag = false;
+                if (this.isVideo)
+                    flag = true;
+
+                this.isDark = isDark;
+                this.isVideo = false;
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                    if (flag)
+                        this.startAnime();
+                }, 100);
+
+                this.$parent.$emit('isDarkTheme', this.isDark);
+            });
+
+            this.$on('isVideoTheme', isVideo => {
+                this.isDark = true;
+                this.isVideo = isVideo;
+                this.reBuild = false;
+                setTimeout(() => {
+                    this.reBuild = true;
+                }, 100);
+
+                this.$parent.$emit('isDarkTheme', true);
+            });
+
 
             //устанавливать начальное значение checked на включение оповещений
 
@@ -1086,36 +914,6 @@
 
             let a = document.querySelector('.collection').getElementsByClassName('item');
             a[a.length - 1].addEventListener('click', this.yaMetricaCollectionLastItem);
-
-
-            if (this.isVideo) {
-                document.querySelector('video').playbackRate = 0.75;
-            }
-
-            setTimeout(() => {
-                if (localStorage.getItem('color-theme') === 'dark' && this.checkWindowWidth) {
-                    this.isDark = true;
-                    this.isVideo = false;
-                    this.$parent.$emit('isDarkTheme', true);
-                } else if (localStorage.getItem('color-theme') === 'light' && this.checkWindowWidth) {
-                    this.isDark = false;
-                    this.isVideo = false;
-                    this.$parent.$emit('isDarkTheme', false);
-                } else if (localStorage.getItem('color-theme') === 'video' && this.checkWindowWidth) {
-                    this.isDark = true;
-                    this.isVideo = true;
-                    this.$parent.$emit('isDarkTheme', true);
-                } else if (this.checkWindowWidth) {
-                    this.isDark = true;
-                    this.isVideo = true;
-                    localStorage.setItem('color-theme', 'video');
-                    this.$parent.$emit('isDarkTheme', true);
-                } else {
-                    this.isDark = false;
-                    this.isVideo = false;
-                    this.$parent.$emit('isDarkTheme', false);
-                }
-            }, 40);
 
             setTimeout(() => {
                 this.startAnime();
@@ -1152,75 +950,7 @@
         @media (min-width 690px) and (max-width 1024px)
             margin-top 20px
 
-    .wrap__pointer
-        cursor pointer
-        position fixed
-        width 20px
-        right 10px
-        top 100px
-        z-index 110
 
-        @media (min-width 690px) and (max-width 1024px)
-            right 7.5px
-            width 15px
-
-        @media (max-width 690px)
-            display none
-
-        @media (max-width 768px)
-            top 150px
-
-        .pointer-to-top
-            width 100%
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-
-        .pointer-to-bottom
-            transform rotateX(180deg)
-
-    .wrap-pointer__rtl
-        left 10px
-        right auto
-
-        @media (min-width 690px) and (max-width 1024px)
-            left 7.5px
-            right auto
-            width 15px
-
-    .scroll-to-top
-        z-index 100
-        cursor pointer
-        width 40px
-        height 100%
-        position fixed
-        right 0
-        display flex
-        align-items center
-        justify-content center
-
-        @media (min-width 690px) and (max-width 1024px)
-            width 30px
-
-        @media (max-width 690px)
-            display none
-
-        a
-            -webkit-transition all .3s ease
-            -o-transition all .3s ease
-            transition all .3s ease
-            opacity 0
-            background-color #e3e3e6
-            height 100%
-            width 40px
-
-        &:hover
-            a
-                opacity .5
-
-    .scroll-to-top__rtl
-        left 0
-        right auto
 
     .desc
         align-self flex-start
@@ -1582,87 +1312,6 @@
     section
         position relative
 
-    .button-choose__stop
-        position absolute !important
-
-    .button-choose
-        position fixed
-        left 20px
-        top 40%
-        width 40px
-        z-index 1000
-
-        .button-choose__active
-            opacity 1 !important
-            border 2px solid #ffd24f !important
-
-        .button-choose__active-video
-            opacity 1 !important
-            border 2px solid #343a49 !important
-
-        .button-choose_video
-            padding 0
-            padding-left 5px
-            position relative
-            opacity 0.8
-            cursor pointer
-            width 40px
-            height 40px
-            margin-bottom 15px
-            background-color #ffd24f
-            border-radius 50%
-            border 1px solid #f7f7f7
-            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-
-            &:focus
-                outline none
-
-            img
-                width 70%
-
-        .button-choose_light
-            opacity 0.8
-            cursor pointer
-            width 40px
-            height 40px
-            margin-bottom 15px
-            background-color #f7f7f7
-            border-radius 50%
-            border 1px solid #f7f7f7
-            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-
-            &:focus
-                outline none
-
-        .button-choose_dark
-            opacity 0.8
-            cursor pointer
-            width 40px
-            height 40px
-            background-color #343a49
-            border-radius 50%
-            border 1px solid #343a49
-            -webkit-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            -moz-box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-            box-shadow 0 0 2px 0 rgba(255, 188, 0, 0.7), 0 0 8px 0 rgba(0, 0, 0, 0.2)
-
-            &:focus
-                outline none
-
-    .button-choose__rtl
-        right 20px
-
-        .button-choose_video
-            padding-left 0
-            padding-right 5px
-
-            img
-                transform rotateY(180deg)
-
     .social-line
         padding 15px 0
 
@@ -1990,10 +1639,4 @@
             font-size 18px !important
             font-weight 700
 
-</style>
-
-<style scoped>
-    .wrap__pointer:hover + .scroll-to-top > a {
-        opacity: 0.5 !important;
-    }
 </style>

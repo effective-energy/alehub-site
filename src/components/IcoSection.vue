@@ -131,16 +131,18 @@
                     return this.distributionList[this.selectedDistributionIndex];
             },
             softCap: function () {
-                if (this.cryptoPriceStatus === 'success')
-                    return (this.cryptocurrencies.eth.softCap);
-
-                 return 'loading';
+                // if (this.cryptoPriceStatus === 'success')
+                //     return (this.cryptocurrencies.eth.softCap);
+                //
+                //  return 'loading';
+                return 16859;
             },
             hardCap: function () {
-                if (this.cryptoPriceStatus === 'success')
-                    return (this.cryptocurrencies.eth.hardCap);
-
-                return 'loading';
+                // if (this.cryptoPriceStatus === 'success')
+                //     return (this.cryptocurrencies.eth.hardCap);
+                //
+                // return 'loading';
+                return 47143;
             },
         },
         methods: {

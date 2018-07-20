@@ -1,5 +1,5 @@
 <template>
-    <div class="group-alert-button">
+    <div class="group-alert-button" :class="{ 'group-alert-button__top': scrollInFooter }">
         <email-subscribe-alert-panel :opened-email-subscribe-panel="openedEmailSubscribePanel"
                                      :in-dark-section="emailInDarkSection"
                                      :rtl="rtl"/>
@@ -67,7 +67,7 @@
             },
             doCloseTelegramAlertMobile: function () {
                 this.openedTelegramAlertMobile = false;
-            },
+            }
         },
         mounted() {
             this.$on('toggleEmailSubscribePanel', toggle => {
@@ -89,6 +89,7 @@
         bottom 75px
         width 70px
         height 200px
+        transition all .3s ease
 
         @media (max-width 768px)
             display none !important
@@ -104,4 +105,11 @@
             bottom 50px
             width 60px
             height 160px
+
+        &.group-alert-button__top
+            transition all .3s ease
+            bottom 200px
+
+            @media (max-width 1024px)
+                bottom 250px
 </style>
