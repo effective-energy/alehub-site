@@ -224,11 +224,6 @@
         height 30vw
         max-height 220px
 
-
-
-    .animate span
-        /*padding 25px 80px*/
-
     .animate::before, .animate::after
         content ""
         width 0
@@ -258,16 +253,12 @@
         display flex
         justify-content center
         align-items center
-        transition 2s
         text-align center
 
-        &:hover .news-info { .news-date {
-            margin-right: 0
-        }
-        }
-        &:hover img {
-            padding 1%
-        }
+
+        &:hover
+            img
+                padding 1%
 
         @media (max-width 320px)
             flex-direction column
@@ -281,10 +272,7 @@
             object-fit contain
             display flex
             padding 3%
-            transition 2s
-
-
-
+            transition all .5s ease
 
             @media (max-width 320px)
                 max-width 85%
@@ -297,11 +285,7 @@
             flex-direction column
             width 50%
             padding 10px
-            background-color rgba(255,255,255,0.627);
-
-
-
-
+            background-color rgba(255, 255, 255, .627)
 
             .news-title
                 font-family MuseoSansCyrl300
@@ -313,7 +297,7 @@
                 letter-spacing normal
                 color #34343e
                 margin-bottom 8px
-                text-decoration: none;
+                text-decoration none
 
                 @media (max-width 425px)
                     font-size 4vw !important
@@ -328,8 +312,7 @@
                 letter-spacing normal
                 text-align right
                 color #34343e
-                margin-right: 8%
-                transition 2s
+                margin-right 0
 
 
                 @media (max-width 320px)
