@@ -90,7 +90,7 @@ const messages = {
             btnGroup: {
                 whitePaper: '白皮书',
                 techDetails: '关于ALE的更多信息',
-                download: '下载'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -895,7 +895,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'リンク',
                 techDetails: 'Ale について詳しく見る',
-                download: 'ダウンロード'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -1694,7 +1694,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'Подробнее про ALE',
-                download: 'Загрузить MVP'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -2659,7 +2659,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'More about ALE',
-                download: 'Download MVP'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -3628,7 +3628,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'Livret-blanc',
                 techDetails: 'Plus d’infos à propos d’ALE',
-                download: 'Télécharger MVP'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -4411,7 +4411,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'Whitepaper',
                 techDetails: 'Mehr über ALE',
-                download: 'Download MVP'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -5184,7 +5184,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'ورق العمل',
                 techDetails: 'المزيد عن ALE',
-                download: 'تحميل'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -5962,7 +5962,7 @@ const messages = {
             btnGroup: {
                 whitePaper: '백서',
                 techDetails: 'ALE에 대한 추가 정보',
-                download: '다운로드'
+                download: 'Live Demo'
             }
         },
         mission: {
@@ -6740,7 +6740,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'Libro Blanco',
                 techDetails: 'Más información sobre ALE',
-                download: 'Descargar'
+                download: 'Live Demo'
             }
         },
         mission: {
