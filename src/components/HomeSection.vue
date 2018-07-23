@@ -930,6 +930,14 @@
     }
 </script>
 
+<style>
+  .mark a img {
+    object-fit: contain;
+    width: 322px;
+    height: 90px;
+  }
+</style>
+
 <style lang="stylus" scoped>
 
     .icorating-list

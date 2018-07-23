@@ -1694,7 +1694,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'Подробнее про ALE',
-                download: 'Загрузить MVP-версию приложения'
+                download: 'Загрузить MVP'
             }
         },
         mission: {
@@ -2659,7 +2659,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'White paper',
                 techDetails: 'More about ALE',
-                download: 'Download MVP-version application'
+                download: 'Download MVP'
             }
         },
         mission: {
@@ -3628,7 +3628,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'Livret-blanc',
                 techDetails: 'Plus d’infos à propos d’ALE',
-                download: 'Télécharger MVP-version'
+                download: 'Télécharger MVP'
             }
         },
         mission: {
@@ -4411,7 +4411,7 @@ const messages = {
             btnGroup: {
                 whitePaper: 'Whitepaper',
                 techDetails: 'Mehr über ALE',
-                download: 'Download MVP-version'
+                download: 'Download MVP'
             }
         },
         mission: {
