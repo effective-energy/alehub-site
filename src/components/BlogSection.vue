@@ -19,12 +19,12 @@
                         <router-link class="news-block"
                                      tag="div"
                                      :to="`/blog/${n.url}`">
-                            <router-link :to="`/blog/${n.url}`">
+                            <!--<router-link :to="`/blog/${n.url}`">-->
                                 <img class="picture"
                                      :src="'https://alehub-4550.nodechef.com/' + n.preview_image"
                                      :alt="n.title"
                                      @click="goToNews(n.url)">
-                            </router-link>
+                            <!--</router-link>-->
                             <div class="news-info">
                                 <p class="news-title">
                                     {{ n.title }}
@@ -220,9 +220,9 @@
         border none
         color #fff
         cursor pointer
-
-    .animate span
-        padding 25px 80px
+        padding 0
+        height 30vw
+        max-height 220px
 
     .animate::before, .animate::after
         content ""
@@ -248,34 +248,48 @@
 
     .news-block
         width 100%
-        height 94px
-        margin 32px 16px
+        height 100%
+        /*margin 32px 16px*/
         display flex
-        justify-content flex-start
-        transition 2s
+        justify-content center
+        align-items center
+        text-align center
+
+
+        &:hover
+            img
+                padding 1%
 
         @media (max-width 320px)
             flex-direction column
 
         .picture
-            max-width 150px
-            height 100%
-            width 150px
-            -o-object-fit cover
-            object-fit cover
+            z-index 0
+            width 98%
+            height 98%
+            position absolute
+            -o-object-fit contain
+            object-fit contain
+            display flex
+            padding 3%
+            transition all .5s ease
 
             @media (max-width 320px)
                 max-width 85%
                 width 85%
 
         .news-info
-            margin 4px 16px
+            z-index 1
+            /*margin 4px 16px*/
             display flex
             flex-direction column
+            width 50%
+            padding 10px
+            background-color rgba(255, 255, 255, .627)
 
             .news-title
                 font-family MuseoSansCyrl300
-                font-size 22px
+                font-size 20px
                 font-weight 500
                 font-style normal
                 font-stretch normal
@@ -283,10 +297,10 @@
                 letter-spacing normal
                 color #34343e
                 margin-bottom 8px
-                text-decoration: none;
+                text-decoration none
 
-                @media (max-width 320px)
-                    font-size 16px !important
+                @media (max-width 425px)
+                    font-size 4vw !important
 
             .news-date
                 font-family MuseoSansCyrl300
@@ -296,12 +310,13 @@
                 font-stretch normal
                 line-height normal
                 letter-spacing normal
-                text-align left
+                text-align right
                 color #34343e
+                margin-right 0
+
 
                 @media (max-width 320px)
                     font-size 14px !important
-                    color #ccc
 
     @media screen and (max-width 600px)
         .news-title
