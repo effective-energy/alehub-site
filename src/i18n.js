@@ -685,7 +685,7 @@ const messages = {
                         '../static/images/avatars/sergeeva@3x.png',
                         '../static/images/avatars/zhuravlev@3x.png'
                     ],
-                    progress: 25,
+                    progress: 100,
                     state: '实施',
                     status: false
                 },
@@ -717,22 +717,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 80,
-                    state: '舞台已经开始',
+                    progress: 100,
+                    state: '部署',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 5,
-                    state: '舞台已经开始',
+                    progress: 100,
+                    state: '部署',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
-                    progress: 0,
-                    state: '舞台没有开始',
+                    progress: 5,
+                    state: '实施',
                     status: false
                 },
                 {
@@ -1540,22 +1540,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 80,
-                    state: 'stage in the process',
+                    progress: 100,
+                    state: 'deployed',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 5,
-                    state: 'stage in the process',
+                    progress: 100,
+                    state: 'deployed',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
+                    progress: 5,
+                    state: 'implementing',
                     status: false
                 },
                 {
@@ -2356,22 +2356,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '09.05.2018 – 25.05.2018',
-                    progress: 80,
-                    state: 'этап идёт',
+                    progress: 100,
+                    state: 'готово',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '25.05.2018 – 25.06.2018',
-                    progress: 5,
-                    state: 'этап идёт',
+                    progress: 100,
+                    state: 'готово',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '25.07.2018 – 24.09.2018',
-                    progress: 0,
-                    state: 'этап ещё не начался',
+                    progress: 5,
+                    state: 'этап идет',
                     status: false
                 },
                 {
@@ -3345,22 +3345,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '09/05/2018 - 25/05/2018',
-                    progress: 90,
-                    state: 'stage in the process',
+                    progress: 100,
+                    state: 'deployed',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 25,
-                    state: 'stage in the process',
+                    progress: 100,
+                    state: 'deployed',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/24/2018',
-                    progress: 0,
-                    state: 'the stage did not begin',
+                    progress: 5,
+                    state: 'implementing',
                     status: false
                 },
                 {
@@ -4309,22 +4309,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/09/2018 - 05/25/2018',
-                    progress: 80,
-                    state: 'la scène dans le processus',
+                    progress: 100,
+                    state: 'déployé',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 5,
-                    state: 'la scène dans le processus',
+                    progress: 100,
+                    state: 'déployé',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
-                    progress: 0,
-                    state: 'la scène n\'a pas commencé',
+                    progress: 5,
+                    state: 'exécution',
                     status: false
                 },
                 {
@@ -5106,21 +5106,21 @@ const messages = {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
                     progress: 80,
-                    state: 'Stufe im Prozess',
+                    state: 'bereitgestellt',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
                     progress: 5,
-                    state: 'Stufe im Prozess',
+                    state: 'bereitgestellt',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
-                    progress: 0,
-                    state: 'die Bühne hat nicht begonnen',
+                    progress: 5,
+                    state: 'implementieren',
                     status: false
                 },
                 {
@@ -5896,22 +5896,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 80,
-                    state: 'بدأ المشهد',
+                    progress: 100,
+                    state: 'نشر',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 5,
-                    state: 'بدأ المشهد',
+                    progress: 100,
+                    state: 'نشر',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
                     progress: 0,
-                    state: 'المرحلة لم تبدأ',
+                    state: 'تنفيذ',
                     status: false
                 },
                 {
@@ -6692,22 +6692,22 @@ const messages = {
                 {
                     title: 'Bounty',
                     date: '05/25/2018 - 05/25/2018',
-                    progress: 80,
-                    state: '무대가 시작되었습니다',
+                    progress: 100,
+                    state: '배포',
                     status: true
                 },
                 {
                     title: 'PreICO',
                     date: '05/25/2018 - 06/25/2018',
-                    progress: 5,
-                    state: '무대가 시작되었습니다',
+                    progress: 100,
+                    state: '배포',
                     status: true
                 },
                 {
                     title: 'ICO',
                     date: '07/25/2018 - 09/25/2018',
-                    progress: 0,
-                    state: '단계를 시작하지 않았',
+                    progress: 5,
+                    state: '구현',
                     status: false
                 },
                 {
