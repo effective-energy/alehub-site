@@ -987,6 +987,9 @@
             align-items center
 
     .screen1.title
+        @media (max-width 425px)
+            margin-bottom 15px
+
         @media (min-width 425px) and (max-width 768px)
             text-align center
 

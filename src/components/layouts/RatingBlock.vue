@@ -19,10 +19,6 @@
     </div>
 </template>
 
-<a href="https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale" target="_blank" rel="nofollow"
-   title="Alehub (ALE)"><img src="https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium"
-                             alt="Alehub (ALE)"/></a>
-
 <script>
     export default {
         name: 'RatingBlock',
@@ -120,7 +116,7 @@
                 padding 50px 0
 
             @media (max-width 1024px)
-                height 75vh
+                height 100vh
                 flex-direction column
                 align-items center
 
