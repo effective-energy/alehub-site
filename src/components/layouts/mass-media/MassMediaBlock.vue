@@ -2,7 +2,7 @@
     <div class="media-block">
         <div class="media-block__header">
             <div class="title">
-                Mass media
+                Mass Media
             </div>
             <div class="separator">
             </div>
@@ -167,6 +167,7 @@
             .title
                 font-size 3em
                 font-weight 500
+                text-align center
 
             .separator
                 width 120px
