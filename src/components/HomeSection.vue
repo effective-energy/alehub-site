@@ -365,8 +365,8 @@
                     </div>
 
                     <a class="btn btn-black to-download"
-                       @click="yaCounter48802643.reachGoal('DownloadMVP'); return true;"
-                       v-scroll-to="'#download-application'"
+                      href="https://demo.alehub.io/"
+                      target="_blank" 
                        style="font-weight: bold; color: #fff;">
                         <button type="button">
                             <img src="../../static/images/request-ic.svg">
@@ -929,6 +929,14 @@
         },
     }
 </script>
+
+<style>
+  .mark a img {
+    object-fit: contain;
+    width: 322px;
+    height: 90px;
+  }
+</style>
 
 <style lang="stylus" scoped>
 
