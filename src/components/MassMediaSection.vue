@@ -1,16 +1,19 @@
 <template>
     <div class="mass-media-section" id="mass-media-section">
-        <media-block/>
+        <mass-media-block/>
+        <mass-media-about-us/>
     </div>
 </template>
 
 <script>
-    import MediaBlock from './layouts/MediaBlock';
+    import MassMediaBlock from './layouts/mass-media/MassMediaBlock';
+    import MassMediaAboutUs from './layouts/mass-media/MassMediaAboutUs';
 
     export default {
         name: 'MassMediaSection',
         components: {
-            MediaBlock
+            MassMediaBlock,
+            MassMediaAboutUs
         }
     }
 </script>
