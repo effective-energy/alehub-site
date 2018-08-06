@@ -125,7 +125,7 @@ const mutations = {
     },
     SUCCESS_CRYPTO_PRICE: (state, data) => {
         state.cryptocurrencies = data.round.ico;
-        state.collected = data.totals.ETH_sum * state.eth + data.totals.USD_sum;
+        state.collected = data.totals.USD_sum;
 
         state.currencies.btc.count = state.cryptocurrencies['BTC'].value;
         state.currencies.eth.count = state.cryptocurrencies['ETH'].value.toFixed(2);
