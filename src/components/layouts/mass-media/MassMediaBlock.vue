@@ -116,6 +116,20 @@
                         hoverSrc: '../../../static/images/logo/bitjournal-hover.svg',
                         href: 'https://bitjournal.media/17-04-2018/alehub-universalnaya-platforma-dlya-upravleniya-proektami/',
                         isHover: false
+                    },
+                    {
+                        title: 'Nasdaq',
+                        src: '../../../../static/images/logo/nasdaq-logo.png',
+                        hoverSrc: '../../../../static/images/logo/nasdaq-logo.png',
+                        href: 'https://nasdaq.com/article/blockchain-based-architecture-for-project-management-cm971453',
+                        alt: 'nasdaq'
+                    },
+                    {
+                        title: 'Yahoo',
+                        href: 'https://www.yahoo.com/amphtml/finance/news/promoted-blockchain-based-architecture-project-150559234.html',
+                        hoverSrc: '../../../../static/images/logo/yahoo-finance-logo.png',
+                        src: '../../../../static/images/logo/yahoo-finance-logo.png',
+                        isHover: false
                     }
                 ]
             }

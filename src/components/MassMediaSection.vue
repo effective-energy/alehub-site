@@ -1,7 +1,7 @@
 <template>
     <div class="mass-media-section" id="mass-media-section">
         <mass-media-block/>
-        <mass-media-about-us/>
+        <!--<mass-media-about-us/>-->
     </div>
 </template>
 
