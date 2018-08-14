@@ -12,9 +12,12 @@
             <div class="separator">
             </div>
 
-            <div class="effective-energy-team" id="effective-energy-team">
+            <div class="effective-energy-team"
+                 id="effective-energy-team">
 
-                <p>{{ $t('team.effectiveEnergy[0].name') }}</p>
+                <p>
+                    {{ $t('team.effectiveEnergy[0].name') }}
+                </p>
 
                 <!--add static block images like serokell and advisors-->
 
@@ -79,7 +82,9 @@
             </div>
 
         </div>
-        <div class="advisors" id="advisors" v-if="true">
+        <div class="advisors"
+             id="advisors"
+             v-if="true">
             <h3 class="title">
                 {{$t('advisors.title')}}
             </h3>
@@ -88,44 +93,7 @@
             </div>
 
             <div class="advisors-team">
-                <!-- <div class="images"
-                     v-if="isWideScreen">
-                    <div class="image"
-                         v-for="(member, i) in $t('advisors.members')" :key="i">
-                        <div class="image__inner">
-                            <img class="layer__bottom"
-                                 :src="$t('advisors.members['+i+'].src')"
-                                 :alt="member.name">
-                            <div class="layer__top">
-                                <div class="layer__text">
-                                    <h3>
-                                        {{ member.position }}
-                                    </h3>
-
-                                    <div class="icons"
-                                         v-if="member.social !== undefined && member.length !== 0">
-                                        <a target="_blank"
-                                           :href="social.link"
-                                           v-for="social in member.social">
-                                            <img :src="social.src"
-                                                 :alt="social.type"/>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="image__info">
-                            <span>{{ member.name }}</span>
-                            <div @click="openAdvisorInfoModal(member)">
-                                <img src="../../static/images/info-ic.svg"
-                                     alt="advisor info">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <slider-advisors
-                                 :items="$t('advisors.members')"
+                <slider-advisors :items="$t('advisors.members')"
                                  :settings="settings.advisors"
                                  :options="options.advisors"
                                  :is-autoplay="isAdvisorsAutoplay"
