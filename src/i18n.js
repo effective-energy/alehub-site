@@ -1414,7 +1414,7 @@ const messages = {
                 {
                     title: 'Conception',
                     desk: 'The idea',
-                    date: 'January 2017',
+                    date: '01/01/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -1426,7 +1426,7 @@ const messages = {
                 {
                     title: 'Expertise from specialists in project management. Definition of requirements',
                     desk: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
-                    date: 'February - March 2017',
+                    date: '01/02/17 - 01/03/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -1437,7 +1437,7 @@ const messages = {
                 {
                     title: 'Mathematical modeling',
                     desk: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
-                    date: 'April - May 2017',
+                    date: '01/04/17 - 01/05/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -1448,7 +1448,7 @@ const messages = {
                 {
                     title: 'Formation of the Terms of Reference',
                     desk: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
-                    date: 'June - July 2017',
+                    date: '01/06/17 - 01/07/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -1460,7 +1460,7 @@ const messages = {
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
-                    date: 'August 2017',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -1479,7 +1479,7 @@ const messages = {
                 {
                     title: 'PreSale',
                     desk: 'Raised more than 1,000,000 USD',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -1492,7 +1492,7 @@ const messages = {
                 },
                 {
                     title: 'Publishing MVP',
-                    date: 'May 15, 2018',
+                    date: '15/05/18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -2212,7 +2212,7 @@ const messages = {
             stages: [
                 {
                     title: 'Появление идеи',
-                    date: 'Январь 2017-го',
+                    date: '01.01.17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -2224,7 +2224,7 @@ const messages = {
                 {
                     title: 'Экспертиза от специалистов по управлению проектами. Определение требований.',
                     desk: 'Консультации со специалистами по менеджменту проектов из реального сектора экономики, Сбор требований и определение проблематики',
-                    date: 'Февраль - Март 2017-го',
+                    date: '01.02.17 - 01.03.17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -2235,7 +2235,7 @@ const messages = {
                 {
                     title: 'Построение математической модели',
                     desk: 'Консультации с финансистами. Математическое моделирование, совместно с Университетом ИТМО',
-                    date: 'Апрель - Май 2017-го',
+                    date: '01.04.17 - 01.05.17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -2246,7 +2246,7 @@ const messages = {
                 {
                     title: 'Формирование Технического задания',
                     desk: 'Консультации с блокчейн -экспертами и разработчиками. Формирование образа продукта и технического задания',
-                    date: 'Июнь - Июль 2017-го',
+                    date: '01.06.17 - 01.07.17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -2258,7 +2258,7 @@ const messages = {
                 },
                 {
                     title: 'Партнерство с Serokell OU. Начало разработки.',
-                    date: 'Август 2017-го',
+                    date: '01.08.17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -2277,7 +2277,7 @@ const messages = {
                 {
                     title: 'PreSale',
                     desk: 'Собрано более 1,000,000$',
-                    date: 'Ноябрь - Декабрь 2017-го',
+                    date: '01.11.17 - 01.12.17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -2290,7 +2290,7 @@ const messages = {
                 },
                 {
                     title: 'Публикация MVP',
-                    date: '15 Мая 2018-го',
+                    date: '15.05.18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -3181,7 +3181,7 @@ const messages = {
                 {
                     title: 'Conception',
                     desk: 'The idea',
-                    date: 'January 2017',
+                    date: '01/01/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -3193,7 +3193,7 @@ const messages = {
                 {
                     title: 'Expertise from specialists in project management. Definition of requirements',
                     desk: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
-                    date: 'February - March 2017',
+                    date: '01/02/17 - 01/03/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -3204,7 +3204,7 @@ const messages = {
                 {
                     title: 'Mathematical modeling',
                     desk: 'Consultations with financial experts. Mathematical modeling in cooperation with the University of ITMO',
-                    date: 'April - May 2017',
+                    date: '01/04/17 - 01/05/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -3215,7 +3215,7 @@ const messages = {
                 {
                     title: 'Formation of the Terms of Reference',
                     desk: 'Consultations with blockchain experts and developers. Forming an image of a product and the terms of reference',
-                    date: 'June - July 2017',
+                    date: '01/06/17 - 01/07/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -3227,7 +3227,7 @@ const messages = {
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
-                    date: 'August 2017',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -3246,7 +3246,7 @@ const messages = {
                 {
                     title: 'PreSale',
                     desk: 'Raised more than 1,000,000 USD',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -3259,7 +3259,7 @@ const messages = {
                 },
                 {
                     title: 'Publishing MVP',
-                    date: 'May 15, 2018',
+                    date: '15/05/18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -4127,7 +4127,7 @@ const messages = {
                 {
                     title: 'Conception',
                     desk: 'L’idée',
-                    date: 'January 2017',
+                    date: '01/01/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -4139,7 +4139,7 @@ const messages = {
                 {
                     title: 'L\'expertise de spécialistes en gestion de projet. Définition des besoins',
                     desk: 'Consultations with specialists in project management from the real sector of the economy. Collection of requirements and defining problems',
-                    date: 'February - March 2017',
+                    date: '01/02/17 - 01/03/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -4150,7 +4150,7 @@ const messages = {
                 {
                     title: 'Modèle mathématique',
                     desk: 'Consultations avec des experts financiers. Modélisation mathématique en coopération avec l\'Université de l\'ITMO.',
-                    date: 'April - May 2017',
+                    date: '01/04/17 - 01/05/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -4161,7 +4161,7 @@ const messages = {
                 {
                     title: 'Formation des termes de référence',
                     desk: 'Consultations avec des experts de la blockchain et des développeurs. Formation de l\'image d\'un produit et des termes de référence.',
-                    date: 'June - July 2017',
+                    date: '01/06/17 - 01/07/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -4173,7 +4173,7 @@ const messages = {
                 },
                 {
                     title: 'Partenariat avec Serokell OU, début du développement.',
-                    date: 'August 2017',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -4192,7 +4192,7 @@ const messages = {
                 {
                     title: 'Pré-Vente',
                     desk: 'Levée de fonds de plus de 1,000,000 USD',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -4205,7 +4205,7 @@ const messages = {
                 },
                 {
                     title: 'Publication MVP',
-                    date: 'May 15, 2018',
+                    date: '15/05/18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -4905,7 +4905,7 @@ const messages = {
                 {
                     title: 'Konzeption',
                     desk: 'Die Idee',
-                    date: 'January 2017',
+                    date: '01/01/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -4917,7 +4917,7 @@ const messages = {
                 {
                     title: 'Kompetenz von Spezialisten im Projektmanagement. Anforderungsdefinition',
                     desk: 'Beratungen mit Spezialisten für Projektmanagement aus der Realwirtschaft. Erfassung von Anforderungen und Definition von Problemen',
-                    date: 'February - March 2017',
+                    date: '01/02/17 - 01/03/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -4928,7 +4928,7 @@ const messages = {
                 {
                     title: 'Mathematische Modellierung',
                     desk: 'Konsultationen mit Finanzexperten. Mathematische Modellierung in Zusammenarbeit mit der Universität ITMO',
-                    date: 'April - May 2017',
+                    date: '01/04/17 - 01/05/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -4939,7 +4939,7 @@ const messages = {
                 {
                     title: 'Bildung der Geschäftsordnung',
                     desk: 'Beratungen mit Blockchain-Experten und Entwicklern. Erstellung eines Produktbildes und des Pflichtenheftes',
-                    date: 'June - July 2017',
+                    date: '01/06/17 - 01/07/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -4951,7 +4951,7 @@ const messages = {
                 },
                 {
                     title: 'Partnerschaft mit Serokell OU, Beginn der Entwicklung.',
-                    date: 'August 2017',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -4970,7 +4970,7 @@ const messages = {
                 {
                     title: 'Vorverkauf',
                     desk: 'Erhob mehr als 1.000.000 USD',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -4983,7 +4983,7 @@ const messages = {
                 },
                 {
                     title: 'Veröffentlichung MVP',
-                    date: 'May 15, 2018',
+                    date: '15/05/18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -5743,7 +5743,7 @@ const messages = {
                 {
                     title: 'البيع الأولي',
                     desk: 'تحقيق أكثر من 1،000،000 دولار أمريكي',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -6456,7 +6456,7 @@ const messages = {
                 {
                     title: '구상',
                     desk: '아이디어',
-                    date: 'January 2017',
+                    date: '01/01/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png'
@@ -6468,7 +6468,7 @@ const messages = {
                 {
                     title: '프로젝트 관리 전문가. 요구 사항 정의',
                     desk: '실제 경제 부문의 프로젝트 관리 전문가와의 상담. 요구 사항 수집 및 정의 문제',
-                    date: 'February - March 2017',
+                    date: '01/02/17 - 01/03/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -6479,7 +6479,7 @@ const messages = {
                 {
                     title: '수학적 모델링',
                     desk: '금융 전문가와의 상담. ITMO 대학과 협력하여 수학적 모델링',
-                    date: 'April - May 2017',
+                    date: '01/04/17 - 01/05/17',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
                     ],
@@ -6490,7 +6490,7 @@ const messages = {
                 {
                     title: '참조 조건의 형성',
                     desk: '블록 체인 전문가 및 개발자와의 상담. 제품 이미지 및 참조 조건 구성',
-                    date: 'June - July 2017',
+                    date: '01/06/17 - 01/07/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -6502,7 +6502,7 @@ const messages = {
                 },
                 {
                     title: 'Serokell OU와의 파트너십, 개발 시작',
-                    date: 'August 2017',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -6521,7 +6521,7 @@ const messages = {
                 {
                     title: '선판매 (Pre-Sale)',
                     desk: '1,000,000 USD 이상 판매',
-                    date: 'November - December 2017',
+                    date: '01/11/17 - 01/12/17',
                     members: [
                         '../static/images/avatars/gromyko@3x.png',
                         '../static/images/avatars/osipenko@3x.png',
@@ -6534,7 +6534,7 @@ const messages = {
                 },
                 {
                     title: 'MVP 게시',
-                    date: 'May 15, 2018',
+                    date: '15/05/18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
