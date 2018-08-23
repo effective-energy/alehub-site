@@ -339,6 +339,9 @@
                 <a href="https://github.com/effective-energy"
                    class="social-item github"
                    target="_blank"></a>
+                <a href="https://medium.com/@alehub"
+                   class="social-item medium"
+                   target="_blank"></a>
                 <a href="https://vk.com/alehub" v-if="false"
                    class="social-item vk"
                    target="_blank"></a>
@@ -1245,6 +1248,12 @@
 
             &:hover
                 background-image url(../../static/images/fb-hovered.svg) !important
+
+        .social-item.medium
+            background-image url(../../static/images/medium-dark.svg) !important
+
+            &:hover
+                background-image url(../../static/images/medium-icon-hover.svg) !important
 
         .social-item.ins
             background-image url(../../static/images/instagram-dark.svg) !important

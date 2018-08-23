@@ -62,13 +62,6 @@
                         isHover: false
                     },
                     {
-                        title: 'TheMerkle',
-                        src: '../../../static/images/logo/the-merkle.svg',
-                        hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
-                        href: 'https://themerkle.com/',
-                        isHover: false
-                    },
-                    {
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
                         hoverSrc: '../../../static/images/logo/ccn-hover.svg',
