@@ -196,19 +196,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://sale.alehub.io/"
-                               target="_blank"
-                               class="a-buy-tokens">
+                            <router-link to="/white-list"
+                                         tag="a"
+                                         class="a-buy-tokens">
                                 <button onclick="yaCounter48805535.reachGoal('kupit'); return true;"
                                         type="button"
                                         class="btn btn-buy-tokens">
                                     {{ $t("greeting.countDown.btnBuyTokens") }}
                                 </button>
-                            </a>
+                            </router-link>
                             <!--<div class="bonus-desc"-->
-                                 <!--:class="{ 'padding-right-rtl': isRtl }">-->
-                                <!--<span>{{ $t("greeting.countDown.bonus") }}</span>-->
-                                <!--<span>{{ $t("greeting.countDown.notAvailable") }}</span>-->
+                            <!--:class="{ 'padding-right-rtl': isRtl }">-->
+                            <!--<span>{{ $t("greeting.countDown.bonus") }}</span>-->
+                            <!--<span>{{ $t("greeting.countDown.notAvailable") }}</span>-->
                             <!--</div>-->
                         </div>
                         <div class="col-xl-4 col-lg-12 col-md-12">
@@ -368,8 +368,8 @@
                     </div>
 
                     <a class="btn btn-black to-download"
-                      href="https://demo.alehub.io/"
-                      target="_blank" 
+                       href="https://demo.alehub.io/"
+                       target="_blank"
                        style="font-weight: bold; color: #fff;">
                         <button type="button">
                             <img src="../../static/images/request-ic.svg">
@@ -934,11 +934,11 @@
 </script>
 
 <style>
-  .mark a img {
-    object-fit: contain;
-    width: 322px;
-    height: 90px;
-  }
+    .mark a img {
+        object-fit: contain;
+        width: 322px;
+        height: 90px;
+    }
 </style>
 
 <style lang="stylus" scoped>
@@ -960,8 +960,6 @@
 
         @media (min-width 690px) and (max-width 1024px)
             margin-top 20px
-
-
 
     .desc
         align-self flex-start
