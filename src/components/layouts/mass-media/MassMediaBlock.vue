@@ -242,6 +242,7 @@
                     transition .3s
                     &:hover
                         filter invert(0)
+                        transform: scale(1.1);
 
 
                 img
