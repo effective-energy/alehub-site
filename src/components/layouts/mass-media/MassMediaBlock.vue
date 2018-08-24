@@ -62,13 +62,6 @@
                         isHover: false
                     },
                     {
-                        title: 'TheMerkle',
-                        src: '../../../static/images/logo/the-merkle.svg',
-                        hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
-                        href: 'https://themerkle.com/',
-                        isHover: false
-                    },
-                    {
                         title: 'CCN',
                         src: '../../../static/images/logo/ccn.svg',
                         hoverSrc: '../../../static/images/logo/ccn-hover.svg',
@@ -119,16 +112,18 @@
                     },
                     {
                         title: 'Nasdaq',
-                        src: '../../../../static/images/logo/nasdaq-logo.png',
-                        hoverSrc: '../../../../static/images/logo/nasdaq-logo.png',
+                        src: '../../../../static/images/logo/nasdaq-logo.svg',
+                        hoverSrc: '../../../../static/images/logo/nasdaq-logo-hover.svg',
                         href: 'https://nasdaq.com/article/blockchain-based-architecture-for-project-management-cm971453',
-                        alt: 'nasdaq'
+                        alt: 'nasdaq',
+                        isHover: false
                     },
                     {
                         title: 'Yahoo',
                         href: 'https://www.yahoo.com/amphtml/finance/news/promoted-blockchain-based-architecture-project-150559234.html',
-                        hoverSrc: '../../../../static/images/logo/yahoo-finance-logo.png',
-                        src: '../../../../static/images/logo/yahoo-finance-logo.png',
+                        hoverSrc: '../../../../static/images/logo/yahoo-finance-logo-hover.svg',
+                        src: '../../../../static/images/logo/yahoo-finance-logo.svg',
+                        alt: 'yahoo-finance',
                         isHover: false
                     }
                 ]

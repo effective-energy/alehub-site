@@ -8,8 +8,8 @@
                 {{ $t('economy.subTitle') }}
             </p>
 
-            <div class="row figures-panel">
-                <div class="col-4 is-center is-white">
+            <div class="row">
+                <div class="col-12 is-center is-white figures-panel">
                     <h1 class="figures-title">
                         {{ $t('economy.ICOinfo.emission.title') }}
                     </h1>
@@ -17,22 +17,22 @@
                         {{ $t('economy.ICOinfo.emission.amount') }} ALE
                     </h3>
                 </div>
-                <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">
-                        {{ $t('economy.ICOinfo.hardCap.title') }}
-                    </h1>
-                    <h3 class="figures-subtitle">
-                        {{ hardCap }} ETH
-                    </h3>
-                </div>
-                <div class="col-4 is-center is-white">
-                    <h1 class="figures-title">
-                        {{ $t('economy.ICOinfo.softCap.title') }}
-                    </h1>
-                    <h3 class="figures-subtitle">
-                        {{ softCap }} ETH
-                    </h3>
-                </div>
+                <!--<div class="col-4 is-center is-white">-->
+                    <!--<h1 class="figures-title">-->
+                        <!--{{ $t('economy.ICOinfo.hardCap.title') }}-->
+                    <!--</h1>-->
+                    <!--<h3 class="figures-subtitle">-->
+                        <!--{{ hardCap }} ETH-->
+                    <!--</h3>-->
+                <!--</div>-->
+                <!--<div class="col-4 is-center is-white">-->
+                    <!--<h1 class="figures-title">-->
+                        <!--{{ $t('economy.ICOinfo.softCap.title') }}-->
+                    <!--</h1>-->
+                    <!--<h3 class="figures-subtitle">-->
+                        <!--{{ softCap }} ETH-->
+                    <!--</h3>-->
+                <!--</div>-->
             </div>
             <div class="row distribution">
                 <circle1 v-if="isShowAnim"
