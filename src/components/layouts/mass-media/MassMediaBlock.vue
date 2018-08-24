@@ -13,16 +13,18 @@
                :href="item.href"
                @mouseenter="enterMediaHover(item)"
                @mouseleave="leaveMediaHover(item)">
-                <img class="light"
-                     :class="{ 'light__transparent': item.isHover }"
-                     :src="item.src"
+                <!--:class="{ 'light__transparent': item.isHover }"
+                    :src="item.src"
+                    class="light"-->
+                <img class="filter"
+                     :src="item.hoverSrc"
                      :alt="item.title">
-                <transition name="fade-media-hover">
-                    <img class="hover"
-                         :src="item.hoverSrc"
-                         :alt="item.title"
-                         v-if="item.isHover">
-                </transition>
+                <!--<transition name="fade-media-hover">-->
+                    <!--<img class="hover"-->
+                         <!--:src="item.hoverSrc"-->
+                         <!--:alt="item.title"-->
+                         <!--v-if="item.isHover">-->
+                <!--</transition>-->
             </a>
         </div>
     </div>
@@ -235,6 +237,13 @@
                     -webkit-transition all .4s ease-in-out
                     -o-transition all .4s ease-in-out
                     transition all .4s ease-in-out
+                .filter
+                    filter  invert(.5)
+                    transition .3s
+                    &:hover
+                        filter invert(0)
+                        transform: scale(1.1);
+
 
                 img
                     height 60px

@@ -688,7 +688,7 @@ const messages = {
                 },
                 {
                     title: '发行最小可行性产品（MVP）',
-                    date: '五月 15, 2018',
+                    date: '五月 15, 18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -699,21 +699,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/25/2018 - 05/25/2018',
+                    date: '05/25/18 - 05/25/18',
                     progress: 100,
                     state: '部署',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: '部署',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: '实施',
                     status: false
@@ -721,7 +721,7 @@ const messages = {
                 {
                     title: '黄皮书开发',
                     desk: '黄皮书 –系统的技术描述。该文件说明了系统体系的结构特征，并包含网络节点和其他技术细节的交互协议。',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -729,7 +729,7 @@ const messages = {
                 {
                     title: '去中心化的MVP解决方案',
                     desc: '构建实施以下组件的系统版本：对等网络；使用内置代币和其他代币的自定义交易；',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -737,7 +737,7 @@ const messages = {
                 {
                     title: '私人区块链',
                     desk: '开发私人区块链并集成到现有的基础设施中。确保Oracle 的不间断运作。 在整个系统的完整版本中进行注册—但还没存在争端机制（仲裁）。',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -745,7 +745,7 @@ const messages = {
                 {
                     title: '争端解决机制的实施',
                     desk: '在去中心化的应用框架内完善争议解决机制。',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -753,14 +753,14 @@ const messages = {
                 {
                     title: '变更投票制度的实施',
                     desk: '随着时间的变化进行系统修改。',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
                 },
                 {
                     title: '系统发布',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/2020',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -768,14 +768,14 @@ const messages = {
                 {
                     title: '公开系统的源代码以及相关文件',
                     desk: '将系统的源代码和相关文件发布到公开的存储库中',
-                    date: '01/2020 - 02/2020',
+                    date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
                 },
                 {
                     title: '启动系统',
-                    date: '02/2020 – 03/2020',
+                    date: '01/02/2020 – 01/03/2020',
                     progress: 0,
                     state: '舞台没有开始',
                     status: false
@@ -1462,7 +1462,7 @@ const messages = {
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
-                    date: '08/17',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -1505,21 +1505,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '09/2018 - 25/2018',
+                    date: '05/18',
                     progress: 100,
                     state: 'deployed',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: 'deployed',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementing',
                     status: false
@@ -1527,56 +1527,56 @@ const messages = {
                 {
                     title: 'Yellow Paper development',
                     desk: 'Yellow Paper – technical description of the system. The document illustrates architectural features of the system construction, protocols of interaction between network nodes and other technical details.',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Decentralization of MVP solutions',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Private blockchains',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Implementation of the dispute system',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Implementation of the voting system for changes',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Closed system testing',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/2020',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Publication of the source code of the system and documentation',
-                    date: '01/2020 - 02/2020',
+                    date: '01/01/2020 - 01/02/2020',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
                 },
                 {
                     title: 'Booting the system ',
-                    date: '02/2020 – 03/2020',
+                    date: '01/02/2020 – 01/03/2020',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2304,20 +2304,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05.2018 – 05.2018',
+                    date: '05.18 – 05.18',
                     progress: 100,
                     state: 'готово',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '05.2018 – 06.2018',
+                    date: '05.18 – 06.18',
                     progress: 100,
                     state: 'готово',
                     status: true
                 },
                 {
                     title: 'ICO',
+                    date: '07.18 – 09.18',
                     progress: 5,
                     state: 'этап идет',
                     status: false
@@ -2326,7 +2327,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация блокчейна верхнего уровня',
                     result: 'Результат: Yellow Paper, v0.1',
-                    date: '25.2018 - 30.2018',
+                    date: '09.18 - 10.18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2335,7 +2336,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация процедуры майнинга',
                     result: 'Результат: Yellow Paper, v0.2',
-                    date: '30.2018 - 19.2018',
+                    date: '10.18 - 11.18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2344,7 +2345,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация вложенных блокчейнов',
                     result: 'Результат: Yellow Paper, v0.3',
-                    date: '19.2018 - 25.18',
+                    date: '11.18 - 12.18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2353,7 +2354,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация системы диспута',
                     result: 'Результат: Yellow Paper, v0.4',
-                    date: '25.18 - 22.2019',
+                    date: '12.18 - 01.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2362,7 +2363,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Разработка виртуальной машины',
                     result: 'Результат: Yellow Paper, v0.5',
-                    date: '22.19 - 02.19',
+                    date: '01.19 - 02.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2371,7 +2372,7 @@ const messages = {
                     title: 'Разработка Yellow Paper',
                     desk: 'Формализация процедуры внесения изменений',
                     result: 'Результат:\tYellow Paper, v0.6; Yellow Paper v1.0.',
-                    date: '26.19 - 26.19',
+                    date: '02.19 - 03.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2380,7 +2381,7 @@ const messages = {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания модулей системы',
                     result: 'Результат:\tBlue Paper, v0.1',
-                    date: '26.2019 - 09.19',
+                    date: '04.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2389,7 +2390,7 @@ const messages = {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка требований к frontend-модулю',
                     result: 'Результат:\tBlue Paper, v0.2',
-                    date: '09.19 - 23.19',
+                    date: '04.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2398,7 +2399,7 @@ const messages = {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания блокчейна верхнего уровня',
                     result: 'Результат:\tBlue Paper, v0.3',
-                    date: '23.19 - 28.19',
+                    date: '04.19 - 05.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2407,7 +2408,7 @@ const messages = {
                     title: 'Разработка технического описания реализации',
                     desk: 'Разработка технического описания вложенных блокчейнов',
                     result: 'Результат:\tBlue Paper, v1.0',
-                    date: '28.19 - 02.19',
+                    date: '05.19 - 07.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2415,7 +2416,7 @@ const messages = {
                 {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация пиринговой сети',
-                    date: '02.19 - 06.19',
+                    date: '07.19 - 08.19',
                     result: 'Результат:\tПиринговая сеть, поверх которой функционирует базовый блокчейн',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -2425,7 +2426,7 @@ const messages = {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация базового блокчейна и майнинга',
                     result: 'Результат:\tАбстракция блокчейна без привязки к логике приложения',
-                    date: '06.19 - 03.19',
+                    date: '08.19 - 09.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2434,7 +2435,7 @@ const messages = {
                     title: 'Децентрализация MVP решения',
                     desk: 'Реализация логики приложения',
                     result: 'Результат:\tpre-aplha, v0.1',
-                    date: '03.19 - 12.19',
+                    date: '09.19 - 11.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2443,7 +2444,7 @@ const messages = {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Реализация шаблона для построения вложенных блокчейнов',
                     result: 'Результат:\tшаблон для построения вложенных блокчейнов',
-                    date: '12.19 - 17.19',
+                    date: '11.19 - 12.19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2452,7 +2453,7 @@ const messages = {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Реализация вложенных блокчейнов на основе шаблона',
                     result: 'Результат:\tpre-alpha v0.2',
-                    date: '17.19 - 14.20',
+                    date: '12.19 - 01.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2461,7 +2462,7 @@ const messages = {
                     title: 'Реализация приватных блокчейнов',
                     desk: 'Встраивание вложенных блокчейнов в платформу',
                     result: 'Результат:\tpre-alpha v1.0; alpha v0.1',
-                    date: '14.20 - 11.20',
+                    date: '01.20 - 02.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2470,7 +2471,7 @@ const messages = {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
                     result: 'Результат:\talpha v0.2',
-                    date: '11.20 - 10.20',
+                    date: '02.20 - 03.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2479,7 +2480,7 @@ const messages = {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
                     result: 'Результат:\talpha v0.3',
-                    date: '10.20 - 24.20',
+                    date: '03.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2488,7 +2489,7 @@ const messages = {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
                     result: 'Результат:\talpha v0.4',
-                    date: '24.20 - 14.20',
+                    date: '03.20 - 04.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2497,7 +2498,7 @@ const messages = {
                     title: 'Реализация системы диспута',
                     desk: 'Реализация логики работы агентов верификации',
                     result: 'Результат:\talpha v1.0; beta v0.1',
-                    date: '14.20 - 12.20',
+                    date: '04.20 - 05.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2506,7 +2507,7 @@ const messages = {
                     title: 'Реализация системы голосования за изменения',
                     desk: 'Реализация системы голосования за монетарную политику',
                     result: 'Результат:\tbeta v0.2',
-                    date: '12.20 - 02.20',
+                    date: '05.20 - 06.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2515,7 +2516,7 @@ const messages = {
                     title: 'Реализация системы голосования за изменения',
                     desk: 'Реализация системы голосования за техническую модификацию',
                     result: 'Результат:\tbeta v1.0',
-                    date: '02.20 - 23.20',
+                    date: '06.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2524,7 +2525,7 @@ const messages = {
                     title: 'Выпуск системы',
                     desk: 'Закрытое тестирование работы системы',
                     result: 'Результат:\tbeta v1.1',
-                    date: '23.20 - 25.20',
+                    date: '06.20 - 08.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2533,7 +2534,7 @@ const messages = {
                     title: 'Выпуск системы',
                     desk: 'Публикация исходного кода системы и документации',
                     result: 'Результат:\tbeta v2.0',
-                    date: '04.20 - 25.20',
+                    date: '08.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -2542,7 +2543,7 @@ const messages = {
                     title: 'Выпуск системы',
                     desk: 'Запуск эксплуатации системы',
                     result: 'Результат:\tфункционирующая версия системы ALEHUB',
-                    date: '25.20',
+                    date: '08.20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3230,7 +3231,7 @@ const messages = {
                 },
                 {
                     title: 'Partnership with Serokell OU. The beginning of development.',
-                    date: '08/17',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -3273,21 +3274,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/2018 - 05/2018',
+                    date: '05/18',
                     progress: 100,
                     state: 'deployed',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: 'deployed',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 24/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementing',
                     status: false
@@ -3296,7 +3297,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of the top level blockchain.',
                     result: 'Result: Yellow Paper, v0.1',
-                    date: '25/2018 - 30/2018',
+                    date: '09/18 - 10/18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3305,7 +3306,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of mining procedure.',
                     result: 'Result: Yellow Paper, v0.2',
-                    date: '30/2018 - 19/2018',
+                    date: '10/18 - 11/18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3314,7 +3315,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of embedded blockchains',
                     result: 'Result: Yellow Paper, v0.3',
-                    date: '19/2018 - 25/18',
+                    date: '11/18 - 12/18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3323,7 +3324,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of a dispute system',
                     result: 'Result: Yellow Paper, v0.4',
-                    date: '12/25/18 - 01/22/2019',
+                    date: '12/18 - 01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3332,7 +3333,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Development of a virtual machine',
                     result: 'Result: Yellow Paper, v0.5',
-                    date: '22/19 - 02/19',
+                    date: '01/19 - 02/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3341,7 +3342,7 @@ const messages = {
                     title: 'Development of Yellow Paper',
                     desk: 'Formalization of changes procedure',
                     result: 'Result: Yellow Paper, v0.6; Yellow Paper, v1.0',
-                    date: '26/19 - 26/19',
+                    date: '02/19 - 03/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3350,7 +3351,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of system modules',
                     result: 'Result: Blue paper, v0.1',
-                    date: '26/2019 - 09/19',
+                    date: '04/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3359,7 +3360,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of requirements for frontend-module',
                     result: 'Result: Blue paper, v0.2',
-                    date: '09/19 - 23/19',
+                    date: '04/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3368,7 +3369,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of a top level blockchain',
                     result: 'Result: Blue paper, v0.3',
-                    date: '23/19 - 28/19',
+                    date: '04/19 - 05/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3377,7 +3378,7 @@ const messages = {
                     title: 'Development of technical description of implementation',
                     desk: 'Development of technical description of an embedded blockchain',
                     result: 'Result: Blue paper, v1.0',
-                    date: '28/19 - 02/19',
+                    date: '05/19 - 07/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3385,7 +3386,7 @@ const messages = {
                 {
                     title: 'MVP solution decentralizing',
                     desk: 'Implementation of peer-to-peer network',
-                    date: '02/19 - 06/19',
+                    date: '07/19 - 08/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3394,7 +3395,7 @@ const messages = {
                     title: 'MVP solution decentralizing',
                     desk: ' Implementation of basic blockchain and mining',
                     result: 'Result: Blockchain abstraction without reference to application logic',
-                    date: '06/19 - 03/19',
+                    date: '08/19 - 09/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3403,7 +3404,7 @@ const messages = {
                     title: 'MVP solution decentralizing',
                     desk: 'Implementation of application logic',
                     result: 'Result: pre-alpha, v0.1',
-                    date: '03/19 - 12/19',
+                    date: '09/19 - 11/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3412,7 +3413,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: ' Implementation of template for building embedded blockchains',
                     result: 'Result: template for building embedded blockchains',
-                    date: '12/19 - 17/19',
+                    date: '11/19 - 12/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3421,7 +3422,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: 'Implementation of embedded blockchains based on a template',
                     result: 'Result: pre-alpha v0.2',
-                    date: '17/19 - 14/20',
+                    date: '12/19 - 01/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3430,7 +3431,7 @@ const messages = {
                     title: 'Implementation of private blockchains',
                     desk: 'Integration of embedded blockchains into the platform',
                     result: 'Result: pre-alpha,v1.0; alpha v0.1',
-                    date: '14/20 - 11/20',
+                    date: '01/20 - 02/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3439,7 +3440,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of verification agents logic',
                     result: 'Result: alpha v0.2',
-                    date: '11/20 - 10/20',
+                    date: '02/20 - 03/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3448,7 +3449,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a first level dispute',
                     result: 'Result: alpha v0.3',
-                    date: '10/20 - 24/20',
+                    date: '03/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3457,7 +3458,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a second level dispute',
                     result: 'Result: alpha v0.4',
-                    date: '24/20 - 14/20',
+                    date: '03/20 - 04/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3466,7 +3467,7 @@ const messages = {
                     title: ' Implementation of a dispute system',
                     desk: 'Implementation of a third level dispute',
                     result: 'Result: alpha v1.0; beta v0.1',
-                    date: '14/20 - 12/20',
+                    date: '04/20 - 05/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3475,7 +3476,7 @@ const messages = {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for monetary policy',
                     result: 'Result: beta v0.2',
-                    date: '12/20 - 02/20',
+                    date: '05/20 - 06/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3484,7 +3485,7 @@ const messages = {
                     title: 'Implementation of a system for voting for changes',
                     desk: 'Implementation of system of voting for technological upgrade',
                     result: 'Result: beta v1.0',
-                    date: '02/20 - 23/20',
+                    date: '06/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3493,7 +3494,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Closed testing of the system',
                     result: 'Result: beta v1.1',
-                    date: '23/20 - 25/20',
+                    date: '06/20 - 08/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3502,7 +3503,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Publication of the system source code and documentation',
                     result: 'Result: beta v2.0',
-                    date: '04/20 - 25/20',
+                    date: '08/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -3511,7 +3512,7 @@ const messages = {
                     title: 'Release of the system',
                     desk: 'Putting the system into operation',
                     result: 'Result: fully operational ALEHUB system',
-                    date: '25/20',
+                    date: '08/20',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -4177,7 +4178,7 @@ const messages = {
                 },
                 {
                     title: 'Partenariat avec Serokell OU, début du développement.',
-                    date: '08/17',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -4220,21 +4221,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '09/2018 - 25/2018',
+                    date: '05/18',
                     progress: 100,
                     state: 'déployé',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: 'déployé',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: 'exécution',
                     status: false
@@ -4242,7 +4243,7 @@ const messages = {
                 {
                     title: 'Développement du Livret-jaune',
                     desk: 'Papier jaune - description technique du système. Le document illustre les caractéristiques architecturales de la construction du système, les protocoles d\'interaction entre les nœuds du réseau et d\'autres détails techniques.',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4250,7 +4251,7 @@ const messages = {
                 {
                     title: 'Décentralisation des solutions MVP',
                     desk: 'Construire une version du système dans laquelle les composants suivants sont implémentés : Réseau Peering; Transactions personnalisées à l\'aide du jeton intégré et des jetons colorés;',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4258,7 +4259,7 @@ const messages = {
                 {
                     title: 'Blockchain privée',
                     desk: 'Développement de filières privées et leur intégration dans l\'infrastructure existante. Assurer le fonctionnement ininterrompu des oracles. Enregistrement dans la version complète de l\'ensemble du système - à l\'exception du mécanisme de litige (arbitrage).',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4266,7 +4267,7 @@ const messages = {
                 {
                     title: 'Mise en œuvre du système de règlement des différends',
                     desk: 'Améliorer le système de résolution des conflits dans le cadre d\'une application décentralisée.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4274,14 +4275,14 @@ const messages = {
                 {
                     title: 'Mise en œuvre du système de vote pour les changements',
                     desk: 'Modifier le système pour assurer sa variabilité dans le temps.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
                 },
                 {
                     title: 'Closed system testing',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/20',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4289,14 +4290,14 @@ const messages = {
                 {
                     title: 'Publication du code source du système et de la documentation.',
                     desk: 'Publication du code source du système et de la documentation dans des référentiels ouverts.',
-                    date: '01/2020 - 02/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
                 },
                 {
                     title: 'Démarrage du système ',
-                    date: '02/2020 – 03/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'la scène n\'a pas commencé',
                     status: false
@@ -4956,7 +4957,7 @@ const messages = {
                 },
                 {
                     title: 'Partnerschaft mit Serokell OU, Beginn der Entwicklung.',
-                    date: '08/17',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -4999,21 +5000,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/25/2018 - 05/25/2018',
+                    date: '05/25/18 - 05/25/18',
                     progress: 80,
                     state: 'bereitgestellt',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 5,
                     state: 'bereitgestellt',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementieren',
                     status: false
@@ -5021,7 +5022,7 @@ const messages = {
                 {
                     title: 'Yellow Paper Entwicklung',
                     desk: 'Yellow Paper - Technische Beschreibung des Systems. Das Dokument veranschaulicht die architektonischen Merkmale des Systemaufbaus, die Protokolle der Interaktion zwischen den Netzknoten und andere technische Details.',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5029,7 +5030,7 @@ const messages = {
                 {
                     title: 'Dezentralisierung der MVP-Lösungen',
                     desk: 'Aufbau einer Version des Systems, in der die folgenden Komponenten implementiert sind: Peering Netzwerk; Benutzerdefinierte Transaktionen mit dem eingebauten Token und farbigen Token;',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5037,7 +5038,7 @@ const messages = {
                 {
                     title: 'Private Blockchains',
                     desk: 'Entwicklung von privaten Blockchains und deren Integration in die bestehende Infrastruktur. Sicherstellung des ununterbrochenen Betriebs von Orakeln. Registrierung in der fertigen Version des gesamten Systems - mit Ausnahme des Streitmechanismus (Schiedsverfahren).',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5045,7 +5046,7 @@ const messages = {
                 {
                     title: 'Einführung des Streitbeilegungssystems',
                     desk: 'Verbesserung des Streitbeilegungssystems zur Lösung von Konflikten im Rahmen einer dezentralen Anwendung.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5053,28 +5054,28 @@ const messages = {
                 {
                     title: 'Implementierung des Abstimmungssystems für Änderungen',
                     desk: 'Modifizierung des Systems, um seine Variabilität im Laufe der Zeit zu gewährleisten.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
                 },
                 {
                     title: 'Closed system testing',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/20',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
                 },
                 {
                     title: 'Veröffentlichung des Quellcodes des Systems und der Dokumentation',
-                    date: '01/2020 - 02/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
                 },
                 {
                     title: 'Booten des Systems ',
-                    date: '02/2020 – 03/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'die Bühne hat nicht begonnen',
                     status: false
@@ -5762,7 +5763,7 @@ const messages = {
                 },
                 {
                     title: 'نشر ال MVP',
-                    date: 'قد 15, 2018',
+                    date: 'قد 15, 18',
                     members: [
                         '../static/images/avatars/osipenko@3x.png',
                         '../static/images/avatars/loktev@3x.png'
@@ -5773,21 +5774,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/25/2018 - 05/25/2018',
+                    date: '05/25/18 - 05/25/18',
                     progress: 100,
                     state: 'نشر',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: 'نشر',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 0,
                     state: 'تنفيذ',
                     status: false
@@ -5795,7 +5796,7 @@ const messages = {
                 {
                     title: 'تطوير الورقه الصفراء',
                     desk: 'الورقة الصفراء - مستند وصف فني للنظام. يوضح السمات الهيكليه لبناء النظام وبروتوكولات التفاعل بين عقد الشبكة(network nodes) والتفاصيل الفنية الأخرى',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5803,7 +5804,7 @@ const messages = {
                 {
                     title: 'اللامركزية لحلول MVP',
                     desk: 'إنشاء إصدار من النظام يتم فيه تنفيذ المكونات التالية: شبكة التناظر. معاملات مخصصة باستخدام الرموز المميزة المدمجه (built-in token)  والرموز الملونة (colored tokens)(الرموز الملونه هو تطبيق متقدم للبلوك شين بت كوين)',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5811,7 +5812,7 @@ const messages = {
                 {
                     title: 'البلوك شين الخاص',
                     desk: 'تطوير بلوك شين خاصة وادماجها في البنية التحتية الموجوده. ضمان عملية دون انقطاع من الوسيط. التسجيل في النسخة المكتملة من النظام بأكمله - باستثناء آلية النزاع (التحكيم).',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5819,7 +5820,7 @@ const messages = {
                 {
                     title: 'تنفيذ نظام التحكيم',
                     desk: 'تحسين نظام التحكيم لحل النزاعات في إطار تطبيق لامركزي',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5827,14 +5828,14 @@ const messages = {
                 {
                     title: 'تنفيذ نظام التصويت من أجل التغييرات',
                     desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
                 },
                 {
                     title: 'اختبار النظام مغلق',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/20',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -5842,14 +5843,14 @@ const messages = {
                 {
                     title: 'نشر مصدر الكود  للنظام والمستندات',
                     desk: 'نشر مصدر الكود  للنظام والوثائق في مستودعات مفتوحة',
-                    date: '01/2020 - 02/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
                 },
                 {
                     title: 'التمهيد لبدء تشغيل النظام',
-                    date: '02/2020 – 03/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'المرحلة لم تبدأ',
                     status: false
@@ -6509,7 +6510,7 @@ const messages = {
                 },
                 {
                     title: 'Serokell OU와의 파트너십, 개발 시작',
-                    date: '08/17',
+                    date: '01/08/17',
                     members: [
                         '../static/images/avatars/seroka@3x.png',
                         '../static/images/avatars/mostovoy@3x.png',
@@ -6552,21 +6553,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/25/2018 - 05/25/2018',
+                    date: '05/25/18 - 05/25/18',
                     progress: 100,
                     state: '배포',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 100,
                     state: '배포',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 5,
                     state: '구현',
                     status: false
@@ -6574,7 +6575,7 @@ const messages = {
                 {
                     title: '황색언론 개발',
                     desk: '황색언론– 시스탬의 기술 문서. 이 문서는 시스템 구성의 건축학적 특징, 네트워크 노드 간의 상호 작용 프로토콜 및 기타 기술적 세부 사항을 설명합니다.',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6582,7 +6583,7 @@ const messages = {
                 {
                     title: 'MVP 솔루션의 분산화',
                     desk: '다음 구성 요소가 구현 된 시스템 버전 구축 : 대등접속 네트워크;내장형 토큰 및 컬러 토큰을 사용하는 사용자 정의 거래;',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6590,7 +6591,7 @@ const messages = {
                 {
                     title: '개인적인 블록체인',
                     desk: '개인 블록 체인 개발 및 기존 인프라에 대한 통합. 오라클의 중단 없는 운영 보장. 분쟁의 메커니즘 (중재)을 제외하고 전체 시스템의 완성 된 버전에 등록.',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6598,7 +6599,7 @@ const messages = {
                 {
                     title: '분쟁 해결 시스템 구현',
                     desk: '분산 된 응용 프로그램의 프레임 워크 내에서 충돌을 해결하기 위해 분쟁 시스템을 개선.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6606,14 +6607,14 @@ const messages = {
                 {
                     title: '변경을 위한 투표 시스템의 구현',
                     desk: '시간이 지남에 따라 시스템의 변동성을 보장하기 위해 시스템을 수정.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
                 },
                 {
                     title: '폐쇄 시스템 테스트',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/20',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -6621,14 +6622,14 @@ const messages = {
                 {
                     title: '시스템 및 문서의 소스 코드 공개',
                     desk: '시스템 및 문서의 소스 코드를 공개 저장소에 게시',
-                    date: '01/2020 - 02/2020',
+                    date: '01/20',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
                 },
                 {
                     title: '시스템 부팅',
-                    date: '02/2020 – 03/2020',
+                    date: '01/20',
                     progress: 0,
                     state: '단계를 시작하지 않았',
                     status: false
@@ -7333,21 +7334,21 @@ const messages = {
                 },
                 {
                     title: 'Bounty',
-                    date: '05/25/2018 - 05/25/2018',
+                    date: '05/25/18 - 05/25/18',
                     progress: 80,
                     state: 'el escenario comenzó',
                     status: true
                 },
                 {
                     title: 'PreICO',
-                    date: '25/2018 - 25/2018',
+                    date: '05/18 - 06/18',
                     progress: 5,
                     state: 'el escenario comenzó',
                     status: true
                 },
                 {
                     title: 'ICO',
-                    date: '25/2018 - 25/2018',
+                    date: '07/18 - 09/18',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -7355,7 +7356,7 @@ const messages = {
                 {
                     title: 'Desarrollo de Yellow Paper',
                     desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnicos.',
-                    date: '02/2018 - 01/2019',
+                    date: '02/18 - 01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -7363,7 +7364,7 @@ const messages = {
                 {
                     title: 'Descentralización de las soluciones MVP',
                     desk: 'Crear una versión del sistema en la que se implementan los siguientes componentes: Red de peering; Transacciones personalizadas usando el token incorporado y tokens de color;',
-                    date: '01/2018 - 02/2019',
+                    date: '01/18 - 02/19',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
@@ -7371,7 +7372,7 @@ const messages = {
                 {
                     title: 'Blockchains privadas',
                     desk: 'Desarrollo de blockchains privados y su integración en la infraestructura existente. Garantizar la operación ininterrumpida de los oráculos. Registro en la versión completa de todo el sistema, a excepción del mecanismo de disputa (arbitraje).',
-                    date: '03/2019 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'the stage did not begin',
                     status: false
@@ -7379,7 +7380,7 @@ const messages = {
                 {
                     title: 'Implementación del sistema de disputas',
                     desk: 'Mejora del sistema de disputas para resolver conflictos en el marco de una aplicación descentralizada.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
@@ -7387,14 +7388,14 @@ const messages = {
                 {
                     title: 'Implementación del sistema de votación para cambios',
                     desk: 'Modificar el sistema para garantizar su variabilidad a lo largo del tiempo.',
-                    date: '01/2018 - 01/2019',
+                    date: '01/19',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
                 },
                 {
                     title: 'Sistema cerrado de pruebas',
-                    date: '01/2019 - 01/2020',
+                    date: '10/19 - 01/20',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
@@ -7402,14 +7403,14 @@ const messages = {
                 {
                     title: 'Publicación del código fuente del sistema y documentación',
                     desk: 'Publicación del código fuente del sistema y la documentación en repositorios abiertos',
-                    date: '01/2020 - 02/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
                 },
                 {
                     title: 'Iniciando el sistema',
-                    date: '02/2020 – 03/2020',
+                    date: '01/20',
                     progress: 0,
                     state: 'el escenario no pudo comenzar',
                     status: false
