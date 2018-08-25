@@ -242,24 +242,27 @@
                 <div class="col-xl-12 col-lg-11">
                     <div class="crypto">
                         <div class="title"
-                             :class="{ 'ico-progress__dark': isDark, 'text-align-right-rtl': isRtl }">
-                            {{ $t("greeting.acceptedCrypto.title") }}<span v-if="!isRtl">:</span>
+                             :class="{ 'ico-progress__dark': isDark,
+                                       'text-align-right-rtl': isRtl }">
+                            {{ $t("greeting.acceptedCrypto.title") }}
+                            <span v-if="!isRtl">:</span>
                         </div>
                         <div class="collection"
                              :class="{ 'collection__dark': isDark }">
-                            <div class="item" v-for="item in cryptocurrencies">
-                                <!--@mouseover="changeCurrentCurrency(item.name)"-->
-                                <!--@mouseout="resetCurrentCurrency"-->
+                            <div class="item"
+                                 v-for="item in cryptocurrencies">
                                 <div class="inner">
-                                    <a href="https://sale.alehub.io/" target="_blank">
+                                    <router-link tag="a"
+                                                 to="/white-list">
                                         <div class="cur-logo">
-                                            <img :src="item.src" :alt="item.alt">
+                                            <img :src="item.src"
+                                                 :alt="item.alt">
                                         </div>
                                         <div class="description">
-                                            <span class="count">{{ item.count }}</span>
+                                            <!--<span class="count">{{ item.count }}</span>-->
                                             <span class="name">{{ item.name }}</span>
                                         </div>
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -275,8 +278,7 @@
                                 Soft cap
                             </div>
                             <div class="count">
-                                {{ collected }} / {{ softCap }} <span
-                                    class="currency">{{ '$' }}</span>
+                                {{ collectedSoftCapPercent }}
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -289,8 +291,7 @@
                                 Hard cap
                             </div>
                             <div class="count">
-                                {{ collected }} / {{ hardCap }} <span
-                                    class="currency">{{ '$' }}</span>
+                                {{ collectedHardCapPercent }}
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -519,6 +520,7 @@
         },
         data() {
             return {
+                hardCap: 21000000,
                 openedEmailSubscribeAlert: true,
                 subscriber: {
                     email: '',
@@ -595,18 +597,12 @@
 
                     'cryptocurrencies',
                     'softCap',
-                    'hardCap',
+                    // 'hardCap',
                     'collected'
                 ]
             ),
             checkWindowWidth: function () {
                 return window.innerWidth >= 1024;
-            },
-            checkTabletWidth: function () {
-                return window.innerWidth >= 768;
-            },
-            checkSmallTabletWidth: function () {
-                return window.innerWidth > 690;
             },
             softCapWidth: function () {
                 if (this.collected <= this.softCap)
@@ -649,6 +645,12 @@
 
                 return 'email-subscribe-alert__dark';
             },
+            collectedHardCapPercent: function () {
+                return +(Math.round((100 * this.collected) / this.hardCap + 'e+2') + 'e-2') + ' ' + '%';
+            },
+            collectedSoftCapPercent: function () {
+                return +(Math.round((100 * this.collected) / this.softCap + 'e+2') + 'e-2') + ' ' + '%';
+            }
         },
         methods: {
             alertButtonInDarkSection: function (factor) {
@@ -734,18 +736,6 @@
             },
             doCloseTelegramAlertMobile: function () {
                 this.closedTelegramAlertMobile = true;
-            },
-            changeCurrentCurrency: function (name) {
-                this.collected = this.currencies[name].collected;
-                this.softCap = this.currencies[name].softCap;
-                this.hardCap = this.currencies[name].hardCap;
-                this.currentCurrency = name;
-            },
-            resetCurrentCurrency: function () {
-                this.collected = this.currencies.usd.collected;
-                this.softCap = this.currencies.usd.softCap;
-                this.hardCap = this.currencies.usd.hardCap;
-                this.currentCurrency = this.currencies.usd.name;
             },
             playVideo: function () {
                 if (this.mainPlayer) {

@@ -643,9 +643,9 @@ body {
   display: block;
   text-align: center;
 }
-.crypto .collection .item .inner:hover .description .name {
-  display: none;
-}
+/*.crypto .collection .item .inner:hover .description .name {*/
+  /*display: none;*/
+/*}*/
 .anim {
   width: 100%;
   height: 200vh;
