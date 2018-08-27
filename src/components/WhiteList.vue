@@ -3,7 +3,7 @@
         <header-block :white-list="true"/>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-9 col-lg-6 col-xl-4">
+                <div class="col-xs-12 col-sm-12 col-lg-6 col-xl-4">
                     <div class="panel">
                         <h3>
                             White List
@@ -24,9 +24,11 @@
                                    autocomplete="off"
                                    :placeholder="placeholder"
                                    :class="calcEmailClass"
+                                   :disabled="loader"
                                    v-model="email.value">
                             <button type="submit"
-                                    class="submit">
+                                    class="submit"
+                                    :disabled="loader">
                                 {{ sendButtonText }}
                             </button>
                         </form>
@@ -55,9 +57,9 @@
         },
         data() {
             return {
-                loader: false,
                 placeholder: 'Enter your email',
                 sendButtonText: 'Send email',
+                loader: false,
                 status: {
                     success: false,
                     exist: false,
@@ -204,6 +206,7 @@
                             }
 
                         }, err => {
+                            this.loader = false;
                             if (err.status === EMAIL_ALREADY_EXIST) {
                                 for (let key in this.status) {
                                     if (this.status.hasOwnProperty(key)) {
@@ -224,8 +227,6 @@
                                     }
                                 }
                             }
-
-                            this.loader = false;
                         }
                     )
                 } else {
