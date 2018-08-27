@@ -46,7 +46,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: '下载'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -298,9 +298,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -327,18 +346,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Investment Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -852,7 +859,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'アップロード'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -1104,9 +1111,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -1133,18 +1159,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Investment Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -1652,7 +1666,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Загрузка'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -1904,9 +1918,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Михаил Громыко',
+                            position: 'Инвестиционный директор',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Владимир Грудинин',
-                            position: 'Блокчейн эксперт',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Доцент кафедры сетевых и облачных технологий университета ITMO',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Алексей Осипенко',
@@ -1933,18 +1966,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Михаил Громыко',
-                            position: 'Инвестиционный директор',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -2618,7 +2639,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Download'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -2862,9 +2883,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -2891,18 +2931,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Investment Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -3588,7 +3616,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Télécharger'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -3820,9 +3848,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -3849,18 +3896,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -4372,7 +4407,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Herunterladen'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -4604,9 +4639,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -4633,18 +4687,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -5378,9 +5420,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -5407,18 +5468,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -5925,11 +5974,11 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: '다운로드'
+                    name: 'MVP'
                 },
                 {
                     path: '#download-application',
-                    name: '매스 미디어'
+                    name: 'MVP'
                 },
                 {
                     path: '#blog',
@@ -6157,9 +6206,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -6186,18 +6254,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -6704,7 +6760,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Descargar'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -6936,9 +6992,28 @@ const messages = {
                             ]
                         },
                         {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/gromyko@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -6965,18 +7040,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Mikhail Gromyko',
-                            position: 'Chief Executive Officer',
-                            src: '../static/images/avatars/gromyko@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/mikhail-gromyko-a84821162/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
