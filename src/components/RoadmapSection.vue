@@ -84,12 +84,20 @@
                 </div>
             </div>
         </div>
+
+        <roadmap/>
+
     </div>
 </template>
 
 <script>
+    import Roadmap from './layouts/roadmap/Roadmap';
+
     export default {
-        name: 'Roadmap',
+        name: 'RoadmapSection',
+        components: {
+            Roadmap
+        },
         props: {
             isRtl: {
                 type: Boolean,

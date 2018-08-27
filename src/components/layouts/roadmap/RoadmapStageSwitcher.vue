@@ -1,10 +1,12 @@
 <template>
-    
+    <div class="roadmap-stage-switcher">
+
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'RoadmapStageMarker'
+        name: 'RoadmapStageSwitcher'
     }
 </script>
 

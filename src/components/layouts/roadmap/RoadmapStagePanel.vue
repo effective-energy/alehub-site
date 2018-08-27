@@ -8,6 +8,6 @@
     }
 </script>
 
-<style lang="scoped" scoped>
+<style lang="stylus" scoped>
 
 </style>
