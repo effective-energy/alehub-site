@@ -13,16 +13,18 @@
                :href="item.href"
                @mouseenter="enterMediaHover(item)"
                @mouseleave="leaveMediaHover(item)">
-                <img class="light"
-                     :class="{ 'light__transparent': item.isHover }"
-                     :src="item.src"
+                <!--:class="{ 'light__transparent': item.isHover }"
+                    :src="item.src"
+                    class="light"-->
+                <img class="filter"
+                     :src="item.hoverSrc"
                      :alt="item.title">
-                <transition name="fade-media-hover">
-                    <img class="hover"
-                         :src="item.hoverSrc"
-                         :alt="item.title"
-                         v-if="item.isHover">
-                </transition>
+                <!--<transition name="fade-media-hover">-->
+                    <!--<img class="hover"-->
+                         <!--:src="item.hoverSrc"-->
+                         <!--:alt="item.title"-->
+                         <!--v-if="item.isHover">-->
+                <!--</transition>-->
             </a>
         </div>
     </div>
@@ -59,13 +61,6 @@
                         src: '../../../static/images/logo/forklog.svg',
                         hoverSrc: '../../../static/images/logo/forklog-hover.svg',
                         href: 'https://forklog.com/',
-                        isHover: false
-                    },
-                    {
-                        title: 'TheMerkle',
-                        src: '../../../static/images/logo/the-merkle.svg',
-                        hoverSrc: '../../../static/images/logo/the-merkle-hover.svg',
-                        href: 'https://themerkle.com/',
                         isHover: false
                     },
                     {
@@ -119,16 +114,18 @@
                     },
                     {
                         title: 'Nasdaq',
-                        src: '../../../../static/images/logo/nasdaq-logo.png',
-                        hoverSrc: '../../../../static/images/logo/nasdaq-logo.png',
+                        src: '../../../../static/images/logo/nasdaq-logo.svg',
+                        hoverSrc: '../../../../static/images/logo/nasdaq-logo-hover.svg',
                         href: 'https://nasdaq.com/article/blockchain-based-architecture-for-project-management-cm971453',
-                        alt: 'nasdaq'
+                        alt: 'nasdaq',
+                        isHover: false
                     },
                     {
                         title: 'Yahoo',
                         href: 'https://www.yahoo.com/amphtml/finance/news/promoted-blockchain-based-architecture-project-150559234.html',
-                        hoverSrc: '../../../../static/images/logo/yahoo-finance-logo.png',
-                        src: '../../../../static/images/logo/yahoo-finance-logo.png',
+                        hoverSrc: '../../../../static/images/logo/yahoo-finance-logo-hover.svg',
+                        src: '../../../../static/images/logo/yahoo-finance-logo.svg',
+                        alt: 'yahoo-finance',
                         isHover: false
                     }
                 ]
@@ -240,6 +237,13 @@
                     -webkit-transition all .4s ease-in-out
                     -o-transition all .4s ease-in-out
                     transition all .4s ease-in-out
+                .filter
+                    filter  invert(.5)
+                    transition .3s
+                    &:hover
+                        filter invert(0)
+                        transform: scale(1.1);
+
 
                 img
                     height 60px

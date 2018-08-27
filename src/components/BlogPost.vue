@@ -14,22 +14,22 @@
             <social-sharing :url="newsUrl"
                             inline-template>
                 <div class="share-block">
-                    <network network="twitter">
+                    <network class="icon" network="twitter">
                         <img src="../../static/images/share-ic/twitter.svg" alt="twitter" class="share-item">
                     </network>
-                    <network network="facebook">
+                    <network class="icon" network="facebook">
                         <img src="../../static/images/share-ic/fb.svg" alt="fb" class="share-item">
                     </network>
-                    <network network="googleplus">
+                    <network class="icon" network="googleplus">
                         <img src="../../static/images/share-ic/g-plus.svg" alt="gplus" class="share-item">
                     </network>
-                    <network network="vk">
+                    <network class="icon" network="vk">
                         <img src="../../static/images/share-ic/vk.svg" alt="vk" class="share-item">
                     </network>
-                    <network network="telegram">
+                    <network class="icon" network="telegram">
                         <img src="../../static/images/share-ic/telegram-ic.svg" alt="telegram" class="share-item">
                     </network>
-                    <network network="email">
+                    <network class="icon" network="email">
                         <img src="../../static/images/share-ic/mail.svg" alt="mail" class="share-item">
                     </network>
                 </div>
@@ -193,6 +193,27 @@
 
             @media (max-width: 425px)
                 font-size 26px
+    .share-item
+        cursor pointer
+    img[alt="twitter"]
+        &:hover
+            content url("../../static/images/share-ic/twitter-hover.svg")
+    img[alt="fb"]
+        &:hover
+            content url("../../static/images/share-ic/fb-hover.svg")
+    img[alt="gplus"]
+        &:hover
+            content url("../../static/images/share-ic/g-plus-hover.svg")
+    img[alt="vk"]
+        &:hover
+            content url("../../static/images/share-ic/vk-hover.svg")
+    img[alt="telegram"]
+        &:hover
+            content url("../../static/images/share-ic/telegram-ic-hover.svg")
+    img[alt="mail"]
+        &:hover
+            content url("../../static/images/share-ic/mail-hover.svg")
+
 </style>
 
 
