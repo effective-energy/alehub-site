@@ -17,10 +17,11 @@
                         <label class="top-label-subscribe"
                                :class="calcTopLabelClass"
                                v-if="subscriber.status">
-                            <span>{{ calcLabelText }}</span>
+                            <span>{{ calcTopLabelText }}</span>
                         </label>
                         <input id="subscribe-email-input"
                                type="text"
+                               autocomplete="off"
                                required
                                :class="calcInputClass"
                                :placeholder='$t("emailSubscribePanel.yourAddress")'
@@ -106,7 +107,7 @@
                         return '';
                 }
             },
-            calcLabelText: function () {
+            calcTopLabelText: function () {
                 switch (this.subscriber.status) {
                     case 'success':
                         return this.$t('emailSubscribePanel.label.success');
@@ -255,17 +256,17 @@
                     letter-spacing .4px
                     padding 0 7px
 
-                .error-label
-                    background-color #ff4f4f
-                    color #f7f7f7
-
-                .success-label
-                    background-color green
-                    color #f7f7f7
-
-                .exist-label
-                    background-color #2e86ce
-                    color #f7f7f7
+                    &.error-label
+                        background-color #ff4f4f
+                        color #f7f7f7
+    
+                    &.success-label
+                        background-color green
+                        color #f7f7f7
+    
+                    &.exist-label
+                        background-color #2e86ce
+                        color #f7f7f7
 
                 input
                     width 67%
