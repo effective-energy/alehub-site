@@ -263,6 +263,9 @@ body {
 #screen1 .home .social-line .social-item.github {
   background-image: url("../../images/github-default.svg");
 }
+#screen1 .home .social-line .social-item.medium {
+  background-image: url("../../images/medium-default.svg");
+}
 #screen1 .home .social-line .social-item.github:hover {
   background-image: url("../../images/github-hovered.svg");
 }
