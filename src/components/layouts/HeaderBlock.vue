@@ -3,9 +3,9 @@
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow, 'bg-yellow': isYellow }"
          id="navbar">
 
-        <router-link tag="a"
+        <router-link class="navbar-brand"
+                     tag="a"
                      to="/"
-                     class="navbar-brand"
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             <img class="d-inline-block align-top"
@@ -22,13 +22,19 @@
              id="hamburger-6"
              :class="{ 'is-active': activeHamburger }"
              @click="toggleHamburger">
-            <span class="line" :class="{ 'line__white': isDark }"></span>
-            <span class="line" :class="{ 'line__white': isDark }"></span>
-            <span class="line" :class="{ 'line__white': isDark }"></span>
+            <span class="line"
+                  :class="{ 'line__white': isDark }">
+            </span>
+            <span class="line"
+                  :class="{ 'line__white': isDark }">
+            </span>
+            <span class="line"
+                  :class="{ 'line__white': isDark }">
+            </span>
         </div>
 
         <div class="navbar__blog"
-             v-if="isNotIndex">
+             v-if="isBlogPage">
             <router-link class="navbar-item"
                          tag="a"
                          :to="'/blog/categories/all'">
@@ -36,9 +42,19 @@
             </router-link>
         </div>
 
-        <div class="navbar-folding" id="navbarText">
+        <div class="white-list"
+             v-if="isWhiteList">
+            <router-link class="navbar-item"
+                         tag="a"
+                         :to="'/'">
+                {{ $t("navbar.home") }}
+            </router-link>
+        </div>
+
+        <div class="navbar-folding"
+             id="navbarText">
             <slider-navbar id="slider-navbar"
-                           v-if="!show"
+                           v-if="!show && !whiteList"
                            :is-dark="isDark"
                            :is-yellow="isYellow"
                            :is-rtl="rtl"
@@ -47,14 +63,16 @@
 
 
             <div class="navbar-folding__inner"
-                 v-if="!show">
-                <div class="navbar-item" v-for="(item, index) in $t('navbar.menuList')">
+                 v-if="!show && !whiteList">
+                <div class="navbar-item"
+                     v-for="(item, index) in $t('navbar.menuList')">
                     <a :href="item.path"
                        v-scroll-to="item.path">
                         {{ item.name }}
                     </a>
                     <div class="nav-line"
-                         :class="{ 'nav-line__yellow': isYellow, 'nav-line__black': isDark,
+                         :class="{ 'nav-line__yellow': isYellow,
+                                   'nav-line__black': isDark,
                                    'nav-line__white': !isYellow && !isDark }"
                          v-if="index === 0">
                     </div>
@@ -62,12 +80,15 @@
             </div>
 
             <div class="right-menu"
-                 :class="{ 'right-menu__rtl': rtl, 'right-menu__abs': isNotIndex }">
-                <a class="btn btn-login"
-                   href="https://sale.alehub.io/"
-                   target="_blank">
+                 :class="{ 'right-menu__rtl': rtl,
+                           'right-menu__abs': isBlogPage || isWhiteList }">
+
+                <router-link tag="a"
+                             to="/white-list"
+                             class="btn btn-login">
                     {{ $t("greeting.countDown.btnBuyTokens") }}
-                </a>
+                </router-link>
+
                 <div id="select-lang"
                      class="select-lang"
                      :class="{ 'select-lang__rtl': rtl }"
@@ -161,9 +182,6 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-actions" v-if="false">
-                ok
-            </button>
         </div>
 
         <menu-modal :dark="isDark"
@@ -189,6 +207,10 @@
             show: {
                 type: [String],
                 required: false
+            },
+            whiteList: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
@@ -287,8 +309,11 @@
             isHeightLangItem: function () {
                 return this.heightLangItem;
             },
-            isNotIndex: function () {
-                return !(this.$route.path === '/');
+            isBlogPage: function () {
+                return !(this.$route.path === '/' || this.$route.path === '/white-list');
+            },
+            isWhiteList: function () {
+                return this.$route.path === '/white-list';
             },
             navbarOffset: function () {
                 return document.getElementById('navbar').offsetHeight;
@@ -791,7 +816,8 @@
                     left 0
                     right auto
 
-        .navbar__blog
+        .navbar__blog,
+        .white-list
             width 100%
             left 0
             position absolute

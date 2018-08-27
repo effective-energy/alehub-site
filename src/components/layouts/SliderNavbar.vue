@@ -403,20 +403,25 @@
                         &:focus
                             outline none
 
-                    @media (min-width 1250px) and (max-width 1350px)
+                    @media (min-width 1350px) and (max-width 1450px)
                         flex-grow 0
                         flex-shrink 0
-                        flex-basis 16.666666%
+                        flex-basis 16.666%
 
-                    @media (min-width 1150px) and (max-width 1250px)
+                    @media (min-width 1250px) and (max-width 1350px)
                         flex-grow 0
                         flex-shrink 0
                         flex-basis 20%
 
-                    @media (min-width 1024px) and (max-width 1150px)
+                    @media (min-width 1150px) and (max-width 1250px)
                         flex-grow 0
                         flex-shrink 0
                         flex-basis 25%
+
+                    @media (min-width 1024px) and (max-width 1150px)
+                        flex-grow 0
+                        flex-shrink 0
+                        flex-basis 33.333%
 
     .slider-navbar__dark
         .wrap

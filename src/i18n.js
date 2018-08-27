@@ -14,6 +14,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -819,6 +820,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -1618,6 +1620,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -2583,6 +2586,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -3552,6 +3556,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -4335,6 +4340,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -5112,6 +5118,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -5886,6 +5893,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
@@ -6664,6 +6672,7 @@ const messages = {
             }
         },
         navbar: {
+            home: 'Home',
             menuList: [
                 {
                     path: '#home',
