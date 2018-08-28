@@ -1,8 +1,19 @@
 <template>
     <div class="roadmap">
-        <roadmap-stage-marker/>
-        <roadmap-stage-switcher/>
-        <roadmap-stage-panel/>
+        <div class="container">
+            <div class="row row-flex">
+                <div class="col-sm-3 roadmap-stage-marker-wrap">
+                    <roadmap-stage-marker/>
+                </div>
+                <div class="col-sm-1 roadmap-stage-switcher-wrap">
+                    <roadmap-stage-switcher/>
+                </div>
+                <div class="col-sm-8 roadmap-stage-panel-wrap">
+                    <roadmap-stage-panel v-for="stage in stages"
+                                         :stage="stage"/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -95,5 +106,13 @@
 </script>
 
 <style lang="stylus" scoped>
+    .roadmap
+        .row-flex
+            display flex
+            flex-direction row
+
+            .roadmap-stage-panel-wrap
+                display flex
+                flex-direction column
 
 </style>
