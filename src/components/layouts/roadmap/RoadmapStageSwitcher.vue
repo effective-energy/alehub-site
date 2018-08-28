@@ -10,7 +10,7 @@
         </div>
         <div class="marker-counter">
             <span>
-                {{ '1' }} / {{ stageCount }}
+                {{ stageIndexActive }} / {{ stageCount }}
             </span>
         </div>
         <div class="arrow-bottom-wrap">
@@ -29,6 +29,10 @@
         name: 'RoadmapStageSwitcher',
         props: {
             stageCount: {
+                type: Number,
+                required: true
+            },
+            stageIndexActive: {
                 type: Number,
                 required: true
             }
