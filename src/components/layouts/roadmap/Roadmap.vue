@@ -224,12 +224,30 @@
                 if (!i)
                     return {
                         id: stage.id,
-                        active: true
+                        active: true,
+                        activeTop: false,
+                        activeBottom: false,
+                        inactiveTop: false,
+                        inactiveBottom: false
+                    };
+
+                if (i === 1)
+                    return {
+                        id: stage.id,
+                        active: false,
+                        activeTop: false,
+                        activeBottom: true,
+                        inactiveTop: false,
+                        inactiveBottom: false
                     };
 
                 return {
                     id: stage.id,
-                    active: false
+                    active: false,
+                    activeTop: false,
+                    activeBottom: false,
+                    inactiveTop: false,
+                    inactiveBottom: true
                 }
             });
         },
@@ -238,8 +256,25 @@
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== 0) {
+                    // if (activeStateIndex !== this.states.length - 1) {
+                    //     this.states[activeStateIndex - 2].active = false;
+                    //     this.states[activeStateIndex - 2].activeTop = false;
+                    //     this.states[activeStateIndex - 2].activeBottom = false;
+                    // }
+                    if (activeStateIndex !== 1) {
+                        this.states[activeStateIndex - 2].active = false;
+                        this.states[activeStateIndex - 2].activeTop = true;
+                        this.states[activeStateIndex - 2].activeBottom = false;
+                    }
                     this.states[activeStateIndex - 1].active = true;
+                    this.states[activeStateIndex - 1].activeTop = false;
+                    this.states[activeStateIndex - 1].activeBottom = false;
                     this.states[activeStateIndex].active = false;
+                    this.states[activeStateIndex].activeTop = false;
+                    this.states[activeStateIndex].activeBottom = true;
+                    // this.states[activeStateIndex + 1].active = false;
+                    // this.states[activeStateIndex + 1].activeTop = false;
+                    this.states[activeStateIndex + 1].activeBottom = false;
                 }
             });
 
@@ -247,8 +282,22 @@
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== this.states.length - 1) {
-                    this.states[activeStateIndex + 1].active = true;
+                    if (activeStateIndex !== 0) {
+                        this.states[activeStateIndex - 1].active = false;
+                        this.states[activeStateIndex - 1].activeTop = false;
+                        this.states[activeStateIndex - 1].activeBottom = false;
+                    }
                     this.states[activeStateIndex].active = false;
+                    this.states[activeStateIndex].activeTop = true;
+                    this.states[activeStateIndex].activeBottom = false;
+                    this.states[activeStateIndex + 1].active = true;
+                    this.states[activeStateIndex + 1].activeTop = false;
+                    this.states[activeStateIndex + 1].activeBottom = false;
+                    if (activeStateIndex !== this.states.length - 2) {
+                        this.states[activeStateIndex + 2].active = false;
+                        this.states[activeStateIndex + 2].activeTop = false;
+                        this.states[activeStateIndex + 2].activeBottom = true;
+                    }
                 }
             });
         }
@@ -257,6 +306,8 @@
 
 <style lang="stylus" scoped>
     .roadmap
+        height 500px
+
         .row-flex
             display flex
             flex-direction row
