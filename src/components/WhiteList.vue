@@ -3,13 +3,13 @@
         <header-block :white-list="true"/>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-lg-6 col-xl-4">
+                <div class="col-xs-12 col-sm-12 col-lg-6 col-xl-6">
                     <div class="panel">
                         <h3>
                             White List
                         </h3>
                         <p>
-                            Description
+                            {{ $t('whiteList.description') }}
                         </p>
                         <form @submit.prevent="send"
                               class="form-group">
