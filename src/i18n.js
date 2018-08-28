@@ -1,6 +1,7 @@
 const messages = {
     zh: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -816,6 +817,7 @@ const messages = {
 
     ja: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -1623,6 +1625,7 @@ const messages = {
         serverErr: 'アプリケーションリストをアップロード中にサーバーエラー起こりました'
     },
     ru: {
+        description: 'Уважаемый инвестор, с 25 августа мы ограничили открытую продажу токенов ALEHUB. Введите свой адрес электронной почты, и вы получите инструкцию по покупке токенов ALEHUB.',
         whiteList: {
             form: {
                 topLabel: {
@@ -2599,6 +2602,7 @@ const messages = {
     },
     en: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -3578,6 +3582,7 @@ const messages = {
     },
     fr: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -4371,6 +4376,7 @@ const messages = {
     },
     de: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -5158,6 +5164,7 @@ const messages = {
     },
     ar: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -5942,6 +5949,7 @@ const messages = {
     },
     ko: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',
@@ -6730,6 +6738,7 @@ const messages = {
     },
     es: {
         whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
             form: {
                 topLabel: {
                     success: 'successful sending',

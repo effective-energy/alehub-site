@@ -120,6 +120,25 @@
                     active: false
                 }
             });
+        },
+        mounted() {
+            this.$on('decreaseStage', value => {
+                let activeStateIndex = this.states.findIndex(state => state.active);
+
+                if (activeStateIndex !== 0) {
+                    this.states[activeStateIndex - 1].active = true;
+                    this.states[activeStateIndex].active = false;
+                }
+            });
+
+            this.$on('increaseStage', value => {
+                let activeStateIndex = this.states.findIndex(state => state.active);
+
+                if (activeStateIndex !== this.states.length - 1) {
+                    this.states[activeStateIndex + 1].active = true;
+                    this.states[activeStateIndex].active = false;
+                }
+            });
         }
     }
 </script>

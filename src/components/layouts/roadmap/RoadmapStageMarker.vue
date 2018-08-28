@@ -32,6 +32,7 @@
         display flex
         justify-content center
         align-items center
+        margin-bottom 20px
 
         &.active
             border 2px solid #ffd24f
