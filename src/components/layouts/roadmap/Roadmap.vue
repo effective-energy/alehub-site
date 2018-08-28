@@ -9,8 +9,7 @@
                     <roadmap-stage-switcher/>
                 </div>
                 <div class="col-sm-8 roadmap-stage-panel-wrap">
-                    <roadmap-stage-panel v-for="stage in stages"
-                                         :stage="stage"/>
+                    <roadmap-stage-panel-list :stages="stages"/>
                 </div>
             </div>
         </div>
@@ -20,14 +19,14 @@
 <script>
     import RoadmapStageMarker from './RoadmapStageMarker';
     import RoadmapStageSwitcher from './RoadmapStageSwitcher';
-    import RoadmapStagePanel from './RoadmapStagePanel';
+    import RoadmapStagePanelList from './RoadmapStagePanelList';
 
     export default {
         name: 'Roadmap',
         components: {
             RoadmapStageMarker,
             RoadmapStageSwitcher,
-            RoadmapStagePanel
+            RoadmapStagePanelList
         },
         data() {
             return {
@@ -35,6 +34,7 @@
                     {
                         id: 1,
                         title: 'Conception',
+                        date: '01.01.2017 - 01.07.2017',
                         stages: [
                             {
                                 id: 1,
@@ -65,6 +65,7 @@
                     {
                         id: 2,
                         title: 'Development',
+                        date: '01.08.2017 - 15.05.2018',
                         stages: [
                             {
                                 id: 1,
@@ -81,6 +82,7 @@
                     {
                         id: 3,
                         title: 'Token Sale',
+                        date: '01.11.2017 - 24.09.2018',
                         stages: [
                             {
                                 id: 1,
