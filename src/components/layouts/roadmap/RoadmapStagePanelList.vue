@@ -1,6 +1,7 @@
 <template>
     <div class="roadmap-stage-panel-list">
         <roadmap-stage-panel v-for="(stage, i) in stages"
+                             :key="i"
                              :state="states[i]"
                              :stage="stage"/>
     </div>
@@ -18,26 +19,16 @@
             stages: {
                 type: Array,
                 required: true
+            },
+            states: {
+                type: Array,
+                required: true
             }
         },
         data() {
             return {
-                states: []
-            }
-        },
-        created() {
-            this.states = this.stages.map((stage, i) => {
-                if (!i)
-                    return {
-                        id: stage.id,
-                        active: true
-                    };
 
-                return {
-                    id: stage.id,
-                    active: false
-                }
-            });
+            }
         }
     }
 </script>

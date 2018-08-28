@@ -3,13 +3,15 @@
         <div class="container">
             <div class="row row-flex">
                 <div class="col-sm-3 roadmap-stage-marker-wrap">
-                    <roadmap-stage-marker/>
+                    <roadmap-stage-marker-list :stages="stages"
+                                               :states="states"/>
                 </div>
                 <div class="col-sm-1 roadmap-stage-switcher-wrap">
-                    <roadmap-stage-switcher/>
+                    <roadmap-stage-switcher :stage-count="stages.length"/>
                 </div>
                 <div class="col-sm-8 roadmap-stage-panel-wrap">
-                    <roadmap-stage-panel-list :stages="stages"/>
+                    <roadmap-stage-panel-list :stages="stages"
+                                              :states="states"/>
                 </div>
             </div>
         </div>
@@ -17,19 +19,20 @@
 </template>
 
 <script>
-    import RoadmapStageMarker from './RoadmapStageMarker';
-    import RoadmapStageSwitcher from './RoadmapStageSwitcher';
+    import RoadmapStageMarkerList from './RoadmapStageMarkerList';
     import RoadmapStagePanelList from './RoadmapStagePanelList';
+    import RoadmapStageSwitcher from './RoadmapStageSwitcher';
 
     export default {
         name: 'Roadmap',
         components: {
-            RoadmapStageMarker,
-            RoadmapStageSwitcher,
-            RoadmapStagePanelList
+            RoadmapStageMarkerList,
+            RoadmapStagePanelList,
+            RoadmapStageSwitcher
         },
         data() {
             return {
+                states: [],
                 stages: [
                     {
                         id: 1,
@@ -44,20 +47,20 @@
                             {
                                 id: 2,
                                 text: 'Expertise from specialists in project management. Definition of requirements. ' +
-                                    '(Consultations with specialists in project management from the real sector of' +
-                                    ' the economy. Collection of requirements and defining problems)',
+                                '(Consultations with specialists in project management from the real sector of' +
+                                ' the economy. Collection of requirements and defining problems)',
                                 date: '01.02.2017 - 01.03.2017'
                             },
                             {
                                 id: 3,
                                 text: 'Mathematical modeling. (Consultations with financial experts. Mathematical' +
-                                    ' modeling in cooperation with the University of ITMO)',
+                                ' modeling in cooperation with the University of ITMO)',
                                 date: '01.01.2017 - 01.05.2017'
                             },
                             {
                                 id: 4,
                                 text: 'Formation of the Terms of Reference. (Consultations with blockchain experts and ' +
-                                    'developers. Forming an image of a product and the terms of reference) ',
+                                'developers. Forming an image of a product and the terms of reference) ',
                                 date: '01.06.2017 - 01.07.2017'
                             }
                         ]
@@ -103,6 +106,20 @@
                     }
                 ]
             }
+        },
+        created() {
+            this.states = this.stages.map((stage, i) => {
+                if (!i)
+                    return {
+                        id: stage.id,
+                        active: true
+                    };
+
+                return {
+                    id: stage.id,
+                    active: false
+                }
+            });
         }
     }
 </script>
