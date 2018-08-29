@@ -56,7 +56,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: '下载'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -872,7 +872,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'アップロード'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -1681,7 +1681,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Загрузка'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -2657,7 +2657,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Download'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -3637,7 +3637,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Télécharger'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -4431,7 +4431,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Herunterladen'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -5216,6 +5216,10 @@ const messages = {
                 {
                     path: '#roadmap',
                     name: 'خريطة الطريق'
+                },
+                {
+                    path: '#download-application',
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -6004,7 +6008,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: '다운로드'
+                    name: 'MVP'
                 },
                 {
                     path: '#download-application',
@@ -6793,7 +6797,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: 'Descargar'
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
