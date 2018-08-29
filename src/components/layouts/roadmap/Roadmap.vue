@@ -315,8 +315,6 @@
 
                 .roadmap-stage-panel-wrap
                     height 100%
-                    display flex
-                    flex-direction column
 
                     &:before
                         background rgba(52,58,73,1)
@@ -351,6 +349,10 @@
                         width 100%
                         height 100px
                         z-index 2
+
+                .roadmap-stage-switcher-wrap
+                    display flex
+                    align-items center
 
 
 </style>

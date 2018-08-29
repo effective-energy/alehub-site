@@ -29,5 +29,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .roadmap-stage-marker-list
+        display flex
+        flex-direction column
+        align-items center
 
 </style>
