@@ -39,7 +39,10 @@
                     return 'active-top';
                 else if (this.state.activeBottom)
                     return 'active-bottom';
-                return 'inactive';
+                else if (this.state.inactiveTop)
+                    return 'inactive-top';
+                else if (this.state.inactiveBottom)
+                    return 'inactive-bottom';
             }
         },
         created() {
@@ -51,26 +54,37 @@
 <style lang="stylus" scoped>
     .roadmap-stage-panel
         background-color #3e4452
+        width calc(100% - 2 * 15px)
         padding 25px 40px
-        margin-bottom 20px
-        transition all .3s linear
+        transition all .4s ease-out
+        position absolute
+        height 150px
 
         &.active
-            transform translateY(0)
+            transform translateY(175px)
             -webkit-box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
             -moz-box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
             box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
 
         &.active-bottom
-            background-color #535a6d
-            transform translateY(100px)
+            transform translateY(400px) scale(0.9)
+            background-color transparent
+            opacity .5
+            /*background-color #cccccc*/
 
         &.active-top
-            background-color #535a6d
-            transform translateY(-100px)
+            transform translateY(-50px) scale(0.9)
+            background-color transparent
+            opacity .5
+            /*background-color #cccccc*/
 
-        &.inactive
-            display none
+        &.inactive-bottom
+            transform translateY(550px)
+            visibility hidden
+
+        &.inactive-top
+            transform translateY(-250px)
+            visibility hidden
 
         h3
             font-size 24px

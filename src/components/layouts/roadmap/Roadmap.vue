@@ -256,25 +256,21 @@
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== 0) {
-                    // if (activeStateIndex !== this.states.length - 1) {
-                    //     this.states[activeStateIndex - 2].active = false;
-                    //     this.states[activeStateIndex - 2].activeTop = false;
-                    //     this.states[activeStateIndex - 2].activeBottom = false;
-                    // }
-                    if (activeStateIndex !== 1) {
-                        this.states[activeStateIndex - 2].active = false;
-                        this.states[activeStateIndex - 2].activeTop = true;
-                        this.states[activeStateIndex - 2].activeBottom = false;
-                    }
+                    this.states[activeStateIndex].active = false;
+                    this.states[activeStateIndex].activeBottom = true;
+
                     this.states[activeStateIndex - 1].active = true;
                     this.states[activeStateIndex - 1].activeTop = false;
-                    this.states[activeStateIndex - 1].activeBottom = false;
-                    this.states[activeStateIndex].active = false;
-                    this.states[activeStateIndex].activeTop = false;
-                    this.states[activeStateIndex].activeBottom = true;
-                    // this.states[activeStateIndex + 1].active = false;
-                    // this.states[activeStateIndex + 1].activeTop = false;
-                    this.states[activeStateIndex + 1].activeBottom = false;
+
+                    if (activeStateIndex !== this.states.length - 1) {
+                        this.states[activeStateIndex + 1].activeBottom = false;
+                        this.states[activeStateIndex + 1].inactiveBottom = true;
+                    }
+
+                    if (activeStateIndex !== 1) {
+                        this.states[activeStateIndex - 2].activeTop = true;
+                        this.states[activeStateIndex - 2].inactiveTop = false;
+                    }
                 }
             });
 
@@ -282,21 +278,20 @@
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== this.states.length - 1) {
-                    if (activeStateIndex !== 0) {
-                        this.states[activeStateIndex - 1].active = false;
-                        this.states[activeStateIndex - 1].activeTop = false;
-                        this.states[activeStateIndex - 1].activeBottom = false;
-                    }
                     this.states[activeStateIndex].active = false;
                     this.states[activeStateIndex].activeTop = true;
-                    this.states[activeStateIndex].activeBottom = false;
+
                     this.states[activeStateIndex + 1].active = true;
-                    this.states[activeStateIndex + 1].activeTop = false;
                     this.states[activeStateIndex + 1].activeBottom = false;
+
+                    if (activeStateIndex !== 0) {
+                        this.states[activeStateIndex - 1].activeTop = false;
+                        this.states[activeStateIndex - 1].inactiveTop = true;
+                    }
+
                     if (activeStateIndex !== this.states.length - 2) {
-                        this.states[activeStateIndex + 2].active = false;
-                        this.states[activeStateIndex + 2].activeTop = false;
                         this.states[activeStateIndex + 2].activeBottom = true;
+                        this.states[activeStateIndex + 2].inactiveBottom = false;
                     }
                 }
             });
@@ -307,13 +302,55 @@
 <style lang="stylus" scoped>
     .roadmap
         height 500px
+        overflow hidden
+        position relative
 
-        .row-flex
-            display flex
-            flex-direction row
+        .container
+            height 100%
 
-            .roadmap-stage-panel-wrap
+            .row-flex
+                height 100%
                 display flex
-                flex-direction column
+                flex-direction row
+
+                .roadmap-stage-panel-wrap
+                    height 100%
+                    display flex
+                    flex-direction column
+
+                    &:before
+                        background rgba(52,58,73,1)
+                        background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, .2)))
+                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        top 0
+                        content ''
+                        display block
+                        position absolute
+                        left 0
+                        width 100%
+                        height 50px
+                        z-index 2
+
+                    &:after
+                        background rgba(52, 58, 73, 1)
+                        background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, .2)))
+                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58,73, .2) 100%)
+                        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        bottom 0
+                        content ''
+                        display block
+                        position absolute
+                        left 0
+                        width 100%
+                        height 100px
+                        z-index 2
+
 
 </style>
