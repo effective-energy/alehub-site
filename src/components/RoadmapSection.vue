@@ -85,7 +85,7 @@
             </div>
         </div>
 
-        <!--<roadmap/>-->
+        <roadmap/>
 
     </div>
 </template>

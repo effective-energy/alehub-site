@@ -59,13 +59,13 @@
             box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
 
         &.active-bottom
-            transform translateY(350px) scale(.8)
+            transform translateY(350px) scale(.7)
             border 1px solid #9e8b4f
             background-color #393f4d
             color #aaaaaa
 
         &.active-top
-            transform translateY(30px) scale(.8)
+            transform translateY(30px) scale(.7)
             border 1px solid #9e8b4f
             background-color #393f4d
             color #aaaaaa
