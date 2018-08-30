@@ -335,19 +335,19 @@
 
                     &:after
                         background rgba(52, 58, 73, 1)
-                        background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, .2)))
-                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
-                        background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
-                        background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58,73, .2) 100%)
-                        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, .2) 100%)
+                        background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, 0)))
+                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                        background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                        background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58,73, 0) 100%)
+                        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
                         bottom 0
                         content ''
                         display block
                         position absolute
                         left 0
                         width 100%
-                        height 100px
+                        height 50px
                         z-index 2
 
                 .roadmap-stage-switcher-wrap

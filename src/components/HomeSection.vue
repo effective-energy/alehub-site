@@ -520,7 +520,7 @@
         },
         data() {
             return {
-                hardCap: 21000000,
+                // hardCap: 21000000,
                 openedEmailSubscribeAlert: true,
                 subscriber: {
                     email: '',
@@ -597,7 +597,7 @@
 
                     'cryptocurrencies',
                     'softCap',
-                    // 'hardCap',
+                    'hardCap',
                     'collected'
                 ]
             ),
@@ -860,7 +860,6 @@
             }
         },
         mounted() {
-
             this.$on('isDarkTheme', isDark => {
                 let flag = false;
                 if (this.isVideo)
