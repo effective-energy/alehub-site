@@ -1,9 +1,12 @@
 <template>
     <div class="roadmap-stage-marker"
          :class="calcStagePanelClass">
-        <h3>
-            {{ stage.title }}
-        </h3>
+        <h4>
+            {{ stage.marker.title }}
+        </h4>
+        <h4>
+            {{ stage.marker.date }}
+        </h4>
     </div>
 </template>
 
@@ -45,6 +48,7 @@
         width 120px
         background-color #3e4452
         display flex
+        flex-direction column
         justify-content center
         align-items center
         transition all .4s ease-out
@@ -77,5 +81,9 @@
         &.inactive-top
             transform translateY(-250px) scale(.8)
             visibility hidden
+
+        h4
+            font-weight 700
+            margin 0
 
 </style>
