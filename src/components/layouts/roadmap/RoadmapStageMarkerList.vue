@@ -1,5 +1,6 @@
 <template>
     <div class="roadmap-stage-marker-list">
+        <div class="line"></div>
         <roadmap-stage-marker v-for="(stage, i) in stages"
                               :key="i"
                               :state="states[i]"
@@ -33,5 +34,12 @@
         display flex
         flex-direction column
         align-items center
+
+        .line
+            z-index 1
+            position absolute
+            background-color #ffd24f
+            width 2px
+            height 100%
 
 </style>

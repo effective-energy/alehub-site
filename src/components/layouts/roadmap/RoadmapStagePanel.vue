@@ -32,6 +32,11 @@
             }
         },
         computed: {
+            /**
+             *
+             *
+             * @returns {string}
+             */
             calcStagePanelClass: function () {
                 if (this.state.active)
                     return 'active';
@@ -44,9 +49,6 @@
                 else if (this.state.inactiveBottom)
                     return 'inactive-bottom';
             }
-        },
-        created() {
-            console.log(this.state, this.state.id);
         }
     }
 </script>
@@ -67,16 +69,14 @@
             box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
 
         &.active-bottom
-            transform translateY(400px) scale(0.9)
+            transform translateY(400px) scale(.9)
             background-color transparent
             opacity .5
-            /*background-color #cccccc*/
 
         &.active-top
-            transform translateY(-50px) scale(0.9)
+            transform translateY(-50px) scale(.9)
             background-color transparent
             opacity .5
-            /*background-color #cccccc*/
 
         &.inactive-bottom
             transform translateY(550px)
