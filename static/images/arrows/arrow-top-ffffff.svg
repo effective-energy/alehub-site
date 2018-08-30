@@ -4,10 +4,12 @@
      viewBox="0 0 52 28">
     <path fill="none"
           fill-rule="evenodd"
-          stroke="#34343E"
+          stroke="#ffffff"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="4"
-          d="M2 26L26 2l24 24"
+          d="M 2, 26
+             L 24, 2
+             L 48, 26"
           opacity="0.8"/>
 </svg>

@@ -1,5 +1,15 @@
 const messages = {
     zh: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: "訂閱我們的通訊",
             yourAddress: "您的電子郵件地址”",
@@ -813,6 +823,16 @@ const messages = {
 
 
     ja: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: "ニュースレターを購読する",
             yourAddress: "あなたのEメールアドレス",
@@ -1618,8 +1638,17 @@ const messages = {
         download: 'Download',
         serverErr: 'アプリケーションリストをアップロード中にサーバーエラー起こりました'
     },
-
     ru: {
+        whiteList: {
+            description: 'Уважаемый инвестор, с 25 августа мы ограничили открытую продажу токенов ALEHUB. Введите свой адрес электронной почты, и вы получите инструкцию по покупке токенов ALEHUB.',
+            form: {
+                topLabel: {
+                    success: 'email успешно отправлен',
+                    exist: 'этот email был отправлен ранее',
+                    incorrect: 'некорректный email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'Подпишитесь на нашу рассылку',
             yourAddress: 'Ваш адрес электронной почты',
@@ -2593,6 +2622,16 @@ const messages = {
         serverErr: 'Произошла ошибка сервера при получении списка приложений.'
     },
     en: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'Subscribe to our newsletter',
             yourAddress: 'Your e-mail address',
@@ -3570,6 +3609,16 @@ const messages = {
         serverErr: 'A server error occurred while retrieving the application list.'
     },
     fr: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'Abonnez-vous à notre newsletter',
             yourAddress: 'Votre adresse e-mail',
@@ -4361,6 +4410,16 @@ const messages = {
         serverErr: 'Une erreur de serveur s\'est produite lors de la récupération de la liste des applications.'
     },
     de: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'Abonnieren Sie unseren Newsletter',
             yourAddress: 'Ihre E-Mail-Adresse',
@@ -5146,6 +5205,16 @@ const messages = {
         serverErr: 'Serverfehler beim abrufen der Liste der Anwendungen.'
     },
     ar: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'اشترك في النشرة الإخبارية لدين',
             yourAddress: "عنوان بريدك الإلكتروني",
@@ -5189,6 +5258,10 @@ const messages = {
                 {
                     path: '#roadmap',
                     name: 'خريطة الطريق'
+                },
+                {
+                    path: '#download-application',
+                    name: 'MVP'
                 },
                 {
                     path: '#mass-media-section',
@@ -5928,6 +6001,16 @@ const messages = {
         serverErr: 'خادم حدث خطأ أثناء استرداد قائمة التطبيقات.'
     },
     ko: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: "뉴스 레터 구독",
             yourAddress: "귀하의 이메일 주소",
@@ -6714,6 +6797,16 @@ const messages = {
         serverErr: '서버 오류가 발생했을 검색하는 동안 이 응용 프로그램의 목록이 있습니다.'
     },
     es: {
+        whiteList: {
+            description: 'Dear Sir/Madam, since August, 25 we have limited the open sale of ALEHUB tokens. Enter your email and you will receive an instruction to buy ALEHUB tokens.',
+            form: {
+                topLabel: {
+                    success: 'successful sending',
+                    exist: 'this email is already in use',
+                    incorrect: 'incorrect email'
+                }
+            }
+        },
         emailSubscribePanel: {
             newsletter: 'Suscríbete a nuestro boletín informativo',
             yourAddress: 'Su dirección de correo electrónico',

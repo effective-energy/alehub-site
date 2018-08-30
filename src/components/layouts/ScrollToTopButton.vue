@@ -37,7 +37,7 @@
                 afterClickToTop: false,
                 position: 0,
                 img: {
-                    dark: '../../../static/images/arrow-top-dark.svg',
+                    dark: '../../../static/images/arrow-top-34343e.svg',
                     yellow: '../../../static/images/arrow-top-yellow.svg'
                 }
             }
