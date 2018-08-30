@@ -1251,7 +1251,7 @@
             background-image url(../../static/images/medium-dark.svg) !important
 
             &:hover
-                background-image url(../../static/images/medium-icon-hover.svg) !important
+                background-image url(../../static/images/medium-icon-hover.svg)!important
 
         .social-item.ins
             background-image url(../../static/images/instagram-dark.svg) !important

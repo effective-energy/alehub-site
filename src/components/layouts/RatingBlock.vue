@@ -51,22 +51,22 @@
                         width: '244px',
                         height: '90px'
                     },
-                    // {
-                    //     id: 3,
-                    //     title: 'Alehub on TrackICO',
-                    //     href: 'https://www.trackico.io/ico/alehub/',
-                    //     src: 'https://www.trackico.io/widget/horizontal/alehub/483.png',
-                    //     altSrc: '../../../static/images/ratings/ico-track.png',
-                    //     alt: 'Alehub TrackICO rating',
-                    //     width: '322px',
-                    //     height: '90px'
-                    // },
+                    {
+                        id: 3,
+                        title: 'Alehub on TrackICO',
+                        href: 'https://www.trackico.io/ico/alehub/',
+                        src: '../../../static/images/ratings/ico-track.png',
+                        // altSrc: '../../../static/images/ratings/ico-track.png',
+                        alt: 'Alehub TrackICO rating',
+                        width: '322px',
+                        height: '90px'
+                    },
                     {
                         id: 4,
                         title: 'Alehub on ICO rating',
                         href: 'https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale',
                         src: 'https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium',
-                        altSrc: '../../../static/images/ratings/ico-rating.png',
+                        altSrc: '../../../static/images/ratings/ico-rating.jpeg',
                         alt: 'Alehub ICO rating',
                         width: '342px',
                         height: '90px'
