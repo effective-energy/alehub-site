@@ -7,6 +7,12 @@
         <p>
             {{ stage.date }}
         </p>
+        <button type="button"
+                class="btn btn-yellow"
+                v-if="haveStages"
+                @click="showInnerStages">
+            {{ 'Show details' }}
+        </button>
     </div>
 </template>
 
@@ -25,7 +31,7 @@
         },
         watch: {
             state: {
-                handler (val) {
+                handler(val) {
                     console.log(val, val.id);
                 },
                 deep: true
@@ -48,6 +54,19 @@
                     return 'inactive-top';
                 else if (this.state.inactiveBottom)
                     return 'inactive-bottom';
+            },
+            haveStages: function () {
+                if (this.stage.hasOwnProperty('stages')) {
+                    if (this.stage.stages.length !== 0) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        },
+        methods: {
+            showInnerStages: function () {
+
             }
         }
     }
