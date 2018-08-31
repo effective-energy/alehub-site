@@ -32,14 +32,14 @@
             RoadmapStageSwitcher
         },
         props: {
-            stages: {
-                type: Array,
-                required: true
-            },
-            states: {
-                type: Array,
-                required: true
-            }
+            // stages: {
+            //     type: Array,
+            //     required: true
+            // },
+            // states: {
+            //     type: Array,
+            //     required: true
+            // }
         },
         data() {
             return {
@@ -654,7 +654,7 @@
         mounted() {
             this.$on('decreaseStage', value => {
 
-
+                this.$parent.$emit('decreaseStage', value);
 
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
