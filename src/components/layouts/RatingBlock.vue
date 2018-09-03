@@ -51,7 +51,7 @@
                         width: '244px',
                         height: '90px'
                     },
-                    {
+                    /*{
                         id: 3,
                         title: 'Alehub on TrackICO',
                         href: 'https://www.trackico.io/ico/alehub/',
@@ -60,14 +60,14 @@
                         alt: 'Alehub TrackICO rating',
                         width: '322px',
                         height: '90px'
-                    },
+                    },*/
                     {
                         id: 4,
                         title: 'Alehub on ICO rating',
-                        href: 'https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale',
-                        src: 'https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium',
-                        altSrc: '../../../static/images/ratings/ico-rating.jpeg',
-                        alt: 'Alehub ICO rating',
+                        href: 'https://icorating.com/ico/alehub-ale/',
+                        src: 'https://icorating.com/widget/alehub-ale/?type=InvesmentRating&shape=Horizontal&color=Transparent',
+                        altSrc: '../../../static/images/ratings/ico-rating.png',
+                        alt: 'Alehub (ALE)',
                         width: '342px',
                         height: '90px'
                     }
