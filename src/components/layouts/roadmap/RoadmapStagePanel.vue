@@ -1,18 +1,42 @@
 <template>
     <div class="roadmap-stage-panel"
          :class="calcStagePanelClass">
-        <h3>
-            {{ stage.title }}
-        </h3>
-        <p>
-            {{ stage.date }}
-        </p>
-        <button type="button"
-                class="btn btn-yellow"
-                v-if="haveStages"
-                @click="showInnerStages">
-            {{ 'Show details' }}
-        </button>
+        <div class="content-wrap">
+            <h3>
+                {{ stage.date }}
+            </h3>
+            <div class="content"
+                 v-if="isStageTitle || isStageText">
+                <h4 v-if="isStageTitle">
+                    {{ stage.title }}
+                </h4>
+                <p v-if="isStageText"
+                   v-for="text in stage.text">
+                    {{ text }}
+                </p>
+            </div>
+            <div class="tab-content"
+                 v-if="isStageTabs">
+                <h4>
+                    {{ activeTab.title }}
+                </h4>
+                <p v-for="text in activeTab.text">
+                    {{ text }}
+                </p>
+            </div>
+        </div>
+        <div class="tabs"
+             v-if="isStageTabs">
+            <button type="button"
+                    class="tab"
+                    v-for="tab in stage.tabs"
+                    :class="{ 'tab-active': tab.id === activeTab.id }"
+                    :disabled="tab.id === activeTab.id"
+                    :style="calcTabHeight(stage.tabs)"
+                    @click="changeActiveTab(tab)">
+                {{ tab.title }}
+            </button>
+        </div>
     </div>
 </template>
 
@@ -37,6 +61,11 @@
                 deep: true
             }
         },
+        data() {
+            return {
+                activeTab: {}
+            }
+        },
         computed: {
             /**
              *
@@ -55,31 +84,60 @@
                 else if (this.state.inactiveBottom)
                     return 'inactive-bottom';
             },
-            haveStages: function () {
-                if (this.stage.hasOwnProperty('stages')) {
-                    if (this.stage.stages.length !== 0) {
-                        return true;
-                    }
-                }
-                return false;
+            isStageTitle: function () {
+                return this.stage.hasOwnProperty('title');
+            },
+            isStageText: function () {
+                return this.stage.hasOwnProperty('text');
+            },
+            isStageTabs: function () {
+                return this.stage.hasOwnProperty('tabs') && this.stage.tabs.length !== 0;
             }
         },
         methods: {
-            showInnerStages: function () {
-
+            /**
+             * change active tab
+             *
+             * @param tab
+             */
+            changeActiveTab: function (tab) {
+                this.activeTab = tab;
+            },
+            calcTabHeight: function (tabs) {
+                let a = 'height: ' + 100 / tabs.length + '%';
+                console.log(a, 'a');
+                return 'height: ' + 100 / tabs.length + '%';
+            }
+        },
+        created() {
+            if (this.isStageTabs) {
+                this.activeTab = this.stage.tabs[0];
             }
         }
     }
 </script>
 
 <style lang="stylus" scoped>
+    .slide-enter-active, .slide-leave-active {
+        transition: margin-bottom .8s ease-out;
+    }
+
+    .slide-enter, .slide-leave-to {
+        margin-bottom: -200px;
+    }
+
+    .slide-enter-to, .slide-leave {
+        margin-bottom: 0px;
+    }
+
     .roadmap-stage-panel
         background-color #3e4452
         width calc(100% - 2 * 15px)
-        padding 25px 40px
         transition all .4s ease-out
         position absolute
-        height 150px
+        height 250px
+        display flex
+        justify-content space-between
 
         &.active
             transform translateY(175px)
@@ -87,30 +145,104 @@
             -moz-box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
             box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
 
+            .tabs
+                .tab
+                    &:first-child.tab-active
+                        cursor default
+                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        box-shadow: inset 2px -2px 4px 0px rgba(0, 0, 0, .7);
+                        background-color transparent
+                        color #ffffff
+
+                    &:nth-child(2n):not(:last-child).tab-active
+                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        box-shadow: inset 1px 0px 7px 0px rgba(0, 0, 0, 1);
+                        background-color transparent
+
+                    &:last-child.tab-active
+                        cursor default
+                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+                        box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, .7);
+                        background-color transparent
+                        color #ffffff
+
+
         &.active-bottom
-            transform translateY(400px) scale(.9)
+            transform translateY(450px) scale(.9)
             background-color transparent
             opacity .5
 
         &.active-top
-            transform translateY(-50px) scale(.9)
+            transform translateY(-100px) scale(.9)
             background-color transparent
             opacity .5
 
         &.inactive-bottom
-            transform translateY(550px)
+            transform translateY(725px)
             visibility hidden
 
         &.inactive-top
-            transform translateY(-250px)
+            transform translateY(-325px)
             visibility hidden
 
         h3
             font-size 24px
             color #ffffff
+            font-weight 700
+
+        h4
+            font-size 20px
+            color #ffffff
+            font-weight 700
+            margin-bottom .75rem
 
         p
             font-size 18px
             color #ffffff
+            margin-bottom .5rem
 
+        .content-wrap
+            padding 25px 0 25px 40px
+
+        .content-wrap
+            display flex
+            flex-direction column
+            position relative
+            height 100%
+            flex-basis 75%
+
+            .content
+                padding 25px 0
+                height 100%
+                display flex
+                flex-direction column
+                justify-content flex-start
+
+            /*.tab-content*/
+                /*flex-basis 75%*/
+
+        .tabs
+            display flex
+            flex-direction column
+            height 100%
+
+            .tab
+                cursor pointer
+                border none
+                text-align left
+                padding-left 20px
+                padding-right 20px
+                transition all .3s ease
+
+                &:focus
+                    outline none
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3)
+                    background-color transparent
+                    color #ffffff
 </style>

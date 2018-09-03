@@ -57,29 +57,29 @@
         color #ffffff
 
         &.active
-            transform translateY(190px)
+            transform translateY(240px)
             -webkit-box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
             -moz-box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
             box-shadow 0 3px 25px 0 rgba(0, 0, 0, .36)
 
         &.active-bottom
-            transform translateY(350px) scale(.7)
+            transform translateY(400px) scale(.7)
             border 1px solid #9e8b4f
             background-color #393f4d
             color #aaaaaa
 
         &.active-top
-            transform translateY(30px) scale(.7)
+            transform translateY(80px) scale(.7)
             border 1px solid #9e8b4f
             background-color #393f4d
             color #aaaaaa
 
         &.inactive-bottom
-            transform translateY(550px) scale(.8)
+            transform translateY(600px) scale(.8)
             visibility hidden
 
         &.inactive-top
-            transform translateY(-250px) scale(.8)
+            transform translateY(-300px) scale(.8)
             visibility hidden
 
         h4

@@ -49,8 +49,10 @@
                         id: 1,
                         date: 'Q1 2017',
                         title: 'The Idea',
-                        text: 'Expertise from specialists in project management.',
-                        result: 'Definition of requirements.',
+                        text: [
+                            'Expertise from specialists in project management',
+                            'Definition of requirements'
+                        ],
                         marker: {
                             title: 'Q1',
                             date: '2017'
@@ -60,8 +62,10 @@
                         id: 2,
                         date: 'Q2 2017',
                         title: 'Mathematical modeling in cooperation with the University of ITMO',
-                        text: 'Consultations with blockchain experts and developer',
-                        result: 'Formation of the Terms of Reference',
+                        text: [
+                            'Consultations with blockchain experts and developer',
+                            'Formation of the Terms of Reference'
+                        ],
                         marker: {
                             title: 'Q2',
                             date: '2017'
@@ -71,7 +75,9 @@
                         id: 3,
                         date: 'Q3 2017',
                         title: 'Partnership with Serokell OU',
-                        text: 'The beginning of development',
+                        text: [
+                            'The beginning of development'
+                        ],
                         marker: {
                             title: 'Q3',
                             date: '2017'
@@ -81,7 +87,9 @@
                         id: 4,
                         date: 'Q4 2017',
                         title: 'Private presale',
-                        text: '1.2 mln $ raised',
+                        text: [
+                            '1.2 mln $ raised'
+                        ],
                         marker: {
                             title: 'Q4',
                             date: '2017'
@@ -91,8 +99,10 @@
                         id: 5,
                         date: 'Q1 2018',
                         title: 'Partnership with ITMO University',
-                        text: 'MVP blockchain published (GitHub)',
-                        result: 'Demo platform published (http://demo.alehub.io)',
+                        text: [
+                            'MVP blockchain published (GitHub)',
+                            'Demo platform published (http://demo.alehub.io)'
+                        ],
                         marker: {
                             title: 'Q1',
                             date: '2018'
@@ -102,8 +112,10 @@
                         id: 6,
                         date: 'Q2 2018',
                         title: 'MVP applications published',
-                        text: 'Bounty campaign',
-                        result: 'PreICO completed',
+                        text: [
+                            'Bounty campaign',
+                            'PreICO completed'
+                        ],
                         marker: {
                             title: 'Q2',
                             date: '2018'
@@ -113,7 +125,9 @@
                         id: 7,
                         date: 'Q3 2018',
                         title: 'ICO completed',
-                        text: 'Exchanges listing',
+                        text: [
+                            'Exchanges listing'
+                        ],
                         marker: {
                             title: 'Q3',
                             date: '2018'
@@ -434,7 +448,7 @@
 
 <style lang="stylus" scoped>
     .roadmap
-        height 500px
+        height 600px
         overflow hidden
         position relative
 
