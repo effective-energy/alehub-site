@@ -278,7 +278,8 @@
                                 Soft cap
                             </div>
                             <div class="count">
-                                {{ collectedSoftCapPercent }}
+                                {{ collectedSoftCap }}
+                                <!--{{ collectedSoftCapPercent }}-->
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -291,7 +292,8 @@
                                 Hard cap
                             </div>
                             <div class="count">
-                                {{ collectedHardCapPercent }}
+                                {{ collectedHardCap }}
+                                <!--{{ collectedHardCapPercent }}-->
                             </div>
                         </div>
                         <div class="progress-bar-outer">
@@ -369,7 +371,7 @@
                     </div>
 
                     <a class="btn btn-black to-download"
-                       href="https://demo.alehub.io/"
+                       href="http://demo.alehub.io/"
                        target="_blank"
                        style="font-weight: bold; color: #fff;">
                         <button type="button">
@@ -650,6 +652,14 @@
             },
             collectedSoftCapPercent: function () {
                 return +(Math.round((100 * this.collected) / this.softCap + 'e+2') + 'e-2') + ' ' + '%';
+            },
+            collectedSoftCap: function () {
+                return this.collected.toLocaleString(this.$i18n.locale) + ' / ' +
+                       Number(this.softCap).toLocaleString(this.$i18n.locale) + '$';
+            },
+            collectedHardCap: function () {
+                return this.collected.toLocaleString(this.$i18n.locale) + ' / ' +
+                    Number(this.hardCap).toLocaleString(this.$i18n.locale) + '$';
             }
         },
         methods: {

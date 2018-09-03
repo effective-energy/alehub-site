@@ -2,11 +2,11 @@
     <div class="roadmap">
         <div class="container">
             <div class="row row-flex">
-                <div class="col-sm-3 roadmap-stage-marker-wrap">
+                <div class="col-sm-2 roadmap-stage-marker-wrap">
                     <roadmap-stage-marker-list :stages="stages"
                                                :states="states"/>
                 </div>
-                <div class="col-sm-1 roadmap-stage-switcher-wrap">
+                <div class="col-sm-2 roadmap-stage-switcher-wrap">
                     <roadmap-stage-switcher :stage-count="stages.length"
                                             :stage-index-active="stageIndexActive"/>
                 </div>
@@ -31,186 +31,328 @@
             RoadmapStagePanelList,
             RoadmapStageSwitcher
         },
+        props: {
+            // stages: {
+            //     type: Array,
+            //     required: true
+            // },
+            // states: {
+            //     type: Array,
+            //     required: true
+            // }
+        },
         data() {
             return {
                 states: [],
                 stages: [
                     {
                         id: 1,
-                        title: 'Conception',
-                        date: '01.01.2017 - 01.07.2017',
-                        stages: [
-                            {
-                                id: 1,
-                                title: 'The Idea',
-                                date: '01.01.2017'
-                            },
-                            {
-                                id: 2,
-                                title: 'Expertise from specialists in project management. Definition of requirements. ' +
-                                '(Consultations with specialists in project management from the real sector of' +
-                                ' the economy. Collection of requirements and defining problems)',
-                                date: '01.02.2017 - 01.03.2017'
-                            },
-                            {
-                                id: 3,
-                                title: 'Mathematical modeling. (Consultations with financial experts. Mathematical' +
-                                ' modeling in cooperation with the University of ITMO)',
-                                date: '01.01.2017 - 01.05.2017'
-                            },
-                            {
-                                id: 4,
-                                title: 'Formation of the Terms of Reference. (Consultations with blockchain experts and ' +
-                                'developers. Forming an image of a product and the terms of reference) ',
-                                date: '01.06.2017 - 01.07.2017'
-                            }
-                        ]
+                        date: 'Q1 2017',
+                        title: 'The Idea',
+                        text: [
+                            'Expertise from specialists in project management',
+                            'Definition of requirements'
+                        ],
+                        marker: {
+                            title: 'Q1',
+                            date: '2017'
+                        }
                     },
                     {
                         id: 2,
-                        title: 'Development',
-                        date: '01.08.2017 - 15.05.2018',
-                        stages: [
-                            {
-                                id: 1,
-                                title: 'Partnership with Serokell OU. The beginning of development.',
-                                date: '01.08.2017'
-                            },
-                            {
-                                id: 2,
-                                title: 'Publishing MVP.',
-                                date: '15.05.2018'
-                            }
-                        ]
+                        date: 'Q2 2017',
+                        title: 'Mathematical modeling in cooperation with the University of ITMO',
+                        text: [
+                            'Consultations with blockchain experts and developer',
+                            'Formation of the Terms of Reference'
+                        ],
+                        marker: {
+                            title: 'Q2',
+                            date: '2017'
+                        }
                     },
                     {
                         id: 3,
-                        title: 'Token Sale',
-                        date: '01.11.2017 - 24.09.2018',
-                        stages: [
-                            {
-                                id: 1,
-                                title: 'PreSale (Raised more 1.2 mln $)',
-                                date: '01.11.2017 - 01.12.2017'
-                            },
-                            {
-                                id: 2,
-                                title: 'PreICO',
-                                date: '25.05.2018 - 25.06.2018'
-                            },
-                            {
-                                id: 2,
-                                title: 'ICO',
-                                date: '25.07.2018 - 24.09.2018'
-                            }
-                        ]
+                        date: 'Q3 2017',
+                        title: 'Partnership with Serokell OU',
+                        text: [
+                            'The beginning of development'
+                        ],
+                        marker: {
+                            title: 'Q3',
+                            date: '2017'
+                        }
                     },
                     {
                         id: 4,
-                        title: 'Listing',
-                        date: '25.09.2018 - 10.10.2018',
-                        stages: [
-                            {
-                                id: 1,
-                                title: 'Listing on first exchange',
-                                date: '25.09.2018'
-                            },
-                            {
-                                id: 2,
-                                title: 'Listing on second exchange ',
-                                date: '10.10.2018'
-                            }
-                        ]
+                        date: 'Q4 2017',
+                        title: 'Private presale',
+                        text: [
+                            '1.2 mln $ raised'
+                        ],
+                        marker: {
+                            title: 'Q4',
+                            date: '2017'
+                        }
                     },
                     {
                         id: 5,
-                        title: 'Marketing',
-                        date: '09.05.2018 - 25.09.2018',
-                        stages: [
-                            {
-                                id: 1,
-                                title: 'Bounty Campaign',
-                                date: '09.05.2018 - 25.05.2018'
-                            },
-                            {
-                                id: 2,
-                                title: 'Listing Coinmarketcap.com',
-                                date: '28.09.2018'
-                            },
-                            {
-                                id: 3,
-                                title: 'Road show',
-                                date: '05.09.2018 - 28.09.2018'
-                            },
-                            {
-                                id: 4,
-                                title: 'Participation in conference',
-                                date: '23.05.2018 - 25.09.2018',
-                                stages: [
-                                    {
-                                        id: 1,
-                                        title: 'Tokenomics',
-                                        date: '23.05.2018 - 24.05.2018'
-                                    },
-                                    {
-                                        id: 2,
-                                        title: 'New York road show',
-                                        date: '12.06.2018'
-                                    },
-                                    {
-                                        id: 3,
-                                        title: 'Singapore',
-                                        date: ''
-                                    },
-                                    {
-                                        id: 4,
-                                        title: 'Korean blockchain summit',
-                                        date: '05.09.2018 - 25.09.2018'
-                                    }
-                                ]
-                            }
-                        ]
+                        date: 'Q1 2018',
+                        title: 'Partnership with ITMO University',
+                        text: [
+                            'MVP blockchain published (GitHub)',
+                            'Demo platform published (http://demo.alehub.io)'
+                        ],
+                        marker: {
+                            title: 'Q1',
+                            date: '2018'
+                        }
                     },
                     {
                         id: 6,
-                        title: 'Legal',
-                        date: '09.10.2019 - 25.09.2020',
-                        stages: [
+                        date: 'Q2 2018',
+                        title: 'MVP applications published',
+                        text: [
+                            'Bounty campaign',
+                            'PreICO completed'
+                        ],
+                        marker: {
+                            title: 'Q2',
+                            date: '2018'
+                        }
+                    },
+                    {
+                        id: 7,
+                        date: 'Q3 2018',
+                        title: 'ICO completed',
+                        text: [
+                            'Exchanges listing'
+                        ],
+                        marker: {
+                            title: 'Q3',
+                            date: '2018'
+                        }
+                    },
+                    {
+                        id: 8,
+                        date: 'Q4 2018',
+                        tabs: [
                             {
                                 id: 1,
-                                text: 'Opening representatives offices in Japan, Korea, China, USA, Cyprus, Germany, ' +
-                                'Estonia, France, Switzerland, Vietnam, UAE',
-                                date: '09.10.2019 - 25.09.2020'
+                                title: 'Development',
+                                text: [
+                                    'Formalization of the top level blockchain',
+                                    'Formalization of mining procedure',
+                                    'Formalization of embedded blockchain'
+                                ]
                             },
                             {
                                 id: 2,
-                                text: 'Partnership agreement',
-                                date: '09.10.2019 - 25.09.2020'
+                                title: 'Testing',
+                                text: [
+                                    'Partnership with 3 major universities for testing purposes',
+                                    'Preparations for pilot projects on with Bayer AG management'
+                                ]
                             }
-                        ]
+                        ],
+                        marker: {
+                            title: 'Q4',
+                            date: '2018'
+                        }
                     },
-                    // {
-                    //     id: 7,
-                    //     title: 'Technical Description',
-                    //     date: '01.11.2017 - 24.09.2018',
-                    //     stages: [
-                    //         {
-                    //             id: 1,
-                    //             text: 'PreSale (Raised more 1.2 mln $)',
-                    //             date: '01.11.2017 - 01.12.2017'
-                    //         },
-                    //         {
-                    //             id: 2,
-                    //             text: 'PreICO',
-                    //             date: '25.05.2018 - 25.06.2018'
-                    //         },
-                    //         {
-                    //             id: 2,
-                    //             text: 'ICO',
-                    //             date: '25.07.2018 - 24.09.2018'
-                    //         }
-                    //     ]
-                    // }
+                    {
+                        id: 9,
+                        date: 'Q1 2019',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'Formalization of a dispute system',
+                                    'Development of a virtual machine',
+                                    'Formalization of changes procedure',
+                                    'Technical description of system modules'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'Testing',
+                                text: [
+                                    'Start of first projects in cooperation with partner Universities',
+                                    'Pilot project with Bayer AG management',
+                                    'Preparations for pilot projects with Siemens AG management'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q1',
+                            date: '2019'
+                        }
+                    },
+                    {
+                        id: 10,
+                        date: 'Q2 2019',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'Development of technical description of system modules',
+                                    'Development of technical description of a top level blockchain',
+                                    'Technical description of an embedded blockchain'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'Testing',
+                                text: [
+                                    'Pilot projects with universities',
+                                    'Multiple pilot projects with Bayer AG management',
+                                    'First pilot project with Siemens AG management'
+                                ]
+                            },
+                            {
+                                id: 3,
+                                title: 'Sales & Marketing',
+                                text: [
+                                    'First conference in Switzerland, presenting results of pilot projects with universities & companies',
+                                    'Panel sessions with business representatives'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q2',
+                            date: '2019'
+                        }
+                    },
+                    {
+                        id: 11,
+                        date: 'Q3 2019',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'MVP solution Decentralizing',
+                                    'Implementation of peer-to-peer network',
+                                    'Implementation of basic blockchain and mining',
+                                    'Implementation of application logic'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'Testing',
+                                text: [
+                                    'Projects with Bayer AG & Siemens AG management on a constant basis'
+                                ]
+                            },
+                            {
+                                id: 3,
+                                title: 'Sales & Marketing',
+                                text: [
+                                    'Foundation of sales network & first representative offices',
+                                    'Panel sessions with legal advisors in USA, EU, China, Japan & Sinagapore',
+                                    'Multiple partnership agreements with business entities'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q3',
+                            date: '2019'
+                        }
+                    },
+                    {
+                        id: 12,
+                        date: 'Q4 2019',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'Implementation of template for building embedded blockchains'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'Testing',
+                                text: [
+                                    'Testnet start',
+                                    'More than 15 Universities all around the world are connected to the testnet applications for testing purposes'
+                                ]
+                            },
+                            {
+                                id: 3,
+                                title: 'Sales & Marketing',
+                                text: [
+                                    'Foundation of sales offices in USA, Germany, Japan & Singapore'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q4',
+                            date: '2019'
+                        }
+                    },
+                    {
+                        id: 13,
+                        date: 'Q1 2020',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'Implementation of verification agents logic',
+                                    'Implementation of a dispute system'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'Testing',
+                                text: [
+                                    'Testnet is supported by more than 5,000 nodes',
+                                    'Pilot projects are implemented in to corporate structure'
+                                ]
+                            },
+                            {
+                                id: 3,
+                                title: 'Sales & Marketing',
+                                text: [
+                                    'More than 1,000 advance contracts',
+                                    'First clients are being connected to testnet'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q1',
+                            date: '2020'
+                        }
+                    },
+                    {
+                        id: 14,
+                        date: 'Q2 2020',
+                        tabs: [
+                            {
+                                id: 1,
+                                title: 'Development',
+                                text: [
+                                    'Implementation of system of voting for monetary policy',
+                                    'Implementation of system of voting for technological upgrade'
+                                ]
+                            },
+                            {
+                                id: 2,
+                                title: 'General',
+                                text: [
+                                    'Putting the system into operation',
+                                    'First dividends being distributed among ALE token holders'
+                                ]
+                            }
+                        ],
+                        marker: {
+                            title: 'Q2',
+                            date: '2020'
+                        }
+                    }
                 ]
             }
         },
@@ -253,6 +395,9 @@
         },
         mounted() {
             this.$on('decreaseStage', value => {
+
+                this.$parent.$emit('decreaseStage', value);
+
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== 0) {
@@ -275,6 +420,8 @@
             });
 
             this.$on('increaseStage', value => {
+
+
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== this.states.length - 1) {
@@ -301,7 +448,7 @@
 
 <style lang="stylus" scoped>
     .roadmap
-        height 500px
+        height 600px
         overflow hidden
         position relative
 
@@ -317,7 +464,7 @@
                     height 100%
 
                     &:before
-                        background rgba(52,58,73,1)
+                        background rgba(52, 58, 73, 1)
                         background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
                         background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, 0)))
                         background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
@@ -339,7 +486,7 @@
                         background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 0)), color-stop(100%, rgba(52, 58, 73, 1)))
                         background -webkit-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
                         background -o-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        background -ms-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58,73, 1) 100%)
+                        background -ms-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
                         background linear-gradient(to bottom, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
                         bottom 0
                         content ''
@@ -353,6 +500,5 @@
                 .roadmap-stage-switcher-wrap
                     display flex
                     align-items center
-
-
+                    justify-content center
 </style>
