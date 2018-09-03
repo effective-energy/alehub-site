@@ -7,83 +7,83 @@
             </h1>
         </div>
 
-        <div class="roadmap-slides">
-            <div class="topline"></div>
+        <!--<div class="roadmap-slides">-->
+            <!--<div class="topline"></div>-->
 
-            <div class="scroll-block" style="margin-top: 0; position: absolute; top: -4px;">
-                <div id="scroll-element"
-                     class="scroll-element"
-                     style="max-width: 100%; margin: 0;"
-                     :style="{ 'width': scrollHorizontalWidth }"
-                     v-on:scroll="scrollForSlide($event)">
+            <!--<div class="scroll-block" style="margin-top: 0; position: absolute; top: -4px;">-->
+                <!--<div id="scroll-element"-->
+                     <!--class="scroll-element"-->
+                     <!--style="max-width: 100%; margin: 0;"-->
+                     <!--:style="{ 'width': scrollHorizontalWidth }"-->
+                     <!--v-on:scroll="scrollForSlide($event)">-->
 
-                    <div id="scroll-content"
-                         class="scroll-content"
-                         :style="'width: ' + roadmapPanelWidth + 'px'">
-                    </div>
-                </div>
-            </div>
+                    <!--<div id="scroll-content"-->
+                         <!--class="scroll-content"-->
+                         <!--:style="'width: ' + roadmapPanelWidth + 'px'">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div class="slide-to-left" v-if="isLeft">
-                <button type="button" :disabled="disableControls" @click="prevSlide">
-                    <img src="../../static/images/arrow-left-roadmap.svg" alt="slide-to-left">
-                </button>
-            </div>
+            <!--<div class="slide-to-left" v-if="isLeft">-->
+                <!--<button type="button" :disabled="disableControls" @click="prevSlide">-->
+                    <!--<img src="../../static/images/arrow-left-roadmap.svg" alt="slide-to-left">-->
+                <!--</button>-->
+            <!--</div>-->
 
-            <div class="slide-to-right" v-if="isRight">
-                <button type="button" :disabled="disableControls" @click="nextSlide">
-                    <img src="../../static/images/arrow-right-roadmap.svg" alt="slide-to-right">
-                </button>
-            </div>
+            <!--<div class="slide-to-right" v-if="isRight">-->
+                <!--<button type="button" :disabled="disableControls" @click="nextSlide">-->
+                    <!--<img src="../../static/images/arrow-right-roadmap.svg" alt="slide-to-right">-->
+                <!--</button>-->
+            <!--</div>-->
 
-            <div class="slides-body"
-                 @mousedown="dragStart($event)"
-                 @mouseup="dragEnd()"
-                 @mousemove="(xDrag && yDrag && !isDisableTouch) ? dragMove($event) : 'false'"
-                 @touchstart="touchStart($event)"
-                 @touchmove="touchMove($event)">
+            <!--<div class="slides-body"-->
+                 <!--@mousedown="dragStart($event)"-->
+                 <!--@mouseup="dragEnd()"-->
+                 <!--@mousemove="(xDrag && yDrag && !isDisableTouch) ? dragMove($event) : 'false'"-->
+                 <!--@touchstart="touchStart($event)"-->
+                 <!--@touchmove="touchMove($event)">-->
 
-                <div class="slide"
-                     v-for="(slide, slideIndex) in $t('roadmap.stages')"
-                     :key="slideIndex">
-                    <div class="line"></div>
-                    <div class="slide-content"
-                         :class="{ 'deployed': slide.progress === 100, 'text-align-right-rtl': isRtl }">
-                        <h1 class="slide-title">
-                            {{ slide.title }}
-                        </h1>
-                        <h6 class="top-line">
-                            {{ slide.desk }}
-                        </h6>
-                        <h6>
-                            {{ slide.result}}
-                        </h6>
-                        <span class="date">
-                            {{ slide.date }}
-                        </span>
+                <!--<div class="slide"-->
+                     <!--v-for="(slide, slideIndex) in $t('roadmap.stages')"-->
+                     <!--:key="slideIndex">-->
+                    <!--<div class="line"></div>-->
+                    <!--<div class="slide-content"-->
+                         <!--:class="{ 'deployed': slide.progress === 100, 'text-align-right-rtl': isRtl }">-->
+                        <!--<h1 class="slide-title">-->
+                            <!--{{ slide.title }}-->
+                        <!--</h1>-->
+                        <!--<h6 class="top-line">-->
+                            <!--{{ slide.desk }}-->
+                        <!--</h6>-->
+                        <!--<h6>-->
+                            <!--{{ slide.result}}-->
+                        <!--</h6>-->
+                        <!--<span class="date">-->
+                            <!--{{ slide.date }}-->
+                        <!--</span>-->
 
-                        <div class="slide-progress">
-                            <div class="progress-line-outer">
-                                <div class="progress-line"
-                                     :style="{ width: slide.progress + '%' }">
-                                </div>
-                            </div>
-                            <div class="state">
-                                <p class="status">
-                                    {{ $t('roadmap.stateLabel') }}:
-                                    <span class="bold">
-                                        {{ slide.state }}
-                                    </span>
-                                </p>
-                                <p class="count">
-                                    {{ slide.progress }}%
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <!--<div class="slide-progress">-->
+                            <!--<div class="progress-line-outer">-->
+                                <!--<div class="progress-line"-->
+                                     <!--:style="{ width: slide.progress + '%' }">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="state">-->
+                                <!--<p class="status">-->
+                                    <!--{{ $t('roadmap.stateLabel') }}:-->
+                                    <!--<span class="bold">-->
+                                        <!--{{ slide.state }}-->
+                                    <!--</span>-->
+                                <!--</p>-->
+                                <!--<p class="count">-->
+                                    <!--{{ slide.progress }}%-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <roadmap/>
 
@@ -318,7 +318,7 @@
         letter-spacing normal
         text-align center
         color #f7f7f7
-        margin 24px 0
+        margin 24px 0 48px 0
 
     .is-center
         text-align center

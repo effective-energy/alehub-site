@@ -2,11 +2,11 @@
     <div class="roadmap">
         <div class="container">
             <div class="row row-flex">
-                <div class="col-sm-3 roadmap-stage-marker-wrap">
+                <div class="col-sm-2 roadmap-stage-marker-wrap">
                     <roadmap-stage-marker-list :stages="stages"
                                                :states="states"/>
                 </div>
-                <div class="col-sm-1 roadmap-stage-switcher-wrap">
+                <div class="col-sm-2 roadmap-stage-switcher-wrap">
                     <roadmap-stage-switcher :stage-count="stages.length"
                                             :stage-index-active="stageIndexActive"/>
                 </div>
@@ -500,6 +500,5 @@
                 .roadmap-stage-switcher-wrap
                     display flex
                     align-items center
-
-
+                    justify-content center
 </style>
