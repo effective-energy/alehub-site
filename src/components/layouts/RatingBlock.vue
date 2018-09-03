@@ -64,10 +64,10 @@
                     {
                         id: 4,
                         title: 'Alehub on ICO rating',
-                        href: 'https://icorating.com/ico/alehub-ale/?utm_source=widget&utm_medium=alehub-ale',
-                        src: 'https://icorating.com/widgets/alehub-ale/?shape=horizontal&size=medium',
+                        href: 'https://icorating.com/ico/alehub-ale/',
+                        src: 'https://icorating.com/widget/alehub-ale/?type=InvesmentRating&shape=Horizontal&color=Transparent',
                         altSrc: '../../../static/images/ratings/ico-rating.png',
-                        alt: 'Alehub ICO rating',
+                        alt: 'Alehub (ALE)',
                         width: '342px',
                         height: '90px'
                     }

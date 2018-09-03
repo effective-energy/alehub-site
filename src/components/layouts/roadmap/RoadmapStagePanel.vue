@@ -105,7 +105,6 @@
             },
             calcTabHeight: function (tabs) {
                 let a = 'height: ' + 100 / tabs.length + '%';
-                console.log(a, 'a');
                 return 'height: ' + 100 / tabs.length + '%';
             }
         },

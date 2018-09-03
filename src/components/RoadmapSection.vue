@@ -180,29 +180,29 @@
             };
         },
         mounted() {
-            this.scrollContentWidth = document.querySelector('.slide').offsetWidth * document.getElementsByClassName('slide').length -
-                this.getCoords(document.getElementById('scroll-element')).left * 2;
-
-            this.slideWidth = document.querySelector('.slide').offsetWidth;
-
-            document.getElementById('scroll-element').addEventListener('scroll', () => {
-                if (document.getElementById('scroll-content').getBoundingClientRect().right === document.getElementById('scroll-content').offsetWidth)
-                    this.isLeft = false;
-                else if (document.getElementById('scroll-content').getBoundingClientRect().right <= window.innerWidth - 9)
-                    this.isRight = false;
-                else {
-                    this.isLeft = true;
-                    this.isRight = true;
-                }
-            });
+            // this.scrollContentWidth = document.querySelector('.slide').offsetWidth * document.getElementsByClassName('slide').length -
+            //     this.getCoords(document.getElementById('scroll-element')).left * 2;
+            //
+            // this.slideWidth = document.querySelector('.slide').offsetWidth;
+            //
+            // document.getElementById('scroll-element').addEventListener('scroll', () => {
+            //     if (document.getElementById('scroll-content').getBoundingClientRect().right === document.getElementById('scroll-content').offsetWidth)
+            //         this.isLeft = false;
+            //     else if (document.getElementById('scroll-content').getBoundingClientRect().right <= window.innerWidth - 9)
+            //         this.isRight = false;
+            //     else {
+            //         this.isLeft = true;
+            //         this.isRight = true;
+            //     }
+            // });
 
             this.currStageIndex = this.$t('roadmap.stages').findIndex((item) => {
                 return item.status;
             });
 
-            setTimeout(() => {
-                document.getElementById('scroll-element').scrollLeft = this.slideWidth * this.currStageIndex;
-            }, 0);
+            // setTimeout(() => {
+            //     document.getElementById('scroll-element').scrollLeft = this.slideWidth * this.currStageIndex;
+            // }, 0);
         }
     }
 </script>

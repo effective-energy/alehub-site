@@ -36,7 +36,7 @@
         },
         watch: {
             tgMobileInDarkSection: function (val) {
-                console.log(val, 'watch tgMobileInDarkSection');
+                // console.log(val, 'watch tgMobileInDarkSection');
             }
         },
         data() {
