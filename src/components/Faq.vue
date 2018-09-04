@@ -8,8 +8,39 @@
                         <h3>
                             FAQ
                         </h3>
-                        <div class="spoiler">
+                        <div class="section"
+                             v-for="section in sections">
+                            <h4>
+                                {{ section.title }}
+                            </h4>
+                            <div class="spoiler"
+                                 v-for="question in section.questions">
+                                <div class="spoiler-header"
+                                     @click="toggleSpoilerBody(question.id)">
+                                    {{ question.title }}
+                                </div>
+                                <!--<transition name="expand">-->
 
+                                    <!--v-if="isSpoilerActive(question.id)"-->
+                                    <div class="spoiler-body"
+                                         :class="calcSpoilerBodyActiveClass(question.id)">
+                                        <p v-if="isProperty(question, 'text')">
+                                            {{ question.text }}
+                                        </p>
+                                        <div v-if="isProperty(question, 'list')"
+                                             v-for="list in question.list">
+                                            <p v-if="isProperty(list, 'title')">
+                                                {{ list.title }}
+                                            </p>
+                                            <ul v-if="isProperty(list, 'items')">
+                                                <li v-for="item in list.items">
+                                                    {{ item }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <!--</transition>-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,6 +59,7 @@
         },
         data() {
             return {
+                state: [],
                 sections: [
                     {
                         id: 1,
@@ -72,7 +104,7 @@
                         title: 'Продукт',
                         questions: [
                             {
-                                id: 1,
+                                id: 7,
                                 title: 'Зачем нужен блокчейн?',
                                 text: 'Поскольку отношения между заказчиком и исполнителем в, первую очередь, носят ' +
                                     'сугубо финансовый харакер и построены на доверии двух сторон, то блокчейн является ' +
@@ -118,7 +150,7 @@
                                 ]
                             },
                             {
-                                id: 2,
+                                id: 8,
                                 title: 'Чем ALEHUB лучше классических инструментов?',
                                 list: [
                                     {
@@ -152,14 +184,14 @@
                                 ]
                             },
                             {
-                                id: 3,
+                                id: 9,
                                 title: 'Для чего в системе ALEHUB нужны майнеры?',
                                 text: 'Майнеры выполняют работу по проверке и внесении корректных транзакций в ' +
                                     'распределенный реестр, исполняют смарт-контракты, а также проверяют наличие и ' +
                                     'корректность электронных подписей документов.'
                             },
                             {
-                                id: 4,
+                                id: 10,
                                 title: 'За что платформа начисляет комиссии?',
                                 list: [
                                     {
@@ -176,7 +208,7 @@
                                 ]
                             },
                             {
-                                id: 5,
+                                id: 11,
                                 title: 'Как начать выпорлнять заказы на платформе?',
                                 text: 'Для того, чтобы получить доступ к заказам на платформе, необходимо подтвердить ' +
                                     'навыки, путем сдачи экзаменационных испытаний.'
@@ -186,17 +218,90 @@
                 ]
             }
         },
+        methods: {
+            /**
+             *
+             *
+             * @param questionId
+             * @returns {*}
+             */
+            isSpoilerActive: function (questionId) {
+                return this.state.find(s => s.id === questionId).active;
+            },
+            /**
+             *
+             *
+             * @param object
+             * @param property
+             * @returns {boolean}
+             */
+            isProperty: function (object, property) {
+                return object.hasOwnProperty(property);
+            },
+            toggleSpoilerBody: function (questionId) {
+                this.state.find(s => s.id === questionId).active = !this.state.find(s => s.id === questionId).active;
+            },
+            calcSpoilerBodyActiveClass: function (questionId) {
+                if (this.state.find(s => s.id === questionId).active)
+                    return 'active';
+                return 'inactive';
+            }
+        },
+        created() {
+            this.sections.forEach(s => {
+                s.questions.forEach(q => {
+                    if (q.id === 1)
+                        this.state.push(
+                            {
+                                id: q.id,
+                                active: true
+                            }
+                        );
+                    this.state.push(
+                        {
+                            id: q.id,
+                            active: false
+                        }
+                    )
+                })
+            });
+        }
     }
 </script>
 
 <style lang="stylus" scoped>
-.faq
-    min-height 100vh
-    background-color white
+    /*.expand-enter-active,*/
+    /*.expand-leave-active*/
+        /*transition height 1s ease-in-out*/
+        /*overflow hidden*/
+        /*height auto*/
 
-    .container
-        padding-top 74px
+    /*.expand-enter,*/
+    /*.expand-leave-to*/
+        /*height 0*/
 
-        .panel
-            margin-top 50px
+    .faq
+        min-height 100vh
+        background-color white
+
+        .container
+            padding-top 74px
+
+            .panel
+                margin-top 50px
+
+                .spoiler
+                    position relative
+                    height 100%
+
+                    .spoiler-body
+                        transition height 1s ease-in-out
+                        overflow hidden
+
+                        &.active
+                            height auto
+
+                        &.inactive
+                            height 0
+
 </style>
