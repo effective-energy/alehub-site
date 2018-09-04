@@ -6,6 +6,7 @@ import Blog from '@/components/Blog';
 import BlogPost from '@/components/BlogPost';
 import NotFound from '@/components/NotFound';
 import WhiteList from '@/components/WhiteList';
+import Faq from '@/components/Faq';
 
 Vue.use(Router);
 
@@ -35,6 +36,11 @@ const router = new Router(
                 path: '/white-list',
                 name: 'WhiteList',
                 component: WhiteList
+            },
+            {
+                path: '/faq',
+                name: 'Faq',
+                component: Faq
             },
             {
                 path: '*',
