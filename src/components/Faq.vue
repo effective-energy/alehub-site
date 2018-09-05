@@ -5,19 +5,25 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="panel">
-                        <h3>
+                        <h3 class="faq-title">
                             FAQ
                         </h3>
                         <div class="section"
                              v-for="section in sections">
-                            <h4>
+                            <h4 class="faq-section-title">
                                 {{ section.title }}
                             </h4>
                             <div class="spoiler"
                                  v-for="question in section.questions">
                                 <div class="spoiler-header"
                                      @click="toggleSpoilerBody(question.id)">
-                                    {{ question.title }}
+                                    <span>
+                                        {{ question.title }}
+                                    </span>
+                                    <img class="spoiler-arrow"
+                                         alt="arrow"
+                                         src="../../static/images/arrows/arrow-bottom-34343e.svg"
+                                         :class="calcSpoilerArrowClass(question.id)">
                                 </div>
                                 <div class="spoiler-body"
                                      :id="'spoiler-body-' + question.id">
@@ -67,13 +73,13 @@
                             {
                                 id: 1,
                                 title: 'KYC',
-                                text: 'Для прохождения KYC требуется паспорт и документ, подтверждающий адрес пребывания'
+                                text: 'Для прохождения KYC требуется паспорт и документ, подтверждающий адрес пребывания.'
                             },
                             {
                                 id: 2,
                                 title: 'Ограничения',
                                 text: 'В покупке токенов могут участвовать не все страны. Ограничения касаются граждан ' +
-                                'Китая, США, Гонконга, Сингапура '
+                                'Китая, США, Гонконга, Сингапура.'
                             },
                             {
                                 id: 3,
@@ -85,7 +91,7 @@
                                 id: 4,
                                 title: 'Есть ли у вас MVP?',
                                 text: 'Да, в данный момент доступна демо веб-версия платформы, так же есть возможность' +
-                                ' установки приложения на Mac и Linux. '
+                                ' установки приложения на Mac и Linux.'
                             },
                             {
                                 id: 5,
@@ -95,7 +101,7 @@
                             {
                                 id: 6,
                                 title: 'Какая минимальная сумма инвестицций?',
-                                text: 'Минимальная сумма инвестиций составляет 30$'
+                                text: 'Минимальная сумма инвестиций составляет 30$.'
                             }
                         ]
                     },
@@ -164,7 +170,7 @@
                                             '(вне зависимости от желаний исполнителя)',
                                             'Подтвержденный рейтинг исполнителей;',
                                             'Высокий уровень конфиденциальности (шифрование);',
-                                            'Возможность заключения договора с несколькими подрядчиками;'
+                                            'Возможность заключения договора с несколькими подрядчиками.'
                                         ]
                                     },
                                     {
@@ -178,7 +184,7 @@
                                             ' аккаунтов.',
                                             'Корректный поиск заказов, в соответствии с профессиональными качествами;',
                                             'Получение оплаты за любой заказ в валюте по выбору (как крипто-, так и фиатной)',
-                                            'Минимальная комиссия за вывод средств'
+                                            'Минимальная комиссия за вывод средств.'
                                         ]
                                     }
                                 ]
@@ -201,8 +207,8 @@
                                             'Успешно завершенная сделка;',
                                             'Использование блокчейна для сохранения истории коммуникации (по выбору ' +
                                             'заказчика/исполнителя вся коммуникация по проекту может быть записана в ' +
-                                            'блокчейн)',
-                                            'Ввод/вывод средств'
+                                            'блокчейн);',
+                                            'Ввод/вывод средств.'
                                         ]
                                     }
                                 ]
@@ -279,6 +285,17 @@
                             )
                     })
                 });
+            },
+            /**
+             *
+             *
+             * @param questionId
+             * @returns {string}
+             */
+            calcSpoilerArrowClass: function (questionId) {
+                if (this.state.find(s => s.id === questionId).active)
+                    return 'active';
+                return 'inactive';
             }
         },
         created() {
@@ -301,12 +318,38 @@
             .panel
                 margin-top 50px
 
-                .spoiler
-                    position relative
-                    height 100%
+                .faq-title
+                    font-weight 700
+                    margin-bottom 20px
 
-                    .spoiler-body
-                        transition height 1s ease-in-out
-                        overflow hidden
+                .section
+                    margin-bottom 20px
 
+                    .spoiler
+                        position relative
+                        height 100%
+                        margin-bottom 10px
+
+                        .spoiler-header
+                            cursor pointer
+                            display flex
+                            justify-content space-between
+                            align-items center
+                            color #000
+                            background-color #ffd24f
+                            padding 5px 10px
+
+                            .spoiler-arrow
+                                transition transform .5s ease-in-out
+                                height 8px
+
+                                &.active
+                                    transform rotateX(180deg)
+
+                        .spoiler-body
+                            transition height .5s ease-in-out
+                            overflow hidden
+
+                            .inner
+                                margin-top 10px
 </style>
