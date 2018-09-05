@@ -33,7 +33,7 @@
             </span>
         </div>
 
-        <div class="navbar__blog"
+        <div class="navbar-blog"
              v-if="isBlogPage">
             <router-link class="navbar-item"
                          tag="a"
@@ -62,13 +62,12 @@
                            :options="optionsToSliderNavbar"/>
 
 
-            <div class="navbar-folding__inner"
+            <div class="navbar-folding-inner"
                  v-if="!show && !whiteList">
                 <div class="navbar-item"
                      v-for="(item, index) in $t('navbar.menuList')">
                     <a v-if="isItemHasPath(item)"
-                       :href="item.path"
-                       v-scroll-to="item.path">
+                       @click="scrollTo(item.path)">
                         {{ item.name }}
                     </a>
                     <router-link tag="a"
@@ -201,7 +200,7 @@
     import SliderNavbar from '../layouts/SliderNavbar';
 
     export default {
-        name: 'HeaderSection', //rename
+        name: 'HeaderBlock',
         components: {
             MenuModal,
             SliderNavbar
@@ -317,9 +316,6 @@
 
                 return 'en';
             },
-            isHeightLangItem: function () {
-                return this.heightLangItem;
-            },
             isBlogPage: function () {
                 return !(this.$route.path === '/' || this.$route.path === '/white-list');
             },
@@ -358,6 +354,18 @@
             }
         },
         methods: {
+            /**
+             * scroll window to specified block
+             */
+            scrollTo: function (id) {
+                let position = this.getPageCoords(document.querySelector(id));
+                window.scrollTo(
+                    {
+                        top: position.top - document.getElementById('navbar').offsetHeight + 1,
+                        behavior: 'smooth'
+                    }
+                );
+            },
             /**
              * checking property belonging to a path object item
              */
@@ -788,8 +796,7 @@
                 @media (min-width 1024px) and (max-width 1350px)
                     display flex !important
 
-            .navbar-folding__inner
-                width 100%
+            .navbar-folding-inner
                 width 100%
                 position relative
                 display flex
@@ -801,6 +808,7 @@
                     display none !important
 
                 .navbar-item
+                    cursor pointer
                     font-size 18px
                     font-weight 600
 
@@ -833,7 +841,7 @@
                     left 0
                     right auto
 
-        .navbar__blog,
+        .navbar-blog,
         .white-list
             width 100%
             left 0
