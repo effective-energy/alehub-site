@@ -53,7 +53,12 @@
             },
             returnPosition: function () {
                 this.afterClickToTop = false;
-                window.scrollTo({top: this.position, behavior: 'smooth'});
+                window.scrollTo(
+                    {
+                        top: this.position,
+                        behavior: 'smooth'
+                    }
+                );
             },
         }
     }

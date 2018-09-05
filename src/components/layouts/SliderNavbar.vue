@@ -48,10 +48,16 @@
                          :key="index">
 
                         <a class="b-carousel__link"
-                           :href="item.path"
-                           v-scroll-to="item.path">
+                           v-if="isItemHasPath(item)"
+                           @click="scrollTo(item.path)">
                             {{ item.name }}
                         </a>
+                        <router-link class="b-carousel__link"
+                                     tag="a"
+                                     v-else
+                                     :to="item.to">
+                            {{ item.name }}
+                        </router-link>
 
                         <div class="nav-line-slider"
                              :class="{ 'nav-line-slider__yellow': isYellow, 'nav-line-slider__black': isDark,
@@ -207,6 +213,43 @@
             }
         },
         methods: {
+            /**
+             * scroll window to specified block
+             */
+            scrollTo: function (id) {
+                let position = this.getPageCoords(document.querySelector(id));
+                window.scrollTo(
+                    {
+                        top: position.top - document.getElementById('navbar').offsetHeight + 1,
+                        behavior: 'smooth'
+                    }
+                );
+            },
+            /**
+             * getting the coordinates of the element on the page
+             *
+             * @param elem
+             * @returns {*}
+             */
+            getPageCoords: function (elem) {
+                let box = elem.getBoundingClientRect();
+
+                if (!elem)
+                    return false;
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset,
+                    right: box.right + pageXOffset,
+                    bottom: box.bottom + pageYOffset
+                };
+            },
+            /**
+             * checking property belonging to a path object item
+             */
+            isItemHasPath: function (item) {
+                return item.hasOwnProperty('path');
+            },
             touchStart: function (e) {
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
@@ -352,6 +395,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .b-carousel__link
+        cursor pointer
+
     .slider-navbar
         width 70%
         display flex

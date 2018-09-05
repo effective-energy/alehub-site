@@ -17,16 +17,23 @@
 
             <div class="body__menu" v-if="!isSelectingLanguage && isIndex">
                 <div v-for="item in $t('navbar.menuList')">
-                    <a v-scroll-to="item.path"
-                       @click="closeModal('menu-modal')">
+                    <a v-if="isItemHasPath(item)"
+                       @click="scrollTo(item.path)">
                         {{ item.name }}
                     </a>
+                    <router-link tag="a"
+                                 v-else
+                                 :to="item.to">
+                        {{ item.name }}
+                    </router-link>
                 </div>
             </div>
 
             <div class="body__menu" v-if="!isSelectingLanguage && !isIndex">
                 <div>
-                    <router-link tag="a" to="/blog/categories/all" @click.native="closeModal('menu-modal')">
+                    <router-link tag="a"
+                                 to="/blog/categories/all"
+                                 @click.native="closeModal('menu-modal')">
                         {{ 'Blog' }}
                     </router-link>
                 </div>
@@ -98,6 +105,44 @@
             }
         },
         methods: {
+            /**
+             * scroll window to specified block
+             */
+            scrollTo: function (id) {
+                let position = this.getPageCoords(document.querySelector(id));
+                window.scrollTo(
+                    {
+                        top: position.top - document.getElementById('navbar').offsetHeight + 1,
+                        behavior: 'smooth'
+                    }
+                );
+                this.closeModal('menu-modal');
+            },
+            /**
+             * getting the coordinates of the element on the page
+             *
+             * @param elem
+             * @returns {*}
+             */
+            getPageCoords: function (elem) {
+                let box = elem.getBoundingClientRect();
+
+                if (!elem)
+                    return false;
+
+                return {
+                    top: box.top + pageYOffset,
+                    left: box.left + pageXOffset,
+                    right: box.right + pageXOffset,
+                    bottom: box.bottom + pageYOffset
+                };
+            },
+            /**
+             * checking property belonging to a path object item
+             */
+            isItemHasPath: function (item) {
+                return item.hasOwnProperty('path');
+            },
             closeModal: function (name) {
                 this.$parent.$emit(name);
                 this.$modal.hide(name);

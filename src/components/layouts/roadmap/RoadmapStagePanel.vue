@@ -1,16 +1,17 @@
 <template>
     <div class="roadmap-stage-panel"
+         :id="'roadmap-stage-panel-' + stage.id"
          :class="calcStagePanelClass">
         <div class="content-wrap">
             <h3>
                 {{ stage.date }}
             </h3>
             <div class="content"
-                 v-if="isStageTitle || isStageText">
-                <h4 v-if="isStageTitle">
+                 v-if="stage.hasOwnProperty('title') || stage.hasOwnProperty('text')">
+                <h4 v-if="stage.hasOwnProperty('title')">
                     {{ stage.title }}
                 </h4>
-                <p v-if="isStageText"
+                <p v-if="stage.hasOwnProperty('text')"
                    v-for="text in stage.text">
                     {{ text }}
                 </p>
@@ -53,14 +54,6 @@
                 required: true
             }
         },
-        watch: {
-            state: {
-                handler(val) {
-                    console.log(val, val.id);
-                },
-                deep: true
-            }
-        },
         data() {
             return {
                 activeTab: {}
@@ -84,12 +77,11 @@
                 else if (this.state.inactiveBottom)
                     return 'inactive-bottom';
             },
-            isStageTitle: function () {
-                return this.stage.hasOwnProperty('title');
-            },
-            isStageText: function () {
-                return this.stage.hasOwnProperty('text');
-            },
+            /**
+             * checking property 'tabs' belonging to a object item stage and checking stage length
+             *
+             * @returns {boolean}
+             */
             isStageTabs: function () {
                 return this.stage.hasOwnProperty('tabs') && this.stage.tabs.length !== 0;
             }
@@ -101,12 +93,23 @@
              * @param tab
              */
             changeActiveTab: function (tab) {
-                this.activeTab = tab;
+                if (document.getElementById('roadmap-stage-panel-' + this.stage.id).classList.contains('active'))
+                    this.activeTab = tab;
             },
             calcTabHeight: function (tabs) {
                 let a = 'height: ' + 100 / tabs.length + '%';
                 return 'height: ' + 100 / tabs.length + '%';
-            }
+            },
+            /**
+             * checking property belonging to a object item
+             *
+             * @param object
+             * @param property
+             * @returns {boolean}
+             */
+            isObjectProperty: function (object, property) {
+                return object.hasOwnProperty(property);
+            },
         },
         created() {
             if (this.isStageTabs) {
@@ -117,18 +120,6 @@
 </script>
 
 <style lang="stylus" scoped>
-    .slide-enter-active, .slide-leave-active {
-        transition: margin-bottom .8s ease-out;
-    }
-
-    .slide-enter, .slide-leave-to {
-        margin-bottom: -200px;
-    }
-
-    .slide-enter-to, .slide-leave {
-        margin-bottom: 0px;
-    }
-
     .roadmap-stage-panel
         background-color #3e4452
         width calc(100% - 2 * 15px)
