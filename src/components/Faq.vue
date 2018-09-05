@@ -19,11 +19,10 @@
                                      @click="toggleSpoilerBody(question.id)">
                                     {{ question.title }}
                                 </div>
-                                <!--<transition name="expand">-->
-
-                                    <!--v-if="isSpoilerActive(question.id)"-->
-                                    <div class="spoiler-body"
-                                         :class="calcSpoilerBodyActiveClass(question.id)">
+                                <div class="spoiler-body"
+                                     :id="'spoiler-body-' + question.id">
+                                    <div class="inner"
+                                         :id="'inner-' + question.id">
                                         <p v-if="isProperty(question, 'text')">
                                             {{ question.text }}
                                         </p>
@@ -39,7 +38,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                <!--</transition>-->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,19 +72,20 @@
                             {
                                 id: 2,
                                 title: 'Ограничения',
-                                text: 'Для прохождения KYC требуется паспорт и документ, подтверждающий адрес пребывания'
+                                text: 'В покупке токенов могут участвовать не все страны. Ограничения касаются граждан ' +
+                                'Китая, США, Гонконга, Сингапура '
                             },
                             {
                                 id: 3,
                                 title: 'Когда планируется листинг на бирже?',
                                 text: 'Листинг на первой бирже планируется сразу после окончания ICO. В данный момент ' +
-                                    'ведутся переговоры сразу с несколькими биржами.'
+                                'ведутся переговоры сразу с несколькими биржами.'
                             },
                             {
                                 id: 4,
                                 title: 'Есть ли у вас MVP?',
                                 text: 'Да, в данный момент доступна демо веб-версия платформы, так же есть возможность' +
-                                    ' установки приложения на Mac и Linux. '
+                                ' установки приложения на Mac и Linux. '
                             },
                             {
                                 id: 5,
@@ -107,10 +107,10 @@
                                 id: 7,
                                 title: 'Зачем нужен блокчейн?',
                                 text: 'Поскольку отношения между заказчиком и исполнителем в, первую очередь, носят ' +
-                                    'сугубо финансовый харакер и построены на доверии двух сторон, то блокчейн является ' +
-                                    'идеальным решением, способным сохранить все детали работы над проектом. Решение, ' +
-                                    'предлагаемое ALEHUB позволяет эффективно решить весь спектр проблем, присущий ' +
-                                    'централизованным платформам.',
+                                'сугубо финансовый харакер и построены на доверии двух сторон, то блокчейн является ' +
+                                'идеальным решением, способным сохранить все детали работы над проектом. Решение, ' +
+                                'предлагаемое ALEHUB позволяет эффективно решить весь спектр проблем, присущий ' +
+                                'централизованным платформам.',
                                 list: [
                                     {
                                         id: 1,
@@ -187,8 +187,8 @@
                                 id: 9,
                                 title: 'Для чего в системе ALEHUB нужны майнеры?',
                                 text: 'Майнеры выполняют работу по проверке и внесении корректных транзакций в ' +
-                                    'распределенный реестр, исполняют смарт-контракты, а также проверяют наличие и ' +
-                                    'корректность электронных подписей документов.'
+                                'распределенный реестр, исполняют смарт-контракты, а также проверяют наличие и ' +
+                                'корректность электронных подписей документов.'
                             },
                             {
                                 id: 10,
@@ -211,7 +211,7 @@
                                 id: 11,
                                 title: 'Как начать выпорлнять заказы на платформе?',
                                 text: 'Для того, чтобы получить доступ к заказам на платформе, необходимо подтвердить ' +
-                                    'навыки, путем сдачи экзаменационных испытаний.'
+                                'навыки, путем сдачи экзаменационных испытаний.'
                             }
                         ]
                     }
@@ -220,16 +220,7 @@
         },
         methods: {
             /**
-             *
-             *
-             * @param questionId
-             * @returns {*}
-             */
-            isSpoilerActive: function (questionId) {
-                return this.state.find(s => s.id === questionId).active;
-            },
-            /**
-             *
+             * checking property belonging to an object
              *
              * @param object
              * @param property
@@ -238,48 +229,68 @@
             isProperty: function (object, property) {
                 return object.hasOwnProperty(property);
             },
+            /**
+             * spoiler switching between active and inactive state
+             *
+             * @param questionId
+             */
             toggleSpoilerBody: function (questionId) {
                 this.state.find(s => s.id === questionId).active = !this.state.find(s => s.id === questionId).active;
+
+                if (this.state.find(s => s.id === questionId).active) {
+                    document.getElementById('spoiler-body-' + questionId).style.height =
+                        document.getElementById('inner-' + questionId).scrollHeight + 'px';
+                } else {
+                    document.getElementById('spoiler-body-' + questionId).style.height = '0px';
+                }
             },
-            calcSpoilerBodyActiveClass: function (questionId) {
-                if (this.state.find(s => s.id === questionId).active)
-                    return 'active';
-                return 'inactive';
+            /**
+             * spoiler body height initialization
+             */
+            initSpoilerBodyStyle: function () {
+                let collection = document.getElementsByClassName('spoiler-body');
+
+                this.state.forEach((s, i) => {
+                    if (s.active)
+                        collection[i].style.height = collection[i].querySelector('.inner').scrollHeight + 'px';
+                    else
+                        collection[i].style.height = '0';
+                });
+            },
+            /**
+             * initializing the initial state of sections
+             */
+            initSectionState: function () {
+                this.sections.forEach(s => {
+                    s.questions.forEach(q => {
+                        if (q.id === 1)
+                            this.state.push(
+                                {
+                                    id: q.id,
+                                    active: true
+                                }
+                            );
+                        else
+                            this.state.push(
+                                {
+                                    id: q.id,
+                                    active: false
+                                }
+                            )
+                    })
+                });
             }
         },
         created() {
-            this.sections.forEach(s => {
-                s.questions.forEach(q => {
-                    if (q.id === 1)
-                        this.state.push(
-                            {
-                                id: q.id,
-                                active: true
-                            }
-                        );
-                    this.state.push(
-                        {
-                            id: q.id,
-                            active: false
-                        }
-                    )
-                })
-            });
+            this.initSectionState();
+        },
+        mounted() {
+            this.initSpoilerBodyStyle();
         }
     }
 </script>
 
 <style lang="stylus" scoped>
-    /*.expand-enter-active,*/
-    /*.expand-leave-active*/
-        /*transition height 1s ease-in-out*/
-        /*overflow hidden*/
-        /*height auto*/
-
-    /*.expand-enter,*/
-    /*.expand-leave-to*/
-        /*height 0*/
-
     .faq
         min-height 100vh
         background-color white
@@ -297,11 +308,5 @@
                     .spoiler-body
                         transition height 1s ease-in-out
                         overflow hidden
-
-                        &.active
-                            height auto
-
-                        &.inactive
-                            height 0
 
 </style>

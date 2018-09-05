@@ -17,9 +17,6 @@
         components: {
             LoadingScreen
         },
-        data() {
-            return {}
-        },
         computed: {
             ...mapGetters(
                 [
@@ -29,8 +26,6 @@
                 ]
             ),
             dataProcessing: function () {
-                console.log(this.cryptoPriceStatus, 'this.cryptoPriceStatus');
-
                 return !(this.cryptoPriceStatus === 'success' && this.downloadAppStatus === 'success' && this.blogStatus === 'success');
             }
         },
