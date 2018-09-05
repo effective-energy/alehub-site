@@ -17,16 +17,24 @@
 
             <div class="body__menu" v-if="!isSelectingLanguage && isIndex">
                 <div v-for="item in $t('navbar.menuList')">
-                    <a v-scroll-to="item.path"
+                    <a v-if="isItemHasPath(item)"
+                       v-scroll-to="item.path"
                        @click="closeModal('menu-modal')">
                         {{ item.name }}
                     </a>
+                    <router-link tag="a"
+                                 v-else
+                                 :to="item.to">
+                        {{ item.name }}
+                    </router-link>
                 </div>
             </div>
 
             <div class="body__menu" v-if="!isSelectingLanguage && !isIndex">
                 <div>
-                    <router-link tag="a" to="/blog/categories/all" @click.native="closeModal('menu-modal')">
+                    <router-link tag="a"
+                                 to="/blog/categories/all"
+                                 @click.native="closeModal('menu-modal')">
                         {{ 'Blog' }}
                     </router-link>
                 </div>
@@ -98,6 +106,12 @@
             }
         },
         methods: {
+            /**
+             * checking property belonging to a path object item
+             */
+            isItemHasPath: function (item) {
+                return item.hasOwnProperty('path');
+            },
             closeModal: function (name) {
                 this.$parent.$emit(name);
                 this.$modal.hide(name);

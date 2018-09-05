@@ -48,7 +48,7 @@
                          :key="index">
 
                         <a class="b-carousel__link"
-                           v-if="isPath(item)"
+                           v-if="isItemHasPath(item)"
                            :href="item.path"
                            v-scroll-to="item.path">
                             {{ item.name }}
@@ -214,7 +214,10 @@
             }
         },
         methods: {
-            isPath: function (item) {
+            /**
+             * checking property belonging to a path object item
+             */
+            isItemHasPath: function (item) {
                 return item.hasOwnProperty('path');
             },
             touchStart: function (e) {

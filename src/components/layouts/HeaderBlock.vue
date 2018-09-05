@@ -71,8 +71,7 @@
                        v-scroll-to="item.path">
                         {{ item.name }}
                     </a>
-                    <router-link class="navbar-item"
-                                 tag="a"
+                    <router-link tag="a"
                                  v-else
                                  :to="item.to">
                         {{ item.name }}
@@ -360,8 +359,7 @@
         },
         methods: {
             /**
-             *
-             *
+             * checking property belonging to a path object item
              */
             isItemHasPath: function (item) {
                 return item.hasOwnProperty('path');
