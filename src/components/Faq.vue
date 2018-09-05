@@ -1,6 +1,7 @@
 <template>
     <div class="faq">
-        <header-block :white-list="true"/>
+        <header-block :white-list="true"
+                      :is-lang="false"/>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -287,7 +288,7 @@
                 });
             },
             /**
-             *
+             * calculation of the spoiler arrow class
              *
              * @param questionId
              * @returns {string}

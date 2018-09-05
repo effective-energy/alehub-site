@@ -91,6 +91,7 @@
 
                 <div id="select-lang"
                      class="select-lang"
+                     v-if="isLang"
                      :class="{ 'select-lang__rtl': rtl }"
                      @click="toggleDropdown">
                     {{ currentLang }}
@@ -211,6 +212,10 @@
             whiteList: {
                 type: Boolean,
                 default: false
+            },
+            isLang: {
+                type: Boolean,
+                default: true
             }
         },
         data() {
