@@ -66,10 +66,17 @@
                  v-if="!show && !whiteList">
                 <div class="navbar-item"
                      v-for="(item, index) in $t('navbar.menuList')">
-                    <a :href="item.path"
+                    <a v-if="isItemHasPath(item)"
+                       :href="item.path"
                        v-scroll-to="item.path">
                         {{ item.name }}
                     </a>
+                    <router-link class="navbar-item"
+                                 tag="a"
+                                 v-else
+                                 :to="item.to">
+                        {{ item.name }}
+                    </router-link>
                     <div class="nav-line"
                          :class="{ 'nav-line__yellow': isYellow,
                                    'nav-line__black': isDark,
@@ -352,6 +359,13 @@
             }
         },
         methods: {
+            /**
+             *
+             *
+             */
+            isItemHasPath: function (item) {
+                return item.hasOwnProperty('path');
+            },
             /**
              * checking for a page in the dark section
              *

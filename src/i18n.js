@@ -1697,13 +1697,17 @@ const messages = {
                     path: '#download-application',
                     name: 'MVP'
                 },
-                {
-                    path: '#mass-media-section',
-                    name: 'Медиа о нас'
-                },
+                // {
+                //     path: '#mass-media-section',
+                //     name: 'Медиа о нас'
+                // },
                 {
                     path: '#blog',
                     name: 'Блог'
+                },
+                {
+                    to: '/faq',
+                    name: 'FAQ'
                 }
             ],
             loginBtn: 'Войти',

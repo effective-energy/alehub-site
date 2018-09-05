@@ -48,10 +48,17 @@
                          :key="index">
 
                         <a class="b-carousel__link"
+                           v-if="isPath(item)"
                            :href="item.path"
                            v-scroll-to="item.path">
                             {{ item.name }}
                         </a>
+                        <router-link class="b-carousel__link"
+                                     tag="a"
+                                     v-else
+                                     :to="item.to">
+                            {{ item.name }}
+                        </router-link>
 
                         <div class="nav-line-slider"
                              :class="{ 'nav-line-slider__yellow': isYellow, 'nav-line-slider__black': isDark,
@@ -207,6 +214,9 @@
             }
         },
         methods: {
+            isPath: function (item) {
+                return item.hasOwnProperty('path');
+            },
             touchStart: function (e) {
                 this.xDown = e.touches[0].clientX;
                 this.yDown = e.touches[0].clientY;
