@@ -329,6 +329,10 @@
         .effective-energy-team
             width 100%
 
+            p
+                margin-bottom 50px
+                font-size 20px
+
         .serokell-team
             padding 60px 0
 

@@ -409,7 +409,7 @@
                                 font-size 18px
                                 display flex
                                 flex-direction column
-                                justify-content space-around
+                                justify-content flex-end
                                 align-items center
                                 position absolute
                                 width 80%

@@ -194,10 +194,16 @@
             @media (max-width: 425px)
                 font-size 26px
     .share-item
+        -webkit-transition background .3s ease-in-out
+        -o-transition background color .3s ease-in-out
+        transition background color .3s ease-in-out
         cursor pointer
+
+
     img[alt="twitter"]
         &:hover
             content url("../../static/images/share-ic/twitter-hover.svg")
+
     img[alt="fb"]
         &:hover
             content url("../../static/images/share-ic/fb-hover.svg")

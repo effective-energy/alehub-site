@@ -296,8 +296,20 @@ const messages = {
                     name: 'Effective Energy team',
                     members: [
                         {
-                            name: 'Mikhail Gromyko',
+                            name: 'Egor Loktev',
                             position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
                             social: [
                                 {
@@ -309,8 +321,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -337,18 +356,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -477,7 +484,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -531,7 +538,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -1112,8 +1119,20 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
-                            name: 'Mikhail Gromyko',
+                            name: 'Egor Loktev',
                             position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
                             social: [
                                 {
@@ -1125,8 +1144,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -1153,18 +1179,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -1293,7 +1307,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -1347,7 +1361,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -1921,8 +1935,20 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
-                            name: 'Михаил Громыко',
+                            name: 'Егор Локтев',
                             position: 'Генеральный директор',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Михаил Громыко',
+                            position: 'Инвестиционный директор',
                             src: '../static/images/avatars/gromyko@3x.png',
                             social: [
                                 {
@@ -1934,8 +1960,15 @@ const messages = {
                         },
                         {
                             name: 'Владимир Грудинин',
-                            position: 'Блокчейн эксперт',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Доцент кафедры сетевых и облачных технологий университета ITMO',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Алексей Осипенко',
@@ -1962,18 +1995,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Егор Локтев',
-                            position: 'Руководитель проекта',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -2102,7 +2123,7 @@ const messages = {
                 {
                     name: 'Филипп Нанн',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -2156,7 +2177,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -2889,8 +2910,20 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
-                            name: 'Mikhail Gromyko',
+                            name: 'Egor Loktev',
                             position: 'Chief Executive Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Mikhail Gromyko',
+                            position: 'Chief Investment Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
                             social: [
                                 {
@@ -2902,8 +2935,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -2930,18 +2970,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -3072,7 +3100,7 @@ const messages = {
                     position: 'advisor',
                     description: '<p><img src="../static/images/avatars/nunn@3x.png" alt="Philipp Nunn" style="width: 200px; height: auto; ' +
                     'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
-                    'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.</p>' +
@@ -3131,7 +3159,7 @@ const messages = {
                     'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
                     'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.</p>' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.</p>' +
                     '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -3857,6 +3885,18 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
+                            name: 'Egor Loktev',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
@@ -3870,8 +3910,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -3898,18 +3945,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -4038,7 +4073,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -4092,7 +4127,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -4651,6 +4686,18 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
+                            name: 'Egor Loktev',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
@@ -4664,8 +4711,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -4692,18 +4746,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -4832,7 +4874,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -4886,7 +4928,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -5439,6 +5481,18 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
+                            name: 'Egor Loktev',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
@@ -5452,8 +5506,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -5480,18 +5541,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -5620,7 +5669,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -5674,7 +5723,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -6012,7 +6061,7 @@ const messages = {
                 },
                 {
                     path: '#download-application',
-                    name: '매스 미디어'
+                    name: 'MVP'
                 },
                 {
                     path: '#blog',
@@ -6228,6 +6277,18 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
+                            name: 'Egor Loktev',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
@@ -6241,8 +6302,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -6269,18 +6337,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -6409,7 +6465,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -6463,7 +6519,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
@@ -7017,6 +7073,18 @@ const messages = {
                     name: 'Effective Energy',
                     members: [
                         {
+                            name: 'Egor Loktev',
+                            position: 'Chief Investment Officer',
+                            src: '../static/images/avatars/loktev@3x.png',
+                            social: [
+                                {
+                                    type: 'linkedin',
+                                    link: 'https://www.linkedin.com/in/egor-loktev/',
+                                    src: '../static/images/in.svg'
+                                }
+                            ]
+                        },
+                        {
                             name: 'Mikhail Gromyko',
                             position: 'Chief Executive Officer',
                             src: '../static/images/avatars/gromyko@3x.png',
@@ -7030,8 +7098,15 @@ const messages = {
                         },
                         {
                             name: 'Vladimir Grudinin',
-                            position: 'Blockchain Expert',
-                            src: '../static/images/avatars/grudinin@3x.png'
+                            position: 'Associate Professor of the Department of Network and Cloud Technologies, ITMO University',
+                            src: '../static/images/avatars/grudinin@3x.png',
+                            social: [
+                                {
+                                    type: 'facebook',
+                                    link: 'https://www.facebook.com/vladimir.grudinin.94',
+                                    src: '../static/images/fb.svg'
+                                }
+                            ]
                         },
                         {
                             name: 'Alexej Osipenko',
@@ -7058,18 +7133,6 @@ const messages = {
                                 {
                                     type: 'linkedin',
                                     link: 'https://www.linkedin.com/in/elenatsymbalyuk/',
-                                    src: '../static/images/in.svg'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'Egor Loktev',
-                            position: 'Project Lead',
-                            src: '../static/images/avatars/loktev@3x.png',
-                            social: [
-                                {
-                                    type: 'linkedin',
-                                    link: 'https://www.linkedin.com/in/egor-loktev/',
                                     src: '../static/images/in.svg'
                                 }
                             ]
@@ -7200,7 +7263,7 @@ const messages = {
                 {
                     name: 'Phillip Nunn',
                     position: 'advisor',
-                    description: 'Entrepreneur, CEO and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
+                    description: 'Entrepreneur, Chief Executive Officer and international speaker on Blockchain, Cryptocurrency and fintech.\n' +
                     'Phillip Nunn founded The Blackmore Group in 2013. Today it’s grown into a business with substantial ' +
                     'assets under management and a suite of investment products across multiple classes for individuals' +
                     ' and institutions in the UK and overseas.\n' +
@@ -7254,7 +7317,7 @@ const messages = {
                     position: 'advisor',
                     description: 'Crypto enthusiast and mentor. Rated Top 5 in People of Blockchain. Has 20 years of ' +
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
-                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and CEO of Private Business Club.' +
+                    'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
                     'directions. Co-Founder "Top ICO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
