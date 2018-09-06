@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import { store } from './store'
+import {store} from './store'
 import router from './router';
 import VueScrollTo from 'vue-scrollto';
 import VModal from 'vue-js-modal';
@@ -10,13 +10,25 @@ import VueCircleSlider from 'vue-circle-slider';
 import VueResource from 'vue-resource';
 import Moment from 'vue-moment';
 import VueYandexMetrika from 'vue-yandex-metrika';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {fab} from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+
+library.add(faCoffee);
+library.add(fab);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 
-Vue.use(VueYandexMetrika, {
-    id: 48805535,
-    env: process.env.NODE_ENV
-    // other options
-});
+Vue.use(VueYandexMetrika,
+    {
+        id: 48805535,
+        env: process.env.NODE_ENV
+    }
+);
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -37,17 +49,9 @@ Vue.use(Moment);
 
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 
-// require styles
 import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper);
-
-// Vue.use(VueYandexMetrika, {
-//     id: 48802643,
-//     router: router,
-//     env: process.env.NODE_ENV
-//     // other options
-// });
 
 Vue.config.productionTip = false;
 
@@ -100,10 +104,12 @@ switch (localStorage.getItem('systemLang')) {
 
 import messages from './i18n.js';
 
-const i18n = new VueI18n({
-    locale: systemLang,
-    messages,
-});
+const i18n = new VueI18n(
+    {
+        locale: systemLang,
+        messages,
+    }
+);
 
 import BootstrapVue from 'bootstrap-vue';
 
@@ -143,11 +149,13 @@ setTimeout(() => {
 }, 2000);
 
 
-new Vue({
-    el: '#app',
-    store,
-    i18n,
-    router,
-    components: {App},
-    template: '<App/>'
-});
+new Vue(
+    {
+        el: '#app',
+        store,
+        i18n,
+        router,
+        components: {App},
+        template: '<App/>'
+    }
+);

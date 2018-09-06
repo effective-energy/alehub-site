@@ -316,38 +316,7 @@
                  class="social-line"
                  :class="{ 'social-line__dark': isDark }">
                 <div class="line"></div>
-                <a href="https://www.facebook.com/alehub.io/"
-                   @click="yaCounter48802643.reachGoal('Facebook'); return true;"
-                   class="social-item fb"
-                   target="_blank"></a>
-                <a href="https://www.instagram.com/alehub.io/"
-                   @click="yaCounter48802643.reachGoal('Instagram'); return true;"
-                   class="social-item ins"
-                   target="_blank"></a>
-                <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
-                   @click="yaCounter48802643.reachGoal('Youtube'); return true;"
-                   class="social-item yt"
-                   target="_blank"></a>
-                <a href="https://twitter.com/alehub_io"
-                   @click="yaCounter48802643.reachGoal('Twitter'); return true;"
-                   class="social-item tw"
-                   target="_blank"></a>
-                <a href="https://t.me/alehub"
-                   @click="yaCounter48802643.reachGoal('Telegram'); return true;"
-                   class="social-item tg"
-                   target="_blank"></a>
-                <a href="https://bitcointalk.org/index.php?topic=3676768.new"
-                   class="social-item btc-talk"
-                   target="_blank"></a>
-                <a href="https://github.com/effective-energy"
-                   class="social-item github"
-                   target="_blank"></a>
-                <a href="https://medium.com/@alehub"
-                   class="social-item medium"
-                   target="_blank"></a>
-                <a href="https://vk.com/alehub" v-if="false"
-                   class="social-item vk"
-                   target="_blank"></a>
+                <social-block :dark="isDark"/>
             </div>
         </div>
 
@@ -442,6 +411,8 @@
     import TelegramAlertButtonMobile from './layouts/alert-buttons/TelegramAlertButtonMobile';
     import GroupAlertButtons from './layouts/alert-buttons/GroupAlertButtons';
 
+    import SocialBlock from './layouts/SocialBlock';
+
     import {mapGetters} from 'vuex';
 
     import anime from 'animejs';
@@ -456,7 +427,9 @@
             RatingBlock,
             PartnersBlock,
             TelegramAlertButtonMobile,
-            GroupAlertButtons
+            GroupAlertButtons,
+
+            SocialBlock
         },
         props: {
             isDarkSection: {

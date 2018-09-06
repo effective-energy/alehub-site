@@ -1,0 +1,93 @@
+<template>
+    <div class="social-block">
+        <a class="social-icon"
+           target="_blank"
+           v-for="icon in icons"
+           :class="{ 'social-icon-white': dark }"
+           :href="icon.href"
+           :key="icon.id"
+           @click="yaCounter48802643.reachGoal(icon.name); return true;">
+            <font-awesome-icon :icon="['fab', icon.name]"/>
+        </a>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'SocialBlock',
+        props: {
+            dark: {
+                type: Boolean,
+                default: false
+            }
+        },
+        data() {
+            return {
+                icons: [
+                    {
+                        id: 1,
+                        name: 'facebook',
+                        href: 'https://www.facebook.com/alehub.io/'
+                    },
+                    {
+                        id: 2,
+                        name: 'instagram',
+                        href: 'https://www.instagram.com/alehub.io/'
+                    },
+                    {
+                        id: 3,
+                        name: 'youtube',
+                        href: 'https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg'
+                    },
+                    {
+                        id: 4,
+                        name: 'twitter',
+                        href: 'https://twitter.com/alehub_io'
+                    },
+                    {
+                        id: 5,
+                        name: 'telegram',
+                        href: 'https://t.me/alehub'
+                    },
+                    {
+                        id: 6,
+                        name: 'btc',
+                        href: 'https://bitcointalk.org/index.php?topic=3676768.new'
+                    },
+                    {
+                        id: 7,
+                        name: 'github',
+                        href: 'https://github.com/effective-energy'
+                    },
+                    {
+                        id: 8,
+                        name: 'medium',
+                        href: 'https://medium.com/@alehub'
+                    }
+                ]
+            }
+        }
+    }
+</script>
+
+<style lang="stylus" scoped>
+.social-block
+    z-index 10
+
+    .social-icon
+        height 54px
+        width 54px
+        color #34343e
+        font-size 24px
+        transition color .3s ease-in-out
+        margin-right 24px
+
+        &:last-child
+            margin-right 0
+
+        &.social-icon-white
+            color #ffffff
+
+        &:hover
+            color #ffbc00
+</style>
