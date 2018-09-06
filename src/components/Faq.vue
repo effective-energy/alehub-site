@@ -303,5 +303,4 @@
 
                         &.inactive
                             height 0
-
 </style>
