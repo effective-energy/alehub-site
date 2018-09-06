@@ -31,16 +31,6 @@
             RoadmapStagePanelList,
             RoadmapStageSwitcher
         },
-        props: {
-            // stages: {
-            //     type: Array,
-            //     required: true
-            // },
-            // states: {
-            //     type: Array,
-            //     required: true
-            // }
-        },
         data() {
             return {
                 states: [],

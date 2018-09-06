@@ -13,18 +13,9 @@
                :href="item.href"
                @mouseenter="enterMediaHover(item)"
                @mouseleave="leaveMediaHover(item)">
-                <!--:class="{ 'light__transparent': item.isHover }"
-                    :src="item.src"
-                    class="light"-->
                 <img class="filter"
                      :src="item.hoverSrc"
                      :alt="item.title">
-                <!--<transition name="fade-media-hover">-->
-                    <!--<img class="hover"-->
-                         <!--:src="item.hoverSrc"-->
-                         <!--:alt="item.title"-->
-                         <!--v-if="item.isHover">-->
-                <!--</transition>-->
             </a>
         </div>
     </div>
@@ -33,12 +24,6 @@
 <script>
     export default {
         name: 'MediaBlock',
-        props: {
-            // isDark: {
-            //     type: Boolean,
-            //     required: true
-            // }
-        },
         data() {
             return {
                 media: [
@@ -47,20 +32,6 @@
                         src: '../../../static/images/logo/bitcoin-magazine.svg',
                         hoverSrc: '../../../static/images/logo/bitcoin-magazine-hover.svg',
                         href: 'https://bitcoinmagazine.com/articles/alehubs-new-blockchain-based-architecture-project-manageme/',
-                        isHover: false
-                    },
-                    {
-                        title: 'Coin Telegraph',
-                        src: '../../../static/images/logo/coin-telegraph.svg',
-                        hoverSrc: '../../../static/images/logo/coin-telegraph-hover.svg',
-                        href: 'https://cointelegraph.com/',
-                        isHover: false
-                    },
-                    {
-                        title: 'Forklog',
-                        src: '../../../static/images/logo/forklog.svg',
-                        hoverSrc: '../../../static/images/logo/forklog-hover.svg',
-                        href: 'https://forklog.com/',
                         isHover: false
                     },
                     {
@@ -96,13 +67,6 @@
                         src: '../../../static/images/logo/coin-news-asia.svg',
                         hoverSrc: '../../../static/images/logo/coin-news-asia-hover.svg',
                         href: 'http://www.coinnewsasia.com/alehub-decentralization-mining-and-anonymity/',
-                        isHover: false
-                    },
-                    {
-                        title: 'Medium',
-                        src: '../../../static/images/logo/medium.svg',
-                        hoverSrc: '../../../static/images/logo/medium-hover.svg',
-                        href: 'https://medium.com/@alehub',
                         isHover: false
                     },
                     {
