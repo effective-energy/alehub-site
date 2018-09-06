@@ -46,49 +46,10 @@
             <div class="col-2 back-to-top">
             </div>
 
-            <div class="col-5 social-block">
-                <div class="social-networks">
-                    <a href="https://www.facebook.com/alehub.io/"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-fb"></i>
-                    </a>
-                    <a href="https://www.instagram.com/alehub.io/"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-insta"></i>
-                    </a>
-                    <a href="https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-youtube"></i>
-                    </a>
-                    <a href="https://twitter.com/alehub_io"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-twitter"></i>
-                    </a>
-                    <a href="https://t.me/alehub"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-tg"></i>
-                    </a>
-                    <a href="https://bitcointalk.org/index.php?topic=3676768.new"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-btc-talk"></i>
-                    </a>
-                    <a href="https://github.com/effective-energy"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-github"></i>
-                    </a>
-                    <a href="https://vk.com/alehub" v-if="false"
-                       class="social-item"
-                       target="_blank">
-                        <i class="social-icon social-icon-vk"></i>
-                    </a>
-                </div>
+            <div class="col-5 footer-social-block">
+                <!--<div class="social-networks">-->
+                    <social-block :footer="true"/>
+                <!--</div>-->
                 <div class="subscribe-form">
                     <div class="subscribe-form__wrap"
                          :class="{ 'subscribe-form__wrap-rtl': isRtl }"
@@ -129,12 +90,14 @@
 </template>
 
 <script>
+    import SocialBlock from './SocialBlock';
     import Spinner from './Spinner';
 
     export default {
         name: 'FooterSection',
         components: {
-            Spinner
+            Spinner,
+            SocialBlock
         },
         props: {
             isRtl: {
@@ -247,7 +210,7 @@
             display flex
             justify-content center
 
-        .social-block
+        .footer-social-block
             display flex
             flex-direction column
 
@@ -575,7 +538,7 @@
                     .terms
                         margin-left 0
 
-            .social-block
+            .footer-social-block
                 align-items flex-end
 
                 .subscribe-form
@@ -622,7 +585,7 @@
                     align-self center
                     margin-bottom 24px
 
-                .social-block
+                .footer-social-block
                     order 2
                     margin-bottom 24px
 
@@ -642,7 +605,7 @@
     @media (max-width 760px)
         .footer
             .footer-row
-                .social-block
+                .footer-social-block
                     .social-networks
                         width 100%
                         justify-content center

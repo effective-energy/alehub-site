@@ -1,9 +1,10 @@
 <template>
-    <div class="social-block">
+    <div class="social-block"
+         :class="{ 'social-block-footer': footer }">
         <a class="social-icon"
            target="_blank"
            v-for="icon in icons"
-           :class="{ 'social-icon-white': dark }"
+           :class="{ 'social-icon-white': dark, 'social-icon-footer': footer }"
            :href="icon.href"
            :key="icon.id"
            @click="yaCounter48802643.reachGoal(icon.name); return true;">
@@ -17,6 +18,10 @@
         name: 'SocialBlock',
         props: {
             dark: {
+                type: Boolean,
+                default: false
+            },
+            footer: {
                 type: Boolean,
                 default: false
             }
@@ -71,23 +76,30 @@
 </script>
 
 <style lang="stylus" scoped>
-.social-block
-    z-index 10
+    .social-block
+        z-index 10
+        display flex
 
-    .social-icon
-        height 54px
-        width 54px
-        color #34343e
-        font-size 24px
-        transition color .3s ease-in-out
-        margin-right 24px
+        &.social-block-footer
+            justify-content flex-end
+            margin-bottom 20px
 
-        &:last-child
-            margin-right 0
+        .social-icon
+            color #34343e
+            font-size 24px
+            transition color .3s ease-in-out
+            margin-right 24px
 
-        &.social-icon-white
-            color #ffffff
+            &:last-child
+                margin-right 0
 
-        &:hover
-            color #ffbc00
+            &.social-icon-white
+                color #ffffff
+
+            &.social-icon-footer
+                color #a3a3a9
+                font-size 18px
+
+            &:hover
+                color #ffbc00
 </style>
