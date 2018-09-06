@@ -2,7 +2,8 @@
     <div class="roadmap-stage-panel"
          :id="'roadmap-stage-panel-' + stage.id"
          :class="calcStagePanelClass">
-        <div class="content-wrap">
+        <div class="content-wrap"
+             :class="{ 'content-wrap-tabs': isStageTabs }">
             <h3>
                 {{ stage.date }}
             </h3>
@@ -96,20 +97,15 @@
                 if (document.getElementById('roadmap-stage-panel-' + this.stage.id).classList.contains('active'))
                     this.activeTab = tab;
             },
-            calcTabHeight: function (tabs) {
-                let a = 'height: ' + 100 / tabs.length + '%';
-                return 'height: ' + 100 / tabs.length + '%';
-            },
             /**
-             * checking property belonging to a object item
              *
-             * @param object
-             * @param property
-             * @returns {boolean}
+             *
+             * @param tabs
+             * @returns {string}
              */
-            isObjectProperty: function (object, property) {
-                return object.hasOwnProperty(property);
-            },
+            calcTabHeight: function (tabs) {
+                return 'height: ' + 100 / tabs.length + '%';
+            }
         },
         created() {
             if (this.isStageTabs) {
@@ -139,23 +135,31 @@
                 .tab
                     &:first-child.tab-active
                         cursor default
-                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        box-shadow: inset 2px -2px 4px 0px rgba(0, 0, 0, .7);
+                        border-bottom 1px solid #ffd24f
+                        border-left 1px solid #ffd24f
+                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
+                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
+                        //box-shadow inset 2px -2px 4px 0px rgba(0, 0, 0, .7);
                         background-color transparent
                         color #ffffff
 
                     &:nth-child(2n):not(:last-child).tab-active
-                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        box-shadow: inset 1px 0px 7px 0px rgba(0, 0, 0, 1);
+                        cursor default
+                        border-top 1px solid #ffd24f
+                        border-bottom 1px solid #ffd24f
+                        border-left 1px solid #ffd24f
+                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, 1);
+                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, 1);
+                        //box-shadow inset 1px 0 7px 0 rgba(0, 0, 0, 1);
                         background-color transparent
 
                     &:last-child.tab-active
                         cursor default
-                        -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
-                        box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, .7);
+                        border-left 1px solid #ffd24f
+                        border-top 1px solid #ffd24f
+                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
+                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
+                        //box-shadow inset 2px 2px 4px 0px rgba(0, 0, 0, .7);
                         background-color transparent
                         color #ffffff
 
@@ -190,7 +194,7 @@
             margin-bottom .75rem
 
         p
-            font-size 18px
+            font-size 1em
             color #ffffff
             margin-bottom .5rem
 
@@ -202,17 +206,17 @@
             flex-direction column
             position relative
             height 100%
-            flex-basis 75%
+            overflow auto
+
+            &.content-wrap-tabs
+                flex-basis 75%
 
             .content
-                padding 25px 0
+                padding 15px 0 0 0
                 height 100%
                 display flex
                 flex-direction column
                 justify-content flex-start
-
-            /*.tab-content*/
-                /*flex-basis 75%*/
 
         .tabs
             display flex

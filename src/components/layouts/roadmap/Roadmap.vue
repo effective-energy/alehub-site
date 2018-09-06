@@ -1,16 +1,16 @@
 <template>
     <div class="roadmap">
-        <div class="container">
+        <div class="container container-fluid-sm">
             <div class="row row-flex">
-                <div class="col-sm-2 roadmap-stage-marker-wrap">
+                <div class="col-md-2 hidden-sm roadmap-stage-marker-wrap">
                     <roadmap-stage-marker-list :stages="stages"
                                                :states="states"/>
                 </div>
-                <div class="col-sm-2 roadmap-stage-switcher-wrap">
+                <div class="col-md-2 col-sm-2 roadmap-stage-switcher-wrap">
                     <roadmap-stage-switcher :stage-count="stages.length"
                                             :stage-index-active="stageIndexActive"/>
                 </div>
-                <div class="col-sm-8 roadmap-stage-panel-wrap">
+                <div class="col-md-8 col-sm-10 roadmap-stage-panel-wrap">
                     <roadmap-stage-panel-list :stages="stages"
                                               :states="states"/>
                 </div>
@@ -437,6 +437,14 @@
 </script>
 
 <style lang="stylus" scoped>
+    .hidden-sm
+        @media (max-width 768px)
+            display none
+
+    .container-fluid-sm
+        @media (max-width 768px)
+            max-width unset
+
     .roadmap
         height 600px
         overflow hidden
