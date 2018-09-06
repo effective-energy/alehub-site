@@ -6,11 +6,11 @@
                     <roadmap-stage-marker-list :stages="stages"
                                                :states="states"/>
                 </div>
-                <div class="col-md-2 col-sm-2 roadmap-stage-switcher-wrap">
+                <div class="col-md-2 col-sm-2 hidden-xs roadmap-stage-switcher-wrap">
                     <roadmap-stage-switcher :stage-count="stages.length"
                                             :stage-index-active="stageIndexActive"/>
                 </div>
-                <div class="col-md-8 col-sm-10 roadmap-stage-panel-wrap">
+                <div class="col-md-8 col-sm-10 col-xs-12 roadmap-stage-panel-wrap">
                     <roadmap-stage-panel-list :stages="stages"
                                               :states="states"/>
                 </div>
@@ -347,8 +347,63 @@
             }
         },
         computed: {
+            /**
+             *
+             *
+             * @returns {number}
+             */
             stageIndexActive: function () {
                 return this.states.findIndex(state => state.active) + 1;
+            }
+        },
+        methods: {
+            /**
+             *
+             */
+            increaseRoadmapStagePanel: function () {
+                let activeStateIndex = this.states.findIndex(state => state.active);
+
+                if (activeStateIndex !== this.states.length - 1) {
+                    this.states[activeStateIndex].active = false;
+                    this.states[activeStateIndex].activeTop = true;
+
+                    this.states[activeStateIndex + 1].active = true;
+                    this.states[activeStateIndex + 1].activeBottom = false;
+
+                    if (activeStateIndex !== 0) {
+                        this.states[activeStateIndex - 1].activeTop = false;
+                        this.states[activeStateIndex - 1].inactiveTop = true;
+                    }
+
+                    if (activeStateIndex !== this.states.length - 2) {
+                        this.states[activeStateIndex + 2].activeBottom = true;
+                        this.states[activeStateIndex + 2].inactiveBottom = false;
+                    }
+                }
+            },
+            /**
+             *
+             */
+            decreaseRoadmapStagePanel: function () {
+                let activeStateIndex = this.states.findIndex(state => state.active);
+
+                if (activeStateIndex !== 0) {
+                    this.states[activeStateIndex].active = false;
+                    this.states[activeStateIndex].activeBottom = true;
+
+                    this.states[activeStateIndex - 1].active = true;
+                    this.states[activeStateIndex - 1].activeTop = false;
+
+                    if (activeStateIndex !== this.states.length - 1) {
+                        this.states[activeStateIndex + 1].activeBottom = false;
+                        this.states[activeStateIndex + 1].inactiveBottom = true;
+                    }
+
+                    if (activeStateIndex !== 1) {
+                        this.states[activeStateIndex - 2].activeTop = true;
+                        this.states[activeStateIndex - 2].inactiveTop = false;
+                    }
+                }
             }
         },
         created() {
@@ -384,53 +439,24 @@
             });
         },
         mounted() {
-            this.$on('decreaseStage', value => {
-
-                this.$parent.$emit('decreaseStage', value);
-
-                let activeStateIndex = this.states.findIndex(state => state.active);
-
-                if (activeStateIndex !== 0) {
-                    this.states[activeStateIndex].active = false;
-                    this.states[activeStateIndex].activeBottom = true;
-
-                    this.states[activeStateIndex - 1].active = true;
-                    this.states[activeStateIndex - 1].activeTop = false;
-
-                    if (activeStateIndex !== this.states.length - 1) {
-                        this.states[activeStateIndex + 1].activeBottom = false;
-                        this.states[activeStateIndex + 1].inactiveBottom = true;
-                    }
-
-                    if (activeStateIndex !== 1) {
-                        this.states[activeStateIndex - 2].activeTop = true;
-                        this.states[activeStateIndex - 2].inactiveTop = false;
-                    }
+            if (document.body.clientWidth < 576) {
+                let panels = document.getElementsByClassName('roadmap-stage-panel');
+                for (let i = 0; i < panels.length; i++) {
+                    panels[i].addEventListener('click', () => {
+                        if (panels[i].classList.contains('active-bottom'))
+                            this.increaseRoadmapStagePanel();
+                        else if (panels[i].classList.contains('active-top'))
+                            this.decreaseRoadmapStagePanel();
+                    });
                 }
+            }
+
+            this.$on('decreaseStage', value => {
+                this.decreaseRoadmapStagePanel();
             });
 
             this.$on('increaseStage', value => {
-
-
-                let activeStateIndex = this.states.findIndex(state => state.active);
-
-                if (activeStateIndex !== this.states.length - 1) {
-                    this.states[activeStateIndex].active = false;
-                    this.states[activeStateIndex].activeTop = true;
-
-                    this.states[activeStateIndex + 1].active = true;
-                    this.states[activeStateIndex + 1].activeBottom = false;
-
-                    if (activeStateIndex !== 0) {
-                        this.states[activeStateIndex - 1].activeTop = false;
-                        this.states[activeStateIndex - 1].inactiveTop = true;
-                    }
-
-                    if (activeStateIndex !== this.states.length - 2) {
-                        this.states[activeStateIndex + 2].activeBottom = true;
-                        this.states[activeStateIndex + 2].inactiveBottom = false;
-                    }
-                }
+                this.increaseRoadmapStagePanel();
             });
         }
     }
@@ -441,9 +467,18 @@
         @media (max-width 768px)
             display none
 
+    .hidden-xs
+        @media (max-width 576px)
+            display none !important
+
     .container-fluid-sm
         @media (max-width 768px)
             max-width unset
+
+    .col-xs-12
+        @media (max-width 576px)
+            flex 0 0 100%
+            max-width 100%
 
     .roadmap
         height 600px
@@ -460,40 +495,6 @@
 
                 .roadmap-stage-panel-wrap
                     height 100%
-
-                    &:before
-                        background rgba(52, 58, 73, 1)
-                        background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, 0)))
-                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                        background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                        background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                        background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                        top 0
-                        content ''
-                        display block
-                        position absolute
-                        left 0
-                        width 100%
-                        height 50px
-                        z-index 2
-
-                    &:after
-                        background rgba(52, 58, 73, 1)
-                        background -moz-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 0)), color-stop(100%, rgba(52, 58, 73, 1)))
-                        background -webkit-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        background -o-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        background -ms-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        background linear-gradient(to bottom, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                        bottom 0
-                        content ''
-                        display block
-                        position absolute
-                        left 0
-                        width 100%
-                        height 50px
-                        z-index 2
 
                 .roadmap-stage-switcher-wrap
                     display flex

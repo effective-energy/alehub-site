@@ -62,7 +62,7 @@
         },
         computed: {
             /**
-             *
+             * calculating stage panel class
              *
              * @returns {string}
              */
@@ -98,7 +98,7 @@
                     this.activeTab = tab;
             },
             /**
-             *
+             * calculating tab height
              *
              * @param tabs
              * @returns {string}
@@ -169,10 +169,50 @@
             background-color transparent
             opacity .5
 
+            @media (max-width 576px)
+                cursor pointer
+
+            &:after
+                background rgba(52, 58, 73, 1)
+                background -moz-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
+                background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 0)), color-stop(100%, rgba(52, 58, 73, 1)))
+                background -webkit-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
+                background -o-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
+                background -ms-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
+                background linear-gradient(to bottom, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
+                bottom 50px
+                content ''
+                display block
+                position absolute
+                left 0
+                width 100%
+                height 150px
+                z-index 2
+
         &.active-top
             transform translateY(-100px) scale(.9)
             background-color transparent
             opacity .5
+
+            @media (max-width 576px)
+                cursor pointer
+
+            &:before
+                background rgba(52, 58, 73, 1)
+                background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, 0)))
+                background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
+                top 50px
+                content ''
+                display block
+                position absolute
+                left 0
+                width 100%
+                height 150px
+                z-index 2
 
         &.inactive-bottom
             transform translateY(725px)
