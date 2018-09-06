@@ -360,7 +360,7 @@
             /**
              *
              */
-            increaseRoadmapStagePanel: function () {
+            nextPanel: function () {
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== this.states.length - 1) {
@@ -384,7 +384,7 @@
             /**
              *
              */
-            decreaseRoadmapStagePanel: function () {
+            prevPanel: function () {
                 let activeStateIndex = this.states.findIndex(state => state.active);
 
                 if (activeStateIndex !== 0) {
@@ -403,6 +403,34 @@
                         this.states[activeStateIndex - 2].activeTop = true;
                         this.states[activeStateIndex - 2].inactiveTop = false;
                     }
+                }
+            },
+            /**
+             *
+             */
+            handlerSwitchPanel: function (panel) {
+                return () => {
+                    if (panel.classList.contains('active-bottom'))
+                        this.nextPanel();
+                    else if (panel.classList.contains('active-top'))
+                        this.prevPanel();
+                }
+            },
+            /**
+             *
+             */
+            adaptiveSwitchPanel: function () {
+                if (document.body.clientWidth < 576) {
+                    let panels = document.getElementsByClassName('roadmap-stage-panel');
+                    for (let i = 0; i < panels.length; i++)
+                        panels[i].addEventListener('click', this.handlerSwitchPanel(panels[i]), false);
+                }
+            },
+            removeListenerFromPanel: function () {
+                if (document.body.clientWidth >= 576) {
+                    let panels = document.getElementsByClassName('roadmap-stage-panel');
+                    for (let i = 0; i < panels.length; i++)
+                        panels[i].removeEventListener('click', this.handlerSwitchPanel(panels[i]), false);
                 }
             }
         },
@@ -439,24 +467,19 @@
             });
         },
         mounted() {
-            if (document.body.clientWidth < 576) {
-                let panels = document.getElementsByClassName('roadmap-stage-panel');
-                for (let i = 0; i < panels.length; i++) {
-                    panels[i].addEventListener('click', () => {
-                        if (panels[i].classList.contains('active-bottom'))
-                            this.increaseRoadmapStagePanel();
-                        else if (panels[i].classList.contains('active-top'))
-                            this.decreaseRoadmapStagePanel();
-                    });
-                }
-            }
+           this.adaptiveSwitchPanel();
 
-            this.$on('decreaseStage', value => {
-                this.decreaseRoadmapStagePanel();
+            window.addEventListener('resize', () => {
+                this.adaptiveSwitchPanel();
+                this.removeListenerFromPanel();
             });
 
             this.$on('increaseStage', value => {
-                this.increaseRoadmapStagePanel();
+                this.nextPanel();
+            });
+
+            this.$on('decreaseStage', value => {
+                this.prevPanel();
             });
         }
     }
