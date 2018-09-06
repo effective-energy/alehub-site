@@ -347,6 +347,9 @@
                                 &.active
                                     transform rotateX(180deg)
 
+                        &.inactive
+                            height 0
+
                         .spoiler-body
                             transition height .5s ease-in-out
                             overflow hidden
