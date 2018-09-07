@@ -51,38 +51,43 @@
             <!--</router-link>-->
         <!--</div>-->
 
-        <div class="navbar-folding"
-             id="navbarText">
-            <slider-navbar id="slider-navbar"
-                           v-if="!show && !whiteList"
-                           :is-dark="isDark"
-                           :is-yellow="isYellow"
-                           :is-rtl="rtl"
-                           :items="$t('navbar.menuList')"
-                           :options="optionsToSliderNavbar"/>
+        <div id="navbar-text"
+             class="navbar-folding">
+            <!--<slider-navbar id="slider-navbar"-->
+                           <!--v-if="!show && !whiteList"-->
+                           <!--:is-dark="isDark"-->
+                           <!--:is-yellow="isYellow"-->
+                           <!--:is-rtl="rtl"-->
+                           <!--:items="$t('navbar.menuList')"-->
+                           <!--:options="optionsToSliderNavbar"/>-->
 
 
-            <div class="navbar-folding-inner"
-                 v-if="!show && !whiteList">
-                <div class="navbar-item"
-                     v-for="(item, index) in $t('navbar.menuList')">
-                    <a v-if="isItemHasPath(item)"
-                       @click="scrollTo(item.path)">
-                        {{ item.name }}
-                    </a>
-                    <router-link tag="a"
-                                 v-else
-                                 :to="item.to">
-                        {{ item.name }}
-                    </router-link>
-                    <div class="nav-line"
-                         :class="{ 'nav-line__yellow': isYellow,
-                                   'nav-line__black': isDark,
-                                   'nav-line__white': !isYellow && !isDark }"
-                         v-if="index === 0">
-                    </div>
-                </div>
-            </div>
+            <!--<div class="navbar-folding-inner"-->
+                 <!--v-if="!show && !whiteList">-->
+                <!--<div class="navbar-item"-->
+                     <!--v-for="(item, index) in $t('navbar.menuList')">-->
+                    <!--<a v-if="isItemHasPath(item)"-->
+                       <!--@click="scrollTo(item.path)">-->
+                        <!--{{ item.name }}-->
+                    <!--</a>-->
+                    <!--<router-link tag="a"-->
+                                 <!--v-else-->
+                                 <!--:to="item.to">-->
+                        <!--{{ item.name }}-->
+                    <!--</router-link>-->
+                    <!--<div class="nav-line"-->
+                         <!--:class="{ 'nav-line__yellow': isYellow,-->
+                                   <!--'nav-line__black': isDark,-->
+                                   <!--'nav-line__white': !isYellow && !isDark }"-->
+                         <!--v-if="index === 0">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <button type="button"
+                    @click="toggleSideMenu">
+                Show side menu
+            </button>
 
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl,
@@ -117,6 +122,9 @@
             </div>
         </div>
 
+
+            <side-menu :show="showSideMenu"/>
+
         <menu-modal :dark="isDark"
                     :yellow="isYellow"/>
     </nav>
@@ -126,11 +134,14 @@
     import MenuModal from '../modals/MenuModal';
     import SliderNavbar from '../layouts/SliderNavbar';
 
+    import SideMenu from '../layouts/side-menu/SideMenu';
+
     export default {
         name: 'HeaderBlock',
         components: {
             MenuModal,
-            SliderNavbar
+            SliderNavbar,
+            SideMenu
         },
         props: {
             isMainDark: {
@@ -152,6 +163,7 @@
         },
         data() {
             return {
+                showSideMenu: false,
                 languages: [
                     {
                         id: 1,
@@ -269,26 +281,7 @@
         },
         computed: {
             currentLang: function () {
-                if (this.selectedLanguage === 'en')
-                    return 'en';
-                else if (this.selectedLanguage === 'ru')
-                    return 'ru';
-                else if (this.selectedLanguage === 'zh')
-                    return 'zh';
-                else if (this.selectedLanguage === 'ja')
-                    return 'ja';
-                else if (this.selectedLanguage === 'fr')
-                    return 'fr';
-                else if (this.selectedLanguage === 'de')
-                    return 'de';
-                else if (this.selectedLanguage === 'ar')
-                    return 'ar';
-                else if (this.selectedLanguage === 'ko')
-                    return 'ko';
-                else if (this.selectedLanguage === 'es')
-                    return 'es';
-
-                return 'en';
+                return this.selectedLanguage;
             },
             isBlogPage: function () {
                 return !(this.$route.path === '/' || this.$route.path === '/white-list');
@@ -328,6 +321,9 @@
             }
         },
         methods: {
+            toggleSideMenu: function () {
+                this.showSideMenu = !this.showSideMenu;
+            },
             /**
              * scroll window to specified block
              */
@@ -751,7 +747,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
     .navbar
         flex-wrap nowrap
 
