@@ -3,53 +3,53 @@
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow, 'bg-yellow': isYellow }"
          id="navbar">
 
-        <router-link class="navbar-brand"
-                     tag="a"
-                     to="/"
-                     :class="{ 'navbar-brand__rtl': rtl }"
-                     @click.native="toggleMenuModal">
-            <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub-dark.svg"
-                 alt="ALEHUB"
-                 v-if="!isDark">
-            <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub.svg"
-                 alt="ALEHUB"
-                 v-else>
-        </router-link>
+        <!--<router-link class="navbar-brand"-->
+                     <!--tag="a"-->
+                     <!--to="/"-->
+                     <!--:class="{ 'navbar-brand__rtl': rtl }"-->
+                     <!--@click.native="toggleMenuModal">-->
+            <!--<img class="d-inline-block align-top"-->
+                 <!--src="../../../static/images/logo/alehub-dark.svg"-->
+                 <!--alt="ALEHUB"-->
+                 <!--v-if="!isDark">-->
+            <!--<img class="d-inline-block align-top"-->
+                 <!--src="../../../static/images/logo/alehub.svg"-->
+                 <!--alt="ALEHUB"-->
+                 <!--v-else>-->
+        <!--</router-link>-->
 
-        <div class="hamburger"
-             id="hamburger-6"
-             :class="{ 'is-active': activeHamburger }"
-             @click="toggleHamburger">
-            <span class="line"
-                  :class="{ 'line__white': isDark }">
-            </span>
-            <span class="line"
-                  :class="{ 'line__white': isDark }">
-            </span>
-            <span class="line"
-                  :class="{ 'line__white': isDark }">
-            </span>
-        </div>
+        <!--<div class="hamburger"-->
+             <!--id="hamburger-6"-->
+             <!--:class="{ 'is-active': activeHamburger }"-->
+             <!--@click="toggleHamburger">-->
+            <!--<span class="line"-->
+                  <!--:class="{ 'line__white': isDark }">-->
+            <!--</span>-->
+            <!--<span class="line"-->
+                  <!--:class="{ 'line__white': isDark }">-->
+            <!--</span>-->
+            <!--<span class="line"-->
+                  <!--:class="{ 'line__white': isDark }">-->
+            <!--</span>-->
+        <!--</div>-->
 
-        <div class="navbar-blog"
-             v-if="isBlogPage">
-            <router-link class="navbar-item"
-                         tag="a"
-                         :to="'/blog/categories/all'">
-                {{ $t("navbar.blog") }}
-            </router-link>
-        </div>
+        <!--<div class="navbar-blog"-->
+             <!--v-if="isBlogPage">-->
+            <!--<router-link class="navbar-item"-->
+                         <!--tag="a"-->
+                         <!--:to="'/blog/categories/all'">-->
+                <!--{{ $t("navbar.blog") }}-->
+            <!--</router-link>-->
+        <!--</div>-->
 
-        <div class="white-list"
-             v-if="isWhiteList">
-            <router-link class="navbar-item"
-                         tag="a"
-                         :to="'/'">
-                {{ $t("navbar.home") }}
-            </router-link>
-        </div>
+        <!--<div class="white-list"-->
+             <!--v-if="isWhiteList">-->
+            <!--<router-link class="navbar-item"-->
+                         <!--tag="a"-->
+                         <!--:to="'/'">-->
+                <!--{{ $t("navbar.home") }}-->
+            <!--</router-link>-->
+        <!--</div>-->
 
         <div class="navbar-folding"
              id="navbarText">
@@ -100,90 +100,17 @@
                      :class="{ 'select-lang__rtl': rtl }"
                      @click="toggleDropdown">
                     {{ currentLang }}
-                    <div class="select-lang__dropdown"
+                    <div class="select-lang-dropdown"
                          v-if="dropdownOpen">
-
-                        <!--классы поместить в массив с названиями языков в data()-->
-                        <div class="select-lang__item select-lang__fr"
-                             :class="{ 'selected': currentLang === 'fr' }"
-                             @click="changeLanguage(8);
-                                     yaCounter48802643.reachGoal('FR');
-                                     return true;">
+                        <div class="select-lang-item"
+                             v-for="lang in languages"
+                             :class="[{ 'selected': currentLang === lang.name }, lang.class]"
+                             @click="changeLanguage(lang.id)">
                             <div class="select-lang__cover">
                             </div>
-                            <span>FR</span>
-                        </div>
-                        <div class="select-lang__item select-lang__de"
-                             :class="{ 'selected': currentLang === 'de' }"
-                             @click="changeLanguage(7);
-                                     yaCounter48802643.reachGoal('DE');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>DE</span>
-                        </div>
-                        <div class="select-lang__item select-lang__es"
-                             :class="{ 'selected': currentLang === 'es' }"
-                             @click="changeLanguage(6);
-                                     yaCounter48802643.reachGoal('ES');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>ES</span>
-                        </div>
-                        <div class="select-lang__item select-lang__ar"
-                             :class="{ 'selected': currentLang === 'ar' }"
-                             @click="changeLanguage(5);
-                                     yaCounter48802643.reachGoal('AR');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>AR</span>
-                        </div>
-                        <div class="select-lang__item select-lang__ko"
-                             :class="{ 'selected': currentLang === 'ko' }"
-                             @click="changeLanguage(4);
-                                     yaCounter48802643.reachGoal('KO');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>KO</span>
-                        </div>
-                        <div class="select-lang__item select-lang__ja"
-                             :class="{ 'selected': currentLang === 'ja' }"
-                             @click="changeLanguage(3);
-                                     yaCounter48802643.reachGoal('JA');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>JA</span>
-                        </div>
-                        <div class="select-lang__item select-lang__zh"
-                             :class="{ 'selected': currentLang === 'zh' }"
-                             @click="changeLanguage(2);
-                                     yaCounter48802643.reachGoal('ZH');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>ZH</span>
-                        </div>
-                        <div class="select-lang__item select-lang__ru"
-                             :class="{ 'selected': currentLang === 'ru' }"
-                             @click="changeLanguage(1);
-                                     yaCounter48802643.reachGoal('RU');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>RU</span>
-                        </div>
-                        <div class="select-lang__item select-lang__en"
-                             :class="{ 'selected': currentLang === 'en' }"
-                             @click="changeLanguage(0);
-                                     yaCounter48802643.reachGoal('EN');
-                                     return true;">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>EN</span>
+                            <span>
+                                {{ lang.name.toUpperCase() }}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -225,6 +152,54 @@
         },
         data() {
             return {
+                languages: [
+                    {
+                        id: 1,
+                        name: 'fr',
+                        class: 'select-lang-fr'
+                    },
+                    {
+                        id: 2,
+                        name: 'de',
+                        class: 'select-lang-de'
+                    },
+                    {
+                        id: 3,
+                        name: 'es',
+                        class: 'select-lang-es'
+                    },
+                    {
+                        id: 4,
+                        name: 'ar',
+                        class: 'select-lang-ar'
+                    },
+                    {
+                        id: 5,
+                        name: 'ko',
+                        class: 'select-lang-ko'
+                    },
+                    {
+                        id: 6,
+                        name: 'ja',
+                        class: 'select-lang-ja'
+                    },
+                    {
+                        id: 7,
+                        name: 'zh',
+                        class: 'select-lang-zh'
+                    },
+                    {
+                        id: 8,
+                        name: 'ru',
+                        class: 'select-lang-ru'
+                    },
+                    {
+                        id: 9,
+                        name: 'en',
+                        class: 'select-lang-en'
+                    }
+                ],
+
                 langDropdownInProcess: false,
                 isLanguagesModal: false,
                 isFeatures: false,
@@ -236,7 +211,6 @@
                 dropdownOpen: false,
                 activeHamburger: false,
                 activeItem: 0,
-                languagesList: ['en', 'ru', 'zh', 'ja', 'ko', 'ar', 'es', 'de', 'fr'],
                 selectedLanguage: localStorage.getItem('systemLang'),
 
                 heightLangItem: 0,
@@ -476,10 +450,10 @@
                 this.rtl = false;
                 this.$parent.$emit('isRtl', this.rtl);
             },
-            changeLanguage(index) {
-                this.selectedLanguage = this.languagesList[index];
-                localStorage.setItem('systemLang', this.selectedLanguage);
+            changeLanguage(id) {
+                this.selectedLanguage = this.languages.find(l => l.id === id).name;
                 this.$i18n.locale = this.selectedLanguage;
+                localStorage.setItem('systemLang', this.selectedLanguage);
 
                 if (this.selectedLanguage === 'ar')
                     this.makeRTL();
@@ -558,11 +532,11 @@
                             let duration = 900,
                                 currentTime = 0,
                                 increment = 100,
-                                i = document.getElementsByClassName('select-lang__item').length - 1;
+                                i = document.getElementsByClassName('select-lang-item').length - 1;
 
                             let animateScroll = () => {
                                 currentTime += increment;
-                                document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 1;
+                                document.getElementsByClassName('select-lang-item')[i].style['opacity'] = 1;
                                 i--;
                                 if (currentTime < duration) {
                                     setTimeout(animateScroll, increment);
@@ -582,7 +556,7 @@
 
                             let animateScroll = () => {
                                 currentTime += increment;
-                                document.getElementsByClassName('select-lang__item')[i].style['opacity'] = 0;
+                                document.getElementsByClassName('select-lang-item')[i].style['opacity'] = 0;
                                 i++;
                                 if (currentTime < duration) {
                                     setTimeout(animateScroll, increment);
@@ -877,7 +851,7 @@
         @media (max-width 420px)
             display none
 
-        .select-lang__dropdown
+        .select-lang-dropdown
             right 0
             top 72px
             position absolute
@@ -897,7 +871,7 @@
                 span
                     opacity 0 !important
 
-            .select-lang__item
+            .select-lang-item
                 opacity 0
                 position relative
                 background-color #fff
@@ -943,41 +917,41 @@
                     -o-transition all .3s ease-out
                     transition all .3s ease-out
 
-            .select-lang__en
+            .select-lang-en
                 margin 0 0 0 3px
                 background-image url(../../../static/images/flags/en@2x.png)
 
-            .select-lang__ru
+            .select-lang-ru
                 position relative
                 background-image url(../../../static/images/flags/ru@2x.png)
 
-            .select-lang__zh
+            .select-lang-zh
                 background-position 0 0
                 background-image url(../../../static/images/flags/zh@2x.png)
 
-            .select-lang__ja
+            .select-lang-ja
                 background-image url(../../../static/images/flags/ja@2x.png)
 
-            .select-lang__ko
+            .select-lang-ko
                 background-image url(../../../static/images/flags/ko@2x.png)
 
-            .select-lang__ar
+            .select-lang-ar
                 background-image url(../../../static/images/flags/ar@2x.png)
 
-            .select-lang__es
+            .select-lang-es
                 background-image url(../../../static/images/flags/es@2x.png)
 
-            .select-lang__de
+            .select-lang-de
                 background-image url(../../../static/images/flags/de@2x.png)
 
-            .select-lang__fr
+            .select-lang-fr
                 margin 0 3px 0 0
                 background-image url(../../../static/images/flags/fr@2x.png)
 
     .select-lang__rtl
         margin 0 20px 0 0
 
-        .select-lang__dropdown
+        .select-lang-dropdown
             left 0
             right auto
 
@@ -1104,8 +1078,8 @@
         background-color #ffd24f
 
         .select-lang
-            .select-lang__dropdown
-                .select-lang__item
+            .select-lang-dropdown
+                .select-lang-item
                     border-left none
 
                     .select-lang__cover
@@ -1179,8 +1153,8 @@
         .select-lang
             color #fff
 
-            .select-lang__dropdown
-                .select-lang__item
+            .select-lang-dropdown
+                .select-lang-item
                     border-left none
 
                     .select-lang__cover
