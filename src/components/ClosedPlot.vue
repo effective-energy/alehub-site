@@ -1,11 +1,17 @@
 <template>
-    <div class="closed-plot">
+    <div class="closed-plot"
+         @click="closeClosedPlot">
     </div>
 </template>
 
 <script>
     export default {
-        name: 'ClosedPlot'
+        name: 'ClosedPlot',
+        methods: {
+            closeClosedPlot: function () {
+                this.$parent.$emit('showSideMenu', false);
+            }
+        },
     }
 </script>
 
@@ -13,9 +19,9 @@
     .closed-plot
         z-index 1500
         position fixed
-        top 0
+        top 74px
         left 0
-        height 100vh
+        height calc(100vh - 74px)
         width 100vw
         background-color #000000
         opacity .1

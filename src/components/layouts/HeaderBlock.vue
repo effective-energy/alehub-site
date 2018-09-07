@@ -3,91 +3,91 @@
          :class="{ 'bg-dark-blue': isDark, 'bg-white': !isDark && !isYellow, 'bg-yellow': isYellow }"
          id="navbar">
 
-        <!--<router-link class="navbar-brand"-->
-                     <!--tag="a"-->
-                     <!--to="/"-->
-                     <!--:class="{ 'navbar-brand__rtl': rtl }"-->
-                     <!--@click.native="toggleMenuModal">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/logo/alehub-dark.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-if="!isDark">-->
-            <!--<img class="d-inline-block align-top"-->
-                 <!--src="../../../static/images/logo/alehub.svg"-->
-                 <!--alt="ALEHUB"-->
-                 <!--v-else>-->
-        <!--</router-link>-->
+        <button type="button"
+                @click="toggleSideMenu">
+            Show side menu
+        </button>
+
+        <router-link class="navbar-brand"
+                     tag="a"
+                     to="/"
+                     :class="{ 'navbar-brand__rtl': rtl }"
+                     @click.native="toggleMenuModal">
+            <img class="d-inline-block align-top"
+                 src="../../../static/images/logo/alehub-dark.svg"
+                 alt="ALEHUB"
+                 v-if="!isDark">
+            <img class="d-inline-block align-top"
+                 src="../../../static/images/logo/alehub.svg"
+                 alt="ALEHUB"
+                 v-else>
+        </router-link>
 
         <!--<div class="hamburger"-->
-             <!--id="hamburger-6"-->
-             <!--:class="{ 'is-active': activeHamburger }"-->
-             <!--@click="toggleHamburger">-->
-            <!--<span class="line"-->
-                  <!--:class="{ 'line__white': isDark }">-->
-            <!--</span>-->
-            <!--<span class="line"-->
-                  <!--:class="{ 'line__white': isDark }">-->
-            <!--</span>-->
-            <!--<span class="line"-->
-                  <!--:class="{ 'line__white': isDark }">-->
-            <!--</span>-->
+        <!--id="hamburger-6"-->
+        <!--:class="{ 'is-active': activeHamburger }"-->
+        <!--@click="toggleHamburger">-->
+        <!--<span class="line"-->
+        <!--:class="{ 'line__white': isDark }">-->
+        <!--</span>-->
+        <!--<span class="line"-->
+        <!--:class="{ 'line__white': isDark }">-->
+        <!--</span>-->
+        <!--<span class="line"-->
+        <!--:class="{ 'line__white': isDark }">-->
+        <!--</span>-->
         <!--</div>-->
 
         <!--<div class="navbar-blog"-->
-             <!--v-if="isBlogPage">-->
-            <!--<router-link class="navbar-item"-->
-                         <!--tag="a"-->
-                         <!--:to="'/blog/categories/all'">-->
-                <!--{{ $t("navbar.blog") }}-->
-            <!--</router-link>-->
+        <!--v-if="isBlogPage">-->
+        <!--<router-link class="navbar-item"-->
+        <!--tag="a"-->
+        <!--:to="'/blog/categories/all'">-->
+        <!--{{ $t("navbar.blog") }}-->
+        <!--</router-link>-->
         <!--</div>-->
 
         <!--<div class="white-list"-->
-             <!--v-if="isWhiteList">-->
-            <!--<router-link class="navbar-item"-->
-                         <!--tag="a"-->
-                         <!--:to="'/'">-->
-                <!--{{ $t("navbar.home") }}-->
-            <!--</router-link>-->
+        <!--v-if="isWhiteList">-->
+        <!--<router-link class="navbar-item"-->
+        <!--tag="a"-->
+        <!--:to="'/'">-->
+        <!--{{ $t("navbar.home") }}-->
+        <!--</router-link>-->
         <!--</div>-->
 
         <div id="navbar-text"
              class="navbar-folding">
             <!--<slider-navbar id="slider-navbar"-->
-                           <!--v-if="!show && !whiteList"-->
-                           <!--:is-dark="isDark"-->
-                           <!--:is-yellow="isYellow"-->
-                           <!--:is-rtl="rtl"-->
-                           <!--:items="$t('navbar.menuList')"-->
-                           <!--:options="optionsToSliderNavbar"/>-->
+            <!--v-if="!show && !whiteList"-->
+            <!--:is-dark="isDark"-->
+            <!--:is-yellow="isYellow"-->
+            <!--:is-rtl="rtl"-->
+            <!--:items="$t('navbar.menuList')"-->
+            <!--:options="optionsToSliderNavbar"/>-->
 
 
             <!--<div class="navbar-folding-inner"-->
-                 <!--v-if="!show && !whiteList">-->
-                <!--<div class="navbar-item"-->
-                     <!--v-for="(item, index) in $t('navbar.menuList')">-->
-                    <!--<a v-if="isItemHasPath(item)"-->
-                       <!--@click="scrollTo(item.path)">-->
-                        <!--{{ item.name }}-->
-                    <!--</a>-->
-                    <!--<router-link tag="a"-->
-                                 <!--v-else-->
-                                 <!--:to="item.to">-->
-                        <!--{{ item.name }}-->
-                    <!--</router-link>-->
-                    <!--<div class="nav-line"-->
-                         <!--:class="{ 'nav-line__yellow': isYellow,-->
-                                   <!--'nav-line__black': isDark,-->
-                                   <!--'nav-line__white': !isYellow && !isDark }"-->
-                         <!--v-if="index === 0">-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--v-if="!show && !whiteList">-->
+            <!--<div class="navbar-item"-->
+            <!--v-for="(item, index) in $t('navbar.menuList')">-->
+            <!--<a v-if="isItemHasPath(item)"-->
+            <!--@click="scrollTo(item.path)">-->
+            <!--{{ item.name }}-->
+            <!--</a>-->
+            <!--<router-link tag="a"-->
+            <!--v-else-->
+            <!--:to="item.to">-->
+            <!--{{ item.name }}-->
+            <!--</router-link>-->
+            <!--<div class="nav-line"-->
+            <!--:class="{ 'nav-line__yellow': isYellow,-->
+            <!--'nav-line__black': isDark,-->
+            <!--'nav-line__white': !isYellow && !isDark }"-->
+            <!--v-if="index === 0">-->
             <!--</div>-->
-
-            <button type="button"
-                    @click="toggleSideMenu">
-                Show side menu
-            </button>
+            <!--</div>-->
+            <!--</div>-->
 
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl,
@@ -122,8 +122,11 @@
             </div>
         </div>
 
+        <closed-plot v-if="showSideMenu"/>
 
-        <side-menu :show="showSideMenu"/>
+        <side-menu :show="showSideMenu"
+                   :dark="isDark"
+                   :yellow="isYellow"/>
 
         <menu-modal :dark="isDark"
                     :yellow="isYellow"/>
@@ -135,13 +138,15 @@
     import SliderNavbar from '../layouts/SliderNavbar';
 
     import SideMenu from '../layouts/side-menu/SideMenu';
+    import ClosedPlot from '../ClosedPlot';
 
     export default {
         name: 'HeaderBlock',
         components: {
             MenuModal,
             SliderNavbar,
-            SideMenu
+            SideMenu,
+            ClosedPlot
         },
         props: {
             isMainDark: {
@@ -606,6 +611,10 @@
             }
         },
         mounted() {
+            this.$on('showSideMenu', closed => {
+                this.showSideMenu = closed;
+            });
+
             if (this.selectedLanguage === 'ar') {
                 this.makeRTL();
             }

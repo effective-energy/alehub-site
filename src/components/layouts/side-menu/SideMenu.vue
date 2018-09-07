@@ -1,7 +1,7 @@
 <template>
     <div id="side-menu"
          class="side-menu"
-         :class="{ 'inactive': !show }">
+         :class="{ 'inactive': !show, 'dark': dark, 'yellow': yellow }">
         <div class="side-menu-item"
              v-for="item in $t('navbar.menuList')"
              @click="scrollTo(item.path)">
@@ -17,6 +17,14 @@
         name: 'SideMenu',
         props: {
             show: {
+                type: Boolean,
+                required: true
+            },
+            dark: {
+                type: Boolean,
+                required: true
+            },
+            yellow: {
                 type: Boolean,
                 required: true
             }
@@ -36,6 +44,7 @@
                         behavior: 'smooth'
                     }
                 );
+                this.$parent.$emit('showSideMenu', false);
             },
             /**
              * getting the coordinates of the element on the page
@@ -62,6 +71,7 @@
 
 <style lang="stylus" scoped>
     .side-menu
+        z-index 2000
         position fixed
         top 74px
         left 0
@@ -72,16 +82,33 @@
         -webkit-box-shadow 2px 2px 2px 0 rgba(0, 0, 0, .2)
         -moz-box-shadow 2px 2px 2px 0 rgba(0, 0, 0, .2)
         box-shadow 2px 2px 2px 0 rgba(0, 0, 0, .2)
-        transition all .5s ease-in-out
+        transition all .4s ease
 
         &.inactive
             left -400px
+
+        &.dark
+            background-color #343a49
+
+            .side-menu-item
+                span
+                    color #ffffff
+
+        &.yellow
+            background-color #ffd24f
+
+            .side-menu-item
+                &:hover
+                    background-color #343a49
+
+                    span
+                        color #ffffff
 
         .side-menu-item
             cursor pointer
             padding 10px 40px
             position relative
-            transition all .3s ease-in-out
+            transition all .2s ease
 
             &:hover
                 background-color #ffd24f
