@@ -123,7 +123,7 @@
         </div>
 
 
-            <side-menu :show="showSideMenu"/>
+        <side-menu :show="showSideMenu"/>
 
         <menu-modal :dark="isDark"
                     :yellow="isYellow"/>
@@ -323,6 +323,7 @@
         methods: {
             toggleSideMenu: function () {
                 this.showSideMenu = !this.showSideMenu;
+                this.$parent.$emit('showSideMenu', this.showSideMenu);
             },
             /**
              * scroll window to specified block
@@ -748,6 +749,7 @@
 
 <style lang="stylus" scoped>
     .navbar
+        z-index 2000
         flex-wrap nowrap
 
         .navbar-folding

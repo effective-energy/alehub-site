@@ -1,6 +1,7 @@
 <template>
     <div class="index" id="index-main-component">
         <header-block :is-main-dark="isDark"/>
+        <closed-plot v-if="showSideMenu"/>
         <home-section :is-dark-section="isDarkSection"
                       :opened-modal-menu="openedModalMenu"
                       :is-scroll-in-footer="isScrollInFooter"
@@ -43,6 +44,8 @@
     import BlogSection from './BlogSection';
     import FooterBlock from './layouts/FooterBlock';
 
+    import ClosedPlot from './ClosedPlot';
+
     export default {
         name: 'Index',
         components: {
@@ -59,6 +62,7 @@
             MassMediaSection,
             BlogSection,
             FooterBlock,
+            ClosedPlot
         },
         data() {
             return {
@@ -77,6 +81,7 @@
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
                 isAdvisorsAutoplay: false,
+                showSideMenu: false
                 // isLoading: true
             }
         },
@@ -144,6 +149,10 @@
             this.$on('isDarkTheme', isDark => {
                 this.isDark = isDark;
             });
+
+            this.$on('showSideMenu', show => {
+                this.showSideMenu = show;
+            })
         }
     }
 </script>
