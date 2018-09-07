@@ -348,7 +348,7 @@
         },
         computed: {
             /**
-             *
+             * calculating stage active index
              *
              * @returns {number}
              */
@@ -358,7 +358,7 @@
         },
         methods: {
             /**
-             *
+             * switch next active panel
              */
             nextPanel: function () {
                 let activeStateIndex = this.states.findIndex(state => state.active);
@@ -382,7 +382,7 @@
                 }
             },
             /**
-             *
+             * switch prev active panel
              */
             prevPanel: function () {
                 let activeStateIndex = this.states.findIndex(state => state.active);
@@ -406,7 +406,7 @@
                 }
             },
             /**
-             *
+             * handler for click event listener for roadmap stage panel
              */
             handlerSwitchPanel: function (panel) {
                 return () => {
@@ -417,21 +417,20 @@
                 }
             },
             /**
-             *
+             * add click event listener to roadmap stage panel
              */
-            adaptiveSwitchPanel: function () {
-                if (document.body.clientWidth < 576) {
-                    let panels = document.getElementsByClassName('roadmap-stage-panel');
-                    for (let i = 0; i < panels.length; i++)
-                        panels[i].addEventListener('click', this.handlerSwitchPanel(panels[i]), false);
-                }
+            addListenterToPanel: function () {
+                let panels = document.getElementsByClassName('roadmap-stage-panel');
+                for (let i = 0; i < panels.length; i++)
+                    panels[i].addEventListener('click', this.handlerSwitchPanel(panels[i]), false);
             },
+            /**
+             * remove click event listener from roadmap stage panel
+             */
             removeListenerFromPanel: function () {
-                if (document.body.clientWidth >= 576) {
-                    let panels = document.getElementsByClassName('roadmap-stage-panel');
-                    for (let i = 0; i < panels.length; i++)
-                        panels[i].removeEventListener('click', this.handlerSwitchPanel(panels[i]), false);
-                }
+                let panels = document.getElementsByClassName('roadmap-stage-panel');
+                for (let i = 0; i < panels.length; i++)
+                    panels[i].removeEventListener('click', this.handlerSwitchPanel(panels[i]), false);
             }
         },
         created() {
@@ -467,11 +466,14 @@
             });
         },
         mounted() {
-           this.adaptiveSwitchPanel();
+            if (document.body.clientWidth < 576)
+                this.addListenterToPanel();
 
             window.addEventListener('resize', () => {
-                this.adaptiveSwitchPanel();
-                this.removeListenerFromPanel();
+                if (document.body.clientWidth < 576)
+                    this.addListenterToPanel();
+                else
+                    this.removeListenerFromPanel();
             });
 
             this.$on('increaseStage', value => {
