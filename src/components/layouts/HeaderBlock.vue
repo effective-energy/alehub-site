@@ -4,8 +4,9 @@
          id="navbar">
 
         <button type="button"
+                class="btn-blank"
                 @click="toggleSideMenu">
-            Show side menu
+            <hamburger :dark="isDark"/>
         </button>
 
         <router-link class="navbar-brand"
@@ -18,34 +19,34 @@
         </router-link>
 
         <!--<div class="hamburger"-->
-        <!--id="hamburger-6"-->
-        <!--:class="{ 'is-active': activeHamburger }"-->
-        <!--@click="toggleHamburger">-->
+             <!--id="hamburger-6"-->
+             <!--:class="{ 'is-active': activeHamburger }"-->
+             <!--@click="toggleHamburger">-->
         <!--<span class="line"-->
-        <!--:class="{ 'line__white': isDark }">-->
+              <!--:class="{ 'line__white': isDark }">-->
         <!--</span>-->
-        <!--<span class="line"-->
-        <!--:class="{ 'line__white': isDark }">-->
+            <!--<span class="line"-->
+                  <!--:class="{ 'line__white': isDark }">-->
         <!--</span>-->
-        <!--<span class="line"-->
-        <!--:class="{ 'line__white': isDark }">-->
+            <!--<span class="line"-->
+                  <!--:class="{ 'line__white': isDark }">-->
         <!--</span>-->
         <!--</div>-->
 
         <!--<div id="navbar-text"-->
-             <!--class="navbar-folding">-->
+        <!--class="navbar-folding">-->
 
-            <!--<div class="right-menu"-->
-                 <!--:class="{ 'right-menu__rtl': rtl,-->
-                           <!--'right-menu__abs': isBlogPage || isWhiteList }">-->
+        <!--<div class="right-menu"-->
+        <!--:class="{ 'right-menu__rtl': rtl,-->
+        <!--'right-menu__abs': isBlogPage || isWhiteList }">-->
 
-                <!--<router-link tag="a"-->
-                             <!--to="/white-list"-->
-                             <!--class="btn btn-login">-->
-                    <!--{{ $t("greeting.countDown.btnBuyTokens") }}-->
-                <!--</router-link>-->
+        <!--<router-link tag="a"-->
+        <!--to="/white-list"-->
+        <!--class="btn btn-login">-->
+        <!--{{ $t("greeting.countDown.btnBuyTokens") }}-->
+        <!--</router-link>-->
 
-            <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
 
         <div>
@@ -84,6 +85,8 @@
 
     import LanguageBlock from '../layouts/LanguageBlock';
 
+    import Hamburger from './Hamburger';
+
     export default {
         name: 'HeaderBlock',
         components: {
@@ -91,7 +94,8 @@
             SliderNavbar,
             SideMenu,
             ClosedPlot,
-            LanguageBlock
+            LanguageBlock,
+            Hamburger
         },
         props: {
             isMainDark: {
@@ -651,6 +655,7 @@
 </script>
 
 <style lang="stylus" scoped>
+    .btn-blank,
     .btn-select-language
         cursor pointer
         display flex
@@ -769,59 +774,6 @@
         -webkit-box-shadow none !important
         -moz-box-shadow none !important
         box-shadow none !important
-
-    .hamburger
-        cursor pointer
-        z-index 100
-        display none
-
-    .line__white
-        background-color #ffffff !important
-
-    .hamburger
-        .line
-            cursor pointer
-            width 30px
-            height 2px
-            background-color #3e3d42
-            display block
-            margin 8px auto
-            -webkit-transition all .3s ease-in-out
-            -o-transition all .3s ease-in-out
-            transition all .3s ease-in-out
-
-    #hamburger-6.is-active
-        -webkit-transition all .3s ease-in-out
-        -o-transition all .3s ease-in-out
-        transition all .3s ease-in-out
-        -webkit-transition-delay 0.6s
-        -o-transition-delay 0.6s
-        transition-delay 0.6s
-        -webkit-transform rotate(45deg)
-        -ms-transform rotate(45deg)
-        -o-transform rotate(45deg)
-        transform rotate(45deg)
-
-    #hamburger-6.is-active .line:nth-child(2)
-        width 0
-
-    #hamburger-6.is-active
-        .line:nth-child(1), .line:nth-child(3)
-            -webkit-transition-delay 0.3s
-            -o-transition-delay 0.3s
-            transition-delay 0.3s
-
-        .line:nth-child(1)
-            -webkit-transform translateY(10px)
-            -ms-transform translateY(10px)
-            -o-transform translateY(10px)
-            transform translateY(10px)
-
-        .line:nth-child(3)
-            -webkit-transform translateY(-10px) rotate(90deg)
-            -ms-transform translateY(-10px) rotate(90deg)
-            -o-transform translateY(-10px) rotate(90deg)
-            transform translateY(-10px) rotate(90deg)
 
     .btn-login
         &:focus
