@@ -11,16 +11,10 @@
         <router-link class="navbar-brand"
                      tag="a"
                      to="/"
+                     style="font-family: MuseoSansCyrl500; text-transform: uppercase;"
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
-            <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub-dark.svg"
-                 alt="ALEHUB"
-                 v-if="!isDark">
-            <img class="d-inline-block align-top"
-                 src="../../../static/images/logo/alehub.svg"
-                 alt="ALEHUB"
-                 v-else>
+            alehub
         </router-link>
 
         <!--<div class="hamburger"-->
@@ -38,23 +32,37 @@
         <!--</span>-->
         <!--</div>-->
 
-        <div id="navbar-text"
-             class="navbar-folding">
+        <!--<div id="navbar-text"-->
+             <!--class="navbar-folding">-->
 
-            <div class="right-menu"
-                 :class="{ 'right-menu__rtl': rtl,
-                           'right-menu__abs': isBlogPage || isWhiteList }">
+            <!--<div class="right-menu"-->
+                 <!--:class="{ 'right-menu__rtl': rtl,-->
+                           <!--'right-menu__abs': isBlogPage || isWhiteList }">-->
 
-                <router-link tag="a"
-                             to="/white-list"
-                             class="btn btn-login">
-                    {{ $t("greeting.countDown.btnBuyTokens") }}
-                </router-link>
+                <!--<router-link tag="a"-->
+                             <!--to="/white-list"-->
+                             <!--class="btn btn-login">-->
+                    <!--{{ $t("greeting.countDown.btnBuyTokens") }}-->
+                <!--</router-link>-->
 
-                <language-block/>
+            <!--</div>-->
+        <!--</div>-->
 
-            </div>
+        <div>
+            <router-link tag="a"
+                         to="/white-list"
+                         class="btn btn-login">
+                {{ $t("greeting.countDown.btnBuyTokens") }}
+            </router-link>
+
+            <button type="button"
+                    class="btn-select-language"
+                    @click="toggleLanguageBlock">
+                {{ currentLang }}
+            </button>
         </div>
+
+        <language-block :open="openedLanguageBlock"/>
 
         <closed-plot v-if="showSideMenu"/>
 
@@ -105,54 +113,8 @@
         },
         data() {
             return {
+                openedLanguageBlock: true,
                 showSideMenu: false,
-                languages: [
-                    {
-                        id: 1,
-                        name: 'fr',
-                        class: 'select-lang-fr'
-                    },
-                    {
-                        id: 2,
-                        name: 'de',
-                        class: 'select-lang-de'
-                    },
-                    {
-                        id: 3,
-                        name: 'es',
-                        class: 'select-lang-es'
-                    },
-                    {
-                        id: 4,
-                        name: 'ar',
-                        class: 'select-lang-ar'
-                    },
-                    {
-                        id: 5,
-                        name: 'ko',
-                        class: 'select-lang-ko'
-                    },
-                    {
-                        id: 6,
-                        name: 'ja',
-                        class: 'select-lang-ja'
-                    },
-                    {
-                        id: 7,
-                        name: 'zh',
-                        class: 'select-lang-zh'
-                    },
-                    {
-                        id: 8,
-                        name: 'ru',
-                        class: 'select-lang-ru'
-                    },
-                    {
-                        id: 9,
-                        name: 'en',
-                        class: 'select-lang-en'
-                    }
-                ],
 
                 langDropdownInProcess: false,
                 isLanguagesModal: false,
@@ -212,7 +174,7 @@
         },
         computed: {
             currentLang: function () {
-                return this.selectedLanguage;
+                return this.$i18n.locale;
             },
             isBlogPage: function () {
                 return !(this.$route.path === '/' || this.$route.path === '/white-list');
@@ -252,6 +214,9 @@
             }
         },
         methods: {
+            toggleLanguageBlock: function () {
+                this.openedLanguageBlock = !this.openedLanguageBlock;
+            },
             /**
              * switching side menu
              */
@@ -686,6 +651,20 @@
 </script>
 
 <style lang="stylus" scoped>
+    .btn-select-language
+        cursor pointer
+        display flex
+        justify-content center
+        align-items center
+        background-color transparent
+        border none
+        padding 0 10px
+        font-weight 700
+        text-transform uppercase
+
+        &:focus
+            outline none
+
     .navbar
         z-index 2000
         flex-wrap nowrap
@@ -770,132 +749,6 @@
 
             @media (max-width 425px)
                 display none
-
-    .select-lang
-        cursor pointer
-        display flex
-        justify-content center
-        align-items center
-        padding 0 20px
-        margin 0 0 0 20px
-        font-weight 700
-        text-transform uppercase
-
-        @media (max-width 1024px)
-            margin-left 10px
-
-        @media (max-width 420px)
-            display none
-
-        .select-lang-dropdown
-            right 0
-            top 72px
-            position absolute
-            display flex
-            justify-content center
-            align-items center
-
-            .selected
-                -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-                -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-                box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-
-                .select-lang__cover
-                    background-color #fff !important
-                    opacity 0.2 !important
-
-                span
-                    opacity 0 !important
-
-            .select-lang-item
-                opacity 0
-                position relative
-                background-color #fff
-                margin 0 3px
-                width 60px
-                height 60px
-                background-size cover
-                background-repeat no-repeat
-                background-position 50% 0
-                -webkit-transition all .3s ease-in-out
-                -o-transition all .3s ease-in-out
-                transition all .3s ease-in-out
-                -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
-                -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
-                box-shadow 0 0 4px 0 rgba(0, 0, 0, .2)
-
-                &:hover
-                    -webkit-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-                    -moz-box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-                    box-shadow 0 0 4px 0 rgba(0, 0, 0, .4)
-
-                    .select-lang__cover
-                        background-color #fff
-                        opacity 0.2
-
-                    span
-                        opacity 0
-
-                span
-                    position absolute
-                    top calc(50% - 12px)
-                    left calc(50% - 10.5px)
-                    -webkit-transition all .3s ease-out
-                    -o-transition all .3s ease-out
-                    transition all .3s ease-out
-
-                .select-lang__cover
-                    opacity 1
-                    background-color #fff
-                    width 100%
-                    height 100%
-                    -webkit-transition all .3s ease-out
-                    -o-transition all .3s ease-out
-                    transition all .3s ease-out
-
-            .select-lang-en
-                margin 0 0 0 3px
-                background-image url(../../../static/images/flags/en@2x.png)
-
-            .select-lang-ru
-                position relative
-                background-image url(../../../static/images/flags/ru@2x.png)
-
-            .select-lang-zh
-                background-position 0 0
-                background-image url(../../../static/images/flags/zh@2x.png)
-
-            .select-lang-ja
-                background-image url(../../../static/images/flags/ja@2x.png)
-
-            .select-lang-ko
-                background-image url(../../../static/images/flags/ko@2x.png)
-
-            .select-lang-ar
-                background-image url(../../../static/images/flags/ar@2x.png)
-
-            .select-lang-es
-                background-image url(../../../static/images/flags/es@2x.png)
-
-            .select-lang-de
-                background-image url(../../../static/images/flags/de@2x.png)
-
-            .select-lang-fr
-                margin 0 3px 0 0
-                background-image url(../../../static/images/flags/fr@2x.png)
-
-    .select-lang__rtl
-        margin 0 20px 0 0
-
-        .select-lang-dropdown
-            left 0
-            right auto
-
-            .select-lang__en
-                margin 0 3px 0 0
-
-            .select-lang__fr
-                margin 0 0 0 3px
 
     .choose-languages
         display none
