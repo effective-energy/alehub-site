@@ -28,6 +28,53 @@
         name: 'LanguageBlock',
         data() {
             return {
+                languages: [
+                    {
+                        id: 1,
+                        name: 'fr',
+                        class: 'select-lang-fr'
+                    },
+                    {
+                        id: 2,
+                        name: 'de',
+                        class: 'select-lang-de'
+                    },
+                    {
+                        id: 3,
+                        name: 'es',
+                        class: 'select-lang-es'
+                    },
+                    {
+                        id: 4,
+                        name: 'ar',
+                        class: 'select-lang-ar'
+                    },
+                    {
+                        id: 5,
+                        name: 'ko',
+                        class: 'select-lang-ko'
+                    },
+                    {
+                        id: 6,
+                        name: 'ja',
+                        class: 'select-lang-ja'
+                    },
+                    {
+                        id: 7,
+                        name: 'zh',
+                        class: 'select-lang-zh'
+                    },
+                    {
+                        id: 8,
+                        name: 'ru',
+                        class: 'select-lang-ru'
+                    },
+                    {
+                        id: 9,
+                        name: 'en',
+                        class: 'select-lang-en'
+                    }
+                ],
                 selectedLanguage: localStorage.getItem('systemLang'),
             }
         },

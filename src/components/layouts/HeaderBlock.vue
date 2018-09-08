@@ -189,7 +189,6 @@
         },
         watch: {
             rtl: function (val) {
-                console.log(val, 'rtl');
             },
             activeItem: function (index) {
                 this.changeLineWidth(index);
