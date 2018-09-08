@@ -38,56 +38,8 @@
         <!--</span>-->
         <!--</div>-->
 
-        <!--<div class="navbar-blog"-->
-        <!--v-if="isBlogPage">-->
-        <!--<router-link class="navbar-item"-->
-        <!--tag="a"-->
-        <!--:to="'/blog/categories/all'">-->
-        <!--{{ $t("navbar.blog") }}-->
-        <!--</router-link>-->
-        <!--</div>-->
-
-        <!--<div class="white-list"-->
-        <!--v-if="isWhiteList">-->
-        <!--<router-link class="navbar-item"-->
-        <!--tag="a"-->
-        <!--:to="'/'">-->
-        <!--{{ $t("navbar.home") }}-->
-        <!--</router-link>-->
-        <!--</div>-->
-
         <div id="navbar-text"
              class="navbar-folding">
-            <!--<slider-navbar id="slider-navbar"-->
-            <!--v-if="!show && !whiteList"-->
-            <!--:is-dark="isDark"-->
-            <!--:is-yellow="isYellow"-->
-            <!--:is-rtl="rtl"-->
-            <!--:items="$t('navbar.menuList')"-->
-            <!--:options="optionsToSliderNavbar"/>-->
-
-
-            <!--<div class="navbar-folding-inner"-->
-            <!--v-if="!show && !whiteList">-->
-            <!--<div class="navbar-item"-->
-            <!--v-for="(item, index) in $t('navbar.menuList')">-->
-            <!--<a v-if="isItemHasPath(item)"-->
-            <!--@click="scrollTo(item.path)">-->
-            <!--{{ item.name }}-->
-            <!--</a>-->
-            <!--<router-link tag="a"-->
-            <!--v-else-->
-            <!--:to="item.to">-->
-            <!--{{ item.name }}-->
-            <!--</router-link>-->
-            <!--<div class="nav-line"-->
-            <!--:class="{ 'nav-line__yellow': isYellow,-->
-            <!--'nav-line__black': isDark,-->
-            <!--'nav-line__white': !isYellow && !isDark }"-->
-            <!--v-if="index === 0">-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
 
             <div class="right-menu"
                  :class="{ 'right-menu__rtl': rtl,
@@ -233,16 +185,6 @@
                 heightLangItem: 0,
 
                 rtl: false,
-
-
-                optionsToSliderNavbar: {
-                    touch: true,
-                    autoplay: false,
-                    inBlockTeam: false,
-                    autoplayDelay: 3000,
-                    pauseOnFocus: true,
-                    pauseOnHover: true
-                },
             }
         },
         watch: {
@@ -326,6 +268,9 @@
             }
         },
         methods: {
+            /**
+             * switching side menu
+             */
             toggleSideMenu: function () {
                 this.showSideMenu = !this.showSideMenu;
                 this.$parent.$emit('showSideMenu', this.showSideMenu);
@@ -760,6 +705,7 @@
     .navbar
         z-index 2000
         flex-wrap nowrap
+        padding 8px 100px
 
         .navbar-folding
             display flex
@@ -1298,16 +1244,6 @@
 
         .navbar-brand
             margin-right 8px
-
-    /*@media (max-width 1100px)*/
-    /*!*.btn-login*!*/
-    /*!*display none*!*/
-
-    /*.dropdown*/
-    /*display none*/
-
-    /*.btn-actions*/
-    /*display unset*/
 
     @media (max-width 1024px)
         .navbar
