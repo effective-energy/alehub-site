@@ -1,6 +1,6 @@
 <template>
     <div class="closed-plot"
-         @click="closeClosedPlot">
+         @click="closeSideMenu">
     </div>
 </template>
 
@@ -8,7 +8,10 @@
     export default {
         name: 'ClosedPlot',
         methods: {
-            closeClosedPlot: function () {
+            /**
+             * emit close side menu
+             */
+            closeSideMenu: function () {
                 this.$parent.$emit('showSideMenu', false);
             }
         },
