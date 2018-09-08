@@ -51,26 +51,8 @@
                     {{ $t("greeting.countDown.btnBuyTokens") }}
                 </router-link>
 
-                <div id="select-lang"
-                     class="select-lang"
-                     v-if="isLang"
-                     :class="{ 'select-lang__rtl': rtl }"
-                     @click="toggleDropdown">
-                    {{ currentLang }}
-                    <div class="select-lang-dropdown"
-                         v-if="dropdownOpen">
-                        <div class="select-lang-item"
-                             v-for="lang in languages"
-                             :class="[{ 'selected': currentLang === lang.name }, lang.class]"
-                             @click="changeLanguage(lang.id)">
-                            <div class="select-lang__cover">
-                            </div>
-                            <span>
-                                {{ lang.name.toUpperCase() }}
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <language-block/>
+
             </div>
         </div>
 
@@ -92,13 +74,16 @@
     import SideMenu from '../layouts/side-menu/SideMenu';
     import ClosedPlot from '../ClosedPlot';
 
+    import LanguageBlock from '../layouts/LanguageBlock';
+
     export default {
         name: 'HeaderBlock',
         components: {
             MenuModal,
             SliderNavbar,
             SideMenu,
-            ClosedPlot
+            ClosedPlot,
+            LanguageBlock
         },
         props: {
             isMainDark: {
