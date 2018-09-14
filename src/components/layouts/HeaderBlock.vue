@@ -18,38 +18,13 @@
             alehub
         </router-link>
 
-        <!--<div class="hamburger"-->
-             <!--id="hamburger-6"-->
-             <!--:class="{ 'is-active': activeHamburger }"-->
-             <!--@click="toggleHamburger">-->
-        <!--<span class="line"-->
-              <!--:class="{ 'line__white': isDark }">-->
-        <!--</span>-->
-            <!--<span class="line"-->
-                  <!--:class="{ 'line__white': isDark }">-->
-        <!--</span>-->
-            <!--<span class="line"-->
-                  <!--:class="{ 'line__white': isDark }">-->
-        <!--</span>-->
-        <!--</div>-->
-
-        <!--<div id="navbar-text"-->
-        <!--class="navbar-folding">-->
-
-        <!--<div class="right-menu"-->
-        <!--:class="{ 'right-menu__rtl': rtl,-->
-        <!--'right-menu__abs': isBlogPage || isWhiteList }">-->
-
         <!--<router-link tag="a"-->
         <!--to="/white-list"-->
         <!--class="btn btn-login">-->
         <!--{{ $t("greeting.countDown.btnBuyTokens") }}-->
         <!--</router-link>-->
 
-        <!--</div>-->
-        <!--</div>-->
-
-        <div>
+        <div class="header-right">
             <router-link tag="a"
                          to="/white-list"
                          class="btn btn-login">
@@ -57,7 +32,7 @@
             </router-link>
 
             <button type="button"
-                    class="btn-select-language"
+                    class="btn-blank"
                     @click="toggleLanguageBlock">
                 {{ currentLang }}
             </button>
@@ -655,23 +630,23 @@
 </script>
 
 <style lang="stylus" scoped>
-    .btn-blank,
-    .btn-select-language
+    .header-right
+        display flex
+        align-items center
+
+    .btn-blank
         cursor pointer
         display flex
         justify-content center
         align-items center
         background-color transparent
         border none
-        padding 0 10px
+        padding 0
         font-weight 700
         text-transform uppercase
 
         &:focus
             outline none
-
-    .btn-blank
-        padding 0
 
     .navbar
         z-index 2000
