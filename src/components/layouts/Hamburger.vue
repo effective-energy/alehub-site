@@ -57,13 +57,13 @@
                 &:nth-child(2)
                     width 0
 
-                .line:nth-child(1)
+                &:nth-child(1)
                     -webkit-transform translateY(10px)
                     -ms-transform translateY(10px)
                     -o-transform translateY(10px)
                     transform translateY(10px)
 
-                .line:nth-child(3)
+                &:nth-child(3)
                     -webkit-transform translateY(-10px) rotate(90deg)
                     -ms-transform translateY(-10px) rotate(90deg)
                     -o-transform translateY(-10px) rotate(90deg)

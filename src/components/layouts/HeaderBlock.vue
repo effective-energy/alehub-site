@@ -670,6 +670,9 @@
         &:focus
             outline none
 
+    .btn-blank
+        padding 0
+
     .navbar
         z-index 2000
         flex-wrap nowrap
