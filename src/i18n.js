@@ -1667,7 +1667,6 @@ const messages = {
             menuList: [
                 {
                     path: '#home',
-                    altpath: 'https://alehub.io/#home',
                     name: 'Домой'
                 },
                 {
