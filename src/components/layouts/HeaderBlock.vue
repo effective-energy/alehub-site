@@ -107,7 +107,7 @@
                         <div class="select-lang__item select-lang__fr"
                              :class="{ 'selected': currentLang === 'fr' }"
                              @click="changeLanguage(8);
-                                     yaCounter48802643.reachGoal('FR');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -116,7 +116,7 @@
                         <div class="select-lang__item select-lang__de"
                              :class="{ 'selected': currentLang === 'de' }"
                              @click="changeLanguage(7);
-                                     yaCounter48802643.reachGoal('DE');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -125,7 +125,7 @@
                         <div class="select-lang__item select-lang__es"
                              :class="{ 'selected': currentLang === 'es' }"
                              @click="changeLanguage(6);
-                                     yaCounter48802643.reachGoal('ES');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -134,7 +134,7 @@
                         <div class="select-lang__item select-lang__ar"
                              :class="{ 'selected': currentLang === 'ar' }"
                              @click="changeLanguage(5);
-                                     yaCounter48802643.reachGoal('AR');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -143,7 +143,7 @@
                         <div class="select-lang__item select-lang__ko"
                              :class="{ 'selected': currentLang === 'ko' }"
                              @click="changeLanguage(4);
-                                     yaCounter48802643.reachGoal('KO');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -152,7 +152,7 @@
                         <div class="select-lang__item select-lang__ja"
                              :class="{ 'selected': currentLang === 'ja' }"
                              @click="changeLanguage(3);
-                                     yaCounter48802643.reachGoal('JA');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -161,7 +161,7 @@
                         <div class="select-lang__item select-lang__zh"
                              :class="{ 'selected': currentLang === 'zh' }"
                              @click="changeLanguage(2);
-                                     yaCounter48802643.reachGoal('ZH');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -170,7 +170,7 @@
                         <div class="select-lang__item select-lang__ru"
                              :class="{ 'selected': currentLang === 'ru' }"
                              @click="changeLanguage(1);
-                                     yaCounter48802643.reachGoal('RU');
+                                     
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -256,7 +256,7 @@
         },
         watch: {
             rtl: function (val) {
-                console.log(val, 'rtl');
+                //console.log(val, 'rtl');
             },
             activeItem: function (index) {
                 this.changeLineWidth(index);
@@ -466,7 +466,7 @@
             makeRTL: function () {
                 document.querySelector('body').style['direction'] = 'rtl';
                 this.rtl = true;
-                console.log('im in rtl');
+                //console.log('im in rtl');
                 setTimeout(() => {
                     this.$parent.$emit('isRtl', this.rtl);
                 }, 0);

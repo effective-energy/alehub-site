@@ -117,7 +117,7 @@
         },
         watch: {
             error: function (val) {
-                // console.log(val, 'error');
+                console.log(val, 'error');
             }
         },
         computed: {
@@ -129,7 +129,7 @@
                 return re.test(String(this.email).toLowerCase());
             },
             isError: function () {
-                console.log(this.error, 'this.error');
+                // console.log(this.error, 'this.error');
                 return this.error;
             },
             isInitialFocus: function () {
@@ -158,7 +158,7 @@
                         }
                     }).then(response => {
                         this.isLoader = false;
-                        console.log(response.body);
+                        // console.log(response.body);
                         if (response.body.message === 'Email already exist')
                             return this.exist = true;
                         this.success = true;

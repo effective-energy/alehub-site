@@ -3,10 +3,12 @@
          :class="calcStagePanelClass">
         <h4>
             {{ stage.marker.title }}
+            <!-- {{ $t('roadmap.stages['+stage.id+'].title') }} -->
         </h4>
-        <h4>
+        <p style="font-weight: 700;">
             {{ stage.marker.date }}
-        </h4>
+            <!-- {{  $t('roadmap.stages['+stage.id+'].date')   }} -->
+        </p>
     </div>
 </template>
 

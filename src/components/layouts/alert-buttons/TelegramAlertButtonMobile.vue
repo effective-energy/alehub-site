@@ -58,7 +58,7 @@
             }
         },
         mounted() {
-            console.log(this.tgMobileInDarkSection, 'tgMobileInDarkSection');
+            // console.log(this.tgMobileInDarkSection, 'tgMobileInDarkSection');
         }
     }
 </script>

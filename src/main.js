@@ -124,27 +124,27 @@ Vue.config.productionTip = false;
 setTimeout(() => {
     store.dispatch('cryptoPriceRequest')
         .then(() => {
-            console.log('success crypto price');
+            // //console.log('success crypto price');
         })
         .catch(() => {
-            console.log('error crypto price');
+            //console.log('error crypto price');
         });
 
     store.dispatch('downloadAppRequest')
         .then(() => {
-            console.log('success download app');
+            // //console.log('success download app');
 
         })
         .catch(() => {
-            console.log('error download app');
+            //console.log('error download app');
         });
 
     store.dispatch('blogRequest')
         .then(() => {
-            console.log('success blog');
+            // //console.log('success blog');
         })
         .catch(() => {
-            console.log('error blog');
+            //console.log('error blog');
         });
 }, 2000);
 
