@@ -18,7 +18,7 @@
         <router-link tag="div"
                      class="side-menu-item"
                      :to="item.to"
-                     v-for="item in pages">
+                     v-for="item in $t('navbar.pages')">
             <span>
                 {{ item.name }}
             </span>
@@ -44,25 +44,7 @@
             }
         },
         data() {
-            return {
-                pages: [
-                    {
-                        id: 1,
-                        name: 'FAQ',
-                        to: '/faq'
-                    },
-                    {
-                        id: 2,
-                        name: 'Buy tokens',
-                        to: '/white-list'
-                    },
-                    {
-                        id: 3,
-                        name: 'Blog page',
-                        to: '/blog/categories/all'
-                    }
-                ]
-            }
+            return {}
         },
         methods: {
             /**
@@ -104,6 +86,7 @@
 <style lang="stylus" scoped>
     .side-menu
         z-index 2000
+        overflow-y auto
         position fixed
         top 74px
         left 0

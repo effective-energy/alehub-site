@@ -67,6 +67,20 @@ const messages = {
                     name: '博客'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: '登录',
             blog: '博客'
         },
@@ -890,6 +904,20 @@ const messages = {
                     name: 'ブログ'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: 'ログイン',
             blog: 'ブログ'
         },
@@ -1708,6 +1736,20 @@ const messages = {
                 {
                     to: '/faq',
                     name: 'FAQ'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Блог',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Войти',
@@ -2691,6 +2733,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Login',
@@ -3680,6 +3736,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: "S'identifier",
             blog: 'Blog'
         },
@@ -4481,6 +4551,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: 'Einloggen',
             blog: 'Blog'
         },
@@ -5274,6 +5358,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'مدونة'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'تسجيل الدخول',
@@ -6072,6 +6170,20 @@ const messages = {
                     name: '블로그'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: '로그인',
             blog: '블로그'
         },
@@ -6866,6 +6978,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Registro en',
