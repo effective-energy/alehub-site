@@ -1029,3 +1029,8 @@
         right 0
 
 </style>
+
+<style lang="stylus" scoped>
+    .btn-login
+        margin-right 0
+</style>

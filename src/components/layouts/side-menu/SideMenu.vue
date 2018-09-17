@@ -2,6 +2,9 @@
     <div id="side-menu"
          class="side-menu"
          :class="{ 'inactive': !show, 'dark': dark, 'yellow': yellow }">
+        <h4 class="side-menu-title">
+            Sections
+        </h4>
         <div class="side-menu-item"
              v-for="item in $t('navbar.menuList')"
              @click="scrollTo(item.path)">
@@ -9,6 +12,17 @@
                 {{ item.name }}
             </span>
         </div>
+        <h4 class="side-menu-title">
+            Pages
+        </h4>
+        <router-link tag="div"
+                     class="side-menu-item"
+                     :to="item.to"
+                     v-for="item in pages">
+            <span>
+                {{ item.name }}
+            </span>
+        </router-link>
     </div>
 </template>
 
@@ -30,7 +44,25 @@
             }
         },
         data() {
-            return {}
+            return {
+                pages: [
+                    {
+                        id: 1,
+                        name: 'FAQ',
+                        to: '/faq'
+                    },
+                    {
+                        id: 2,
+                        name: 'Buy tokens',
+                        to: '/white-list'
+                    },
+                    {
+                        id: 3,
+                        name: 'Blog page',
+                        to: '/blog/categories/all'
+                    }
+                ]
+            }
         },
         methods: {
             /**
@@ -104,9 +136,16 @@
                     span
                         color #ffffff
 
+        .side-menu-title
+            font-size 1.1em
+            font-weight 500
+            font-family MuseoSansCyrl500
+            padding 15px 30px
+            margin 0
+
         .side-menu-item
             cursor pointer
-            padding 10px 40px
+            padding 10px 60px
             position relative
             transition all .2s ease
 
@@ -115,7 +154,7 @@
 
             span
                 font-family MuseoSansCyrl500
-                font-size 1.3em
+                font-size 1.1em
                 font-weight 500
 
 </style>
