@@ -137,9 +137,6 @@
                         cursor default
                         border-bottom 1px solid #ffd24f
                         border-left 1px solid #ffd24f
-                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
-                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
-                        //box-shadow inset 2px -2px 4px 0px rgba(0, 0, 0, .7);
                         background-color transparent
                         color #ffffff
 
@@ -148,18 +145,12 @@
                         border-top 1px solid #ffd24f
                         border-bottom 1px solid #ffd24f
                         border-left 1px solid #ffd24f
-                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, 1);
-                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, 1);
-                        //box-shadow inset 1px 0 7px 0 rgba(0, 0, 0, 1);
                         background-color transparent
 
                     &:last-child.tab-active
                         cursor default
                         border-left 1px solid #ffd24f
                         border-top 1px solid #ffd24f
-                        //-webkit-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
-                        //-moz-box-shadow inset 0 0 5px 0 rgba(0, 0, 0, .7);
-                        //box-shadow inset 2px 2px 4px 0px rgba(0, 0, 0, .7);
                         background-color transparent
                         color #ffffff
 
@@ -172,23 +163,6 @@
             @media (max-width 576px)
                 cursor pointer
 
-            &:after
-                background rgba(52, 58, 73, 1)
-                background -moz-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 0)), color-stop(100%, rgba(52, 58, 73, 1)))
-                background -webkit-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                background -o-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                background -ms-linear-gradient(top, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                background linear-gradient(to bottom, rgba(52, 58, 73, 0) 0%, rgba(52, 58, 73, 1) 100%)
-                bottom 50px
-                content ''
-                display block
-                position absolute
-                left 0
-                width 100%
-                height 150px
-                z-index 2
-
         &.active-top
             transform translateY(-100px) scale(.9)
             background-color transparent
@@ -196,23 +170,6 @@
 
             @media (max-width 576px)
                 cursor pointer
-
-            &:before
-                background rgba(52, 58, 73, 1)
-                background -moz-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                background -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52, 58, 73, 1)), color-stop(100%, rgba(52, 58, 73, 0)))
-                background -webkit-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                background -o-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                background -ms-linear-gradient(top, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                background linear-gradient(to bottom, rgba(52, 58, 73, 1) 0%, rgba(52, 58, 73, 0) 100%)
-                top 50px
-                content ''
-                display block
-                position absolute
-                left 0
-                width 100%
-                height 150px
-                z-index 2
 
         &.inactive-bottom
             transform translateY(725px)
