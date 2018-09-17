@@ -100,7 +100,7 @@
         transition all .4s ease
 
         &.inactive
-            left -400px
+            left -405px
 
         &.dark
             background-color #343a49
@@ -140,4 +140,6 @@
                 font-size 1.1em
                 font-weight 500
 
+        @media (max-width 420px)
+            padding 0
 </style>

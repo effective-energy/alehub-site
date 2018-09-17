@@ -13,17 +13,10 @@
         <router-link class="navbar-brand"
                      tag="a"
                      to="/"
-                     style="font-family: MuseoSansCyrl500; text-transform: uppercase;"
                      :class="{ 'navbar-brand__rtl': rtl }"
                      @click.native="toggleMenuModal">
             alehub
         </router-link>
-
-        <!--<router-link tag="a"-->
-        <!--to="/white-list"-->
-        <!--class="btn btn-login">-->
-        <!--{{ $t("greeting.countDown.btnBuyTokens") }}-->
-        <!--</router-link>-->
 
         <div class="header-right">
             <router-link tag="a"
@@ -93,7 +86,7 @@
         },
         data() {
             return {
-                openedLanguageBlock: true,
+                openedLanguageBlock: false,
                 showSideMenu: false,
 
                 langDropdownInProcess: false,
@@ -961,8 +954,6 @@
             margin-right 8px
 
     @media (max-width 1100px)
-        /*.btn-login*/
-        /*display none*/
         .dropdown
             display none
 
@@ -1031,6 +1022,18 @@
 </style>
 
 <style lang="stylus" scoped>
+    .navbar
+        @media (max-width 768px)
+            flex-direction row-reverse
+
+    .header-right
+        @media (max-width 768px)
+            display none
+
+    .navbar-brand
+        font-family MuseoSansCyrl500
+        text-transform uppercase
+
     .btn-login
         margin-right 0
 </style>
