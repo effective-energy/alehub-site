@@ -6,7 +6,8 @@
         <button type="button"
                 class="btn-blank"
                 @click="toggleSideMenu">
-            <hamburger :dark="isDark"/>
+            <hamburger :dark="isDark"
+                       :closed="showSideMenu"/>
         </button>
 
         <router-link class="navbar-brand"
@@ -201,7 +202,6 @@
              */
             toggleSideMenu: function () {
                 this.showSideMenu = !this.showSideMenu;
-                this.$parent.$emit('showSideMenu', this.showSideMenu);
             },
             /**
              * scroll window to specified block

@@ -16,6 +16,16 @@
             dark: {
                 type: Boolean,
                 required: true
+            },
+            closed: {
+                type: Boolean,
+                required: true
+            }
+        },
+        watch: {
+            closed: function (v) {
+                if (!v)
+                    this.active = false;
             }
         },
         data() {
@@ -24,6 +34,9 @@
             }
         },
         methods: {
+            /**
+             * switch active state hamburger
+             */
             toggle: function () {
                 this.active = !this.active;
             }
