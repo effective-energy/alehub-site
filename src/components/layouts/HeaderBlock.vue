@@ -88,12 +88,12 @@
                  :class="{ 'right-menu__rtl': rtl,
                            'right-menu__abs': isBlogPage || isWhiteList }">
 
-               <!--  <router-link tag="a"
+               <router-link tag="a"
                              to="/white-list"
                              class="btn btn-login">
                     {{ $t("greeting.countDown.btnBuyTokens") }}
                 </router-link>
- -->
+
                 <div id="select-lang"
                      class="select-lang"
                      v-if="isLang"
