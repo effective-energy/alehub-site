@@ -15,6 +15,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.3.1",
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
+    "animejs": "^2.2.0",
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.6",
     "dragscroll": "0.0.8",

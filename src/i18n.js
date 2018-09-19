@@ -67,6 +67,20 @@ const messages = {
                     name: '博客'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: '登录',
             blog: '博客'
         },
@@ -592,8 +606,8 @@ const messages = {
                 }
             },
             distribution: {
-                title: '在ICO期间出售',
-                description: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
+                title: 'ICO Terms',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [
                     {
                         title: '为ICO出售',
@@ -890,6 +904,20 @@ const messages = {
                     name: 'ブログ'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: 'ログイン',
             blog: 'ブログ'
         },
@@ -898,7 +926,7 @@ const messages = {
             navigationMenu: 'Back to menu'
         },
         greeting: {
-            title: 'The new era of project management is coming',
+            title: 'プロジェクト管理の新しい時代が近づいています',
             countDown: {
                 title: 'PreICO will begin',
                 time: {
@@ -906,12 +934,12 @@ const messages = {
                     hours: 'Hours',
                     minutes: 'Minutes'
                 },
-                btnBuyTokens: 'Buy tokens',
+                btnBuyTokens: 'トークンを購入する',
                 bonus: 'Bonus 25% up to 25 June 2018',
                 notAvailable: 'Now not available'
             },
             acceptedCrypto: {
-                title: 'Accepted for collection'
+                title: 'コレクションのために受け入れられる'
             }
         },
         partners: {
@@ -1419,19 +1447,19 @@ const messages = {
                 description: 'スマートコントラクトは投資家の財政の安全を保障します:チームの資本を寝かせる(一年間) softcap が成功にならない場合には財政を返金します。',
                 list: [
                     {
-                        title: 'Sale during the ICO',
+                        title: 'ICO 기간 중 판매',
                         amount: 77
                     },
                     {
-                        title: 'Team',
+                        title: '명령',
                         amount: 11
                     },
                     {
-                        title: 'Referral program, advisors',
+                        title: '추천 프로그램 및 고문',
                         amount: 10
                     },
                     {
-                        title: 'Bounty',
+                        title: '바운티 (Bounty)',
                         amount: 2
                     }
                 ]
@@ -1697,10 +1725,10 @@ const messages = {
                     path: '#download-application',
                     name: 'MVP'
                 },
-                // {
-                //     path: '#mass-media-section',
-                //     name: 'Медиа о нас'
-                // },
+                {
+                    path: '#mass-media-section',
+                    name: 'Медиа о нас'
+                },
                 {
                     path: '#blog',
                     name: 'Блог'
@@ -1708,6 +1736,20 @@ const messages = {
                 {
                     to: '/faq',
                     name: 'FAQ'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Блог',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Войти',
@@ -1718,7 +1760,7 @@ const messages = {
             navigationMenu: 'Вернуться к меню'
         },
         greeting: {
-            title: 'The new era of project management is coming',
+            title: 'Наступает новая эра управления проектами',
             countDown: {
                 title: 'PreICO начинается через',
                 time: {
@@ -2691,6 +2733,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Login',
@@ -3680,6 +3736,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: "S'identifier",
             blog: 'Blog'
         },
@@ -4186,7 +4256,7 @@ const messages = {
             },
             distribution: {
                 title: 'Vente pendant l’ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [
                     {
                         title: 'Vente pendant l’ICO',
@@ -4481,6 +4551,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: 'Einloggen',
             blog: 'Blog'
         },
@@ -4489,7 +4573,7 @@ const messages = {
             navigationMenu: 'Zurück zum Menü'
         },
         greeting: {
-            title: 'La nouvelle ère de la gestion de projet',
+            title: 'Die neue Ära des Projektmanagements steht bevor',
             countDown: {
                 title: 'PreICO wird beginnen',
                 time: {
@@ -4987,7 +5071,7 @@ const messages = {
             },
             distribution: {
                 title: 'Verkauf während der ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [{
                     title: 'Verkauf während der ICO',
                     amount: 77
@@ -5274,6 +5358,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'مدونة'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'تسجيل الدخول',
@@ -5782,7 +5880,7 @@ const messages = {
             },
             distribution: {
                 title: 'البيع خلال الايكو',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [{
                     title: 'البيع خلال الايكو',
                     amount: 77
@@ -6070,6 +6168,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: '블로그'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: '로그인',
@@ -6578,7 +6690,7 @@ const messages = {
             },
             distribution: {
                 title: 'Sale during the ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [{
                     title: 'ICO 기간 중 판매',
                     amount: 77
@@ -6866,6 +6978,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Registro en',
@@ -7376,7 +7502,7 @@ const messages = {
             },
             distribution: {
                 title: 'Sale during the ICO',
-                description: 'The ALE product is primarily a service for consumers to find counterparties for projects in the IT field and to manage these projects at the management and financial level. On the one hand, they are programmers or their associations, and on the other hand, they are IT Customers.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [{
                     title: 'Venta durante el ICO',
                     amount: 77

@@ -63,16 +63,17 @@
 
             <div class="list-items">
                 <div class="item"
-                     v-for="problem in problems">
-                    <div class="left">
-                        <img :src="problem.img">
+                     v-for="(problem, index) in $t('alePlatform.solvingProblems.list')"
+                     :key="index">
+                    <div class="left" >
+                        <img :src="problems[index].img">
                     </div>
                     <div class="right">
                         <p class="right__title">
                             {{ problem.title }}
                         </p>
                         <p>
-                            {{ problem.desc }}
+                            {{ problem.description }}
                         </p>
                     </div>
                 </div>
@@ -93,9 +94,9 @@
                 </h3>
                 <div class="list-items">
                     <div class="item"
-                         v-for="feature in features">
+                         v-for="(feature, index) in $t('features.list')">
                         <div class="left">
-                            <img :src="feature.img">
+                            <img :src="features[index].img">
                         </div>
                         <div class="right">
                             <p class="right__title">

@@ -41,7 +41,7 @@
         },
         watch: {
             isRtl: function (val) {
-                console.log(val, 'is rtl in slider screen');
+                //console.log(val, 'is rtl in slider screen');
             }
         },
         data() {

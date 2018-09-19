@@ -214,7 +214,7 @@
                     .image-preview
                         -o-object-fit cover
                         object-fit cover
-                        width 200px
+                        // width 200px
                         height 120px
 
                     .post-content
