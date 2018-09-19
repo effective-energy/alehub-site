@@ -6,11 +6,15 @@
              :class="{ 'content-wrap-tabs': isStageTabs }">
             <h3>
                 {{ stage.date }}
+            <!-- {{  $t('roadmap.stages['+stage.id+'].date')   }} -->
+
             </h3>
             <div class="content"
                  v-if="stage.hasOwnProperty('title') || stage.hasOwnProperty('text')">
                 <h4 v-if="stage.hasOwnProperty('title')">
                     {{ stage.title }}
+            <!-- {{  $t('roadmap.stages['+(stage.id-1)+'].title')   }} -->
+
                 </h4>
                 <p v-if="stage.hasOwnProperty('text')"
                    v-for="text in stage.text">

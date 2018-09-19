@@ -473,7 +473,7 @@
             tgButtonClass: function (val) {
             },
             isDarkSection: function (val) {
-                console.log(val, 'isDarkSection');
+                // console.log(val, 'isDarkSection');
             },
             isVideo: function (val) {
                 if (val) {
@@ -684,7 +684,7 @@
                         }
                     }).then(response => {
                         this.subscriber.loader = false;
-                        console.log(response.body);
+                        // console.log(response.body);
                         if (response.body.message === 'Email already exist') {
                             localStorage.setItem('subscriber-email', this.subscriber.email);
                             return this.subscriber.exist = true;
@@ -714,7 +714,7 @@
             },
             yaMetricaCollectionLastItem: function () {
                 yaCounter48802643.reachGoal('BuyUSD');
-                console.log('usd');
+                // console.log('usd');
                 return true;
             },
             doCloseTelegramAlertMobile: function () {
@@ -831,7 +831,7 @@
 
             this.$store.dispatch('cryptoPriceRequest')
                 .then(resp => {
-                    console.log('OK');
+                    // console.log('OK');
                 }).catch(err => {
                 console.log('NO');
             });
