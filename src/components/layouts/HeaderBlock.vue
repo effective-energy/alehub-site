@@ -88,12 +88,12 @@
                  :class="{ 'right-menu__rtl': rtl,
                            'right-menu__abs': isBlogPage || isWhiteList }">
 
-                <router-link tag="a"
+               <!--  <router-link tag="a"
                              to="/white-list"
                              class="btn btn-login">
                     {{ $t("greeting.countDown.btnBuyTokens") }}
                 </router-link>
-
+ -->
                 <div id="select-lang"
                      class="select-lang"
                      v-if="isLang"
@@ -107,7 +107,6 @@
                         <div class="select-lang__item select-lang__fr"
                              :class="{ 'selected': currentLang === 'fr' }"
                              @click="changeLanguage(8);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -116,7 +115,6 @@
                         <div class="select-lang__item select-lang__de"
                              :class="{ 'selected': currentLang === 'de' }"
                              @click="changeLanguage(7);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -125,7 +123,6 @@
                         <div class="select-lang__item select-lang__es"
                              :class="{ 'selected': currentLang === 'es' }"
                              @click="changeLanguage(6);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -134,7 +131,6 @@
                         <div class="select-lang__item select-lang__ar"
                              :class="{ 'selected': currentLang === 'ar' }"
                              @click="changeLanguage(5);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -143,7 +139,6 @@
                         <div class="select-lang__item select-lang__ko"
                              :class="{ 'selected': currentLang === 'ko' }"
                              @click="changeLanguage(4);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -152,7 +147,6 @@
                         <div class="select-lang__item select-lang__ja"
                              :class="{ 'selected': currentLang === 'ja' }"
                              @click="changeLanguage(3);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -161,7 +155,6 @@
                         <div class="select-lang__item select-lang__zh"
                              :class="{ 'selected': currentLang === 'zh' }"
                              @click="changeLanguage(2);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>
@@ -170,7 +163,6 @@
                         <div class="select-lang__item select-lang__ru"
                              :class="{ 'selected': currentLang === 'ru' }"
                              @click="changeLanguage(1);
-
                                      return true;">
                             <div class="select-lang__cover">
                             </div>

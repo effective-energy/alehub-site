@@ -16,18 +16,17 @@
                 <span class="copyright-text">
 				    {{ $t('footer.left.copyright') }}
 				<div class="creator-and-terms">
-					<div class="creator">
-						<div class="rukin-logo"
-                             :class="{ 'rukin-logo__rtl': isRtl }"></div>
-						<span class="rukin-about">
-                            {{ $t('footer.left.designBy') }}
-                        </span>
-					</div>
 					<a href="https://alehub.io/terms_and_conditions.pdf"
                        target="_blank"
                        class="terms"
                        :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
+                    </a>
+                    <a href="https://alehub.io/disclaimer.pdf"
+                       target="_blank"
+                       class="terms"
+                       :class="{ 'terms__rtl': isRtl }">
+                        Disclaimer
                     </a>
 				</div>
                     <div class="creator-and-terms">
@@ -40,6 +39,15 @@
                                 Hong Kong
                         </span>
                     </div>
+                    <div class="creator-and-terms">
+                    <div class="creator">
+                        <div class="rukin-logo"
+                             :class="{ 'rukin-logo__rtl': isRtl }"></div>
+                        <span class="rukin-about">
+                            {{ $t('footer.left.designBy') }}
+                        </span>
+                    </div>
+                </div>
 			</span>
             </div>
 
@@ -490,7 +498,6 @@
                         color #34343e
 
                 .terms
-                    margin 0 0 0 12px
                     opacity 0.4
                     font-family MuseoSansCyrl500
                     font-size 14px
@@ -501,6 +508,9 @@
                     color #34343e
                     text-decoration underline
                     white-space nowrap
+                    margin 0 0 3px 0    
+                .terms:last-child
+                    margin 0 0 0 12px    
                 .telephone
                     color #34343e
 
