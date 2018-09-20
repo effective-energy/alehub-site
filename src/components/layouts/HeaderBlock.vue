@@ -670,10 +670,10 @@
                 pointerToTopOffset = pointerToTop.offsetHeight;
             }
 
-            if (document.getElementById('navbar')) {
+            if (document.getElementById('navbar') ) {
                 let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
-                if (document.getElementById('telegram-alert')) {
+                if (!document.getElementById('telegram-alert') && this.$route.path === '/blog/categories/all') {
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
                     tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
                 } else if (document.getElementById('telegram-alert-mobile')) {
