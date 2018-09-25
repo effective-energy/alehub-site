@@ -519,10 +519,10 @@
              * @returns {*}
              */
             getPageCoords: function (elem) {
-                let box = elem.getBoundingClientRect();
-
-                if (!elem)
+                 if (!elem){
                     return false;
+                }
+                let box = elem.getBoundingClientRect();
 
                 return {
                     top: box.top + pageYOffset,
@@ -613,6 +613,7 @@
                 }
             },
             checkActive: function () {
+                if(!this.isBlogPage){
                 let menu = this.$t('navbar.menuList');
                 for (let i = 0; i < menu.menuLength; i++) {
                     if (document.querySelector(menu[i].path) === null)
@@ -623,7 +624,8 @@
                         this.activeItem = i;
                     }
                 }
-            },
+            }
+        },
             preventDefault: function (e) {
                 e.preventDefault();
             },
@@ -830,6 +832,7 @@
 
             .right-menu
                 position block
+                align-self center
 
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
