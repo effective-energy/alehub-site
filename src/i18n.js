@@ -607,7 +607,7 @@ const messages = {
             },
             distribution: {
                 title: 'STO Terms',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [
                     {
                         title: '为STO出售',
