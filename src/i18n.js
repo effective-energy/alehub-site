@@ -48,7 +48,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -508,9 +508,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -589,7 +589,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO 经济',
+            title: 'STO 经济',
             subTitle: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
             ICOinfo: {
                 emission: {
@@ -606,11 +606,11 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'ICO Terms',
+                title: 'STO Terms',
                 description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [
                     {
-                        title: '为ICO出售',
+                        title: '为STO出售',
                         amount: 77
                     },
                     {
@@ -743,7 +743,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: '实施',
@@ -885,7 +885,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -1426,7 +1426,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO の経済',
+            title: 'STO の経済',
             subTitle: 'Ale セキュリティトケンはトケンを持っているユーザにALE システムの営業の部分を儲けします。Ethereum ネットに結んでたプロトコルは流動性を保険します。(プロトコル ERC-20)',
             ICOinfo: {
                 emission: {
@@ -1443,11 +1443,11 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'ICO 条件',
+                title: 'STO 条件',
                 description: 'スマートコントラクトは投資家の財政の安全を保障します:チームの資本を寝かせる(一年間) softcap が成功にならない場合には財政を返金します。',
                 list: [
                     {
-                        title: 'ICO 기간 중 판매',
+                        title: 'STO 기간 중 판매',
                         amount: 77
                     },
                     {
@@ -1580,7 +1580,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementing',
@@ -1715,7 +1715,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -2260,7 +2260,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'Экономика ICO',
+            title: 'Экономика STO',
             subTitle: 'ALE - security токен, обеспечивающий владельцем получение доли прибыли системы ALE. Протокол зазеркален на сеть Ethereum (протокол ERC-20) для обеспечения ликвидности.',
             ICOinfo: {
                 emission: {
@@ -2277,11 +2277,11 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Условия ICO',
-                description: 'Смарт-контракт обеспечивает безопасность средств инвесторов: полный возврат средств в случае недостижения softcap, замораживает средства команды на 1 год. Токены, не распределенные в ходе ICO, будут уничтожены. Токен будет размещен на биржах.',
+                title: 'Условия STO',
+                description: 'Смарт-контракт обеспечивает безопасность средств инвесторов: полный возврат средств в случае недостижения softcap, замораживает средства команды на 1 год. Токены, не распределенные в ходе STO, будут уничтожены. Токен будет размещен на биржах.',
                 list: [
                     {
-                        title: 'Продажа на ICO',
+                        title: 'Продажа на STO',
                         amount: 77
                     },
                     {
@@ -2413,7 +2413,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07.18 – 09.18',
                     progress: 5,
                     state: 'этап идет',
@@ -2716,7 +2716,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -3256,7 +3256,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO Economy',
+            title: 'STO Economy',
             subTitle: 'ALE is a security token, providing the owner with a share of profits in the ALE system. The protocol is mirrored to the Ethereum network (protocol ERC-20) to provide liquidity.',
             ICOinfo: {
                 emission: {
@@ -3273,11 +3273,11 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'ICO Terms',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated. ',
+                title: 'STO Terms',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated. ',
                 list: [
                     {
-                        title: 'Sale in the course of ICO',
+                        title: 'Sale in the course of STO',
                         amount: 77
                     },
                     {
@@ -3414,7 +3414,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementing',
@@ -3717,7 +3717,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -4238,7 +4238,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'Économie de l’ICO ',
+            title: 'Économie de l’STO ',
             subTitle: 'ALE est un jeton de sécurité qui fournit au propriétaire la participation aux bénéfices du système ALE. Le protocole reflète le réseau Ethereum (protocole ERC-20) pour fournir des liquidités.',
             ICOinfo: {
                 emission: {
@@ -4255,11 +4255,11 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Vente pendant l’ICO',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                title: 'Vente pendant l’STO',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [
                     {
-                        title: 'Vente pendant l’ICO',
+                        title: 'Vente pendant l’STO',
                         amount: 77
                     },
                     {
@@ -4392,7 +4392,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: 'exécution',
@@ -4532,7 +4532,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -5053,7 +5053,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO-Wirtschaft',
+            title: 'STO-Wirtschaft',
             subTitle: 'ALE ist ein Sicherheitstoken, das dem Eigentümer den Gewinnanteil des ALE-Systems zur Verfügung stellt. Das Protokoll spiegelt das Ethereum-Netzwerk (ERC-20-Protokoll) wider, um Liquidität bereitzustellen.',
             ICOinfo: {
                 emission: {
@@ -5070,10 +5070,10 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Verkauf während der ICO',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                title: 'Verkauf während der STO',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [{
-                    title: 'Verkauf während der ICO',
+                    title: 'Verkauf während der STO',
                     amount: 77
                 }, {
                     title: 'Befehl',
@@ -5202,7 +5202,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: 'implementieren',
@@ -5341,7 +5341,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -5880,7 +5880,7 @@ const messages = {
             },
             distribution: {
                 title: 'البيع خلال الايكو',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [{
                     title: 'البيع خلال الايكو',
                     amount: 77
@@ -6011,7 +6011,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 0,
                     state: 'تنفيذ',
@@ -6151,7 +6151,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -6672,7 +6672,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'ICO 경제',
+            title: 'STO 경제',
             subTitle: 'ALE는 소유자에게 ALE 시스템 이익 분배를 제공하는 보안 토큰입니다. 이 프로토콜은 이더리움 (Ethereum) 네트워크 (ERC-20 프로토콜)를 반영하여 유동성을 제공합니다.',
             ICOinfo: {
                 emission: {
@@ -6689,10 +6689,10 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Sale during the ICO',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                title: 'Sale during the STO',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [{
-                    title: 'ICO 기간 중 판매',
+                    title: 'STO 기간 중 판매',
                     amount: 77
                 }, {
                     title: '명령',
@@ -6821,7 +6821,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 5,
                     state: '구현',
@@ -6961,7 +6961,7 @@ const messages = {
                 },
                 {
                     path: '#ico',
-                    name: 'ICO'
+                    name: 'STO'
                 },
                 {
                     path: '#roadmap',
@@ -7484,7 +7484,7 @@ const messages = {
             ]
         },
         economy: {
-            title: 'Economía de ICO',
+            title: 'Economía de STO',
             subTitle: 'ALE es un token de seguridad, que proporciona al propietario el porcentaje de ganancia del sistema ALE. El protocolo está reflejado en la red Ethereum (protocolo ERC-20) para proporcionar liquidez.',
             ICOinfo: {
                 emission: {
@@ -7501,10 +7501,10 @@ const messages = {
                 }
             },
             distribution: {
-                title: 'Sale during the ICO',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
+                title: 'Sale during the STO',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
                 list: [{
-                    title: 'Venta durante el ICO',
+                    title: 'Venta durante el STO',
                     amount: 77
                 }, {
                     title: 'Mando',
@@ -7633,7 +7633,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'ICO',
+                    title: 'STO',
                     date: '07/18 - 09/18',
                     progress: 0,
                     state: 'the stage did not begin',
