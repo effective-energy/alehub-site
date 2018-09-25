@@ -614,7 +614,7 @@
             },
             checkActive: function () {
                 let menu = this.$t('navbar.menuList');
-                for (let i = 0; i < menu.length; i++) {
+                for (let i = 0; i < menu.menuLength; i++) {
                     if (document.querySelector(menu[i].path) === null)
                         return false;
                     let offset = document.querySelector(menu[i].path).offsetTop - 74;
@@ -670,10 +670,10 @@
                 pointerToTopOffset = pointerToTop.offsetHeight;
             }
 
-            if (document.getElementById('navbar') ) {
+            if (document.getElementById('navbar') && !this.$route.path.includes('/blog')) {
                 let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
-                if (!document.getElementById('telegram-alert') && this.$route.path === '/blog/categories/all') {
+                if (!document.getElementById('telegram-alert')) {
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
                     tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
                 } else if (document.getElementById('telegram-alert-mobile')) {

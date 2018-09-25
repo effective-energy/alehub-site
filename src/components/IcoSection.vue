@@ -152,7 +152,9 @@
         },
         mounted() {
             window.addEventListener('scroll', () => {
+                if(!this.$route.path.includes('/blog')){
                 this.isShowAnim = document.querySelector('#ico').offsetTop - 400 <= window.pageYOffset;
+                }
             })
         },
     }

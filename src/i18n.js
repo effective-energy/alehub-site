@@ -47,7 +47,7 @@ const messages = {
                     name: '球队'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -870,7 +870,7 @@ const messages = {
                     name: 'チーム'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -1686,7 +1686,7 @@ const messages = {
                     name: 'Команда'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -2673,7 +2673,7 @@ const messages = {
                     name: 'Team'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -3660,7 +3660,7 @@ const messages = {
                     name: 'Équipe'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -4461,7 +4461,7 @@ const messages = {
                     name: 'Mannschaft'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -5256,7 +5256,7 @@ const messages = {
                     name: 'الفريق'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -6052,7 +6052,7 @@ const messages = {
                     name: '팀'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
@@ -6848,7 +6848,7 @@ const messages = {
                     name: 'Equipo'
                 },
                 {
-                    path: '#STO',
+                    path: '#ico',
                     name: 'STO'
                 },
                 {
