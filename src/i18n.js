@@ -91,7 +91,7 @@ const messages = {
         greeting: {
             title: '项目管理的新时代即将到来',
             countDown: {
-                title: 'PreICO将开始',
+                title: 'PreSTO将开始',
                 time: {
                     days: '天',
                     hours: '小时',
@@ -519,8 +519,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -529,20 +529,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -554,17 +554,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -580,8 +580,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -591,7 +591,7 @@ const messages = {
         economy: {
             title: 'STO 经济',
             subTitle: 'ALE是一种安全性代币，它允许代币持有者分享ALE系统的利润。该协议借鉴了以太坊网络（ERC-20协议），以便于提供流动性。',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -736,7 +736,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: '部署',
@@ -928,7 +928,7 @@ const messages = {
         greeting: {
             title: 'プロジェクト管理の新しい時代が近づいています',
             countDown: {
-                title: 'PreICO will begin',
+                title: 'PreSTO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -1345,9 +1345,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -1356,8 +1356,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -1366,20 +1366,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -1391,17 +1391,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -1417,8 +1417,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -1428,7 +1428,7 @@ const messages = {
         economy: {
             title: 'STO の経済',
             subTitle: 'Ale セキュリティトケンはトケンを持っているユーザにALE システムの営業の部分を儲けします。Ethereum ネットに結んでたプロトコルは流動性を保険します。(プロトコル ERC-20)',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Объем эмиссии',
                     amount: "∽211 000 000"
@@ -1573,7 +1573,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: 'deployed',
@@ -1762,7 +1762,7 @@ const messages = {
         greeting: {
             title: 'Наступает новая эра управления проектами',
             countDown: {
-                title: 'PreICO начинается через',
+                title: 'PreSTO начинается через',
                 time: {
                     days: 'Дней',
                     hours: 'Часов',
@@ -2179,9 +2179,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -2190,8 +2190,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2200,20 +2200,20 @@ const messages = {
                     name: 'Владимир Никитин',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2225,17 +2225,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2251,8 +2251,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -2262,7 +2262,7 @@ const messages = {
         economy: {
             title: 'Экономика STO',
             subTitle: 'ALE - security токен, обеспечивающий владельцем получение доли прибыли системы ALE. Протокол зазеркален на сеть Ethereum (протокол ERC-20) для обеспечения ликвидности.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Объем эмиссии',
                     amount: "∽211 000 000"
@@ -2406,7 +2406,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05.18 – 06.18',
                     progress: 100,
                     state: 'готово',
@@ -2759,7 +2759,7 @@ const messages = {
         greeting: {
             title: 'The new era of project management is coming',
             countDown: {
-                title: 'PreICO will begin',
+                title: 'PreSTO will begin',
                 time: {
                     days: 'Days',
                     hours: 'Hours',
@@ -3170,9 +3170,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.</p>' +
                     '<p>Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.</p>',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.</p>',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -3181,8 +3181,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -3193,21 +3193,21 @@ const messages = {
                     description: '<p><img src="../static/images/avatars/nikitin@3x.png" alt="Philipp Nunn" style="width: 200px;' +
                     'float: left; margin: 0 30px 5px 0;  clip-path: circle(50% at center);">' +
                     'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
                     'counts over 30 000 members.</p> ' +
-                    '<p>In portfolio: 10 ico projects with more 200 million dollars.</p>',
+                    '<p>In portfolio: 10 STO projects with more 200 million dollars.</p>',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -3221,17 +3221,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.</p>' +
                     '<p>His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".</p>',
+                    'directions. Co-Founder "Top STO advisors".</p>',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -3247,8 +3247,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -3258,7 +3258,7 @@ const messages = {
         economy: {
             title: 'STO Economy',
             subTitle: 'ALE is a security token, providing the owner with a share of profits in the ALE system. The protocol is mirrored to the Ethereum network (protocol ERC-20) to provide liquidity.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -3407,7 +3407,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: 'deployed',
@@ -3760,7 +3760,7 @@ const messages = {
         greeting: {
             title: 'La nouvelle ère de la gestion de projet',
             countDown: {
-                title: 'PreICO va commencer',
+                title: 'PreSTO va commencer',
                 time: {
                     days: 'Journées',
                     hours: 'Heures',
@@ -4157,9 +4157,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4168,8 +4168,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4178,20 +4178,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4203,17 +4203,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4229,8 +4229,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4240,7 +4240,7 @@ const messages = {
         economy: {
             title: 'Économie de l’STO ',
             subTitle: 'ALE est un jeton de sécurité qui fournit au propriétaire la participation aux bénéfices du système ALE. Le protocole reflète le réseau Ethereum (protocole ERC-20) pour fournir des liquidités.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -4385,7 +4385,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: 'déployé',
@@ -4575,7 +4575,7 @@ const messages = {
         greeting: {
             title: 'Die neue Ära des Projektmanagements steht bevor',
             countDown: {
-                title: 'PreICO wird beginnen',
+                title: 'PreSTO wird beginnen',
                 time: {
                     days: 'Tage',
                     hours: 'Std',
@@ -4972,9 +4972,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -4983,8 +4983,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -4993,20 +4993,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5018,17 +5018,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5044,8 +5044,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5055,7 +5055,7 @@ const messages = {
         economy: {
             title: 'STO-Wirtschaft',
             subTitle: 'ALE ist ein Sicherheitstoken, das dem Eigentümer den Gewinnanteil des ALE-Systems zur Verfügung stellt. Das Protokoll spiegelt das Ethereum-Netzwerk (ERC-20-Protokoll) wider, um Liquidität bereitzustellen.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -5195,7 +5195,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 5,
                     state: 'bereitgestellt',
@@ -5781,9 +5781,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -5792,8 +5792,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5802,20 +5802,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5827,17 +5827,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5853,8 +5853,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -5864,7 +5864,7 @@ const messages = {
         economy: {
             title: 'اقتصاد الايكو',
             subTitle: 'ALE هو رمز أمان ، والذي يزود المالك بمشاركة أرباح نظام ALE. يعكس البروتوكول شبكة الايثريوم (بروتوكول ERC-20) لتوفير السيولة.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -6004,7 +6004,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: 'نشر',
@@ -6194,7 +6194,7 @@ const messages = {
         greeting: {
             title: '프로젝트 관리의 새로운 시대가 오고 있습니다',
             countDown: {
-                title: 'PreICO가 시작됩니다.',
+                title: 'PreSTO가 시작됩니다.',
                 time: {
                     days: '일',
                     hours: '시간',
@@ -6591,9 +6591,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -6602,8 +6602,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -6612,20 +6612,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -6637,17 +6637,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -6663,8 +6663,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -6674,7 +6674,7 @@ const messages = {
         economy: {
             title: 'STO 경제',
             subTitle: 'ALE는 소유자에게 ALE 시스템 이익 분배를 제공하는 보안 토큰입니다. 이 프로토콜은 이더리움 (Ethereum) 네트워크 (ERC-20 프로토콜)를 반영하여 유동성을 제공합니다.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -6814,7 +6814,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 100,
                     state: '배포',
@@ -6925,15 +6925,15 @@ const messages = {
         },
         emailSubscribePanel: {
             newsletter: 'Suscríbete a nuestro boletín informativo',
-            yourAddress: 'Su dirección de correo electrónico',
+            yourAddress: 'Su dirección de correo electrónSTO',
             subscribe: 'Suscribir',
             turnOn: 'Y no olvides activar las notificaciones',
             success: 'suscripción exitosa',
-            alreadyUse: 'este correo electrónico ya está en uso',
+            alreadyUse: 'este correo electrónSTO ya está en uso',
             label: {
                 success: 'suscripción exitosa',
                 error: 'email incorrecto',
-                exist: 'este correo electrónico ya está en uso'
+                exist: 'este correo electrónSTO ya está en uso'
             }
         },
         navbar: {
@@ -7004,7 +7004,7 @@ const messages = {
         greeting: {
             title: 'La nueva era de la gestión de proyectos está llegando',
             countDown: {
-                title: 'PreICO comenzará',
+                title: 'PreSTO comenzará',
                 time: {
                     days: 'Días',
                     hours: 'Horas',
@@ -7024,7 +7024,7 @@ const messages = {
         about: {
             title: 'Cuál es el Eje de concentradores',
             subTitle: 'ALEHUB – es una plataforma para la gestión de proyectos y la búsqueda de contratistas para la industria de TI.',
-            description: 'ALEHUB combina las ventajas del sistema de registros distribuidos (blockchain) y los servicios clásicos de gestión de proyectos. La selección de contratistas (clientes y ejecutores), la gestión de su trabajo, el control y los acuerdos mutuos, regulados por los contratos inteligentes multilaterales del sistema ALE, garantizan la seguridad, la fiabilidad y los bajos costos de la subcontratación de profesionales de TI.',
+            description: 'ALEHUB combina las ventajas del sistema de registros distribuidos (blockchain) y los servicios clásSTOs de gestión de proyectos. La selección de contratistas (clientes y ejecutores), la gestión de su trabajo, el control y los acuerdos mutuos, regulados por los contratos inteligentes multilaterales del sistema ALE, garantizan la seguridad, la fiabilidad y los bajos costos de la subcontratación de profesionales de TI.',
             btnGroup: {
                 whitePaper: 'Libro Blanco',
                 techDetails: 'Más información sobre ALE',
@@ -7079,7 +7079,7 @@ const messages = {
                     title: 'La naturaleza legal del pago.',
                     description: 'Para acuerdos mutuos, ALE utiliza "contenedores" que contienen moneda real.'
                 }, {
-                    title: 'Valor legal del contrato electrónico.',
+                    title: 'Valor legal del contrato electrónSTO.',
                     description: 'Todos los contratos celebrados dentro de la plataforma ALE son legalmente significativos debido al cumplimiento de los requisitos nacionales para los documentos.'
                 }, {
                     title: 'Alta volatilidad de los medios de pago.',
@@ -7117,7 +7117,7 @@ const messages = {
                 desc: ["Contratos inteligentes multilaterals ",
                     "Los participantes establecen las reglas ",
                     "Cumplimiento total con la mayoría de las jurisdicciones",
-                    "Expansión de las posibilidades de un sistema económico legal",
+                    "Expansión de las posibilidades de un sistema económSTO legal",
                     "Pago por contenedor de moneda real",
                     "Posibilidad de arbitraje formal"],
             },
@@ -7403,9 +7403,9 @@ const messages = {
                     'performance and providing “future proof” investment strategies.\n' +
                     'Phillip has become a well-known, online influencer in the blockchain and crypto space and has ' +
                     'travelled the world evangelising and talking on these subjects. Phillip has sat on the advisory' +
-                    ' boards of many ICO\'s over the past 12 months and has helped structure and fund some of the ' +
+                    ' boards of many STO\'s over the past 12 months and has helped structure and fund some of the ' +
                     'biggest companies of the future. Along with his business Wealth Chain, Phillip will be launching ' +
-                    'his own crypto fund that looks to invest in ICO\'s along with existing blockchain technology companies.',
+                    'his own crypto fund that looks to invest in STO\'s along with existing blockchain technology companies.',
                     src: '../static/images/avatars/nunn@3x.png',
                     social: [
                         {
@@ -7414,8 +7414,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/phillipnunn',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/phillipnunn',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -7424,20 +7424,20 @@ const messages = {
                     name: 'Vladimir Nikitin',
                     position: 'advisor',
                     description: 'Vladimir Nikitin is professional and legal consultant with over ten years’ experience' +
-                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and ICO advisor ' +
+                    ' in the legal, finance, retail, and IT industries. Renown cryptocurrency expert and STO advisor ' +
                     '(Top-5 worldwide ICObench Expert). As an active supporter and advocate of blockchain technology, ' +
-                    'provide consultancy and advice to selected ICOs in the CIS region. Network in the crypto community ' +
-                    'counts over 30 000 members. In portfolio: 10 ico projects with more 200 million dollars.',
+                    'provide consultancy and advice to selected STOs in the CIS region. Network in the crypto community ' +
+                    'counts over 30 000 members. In portfolio: 10 STO projects with more 200 million dollars.',
                     src: '../static/images/avatars/nikitin@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadv/',
+                            link: 'https://www.linkedin.com/in/STOadv/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/vladimir-nikitin',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/vladimir-nikitin',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -7449,17 +7449,17 @@ const messages = {
                     'experience in large-scale transaction projects. He has many awards and titles in the IT business. ' +
                     'Self-Made Russia award. Tech guru. Super TOP award etc. Founder and Chief Executive Officer of Private Business Club.' +
                     ' His Holding received "Enterprise of the Year" award in the Kremlin. Has a business in various ' +
-                    'directions. Co-Founder "Top ICO advisors".',
+                    'directions. Co-Founder "Top STO advisors".',
                     src: '../static/images/avatars/shkilev@3x.png',
                     social: [
                         {
                             type: 'linkedin',
-                            link: 'https://www.linkedin.com/in/icoadvisor/',
+                            link: 'https://www.linkedin.com/in/STOadvisor/',
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/nikolay-shkilev',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/nikolay-shkilev',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -7475,8 +7475,8 @@ const messages = {
                             src: '../static/images/in.svg'
                         },
                         {
-                            type: 'icobench',
-                            link: 'https://icobench.com/u/purushotham',
+                            type: 'ICObench',
+                            link: 'https://ICObench.com/u/purushotham',
                             src: '../static/images/icobench-ic.svg'
                         }
                     ]
@@ -7486,7 +7486,7 @@ const messages = {
         economy: {
             title: 'Economía de STO',
             subTitle: 'ALE es un token de seguridad, que proporciona al propietario el porcentaje de ganancia del sistema ALE. El protocolo está reflejado en la red Ethereum (protocolo ERC-20) para proporcionar liquidez.',
-            ICOinfo: {
+            STOinfo: {
                 emission: {
                     title: 'Maximal supply',
                     amount: "∽211 000 000"
@@ -7552,8 +7552,8 @@ const messages = {
                     status: false
                 },
                 {
-                    title: 'Modelado matemático',
-                    desk: 'Consultas con expertos financieros. Modelado matemático en cooperación con la Universidad de ITMO',
+                    title: 'Modelado matemátSTO',
+                    desk: 'Consultas con expertos financieros. Modelado matemátSTO en cooperación con la Universidad de ITMO',
                     date: 'Abril - Mayo De 2017',
                     members: [
                         '../static/images/avatars/grudinin@3x.png'
@@ -7626,7 +7626,7 @@ const messages = {
                     status: true
                 },
                 {
-                    title: 'PreICO',
+                    title: 'PreSTO',
                     date: '05/18 - 06/18',
                     progress: 5,
                     state: 'el escenario comenzó',
@@ -7641,7 +7641,7 @@ const messages = {
                 },
                 {
                     title: 'Desarrollo de Yellow Paper',
-                    desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnicos.',
+                    desk: 'Yellow Paper – descripción técnica del sistema. El documento considera las características arquitectónicas de la construcción del sistema, los protocolos de interacción entre los nodos de la red y otros detalles técnSTOs.',
                     date: '02/18 - 01/19',
                     progress: 0,
                     state: 'the stage did not begin',
@@ -7715,7 +7715,7 @@ const messages = {
                 terms: 'Terms and conditions'
             },
             right: {
-                input: 'Su dirección de correo electrónico',
+                input: 'Su dirección de correo electrónSTO',
                 btn: 'Suscribirse a noticias',
                 error: 'la dirección incorrecta',
                 success: 'dirección correcta'

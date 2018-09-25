@@ -11,10 +11,10 @@
             <div class="row">
                 <div class="col-12 is-center is-white figures-panel">
                     <h1 class="figures-title">
-                        {{ $t('economy.ICOinfo.emission.title') }}
+                        {{ $t('economy.STOinfo.emission.title') }}
                     </h1>
                     <h3 class="figures-subtitle">
-                        {{ $t('economy.ICOinfo.emission.amount') }} ALE
+                        {{ $t('economy.STOinfo.emission.amount') }} ALE
                     </h3>
                 </div>
                 <!--<div class="col-4 is-center is-white">-->
@@ -152,7 +152,9 @@
         },
         mounted() {
             window.addEventListener('scroll', () => {
+                if(!this.$route.path.includes('/blog')){
                 this.isShowAnim = document.querySelector('#ico').offsetTop - 400 <= window.pageYOffset;
+                }
             })
         },
     }

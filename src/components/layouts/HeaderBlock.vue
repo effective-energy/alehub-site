@@ -487,9 +487,10 @@
              * @returns {*}
              */
             getPageCoords: function (elem) {
-                let box = elem.getBoundingClientRect();
-                if (!elem)
+                 if (!elem){
                     return false;
+                }
+                let box = elem.getBoundingClientRect();
                 return {
                     top: box.top + pageYOffset,
                     left: box.left + pageXOffset,
@@ -572,8 +573,9 @@
                 }
             },
             checkActive: function () {
+                if(!this.isBlogPage){
                 let menu = this.$t('navbar.menuList');
-                for (let i = 0; i < menu.length; i++) {
+                for (let i = 0; i < menu.menuLength; i++) {
                     if (document.querySelector(menu[i].path) === null)
                         return false;
                     let offset = document.querySelector(menu[i].path).offsetTop - 74;
@@ -582,7 +584,8 @@
                         this.activeItem = i;
                     }
                 }
-            },
+            }
+        },
             preventDefault: function (e) {
                 e.preventDefault();
             },
@@ -622,11 +625,11 @@
                 pointerToTop = document.getElementById('wrap-pointer');
                 pointerToTopOffset = pointerToTop.offsetHeight;
             }
-            
-            if (document.getElementById('navbar') ) {
+
+            if (document.getElementById('navbar') && !this.$route.path.includes('/blog')) {
                 let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
-                if (!document.getElementById('telegram-alert') && this.$route.path === '/blog/categories/all') {
+                if (!document.getElementById('telegram-alert')) {
                     tgButtonYOffset = document.getElementById('telegram-alert').getBoundingClientRect().top;
                     tgButtonHeight = document.getElementById('telegram-alert').offsetHeight;
                 } else if (document.getElementById('telegram-alert-mobile')) {
@@ -760,6 +763,8 @@
                     transition all .5s ease
             .right-menu
                 position block
+                align-self center
+                
                 @media (min-width 1024px) and (max-width 1350px)
                     position absolute
                     right 0
