@@ -5,7 +5,7 @@
         <div class="row footer-row">
             <div class="col-5 copyright-block"
                  :class="{ 'text-align-right-rtl': isRtl }">
-                <router-link tag="a" to="/">
+                <router-link class="footer-logo" tag="a" to="/">
                     <div class="ale-logo"
                          :class="{ 'ale-logo__rtl': isRtl }">
                         <img src="../../../static/images/ale-logo-grey.svg"
@@ -24,9 +24,15 @@
                     </a>
                     <a href="https://alehub.io/disclaimer.pdf"
                        target="_blank"
-                       class="terms"
+                       class="terms footer-docs-margin"
                        :class="{ 'terms__rtl': isRtl }">
                         Disclaimer
+                    </a>
+                    <a href="https://alehub.io/сookies_privacy_and_policy.pdf"
+                       target="_blank"
+                       class="terms footer-docs-margin"
+                       :class="{ 'terms__rtl': isRtl }">
+                        Cookies Privacy and Policy
                     </a>
 				</div>
                     <div class="creator-and-terms">
@@ -447,7 +453,9 @@
                 background-size contain
                 text-transform uppercase
                 text-decoration none
+                underline none
                 color #919198
+                padding-top 12px
 
                 img
                     margin 0 8px 0 0
@@ -509,8 +517,9 @@
                     text-decoration underline
                     white-space nowrap
                     margin 0 0 3px 0    
-                .terms:last-child
+                .footer-docs-margin
                     margin 0 0 0 12px    
+
                 .telephone
                     color #34343e
 
@@ -546,7 +555,7 @@
                     align-items flex-start
 
                     .terms
-                        margin-left 0
+                        margin-left 0 !important
 
             .footer-social-block
                 align-items flex-end
