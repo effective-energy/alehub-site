@@ -67,6 +67,20 @@ const messages = {
                     name: '博客'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: '登录',
             blog: '博客'
         },
@@ -593,7 +607,7 @@ const messages = {
             },
             distribution: {
                 title: 'STO Terms',
-                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of STO, shall be liquidated.',
+                description: 'Smart-contract ensures safety of investments: full payback to investors if softcap is not reached, team funds are frozen for 1 year. The tokens that are not distributed in the course of ICO, shall be liquidated.',
                 list: [
                     {
                         title: '为STO出售',
@@ -888,6 +902,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'ブログ'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'ログイン',
@@ -1697,10 +1725,10 @@ const messages = {
                     path: '#download-application',
                     name: 'MVP'
                 },
-                // {
-                //     path: '#mass-media-section',
-                //     name: 'Медиа о нас'
-                // },
+                {
+                    path: '#mass-media-section',
+                    name: 'Медиа о нас'
+                },
                 {
                     path: '#blog',
                     name: 'Блог'
@@ -1708,6 +1736,20 @@ const messages = {
                 {
                     to: '/faq',
                     name: 'FAQ'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Блог',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Войти',
@@ -2691,6 +2733,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Login',
@@ -3680,6 +3736,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: "S'identifier",
             blog: 'Blog'
         },
@@ -4481,6 +4551,20 @@ const messages = {
                     name: 'Blog'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: 'Einloggen',
             blog: 'Blog'
         },
@@ -5274,6 +5358,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'مدونة'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'تسجيل الدخول',
@@ -6072,6 +6170,20 @@ const messages = {
                     name: '블로그'
                 }
             ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
+                }
+            ],
             loginBtn: '로그인',
             blog: '블로그'
         },
@@ -6866,6 +6978,20 @@ const messages = {
                 {
                     path: '#blog',
                     name: 'Blog'
+                }
+            ],
+            pages: [
+                {
+                    name: 'FAQ',
+                    to: '/faq'
+                },
+                {
+                    name: 'White list',
+                    to: '/white-list'
+                },
+                {
+                    name: 'Blog page',
+                    to: '/blog/categories/all'
                 }
             ],
             loginBtn: 'Registro en',
