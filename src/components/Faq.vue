@@ -52,16 +52,25 @@
                 </div>
             </div>
         </div>
+        <group-alert-buttons email-button-class="email-subscribe-alert__dark"
+                             :email-in-dark-section="true"
+                             tg-button-class="telegram-alert telegram-alert__dark"
+                             tg-button-messages-class="telegram-alert alert-messages__yellow"
+                             />
     </div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
+    import GroupAlertButtons from './layouts/alert-buttons/GroupAlertButtons';
+
 
     export default {
         name: 'faq',
         components: {
-            HeaderBlock
+            HeaderBlock,
+            GroupAlertButtons
+
         },
         data() {
             return {

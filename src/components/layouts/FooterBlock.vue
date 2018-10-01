@@ -215,6 +215,9 @@
         padding-left 64px
         padding-right 64px
 
+        .footer-logo
+            text-decoration: none;
+
         .footer-row
             display flex
             align-items center

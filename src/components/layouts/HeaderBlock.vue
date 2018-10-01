@@ -613,7 +613,7 @@
                 }
             },
             checkActive: function () {
-                if(!this.isBlogPage){
+                if(!this.isBlogPage && !this.isWhiteList){
                 let menu = this.$t('navbar.menuList');
                 for (let i = 0; i < menu.menuLength; i++) {
                     if (document.querySelector(menu[i].path) === null)
@@ -672,7 +672,7 @@
                 pointerToTopOffset = pointerToTop.offsetHeight;
             }
 
-            if (document.getElementById('navbar') && !this.$route.path.includes('/blog')) {
+            if (document.getElementById('navbar') && !this.isBlogPage && !this.isWhiteList && !(this.$route.path==="/faq")) {
                 let navbarYOffset = document.getElementById('navbar').offsetHeight;
 
                 if (!document.getElementById('telegram-alert')) {
