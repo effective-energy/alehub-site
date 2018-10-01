@@ -7,7 +7,8 @@
                 <a target="_blank"
                    :href="item.href"
                    :title="item.title">
-                    <img border="0"
+                    <img class="ratingImg"
+                         border="0"
                          :width="item.width"
                          :height="item.height"
                          :src="item.src"
@@ -103,11 +104,11 @@
         .list
             display flex
             justify-content space-evenly
-            flex-wrap wrap
+            flex-wrap nowrap
             padding 150px 150px 0 150px
 
             @media (min-width 1024px) and (max-width 1440px)
-                padding 100px 100px 0 100px
+                // padding 100px 100px 0 100px
 
             @media (min-width 768px) and (max-width 1024px)
                 padding 75px
@@ -124,4 +125,5 @@
                 z-index 10
                 background-color transparent
                 margin-bottom 30px
+                // @media (min-width 1024px) and (max-width 1440px)
 </style>

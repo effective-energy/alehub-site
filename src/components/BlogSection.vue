@@ -320,5 +320,5 @@
 
     @media screen and (max-width 600px)
         .news-title
-            font-size 5vw !important
+            font-size 4vw !important
 </style>

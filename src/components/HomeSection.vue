@@ -908,7 +908,7 @@
 <style>
     .mark a img {
         object-fit: contain;
-        width: 322px;
+        width: 300px;
         height: 90px;
     }
 </style>
@@ -1397,6 +1397,10 @@
                             display block
 
                 .desc
+
+                    .btn
+                        margin-top 12px
+
                     @media (min-width 768px) and (max-width 1024px)
                         .buttons
                             display flex
@@ -1407,7 +1411,7 @@
                                 flex-grow 1
                                 padding 10px 30px
                                 font-size 18px
-                                margin 10px 0
+                                margin 10px 0 
 
                                 &:first-child
                                     margin-right 10px
@@ -1427,7 +1431,7 @@
                                 width 50%
                                 padding 10px 15px
                                 font-size 18px
-                                margin 10px 0
+                                margin 10px 0 
 
                                 &:first-child
                                     margin-right 7.5px

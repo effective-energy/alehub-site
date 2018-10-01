@@ -5,7 +5,7 @@
         <div class="row footer-row">
             <div class="col-5 copyright-block"
                  :class="{ 'text-align-right-rtl': isRtl }">
-                <router-link tag="a" to="/">
+                <router-link class="footer-logo" tag="a" to="/">
                     <div class="ale-logo"
                          :class="{ 'ale-logo__rtl': isRtl }">
                         <img src="../../../static/images/ale-logo-grey.svg"
@@ -16,18 +16,23 @@
                 <span class="copyright-text">
 				    {{ $t('footer.left.copyright') }}
 				<div class="creator-and-terms">
-					<div class="creator">
-						<div class="rukin-logo"
-                             :class="{ 'rukin-logo__rtl': isRtl }"></div>
-						<span class="rukin-about">
-                            {{ $t('footer.left.designBy') }}
-                        </span>
-					</div>
 					<a href="https://alehub.io/terms_and_conditions.pdf"
                        target="_blank"
                        class="terms"
                        :class="{ 'terms__rtl': isRtl }">
                         {{ $t('footer.left.terms') }}
+                    </a>
+                    <a href="https://alehub.io/disclaimer.pdf"
+                       target="_blank"
+                       class="terms footer-docs-margin"
+                       :class="{ 'terms__rtl': isRtl }">
+                        Disclaimer
+                    </a>
+                    <a href="https://alehub.io/сookies_privacy_and_policy.pdf"
+                       target="_blank"
+                       class="terms footer-docs-margin"
+                       :class="{ 'terms__rtl': isRtl }">
+                        Cookies Privacy and Policy
                     </a>
 				</div>
                     <div class="creator-and-terms">
@@ -40,6 +45,15 @@
                                 Hong Kong
                         </span>
                     </div>
+                    <div class="creator-and-terms">
+                    <div class="creator">
+                        <div class="rukin-logo"
+                             :class="{ 'rukin-logo__rtl': isRtl }"></div>
+                        <span class="rukin-about">
+                            {{ $t('footer.left.designBy') }}
+                        </span>
+                    </div>
+                </div>
 			</span>
             </div>
 
@@ -200,6 +214,9 @@
         padding-top 12px
         padding-left 64px
         padding-right 64px
+
+        .footer-logo
+            text-decoration: none;
 
         .footer-row
             display flex
@@ -439,7 +456,9 @@
                 background-size contain
                 text-transform uppercase
                 text-decoration none
+                underline none
                 color #919198
+                padding-top 12px
 
                 img
                     margin 0 8px 0 0
@@ -490,7 +509,6 @@
                         color #34343e
 
                 .terms
-                    margin 0 0 0 12px
                     opacity 0.4
                     font-family MuseoSansCyrl500
                     font-size 14px
@@ -501,6 +519,10 @@
                     color #34343e
                     text-decoration underline
                     white-space nowrap
+                    margin 0 0 3px 0    
+                .footer-docs-margin
+                    margin 0 0 0 12px    
+
                 .telephone
                     color #34343e
 
@@ -536,7 +558,7 @@
                     align-items flex-start
 
                     .terms
-                        margin-left 0
+                        margin-left 0 !important
 
             .footer-social-block
                 align-items flex-end

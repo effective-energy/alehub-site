@@ -94,6 +94,7 @@
 </template>
 
 <script>
+
     export default {
         name: 'SliderNavbar',
         props: {
@@ -345,6 +346,7 @@
                 document.querySelector('.nav-line-slider').style.transform = `translate3D(${ currentNavbarItem - firstNavbarItem }px,0,0)`;
             },
             checkActive: function () {
+                if(this.isBlogPage){
                 let menu = this.$t('navbar.menuList');
                 for (let i = 0; i < menu.length; i++) {
                     if (document.querySelector(menu[i].path) === null)
@@ -357,7 +359,8 @@
                         this.activeItem = i;
 
                 }
-            },
+            }
+        }
         },
         mounted() {
             let items = document.querySelector('.n-js-carousel__wrap').children;

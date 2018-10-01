@@ -108,7 +108,7 @@
                 });
             },
             initAutoplay: function (delay) {
-                if (this.options.autoplay)
+                if (this.options.autoplay && this.$route.path.includes('/blog'))
                     this.autoplay = setInterval(() => {
                         this.nextSlide();
                     }, delay);

@@ -72,6 +72,9 @@
             flex-direction column
             align-items center
 
+        .p-l-40
+            align-self: center;
+
         .desc
             @media (max-width 992px)
                 padding-top 60px

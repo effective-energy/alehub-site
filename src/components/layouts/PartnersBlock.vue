@@ -13,13 +13,13 @@
                :href="item.href">
                 <transition name="fade-partners">
                     <img class="light"
-                         :src="item.src"
+                         :src="calcImgSrc(item)"
                          :alt="item.title"
                          v-if="!isDark">
                 </transition>
                 <transition name="fade-partners">
                     <img class="dark"
-                         :src="item.darkSrc"
+                         :src="calcImgDarkSrc(item)"
                          :alt="item.title"
                          v-if="isDark">
                 </transition>
@@ -42,8 +42,10 @@
                 partners: [
                     {
                         title: 'ITMO University',
-                        src: '../../../static/images/logo/itmo.svg',
-                        darkSrc: '../../../static/images/logo/itmo-light.svg',
+                        src: '../../../static/images/logo/itmo-en.svg',
+                        darkSrc: '../../../static/images/logo/itmo-en-fff.svg',
+                        srcRu: '../../../static/images/logo/itmo.svg',
+                        srcDarkRu: '../../../static/images/logo/itmo-light.svg',
                         href: 'http://en.ifmo.ru/en/'
                     },
                     {
@@ -65,6 +67,18 @@
                         href: 'https://serokell.io/'
                     }
                 ]
+            }
+        },
+        methods: {
+            calcImgSrc: function (item) {
+                if (item.hasOwnProperty('srcRu') && this.$i18n.locale === 'ru')
+                    return item.srcRu;
+                return item.src;
+            },
+            calcImgDarkSrc: function (item) {
+                if (item.hasOwnProperty('srcDarkRu') && this.$i18n.locale === 'ru')
+                    return item.srcDarkRu;
+                return item.darkSrc;
             }
         }
     }

@@ -110,6 +110,9 @@
                         });
                     });
                 }
+            },
+            dataProcessing: function () {
+                return !(this.cryptoPriceStatus === 'success');
             }
         }
     }
