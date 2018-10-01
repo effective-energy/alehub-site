@@ -69,11 +69,19 @@
                 this.openedTelegramAlertMobile = false;
             }
         },
+        computed: {
+            isBlogPage: function () {
+                return !(this.$route.path === '/' || this.$route.path === '/white-list');
+            },
+            isWhiteList: function () {
+                return this.$route.path === '/white-list';
+            },
+        },
         mounted() {
             this.$on('toggleEmailSubscribePanel', toggle => {
                 this.openedEmailSubscribePanel = toggle;
             });
-        }
+        },
     }
 </script>
 

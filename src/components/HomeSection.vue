@@ -908,7 +908,7 @@
 <style>
     .mark a img {
         object-fit: contain;
-        width: 322px;
+        width: 300px;
         height: 90px;
     }
 </style>
