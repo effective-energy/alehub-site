@@ -58,7 +58,7 @@
             DownloadApplicationSection,
             MassMediaSection,
             BlogSection,
-            FooterBlock,
+            FooterBlock
         },
         data() {
             return {
@@ -76,8 +76,7 @@
                 tgButtonMobileClass: '',
                 isEffectiveEnergyAutoplay: false,
                 isSerokellAutoplay: false,
-                isAdvisorsAutoplay: false,
-                // isLoading: true
+                isAdvisorsAutoplay: false
             }
         },
         mounted() {

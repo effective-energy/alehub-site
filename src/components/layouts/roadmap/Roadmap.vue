@@ -114,7 +114,7 @@
                     {
                         id: 7,
                         date: 'Q3 2018',
-                        title: 'ICO completed',
+                        title: 'STO completed',
                         text: [
                             'Exchanges listing'
                         ],
