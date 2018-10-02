@@ -613,7 +613,7 @@
                 }
             },
             checkActive: function () {
-                if(!this.isBlogPage && !this.isWhiteList){
+                if(!this.isBlogPage && this.isWhiteList){
                 let menu = this.$t('navbar.menuList');
                 for (let i = 0; i < menu.menuLength; i++) {
                     if (document.querySelector(menu[i].path) === null)
