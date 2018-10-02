@@ -241,7 +241,7 @@
                     width 100%
 
                     @media (max-width 1023px)
-                        margin-bottom 24px
+                        margin-bottom 14px
 
                     @media (max-width 425px)
                         width 100% !important
@@ -564,6 +564,7 @@
                 align-items flex-end
 
                 .subscribe-form
+                    display flex
                     flex-direction column
                     align-items flex-end
                     width 100%

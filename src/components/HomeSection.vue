@@ -1356,7 +1356,7 @@
                             padding 8px 18px
 
                         @media (min-width 768px) and (max-width 1024px)
-                            width 100%
+                            width 60%
                             margin-top 30px
                             margin-bottom 40px
                             padding 15px 30px
@@ -1370,6 +1370,7 @@
                             margin-bottom 40px
                             padding 10px 25px
                             font-size 18px
+                            text-align: -webkit-center;
 
                         @media (max-width 425px)
                             font-size 16px
@@ -1632,5 +1633,10 @@
             margin-top 18px !important
             font-size 18px !important
             font-weight 700
+    @media (min-width: 992px)
+      .col-lg-6 
+        -ms-flex: 0 0 50%;
+        flex: 0 0 40%;
+        max-width: 60%;        
 
 </style>
