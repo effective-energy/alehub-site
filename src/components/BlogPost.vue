@@ -198,6 +198,10 @@
         -o-transition background color .3s ease-in-out
         transition background color .3s ease-in-out
         cursor pointer
+        @media (min-width: 420px) and (max-width: 768px)
+            height 18px
+        @media (max-width: 425px)
+            margin 25px 0 0 0
 
 
     img[alt="twitter"]
@@ -242,18 +246,26 @@
         position relative
 
         .share-block
-            min-width 36px
+            min-width 31px
             height 240px
             position absolute
             display flex
             flex-direction column
             align-items center
             justify-content space-around
-            left -70px
+            left 0px
             top 80px
+            @media (max-width: 425px)
+                top 110px
+                position fixed 
+                background-color white 
+                height 100vh
+                justify-content flex-start
 
             img
                 margin 12px
+           
+                
 
         .news-block
             .title

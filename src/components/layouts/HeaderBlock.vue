@@ -35,7 +35,7 @@
 
         <div class="navbar-blog"
              v-if="isBlogPage">
-            <router-link class="navbar-item"
+            <router-link class="blog-item navbar-item"
                          tag="a"
                          :to="'/blog/categories/all'">
                 {{ $t("navbar.blog") }}
@@ -857,12 +857,15 @@
                 font-size 18px
                 font-weight 600
                 color #0f1118
+            .blog-item
+                @media (max-width: 576px)
+                    display none    
 
                 &:hover
                     text-decoration none
 
-            @media (max-width 425px)
-                display none
+                @media (max-width 425px)
+                    display none
 
     .select-lang
         cursor pointer
