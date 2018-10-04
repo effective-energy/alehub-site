@@ -282,9 +282,13 @@
 
         .container
             padding-top 74px
+            .row
+                justify-content: center;
 
             .panel
                 margin-top 50px
+                h3
+                    text-align center
 
                 .form-group
                     position relative

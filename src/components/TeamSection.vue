@@ -92,14 +92,53 @@
             <div class="separator">
             </div>
 
+            
+
             <div class="advisors-team">
-                <slider-advisors :items="$t('advisors.members')"
-                                 :settings="settings.advisors"
-                                 :options="options.advisors"
-                                 :is-autoplay="isAdvisorsAutoplay"
-                                 :privates1="Object.assign(settings.advisors, options.advisors)"
-                                 :multiplier-position="multiplierPosition"
-                                 :num-items-in-wrap="numItemsInWrap"/>
+                <div class="images"
+                     id="advisor-gallery"
+                     v-if="isWideScreen">
+                    <div class="image"
+                         v-for="(member, i) in $t('advisors.members')"
+                         :key="i">
+                        <div class="image__inner">
+                            <img class="layer__bottom"
+                                 :src="member.src"
+                                 :alt="member.name">
+                            <div class="layer__top">
+                                <div class="layer__text">
+                                    <h3>
+                                        {{ member.position }}
+                                    </h3>
+
+                                    <div class="icons"
+                                         v-if="member.social !== undefined && member.length !== 0">
+                                        <a target="_blank"
+                                           :href="social.link"
+                                           v-for="social in member.social">
+                                            <img :class="{ 'in': social.type === 'linkedin' }"
+                                                 src="../../static/images/in.svg"
+                                                 alt="in"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image__info">
+                            <span>{{ member.name }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <slider-advisors
+                                v-else 
+                                :items="$t('advisors.members')"
+                                :settings="settings.advisors"
+                                :options="options.advisors"
+                                :is-autoplay="isAdvisorsAutoplay"
+                                :privates1="Object.assign(settings.advisors, options.advisors)"
+                                :multiplier-position="multiplierPosition"
+                 :num-items-in-wrap="numItemsInWrap"/>
             </div>
         </div>
 
