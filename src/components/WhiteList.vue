@@ -36,11 +36,17 @@
                 </div>
             </div>
         </div>
+        <group-alert-buttons email-button-class="email-subscribe-alert__dark"
+                             tg-button-class="telegram-alert telegram-alert__dark"
+                             tg-button-messages-class="telegram-alert alert-messages__yellow"
+                             />
+
     </div>
 </template>
 
 <script>
     import HeaderBlock from './layouts/HeaderBlock';
+    import GroupAlertButtons from './layouts/alert-buttons/GroupAlertButtons';
 
     const EMAIL_SUCCESS = 200;
     const EMAIL_ALREADY_EXIST = 409;
@@ -51,9 +57,10 @@
     const INCORRECT = 'incorrect';
 
     export default {
-        name: 'Verification',
+        name: 'WhiteList',
         components: {
-            HeaderBlock
+            HeaderBlock,
+            GroupAlertButtons
         },
         data() {
             return {
@@ -253,6 +260,17 @@
 
                 return re.test(String(email).toLowerCase());
             },
+             alertButtonInDarkSection: function (factor) {
+                return factor.includes('yellow');
+            },
+
+
+            // compEmailButtonClass: function () {
+            //     if (this.emailButtonClass.length !== 0)
+            //         return console.log(this.emailButtonClass);
+
+            //     return 'email-subscribe-alert__dark';
+            // },
         }
     }
 </script>
@@ -264,9 +282,13 @@
 
         .container
             padding-top 74px
+            .row
+                justify-content: center;
 
             .panel
                 margin-top 50px
+                h3
+                    text-align center
 
                 .form-group
                     position relative
@@ -384,4 +406,6 @@
 
     .blue
         color blue
+    .telegram-alert
+        background-color #343a49
 </style>

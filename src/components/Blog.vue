@@ -110,6 +110,9 @@
                         });
                     });
                 }
+            },
+            dataProcessing: function () {
+                return !(this.cryptoPriceStatus === 'success');
             }
         }
     }
@@ -204,6 +207,9 @@
                     background-color #000000
                     height 0.8px
                     opacity 0.2
+                    @media (max-width: 768)
+                        background-color none
+                        
 
 
                 .blog-post
