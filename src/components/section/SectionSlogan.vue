@@ -1,12 +1,12 @@
 <template>
-    <div class="section-main">
-
+    <div class="section-slogan">
+        section slogan
     </div>
 </template>
 
 <script>
     export default {
-        name: 'SectionMain',
+        name: 'SectionSlogan',
         data: () => ({
 
         })

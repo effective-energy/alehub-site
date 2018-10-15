@@ -1,6 +1,6 @@
 <template>
     <div class="section-why-invest">
-
+        section reason investing
     </div>
 </template>
 

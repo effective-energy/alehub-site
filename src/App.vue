@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <transition name="fade">
-            <loading-screen v-if="dataProcessing"/>
-        </transition>
+        <!--<transition name="fade">-->
+            <!--<loading-screen v-if="dataProcessing"/>-->
+        <!--</transition>-->
         <router-view/>
     </div>
 </template>

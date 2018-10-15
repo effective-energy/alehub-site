@@ -8,6 +8,8 @@ import NotFound from '@/components/NotFound';
 import WhiteList from '@/components/WhiteList';
 import Faq from '@/components/Faq';
 
+import IndexNew from '@/components/Index2';
+
 Vue.use(Router);
 
 const router = new Router(
@@ -19,9 +21,14 @@ const router = new Router(
         routes: [
             {
                 path: '/',
-                name: 'Index',
-                component: Index
+                name: 'IndexNew',
+                component: IndexNew
             },
+            // {
+            //     path: '/',
+            //     name: 'Index',
+            //     component: Index
+            // },
             {
                 path: '/blog/categories/:id',
                 name: 'Blog',

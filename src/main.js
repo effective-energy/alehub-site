@@ -15,12 +15,17 @@ import {faCoffee} from '@fortawesome/free-solid-svg-icons';
 import {fab} from '@fortawesome/free-brands-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
+import Vuetify from 'vuetify';
+Vue.use(Vuetify);
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
+
 library.add(faCoffee);
 library.add(fab);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;
+
 
 
 Vue.use(VueYandexMetrika,

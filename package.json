@@ -23,7 +23,8 @@
     "gulp-notify": "^3.2.0",
     "gulp-stylus": "^2.7.0",
     "i": "^0.3.6",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
+    "material-design-icons-iconfont": "^3.0.3",
     "moment": "^2.22.1",
     "npm": "^6.4.1",
     "stylus": "^0.54.5",
@@ -43,6 +44,7 @@
     "vue-social-sharing": "^2.3.3",
     "vue-tiny-slider": "^0.1.17",
     "vue-yandex-metrika": "^1.6.1",
+    "vuetify": "^1.2.9",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
