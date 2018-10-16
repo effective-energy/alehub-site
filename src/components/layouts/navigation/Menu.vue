@@ -29,5 +29,13 @@
 </script>
 
 <style lang="stylus" scoped>
+.menu
+    list-style none
 
+    li
+        display inline-block
+        margin 0 40px
+        color white
+        font-family MuseoSansCyrl700
+        font-size 18px
 </style>

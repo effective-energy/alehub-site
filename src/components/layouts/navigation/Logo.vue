@@ -22,12 +22,20 @@
         position relative
 
         .text
+            z-index 2
+            position inherit
             color white
             font-family MuseoSansCyrl700
             font-size 32px
+            text-transform uppercase
 
         .circle-orange
+            z-index 1
+            top 0
+            left 0
+            position absolute
             height h
             width w
+            border-radius 50%
             background-color orange
 </style>
