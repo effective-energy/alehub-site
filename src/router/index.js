@@ -19,16 +19,16 @@ const router = new Router(
         },
         mode: 'history',
         routes: [
-            {
-                path: '/',
-                name: 'IndexNew',
-                component: IndexNew
-            },
             // {
             //     path: '/',
-            //     name: 'Index',
-            //     component: Index
+            //     name: 'IndexNew',
+            //     component: IndexNew
             // },
+            {
+                path: '/',
+                name: 'Index',
+                component: Index
+            },
             {
                 path: '/blog/categories/:id',
                 name: 'Blog',
