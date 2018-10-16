@@ -9,17 +9,24 @@
                     <v-flex d-flex>
                         <v-layout row>
                             <v-flex d-flex>
-                                1
+                                <button-watch-video/>
                             </v-flex>
                             <v-flex d-flex>
-                                2
+                                <button-get-whitepaper/>
                             </v-flex>
                         </v-layout>
+                    </v-flex>
+                    <v-flex d-flex>
+                        <social-block/>
                     </v-flex>
                 </v-layout>
             </v-flex>
             <v-flex d-flex xs6>
-
+                <v-layout row>
+                    <v-flex d-flex>
+                        <timer-sales-end/>
+                    </v-flex>
+                </v-layout>
             </v-flex>
         </v-layout>
     </v-container>
@@ -41,11 +48,19 @@
 
 <script>
     import MainTitle from '../layouts/section-main/MainTitle';
+    import ButtonWatchVideo from '../layouts/section-main/ButtonWatchVideo';
+    import ButtonGetWhitepaper from '../layouts/section-main/ButtonGetWhitepaper';
+    import SocialBlock from '../layouts/SocialBlock';
+    import TimerSalesEnd from '../layouts/section-main/TimerSalesEnd';
 
     export default {
         name: 'SectionMain',
         components: {
-            MainTitle
+            MainTitle,
+            ButtonWatchVideo,
+            ButtonGetWhitepaper,
+            SocialBlock,
+            TimerSalesEnd
         },
         data: () => ({})
     }
