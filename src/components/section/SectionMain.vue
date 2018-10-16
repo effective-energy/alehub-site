@@ -1,7 +1,9 @@
 <template>
     <div class="section-main">
+        <navigation/>
         <background-title-main/>
-        <v-container grid-list-md>
+        <v-container grid-list-md
+                     class="parent-z">
             <v-layout row wrap>
                 <v-flex d-flex xs7>
                     <v-layout column>
@@ -45,6 +47,7 @@
 </template>
 
 <script>
+    import Navigation from '../layouts/navigation/Navigation';
     import MainTitle from '../layouts/section-main/MainTitle';
     import ButtonWatchVideo from '../layouts/section-main/ButtonWatchVideo';
     import ButtonGetWhitepaper from '../layouts/section-main/ButtonOpenWhitepaper';
@@ -58,6 +61,7 @@
     export default {
         name: 'SectionMain',
         components: {
+            Navigation,
             MainTitle,
             ButtonWatchVideo,
             ButtonGetWhitepaper,
@@ -77,4 +81,8 @@
         height 100vh
         background-color #020449
         color white
+
+    .parent-z
+        z-index 2
+        position relative
 </style>
