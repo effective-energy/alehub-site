@@ -56,5 +56,4 @@
 </script>
 
 <style lang="stylus" scoped>
-    @import "~vuetify/src/stylus/main.styl"
 </style>

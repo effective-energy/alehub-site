@@ -33,6 +33,8 @@
 </script>
 
 <style lang="stylus">
+    @import "~vuetify/src/stylus/main.styl"
+
     .fade-enter-active,
     .fade-leave-active
         -webkit-transition all 1s
