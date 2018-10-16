@@ -4,10 +4,8 @@
         <a class="social-icon"
            target="_blank"
            v-for="icon in icons"
-           :class="{ 'social-icon-white': dark, 'social-icon-footer': footer }"
            :href="icon.href"
-           :key="icon.id"
-           @click="yaCounter48802643.reachGoal(icon.name); return true;">
+           :key="icon.id">
             <font-awesome-icon :icon="['fab', icon.name]"/>
         </a>
     </div>
@@ -31,28 +29,28 @@
                 icons: [
                     {
                         id: 1,
+                        name: 'telegram',
+                        href: 'https://t.me/alehub'
+                    },
+                    {
+                        id: 2,
                         name: 'facebook',
                         href: 'https://www.facebook.com/alehub.io/'
                     },
                     {
-                        id: 2,
+                        id: 3,
                         name: 'instagram',
                         href: 'https://www.instagram.com/alehub.io/'
                     },
                     {
-                        id: 3,
+                        id: 4,
                         name: 'youtube',
                         href: 'https://www.youtube.com/channel/UCQmFu8R6TIKU1Vz10HrvFYg'
                     },
                     {
-                        id: 4,
+                        id: 5,
                         name: 'twitter',
                         href: 'https://twitter.com/alehub_io'
-                    },
-                    {
-                        id: 5,
-                        name: 'telegram',
-                        href: 'https://t.me/alehub'
                     },
                     {
                         id: 6,
@@ -76,6 +74,8 @@
 </script>
 
 <style lang="stylus" scoped>
+    orange = #fc8435
+
     .social-block
         z-index 10
         display flex
@@ -85,7 +85,7 @@
             margin-bottom 20px
 
         .social-icon
-            color #34343e
+            color #ffffff
             font-size 24px
             transition color .3s ease-in-out
             margin-right 24px
@@ -101,5 +101,5 @@
                 font-size 18px
 
             &:hover
-                color #ffbc00
+                color orange
 </style>

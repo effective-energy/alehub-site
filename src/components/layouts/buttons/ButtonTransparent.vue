@@ -53,4 +53,5 @@
     .icon
         height 22px
         margin-left 7px
+
 </style>
