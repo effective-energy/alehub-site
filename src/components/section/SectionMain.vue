@@ -1,5 +1,6 @@
 <template>
     <div class="section-main">
+        <background-title-main/>
         <v-container grid-list-md>
             <v-layout row wrap>
                 <v-flex d-flex xs7>
@@ -46,12 +47,13 @@
 <script>
     import MainTitle from '../layouts/section-main/MainTitle';
     import ButtonWatchVideo from '../layouts/section-main/ButtonWatchVideo';
-    import ButtonGetWhitepaper from '../layouts/section-main/ButtonDownloadWhitepaper';
+    import ButtonGetWhitepaper from '../layouts/section-main/ButtonOpenWhitepaper';
     import SocialBlock from '../layouts/SocialBlock';
     import TimerSalesEnd from '../layouts/section-main/TimerSalesEnd';
     import GetToWhitelist from '../layouts/section-main/GetToWhitelist';
     import SoftCap from '../layouts/section-main/SoftCap';
     import HardCap from '../layouts/section-main/HardCap';
+    import BackgroundTitleMain from '../layouts/section-main/BackgroundTitleMain';
 
     export default {
         name: 'SectionMain',
@@ -63,7 +65,8 @@
             TimerSalesEnd,
             GetToWhitelist,
             SoftCap,
-            HardCap
+            HardCap,
+            BackgroundTitleMain
         },
         data: () => ({})
     }
