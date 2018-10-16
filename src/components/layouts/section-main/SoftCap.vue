@@ -1,16 +1,16 @@
 <template>
     <div class="soft-cap">
-        <soft-cap-progress/>
+        <cap title="Soft cap" total="7500000"/>
     </div>
 </template>
 
 <script>
-    import SoftCapProgress from './SoftCapProgress';
+    import Cap from './Cap';
 
     export default {
         name: 'SoftCap',
         components: {
-            SoftCapProgress
+            Cap
         }
     }
 </script>

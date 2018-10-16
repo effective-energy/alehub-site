@@ -1,16 +1,16 @@
 <template>
     <div class="hard-cap">
-        <hard-cap-progress/>
+        <cap title="Hard cap" total="33000000"/>
     </div>
 </template>
 
 <script>
-    import HardCapProgress from './HardCapProgress';
+    import Cap from './Cap';
 
     export default {
         name: 'HardCap',
         components: {
-            HardCapProgress
+            Cap
         }
     }
 </script>
