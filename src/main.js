@@ -28,12 +28,12 @@ Vue.config.productionTip = false;
 
 
 
-Vue.use(VueYandexMetrika,
-    {
-        id: 48805535,
-        env: process.env.NODE_ENV
-    }
-);
+// Vue.use(VueYandexMetrika,
+//     {
+//         id: 48805535,
+//         env: process.env.NODE_ENV
+//     }
+// );
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';

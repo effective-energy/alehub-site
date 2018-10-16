@@ -1,11 +1,11 @@
 <template>
     <v-layout column>
-        <v-flex xs12>
+        <v-flex d-flex xs12>
             <h3>
                 Окончание продаж
             </h3>
         </v-flex>
-        <v-flex xs12>
+        <v-flex d-flex xs12>
             <v-layout row>
                 <v-flex d-flex>
                     <v-layout column>

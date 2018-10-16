@@ -22,27 +22,36 @@
                 </v-layout>
             </v-flex>
             <v-flex d-flex xs6>
-                <v-layout row>
+                <v-layout column>
                     <v-flex d-flex>
                         <timer-sales-end/>
+                    </v-flex>
+                    <v-flex d-flex>
+                        <get-to-whitelist/>
+                    </v-flex>
+                    <v-flex d-flex>
+                        <soft-cap/>
+                    </v-flex>
+                    <v-flex d-flex>
+                        <hard-cap/>
                     </v-flex>
                 </v-layout>
             </v-flex>
         </v-layout>
     </v-container>
     <!--<v-container grid-list-md>-->
-        <!--<v-layout row wrap>-->
-            <!--<v-flex xs6>-->
-                <!--<v-card dark color="primary">-->
-                    <!--<v-card-text class="px-0">12</v-card-text>-->
-                <!--</v-card>-->
-            <!--</v-flex>-->
-            <!--<v-flex xs6>-->
-                <!--<v-card dark color="primary">-->
-                    <!--<v-card-text class="px-0">12</v-card-text>-->
-                <!--</v-card>-->
-            <!--</v-flex>-->
-        <!--</v-layout>-->
+    <!--<v-layout row wrap>-->
+    <!--<v-flex xs6>-->
+    <!--<v-card dark color="primary">-->
+    <!--<v-card-text class="px-0">12</v-card-text>-->
+    <!--</v-card>-->
+    <!--</v-flex>-->
+    <!--<v-flex xs6>-->
+    <!--<v-card dark color="primary">-->
+    <!--<v-card-text class="px-0">12</v-card-text>-->
+    <!--</v-card>-->
+    <!--</v-flex>-->
+    <!--</v-layout>-->
     <!--</v-container>-->
 </template>
 
@@ -52,6 +61,9 @@
     import ButtonGetWhitepaper from '../layouts/section-main/ButtonGetWhitepaper';
     import SocialBlock from '../layouts/SocialBlock';
     import TimerSalesEnd from '../layouts/section-main/TimerSalesEnd';
+    import GetToWhitelist from '../layouts/section-main/GetToWhitelist';
+    import SoftCap from '../layouts/section-main/SoftCap';
+    import HardCap from '../layouts/section-main/HardCap';
 
     export default {
         name: 'SectionMain',
@@ -60,7 +72,10 @@
             ButtonWatchVideo,
             ButtonGetWhitepaper,
             SocialBlock,
-            TimerSalesEnd
+            TimerSalesEnd,
+            GetToWhitelist,
+            SoftCap,
+            HardCap
         },
         data: () => ({})
     }
