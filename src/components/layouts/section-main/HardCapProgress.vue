@@ -1,10 +1,17 @@
 <template>
-    
+    <div class="hard-cap-progress">
+        <cap-progress/>
+    </div>
 </template>
 
 <script>
+    import CapProgress from './CapProgress';
+
     export default {
-        name: "HardCapProgress"
+        name: 'HardCapProgress',
+        components: {
+            CapProgress
+        }
     }
 </script>
 

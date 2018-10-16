@@ -1,10 +1,17 @@
 <template>
-    
+    <div class="soft-cap">
+        <soft-cap-progress/>
+    </div>
 </template>
 
 <script>
+    import SoftCapProgress from './SoftCapProgress';
+
     export default {
-        name: 'SoftCapBlock'
+        name: 'SoftCap',
+        components: {
+            SoftCapProgress
+        }
     }
 </script>
 
