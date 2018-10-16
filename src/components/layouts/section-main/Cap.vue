@@ -2,10 +2,12 @@
     <v-layout column>
         <v-flex>
             <v-layout row>
-                <v-flex text-xs-left>
+                <v-flex text-xs-left
+                        class="text">
                     {{ title }}
                 </v-flex>
-                <v-flex text-xs-right>
+                <v-flex text-xs-right
+                        class="text">
                     {{ '$ ' + total }}
                 </v-flex>
             </v-layout>
@@ -38,5 +40,7 @@
 </script>
 
 <style lang="stylus" scoped>
-
+.text
+    font-family MuseoSansCyrl300
+    font-size 18px
 </style>

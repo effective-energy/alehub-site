@@ -1,5 +1,6 @@
 <template>
-    <button-rounded text="Попасть в whitelist" @click.native="test"/>
+    <button-rounded text="Попасть в whitelist"
+                    @click.native="toWhiteList"/>
 </template>
 
 <script>
@@ -11,7 +12,7 @@
             ButtonRounded
         },
         methods: {
-            test() {
+            toWhiteList() {
                 this.$router.push('/white-list');
             }
         }

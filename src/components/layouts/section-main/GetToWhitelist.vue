@@ -4,8 +4,10 @@
             <button-to-whitelist/>
         </v-flex>
         <v-flex>
-            <p>
+            <p class="text">
                 Принимаем к сборам:
+            </p>
+            <p class="text">
                 BTC, ETH, BCH, LTC, DASH, USD
             </p>
         </v-flex>
@@ -24,5 +26,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .text
+        font-family MuseoSansCyrl300
+        font-size 18px
+        margin 0
 
 </style>
