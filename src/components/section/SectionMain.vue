@@ -2,7 +2,7 @@
     <div class="section-main">
         <v-container grid-list-md>
             <v-layout row wrap>
-                <v-flex d-flex xs6>
+                <v-flex d-flex xs7>
                     <v-layout column>
                         <v-flex d-flex>
                             <main-title/>
@@ -22,7 +22,7 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
-                <v-flex d-flex xs6>
+                <v-flex d-flex xs5>
                     <v-layout column>
                         <v-flex d-flex>
                             <timer-sales-end/>
@@ -46,7 +46,7 @@
 <script>
     import MainTitle from '../layouts/section-main/MainTitle';
     import ButtonWatchVideo from '../layouts/section-main/ButtonWatchVideo';
-    import ButtonGetWhitepaper from '../layouts/section-main/ButtonGetWhitepaper';
+    import ButtonGetWhitepaper from '../layouts/section-main/ButtonDownloadWhitepaper';
     import SocialBlock from '../layouts/SocialBlock';
     import TimerSalesEnd from '../layouts/section-main/TimerSalesEnd';
     import GetToWhitelist from '../layouts/section-main/GetToWhitelist';

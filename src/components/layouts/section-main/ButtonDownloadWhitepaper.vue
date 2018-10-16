@@ -1,6 +1,7 @@
 <template>
-    <div class="button-watch-video">
-        <button-transparent text="Смотреть видео"
+    <div class="button-download-whitepaper">
+        <button-transparent text="Получить whitepaper"
+                            small="Загрузить 13.4 Mb"
                             :icon="icon"/>
     </div>
 </template>
@@ -9,13 +10,13 @@
     import ButtonTransparent from '../buttons/ButtonTransparent';
 
     export default {
-        name: 'ButtonWatchVideo',
+        name: 'ButtonDownloadWhitepaper',
         components: {
             ButtonTransparent
         },
         data: () => ({
-            icon: '../../../../static/images/arrows/right-arrow-in-circular.svg'
-        }),
+            icon: '../../../../static/images/arrows/down-arrow-in-circular.svg'
+        })
     }
 </script>
 

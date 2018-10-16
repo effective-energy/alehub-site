@@ -39,7 +39,7 @@
         box-shadow 0 0 12px 0 orange
         color white
         font-size f-s
-        font-family MuseoSansCyrl500
+        font-family MuseoSansCyrl700
         text-transform uppercase
 
         &:focus

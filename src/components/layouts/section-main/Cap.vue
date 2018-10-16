@@ -40,7 +40,7 @@
 </script>
 
 <style lang="stylus" scoped>
-.text
-    font-family MuseoSansCyrl300
-    font-size 18px
+    .text
+        font-family MuseoSansCyrl300
+        font-size 18px
 </style>
