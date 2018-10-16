@@ -2,11 +2,11 @@
     <v-layout column>
         <v-flex>
             <v-layout row>
-                <v-flex>
+                <v-flex text-xs-left>
                     {{ title }}
                 </v-flex>
-                <v-flex>
-                    {{ total }}
+                <v-flex text-xs-right>
+                    {{ '$ ' + total }}
                 </v-flex>
             </v-layout>
         </v-flex>
