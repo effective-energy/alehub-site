@@ -16,6 +16,11 @@
             icon: {
                 type: String
             }
+        },
+        methods: {
+            test() {
+                console.log('olololo111');
+            }
         }
     }
 </script>

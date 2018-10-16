@@ -1,9 +1,7 @@
 <template>
     <v-layout column>
         <v-flex>
-            <button type="button">
-                Попасть в whitelist
-            </button>
+            <button-to-whitelist/>
         </v-flex>
         <v-flex>
             <p>
@@ -15,8 +13,13 @@
 </template>
 
 <script>
+    import ButtonToWhitelist from './ButtonToWhitelist';
+
     export default {
-        name: 'GetToWhitelist'
+        name: 'GetToWhitelist',
+        components: {
+            ButtonToWhitelist
+        }
     }
 </script>
 
