@@ -35,6 +35,7 @@
             <!--</v-layout>-->
         <!--</v-container>-->
         <section-main/>
+        <section-represent/>
         <section-slogan/>
         <section-reason-investing/>
     </div>
@@ -42,6 +43,7 @@
 
 <script>
     import SectionMain from './section/SectionMain';
+    import SectionRepresent from './section/SectionRepresent';
     import SectionSlogan from './section/SectionSlogan';
     import SectionReasonInvesting from './section/SectionReasonInvesting';
 
@@ -49,6 +51,7 @@
         name: 'Index2',
         components: {
             SectionMain,
+            SectionRepresent,
             SectionSlogan,
             SectionReasonInvesting
         }

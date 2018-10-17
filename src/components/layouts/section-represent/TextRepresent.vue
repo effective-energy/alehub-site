@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'TextSlogan',
+        name: 'TextRepresent',
         props: {
             text: {
                 type: String,

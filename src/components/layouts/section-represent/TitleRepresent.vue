@@ -1,12 +1,12 @@
 <template>
-    <h2 class="title-slogan">
+    <h2 class="title-represent">
         {{ title }}
     </h2>
 </template>
 
 <script>
     export default {
-        name: 'TitleSlogan',
+        name: 'TitleRepresent',
         props: {
             title: {
                 type: String,
@@ -17,12 +17,10 @@
 </script>
 
 <style lang="stylus" scoped>
-    .title-slogan
-        text-align center
+    .title-represent
         color white
         font-family MuseoSansCyrl700
-        font-size 30px
-        line-height 1.6
-        letter-spacing .5px
+        font-size 48px
+        line-height 1.33
         text-transform uppercase
 </style>
