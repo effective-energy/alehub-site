@@ -38,6 +38,7 @@
         <section-represent/>
         <section-slogan/>
         <section-reason-investing/>
+        <section-blog/>
     </div>
 </template>
 
@@ -46,6 +47,7 @@
     import SectionRepresent from './section/SectionRepresent';
     import SectionSlogan from './section/SectionSlogan';
     import SectionReasonInvesting from './section/SectionReasonInvesting';
+    import SectionBlog from './section/SectionBlog';
 
     export default {
         name: 'Index2',
@@ -53,7 +55,8 @@
             SectionMain,
             SectionRepresent,
             SectionSlogan,
-            SectionReasonInvesting
+            SectionReasonInvesting,
+            SectionBlog
         }
     }
 </script>
