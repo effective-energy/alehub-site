@@ -1,19 +1,33 @@
 <template>
     <div class="section-blog">
-        <title-blog :title="title"/>
+        <v-container grid-list-md>
+            <v-layout row>
+                <v-flex>
+                    <title-blog :title="title"/>
+                </v-flex>
+            </v-layout>
+            <v-layout row>
+                <v-flex>
+                    <subtitle-blog :subtitle="subtitle"/>
+                </v-flex>
+            </v-layout>
+        </v-container>
     </div>
 </template>
 
 <script>
     import TitleBlog from '../layouts/section-blog/TitleBlog';
+    import SubtitleBlog from '../layouts/section-blog/SubtitleBlog';
 
     export default {
         name: 'SectionBlog',
         components: {
-            TitleBlog
+            TitleBlog,
+            SubtitleBlog
         },
         data: () => ({
-            title: 'Блог & СМИ'
+            title: 'Блог & СМИ',
+            subtitle: 'Статьи и конференции'
         })
     }
 </script>

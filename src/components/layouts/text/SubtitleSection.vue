@@ -1,14 +1,14 @@
 <template>
-    <h1 class="title-section">
-        {{ title }}
-    </h1>
+    <h3 class="subtitle-section">
+        {{ subtitle }}
+    </h3>
 </template>
 
 <script>
     export default {
-        name: 'TitleSection',
+        name: 'SubtitleSection',
         props: {
-            title: {
+            subtitle: {
                 type: String,
                 required: true
             }
@@ -17,12 +17,10 @@
 </script>
 
 <style lang="stylus" scoped>
-    .title-section
+    .subtitle-section
         color white
-        font-size 48px
-        font-family MuseoSansCyrl700
+        font-family MuseoSansCyrl300
         line-height 1.33
-        letter-spacing 1.9px
-        text-transform uppercase
+        font-size 24px
         text-align center
 </style>
