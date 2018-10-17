@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'MainTitle'
+        name: 'TitleMain'
     }
 </script>
 
@@ -14,5 +14,6 @@
     .main-title
         font-family MuseoSansCyrl500
         font-size 72px
+        line-height 1.33
         text-transform uppercase
 </style>

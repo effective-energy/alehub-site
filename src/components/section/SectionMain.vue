@@ -8,7 +8,7 @@
                 <v-flex d-flex xs7>
                     <v-layout column>
                         <v-flex d-flex>
-                            <main-title/>
+                            <title-main/>
                         </v-flex>
                         <v-flex d-flex>
                             <v-layout row>
@@ -48,7 +48,7 @@
 
 <script>
     import Navigation from '../layouts/navigation/Navigation';
-    import MainTitle from '../layouts/section-main/MainTitle';
+    import TitleMain from '../layouts/section-main/TitleMain';
     import ButtonWatchVideo from '../layouts/section-main/ButtonWatchVideo';
     import ButtonGetWhitepaper from '../layouts/section-main/ButtonOpenWhitepaper';
     import SocialBlock from '../layouts/SocialBlock';
@@ -62,7 +62,7 @@
         name: 'SectionMain',
         components: {
             Navigation,
-            MainTitle,
+            TitleMain,
             ButtonWatchVideo,
             ButtonGetWhitepaper,
             SocialBlock,
