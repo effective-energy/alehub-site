@@ -11,8 +11,8 @@
                         <v-flex>
                             <subtitle-welcome/>
                         </v-flex>
-                        <v-flex>
-
+                        <v-flex xs4>
+                            <button-welcome-invest/>
                         </v-flex>
                     </v-layout>
                 </v-flex>
@@ -24,12 +24,14 @@
 <script>
     import TitleWelcome from '../layouts/section-welcome/TitleWelcome';
     import SubtitleWelcome from '../layouts/section-welcome/SubtitleWelcome';
+    import ButtonWelcomeInvest from '../layouts/section-welcome/ButtonWelcomeInvest';
 
     export default {
         name: 'SectionWelcome',
         components: {
             TitleWelcome,
-            SubtitleWelcome
+            SubtitleWelcome,
+            ButtonWelcomeInvest
         }
     }
 </script>
