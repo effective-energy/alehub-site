@@ -1,15 +1,28 @@
 <template>
-    <div class="blog">
-        blog
-    </div>
+    <v-layout column>
+        <v-flex>
+            <blog-top/>
+        </v-flex>
+        <v-flex>
+            <blog-bottom/>
+        </v-flex>
+    </v-layout>
 </template>
 
 <script>
+    import BlogTop from './BlogTop';
+    import BlogBottom from './BlogBottom';
+
     export default {
-        name: 'Blog'
+        name: 'Blog',
+        components: {
+            BlogTop,
+            BlogBottom
+        }
     }
 </script>
 
 <style lang="stylus" scoped>
+
 
 </style>

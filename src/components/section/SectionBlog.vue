@@ -12,7 +12,9 @@
                 </v-flex>
             </v-layout>
             <v-layout row>
-                <blog/>
+                <v-flex>
+                    <blog/>
+                </v-flex>
             </v-layout>
         </v-container>
     </div>
