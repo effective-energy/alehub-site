@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import TitleSection from '../text/TitleSection';
+    import TitleSection from '../text/Title1Section';
 
     export default {
         name: 'TitleBlog',

@@ -355,7 +355,7 @@
                 return item.hasOwnProperty('path');
             },
             /**
-             * checking for a page in the dark section
+             * checking for a page in the dark sections
              *
              * @returns {boolean}
              */
@@ -367,7 +367,7 @@
                 return false;
             },
             /**
-             * checking for a page in the yellow section
+             * checking for a page in the yellow sections
              *
              * @returns {boolean}
              */
@@ -379,7 +379,7 @@
                 return false;
             },
             /**
-             * checking for a toTopPanel in the dark section
+             * checking for a toTopPanel in the dark sections
              *
              * @returns {boolean}
              */
@@ -391,7 +391,7 @@
                 return false;
             },
             /**
-             * checking for a tgButton in the dark section
+             * checking for a tgButton in the dark sections
              *
              * @returns {boolean}
              */
@@ -403,7 +403,7 @@
                 return false;
             },
             /**
-             * checking for a tgButtonMobile in the dark section
+             * checking for a tgButtonMobile in the dark sections
              *
              * @returns {boolean}
              */
@@ -415,7 +415,7 @@
                 return false;
             },
             /**
-             * checking for a tgButton in the yellow section
+             * checking for a tgButton in the yellow sections
              *
              * @returns {boolean}
              */
@@ -427,7 +427,7 @@
                 return false;
             },
             /**
-             * checking for a mailButton in the dark section
+             * checking for a mailButton in the dark sections
              *
              * @returns {boolean}
              */

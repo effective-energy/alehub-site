@@ -59,7 +59,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: '媒体'
                 },
                 {
@@ -896,7 +896,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'マスメディア'
                 },
                 {
@@ -1726,7 +1726,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'Медиа о нас'
                 },
                 {
@@ -2727,7 +2727,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'Mass media'
                 },
                 {
@@ -3728,7 +3728,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'Médias de masse'
                 },
                 {
@@ -4543,7 +4543,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'Massenmedien'
                 },
                 {
@@ -5352,7 +5352,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'وسائل الإعلام الجماهيرية'
                 },
                 {
@@ -6972,7 +6972,7 @@ const messages = {
                     name: 'MVP'
                 },
                 {
-                    path: '#mass-media-section',
+                    path: '#mass-media-sections',
                     name: 'Medios de comunicación'
                 },
                 {

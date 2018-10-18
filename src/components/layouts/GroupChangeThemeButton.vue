@@ -55,7 +55,7 @@
                     document.querySelector('video').playbackRate = 0.75;
             },
             /**
-             * changes the selected theme to a video theme in the home section
+             * changes the selected theme to a video theme in the home sections
              */
             doVideoTheme: function () {
                 this.isDark = true;
@@ -65,7 +65,7 @@
                 localStorage.setItem('color-theme', 'video');
             },
             /**
-             * changes the selected theme to a light theme in the home section
+             * changes the selected theme to a light theme in the home sections
              */
             doLightTheme: function () {
                 this.isDark = false;
@@ -74,7 +74,7 @@
                 localStorage.setItem('color-theme', 'light');
             },
             /**
-             * changes the selected theme to a dark theme in the home section
+             * changes the selected theme to a dark theme in the home sections
              */
             doDarkTheme: function () {
                 this.isDark = true;

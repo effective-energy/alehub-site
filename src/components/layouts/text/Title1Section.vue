@@ -1,5 +1,5 @@
 <template>
-    <h1 class="title-section">
+    <h1 class="title-1-section">
         {{ title }}
     </h1>
 </template>
@@ -17,7 +17,7 @@
 </script>
 
 <style lang="stylus" scoped>
-    .title-section
+    .title-1-section
         color white
         font-size 48px
         font-family MuseoSansCyrl700
