@@ -24,7 +24,7 @@
                 {
                     id: 1,
                     date: 1539853358738,
-                    text: 'An augmented version soon will be avaliable!'
+                    text: 'An augmented version soon will be available!'
                 },
                 {
                     id: 2,

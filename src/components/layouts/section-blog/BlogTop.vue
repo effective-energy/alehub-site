@@ -1,7 +1,7 @@
 <template>
     <v-layout row>
         <v-flex xs7>
-            <blog-main-video/>
+            <blog-main-video :text="textMainVideo"/>
         </v-flex>
         <v-flex xs5>
             <blog-news/>
@@ -18,6 +18,11 @@
         components: {
             BlogMainVideo,
             BlogNews
+        },
+        computed: {
+            textMainVideo() {
+                return 'ALEHUB: On economy of project management system based on blockchain technology.';
+            }
         }
     }
 </script>
