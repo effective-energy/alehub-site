@@ -5,10 +5,10 @@
             </div>
         </v-flex>
         <v-flex xs9>
-            <p>
-                {{ date }}
+            <p class="date">
+                {{ formattedDate }}
             </p>
-            <p>
+            <p class="text">
                 {{ text }}
             </p>
         </v-flex>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+    import moment from 'moment';
+
     export default {
         name: 'BlogNewsItem',
         props: {
@@ -27,7 +29,13 @@
                 type: String,
                 required: true
             }
+        },
+        computed: {
+            formattedDate() {
+                return moment(this.date).format('D MMMM YYYY');
+            }
         }
+
     }
 </script>
 
@@ -35,5 +43,16 @@
     .image
         height 100px
         width 100px
-        background-color #6a6ba7
+        background-color #5585a7
+
+    .date,
+    .text
+        margin 0
+        color white
+        font-size 16px
+        font-family MuseoSansCyrl300
+        line-height 1.5
+
+    .date
+        opacity .72
 </style>

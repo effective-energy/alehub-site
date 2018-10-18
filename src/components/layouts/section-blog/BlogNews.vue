@@ -1,9 +1,10 @@
 <template>
     <div class="blog-news">
-        <v-layout column>
-            <v-flex>
-                <blog-news-item v-for="item in news"
-                                :text="item.text"
+        <v-layout align-space-between column>
+            <v-flex d-flex align-center
+                    v-for="item in news"
+                    :key="item.date">
+                <blog-news-item :text="item.text"
                                 :date="item.date"/>
             </v-flex>
         </v-layout>
@@ -41,5 +42,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .blog-news
+        height 100%
 
+        .layout
+            height 100%
 </style>
