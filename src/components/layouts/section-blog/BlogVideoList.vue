@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-        <v-flex xs3
+        <v-flex xs4
                 v-for="item in list"
                 :key="item.date">
             <blog-video :date="item.date"
