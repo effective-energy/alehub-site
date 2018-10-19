@@ -6,6 +6,7 @@
         <section-reason-investing/>
         <section-blog/>
         <section-welcome/>
+        <section-end-token-sale/>
     </div>
 </template>
 
@@ -16,6 +17,7 @@
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
     import SectionBlog from './sections/SectionBlog';
     import SectionWelcome from './sections/SectionWelcome';
+    import SectionEndTokenSale from './sections/SectionEndTokenSale';
 
     export default {
         name: 'Index2',
@@ -25,7 +27,8 @@
             SectionSlogan,
             SectionReasonInvesting,
             SectionBlog,
-            SectionWelcome
+            SectionWelcome,
+            SectionEndTokenSale
         }
     }
 </script>
