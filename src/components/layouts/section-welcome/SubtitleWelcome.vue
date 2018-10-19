@@ -1,5 +1,6 @@
 <template>
-    <subtitle-section :subtitle="subtitle"/>
+    <subtitle-section class="subtitle-welcome"
+                      :subtitle="subtitle"/>
 </template>
 
 <script>
@@ -17,5 +18,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
+    .subtitle-welcome
+        margin-bottom 35px
 </style>

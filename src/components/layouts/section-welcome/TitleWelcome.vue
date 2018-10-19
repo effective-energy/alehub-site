@@ -1,5 +1,6 @@
 <template>
-    <title-2-section :title="title"/>
+    <title-2-section class="title-welcome"
+                     :title="title"/>
 </template>
 
 <script>
@@ -17,5 +18,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
+    .title-welcome
+        margin-bottom 20px
 </style>

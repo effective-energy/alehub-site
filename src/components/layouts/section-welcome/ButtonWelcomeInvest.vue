@@ -1,5 +1,6 @@
 <template>
-    <button-rounded :text="text"/>
+    <button-rounded class="button-welcome-invest"
+                    :text="text"/>
 </template>
 
 <script>
@@ -17,5 +18,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
+    .button-welcome-invest
+        margin-bottom 70px
 </style>
