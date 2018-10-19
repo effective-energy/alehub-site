@@ -1,16 +1,32 @@
 <template>
     <div class="timer-end-token-sale">
-        {{ restOfWeeks }}
-        {{ restOfDays }}
-        {{ restOfHours }}
-        {{ restOfMinutes }}
-        {{ restOfSeconds }}
+        <timer-weeks :timer="restOfWeeks"/>
+        <timer-seconds :timer="restOfSeconds"/>
+        <!--{{ restOfWeeks }}-->
+        <!--{{ restOfDays }}-->
+        <!--{{ restOfHours }}-->
+        <!--{{ restOfMinutes }}-->
+        <!--{{ restOfSeconds }}-->
     </div>
 </template>
 
 <script>
+    import TimerWeeks from './TimerWeeks';
+    import TimerDays from './TimerDays';
+    import TimerHours from './TimerHours';
+    import TimerMinutes from './TimerMinutes';
+    import TimerSeconds from './TimerSeconds';
+
+
     export default {
         name: 'TimerEndTokenSale',
+        components: {
+            TimerWeeks,
+            TimerDays,
+            TimerHours,
+            TimerMinutes,
+            TimerSeconds
+        },
         data: () => ({
             end: 1559927329563,
             now: new Date(),
