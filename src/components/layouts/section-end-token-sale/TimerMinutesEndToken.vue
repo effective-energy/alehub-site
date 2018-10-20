@@ -4,10 +4,10 @@
 
 <script>
     export default {
-        name: "TimerDays"
+        name: 'TimerMinutesEndToken'
     }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>

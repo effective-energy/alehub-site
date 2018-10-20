@@ -4,10 +4,10 @@
 
 <script>
     export default {
-        name: "TimerHours"
+        name: 'TimerHours'
     }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
 
 </style>

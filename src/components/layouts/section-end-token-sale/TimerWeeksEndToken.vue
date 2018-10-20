@@ -1,27 +1,23 @@
 <template>
     <div class="timer-weeks">
-        <timer-item :timer="timer"
-                    :text="text"/>
+        <timer-weeks :timer="timer"/>
     </div>
 </template>
 
 <script>
-    import TimerItem from '../timer/TimerItem';
+    import TimerWeeks from '../timer/TimerWeeks';
 
     export default {
-        name: 'TimerWeeks',
+        name: 'TimerWeeksEndToken',
         components: {
-            TimerItem
+            TimerWeeks
         },
         props: {
             timer: {
                 type: [Number, String],
                 required: true
             }
-        },
-        data: () => ({
-            text: 'Недель'
-        })
+        }
     }
 </script>
 

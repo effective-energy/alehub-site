@@ -11,11 +11,11 @@
 </template>
 
 <script>
-    import TimerWeeks from './TimerWeeks';
-    import TimerDays from './TimerDays';
-    import TimerHours from './TimerHours';
-    import TimerMinutes from './TimerMinutes';
-    import TimerSeconds from './TimerSeconds';
+    import TimerWeeks from './TimerWeeksEndToken';
+    import TimerDays from './TimerDaysEndToken';
+    import TimerHours from './TimerHoursEndToken';
+    import TimerMinutes from './TimerMinutesEndToken';
+    import TimerSeconds from './TimerSecondsEndToken';
 
 
     export default {
