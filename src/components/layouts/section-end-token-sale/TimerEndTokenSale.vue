@@ -1,18 +1,24 @@
 <template>
     <div class="timer-end-token-sale">
-        <timer-weeks :timer="restOfWeeks"/>
-        <timer-days :timer="restOfDays"/>
-        <timer-hours :timer="restOfHours"/>
-        <timer-seconds :timer="restOfSeconds"/>
+        <timer-weeks :timer="restOfWeeks"
+                     :big="bigTimer"/>
+        <timer-days :timer="restOfDays"
+                    :big="bigTimer"/>
+        <timer-hours :timer="restOfHours"
+                     :big="bigTimer"/>
+        <timer-minutes :timer="restOfMinutes"
+                       :big="bigTimer"/>
+        <timer-seconds :timer="restOfSeconds"
+                       :big="bigTimer"/>
     </div>
 </template>
 
 <script>
-    import TimerWeeks from './TimerWeeksEndToken';
-    import TimerDays from './TimerDaysEndToken';
-    import TimerHours from './TimerHoursEndToken';
-    import TimerMinutes from './TimerMinutesEndToken';
-    import TimerSeconds from './TimerSecondsEndToken';
+    import TimerWeeks from '../timer/TimerWeeks';
+    import TimerDays from '../timer/TimerDays';
+    import TimerHours from '../timer/TimerHours';
+    import TimerMinutes from '../timer/TimerMinutes';
+    import TimerSeconds from '../timer/TimerSeconds';
 
 
     export default {
@@ -27,7 +33,8 @@
         data: () => ({
             end: 1559927329563,
             now: new Date(),
-            diff: 0
+            diff: 0,
+            bigTimer: true
         }),
         computed: {
             restOfWeeks() {

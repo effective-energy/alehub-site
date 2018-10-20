@@ -20,6 +20,10 @@
             text: {
                 type: String,
                 required: true
+            },
+            big: {
+                type: Boolean,
+                required: true
             }
         }
     }

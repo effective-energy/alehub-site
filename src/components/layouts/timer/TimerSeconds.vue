@@ -8,7 +8,7 @@
     import TimerItem from './TimerItem';
 
     export default {
-        name: 'TimerHours',
+        name: 'TimerSeconds',
         components: {
             TimerItem
         },
@@ -24,7 +24,7 @@
         },
         computed: {
             /**
-             * calculated timer hours text
+             * calculated timer seconds text
              *
              * @returns {string}
              */
@@ -34,10 +34,10 @@
                     lastTimerNum = parseInt(timerStr[timerStr.length - 1]);
 
                 if (lastTimerNum >= 2 && lastTimerNum <= 4 && (timer < 10 || timer > 20))
-                    return 'часа';
+                    return 'секунды';
                 else if (lastTimerNum === 1)
-                    return 'час';
-                return 'часов';
+                    return 'секунда';
+                return 'секунд';
             }
         }
     }

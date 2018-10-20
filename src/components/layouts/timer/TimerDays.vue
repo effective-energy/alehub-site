@@ -1,6 +1,7 @@
 <template>
     <timer-item :timer="timer"
-                :text="calcText"/>
+                :text="calcText"
+                :big="big"/>
 </template>
 
 <script>
@@ -15,6 +16,10 @@
             timer: {
                 type: [Number, String],
                 required: true
+            },
+            big: {
+                type: Boolean,
+                required: true
             }
         },
         computed: {
@@ -24,9 +29,11 @@
              * @returns {string}
              */
             calcText() {
-                if (this.timer >= 2 && this.timer <= 4)
+                let timer = this.timer;
+
+                if (timer >= 2 && timer <= 4)
                     return 'дня';
-                else if (this.timer === 1)
+                else if (timer === 1)
                     return 'день';
                 return 'дней'
             }
