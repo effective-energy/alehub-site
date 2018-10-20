@@ -3,7 +3,7 @@
         <v-container grid-list-md>
             <v-layout row>
                 <v-flex xs5>
-
+                    <title-end-token-sale/>
                 </v-flex>
                 <v-flex xs7>
                     <timer-end-token-sale/>
@@ -14,11 +14,13 @@
 </template>
 
 <script>
+    import TitleEndTokenSale from '../layouts/section-end-token-sale/TitleEndTokenSale';
     import TimerEndTokenSale from '../layouts/section-end-token-sale/TimerEndTokenSale';
 
     export default {
         name: 'SectionEndTokenSale',
         components: {
+            TitleEndTokenSale,
             TimerEndTokenSale
         }
     }
