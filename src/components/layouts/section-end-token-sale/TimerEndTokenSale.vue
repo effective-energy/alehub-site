@@ -2,12 +2,8 @@
     <div class="timer-end-token-sale">
         <timer-weeks :timer="restOfWeeks"/>
         <timer-days :timer="restOfDays"/>
+        <timer-hours :timer="restOfHours"/>
         <timer-seconds :timer="restOfSeconds"/>
-        <!--{{ restOfWeeks }}-->
-        <!--{{ restOfDays }}-->
-        <!--{{ restOfHours }}-->
-        <!--{{ restOfMinutes }}-->
-        <!--{{ restOfSeconds }}-->
     </div>
 </template>
 

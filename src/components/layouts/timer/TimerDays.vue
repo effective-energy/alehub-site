@@ -18,6 +18,11 @@
             }
         },
         computed: {
+            /**
+             * calculated timer days text
+             *
+             * @returns {string}
+             */
             calcText() {
                 if (this.timer >= 2 && this.timer <= 4)
                     return 'дня';

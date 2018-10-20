@@ -7,7 +7,7 @@
     import TimerItem from './TimerItem';
 
     export default {
-        name: 'TimerWeeks',
+        name: 'TimerHours',
         components: {
             TimerItem
         },
@@ -19,7 +19,7 @@
         },
         computed: {
             /**
-             * calculated timer weeks text
+             * calculated timer hours text
              *
              * @returns {string}
              */
@@ -28,11 +28,10 @@
                     lastTimerNum = timer[timer.length - 1];
 
                 if (parseInt(lastTimerNum) >= 2 && parseInt(lastTimerNum) <= 4 && (parseInt(timer) < 10 || parseInt(timer) > 20))
-                    return 'недели';
-                else if (lastTimerNum === '1')
-                    return 'неделя';
-
-                return 'недель';
+                    return 'часа';
+                else if (parseInt(lastTimerNum) === 1)
+                    return 'час';
+                return 'часов'
             }
         }
     }
