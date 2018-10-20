@@ -1,6 +1,7 @@
 <template>
     <div class="timer-end-token-sale">
         <timer-weeks :timer="restOfWeeks"/>
+        <timer-days :timer="restOfDays"/>
         <timer-seconds :timer="restOfSeconds"/>
         <!--{{ restOfWeeks }}-->
         <!--{{ restOfDays }}-->

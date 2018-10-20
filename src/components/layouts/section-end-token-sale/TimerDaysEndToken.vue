@@ -1,10 +1,21 @@
 <template>
-    
+    <timer-days :timer="timer"/>
 </template>
 
 <script>
+    import TimerDays from '../timer/TimerDays';
+
     export default {
-        name: 'TimerDaysEndToken'
+        name: 'TimerDaysEndToken',
+        components: {
+            TimerDays
+        },
+        props: {
+            timer: {
+                type: [Number, String],
+                required: true
+            }
+        }
     }
 </script>
 
