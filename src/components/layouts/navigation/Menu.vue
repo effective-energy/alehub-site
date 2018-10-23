@@ -9,6 +9,11 @@
 <script>
     export default {
         name: 'Menu',
+        props: {
+            bold: {
+                type: Boolean
+            }
+        },
         data: () => ({
             menu: [
                 {

@@ -7,6 +7,7 @@
         <section-blog/>
         <section-welcome/>
         <section-end-token-sale/>
+        <footer-block/>
     </div>
 </template>
 
@@ -18,6 +19,7 @@
     import SectionBlog from './sections/SectionBlog';
     import SectionWelcome from './sections/SectionWelcome';
     import SectionEndTokenSale from './sections/SectionEndTokenSale';
+    import FooterBlock from './FooterBlock';
 
     export default {
         name: 'Index2',
@@ -28,7 +30,8 @@
             SectionReasonInvesting,
             SectionBlog,
             SectionWelcome,
-            SectionEndTokenSale
+            SectionEndTokenSale,
+            FooterBlock
         }
     }
 </script>
