@@ -22,7 +22,7 @@
                             <menu-footer-bottom :items="menuBottom"/>
                         </v-flex>
                         <v-flex>
-
+                            <subscribe/>
                         </v-flex>
                     </v-layout>
                 </v-flex>
@@ -37,6 +37,7 @@
     import Copyright from './layouts/footer/Copyright';
     import MenuFooterTop from './layouts/footer/MenuFooterTop';
     import MenuFooterBottom from './layouts/footer/MenuFooterBottom';
+    import Subscribe from './layouts/footer/Subscribe';
 
     export default {
         name: 'FooterBlock',
@@ -45,7 +46,8 @@
             ListOfDocs,
             Copyright,
             MenuFooterTop,
-            MenuFooterBottom
+            MenuFooterBottom,
+            Subscribe
         },
         data: () => ({
             menuTop: [
