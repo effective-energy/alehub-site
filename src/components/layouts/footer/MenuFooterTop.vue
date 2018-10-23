@@ -1,15 +1,20 @@
 <template>
-    <menu-block :items="items"
-                :inner="inner"/>
+    <ul class="menu-footer-top">
+        <menu-item v-for="item in items" :key="item.title">
+            <router-link :to="item.path" tag="a">
+                {{ item.title }}
+            </router-link>
+        </menu-item>
+    </ul>
 </template>
 
 <script>
-    import MenuBlock from '../menu/Menu';
+    import MenuItem from '../menu/MenuItem';
 
     export default {
         name: 'MenuFooterTop',
         components: {
-            MenuBlock
+            MenuItem
         },
         props: {
             items: {
