@@ -2,7 +2,7 @@
     <a class="link-doc"
        :href="href"
        target="_blank">
-        {{ text }}
+        <slot></slot>
     </a>
 </template>
 
@@ -11,10 +11,6 @@
         name: 'LincDoc',
         props: {
             href: {
-                type: String,
-                required: true
-            },
-            text: {
                 type: String,
                 required: true
             }

@@ -7,7 +7,7 @@
                         <logo/>
                     </v-flex>
                     <v-flex>
-                        <navigation-menu/>
+                        <navigation-menu :items="items"/>
                     </v-flex>
                 </v-layout>
             </v-flex>
@@ -20,7 +20,7 @@
 
 <script>
     import Logo from './Logo';
-    import NavigationMenu from './Menu';
+    import NavigationMenu from './MenuHeader';
     import Language from './Language';
 
     export default {
@@ -29,7 +29,28 @@
             Logo,
             NavigationMenu,
             Language
-        }
+        },
+        data: () => ({
+            //во vuex
+            items: [
+                {
+                    title: 'MVP',
+                    path: '/'
+                },
+                {
+                    title: 'Whitepaper',
+                    path: '/'
+                },
+                {
+                    title: 'Блог',
+                    path: '/blog/categories/:id'
+                },
+                {
+                    title: 'F.A.Q',
+                    path: '/faq'
+                }
+            ]
+        })
     }
 </script>
 

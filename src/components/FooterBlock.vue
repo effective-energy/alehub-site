@@ -16,10 +16,10 @@
                 <v-flex xs10>
                     <v-layout column>
                         <v-flex>
-                            <navigation-menu/>
+                            <menu-footer-top :items="menuTop"/>
                         </v-flex>
                         <v-flex>
-
+                            <menu-footer-bottom :items="menuBottom"/>
                         </v-flex>
                         <v-flex>
 
@@ -35,7 +35,8 @@
     import Logo from './layouts/navigation/Logo';
     import ListOfDocs from './layouts/footer/ListOfDocs';
     import Copyright from './layouts/footer/Copyright';
-    import NavigationMenu from './layouts/navigation/Menu';
+    import MenuFooterTop from './layouts/footer/MenuFooterTop';
+    import MenuFooterBottom from './layouts/footer/MenuFooterBottom';
 
     export default {
         name: 'FooterBlock',
@@ -43,8 +44,55 @@
             Logo,
             ListOfDocs,
             Copyright,
-            NavigationMenu
-        }
+            MenuFooterTop,
+            MenuFooterBottom
+        },
+        data: () => ({
+            menuTop: [
+                {
+                    title: 'MVP',
+                    path: '/'
+                },
+                {
+                    title: 'Whitepaper',
+                    path: '/'
+                },
+                {
+                    title: 'Блог',
+                    path: '/blog/categories/:id'
+                },
+                {
+                    title: 'F.A.Q',
+                    path: '/faq'
+                }
+            ],
+            menuBottom: [
+                {
+                    title: 'Миссия',
+                    id: 'mission'
+                },
+                {
+                    title: 'Преимущества',
+                    id: 'advantages'
+                },
+                {
+                    title: 'Платформа',
+                    id: 'platform'
+                },
+                {
+                    title: 'Команда',
+                    id: 'team'
+                },
+                {
+                    title: 'STO',
+                    id: 'sto'
+                },
+                {
+                    title: 'Карта проекта',
+                    id: 'roadmap'
+                }
+            ]
+        })
     }
 </script>
 
