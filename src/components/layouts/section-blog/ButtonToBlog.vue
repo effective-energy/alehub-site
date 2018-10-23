@@ -1,5 +1,7 @@
 <template>
-    <button-rounded :text="textButton"/>
+    <button-rounded>
+        {{ textButton }}
+    </button-rounded>
 </template>
 
 <script>

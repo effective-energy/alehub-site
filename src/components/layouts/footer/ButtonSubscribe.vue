@@ -8,12 +8,12 @@
     import ButtonRounded from '../buttons/ButtonRounded';
 
     export default {
-        name: 'ButtonToWhiteList',
+        name: 'ButtonSubscribe',
         components: {
             ButtonRounded
         },
         data: () => ({
-            text: 'Попасть в whitelist'
+            text: 'Подписаться'
         })
     }
 </script>

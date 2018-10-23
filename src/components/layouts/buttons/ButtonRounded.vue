@@ -1,7 +1,7 @@
 <template>
     <button type="button"
             class="button-rounded">
-        {{ text }}
+        <slot></slot>
     </button>
 </template>
 
@@ -9,10 +9,6 @@
     export default {
         name: 'ButtonRounded',
         props: {
-            text: {
-                type: String,
-                required: true
-            },
             icon: {
                 type: String
             }

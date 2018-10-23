@@ -1,6 +1,7 @@
 <template>
-    <button-rounded class="button-welcome-invest"
-                    :text="text"/>
+    <button-rounded class="button-welcome-invest">
+        {{ text }}
+    </button-rounded>
 </template>
 
 <script>
