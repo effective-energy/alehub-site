@@ -36,7 +36,15 @@
 </script>
 
 <style lang="stylus" scoped>
-       .header-item
-           font-family MuseoSansCyrl700
-           font-size 18px
+    .menu-header
+        li
+            margin-right 40px
+
+            &:last-of-type
+                margin-right 0
+
+            a
+                font-family MuseoSansCyrl700
+                font-size 18px
+                color white
 </style>

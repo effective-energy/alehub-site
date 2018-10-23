@@ -23,13 +23,21 @@
             }
         },
         data: () => ({
-            inner: false
         })
     }
 </script>
 
 <style lang="stylus" scoped>
-    .footer-item
-        font-family MuseoSansCyrl500
-        font-size 16px
+    .menu-footer-top
+        li
+            margin-right 32px
+
+            &:last-of-type
+                margin-right 0
+
+            a
+                font-family MuseoSansCyrl500
+                font-size 16px
+                color white
+                text-transform uppercase
 </style>

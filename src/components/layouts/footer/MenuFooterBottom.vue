@@ -23,11 +23,20 @@
             }
         },
         data: () => ({
-            inner: true
         })
     }
 </script>
 
 <style lang="stylus" scoped>
+    .menu-footer-bottom
+        li
+            margin-right 32px
 
+            &:last-of-type
+                margin-right 0
+
+            a
+                font-family MuseoSansCyrl500
+                font-size 16px
+                color white
 </style>
