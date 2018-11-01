@@ -4,6 +4,7 @@
         <section-represent/>
         <section-slogan/>
         <section-reason-investing/>
+        <section-subscribe/>
         <section-blog/>
         <section-welcome/>
         <section-end-token-sale/>
@@ -16,6 +17,7 @@
     import SectionRepresent from './sections/SectionRepresent';
     import SectionSlogan from './sections/SectionSlogan';
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
+    import SectionSubscribe from './sections/SectionSubscribe';
     import SectionBlog from './sections/SectionBlog';
     import SectionWelcome from './sections/SectionWelcome';
     import SectionEndTokenSale from './sections/SectionEndTokenSale';
@@ -28,6 +30,7 @@
             SectionRepresent,
             SectionSlogan,
             SectionReasonInvesting,
+            SectionSubscribe,
             SectionBlog,
             SectionWelcome,
             SectionEndTokenSale,

@@ -2,7 +2,11 @@
     <div class="section-main">
         <navigation/>
         <background-title-main/>
-        <v-container grid-list-md
+        <v-container grid-list-xs
+                     grid-list-sm
+                     grid-list-md
+                     grid-list-lg
+                     grid-list-xl
                      class="parent-z">
             <v-layout row wrap>
                 <v-flex d-flex xs7>

@@ -45,7 +45,7 @@
             TimerSeconds
         },
         data: () => ({
-            end: 1559927329563,
+            end: 1549007329563,
             now: new Date(),
             diff: 0,
             bigTimer: true
