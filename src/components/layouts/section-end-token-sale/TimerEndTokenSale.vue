@@ -1,15 +1,29 @@
 <template>
     <div class="timer-end-token-sale">
-        <timer-weeks :timer="restOfWeeks"
-                     :big="bigTimer"/>
-        <timer-days :timer="restOfDays"
-                    :big="bigTimer"/>
-        <timer-hours :timer="restOfHours"
-                     :big="bigTimer"/>
-        <timer-minutes :timer="restOfMinutes"
-                       :big="bigTimer"/>
-        <timer-seconds :timer="restOfSeconds"
-                       :big="bigTimer"/>
+        <v-layout row>
+            <v-flex xs4>
+                <timer-weeks :timer="restOfWeeks"
+                             :big="bigTimer"/>
+            </v-flex>
+            <v-flex xs4>
+                <timer-days :timer="restOfDays"
+                            :big="bigTimer"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row class="margin-top">
+            <v-flex xs4>
+                <timer-hours :timer="restOfHours"
+                             :big="bigTimer"/>
+            </v-flex>
+            <v-flex xs4>
+                <timer-minutes :timer="restOfMinutes"
+                               :big="bigTimer"/>
+            </v-flex>
+            <v-flex xs4>
+                <timer-seconds :timer="restOfSeconds"
+                               :big="bigTimer"/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -69,5 +83,7 @@
 </script>
 
 <style lang="stylus" scoped>
+    .margin-top
+        margin-top 32px !important
 
 </style>
