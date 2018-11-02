@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.339 66.667">
+    <defs>
+        <style>
+            .cls-1{fill:#fc8435}
+        </style>
+    </defs>
+    <g id="Ресурс_2" data-name="Ресурс 2" transform="translate(-21.328)">
+        <g id="Слой_1" data-name="Слой 1">
+            <path id="Path_5942" d="M17.33 27.913l-2.666.323V6h66.65v2.666H17.33z" class="cls-1" data-name="Path 5942" transform="translate(6.664 10)"/>
+            <path id="Rectangle_258" d="M0 0h5.332v2.666H0z" class="cls-1" data-name="Rectangle 258" transform="translate(50.657 40)"/>
+            <path id="Path_5943" d="M83.981 66.662H8V37.331h2.666V64h73.315a6.666 6.666 0 0 0 0-13.332h-6.665V0h6.665c6.105 0 9.331 3.226 9.331 9.333V56a11.175 11.175 0 0 1 0 1.333 9.039 9.039 0 0 1-9.331 9.333zM84.514 48a9.117 9.117 0 0 1 6.132 2.667V9.333c0-4.613-2.053-6.666-6.665-6.666h-4V48z" class="cls-1" data-name="Path 5943" transform="translate(13.335)"/>
+            <path id="Path_5944" d="M33.664 32.832a10.666 10.666 0 1 1 10.664-10.666 10.665 10.665 0 0 1-10.664 10.666zm0-18.665a8 8 0 1 0 8 8 8 8 0 0 0-8-8z" class="cls-1" data-name="Path 5944" transform="translate(38.323 19.167)"/>
+            <path id="Path_5945" d="M73.318 43.664H20v-1.333c0-4.613-2.053-6.666-6.665-6.666H12V17h1.333C17.945 17 20 14.946 20 10.333V9h47.986v2.667H22.664a8 8 0 0 1-8 8V33a8 8 0 0 1 8 8h50.654z" class="cls-1" data-name="Path 5945" transform="translate(19.999 15.001)"/>
+        </g>
+    </g>
+</svg>

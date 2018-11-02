@@ -29,7 +29,6 @@
         z-index 1
         position absolute
         font-family MuseoSansCyrl700
-        font-size 150px
         text-transform uppercase
         user-select none
 
@@ -39,6 +38,8 @@
         @media (min-width 960px)
             font-size 120px
 
+        @media (min-width 960px)
+            font-size 150px
 
         &.blue-orange
             background linear-gradient(87deg, gr-blue, gr-orange)
