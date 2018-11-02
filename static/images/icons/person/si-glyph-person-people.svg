@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.276 25">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#fff;fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="si-glyph-person-people" transform="translate(.915 .489)">
+        <g id="Group_861" data-name="Group 861" transform="translate(-.408 .011)">
+            <path id="Path_5316" d="M14.86 12.96c-.939 1.645-2.02-2.454-3.2-2.454-1.214 0-2.345 4.026-3.327 2.339-.843-1.454-1.573-3.018-2.151-3.824-5.972 0-6.093 9.57-6.093 9.57h23.259s.411-9.612-6.3-9.612c-.597.84-1.333 2.489-2.188 3.981z" class="cls-1" data-name="Path 5316" transform="translate(-.091 5.409)"/>
+            <path id="Path_5317" d="M9.785 14.431c-2.4 0-4.768-6.685-4.768-9.435A5.038 5.038 0 0 1 9.785.011 5.038 5.038 0 0 1 14.553 5c0 2.746-2.368 9.431-4.768 9.431z" class="cls-1" data-name="Path 5317" transform="translate(1.884 -.011)"/>
+        </g>
+    </g>
+</svg>

@@ -9,6 +9,8 @@
         <section-reason-investing/>
         <section-management-system-now/>
         <section-management-system-alehub/>
+        <section-advantages/>
+        <section-downloads/>
         <section-subscribe/>
         <section-partners/>
         <section-questions/>
@@ -29,6 +31,8 @@
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
     import SectionManagementSystemNow from './sections/SectionManagementSystemNow';
     import SectionManagementSystemAlehub from './sections/SectionManagementSystemAlehub';
+    import SectionAdvantages from './sections/SectionAdvantages';
+    import SectionDownloads from './sections/SectionDownloads';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
     import SectionQuestions from './sections/SectionQuestions';
@@ -49,6 +53,8 @@
             SectionReasonInvesting,
             SectionManagementSystemNow,
             SectionManagementSystemAlehub,
+            SectionAdvantages,
+            SectionDownloads,
             SectionSubscribe,
             SectionPartners,
             SectionQuestions,
