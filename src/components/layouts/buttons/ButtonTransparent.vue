@@ -1,21 +1,22 @@
 <template>
-    <v-layout align-start column>
-        <v-flex>
-            <button type="button"
-                    class="button-transparent">
-                <span>{{ text }}</span>
-                <img v-if="icon"
-                     :src="icon"
-                     class="icon"
-                     alt="arrow">
-            </button>
-        </v-flex>
-        <v-flex v-if="small">
-            <small>
-                {{ small }}
-            </small>
-        </v-flex>
-    </v-layout>
+    <!--<v-layout align-start column>-->
+    <!--<v-flex>-->
+    <button type="button"
+            class="button-transparent"
+            :class="classButtonTransparent">
+        <span>{{ text }}</span>
+        <img v-if="icon"
+             :src="icon"
+             class="icon"
+             alt="arrow">
+    </button>
+    <!--</v-flex>-->
+    <!--<v-flex v-if="small">-->
+    <!--<small>-->
+    <!--{{ small }}-->
+    <!--</small>-->
+    <!--</v-flex>-->
+    <!--</v-layout>-->
 </template>
 
 <script>
@@ -27,10 +28,20 @@
                 required: true
             },
             small: {
-                type: String
+                type: Boolean
             },
             icon: {
                 type: String
+            },
+            big: {
+                type: Boolean
+            }
+        },
+        computed: {
+            classButtonTransparent() {
+                if (this.big)
+                    return 'big';
+                return '';
             }
         }
     }
@@ -46,6 +57,9 @@
         font-family MuseoSansCyrl700
         font-size 18px
         text-transform uppercase
+
+        &.big
+            font-size 24px
 
         &:focus
             outline none
