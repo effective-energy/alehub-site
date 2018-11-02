@@ -3,7 +3,7 @@
         <span class="text">
             Alehub
         </span>
-        <div class="circle-orange"></div>
+        <!--<div class="circle-orange"></div>-->
     </div>
 </template>
 

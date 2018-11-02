@@ -9,7 +9,7 @@
                         <v-flex>
                             <logo/>
                         </v-flex>
-                        <v-flex>
+                        <v-flex d-flex align-center>
                             <navigation-menu :items="items"/>
                         </v-flex>
                     </v-layout>

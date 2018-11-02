@@ -1,5 +1,5 @@
 <template>
-    <v-layout>
+    <v-layout row align-end>
         <v-flex xs4
                 v-for="item in list"
                 :key="item.date">

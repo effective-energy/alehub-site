@@ -237,18 +237,16 @@
             },
             decreaseStep() {
                 if (this.current_position > 0) {
-                    console.log(this.current_position, 'decrease after');
                     --this.current_position;
                     document.getElementById('control-line').style['transform'] = `translateY(-${this.pixelsForItem * this.current_position}px)`;
-                    console.log(this.current_position, 'decrease after');
+                    document.getElementById('left').style['transform'] = `translateY(-${this.pixelsForItem * this.current_position}px)`;
                 }
             },
             increaseStep(items_length, items_in_line) {
                 if (this.current_position < items_length - items_in_line) {
-                    console.log(this.current_position, 'increase before');
                     ++this.current_position;
                     document.getElementById('control-line').style['transform'] = `translateY(-${this.pixelsForItem * this.current_position}px)`;
-                    console.log(this.current_position, 'increase after');
+                    document.getElementById('left').style['transform'] = `translateY(-${this.pixelsForItem * this.current_position}px)`;
                 }
             },
             calcControlLineHeight(items) {
@@ -296,7 +294,6 @@
             height 100%
 
             .step
-
                 .right-step-date
                     opacity .72
                     font-family MuseoSansCyrl300
@@ -329,6 +326,7 @@
             display flex
             flex-direction column
             justify-content space-around
+            transition transform 400ms ease
 
             .left-step-title
                 text-align right
@@ -354,6 +352,7 @@
             flex-direction column
             justify-content space-around
             align-items center
+            transition transform 400ms ease
 
             .dot
                 z-index 2

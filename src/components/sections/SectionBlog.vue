@@ -1,17 +1,21 @@
 <template>
     <div class="section-blog">
-        <v-container grid-list-md>
+        <v-container grid-list-xs
+                     grid-list-sm
+                     grid-list-md
+                     grid-list-lg
+                     grid-list-xl>
             <v-layout row>
                 <v-flex>
                     <title-blog :title="title"/>
                 </v-flex>
             </v-layout>
-            <v-layout row>
+            <v-layout row style="margin-top: 24px;">
                 <v-flex>
                     <subtitle-blog :subtitle="subtitle"/>
                 </v-flex>
             </v-layout>
-            <v-layout row>
+            <v-layout row style="margin-top: 40px;">
                 <v-flex>
                     <blog/>
                 </v-flex>
@@ -41,6 +45,17 @@
 
 <style lang="stylus" scoped>
     .section-blog
-        height 100vh
         color white
+
+        @media (min-width 0px)
+            height 200vh
+
+        @media (min-width 600px)
+            height 170vh
+
+        @media (min-width 960px)
+            height 120vh
+
+        @media (min-width 1264px)
+            height 100vh
 </style>

@@ -1,9 +1,9 @@
 <template>
-    <v-layout row>
-        <v-flex xs7>
+    <v-layout row wrap>
+        <v-flex xs12 sm12 md12 lg7 xl7>
             <blog-main-video :text="textMainVideo"/>
         </v-flex>
-        <v-flex xs5>
+        <v-flex xs12 sm12 md12 lg5 xl5>
             <blog-news/>
         </v-flex>
     </v-layout>

@@ -81,5 +81,13 @@
 
 <style lang="stylus" scoped>
     .section-downloads
-        height 70vh
+
+        @media (min-width 600px)
+            font-size 85px
+
+        @media (min-width 960px)
+            height 110vh
+
+        @media (min-width 1264px)
+            height 75vh
 </style>

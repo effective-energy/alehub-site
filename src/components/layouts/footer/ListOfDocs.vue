@@ -2,6 +2,7 @@
     <div class="list-of-docs">
         <link-doc v-for="doc in docs"
                   :key="doc.href"
+                  style="margin-top: 18px;"
                   :href="doc.href">
             {{ doc.text }}
         </link-doc>

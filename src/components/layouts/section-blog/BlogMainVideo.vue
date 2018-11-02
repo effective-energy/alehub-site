@@ -34,7 +34,7 @@
     .image
         position relative
         height 350px
-        width 600px
+        width 100%
         background-color #6a6ba7
         display flex
         align-items flex-end

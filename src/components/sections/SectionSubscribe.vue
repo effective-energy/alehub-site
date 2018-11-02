@@ -6,16 +6,17 @@
                      grid-list-lg
                      grid-list-xl>
             <v-layout align-center
-                      row>
+                      row wrap>
                 <v-flex d-flex
                         align-center
-                        xs5>
+                        xs12
+                sm6 md6 lg4 xl4>
                     <text-subscribe/>
                 </v-flex>
-                <v-flex xs4>
+                <v-flex xs12 sm6 md6 lg4>
                     <input-email-subscribe/>
                 </v-flex>
-                <v-flex xs3>
+                <v-flex xs12 sm6 md6 offset-md6 lg3 offset-lg0 xl3 offset-xl0>
                     <button-subscribe/>
                 </v-flex>
             </v-layout>

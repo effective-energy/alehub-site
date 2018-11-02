@@ -15,7 +15,11 @@
         <section-roadmap/>
         <section-subscribe/>
         <section-partners/>
-        <section-questions/>
+        <section-team-advisors/>
+        <section-team/>
+        <sections-team-serokell/>
+        <section-media/>
+        <!--<section-questions/>-->
         <section-blog/>
         <section-welcome/>
         <section-end-token-sale/>
@@ -39,7 +43,11 @@
     import SectionWhitepaper from './sections/SectionWhitepaper';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
+    import SectionTeamAdvisors from './sections/SectionsTeamAdvisors';
+    import SectionTeam from './sections/SectionsTeam';
+    import SectionsTeamSerokell from './sections/SectionsTeamSerokell';
     import SectionQuestions from './sections/SectionQuestions';
+    import SectionMedia from './sections/SectionMedia';
     import SectionBlog from './sections/SectionBlog';
     import SectionWelcome from './sections/SectionWelcome';
     import SectionEndTokenSale from './sections/SectionEndTokenSale';
@@ -59,6 +67,10 @@
             SectionManagementSystemAlehub,
             SectionAdvantages,
             SectionDownloads,
+            SectionTeamAdvisors,
+            SectionTeam,
+            SectionsTeamSerokell,
+            SectionMedia,
             SectionWhitepaper,
             SectionRoadmap,
             SectionSubscribe,

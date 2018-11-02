@@ -3,7 +3,7 @@
         <v-flex>
             <blog-top/>
         </v-flex>
-        <v-flex>
+        <v-flex style="margin-top: 80px;">
             <blog-bottom/>
         </v-flex>
     </v-layout>

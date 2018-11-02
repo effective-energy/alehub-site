@@ -9,7 +9,7 @@
                         </v-flex>
                         <v-flex>
                             <list-of-docs/>
-                            <copyright/>
+                            <copyright style="margin-top: 24px;"/>
                         </v-flex>
                     </v-layout>
                 </v-flex>
