@@ -26,8 +26,23 @@
             position inherit
             color white
             font-family MuseoSansCyrl700
-            font-size 32px
             text-transform uppercase
+
+            @media (min-width 0)
+                font-size 20px
+                line-height 1.2
+                letter-spacing .8px
+
+            @media (min-width 600px)
+                font-size 24px
+                line-height 1.2
+                letter-spacing .8px
+
+            @media (min-width 960px)
+                font-size 26px
+
+            @media (min-width 1264px)
+                font-size 32px
 
         .circle-orange
             z-index 1

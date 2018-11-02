@@ -1,21 +1,28 @@
 <template>
     <div class="navigation">
-        <v-container>
+        <v-container grid-list-xs
+                     grid-list-sm
+                     grid-list-md
+                     grid-list-lg
+                     grid-list-xl>
             <v-layout align-center
                       justify-space-between
                       row>
                 <v-flex>
                     <v-layout row>
-                        <v-flex>
+                        <v-flex xs4>
                             <logo/>
                         </v-flex>
-                        <v-flex d-flex align-center>
+                        <v-flex xs4 offset-xs2>
+                            <select-language/>
+                        </v-flex>
+                        <v-flex xs2>
+                            <hamburger/>
+                        </v-flex>
+                        <v-flex hidden-sm-and-down>
                             <navigation-menu :items="items"/>
                         </v-flex>
                     </v-layout>
-                </v-flex>
-                <v-flex>
-                    <language/>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -25,14 +32,16 @@
 <script>
     import Logo from './Logo';
     import NavigationMenu from './MenuHeader';
-    import Language from './Language';
+    import SelectLanguage from './SelectLanguage';
+    import Hamburger from './Hamburger';
 
     export default {
         name: 'Navigation',
         components: {
             Logo,
             NavigationMenu,
-            Language
+            SelectLanguage,
+            Hamburger
         },
         data: () => ({
             //во vuex
