@@ -4,6 +4,7 @@
         <section-main/>
         <section-represent/>
         <section-slogan/>
+        <section-distribution-tokens/>
         <section-reason-investing/>
         <section-subscribe/>
         <section-partners/>
@@ -20,6 +21,7 @@
     import SectionMain from './sections/SectionMain';
     import SectionRepresent from './sections/SectionRepresent';
     import SectionSlogan from './sections/SectionSlogan';
+    import SectionDistributionTokens from './sections/SectionPlacingTokens';
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
@@ -36,6 +38,7 @@
             SectionMain,
             SectionRepresent,
             SectionSlogan,
+            SectionDistributionTokens,
             SectionReasonInvesting,
             SectionSubscribe,
             SectionPartners,

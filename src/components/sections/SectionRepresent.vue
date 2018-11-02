@@ -1,13 +1,21 @@
 <template>
     <div class="section-represent">
-        <background-title-slogan class="background-title"/>
         <v-container grid-list-md
-                     class="section-represent-container">
-            <v-layout row align-center>
-                <v-flex xs4 offset-xs1>
+                     class="full-height">
+            <v-layout justify-center
+                      row>
+                <v-flex>
+                    <background-title-slogan class="background-title-center"/>
+                </v-flex>
+            </v-layout>
+            <v-layout class="full-height"
+                      row align-center>
+                <v-flex class="increase-z"
+                        xs4 offset-xs1>
                     <title-slogan :title="title"/>
                 </v-flex>
-                <v-flex xs6 offset-xs1>
+                <v-flex class="increase-z"
+                        xs6 offset-xs1>
                     <text-slogan :text="text"/>
                 </v-flex>
                 <line-vertical/>
@@ -39,19 +47,23 @@
 </script>
 
 <style lang="stylus" scoped>
+    .background-title-center
+        top "calc(50% - %s)" % 75px
+
+    .full-height
+        height 100%
+
+    .increase-z
+        z-index 2
+
     .background-title
         position absolute
 
     .section-represent
-        height 100vh
+        height 80vh
         background-color #020449
         color white
 
-        .section-represent-container
-            z-index 2
+        .container
             position relative
-            height 100%
-
-            .layout
-                height 100%
 </style>
