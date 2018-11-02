@@ -1,21 +1,25 @@
 <template>
-    <v-container>
-        <v-layout align-center justify-space-between row>
-            <v-flex>
-                <v-layout row>
-                    <v-flex>
-                        <logo/>
-                    </v-flex>
-                    <v-flex>
-                        <navigation-menu :items="items"/>
-                    </v-flex>
-                </v-layout>
-            </v-flex>
-            <v-flex>
-                <language/>
-            </v-flex>
-        </v-layout>
-    </v-container>
+    <div class="navigation">
+        <v-container>
+            <v-layout align-center
+                      justify-space-between
+                      row>
+                <v-flex>
+                    <v-layout row>
+                        <v-flex>
+                            <logo/>
+                        </v-flex>
+                        <v-flex>
+                            <navigation-menu :items="items"/>
+                        </v-flex>
+                    </v-layout>
+                </v-flex>
+                <v-flex>
+                    <language/>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </div>
 </template>
 
 <script>
@@ -55,5 +59,7 @@
 </script>
 
 <style lang="stylus" scoped>
-
+    .navigation
+        height 100px
+        background-color #020449
 </style>

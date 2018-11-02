@@ -1,15 +1,21 @@
 <template>
     <div class="section-main">
-        <navigation/>
-        <background-title-main/>
         <v-container grid-list-xs
                      grid-list-sm
                      grid-list-md
                      grid-list-lg
                      grid-list-xl
-                     class="parent-z">
-            <v-layout row wrap>
-                <v-flex d-flex xs7>
+                     class="full-height">
+            <v-layout>
+                <v-flex>
+                    <background-title-main/>
+                </v-flex>
+            </v-layout>
+            <v-layout class="full-height"
+                      row wrap
+                      align-center>
+                <v-flex d-flex xs7
+                        class="increase-z">
                     <v-layout column>
                         <v-flex d-flex>
                             <title-main/>
@@ -29,7 +35,8 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
-                <v-flex d-flex xs5>
+                <v-flex d-flex xs5
+                        class="increase-z">
                     <v-layout column>
                         <v-flex d-flex>
                             <timer-sales-end/>
@@ -81,12 +88,14 @@
 </script>
 
 <style lang="stylus" scoped>
+    .full-height
+        height 100%
+
     .section-main
-        height 100vh
+        height calc(100vh - 100px)
         background-color #020449
         color white
 
-    .parent-z
+    .increase-z
         z-index 2
-        position relative
 </style>

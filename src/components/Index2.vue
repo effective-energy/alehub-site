@@ -1,11 +1,13 @@
 <template>
     <div class="index">
+        <navigation/>
         <section-main/>
         <section-represent/>
         <section-slogan/>
         <section-reason-investing/>
         <section-subscribe/>
         <section-partners/>
+        <section-questions/>
         <section-blog/>
         <section-welcome/>
         <section-end-token-sale/>
@@ -14,6 +16,7 @@
 </template>
 
 <script>
+    import Navigation from './layouts/navigation/Navigation';
     import SectionMain from './sections/SectionMain';
     import SectionRepresent from './sections/SectionRepresent';
     import SectionSlogan from './sections/SectionSlogan';
@@ -29,6 +32,7 @@
     export default {
         name: 'Index2',
         components: {
+            Navigation,
             SectionMain,
             SectionRepresent,
             SectionSlogan,
