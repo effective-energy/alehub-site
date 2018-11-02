@@ -43,7 +43,7 @@
 
 <style lang="stylus" scoped>
     .section-subscribe
-        height 25vh
+        height 35vh
         background-color #020449
 
         .container
