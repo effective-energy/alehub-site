@@ -61,7 +61,6 @@
 
     .section-represent
         height 80vh
-        background-color #020449
         color white
 
         .container

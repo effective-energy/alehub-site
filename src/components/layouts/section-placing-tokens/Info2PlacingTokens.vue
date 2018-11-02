@@ -4,7 +4,8 @@
             {{ title }}
         </h2>
         <v-layout class="layout-margin-top">
-            <v-flex xs6 v-for="item in items">
+            <v-flex xs6 v-for="(item, i) in items"
+                    :key="i">
                 <img :src="item.src"
                      :alt="item.alt">
                 <p class="item-text">

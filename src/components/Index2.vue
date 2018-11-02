@@ -4,6 +4,7 @@
         <section-main/>
         <section-represent/>
         <section-slogan/>
+        <section-placing-tokens/>
         <section-distribution-tokens/>
         <section-reason-investing/>
         <section-subscribe/>
@@ -21,7 +22,8 @@
     import SectionMain from './sections/SectionMain';
     import SectionRepresent from './sections/SectionRepresent';
     import SectionSlogan from './sections/SectionSlogan';
-    import SectionDistributionTokens from './sections/SectionPlacingTokens';
+    import SectionPlacingTokens from './sections/SectionPlacingTokens';
+    import SectionDistributionTokens from './sections/SectionDistributionTokens';
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
@@ -38,6 +40,7 @@
             SectionMain,
             SectionRepresent,
             SectionSlogan,
+            SectionPlacingTokens,
             SectionDistributionTokens,
             SectionReasonInvesting,
             SectionSubscribe,
@@ -52,4 +55,6 @@
 </script>
 
 <style lang="stylus" scoped>
+    .index
+        background-color #020449
 </style>

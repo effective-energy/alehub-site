@@ -47,7 +47,6 @@
 
     .section-end-token-sale
         height 50vh
-        background-color #020449
         color white
 
         .container

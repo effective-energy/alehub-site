@@ -28,7 +28,6 @@
 <style lang="stylus" scoped>
     .section-slogan
         height 50vh
-        background-color #020449
         color white
 
         .section-slogan-container

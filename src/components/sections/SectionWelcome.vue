@@ -50,7 +50,6 @@
 <style lang="stylus" scoped>
     .section-welcome
         height 50vh
-        background-color #020449
         color white
 
         .container

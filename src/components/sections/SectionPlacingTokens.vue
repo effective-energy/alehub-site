@@ -1,5 +1,5 @@
 <template>
-    <div class="section-distribution-token">
+    <div class="section-placing-token">
         <v-container grid-list-xs
                      grid-list-sm
                      grid-list-md
@@ -10,30 +10,30 @@
                 <v-flex>
                     <v-layout justify-center row>
                         <v-flex>
-                            <title1-distribution-token/>
+                            <title1-placing-token/>
                         </v-flex>
                     </v-layout>
                     <v-layout justify-center row>
                         <v-flex>
-                            <title2-distribution-token/>
+                            <title2-placing-token/>
                         </v-flex>
                     </v-layout>
                     <v-layout justify-center row>
                         <v-flex>
-                            <subtitle-distribution-tokens class="subtitle-margin-top"/>
+                            <subtitle-placing-tokens class="subtitle-margin-top"/>
                         </v-flex>
                     </v-layout>
                     <v-layout class="layout-info-margin-top">
                         <v-flex lg6>
-                            <info1-distribution-tokens/>
+                            <info1-placing-tokens/>
                         </v-flex>
                         <v-flex lg5 offset-lg1>
-                            <info2-distribution-tokens/>
+                            <info2-placing-tokens/>
                         </v-flex>
                     </v-layout>
                     <v-layout class="layout-button-margin-top" justify-center row>
-                        <v-flex xs4>
-                            <button-distribution-tokens/>
+                        <v-flex xs12 sm6 md6 lg4 xl4>
+                            <button-placing-tokens/>
                         </v-flex>
                     </v-layout>
                 </v-flex>
@@ -76,8 +76,6 @@
     .subtitle-margin-top
         margin-top 32px
 
-    .section-distribution-token
+    .section-placing-token
         height 100vh
-        background-color #020449
-
 </style>

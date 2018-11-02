@@ -93,7 +93,6 @@
 
     .section-main
         height calc(100vh - 100px)
-        background-color #020449
         color white
 
     .increase-z

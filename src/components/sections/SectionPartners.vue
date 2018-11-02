@@ -11,7 +11,8 @@
                     <v-layout row
                               class="margin-top">
                         <v-flex d-flex
-                                v-for="partner in partners">
+                                v-for="(partner, i) in partners"
+                                :key="i">
                             <a :href="partner.href">
                                 <img :src="partner.src"
                                      :alt="partner.alt">
@@ -72,7 +73,6 @@
 
     .section-partners
         height 50vh
-        background-color #020449
 
         .container
             height 100%

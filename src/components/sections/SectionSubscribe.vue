@@ -44,7 +44,6 @@
 <style lang="stylus" scoped>
     .section-subscribe
         height 35vh
-        background-color #020449
 
         .container
             height 100%

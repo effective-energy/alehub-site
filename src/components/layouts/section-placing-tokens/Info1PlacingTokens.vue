@@ -5,7 +5,8 @@
         </h2>
         <v-layout class="layout-margin-top">
             <v-flex xs4 class="item"
-                    v-for="item in items">
+                    v-for="(item, i) in items"
+                    :key="i">
                 <img :src="item.src"
                      :alt="item.alt">
                 <p class="item-text">

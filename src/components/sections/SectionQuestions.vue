@@ -35,8 +35,6 @@
 <style lang="stylus" scoped>
     .section-questions
         height 60vh
-        background-color #020449
-
     .parent-z
         z-index 2
         position relative

@@ -42,6 +42,5 @@
 <style lang="stylus" scoped>
     .section-blog
         height 100vh
-        background-color #020449
         color white
 </style>

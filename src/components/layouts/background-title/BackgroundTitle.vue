@@ -33,6 +33,13 @@
         text-transform uppercase
         user-select none
 
+        @media (min-width 600px)
+            font-size 85px
+
+        @media (min-width 960px)
+            font-size 120px
+
+
         &.blue-orange
             background linear-gradient(87deg, gr-blue, gr-orange)
             -webkit-background-clip text
