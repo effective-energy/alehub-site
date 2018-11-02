@@ -28,7 +28,7 @@
                 required: true
             },
             small: {
-                type: Boolean
+                type: [Boolean, String]
             },
             icon: {
                 type: String

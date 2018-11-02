@@ -18,8 +18,8 @@
                         xs6 offset-xs1>
                     <text-slogan :text="text"/>
                 </v-flex>
-                <line-vertical/>
-                <line-vertical/>
+                <!--<line-vertical/>-->
+                <!--<line-vertical/>-->
             </v-layout>
         </v-container>
     </div>

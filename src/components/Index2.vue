@@ -11,6 +11,8 @@
         <!--<section-management-system-alehub/>-->
         <section-advantages/>
         <section-downloads/>
+        <section-whitepaper/>
+        <section-roadmap/>
         <section-subscribe/>
         <section-partners/>
         <section-questions/>
@@ -33,6 +35,8 @@
     import SectionManagementSystemAlehub from './sections/SectionManagementSystemAlehub';
     import SectionAdvantages from './sections/SectionAdvantages';
     import SectionDownloads from './sections/SectionDownloads';
+    import SectionRoadmap from './sections/SectionRoadmap';
+    import SectionWhitepaper from './sections/SectionWhitepaper';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
     import SectionQuestions from './sections/SectionQuestions';
@@ -55,6 +59,8 @@
             SectionManagementSystemAlehub,
             SectionAdvantages,
             SectionDownloads,
+            SectionWhitepaper,
+            SectionRoadmap,
             SectionSubscribe,
             SectionPartners,
             SectionQuestions,

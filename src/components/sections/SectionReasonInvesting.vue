@@ -23,7 +23,8 @@
             </v-layout>
             <v-layout row wrap>
                 <v-flex class="increase-z"
-                        v-for="item in items"
+                        v-for="(item, i) in items"
+                        :key="i"
                         xs12
                         sm6
                         md6
