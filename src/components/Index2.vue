@@ -7,6 +7,8 @@
         <section-placing-tokens/>
         <section-distribution-tokens/>
         <section-reason-investing/>
+        <section-management-system-now/>
+        <section-management-system-alehub/>
         <section-subscribe/>
         <section-partners/>
         <section-questions/>
@@ -25,6 +27,8 @@
     import SectionPlacingTokens from './sections/SectionPlacingTokens';
     import SectionDistributionTokens from './sections/SectionDistributionTokens';
     import SectionReasonInvesting from './sections/SectionReasonInvesting';
+    import SectionManagementSystemNow from './sections/SectionManagementSystemNow';
+    import SectionManagementSystemAlehub from './sections/SectionManagementSystemAlehub';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
     import SectionQuestions from './sections/SectionQuestions';
@@ -43,6 +47,8 @@
             SectionPlacingTokens,
             SectionDistributionTokens,
             SectionReasonInvesting,
+            SectionManagementSystemNow,
+            SectionManagementSystemAlehub,
             SectionSubscribe,
             SectionPartners,
             SectionQuestions,

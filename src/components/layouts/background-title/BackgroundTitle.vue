@@ -38,7 +38,7 @@
         @media (min-width 960px)
             font-size 120px
 
-        @media (min-width 960px)
+        @media (min-width 1264px)
             font-size 150px
 
         &.blue-orange
