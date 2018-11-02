@@ -43,9 +43,9 @@
     import SectionWhitepaper from './sections/SectionWhitepaper';
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
-    import SectionTeamAdvisors from './sections/SectionsTeamAdvisors';
+    import SectionTeamAdvisors from './sections/SectionTeamAdvisors';
     import SectionTeam from './sections/SectionTeam';
-    import SectionsTeamSerokell from './sections/SectionsTeamSerokell';
+    import SectionsTeamSerokell from './sections/SectionTeamSerokell';
     import SectionQuestions from './sections/SectionQuestions';
     import SectionMedia from './sections/SectionMedia';
     import SectionBlog from './sections/SectionBlog';
