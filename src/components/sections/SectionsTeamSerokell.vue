@@ -5,76 +5,16 @@
                      grid-list-md
                      grid-list-lg
                      grid-list-xl>
-            <v-layout row style="margin-top: 48px;">
-                <v-flex  xs12 sm12 md6 lg6 xl6>
-                    <div class="member">
-                        <div class="photo">
-                        </div>
-                        <div class="info">
-                            <h3 class="name">
-                                Арсений Серока
-                            </h3>
-                            <p class="position">
-                                Ведущий разработчик Serokell
-                            </p>
-                            <p class="company">
-                                Serokell
-                            </p>
-                        </div>
-                    </div>
-                </v-flex>
-                <v-flex xs12 sm12 md6 lg6 xl6>
-                    <div class="member">
-                        <div class="photo">
-                        </div>
-                        <div class="info">
-                            <h3 class="name">
-                                Йон Мостовой
-                            </h3>
-                            <p class="position">
-                                Ведущий разработчик Serokell
-                            </p>
-                            <p class="company">
-                                Serokell
-                            </p>
-                        </div>
-                    </div>
-                </v-flex>
-            </v-layout>
-            <v-layout row style="margin-top: 80px;">
-                <v-flex xs12 sm12 md6 lg6 xl6>
-                    <div class="member">
-                        <div class="photo">
-                        </div>
-                        <div class="info">
-                            <h3 class="name">
-                                Александр Рукин
-                            </h3>
-                            <p class="position">
-                                UI/UX дизайнер
-                            </p>
-                            <p class="company">
-                                Serokell
-                            </p>
-                        </div>
-                    </div>
-                </v-flex>
-                <v-flex xs12 sm12 md6 lg6 xl6>
-                    <div class="member">
-                        <div class="photo">
-                        </div>
-                        <div class="info">
-                            <h3 class="name">
-                                Кирилл Елагин
-                            </h3>
-                            <p class="position">
-                                Back-end разработчик
-                            </p>
-                            <p class="company">
-                                Serokell
-                            </p>
-                        </div>
-                    </div>
+            <v-layout align-center fill-height row>
+                <v-flex xs12>
+                    <slider-team :autoplay="sliderOptions.autoplay"
+                                 :autoplay-delay="sliderOptions.autoplayDelay"
+                                 :touch="sliderOptions.touch"
+                                 :drag="sliderOptions.drag"
+                                 :num-img-xs="sliderOptions.numImgXs"
+                                 :num-img-md="sliderOptions.numImgMd"
+                                 :num-img-lg="sliderOptions.numImgLg"
+                                 :members="sliderOptions.members"/>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -83,14 +23,54 @@
 
 <script>
     import TitleSection from '../layouts/text/Title1Section';
+    import SliderTeam from '../layouts/section-team/SliderTeam';
 
     export default {
         name: 'SectionsTeamSerokell',
         components: {
-            TitleSection
+            TitleSection,
+            SliderTeam
         },
         data: () => ({
-
+            sliderOptions: {
+                autoplay: false,
+                autoplayDelay: 3000,
+                touch: true,
+                drag: false,
+                numImgXs: 1,
+                numImgMd: 1,
+                numImgLg: 2,
+                members: [
+                    [
+                        {
+                            name: 'Арсений Серока',
+                            position: 'Ведущий разработчик Serokell',
+                            team: 'Serokell',
+                            linkedin: ''
+                        },
+                        {
+                            name: 'Александр Рукин',
+                            position: 'UI/UX дзиайнер',
+                            team: 'Serokell',
+                            linkedin: ''
+                        },
+                    ],
+                    [
+                        {
+                            name: 'Йон Мостовой',
+                            position: 'Ведущий разработчик Serokell',
+                            team: 'Serokell',
+                            linkedin: ''
+                        },
+                        {
+                            name: 'Кирилл Елагин',
+                            position: 'Исполнительный директор',
+                            team: 'Back-end разработчик',
+                            linkedin: ''
+                        }
+                    ],
+                ]
+            }
         })
     }
 </script>
@@ -100,47 +80,11 @@
         display flex
         align-items center
 
-    .photo
-        height 160px
-        width 160px
-        border-radius 50%
-        background-color #a67aff
-        flex-shrink 0
-        margin-right 32px
 
     .sections-team-serokell
         height 65vh
 
-    .company
-        opacity: 0.72;
-        font-family: MuseoSansCyrl300;
-        font-weight: 300;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        text-align: left;
-        color: #ffffff;
-        margin-top 18px
+        .container
+            height 100%
 
-    .position
-        font-family: MuseoSansCyrl300;
-        font-size: 16px;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        text-align: left;
-        color: #ffffff;
-        margin-top 32px
-
-    .name
-        font-family: MuseoSansCyrl500;
-        font-size: 24px;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.33;
-        letter-spacing: normal;
-        text-align: left;
-        color: #ffffff;
 </style>

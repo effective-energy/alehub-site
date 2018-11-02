@@ -44,7 +44,7 @@
     import SectionSubscribe from './sections/SectionSubscribe';
     import SectionPartners from './sections/SectionPartners';
     import SectionTeamAdvisors from './sections/SectionsTeamAdvisors';
-    import SectionTeam from './sections/SectionsTeam';
+    import SectionTeam from './sections/SectionTeam';
     import SectionsTeamSerokell from './sections/SectionsTeamSerokell';
     import SectionQuestions from './sections/SectionQuestions';
     import SectionMedia from './sections/SectionMedia';

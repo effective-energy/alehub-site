@@ -32,16 +32,16 @@
         components: {
             // CapProgress
         },
-        props: {
-            title: {
-                type: String,
-                required: true
-            },
-            total: {
-                type: [String, Number],
-                required: true
-            }
-        }
+        // props: {
+        //     title: {
+        //         type: String,
+        //         required: true
+        //     },
+        //     total: {
+        //         type: [String, Number],
+        //         required: true
+        //     }
+        // }
     }
 </script>
 
