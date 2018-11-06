@@ -11,11 +11,17 @@
                     <background-title-main/>
                 </v-flex>
             </v-layout>
-            <v-layout class="full-height"
-                      row wrap
-                      align-center>
-                <v-flex d-flex xs7
-                        class="increase-z">
+            <v-layout fill-height
+                      align-center-md-and-up
+                      row
+                      wrap>
+                <v-flex class="increase-z"
+                        d-flex
+                        xs12
+                        sm12
+                        md7
+                        lg7
+                        xl7>
                     <v-layout column>
                         <v-flex d-flex>
                             <title-main/>
@@ -35,8 +41,13 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
-                <v-flex d-flex xs5
-                        class="increase-z">
+                <v-flex class="increase-z"
+                        d-flex
+                        xs12
+                        sm12
+                        md5
+                        lg5
+                        xl5>
                     <v-layout column>
                         <v-flex d-flex>
                             <timer-sales-end/>
