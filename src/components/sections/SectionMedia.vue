@@ -1,12 +1,13 @@
 <template>
     <div class="section-media">
-        <v-container>
             <v-layout>
                 <v-flex>
                     <title-section title="Публикации"/>
                 </v-flex>
             </v-layout>
-            <v-layout row style="margin-top: 68px;">
+            <v-layout row
+                      fill-height
+                      style="margin-top: 68px;">
                 <v-flex xs12>
                     <div class="media-block__list">
                         <a target="_blank"
@@ -19,7 +20,6 @@
                     </div>
                 </v-flex>
             </v-layout>
-        </v-container>
     </div>
 </template>
 

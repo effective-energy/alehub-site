@@ -1,70 +1,68 @@
 <template>
     <div class="section-main">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl
-                     class="full-height">
-            <v-layout>
-                <v-flex>
-                    <background-title-main/>
-                </v-flex>
-            </v-layout>
-            <v-layout fill-height
-                      align-center-md-and-up
-                      row
-                      wrap>
-                <v-flex class="increase-z"
-                        d-flex
-                        xs12
-                        sm12
-                        md7
-                        lg7
-                        xl7>
-                    <v-layout column>
-                        <v-flex d-flex>
-                            <title-main/>
-                        </v-flex>
-                        <v-flex d-flex>
-                            <v-layout row>
-                                <v-flex d-flex>
-                                    <button-watch-video/>
-                                </v-flex>
-                                <v-flex d-flex>
-                                    <button-get-whitepaper/>
-                                </v-flex>
-                            </v-layout>
-                        </v-flex>
-                        <v-flex d-flex>
-                            <social-block/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-                <v-flex class="increase-z"
-                        d-flex
-                        xs12
-                        sm12
-                        md5
-                        lg5
-                        xl5>
-                    <v-layout column>
-                        <v-flex d-flex>
-                            <timer-sales-end/>
-                        </v-flex>
-                        <v-flex d-flex>
-                            <get-to-whitelist/>
-                        </v-flex>
-                        <v-flex d-flex>
-                            <soft-cap/>
-                        </v-flex>
-                        <v-flex d-flex>
-                            <hard-cap/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout>
+            <v-flex>
+                <background-title-main/>
+            </v-flex>
+        </v-layout>
+        <v-layout fill-height
+                  align-center-md-and-up
+                  row
+                  wrap>
+            <v-flex class="increase-z"
+                    xs12>
+                <v-layout row wrap>
+                    <v-flex xs12
+                            sm12
+                            md6
+                            lg6
+                            xl6>
+                        <title-main/>
+                    </v-flex>
+                    <v-flex class="timer-margin"
+                            xs12
+                            sm12
+                            md5 offset-md1
+                            lg5 offset-lg1
+                            xl5 offset-xl1>
+                        <timer-sales-end/>
+                        <get-to-whitelist/>
+                    </v-flex>
+                </v-layout>
+                <v-layout row
+                          wrap>
+                    <v-flex xs12
+                            sm12
+                            md6
+                            lg6
+                            xl6>
+                        <v-layout class="buttons-padding"
+                                  row
+                                  wrap>
+                            <v-flex>
+                                <button-watch-video/>
+                            </v-flex>
+                            <v-flex>
+                                <button-get-whitepaper/>
+                            </v-flex>
+                        </v-layout>
+                        <v-layout row>
+                            <v-flex>
+                                <social-block class="social-margin"/>
+                            </v-flex>
+                        </v-layout>
+                    </v-flex>
+                    <v-flex xs12
+                            sm12
+                            md5 offset-md1
+                            lg5 offset-lg1
+                            xl5 offset-xl1>
+                        <soft-cap/>
+                        <hard-cap/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -99,12 +97,62 @@
 </script>
 
 <style lang="stylus" scoped>
+    .buttons-padding
+        @media (min-width 0)
+            padding-top 32px
+
+        @media (min-width 600px)
+            padding-top 32px
+
+        @media (min-width 960px)
+            padding-top 0
+
+        @media (min-width 1264px)
+            padding-top 0
+
+    .timer-margin
+        @media (min-width 0)
+            margin-top 32px
+
+        @media (min-width 600px)
+            margin-top 32px
+
+        @media (min-width 960px)
+            margin-top 0
+
+        @media (min-width 1264px)
+            margin-top 0
+
+    .social-margin
+        @media (min-width 0)
+            margin-top 60px
+
+        @media (min-width 600px)
+            margin-top 60px
+
+        @media (min-width 960px)
+            margin-top 0
+
+        @media (min-width 1264px)
+            margin-top 0
+
     .full-height
         height 100%
 
     .section-main
-        height calc(100vh - 100px)
         color white
+
+        @media (min-width 0)
+            height calc(170vh - 50px)
+
+        @media (min-width 600px)
+            height calc(140vh - 50px)
+
+        @media (min-width 960px)
+            height calc(120vh - 100px)
+
+        @media (min-width 1264px)
+            height calc(100vh - 100px)
 
     .increase-z
         z-index 2

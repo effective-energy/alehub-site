@@ -1,33 +1,32 @@
 <template>
     <div class="footer">
-        <v-container grid-list-md>
-            <v-layout row>
-                <v-flex xs2>
-                    <v-layout column>
-                        <v-flex>
-                            <logo/>
-                        </v-flex>
-                        <v-flex>
-                            <list-of-docs/>
-                            <copyright style="margin-top: 24px;"/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-                <v-flex xs10>
-                    <v-layout column>
-                        <v-flex>
-                            <menu-footer-top :items="menuTop"/>
-                        </v-flex>
-                        <v-flex>
-                            <menu-footer-bottom :items="menuBottom"/>
-                        </v-flex>
-                        <v-flex>
-                            <subscribe/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout fill-height
+                  row>
+            <v-flex xs2>
+                <v-layout column>
+                    <v-flex>
+                        <logo/>
+                    </v-flex>
+                    <v-flex>
+                        <list-of-docs/>
+                        <copyright style="margin-top: 24px;"/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+            <v-flex xs10>
+                <v-layout column>
+                    <v-flex>
+                        <menu-footer-top :items="menuTop"/>
+                    </v-flex>
+                    <v-flex>
+                        <menu-footer-bottom :items="menuBottom"/>
+                    </v-flex>
+                    <v-flex>
+                        <subscribe/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

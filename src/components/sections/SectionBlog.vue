@@ -1,26 +1,20 @@
 <template>
     <div class="section-blog">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
-                <v-flex>
-                    <title-blog :title="title"/>
-                </v-flex>
-            </v-layout>
-            <v-layout row style="margin-top: 24px;">
-                <v-flex>
-                    <subtitle-blog :subtitle="subtitle"/>
-                </v-flex>
-            </v-layout>
-            <v-layout row style="margin-top: 40px;">
-                <v-flex>
-                    <blog/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout row>
+            <v-flex>
+                <title-blog :title="title"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row style="margin-top: 24px;">
+            <v-flex>
+                <subtitle-blog :subtitle="subtitle"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row style="margin-top: 40px;">
+            <v-flex>
+                <blog/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

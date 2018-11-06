@@ -72,17 +72,39 @@
         color white
 
     .normal-time
-        font-size 48px
         font-family MuseoSansCyrl500
-        line-height 2
+        /*line-height 2*/
         letter-spacing 1.9px
         text-align left
         color white
 
+        @media (min-width 0)
+            font-size 36px
+
+        @media (min-width 600px)
+            font-size 36px
+
+        @media (min-width 960px)
+            font-size 48px
+
+        @media (min-width 1264px)
+            font-size 48px
+
     .normal-text
-        font-size 16px
         font-family MuseoSansCyrl300
         line-height 1.5
         text-align left
         color white
+
+        @media (min-width 0)
+            font-size 12px
+
+        @media (min-width 600px)
+            font-size 12px
+
+        @media (min-width 960px)
+            font-size 16px
+
+        @media (min-width 1264px)
+            font-size 16px
 </style>

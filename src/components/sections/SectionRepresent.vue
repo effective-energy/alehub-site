@@ -1,27 +1,25 @@
 <template>
     <div class="section-represent">
-        <v-container grid-list-md
-                     class="full-height">
-            <v-layout justify-center
-                      row>
-                <v-flex>
-                    <background-title-slogan class="background-title-center"/>
-                </v-flex>
-            </v-layout>
-            <v-layout class="full-height"
-                      row align-center>
-                <v-flex class="increase-z"
-                        xs4 offset-xs1>
-                    <title-slogan :title="title"/>
-                </v-flex>
-                <v-flex class="increase-z"
-                        xs6 offset-xs1>
-                    <text-slogan :text="text"/>
-                </v-flex>
-                <!--<line-vertical/>-->
-                <!--<line-vertical/>-->
-            </v-layout>
-        </v-container>
+        <v-layout justify-center
+                  row>
+            <v-flex>
+                <background-title-slogan class="background-title-center"/>
+            </v-flex>
+        </v-layout>
+        <v-layout fill-height
+                  align-center
+                  row>
+            <v-flex class="increase-z"
+                    xs4 offset-xs1>
+                <title-slogan :title="title"/>
+            </v-flex>
+            <v-flex class="increase-z"
+                    xs6 offset-xs1>
+                <text-slogan :text="text"/>
+            </v-flex>
+            <!--<line-vertical/>-->
+            <!--<line-vertical/>-->
+        </v-layout>
     </div>
 </template>
 

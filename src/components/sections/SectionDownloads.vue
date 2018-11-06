@@ -1,30 +1,26 @@
 <template>
     <div class="section-downloads">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row wrap>
-                <v-flex v-for="(item, i) in items"
-                        :key="i"
-                        d-flex
-                        justify-center
-                        xs12
-                        sm6
-                        md6
-                        lg3
-                        xl3>
-                    <item-downloads :src="item.src"
-                                    :href="item.href"
-                                    :title="item.title"
-                                    :version="item.version"
-                                    :bit="item.bit"
-                                    :date="item.date"
-                                    :ready="item.ready"/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout row
+                  fill-height
+                  wrap>
+            <v-flex v-for="(item, i) in items"
+                    :key="i"
+                    d-flex
+                    justify-center
+                    xs12
+                    sm6
+                    md6
+                    lg3
+                    xl3>
+                <item-downloads :src="item.src"
+                                :href="item.href"
+                                :title="item.title"
+                                :version="item.version"
+                                :bit="item.bit"
+                                :date="item.date"
+                                :ready="item.ready"/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -83,7 +79,7 @@
     .section-downloads
 
         @media (min-width 600px)
-            font-size 85px
+            height 130vh
 
         @media (min-width 960px)
             height 110vh

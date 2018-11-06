@@ -1,44 +1,38 @@
 <template>
     <div class="section-placing-token">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl
-                     class="full-height">
-            <v-layout class="full-height" align-center>
-                <v-flex>
-                    <v-layout justify-center row>
-                        <v-flex>
-                            <title1-placing-token/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout justify-center row>
-                        <v-flex>
-                            <title2-placing-token/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout justify-center row>
-                        <v-flex>
-                            <subtitle-placing-tokens class="subtitle-margin-top"/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout class="layout-info-margin-top">
-                        <v-flex lg6>
-                            <info1-placing-tokens/>
-                        </v-flex>
-                        <v-flex lg5 offset-lg1>
-                            <info2-placing-tokens/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout class="layout-button-margin-top" justify-center row>
-                        <v-flex xs12 sm6 md6 lg4 xl4>
-                            <button-placing-tokens/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout fill-height
+                  align-center>
+            <v-flex>
+                <v-layout justify-center row>
+                    <v-flex>
+                        <title1-placing-token/>
+                    </v-flex>
+                </v-layout>
+                <v-layout justify-center row>
+                    <v-flex>
+                        <title2-placing-token/>
+                    </v-flex>
+                </v-layout>
+                <v-layout justify-center row>
+                    <v-flex>
+                        <subtitle-placing-tokens class="subtitle-margin-top"/>
+                    </v-flex>
+                </v-layout>
+                <v-layout class="layout-info-margin-top">
+                    <v-flex lg6>
+                        <info1-placing-tokens/>
+                    </v-flex>
+                    <v-flex lg5 offset-lg1>
+                        <info2-placing-tokens/>
+                    </v-flex>
+                </v-layout>
+                <v-layout class="layout-button-margin-top" justify-center row>
+                    <v-flex xs12 sm6 md6 lg4 xl4>
+                        <button-placing-tokens/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -69,9 +63,6 @@
 
     .layout-info-margin-top
         margin-top 72px !important
-
-    .full-height
-        height 100%
 
     .subtitle-margin-top
         margin-top 32px

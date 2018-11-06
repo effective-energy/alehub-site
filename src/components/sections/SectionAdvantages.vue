@@ -1,33 +1,27 @@
 <template>
     <div class="section-advantages">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
-                <v-flex d-flex justify-center>
-                    <ellipse-blur/>
-                </v-flex>
-            </v-layout>
-            <v-layout align-center row>
-                <v-flex xs6>
-                    <title-section class="align-left"
-                                   :title="title"/>
-                </v-flex>
-                <v-flex xs5 offset-xs1>
-                    <v-layout column>
-                        <v-flex v-for="(item, i) in items"
-                                :key="i">
-                            <item-advantage :src="item.src"
-                                            :title="item.title"
-                                            :text="item.text"/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-
-        </v-container>
+        <v-layout fill-height
+                  row>
+            <v-flex d-flex justify-center>
+                <ellipse-blur/>
+            </v-flex>
+        </v-layout>
+        <v-layout align-center row>
+            <v-flex xs6>
+                <title-section class="align-left"
+                               :title="title"/>
+            </v-flex>
+            <v-flex xs5 offset-xs1>
+                <v-layout column>
+                    <v-flex v-for="(item, i) in items"
+                            :key="i">
+                        <item-advantage :src="item.src"
+                                        :title="item.title"
+                                        :text="item.text"/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

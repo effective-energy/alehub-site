@@ -1,33 +1,27 @@
 <template>
     <div class="sections-team">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout justify-center fill-height column>
-                <v-flex>
-                    <v-layout row>
-                        <v-flex>
-                            <title-section :title="title"/>
-                        </v-flex>
-                    </v-layout>
+        <v-layout justify-center fill-height column>
+            <v-flex>
+                <v-layout row>
+                    <v-flex>
+                        <title-section :title="title"/>
+                    </v-flex>
+                </v-layout>
 
-                    <v-layout row style="margin-top: 48px;">
-                        <v-flex xs12>
-                            <slider-team :autoplay="sliderOptions.autoplay"
-                                         :autoplay-delay="sliderOptions.autoplayDelay"
-                                         :touch="sliderOptions.touch"
-                                         :drag="sliderOptions.drag"
-                                         :num-img-xs="sliderOptions.numImgXs"
-                                         :num-img-md="sliderOptions.numImgMd"
-                                         :num-img-lg="sliderOptions.numImgLg"
-                                         :members="sliderOptions.members"/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+                <v-layout row style="margin-top: 48px;">
+                    <v-flex xs12>
+                        <slider-team :autoplay="sliderOptions.autoplay"
+                                     :autoplay-delay="sliderOptions.autoplayDelay"
+                                     :touch="sliderOptions.touch"
+                                     :drag="sliderOptions.drag"
+                                     :num-img-xs="sliderOptions.numImgXs"
+                                     :num-img-md="sliderOptions.numImgMd"
+                                     :num-img-lg="sliderOptions.numImgLg"
+                                     :members="sliderOptions.members"/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

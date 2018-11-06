@@ -1,27 +1,27 @@
 <template>
     <div class="section-partners">
-        <v-container>
-            <v-layout align-center row>
-                <v-flex>
-                    <v-layout row>
-                        <v-flex>
-                            <title-section :title="title"/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout row
-                              class="margin-top">
-                        <v-flex d-flex
-                                v-for="(partner, i) in partners"
-                                :key="i">
-                            <a :href="partner.href">
-                                <img :src="partner.src"
-                                     :alt="partner.alt">
-                            </a>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout align-center
+                  fill-height
+                  row>
+            <v-flex>
+                <v-layout row>
+                    <v-flex>
+                        <title-section :title="title"/>
+                    </v-flex>
+                </v-layout>
+                <v-layout row
+                          class="margin-top">
+                    <v-flex d-flex
+                            v-for="(partner, i) in partners"
+                            :key="i">
+                        <a :href="partner.href">
+                            <img :src="partner.src"
+                                 :alt="partner.alt">
+                        </a>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

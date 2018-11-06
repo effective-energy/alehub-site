@@ -3,7 +3,7 @@
         <v-flex>
             <button-to-whitelist/>
         </v-flex>
-        <v-flex>
+        <v-flex hidden-sm-and-down>
             <p class="text">
                 Принимаем к сборам:
             </p>

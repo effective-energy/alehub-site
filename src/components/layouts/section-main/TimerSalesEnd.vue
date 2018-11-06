@@ -1,8 +1,10 @@
 <template>
     <v-layout column>
-        <h3>
-            Окончание продаж
-        </h3>
+        <v-flex class="title-padding">
+            <h3 class="title-timer">
+                Окончание продаж
+            </h3>
+        </v-flex>
         <v-flex d-flex xs12>
             <v-layout row>
                 <v-flex xs3>
@@ -76,5 +78,27 @@
 </script>
 
 <style lang="stylus" scoped>
+    .title-padding
+        padding-top 0 !important
+        padding-bottom 0 !important
 
+    .title-timer
+        font-family MuseoSansCyrl700
+        font-weight 700
+        text-transform uppercase
+        line-height 1.33
+        text-align left
+        color #ffffff
+
+        @media (min-width 0)
+            font-size 15px
+
+        @media (min-width 600px)
+            font-size 15px
+
+        @media (min-width 960px)
+            font-size 18px
+
+        @media (min-width 1264px)
+            font-size 18px
 </style>

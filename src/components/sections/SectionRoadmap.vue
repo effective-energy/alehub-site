@@ -1,34 +1,29 @@
 <template>
     <div class="section-roadmap">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
-                <v-flex>
-                    <background-title class="top-background-title"
-                                      :title="titleBackground"
-                                      :blue="blue"/>
-                </v-flex>
-            </v-layout>
-            <v-layout row>
-                <v-flex d-flex justify-center>
-                    <ellipse-big-blur/>
-                </v-flex>
-            </v-layout>
-            <v-layout row>
-                <v-flex class="increase-z">
-                    <title-section class="text-left"
-                                   :title="titleSection"/>
-                </v-flex>
-            </v-layout>
-            <v-layout row>
-                <v-flex class="increase-z">
-                    <roadmap/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout fill-height
+                  row>
+            <v-flex>
+                <background-title class="top-background-title"
+                                  :title="titleBackground"
+                                  :blue="blue"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row>
+            <v-flex d-flex justify-center>
+                <ellipse-big-blur/>
+            </v-flex>
+        </v-layout>
+        <v-layout row>
+            <v-flex class="increase-z">
+                <title-section class="text-left"
+                               :title="titleSection"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row>
+            <v-flex class="increase-z">
+                <roadmap/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

@@ -1,59 +1,53 @@
 <template>
     <div class="section-distribution-token">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl
-                     class="full-height">
-            <v-layout>
-                <v-flex>
-                    <background-title-distribution-tokens/>
-                </v-flex>
-            </v-layout>
-            <v-layout class="full-height"
-                      align-center>
-                <v-flex class="increase-z">
-                    <v-layout row wrap>
-                        <v-flex sm12 md5 lg5>
-                            <h2 class="title-distribution">
-                                {{ title }}
-                            </h2>
-                        </v-flex>
-                        <v-flex sm12 md5 offset-md2 lg5 offset-lg2>
-                            <p class="title-info">
-                                {{ info.title }}
-                            </p>
-                            <p class="sum-info">
-                                {{ info.sum }}
-                            </p>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout class="layout-bottom-margin-top"
-                              align-center row>
-                        <v-flex lg5>
-                            <donut-chart-distribution-tokens/>
-                        </v-flex>
-                        <v-flex lg5 offset-lg2>
-                            <h4 class="title-bottom-distribution">
-                                {{ titleBottom }}
-                            </h4>
-                            <p class="title-bottom-info">
-                                {{ infoBottom.title }}
-                            </p>
-                            <p class="sum-bottom-info">
-                                {{ infoBottom.sum }}
-                            </p>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout>
+            <v-flex>
+                <background-title-distribution-tokens/>
+            </v-flex>
+        </v-layout>
+        <v-layout fill-height
+                  align-center>
+            <v-flex class="increase-z">
+                <v-layout row wrap>
+                    <v-flex sm12 md5 lg5>
+                        <h2 class="title-distribution">
+                            {{ title }}
+                        </h2>
+                    </v-flex>
+                    <v-flex sm12 md5 offset-md2 lg5 offset-lg2>
+                        <p class="title-info">
+                            {{ info.title }}
+                        </p>
+                        <p class="sum-info">
+                            {{ info.sum }}
+                        </p>
+                    </v-flex>
+                </v-layout>
+                <v-layout class="layout-bottom-margin-top"
+                          align-center row>
+                    <v-flex lg5>
+                        <donut-chart-distribution-tokens/>
+                    </v-flex>
+                    <v-flex lg5 offset-lg2>
+                        <h4 class="title-bottom-distribution">
+                            {{ titleBottom }}
+                        </h4>
+                        <p class="title-bottom-info">
+                            {{ infoBottom.title }}
+                        </p>
+                        <p class="sum-bottom-info">
+                            {{ infoBottom.sum }}
+                        </p>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
 <script>
-    import BackgroundTitleDistributionTokens from '../layouts/section-distribution-tokens/BackgroundTitleDistributionTokens';
+    import BackgroundTitleDistributionTokens
+        from '../layouts/section-distribution-tokens/BackgroundTitleDistributionTokens';
     import DonutChartDistributionTokens from '../layouts/section-distribution-tokens/DonutChartDistributionTokens';
 
     export default {

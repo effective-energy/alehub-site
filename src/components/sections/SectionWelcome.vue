@@ -1,32 +1,31 @@
 <template>
     <div class="section-welcome">
-        <v-container grid-list-md
-                     class="section-slogan-container">
-            <v-layout align-center row>
-                <v-flex>
-                    <v-layout row>
-                        <v-flex>
-                            <title-welcome/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout row>
-                        <v-flex>
-                            <subtitle-welcome/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout justify-center row>
-                        <v-flex xs3>
-                            <button-welcome-invest/>
-                        </v-flex>
-                    </v-layout>
-                    <v-layout row>
-                        <v-flex>
-                            <social/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout align-center
+                  fill-height
+                  row>
+            <v-flex>
+                <v-layout row>
+                    <v-flex>
+                        <title-welcome/>
+                    </v-flex>
+                </v-layout>
+                <v-layout row>
+                    <v-flex>
+                        <subtitle-welcome/>
+                    </v-flex>
+                </v-layout>
+                <v-layout justify-center row>
+                    <v-flex xs3>
+                        <button-welcome-invest/>
+                    </v-flex>
+                </v-layout>
+                <v-layout row>
+                    <v-flex>
+                        <social/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

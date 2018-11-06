@@ -1,13 +1,11 @@
 <template>
     <div class="section-slogan">
-        <v-container grid-list-md
-                     class="section-slogan-container">
-            <v-layout align-center row>
-                <v-flex>
-                    <title-slogan :title="title"/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout fill-height
+                  align-center row>
+            <v-flex>
+                <title-slogan :title="title"/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

@@ -1,41 +1,36 @@
 <template>
     <div class="section-why-invest">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
-                <v-flex d-flex justify-center>
-                    <background-title-reason/>
-                </v-flex>
-            </v-layout>
-            <v-layout row>
-                <v-flex class="increase-z"
-                        xs12
-                        sm12
-                        md6
-                        lg5
-                        xl4>
-                    <title-section class="increase-z"
-                                   :title="title"/>
-                </v-flex>
-            </v-layout>
-            <v-layout row wrap>
-                <v-flex class="increase-z"
-                        v-for="(item, i) in items"
-                        :key="i"
-                        xs12
-                        sm6
-                        md6
-                        lg3
-                        xl3>
-                    <item-reason-investing :src="item.src"
-                                           :title="item.title"
-                                           :text="item.text"/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout row>
+            <v-flex d-flex justify-center>
+                <background-title-reason/>
+            </v-flex>
+        </v-layout>
+        <v-layout fill-height
+                  row>
+            <v-flex class="increase-z"
+                    xs12
+                    sm12
+                    md6
+                    lg5
+                    xl4>
+                <title-section class="increase-z"
+                               :title="title"/>
+            </v-flex>
+        </v-layout>
+        <v-layout row wrap>
+            <v-flex class="increase-z"
+                    v-for="(item, i) in items"
+                    :key="i"
+                    xs12
+                    sm6
+                    md6
+                    lg3
+                    xl3>
+                <item-reason-investing :src="item.src"
+                                       :title="item.title"
+                                       :text="item.text"/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 

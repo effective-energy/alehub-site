@@ -1,23 +1,17 @@
 <template>
     <div class="sections-team-serokell">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout align-center fill-height row>
-                <v-flex xs12>
-                    <slider-team :autoplay="sliderOptions.autoplay"
-                                 :autoplay-delay="sliderOptions.autoplayDelay"
-                                 :touch="sliderOptions.touch"
-                                 :drag="sliderOptions.drag"
-                                 :num-img-xs="sliderOptions.numImgXs"
-                                 :num-img-md="sliderOptions.numImgMd"
-                                 :num-img-lg="sliderOptions.numImgLg"
-                                 :members="sliderOptions.members"/>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout align-center fill-height row>
+            <v-flex xs12>
+                <slider-team :autoplay="sliderOptions.autoplay"
+                             :autoplay-delay="sliderOptions.autoplayDelay"
+                             :touch="sliderOptions.touch"
+                             :drag="sliderOptions.drag"
+                             :num-img-xs="sliderOptions.numImgXs"
+                             :num-img-md="sliderOptions.numImgMd"
+                             :num-img-lg="sliderOptions.numImgLg"
+                             :members="sliderOptions.members"/>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -79,7 +73,6 @@
     .member
         display flex
         align-items center
-
 
     .sections-team-serokell
         height 65vh

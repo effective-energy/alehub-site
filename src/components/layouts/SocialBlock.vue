@@ -79,6 +79,7 @@
     .social-block
         z-index 10
         display flex
+        flex-wrap wrap
 
         &.social-block-footer
             justify-content flex-end
@@ -88,7 +89,24 @@
             color #ffffff
             font-size 24px
             transition color .3s ease-in-out
-            margin-right 24px
+
+            @media (min-width 0)
+                text-align center
+                width 25%
+                margin-bottom 50px
+
+            @media (min-width 600px)
+                text-align center
+                width 25%
+                margin-bottom 50px
+
+            @media (min-width 960px)
+                width auto
+                margin-right 24px
+
+            @media (min-width 1264px)
+                width auto
+                margin-right 24px
 
             &:last-child
                 margin-right 0

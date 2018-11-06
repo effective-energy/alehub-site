@@ -1,31 +1,25 @@
 <template>
     <div class="navigation">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout align-center
-                      justify-space-between
-                      row>
-                <v-flex>
-                    <v-layout row>
-                        <v-flex xs4>
-                            <logo/>
-                        </v-flex>
-                        <v-flex xs4 offset-xs2>
-                            <select-language/>
-                        </v-flex>
-                        <v-flex xs2>
-                            <hamburger/>
-                        </v-flex>
-                        <v-flex hidden-sm-and-down>
-                            <navigation-menu :items="items"/>
-                        </v-flex>
-                    </v-layout>
-                </v-flex>
-            </v-layout>
-        </v-container>
+        <v-layout align-center
+                  justify-space-between
+                  row>
+            <v-flex>
+                <v-layout row>
+                    <v-flex xs4>
+                        <logo/>
+                    </v-flex>
+                    <v-flex xs4 offset-xs2>
+                        <select-language/>
+                    </v-flex>
+                    <v-flex xs2>
+                        <hamburger/>
+                    </v-flex>
+                    <v-flex hidden-sm-and-down>
+                        <navigation-menu :items="items"/>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -69,6 +63,17 @@
 
 <style lang="stylus" scoped>
     .navigation
-        height 100px
         background-color #020449
+
+        @media (min-width 0)
+            height 50px
+
+        @media (min-width 600px)
+            height 50px
+
+        @media (min-width 960px)
+            height 100px
+
+        @media (min-width 1264px)
+            height 100px
 </style>

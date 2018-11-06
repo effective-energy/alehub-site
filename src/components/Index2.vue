@@ -1,29 +1,35 @@
 <template>
     <div class="index">
-        <navigation/>
-        <section-main/>
-        <section-represent/>
-        <section-slogan/>
-        <section-placing-tokens/>
-        <section-distribution-tokens/>
-        <section-reason-investing/>
-        <!--<section-management-system-now/>-->
-        <!--<section-management-system-alehub/>-->
-        <section-advantages/>
-        <section-downloads/>
-        <section-whitepaper/>
-        <section-roadmap/>
-        <section-subscribe/>
-        <section-partners/>
-        <section-team-advisors/>
-        <section-team/>
-        <sections-team-serokell/>
-        <section-media/>
-        <!--<section-questions/>-->
-        <section-blog/>
-        <section-welcome/>
-        <section-end-token-sale/>
-        <footer-block/>
+        <v-container grid-list-xs
+                     grid-list-sm
+                     grid-list-md
+                     grid-list-lg
+                     grid-list-xl>
+            <navigation/>
+            <section-main/>
+            <!--<section-represent/>-->
+            <!--<section-slogan/>-->
+            <!--<section-placing-tokens/>-->
+            <!--&lt;!&ndash;<section-distribution-tokens/>&ndash;&gt;-->
+            <!--<section-reason-investing/>-->
+            <!--<section-management-system-now/>-->
+            <!--<section-management-system-alehub/>-->
+            <!--<section-advantages/>-->
+            <!--<section-downloads/>-->
+            <!--<section-whitepaper/>-->
+            <!--<section-roadmap/>-->
+            <!--<section-subscribe/>-->
+            <!--<section-partners/>-->
+            <!--<section-team-advisors/>-->
+            <!--<section-team/>-->
+            <!--<sections-team-serokell/>-->
+            <!--<section-media/>-->
+            <!--&lt;!&ndash;<section-questions/>&ndash;&gt;-->
+            <!--<section-blog/>-->
+            <!--<section-welcome/>-->
+            <!--<section-end-token-sale/>-->
+            <!--<footer-block/>-->
+        </v-container>
     </div>
 </template>
 

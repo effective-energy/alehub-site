@@ -1,11 +1,7 @@
 <template>
     <div class="section-end-token-sale">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
+            <v-layout fill-height
+                      row>
                 <v-flex xs12
                         sm6
                         md5
@@ -22,7 +18,6 @@
                     <timer-end-token-sale/>
                 </v-flex>
             </v-layout>
-        </v-container>
     </div>
 </template>
 

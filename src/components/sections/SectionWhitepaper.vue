@@ -1,11 +1,7 @@
 <template>
     <div class="section-whitepaper">
-        <v-container grid-list-xs
-                     grid-list-sm
-                     grid-list-md
-                     grid-list-lg
-                     grid-list-xl>
-            <v-layout row>
+            <v-layout fill-height
+                      row>
                 <v-flex>
                     <background-title class="top-background-title"
                                       :title="title"
@@ -37,7 +33,6 @@
                     </div>
                 </v-flex>
             </v-layout>
-        </v-container>
     </div>
 </template>
 
