@@ -85,10 +85,10 @@
         position relative
 
         @media (min-width 0)
-            height 100vh
+            height 90vh
 
         @media (min-width 600px)
-            height 100vh
+            height 90vh
 
         @media (min-width 960px)
             height 80vh

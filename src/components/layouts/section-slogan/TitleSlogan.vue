@@ -21,8 +21,22 @@
         text-align center
         color white
         font-family MuseoSansCyrl700
-        font-size 30px
-        line-height 1.6
         letter-spacing .5px
         text-transform uppercase
+
+        @media (min-width 0)
+            font-size 22px
+            line-height 2.22
+
+        @media (min-width 600px)
+            font-size 22px
+            line-height 2.22
+
+        @media (min-width 960px)
+            font-size 30px
+            line-height 1.6
+
+        @media (min-width 1264px)
+            font-size 30px
+            line-height 1.6
 </style>
