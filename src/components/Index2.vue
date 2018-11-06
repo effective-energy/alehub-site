@@ -7,7 +7,7 @@
                      grid-list-xl>
             <navigation/>
             <section-main/>
-            <!--<section-represent/>-->
+            <section-represent/>
             <!--<section-slogan/>-->
             <!--<section-placing-tokens/>-->
             <!--&lt;!&ndash;<section-distribution-tokens/>&ndash;&gt;-->

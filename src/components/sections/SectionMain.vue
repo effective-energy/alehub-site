@@ -6,7 +6,6 @@
             </v-flex>
         </v-layout>
         <v-layout fill-height
-                  align-center-md-and-up
                   row
                   wrap>
             <v-flex class="increase-z"
