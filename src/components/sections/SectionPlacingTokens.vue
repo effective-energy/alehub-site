@@ -18,11 +18,21 @@
                         <subtitle-placing-tokens class="subtitle-margin-top"/>
                     </v-flex>
                 </v-layout>
-                <v-layout class="layout-info-margin-top">
-                    <v-flex lg6>
+                <v-layout class="layout-info-margin-top"
+                          row
+                          wrap>
+                    <v-flex xs12
+                            sm12
+                            md6
+                            lg6
+                            xl6>
                         <info1-placing-tokens/>
                     </v-flex>
-                    <v-flex lg5 offset-lg1>
+                    <v-flex xs12
+                            sm12
+                            md5
+                            lg5 offset-lg1
+                            xl5>
                         <info2-placing-tokens/>
                     </v-flex>
                 </v-layout>
@@ -58,15 +68,62 @@
 </script>
 
 <style lang="stylus" scoped>
+    .layout-placing-token
+        @media (min-width 0)
+            height auto
+
+        @media (min-width 600px)
+            height auto
+
+        @media (min-width 960px)
+            height 100%
+            align-items center
+
+        @media (min-width 1264px)
+            height 100%
+            align-items center
+
     .layout-button-margin-top
         margin-top 64px !important
 
     .layout-info-margin-top
-        margin-top 72px !important
+        @media (min-width 0)
+            margin-top 40px !important
+
+        @media (min-width 600px)
+            margin-top 40px !important
+
+        @media (min-width 960px)
+            margin-top 72px !important
+
+        @media (min-width 1264px)
+            margin-top 72px !important
 
     .subtitle-margin-top
-        margin-top 32px
+        @media (min-width 0)
+            margin-top 24px
+
+        @media (min-width 600px)
+            margin-top 24px
+
+        @media (min-width 960px)
+            margin-top 32px
+
+        @media (min-width 1264px)
+            margin-top 32px
 
     .section-placing-token
         height 100vh
+
+        @media (min-width 0)
+            height 200vh
+
+        @media (min-width 600px)
+            height 200vh
+
+        @media (min-width 960px)
+            height 100vh
+
+        @media (min-width 1264px)
+            height 100vh
 </style>
