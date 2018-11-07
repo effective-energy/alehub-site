@@ -33,7 +33,7 @@
         user-select none
 
         @media (min-width 0)
-            font-size 60px
+            font-size 40px
 
         @media (min-width 600px)
             font-size 85px

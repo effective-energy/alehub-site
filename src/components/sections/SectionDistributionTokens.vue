@@ -9,7 +9,11 @@
                   align-center>
             <v-flex class="increase-z">
                 <v-layout row wrap>
-                    <v-flex sm12 md5 lg5>
+                    <v-flex xs12
+                            sm12
+                            md5
+                            lg5
+                            xl5>
                         <h2 class="title-distribution">
                             {{ title }}
                         </h2>
@@ -24,11 +28,21 @@
                     </v-flex>
                 </v-layout>
                 <v-layout class="layout-bottom-margin-top"
-                          align-center row>
-                    <v-flex lg5>
+                          align-center
+                          row
+                          wrap>
+                    <v-flex xs12
+                            sm12
+                            md5
+                            lg5
+                            xl5>
                         <donut-chart-distribution-tokens/>
                     </v-flex>
-                    <v-flex lg5 offset-lg2>
+                    <v-flex xs12
+                            sm12
+                            md5 offset-md2
+                            lg5 offset-lg2
+                            xl5 offset-xl2>
                         <h4 class="title-bottom-distribution">
                             {{ titleBottom }}
                         </h4>
@@ -73,7 +87,17 @@
 
 <style lang="stylus" scoped>
     .layout-bottom-margin-top
-        margin-top 200px !important
+        @media (min-width 0)
+            margin-top 100px !important
+
+        @media (min-width 600px)
+            margin-top 100px !important
+
+        @media (min-width 960px)
+            margin-top 150px !important
+
+        @media (min-width 1264px)
+            margin-top 200px !important
 
     .sum-bottom-info
         font-family MuseoSansCyrl700
@@ -117,16 +141,40 @@
 
     .title-distribution
         color white
-        font-size 48px
         font-family MuseoSansCyrl700
-        line-height 1.33
         letter-spacing 1.9px
         text-transform uppercase
         text-align left
+
+        @media (min-width 0)
+            font-size 32px
+            line-height 1.5
+
+        @media (min-width 600px)
+            font-size 32px
+            line-height 1.5
+
+        @media (min-width 960px)
+            font-size 48px
+            line-height 1.33
+
+        @media (min-width 1264px)
+            font-size 48px
+            line-height 1.33
 
     .increase-z
         z-index 2
 
     .section-distribution-token
-        height 100vh
+        @media (min-width 0)
+            height 150vh
+
+        @media (min-width 600px)
+            height 150vh
+
+        @media (min-width 960px)
+            height 100vh
+
+        @media (min-width 1264px)
+            height 100vh
 </style>

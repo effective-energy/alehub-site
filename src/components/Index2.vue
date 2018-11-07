@@ -10,7 +10,7 @@
             <section-represent/>
             <section-slogan/>
             <section-placing-tokens/>
-            <!--&lt;!&ndash;<section-distribution-tokens/>&ndash;&gt;-->
+            <section-distribution-tokens/>
             <!--<section-reason-investing/>-->
             <!--<section-management-system-now/>-->
             <!--<section-management-system-alehub/>-->
