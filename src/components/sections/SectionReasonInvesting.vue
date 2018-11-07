@@ -5,8 +5,7 @@
                 <background-title-reason/>
             </v-flex>
         </v-layout>
-        <v-layout fill-height
-                  row>
+        <v-layout row>
             <v-flex class="increase-z"
                     xs12
                     sm12
@@ -81,6 +80,17 @@
         z-index 2
 
     .section-why-invest
-        height 80vh
         position relative
+
+        @media (min-width 0)
+            height 180vh
+
+        @media (min-width 600px)
+            height 180vh
+
+        @media (min-width 960px)
+            height 80vh
+
+        @media (min-width 1264px)
+            height 80vh
 </style>
