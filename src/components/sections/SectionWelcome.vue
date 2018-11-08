@@ -14,8 +14,13 @@
                         <subtitle-welcome/>
                     </v-flex>
                 </v-layout>
-                <v-layout justify-center row>
-                    <v-flex xs3>
+                <v-layout justify-center
+                          row>
+                    <v-flex xs12
+                            sm12
+                            md3
+                            lg3
+                            xl3>
                         <button-welcome-invest/>
                     </v-flex>
                 </v-layout>
@@ -48,8 +53,19 @@
 
 <style lang="stylus" scoped>
     .section-welcome
-        height 50vh
         color white
+
+        @media (min-width 0)
+            height 100vh
+
+        @media (min-width 600px)
+            height 100vh
+
+        @media (min-width 960px)
+            height 75vh
+
+        @media (min-width 1264px)
+            height 50vh
 
         .container
             height 100%

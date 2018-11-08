@@ -13,7 +13,7 @@
             ButtonRounded
         },
         data: () => ({
-            text: 'Инвестировать'
+            text: 'Инвестировать сейчас'
         })
     }
 </script>
