@@ -1,24 +1,26 @@
 <template>
     <div class="section-whitepaper">
-            <v-layout fill-height
-                      row>
+            <v-layout row>
                 <v-flex>
                     <background-title class="top-background-title"
                                       :title="title"
                                       :blue="blue"/>
                 </v-flex>
             </v-layout>
-            <v-layout fill-height align-center>
+            <v-layout fill-height
+                      align-center>
                 <v-flex class="increase-z">
                     <v-layout>
                         <v-flex>
-                            <title-section :title="title" class="text-left"/>
+                            <title-section class="text-left"
+                                           :title="title"/>
                         </v-flex>
                     </v-layout>
                     <v-layout>
                         <v-flex>
                             <div class="button-wrapper">
-                                <a :href="href" target="_blank">
+                                <a target="_blank"
+                                   :href="href">
                                     <button-rounded>
                                         {{ buttonText }}
                                     </button-rounded>
@@ -80,9 +82,34 @@
         text-align left
         color #ffffff
 
+        @media (min-width 0)
+            margin-top 12px
+
+        @media (min-width 600px)
+            margin-top 16px
+
+        @media (min-width 960px)
+            margin-top 18px
+
+        @media (min-width 1264px)
+            margin-top 24px
+
     .button-wrapper
-        margin-top 80px
-        width 400px
+        @media (min-width 0)
+            margin-top 30px
+            width 100%
+
+        @media (min-width 600px)
+            margin-top 50px
+            width 250px
+
+        @media (min-width 960px)
+            margin-top 60px
+            width 300px
+
+        @media (min-width 1264px)
+            margin-top 80px
+            width 400px
 
     .increase-z
         z-index 2

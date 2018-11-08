@@ -15,8 +15,8 @@
             <!--<section-management-system-now/>-->
             <!--<section-management-system-alehub/>-->
             <section-advantages/>
-            <!--<section-downloads/>-->
-            <!--<section-whitepaper/>-->
+            <section-downloads/>
+            <section-whitepaper/>
             <!--<section-roadmap/>-->
             <!--<section-subscribe/>-->
             <!--<section-partners/>-->

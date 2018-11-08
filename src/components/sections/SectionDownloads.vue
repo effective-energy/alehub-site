@@ -77,6 +77,9 @@
 
 <style lang="stylus" scoped>
     .section-downloads
+        @media (min-width 0)
+            display none
+            height 150vh
 
         @media (min-width 600px)
             height 130vh
