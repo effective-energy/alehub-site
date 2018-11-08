@@ -14,7 +14,7 @@
             <section-reason-investing/>
             <!--<section-management-system-now/>-->
             <!--<section-management-system-alehub/>-->
-            <!--<section-advantages/>-->
+            <section-advantages/>
             <!--<section-downloads/>-->
             <!--<section-whitepaper/>-->
             <!--<section-roadmap/>-->

@@ -1,17 +1,27 @@
 <template>
     <div class="section-advantages">
-        <v-layout fill-height
-                  row>
-            <v-flex d-flex justify-center>
+        <v-layout row>
+            <v-flex d-flex
+                    justify-center>
                 <ellipse-blur/>
             </v-flex>
         </v-layout>
-        <v-layout align-center row>
-            <v-flex xs6>
+        <v-layout align-center
+                  row
+                  wrap>
+            <v-flex xs12
+                    sm12
+                    md6
+                    lg6
+                    xl6>
                 <title-section class="align-left"
                                :title="title"/>
             </v-flex>
-            <v-flex xs5 offset-xs1>
+            <v-flex xs12
+                    sm12
+                    md5 offset-md1
+                    lg5 offset-lg1
+                    xl5 offset-xl1>
                 <v-layout column>
                     <v-flex v-for="(item, i) in items"
                             :key="i">
@@ -69,7 +79,18 @@
 
     .section-advantages
         position relative
-        height 70vh
+
+        @media (min-width 0)
+            height 120vh
+
+        @media (min-width 600px)
+            height 110vh
+
+        @media (min-width 960px)
+            height 80vh
+
+        @media (min-width 1264px)
+            height 70vh
 
     .increase-z
         z-index 2
