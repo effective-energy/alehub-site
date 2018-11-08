@@ -23,7 +23,7 @@
             <!--<section-team-advisors/>-->
             <!--<section-team/>-->
             <!--<sections-team-serokell/>-->
-            <!--<section-media/>-->
+            <section-media/>
             <!--&lt;!&ndash;<section-questions/>&ndash;&gt;-->
             <!--<section-blog/>-->
             <!--<section-welcome/>-->

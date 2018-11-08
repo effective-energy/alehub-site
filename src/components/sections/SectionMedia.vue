@@ -6,8 +6,7 @@
                 </v-flex>
             </v-layout>
             <v-layout row
-                      fill-height
-                      style="margin-top: 68px;">
+                      fill-height>
                 <v-flex xs12>
                     <div class="media-block__list">
                         <a target="_blank"
@@ -115,13 +114,24 @@
 
 <style lang="stylus" scoped>
     .section-media
-        height 75vh
         width 100%
         padding 80px 150px 80px 150px
         display flex
         flex-direction column
         justify-content space-between
         align-items center
+
+        @media (min-width 0)
+            height 180vh
+
+        @media (min-width 600px)
+            height 100vh
+
+        @media (min-width 960px)
+            height 85vh
+
+        @media (min-width 1264px)
+            height 75vh
 
         @media (min-width 1024px) and (max-width 1440px)
             padding 60px 100px 60px 100px
@@ -163,6 +173,18 @@
             flex-wrap wrap
             justify-content space-evenly
 
+            @media (min-width 0)
+                margin-top 20px
+
+            @media (min-width 600px)
+                margin-top 40px
+
+            @media (min-width 960px)
+                margin-top 64px
+
+            @media (min-width 1264px)
+                margin-top 64px
+
             @media (max-width 768px)
                 flex-basis unset
                 flex-direction column
@@ -172,7 +194,7 @@
                 height 150vh
 
             @media (max-width 425px)
-                height 200vh
+                height 150vh
 
             .title__list
                 display none
@@ -209,8 +231,9 @@
                     -o-transition all .4s ease-in-out
                     transition all .4s ease-in-out
                 .filter
-                    filter  invert(.5)
+                    filter  invert(.3)
                     transition .3s
+
                     &:hover
                         filter invert(0)
                         transform: scale(1.1);
