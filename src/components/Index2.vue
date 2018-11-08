@@ -19,7 +19,7 @@
             <section-whitepaper/>
             <section-roadmap/>
             <!--<section-subscribe/>-->
-            <!--<section-partners/>-->
+            <section-partners/>
             <!--<section-team-advisors/>-->
             <!--<section-team/>-->
             <!--<sections-team-serokell/>-->

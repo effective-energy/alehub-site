@@ -9,12 +9,18 @@
                         <title-section :title="title"/>
                     </v-flex>
                 </v-layout>
-                <v-layout row
-                          class="margin-top">
-                    <v-flex d-flex
+                <v-layout class="margin-top"
+                          row
+                          wrap>
+                    <v-flex xs6
+                            sm6
+                            md3
+                            lg3
+                            xl3
+                            d-flex
                             v-for="(partner, i) in partners"
                             :key="i">
-                        <a :href="partner.href">
+                        <a :href="partner.href" target="_blank">
                             <img :src="partner.src"
                                  :alt="partner.alt">
                         </a>
@@ -66,13 +72,49 @@
         text-align center
 
     .margin-top
-        margin-top 64px
+        @media (min-width 0)
+            margin-top 0
+
+        @media (min-width 600px)
+            margin-top 0
+
+        @media (min-width 960px)
+            margin-top 64px
+
+        @media (min-width 1264px)
+            margin-top 64px
 
     img
-        height 60px
+        @media (min-width 0)
+            margin-top 60px
+            height 40px
+
+        @media (min-width 600px)
+            margin-top 60px
+            height 50px
+
+        @media (min-width 960px)
+            margin-top 0
+            height 60px
+
+        @media (min-width 1264px)
+            margin-top 0
+            height 60px
 
     .section-partners
         height 50vh
+
+        @media (min-width 0)
+            height 70vh
+
+        @media (min-width 600px)
+            height 60vh
+
+        @media (min-width 960px)
+            height 50vh
+
+        @media (min-width 1264px)
+            height 50vh
 
         .container
             height 100%
