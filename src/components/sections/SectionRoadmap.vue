@@ -1,7 +1,6 @@
 <template>
     <div class="section-roadmap">
-        <v-layout fill-height
-                  row>
+        <v-layout row>
             <v-flex>
                 <background-title class="top-background-title"
                                   :title="titleBackground"
@@ -9,7 +8,8 @@
             </v-flex>
         </v-layout>
         <v-layout row>
-            <v-flex d-flex justify-center>
+            <v-flex d-flex
+                    justify-center>
                 <ellipse-big-blur/>
             </v-flex>
         </v-layout>
@@ -60,6 +60,17 @@
         text-align left
 
     .section-roadmap
-        height 140vh
         position relative
+
+        @media (min-width 0)
+            height 200vh
+
+        @media (min-width 600px)
+            height 200vh
+
+        @media (min-width 960px)
+            height 140vh
+
+        @media (min-width 1264px)
+            height 140vh
 </style>

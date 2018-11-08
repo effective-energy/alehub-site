@@ -2,22 +2,28 @@
     <div class="roadmap"
          ref="roadmap">
         <v-layout row>
-            <v-flex xs1
-                    d-flex
-                    align-center
-                    fill-height>
-                <div class="control-buttons">
-                    <button type="button"
-                            @click="decreaseStep()"
-                            class="control-button">
-                        <img src="../../../../static/images/arrows/arrow-top-777777.svg" alt="arrow up">
-                    </button>
-                    <button type="button"
-                            @click="increaseStep(items.length, itemsInLine)"
-                            class="control-button">
-                        <img src="../../../../static/images/arrows/arrow-bottom-777777.svg" alt="arrow down">
-                    </button>
-                </div>
+            <v-flex hidden-sm-and-down
+                    md1
+                    lg1
+                    xl1>
+                <v-layout align-center
+                          fill-height
+                          row>
+                    <v-flex xs12>
+                        <div class="control-buttons">
+                            <button type="button"
+                                    @click="decreaseStep()"
+                                    class="control-button">
+                                <img src="../../../../static/images/arrows/arrow-top-777777.svg" alt="arrow up">
+                            </button>
+                            <button type="button"
+                                    @click="increaseStep(items.length, itemsInLine)"
+                                    class="control-button">
+                                <img src="../../../../static/images/arrows/arrow-bottom-777777.svg" alt="arrow down">
+                            </button>
+                        </div>
+                    </v-flex>
+                </v-layout>
             </v-flex>
             <v-flex xs4 offset-xs1>
                 <div class="left"
@@ -270,10 +276,10 @@
 
 <style lang="stylus" scoped>
     .control-buttons
+        height 100px
         display flex
         flex-direction column
         justify-content space-between
-        height 100px
 
         .control-button
             &:focus

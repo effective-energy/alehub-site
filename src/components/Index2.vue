@@ -17,7 +17,7 @@
             <section-advantages/>
             <section-downloads/>
             <section-whitepaper/>
-            <!--<section-roadmap/>-->
+            <section-roadmap/>
             <!--<section-subscribe/>-->
             <!--<section-partners/>-->
             <!--<section-team-advisors/>-->
