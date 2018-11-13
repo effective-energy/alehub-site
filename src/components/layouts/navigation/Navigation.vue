@@ -1,5 +1,6 @@
 <template>
-    <div class="navigation">
+    <div id="navigation"
+         class="navigation">
         <v-layout align-center
                   justify-space-between
                   row>

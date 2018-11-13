@@ -1,5 +1,6 @@
 <template>
-    <div class="section-main">
+    <div id="section-main"
+         class="section-main">
         <v-layout>
             <v-flex>
                 <background-title-main/>

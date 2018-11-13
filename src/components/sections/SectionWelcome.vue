@@ -3,7 +3,7 @@
         <v-layout align-center
                   fill-height
                   row>
-            <v-flex>
+            <v-flex class="z-index-2">
                 <v-layout row>
                     <v-flex>
                         <title-welcome/>
@@ -52,6 +52,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .z-index-2
+        z-index 2
+
     .section-welcome
         color white
 

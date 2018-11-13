@@ -12,5 +12,15 @@
 
 <style lang="stylus" scoped>
     .menu-item
-        display inline-block
+        @media (min-width 0)
+            display block
+
+        @media (min-width 600px)
+            display block
+
+        @media (min-width 960px)
+            display inline-block
+
+        @media (min-width 1264px)
+            display inline-block
 </style>

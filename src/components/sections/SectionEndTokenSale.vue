@@ -8,7 +8,8 @@
                     sm6
                     md5
                     lg4
-                    xl4>
+                    xl4
+                    class="z-index-2">
                 <title-end-token-sale/>
                 <button-to-white-list class="button-invest-wide"/>
             </v-flex>
@@ -16,12 +17,14 @@
                     sm6
                     md6 offset-md1
                     lg7 offset-lg1
-                    xl4 offset-xl1>
+                    xl4 offset-xl1
+                    class="z-index-2">
                 <timer-end-token-sale/>
             </v-flex>
             <v-flex xs12
                     sm12
-                    hidden-md-and-up>
+                    hidden-md-and-up
+                    class="z-index-2">
                 <button-to-white-list class="button-invest-long"/>
             </v-flex>
         </v-layout>
@@ -44,6 +47,9 @@
 </script>
 
 <style lang="stylus" scoped>
+    .z-index-2
+        z-index 2
+
     .button-invest-wide
         margin-top 48px
 

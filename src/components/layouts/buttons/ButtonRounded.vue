@@ -46,11 +46,11 @@
 
         @media (min-width 960px)
             font-size f-s
-            height h-0
+            height h
 
         @media (min-width 1264px)
             font-size f-s
-            height h-0
+            height h
 
         &:focus
             outline none

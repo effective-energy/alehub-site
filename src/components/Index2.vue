@@ -28,7 +28,7 @@
             <!--<section-blog/>-->
             <section-welcome/>
             <section-end-token-sale/>
-            <!--<footer-block/>-->
+            <footer-block/>
         </v-container>
     </div>
 </template>

@@ -30,7 +30,21 @@
 <style lang="stylus" scoped>
     .menu-footer-bottom
         li
-            margin-right 32px
+            @media (min-width 0)
+                margin-right 0
+                margin-top 16px
+
+            @media (min-width 600px)
+                margin-right 0
+                margin-top 16px
+
+            @media (min-width 960px)
+                margin-right 32px
+                margin-top 0
+
+            @media (min-width 1264px)
+                margin-right 32px
+                margin-top 0
 
             &:last-of-type
                 margin-right 0
