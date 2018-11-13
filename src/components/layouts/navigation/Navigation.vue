@@ -6,17 +6,28 @@
                   row>
             <v-flex>
                 <v-layout row>
-                    <v-flex xs4>
+                    <v-flex xs4
+                            xm3
+                            md2
+                            lg2
+                            xl2>
                         <logo/>
                     </v-flex>
-                    <v-flex xs4 offset-xs2>
+                    <v-flex d-flex
+                            align-center
+                            hidden-sm-and-down>
+                        <navigation-menu :items="items"/>
+                    </v-flex>
+                    <v-flex xs4 offset-xs2
+                            sm3 offset-sm-3
+                            md2
+                            lg2
+                            xl1>
                         <select-language/>
                     </v-flex>
-                    <v-flex xs2>
+                    <v-flex xs2
+                            hidden-sm-and-up>
                         <hamburger/>
-                    </v-flex>
-                    <v-flex hidden-sm-and-down>
-                        <navigation-menu :items="items"/>
                     </v-flex>
                 </v-layout>
             </v-flex>
@@ -51,7 +62,7 @@
                 },
                 {
                     title: 'Блог',
-                    path: '/blog/categories/:id'
+                    path: '/blog/categories/all'
                 },
                 {
                     title: 'F.A.Q',

@@ -64,9 +64,20 @@
         position relative
 
         &::after
-            content ':'
             position absolute
             right 0
+
+            @media (min-width 0)
+                content ':'
+
+            @media (min-width 600px)
+                content ':'
+
+            @media (min-width 960px)
+                content ''
+
+            @media (min-width 1264px)
+                content ':'
 
     .big-time
         font-size 72px
