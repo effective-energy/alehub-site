@@ -27,7 +27,7 @@
             <!--&lt;!&ndash;<section-questions/>&ndash;&gt;-->
             <!--<section-blog/>-->
             <section-welcome/>
-            <!--<section-end-token-sale/>-->
+            <section-end-token-sale/>
             <!--<footer-block/>-->
         </v-container>
     </div>

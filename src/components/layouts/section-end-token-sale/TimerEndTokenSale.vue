@@ -3,25 +3,30 @@
         <v-layout row>
             <v-flex xs4>
                 <timer-weeks :timer="restOfWeeks"
-                             :big="bigTimer"/>
+                             :big="bigTimer"
+                             :dots="dots.weeks"/>
             </v-flex>
             <v-flex xs4>
                 <timer-days :timer="restOfDays"
-                            :big="bigTimer"/>
+                            :big="bigTimer"
+                            :dots="dots.days"/>
             </v-flex>
         </v-layout>
         <v-layout row class="margin-top">
             <v-flex xs4>
                 <timer-hours :timer="restOfHours"
-                             :big="bigTimer"/>
+                             :big="bigTimer"
+                             :dots="dots.hours"/>
             </v-flex>
             <v-flex xs4>
                 <timer-minutes :timer="restOfMinutes"
-                               :big="bigTimer"/>
+                               :big="bigTimer"
+                               :dots="dots.minutes"/>
             </v-flex>
             <v-flex xs4>
                 <timer-seconds :timer="restOfSeconds"
-                               :big="bigTimer"/>
+                               :big="bigTimer"
+                               :dots="dots.seconds"/>
             </v-flex>
         </v-layout>
     </div>
@@ -48,7 +53,14 @@
             end: 1549007329563,
             now: new Date(),
             diff: 0,
-            bigTimer: true
+            bigTimer: true,
+            dots: {
+                weeks: true,
+                days: false,
+                hours: true,
+                minutes: true,
+                seconds: false
+            }
         }),
         computed: {
             restOfWeeks() {

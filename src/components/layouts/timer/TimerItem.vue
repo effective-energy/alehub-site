@@ -1,6 +1,6 @@
 <template>
     <div class="timer-item">
-        <div :class="timeClass">
+        <div :class="[timeClass, dots ? 'dots' : '']">
             {{ timer }}
         </div>
         <div :class="textClass">
@@ -22,6 +22,10 @@
                 required: true
             },
             big: {
+                type: Boolean,
+                required: true
+            },
+            dots: {
                 type: Boolean,
                 required: true
             }
@@ -56,6 +60,14 @@
 </script>
 
 <style lang="stylus" scoped>
+    .dots
+        position relative
+
+        &::after
+            content ':'
+            position absolute
+            right 0
+
     .big-time
         font-size 72px
         font-family MuseoSansCyrl500
@@ -64,12 +76,35 @@
         text-align left
         color white
 
+        @media (min-width 0)
+            font-size 48px
+
+        @media (min-width 600px)
+            font-size 48px
+
+        @media (min-width 960px)
+            font-size 72px
+
+        @media (min-width 1264px)
+            font-size 72px
+
     .big-text
-        font-size 24px
         font-family MuseoSansCyrl300
         line-height 1
         text-align left
         color white
+
+        @media (min-width 0)
+            font-size 18px
+
+        @media (min-width 600px)
+            font-size 18px
+
+        @media (min-width 960px)
+            font-size 24px
+
+        @media (min-width 1264px)
+            font-size 24px
 
     .normal-time
         font-family MuseoSansCyrl500

@@ -1,7 +1,8 @@
 <template>
     <timer-item :timer="timer"
                 :text="calcText"
-                :big="big"/>
+                :big="big"
+                :dots="dots"/>
 </template>
 
 <script>
@@ -18,6 +19,10 @@
                 required: true
             },
             big: {
+                type: Boolean,
+                required: true
+            },
+            dots: {
                 type: Boolean,
                 required: true
             }

@@ -9,19 +9,23 @@
             <v-layout row>
                 <v-flex xs3>
                     <timer-days :timer="restOfDays"
-                                :big="bigTimer"/>
+                                :big="bigTimer"
+                                :dots="dots.days"/>
                 </v-flex>
                 <v-flex xs3>
                     <timer-hours :timer="restOfHours"
-                                 :big="bigTimer"/>
+                                 :big="bigTimer"
+                                 :dots="dots.hours"/>
                 </v-flex>
                 <v-flex xs3>
                     <timer-minutes :timer="restOfMinutes"
-                                   :big="bigTimer"/>
+                                   :big="bigTimer"
+                                   :dots="dots.minutes"/>
                 </v-flex>
                 <v-flex xs3>
                     <timer-seconds :timer="restOfSeconds"
-                                   :big="bigTimer"/>
+                                   :big="bigTimer"
+                                   :dots="dots.seconds"/>
                 </v-flex>
             </v-layout>
         </v-flex>
@@ -46,7 +50,13 @@
             end: 1549007329563,
             now: new Date(),
             diff: 0,
-            bigTimer: false
+            bigTimer: false,
+            dots: {
+                days: true,
+                hours: true,
+                minutes: true,
+                seconds: false
+            }
         }),
         computed: {
             restOfDays() {
