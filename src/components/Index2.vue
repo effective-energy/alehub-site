@@ -23,9 +23,9 @@
             <!--<section-team-advisors/>-->
             <!--<section-team/>-->
             <!--<sections-team-serokell/>-->
-            <section-media/>
             <!--&lt;!&ndash;<section-questions/>&ndash;&gt;-->
-            <!--<section-blog/>-->
+            <section-blog/>
+            <section-media/>
             <section-welcome/>
             <section-end-token-sale/>
             <footer-block/>

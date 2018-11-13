@@ -3,7 +3,7 @@
         <v-flex>
             <blog-top/>
         </v-flex>
-        <v-flex style="margin-top: 80px;">
+        <v-flex class="blog-bottom">
             <blog-bottom/>
         </v-flex>
     </v-layout>
@@ -23,6 +23,6 @@
 </script>
 
 <style lang="stylus" scoped>
-
-
+    .blog-bottom
+        margin-top 80px
 </style>

@@ -15,6 +15,9 @@
                 </div>
             </div>
         </div>
+        <div class="text-mobile">
+            {{ text }}
+        </div>
     </div>
 </template>
 
@@ -31,13 +34,52 @@
 </script>
 
 <style lang="stylus" scoped>
+    .text-mobile
+        margin-top 10px
+        color white
+        font-family MuseoSansCyrl500
+        font-size 18px
+        line-height 1.33
+        display flex
+        align-items left
+
+        @media (min-width 0px)
+            display block
+
+        @media (min-width 600px)
+            display block
+
+        @media (min-width 960px)
+            display none
+
+        @media (min-width 1264px)
+            display none
+
     .image
         position relative
-        height 350px
         width 100%
         background-color #6a6ba7
         display flex
-        align-items flex-end
+
+        @media (min-width 0px)
+            height 170px
+            align-items center
+            justify-content center
+
+        @media (min-width 600px)
+            height 170px
+            align-items center
+            justify-content center
+
+        @media (min-width 960px)
+            height 350px
+            align-items flex-end
+            justify-content unset
+
+        @media (min-width 1264px)
+            height 350px
+            align-items flex-end
+            justify-content unset
 
         .video-bottom
             height 100px
@@ -50,6 +92,8 @@
                 align-items center
 
                 .play
+                    cursor pointer
+
                     &:focus
                         outline none
 
@@ -64,4 +108,16 @@
                 line-height 1.33
                 display flex
                 align-items center
+
+                @media (min-width 0px)
+                    display none
+
+                @media (min-width 600px)
+                    display none
+
+                @media (min-width 960px)
+                    display block
+
+                @media (min-width 1264px)
+                    display block
 </style>

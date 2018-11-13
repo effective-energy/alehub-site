@@ -40,7 +40,7 @@
 
                 if (lastTimerNum >= 2 && lastTimerNum <= 4 && (timer < 10 || timer > 20))
                     return 'минуты';
-                else if (lastTimerNum === 1)
+                else if (lastTimerNum === 1 && timer !== 11)
                     return 'минута';
                 return 'минут';
             }

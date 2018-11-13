@@ -1,14 +1,14 @@
 <template>
-    <div class="blog-news">
-        <v-layout align-space-between column>
-            <v-flex d-flex align-center
-                    v-for="item in news"
-                    :key="item.date">
-                <blog-news-item :text="item.text"
-                                :date="item.date"/>
-            </v-flex>
-        </v-layout>
-    </div>
+    <v-layout align-space-between
+              column>
+        <v-flex d-flex
+                align-center
+                v-for="item in news"
+                :key="item.date">
+            <blog-news-item :text="item.text"
+                            :date="item.date"/>
+        </v-flex>
+    </v-layout>
 </template>
 
 <script>
@@ -42,9 +42,5 @@
 </script>
 
 <style lang="stylus" scoped>
-    .blog-news
-        height 100%
 
-        .layout
-            height 100%
 </style>

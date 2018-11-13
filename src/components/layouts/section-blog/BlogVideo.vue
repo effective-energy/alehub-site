@@ -10,6 +10,12 @@
         </v-flex>
         <v-flex>
             <div class="image">
+                <button type="button"
+                        class="play">
+                    <img class="icon-play"
+                         src="../../../../static/images/icons/play-circle.svg"
+                         alt="play">
+                </button>
             </div>
         </v-flex>
     </v-layout>
@@ -41,7 +47,32 @@
 <style lang="stylus" scoped>
     .image
         height 160px
+        width 100%
         background-color #479da7
+        display flex
+        align-items center
+        justify-content center
+
+        .play
+            cursor pointer
+
+            &:focus
+                outline none
+
+            @media (min-width 0px)
+                display block
+
+            @media (min-width 600px)
+                display block
+
+            @media (min-width 960px)
+                display none
+
+            @media (min-width 1264px)
+                display none
+
+            .icon-play
+                width 64px
 
     .date,
     .text

@@ -5,7 +5,8 @@
                 <title-blog :title="title"/>
             </v-flex>
         </v-layout>
-        <v-layout row style="margin-top: 24px;">
+        <v-layout row
+                  class="layout-subtitle">
             <v-flex>
                 <subtitle-blog :subtitle="subtitle"/>
             </v-flex>
@@ -38,18 +39,31 @@
 </script>
 
 <style lang="stylus" scoped>
+    .layout-subtitle
+        @media (min-width 0px)
+            margin-top 0 !important
+
+        @media (min-width 600px)
+            margin-top 0 !important
+
+        @media (min-width 960px)
+            margin-top 24px !important
+
+        @media (min-width 1264px)
+            margin-top 24px !important
+
     .section-blog
         color white
 
         @media (min-width 0px)
-            height 200vh
+            height 300vh
 
         @media (min-width 600px)
-            height 170vh
+            height 250vh
 
         @media (min-width 960px)
-            height 120vh
+            height 140vh
 
         @media (min-width 1264px)
-            height 100vh
+            height 120vh
 </style>

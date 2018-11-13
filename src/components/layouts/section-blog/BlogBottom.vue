@@ -1,9 +1,19 @@
 <template>
-    <v-layout align-end row>
-        <v-flex xs10>
+    <v-layout align-end
+              row
+              wrap>
+        <v-flex xs12
+                sm12
+                md10
+                lg10
+                xl10>
             <blog-video-list/>
         </v-flex>
-        <v-flex xs2>
+        <v-flex xs12
+                sm12
+                md2
+                lg2
+                xl2>
             <to-blog-page :text="toBlog.text"/>
         </v-flex>
     </v-layout>

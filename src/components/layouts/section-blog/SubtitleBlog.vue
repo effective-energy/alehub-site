@@ -1,5 +1,6 @@
 <template>
-    <subtitle-section :subtitle="subtitle"/>
+    <subtitle-section :subtitle="subtitle"
+                      class="subtitle"/>
 </template>
 
 <script>
@@ -10,7 +11,7 @@
         components: {
             SubtitleSection
         },
-        props:{
+        props: {
             subtitle: {
                 type: String,
                 required: true
@@ -19,6 +20,17 @@
     }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
+    .subtitle
+        @media (min-width 0px)
+            text-align left
 
+        @media (min-width 600px)
+            text-align left
+
+        @media (min-width 960px)
+            text-align center
+
+        @media (min-width 1264px)
+            text-align center
 </style>

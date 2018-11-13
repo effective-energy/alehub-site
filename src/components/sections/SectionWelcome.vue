@@ -18,9 +18,9 @@
                           row>
                     <v-flex xs12
                             sm12
-                            md3
-                            lg3
-                            xl3>
+                            md5
+                            lg4
+                            xl4>
                         <button-welcome-invest/>
                     </v-flex>
                 </v-layout>

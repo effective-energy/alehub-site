@@ -1,9 +1,17 @@
 <template>
     <v-layout row wrap>
-        <v-flex xs12 sm12 md12 lg7 xl7>
+        <v-flex xs12
+                sm12
+                md12
+                lg7
+                xl7>
             <blog-main-video :text="textMainVideo"/>
         </v-flex>
-        <v-flex xs12 sm12 md12 lg5 xl5>
+        <v-flex xs12
+                sm12
+                md12
+                lg5
+                xl5>
             <blog-news/>
         </v-flex>
     </v-layout>

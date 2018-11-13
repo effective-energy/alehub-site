@@ -1,5 +1,5 @@
 <template>
-    <button-rounded>
+    <button-rounded @click.native="toBlog">
         {{ textButton }}
     </button-rounded>
 </template>
@@ -14,7 +14,12 @@
         },
         data: () => ({
             textButton: 'Блог'
-        })
+        }),
+        methods: {
+            toBlog() {
+                this.$router.push('/blog/categories/all');
+            }
+        }
     }
 </script>
 

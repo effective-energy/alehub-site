@@ -1,6 +1,12 @@
 <template>
-    <v-layout row align-end>
-        <v-flex xs4
+    <v-layout align-end
+              row
+              wrap>
+        <v-flex xs12
+                sm12
+                md4
+                lg4
+                xl4
                 v-for="item in list"
                 :key="item.date">
             <blog-video :date="item.date"

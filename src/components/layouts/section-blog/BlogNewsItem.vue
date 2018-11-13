@@ -1,10 +1,20 @@
 <template>
-    <v-layout align-center row>
-        <v-flex xs3>
+    <v-layout align-center
+              row
+              wrap>
+        <v-flex xs4
+                sm4
+                md3
+                lg3
+                xl3>
             <div class="image">
             </div>
         </v-flex>
-        <v-flex xs9>
+        <v-flex xs8
+                sm8
+                md9
+                lg9
+                xl9>
             <p class="date">
                 {{ formattedDate }}
             </p>
