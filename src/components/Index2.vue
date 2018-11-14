@@ -20,9 +20,9 @@
             <section-roadmap/>
             <!--<section-subscribe/>-->
             <section-partners/>
-            <!--<section-team-advisors/>-->
-            <!--<section-team/>-->
-            <!--<sections-team-serokell/>-->
+            <section-team-advisors class="wide"/>
+            <section-team class="mobile"/>
+            <sections-team-serokell class="mobile"/>
             <!--&lt;!&ndash;<section-questions/>&ndash;&gt;-->
             <section-blog/>
             <section-media/>
@@ -91,6 +91,32 @@
 </script>
 
 <style lang="stylus" scoped>
+    .wide
+        @media (min-width 0px)
+            display none
+
+        @media (min-width 600px)
+            display none
+
+        @media (min-width 960px)
+            display block
+
+        @media (min-width 1264px)
+            display block
+
+    .mobile
+        @media (min-width 0px)
+            display block
+
+        @media (min-width 600px)
+            display block
+
+        @media (min-width 960px)
+            display none
+
+        @media (min-width 1264px)
+            display none
+
     .index
         background-color #020449
 </style>

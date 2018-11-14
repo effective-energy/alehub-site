@@ -1,93 +1,146 @@
 <template>
     <div class="slider-outer">
-        <button class="prev" @click="clickPrev">
-            <img src="../../../../static/images/arrows/arrow-left-777777.svg" alt="left">
-        </button>
+        <v-layout row>
+            <v-flex xs1
+                    class="flex-prev">
+                <button @click="clickPrev"
+                        class="prev">
+                    <img src="../../../../static/images/arrows/arrow-left-777777.svg"
+                         alt="left">
+                </button>
+            </v-flex>
+            <v-flex xs10>
+                <div class="wrap">
+                    <div class="b-carousel"
+                         @mousedown="dragStart($event)"
+                         @mouseup="dragEnd()"
+                         @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
 
-        <div class="wrap">
-            <div class="b-carousel"
-                 @mousedown="dragStart($event)"
-                 @mouseup="dragEnd()"
-                 @mousemove="(xDrag && yDrag) ? dragMove($event) : 'false'">
+                        <div id="carousel__wrap"
+                             class="b-carousel__wrap"
+                             @touchstart="(touch) ? touchStart($event) : 'false'"
+                             @touchmove="(touch) ? touchMove($event) : 'false'">
 
-                <div id="carousel__wrap"
-                     class="b-carousel__wrap"
-                     @touchstart="(touch) ? touchStart($event) : 'false'"
-                     @touchmove="(touch) ? touchMove($event) : 'false'">
+                            <div class="image b-carousel__item"
+                                 @mouseover="stopAutoplay"
+                                 @mouseleave="startAutoplay"
+                                 v-for="(member, i) in membersMd"
+                                 :key="member.name"
+                                 :style="`flex: 0 0 ${ 100 / numImg }%`">
 
-                    <div class="image b-carousel__item"
-                         @mouseover="stopAutoplay"
-                         @mouseleave="startAutoplay"
-                         v-for="(member, i) in members"
-                         :key="i"
-                         :style="`flex: 0 0 ${ 100 / numImg }%`">
+                                <div class="b-carousel__inner">
+                                    <v-layout column>
+                                        <v-flex hidden-md-and-up
+                                                class="member-top">
+                                            <div class="member member-mobile">
 
-                        <div class="b-carousel__inner">
-                            <v-layout column>
-                                <v-flex class="member-top">
-                                    <div class="member">
-                                        <div class="layer__bottom b-carousel__img photo">
-                                        </div>
+                                                <div class="layer__bottom b-carousel__img photo">
+                                                </div>
 
-                                        <div class="info">
-                                            <div class="name-wrapper">
-                                                <h3 class="name">
-                                                    {{ member[0].name }}
-                                                </h3>
-                                                <a href="#">
-                                                    <img class="linkedin"
-                                                         src="../../../../static/images/icons/social/linkedin-ic.svg"
-                                                         alt="linkedin">
-                                                </a>
+                                                <div class="info">
+                                                    <div class="name-wrapper">
+                                                        <h3 class="name">
+                                                            {{ member.name }}
+                                                        </h3>
+                                                        <a href="#">
+                                                            <img class="linkedin"
+                                                                 src="../../../../static/images/icons/social/linkedin-ic.svg"
+                                                                 alt="linkedin">
+                                                        </a>
+                                                    </div>
+                                                    <p class="position">
+                                                        {{ member.position }}
+                                                    </p>
+                                                    <p class="team">
+                                                        {{ member.team }}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <p class="position">
-                                                {{ member[0].position }}
-                                            </p>
-                                            <p class="team">
-                                                {{ member[0].team }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </v-flex>
-                                <v-flex>
-                                    <div class="member">
-                                        <div class="layer__bottom b-carousel__img photo">
-                                        </div>
+                                        </v-flex>
+                                    </v-layout>
+                                </div>
+                            </div>
 
-                                        <div class="info">
-                                            <div class="name-wrapper">
-                                                <h3 class="name">
-                                                    {{ member[1].name }}
-                                                </h3>
-                                                <a href="#">
-                                                    <img class="linkedin"
-                                                         src="../../../../static/images/icons/social/linkedin-ic.svg"
-                                                         alt="linkedin">
-                                                </a>
+                            <div class="image b-carousel__item"
+                                 @mouseover="stopAutoplay"
+                                 @mouseleave="startAutoplay"
+                                 v-for="(member, i) in membersLg"
+                                 :key="i"
+                                 :style="`flex: 0 0 ${ 100 / numImg }%`">
+
+                                <div class="b-carousel__inner">
+                                    <v-layout column>
+                                        <v-flex hidden-lg-and-down
+                                                class="member-top">
+                                            <div class="member">
+
+                                                <div class="layer__bottom b-carousel__img photo">
+                                                </div>
+
+                                                <div class="info">
+                                                    <div class="name-wrapper">
+                                                        <h3 class="name">
+                                                            {{ member[0].name }}
+                                                        </h3>
+                                                        <a href="#">
+                                                            <img class="linkedin"
+                                                                 src="../../../../static/images/icons/social/linkedin-ic.svg"
+                                                                 alt="linkedin">
+                                                        </a>
+                                                    </div>
+                                                    <p class="position">
+                                                        {{ member[0].position }}
+                                                    </p>
+                                                    <p class="team">
+                                                        {{ member[0].team }}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <p class="position">
-                                                {{ member[1].position }}
-                                            </p>
-                                            <p class="team">
-                                                {{ member[1].team }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </v-flex>
-                            </v-layout>
-                            <!--<img class="layer__bottom b-carousel__img"-->
-                            <!--:src="member.src"-->
-                            <!--:alt="member.alt">-->
+                                        </v-flex>
+                                        <v-flex hidden-lg-and-down>
+                                            <div class="member">
+                                                <div class="layer__bottom b-carousel__img photo">
+                                                </div>
+
+                                                <div class="info">
+                                                    <div class="name-wrapper">
+                                                        <h3 class="name">
+                                                            {{ member[1].name }}
+                                                        </h3>
+                                                        <a href="#">
+                                                            <img class="linkedin"
+                                                                 src="../../../../static/images/icons/social/linkedin-ic.svg"
+                                                                 alt="linkedin">
+                                                        </a>
+                                                    </div>
+                                                    <p class="position">
+                                                        {{ member[1].position }}
+                                                    </p>
+                                                    <p class="team">
+                                                        {{ member[1].team }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </v-flex>
+                                    </v-layout>
+                                    <!--<img class="layer__bottom b-carousel__img"-->
+                                    <!--:src="member.src"-->
+                                    <!--:alt="member.alt">-->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <button class="next" @click="clickNext">
-            <img src="../../../../static/images/arrows/arrow-right-777777.svg" alt="right">
-        </button>
-
+            </v-flex>
+            <v-flex xs1
+                    class="flex-next">
+                <button @click="clickNext"
+                        class="next">
+                    <img src="../../../../static/images/arrows/arrow-right-777777.svg"
+                         alt="right">
+                </button>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -123,7 +176,11 @@
                 type: Number,
                 default: 3
             },
-            members: {
+            membersLg: {
+                type: Array,
+                required: true
+            },
+            membersMd: {
                 type: Array,
                 required: true
             }
@@ -305,6 +362,36 @@
 </script>
 
 <style lang="stylus" scoped>
+    .flex-prev
+        padding-right 0 !important
+
+        @media (min-width 0px)
+            padding-top 70px !important
+
+        @media (min-width 600px)
+            padding-top 70px !important
+
+        @media (min-width 960px)
+            padding-top auto !important
+
+        @media (min-width 1264px)
+            padding-top auto !important
+
+    .flex-next
+        padding-left 0 !important
+
+        @media (min-width 0px)
+            padding-top 70px !important
+
+        @media (min-width 600px)
+            padding-top 70px !important
+
+        @media (min-width 960px)
+            padding-top auto !important
+
+        @media (min-width 1264px)
+            padding-top auto !important
+
     .info
         width 100%
 
@@ -322,8 +409,17 @@
 
     .member
         display flex
+        flex-direction row
         align-items center
         padding 0 30px
+
+    .member-mobile
+        display flex
+        flex-direction column
+        align-items center
+
+        .info
+            margin-top 40px
 
     .photo
         height 160px
@@ -331,7 +427,18 @@
         border-radius 50%
         background-color #79daff
         flex-shrink 0
-        margin-right 32px
+
+        @media (min-width 0px)
+            margin-right 0
+
+        @media (min-width 600px)
+            margin-right 0
+
+        @media (min-width 960px)
+            margin-right 32px
+
+        @media (min-width 1264px)
+            margin-right 32px
 
     .sections-team
         height 75vh
@@ -368,7 +475,7 @@
         letter-spacing normal
         text-align left
         color #ffffff
-    
+
     .slider-outer
         color white
         width 100%
@@ -432,7 +539,7 @@
                             width 270px
 
                         @media (max-width 425px)
-                            height 270px
+                            height 530px
                             flex 0 0 100% !important
 
                         &:active
@@ -448,13 +555,13 @@
                             /*padding 20px 20px 0 20px*/
 
                             /*img*/
-                                /*max-width 100%*/
-                                /*height 90%*/
-                                /*width auto*/
-                                /*margin auto*/
+                            /*max-width 100%*/
+                            /*height 90%*/
+                            /*width auto*/
+                            /*margin auto*/
 
-                                /*@media (min-width 768px) and (max-width 1024px)*/
-                                    /*max-height 230px*/
+                            /*@media (min-width 768px) and (max-width 1024px)*/
+                            /*max-height 230px*/
 
                             .layer__top
                                 opacity 0
@@ -530,25 +637,25 @@
 
                             @media (max-width 320px)
                                 position relative
-                                width 180px
+                                /*width 180px*/
                                 height 180px
                                 margin 0
 
                             @media (min-width 320px) and (max-width 360px)
                                 position relative
-                                width 200px
+                                /*width 200px*/
                                 height 200px
                                 margin 0
 
                             @media (min-width 360px) and (max-width 425px)
                                 position relative
-                                width 220px
-                                height 220px
+                                /*width 300px*/
+                                height 4400px
                                 margin 0
 
                             @media (min-width 768px) and (max-width 1024px)
                                 position relative
-                                width 250px
+                                /*width 250px*/
                                 height 250px
                                 margin 0
 
@@ -560,12 +667,6 @@
 
                                 &:active
                                     cursor -webkit-grab !important
-
-        .prev
-            margin-right 20px
-
-        .next
-            margin-left 20px
 
         .prev, .next
             background transparent

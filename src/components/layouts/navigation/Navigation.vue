@@ -13,9 +13,7 @@
                             xl2>
                         <logo/>
                     </v-flex>
-                    <v-flex d-flex
-                            align-center
-                            hidden-sm-and-down>
+                    <v-flex hidden-sm-and-down>
                         <navigation-menu :items="items"/>
                     </v-flex>
                     <v-flex xs4 offset-xs2

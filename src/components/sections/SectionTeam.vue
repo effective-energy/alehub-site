@@ -17,7 +17,8 @@
                                      :num-img-xs="sliderOptions.numImgXs"
                                      :num-img-md="sliderOptions.numImgMd"
                                      :num-img-lg="sliderOptions.numImgLg"
-                                     :members="sliderOptions.members"/>
+                                     :members-lg="sliderOptions.membersLg"
+                                     :members-md="sliderOptions.membersMd"/>
                     </v-flex>
                 </v-layout>
             </v-flex>
@@ -45,7 +46,57 @@
                 numImgXs: 1,
                 numImgMd: 1,
                 numImgLg: 2,
-                members: [
+                membersMd: [
+                    {
+                        name: 'Егор Локтев',
+                        position: 'Генеральный директор',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Владимир Грудинин',
+                        position: 'Доцент кафедры сетевых и облачных технологий университета ITMO ',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Михаил Громыко',
+                        position: 'Инвестиционный директор',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Алексей Осипенко',
+                        position: 'Исполнительный директор',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Антон Беляков',
+                        position: 'Исследователь',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Илья Шилов',
+                        position: 'Технический директор',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Арсений Войтенко',
+                        position: 'Менеджер',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Артём Левашов',
+                        position: 'Юрист',
+                        team: 'Effective Energy',
+                        linkedin: ''
+                    }
+                ],
+                membersLg: [
                     [
                         {
                             name: 'Егор Локтев',
@@ -58,7 +109,7 @@
                             position: 'Доцент кафедры сетевых и облачных технологий университета ITMO ',
                             team: 'Effective Energy',
                             linkedin: ''
-                        },
+                        }
                     ],
                     [
                         {
@@ -110,8 +161,19 @@
 
 <style lang="stylus" scoped>
     .sections-team
-        height 80vh
         position relative
+
+        @media (min-width 0px)
+            height 110vh
+
+        @media (min-width 600px)
+            height 100vh
+
+        @media (min-width 960px)
+            height 90vh
+
+        @media (min-width 1264px)
+            height 80vh
 
         .container
             height 100%

@@ -23,14 +23,14 @@
 <style lang="stylus" scoped>
     .subtitle
         @media (min-width 0px)
-            text-align left
+            text-align left !important
 
         @media (min-width 600px)
-            text-align left
+            text-align left !important
 
         @media (min-width 960px)
-            text-align center
+            text-align center !important
 
         @media (min-width 1264px)
-            text-align center
+            text-align center !important
 </style>

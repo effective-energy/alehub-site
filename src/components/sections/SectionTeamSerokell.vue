@@ -9,7 +9,8 @@
                              :num-img-xs="sliderOptions.numImgXs"
                              :num-img-md="sliderOptions.numImgMd"
                              :num-img-lg="sliderOptions.numImgLg"
-                             :members="sliderOptions.members"/>
+                             :members-lg="sliderOptions.membersLg"
+                             :members-md="sliderOptions.membersMd"/>
             </v-flex>
         </v-layout>
     </div>
@@ -34,7 +35,33 @@
                 numImgXs: 1,
                 numImgMd: 1,
                 numImgLg: 2,
-                members: [
+                membersMd: [
+                    {
+                        name: 'Арсений Серока',
+                        position: 'Ведущий разработчик Serokell',
+                        team: 'Serokell',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Александр Рукин',
+                        position: 'UI/UX дзиайнер',
+                        team: 'Serokell',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Йон Мостовой',
+                        position: 'Ведущий разработчик Serokell',
+                        team: 'Serokell',
+                        linkedin: ''
+                    },
+                    {
+                        name: 'Кирилл Елагин',
+                        position: 'Исполнительный директор',
+                        team: 'Back-end разработчик',
+                        linkedin: ''
+                    }
+                ],
+                membersLg: [
                     [
                         {
                             name: 'Арсений Серока',
@@ -47,7 +74,7 @@
                             position: 'UI/UX дзиайнер',
                             team: 'Serokell',
                             linkedin: ''
-                        },
+                        }
                     ],
                     [
                         {
